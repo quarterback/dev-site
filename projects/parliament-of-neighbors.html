@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>A Parliament of Neighbors — Ron Bronson</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/site.css" />
+<script src="../assets/palette.js"></script>
+<style>
+  .project { max-width: 760px; }
+  .project__title {
+    margin: 0 0 clamp(8px, 1.5vw, 16px);
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(40px, 6vw, 76px);
+    line-height: 1.0;
+    letter-spacing: -0.025em;
+    text-wrap: balance;
+  }
+  .project__lede {
+    margin: 0 0 clamp(28px, 4vw, 48px);
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: clamp(20px, 1.8vw, 24px);
+    line-height: 1.4;
+    color: var(--ink);
+    max-width: 48ch;
+    text-wrap: pretty;
+  }
+
+  .project__body { display: grid; gap: clamp(20px, 2.6vw, 32px); }
+  .project__body > p {
+    margin: 0;
+    font-family: var(--sans);
+    font-size: clamp(17px, 1.35vw, 18px);
+    line-height: 1.65;
+    color: var(--ink);
+    max-width: 64ch;
+    text-wrap: pretty;
+  }
+
+  .project__body .quote {
+    margin: 0;
+    padding-left: clamp(16px, 2vw, 24px);
+    border-left: 2px solid var(--rule);
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: clamp(19px, 1.55vw, 22px);
+    line-height: 1.45;
+    color: var(--ink);
+    max-width: 56ch;
+  }
+  .project__body .quote p { margin: 0 0 0.9em; }
+  .project__body .quote p:last-child { margin-bottom: 0; }
+  .project__body .quote-source {
+    margin-top: 10px;
+    padding-left: clamp(16px, 2vw, 24px);
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-soft);
+  }
+
+  .figure {
+    margin: clamp(28px, 4vw, 48px) 0 0;
+    background: var(--bg-deeper);
+    overflow: hidden;
+    position: relative;
+  }
+  .figure img, .figure svg.ph { display: block; width: 100%; height: auto; }
+  .figure svg.ph { aspect-ratio: 16 / 9; }
+
+  .figure--video { aspect-ratio: 16 / 9; }
+  .figure--video iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <a class="name" href="../index.html">Ron Bronson</a>
+  </header>
+
+  <article class="project">
+
+    <h1 class="project__title">A Parliament of Neighbors</h1>
+    <p class="project__lede">A live participatory piece on worldbuilding, speculative governance, and what we owe our neighbors.</p>
+
+    <figure class="figure figure--video">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/dwemDtD4mTk"
+        title="A Parliament of Neighbors — documentation video"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen></iframe>
+    </figure>
+
+    <div class="project__body">
+
+      <p>A live event paired with a website that ran a sticky-note feature, opening the piece to anyone who wanted to put themselves into the idea. The site is offline now. The documentation video remains.</p>
+
+      <blockquote class="quote">
+        <p>Bringing worldbuilding and speculative futures into community spaces. What if governance and community were a blank canvas? How would we choose to exist, live, and play together?</p>
+        <p>Most reimagination of cities focuses on physical infrastructure. This interactive experience asked us to think about the people who make a place.</p>
+        <p>The piece zoomed in to what it means to govern, and what our responsibilities are to our neighbors.</p>
+      </blockquote>
+      <p class="quote-source">From the original project notes.</p>
+
+      <p style="margin-top: clamp(20px, 3vw, 36px)"><a class="live-link" href="https://www.youtube.com/watch?v=dwemDtD4mTk" target="_blank" rel="noopener">youtube.com/watch?v=dwemDtD4mTk</a></p>
+
+    </div>
+
+  </article>
+
+  <footer class="foot">
+    <span>Reach me at <a href="mailto:contact@ronbronson.com">contact@ronbronson.com</a>.</span>
+    <span class="legal">© Ron Bronson, 2026</span>
+  </footer>
+
+</div>
+</body>
+</html>

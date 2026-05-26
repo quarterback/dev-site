@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PDX Spend — Ron Bronson</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/site.css" />
+<script src="../assets/palette.js"></script>
+<style>
+  .project { max-width: 760px; }
+  .project__title {
+    margin: 0 0 clamp(8px, 1.5vw, 16px);
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(40px, 6vw, 76px);
+    line-height: 1.0;
+    letter-spacing: -0.025em;
+    text-wrap: balance;
+  }
+  .project__lede {
+    margin: 0 0 clamp(28px, 4vw, 48px);
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: clamp(20px, 1.8vw, 24px);
+    line-height: 1.4;
+    color: var(--ink);
+    max-width: 52ch;
+    text-wrap: pretty;
+  }
+
+  .project__body { display: grid; gap: clamp(20px, 2.6vw, 32px); }
+  .project__body > p {
+    margin: 0;
+    font-family: var(--sans);
+    font-size: clamp(17px, 1.35vw, 18px);
+    line-height: 1.65;
+    color: var(--ink);
+    max-width: 64ch;
+    text-wrap: pretty;
+  }
+
+  .project__body h2 {
+    margin: clamp(28px, 4vw, 48px) 0 4px;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(22px, 2vw, 28px);
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+  }
+  .project__body h3 {
+    margin: clamp(18px, 2.4vw, 26px) 0 4px;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(17px, 1.4vw, 19px);
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .project__body h3 + p { margin-top: 0; }
+
+  .project__body ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 14px;
+    font-family: var(--sans);
+    font-size: clamp(16px, 1.3vw, 18px);
+    line-height: 1.55;
+    color: var(--ink);
+    max-width: 64ch;
+  }
+  .project__body ul li { padding-left: 22px; position: relative; }
+  .project__body ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    width: 10px;
+    height: 1px;
+    background: var(--ink-soft);
+  }
+  .project__body ul li b { font-weight: 600; }
+  .project__body code {
+    font-family: var(--mono);
+    font-size: 0.9em;
+    color: var(--accent);
+  }
+
+  /* "Three questions" list — numbered, sits prominently */
+  .questions {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 14px;
+    font-family: var(--sans);
+    font-size: clamp(17px, 1.4vw, 19px);
+    line-height: 1.5;
+    color: var(--ink);
+    max-width: 60ch;
+    counter-reset: q;
+  }
+  .questions li {
+    padding-left: 36px !important;
+    position: relative;
+    counter-increment: q;
+  }
+  .questions li::before {
+    content: counter(q, decimal-leading-zero) !important;
+    position: absolute;
+    left: 0;
+    top: 0.05em;
+    width: auto !important;
+    height: auto !important;
+    background: none !important;
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--accent);
+  }
+
+  .figure {
+    margin: clamp(20px, 3vw, 36px) 0;
+    background: var(--bg-deeper);
+    overflow: hidden;
+    position: relative;
+    border: 1px solid var(--rule);
+  }
+  .figure img, .figure svg.ph { display: block; width: 100%; height: auto; }
+  .figure svg.ph { aspect-ratio: 16 / 10; }
+  .figure.bleed {
+    margin-left: calc(-1 * clamp(20px, 4vw, 56px));
+    margin-right: calc(-1 * clamp(20px, 4vw, 56px));
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <a class="name" href="../index.html">Ron Bronson</a>
+  </header>
+
+  <article class="project">
+
+    <h1 class="project__title">PDX Spend</h1>
+    <p class="project__lede">A single-issue civic-data instrument. A fund-by-fund ledger of what Portland-area voter money could pay for — and the named rules that hold it still.</p>
+
+    <figure class="figure">
+      <svg class="ph" viewBox="0 0 1400 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <pattern id="ph-a" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(20)">
+            <rect width="16" height="16" fill="#269d85"/>
+            <line x1="0" y1="0" x2="0" y2="16" stroke="#228671" stroke-width="6"/>
+          </pattern>
+        </defs>
+        <rect width="1400" height="800" fill="url(#ph-a)"/>
+      </svg>
+      <img src="https://image.thum.io/get/width/1600/crop/1000/https://pdxspend.com" alt="Screenshot of pdxspend.com" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;" />
+    </figure>
+
+    <div class="project__body">
+
+      <h2>Premise &amp; motivation</h2>
+
+      <p>Portland-area voters keep approving ballot measures that dedicate public money to specific things — clean energy, parks, housing, preschool. Years later, much of that money is still sitting in the fund, or has been quietly re-aimed at uses outside what voters approved, through ordinary administrative readings of statute. The information needed to contest that exists, buried in audits, ordinances, and budget PDFs that assume a public-finance background.</p>
+
+      <p>PDX Spend is a tool for closing that gap. For each of seven funds it answers three questions a resident can act on the same day:</p>
+
+      <ol class="questions">
+        <li>What could this fund pay for right now, at its current balance?</li>
+        <li>What&rsquo;s the specific rule blocking that?</li>
+        <li>Who controls that lever — so you can send them the page?</li>
+      </ol>
+
+      <p>The editorial stance is deliberately adversarial. When a bureau uses an elastic reading of statute to spend restricted dollars on, say, a private arena&rsquo;s lighting, the site applies the same elasticity in the other direction — toward what voters actually passed — and names the trade. Every blocker ships with a <b>defense</b> (the line usually offered for it) and a <b>rebuttal</b> (the editorial counter).</p>
+
+      <h2>Design</h2>
+
+      <h3>Plain-language baseline</h3>
+      <p>Every page follows <a href="https://plainlanguage.gov" target="_blank" rel="noopener" style="color: var(--accent); border-bottom: 1px solid currentColor;">plainlanguage.gov</a> standards: common words (&ldquo;money sitting unspent&rdquo; over &ldquo;unobligated reserve&rdquo;), a 25-word sentence cap, active voice, numbers stated before the explanation, headings that assert something usable. Hero copy targets a 6th-grade reading level.</p>
+
+      <h3>Chart-led longform</h3>
+      <p>Editorial reference points are <i>The Pudding</i> (chart-driven storytelling), the <i>Financial Times</i> visual desk (restraint, chart language), and <i>ProPublica</i> / <i>Reveal</i> (structural framing of public-money stories).</p>
+
+      <h3>Scrollytelling</h3>
+      <p>Fund pages walk the reader through how a balance got to where it is — the balance line stays pinned while annotated audit and council events step past in the margin, the active step lifting out of a faded stack as it reaches the viewport center.</p>
+
+      <h3>Honest about uncertainty</h3>
+      <p>Every figure is a modeled reconstruction until audited records replace it. Charts carry a small <code>MODELED</code> badge as the disclosure mechanism. As audited documents arrive, the modeled series swap out and the badge drops.</p>
+
+      <h3>Editorial palette and type</h3>
+      <p>Fraunces + JetBrains Mono, with a burnt-sienna accent reserved for the &ldquo;re-aimed&rdquo; dollars so the eye lands on the contested money.</p>
+
+      <h2>Technical implementation</h2>
+
+      <ul>
+        <li><b>SvelteKit 2 + Svelte 5 runes</b>, fully prerendered via <code>@sveltejs/adapter-static</code>, deployed as static files to Netlify.</li>
+        <li><b>D3 v7 + scrollama</b> for the charts and scrollytelling. Each chart is a hand-built SVG component (balance-over-time, promised-vs-delivered, unspent-reserve stream, drift-from-intent, and a cross-fund stacked view with dollars / share / on-mission modes).</li>
+        <li><b>Accessibility is first-class.</b> Every chart exposes a keyboard-navigable data layer (per-point focus, arrow / Home / End / Escape), an <code>aria-live</code> region announcing the selected point, color-blind-safe pattern fills doubling every color encoding, and a <code>&lt;details&gt;</code> data table mirroring the SVG.</li>
+        <li><b>Made to travel.</b> Every chart downloads as PNG and CSV. The dashboard charts are embeddable via an oEmbed endpoint that carries the credit line through wherever they&rsquo;re embedded — so the argument can be lifted into other reporting.</li>
+        <li><b>Resilient build.</b> The <code>@workspace/db</code> import is dynamic so a static build with <code>DATABASE_URL</code> unset still succeeds (run-history queries return empty). Per-fund memos are authored as markdown and pulled in at build time via <code>import.meta.glob</code>.</li>
+      </ul>
+
+      <p style="margin-top: clamp(20px, 3vw, 36px)"><a class="live-link" href="https://pdxspend.com" target="_blank" rel="noopener">pdxspend.com</a></p>
+
+    </div>
+
+  </article>
+
+  <footer class="foot">
+    <span>Reach me at <a href="mailto:contact@ronbronson.com">contact@ronbronson.com</a>.</span>
+    <span class="legal">© Ron Bronson, 2026</span>
+  </footer>
+
+</div>
+</body>
+</html>
