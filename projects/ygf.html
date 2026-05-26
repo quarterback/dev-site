@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>You Go First — Ron Bronson</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/site.css" />
+<script src="../assets/palette.js"></script>
+<style>
+  .project { max-width: 880px; }
+  .project__title {
+    margin: 0 0 clamp(8px, 1.5vw, 16px);
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(40px, 6vw, 76px);
+    line-height: 1.0;
+    letter-spacing: -0.025em;
+    text-wrap: balance;
+  }
+  .project__lede {
+    margin: 0 0 clamp(28px, 4vw, 48px);
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: clamp(20px, 1.8vw, 24px);
+    line-height: 1.4;
+    color: var(--ink);
+    max-width: 52ch;
+    text-wrap: pretty;
+  }
+
+  .project__body { display: grid; gap: clamp(20px, 2.6vw, 32px); }
+  .project__body > p {
+    margin: 0;
+    font-family: var(--sans);
+    font-size: clamp(17px, 1.35vw, 18px);
+    line-height: 1.65;
+    color: var(--ink);
+    max-width: 64ch;
+    text-wrap: pretty;
+  }
+
+  .project__body h2 {
+    margin: clamp(32px, 5vw, 56px) 0 4px;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(24px, 2.2vw, 30px);
+    line-height: 1.15;
+    letter-spacing: -0.018em;
+    color: var(--ink);
+  }
+  .project__body h3 {
+    margin: clamp(20px, 2.5vw, 28px) 0 4px;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(19px, 1.6vw, 22px);
+    line-height: 1.2;
+    letter-spacing: -0.012em;
+    color: var(--ink);
+  }
+  .project__body h3 + p { margin-top: 0; }
+
+  .project__body ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 14px;
+    font-family: var(--sans);
+    font-size: clamp(16px, 1.3vw, 18px);
+    line-height: 1.55;
+    color: var(--ink);
+    max-width: 64ch;
+  }
+  .project__body ul li { padding-left: 22px; position: relative; }
+  .project__body ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    width: 10px;
+    height: 1px;
+    background: var(--ink-soft);
+  }
+  .project__body ul li b { font-weight: 600; }
+
+  .project__body code {
+    font-family: var(--mono);
+    font-size: 0.9em;
+    color: var(--accent);
+  }
+
+  /* Borrowings table */
+  table.borrowings {
+    margin: 0;
+    width: 100%;
+    max-width: 640px;
+    border-collapse: collapse;
+    font-family: var(--sans);
+    font-size: clamp(15px, 1.25vw, 17px);
+    line-height: 1.55;
+  }
+  table.borrowings th,
+  table.borrowings td {
+    text-align: left;
+    padding: 12px 18px 12px 0;
+    vertical-align: top;
+    border-bottom: 1px solid var(--rule);
+  }
+  table.borrowings th {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    border-bottom-color: var(--ink);
+  }
+  table.borrowings td:first-child {
+    font-weight: 600;
+    width: 38%;
+    padding-right: 24px;
+  }
+
+  /* Generic stack-block (reusing the pattern from other pages) */
+  .stack-block {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 8px 28px;
+    max-width: 720px;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+  .stack-block dt {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-soft);
+    padding-top: 3px;
+  }
+  .stack-block dd { margin: 0; font-family: var(--sans); color: var(--ink); max-width: 56ch; }
+  @media (max-width: 640px) {
+    .stack-block { grid-template-columns: 1fr; gap: 4px 0; }
+    .stack-block dt { padding-top: 16px; }
+    .stack-block dt:first-of-type { padding-top: 0; }
+  }
+
+  /* Figures */
+  .figure {
+    margin: clamp(20px, 3vw, 36px) 0;
+    background: var(--bg-deeper);
+    overflow: hidden;
+    position: relative;
+    border: 1px solid var(--rule);
+  }
+  .figure img, .figure svg.ph { display: block; width: 100%; height: auto; }
+  .figure svg.ph { aspect-ratio: 16 / 10; }
+  .figure figcaption {
+    padding: 8px 12px;
+    border-top: 1px solid var(--rule);
+    background: var(--bg);
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-soft);
+  }
+
+  .figure.bleed {
+    margin-left: calc(-1 * clamp(20px, 4vw, 56px));
+    margin-right: calc(-1 * clamp(20px, 4vw, 56px));
+    border-left: 0;
+    border-right: 0;
+  }
+
+  /* Paired figures */
+  .figpair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(14px, 2vw, 20px);
+    margin: clamp(20px, 3vw, 36px) 0;
+  }
+  .figpair .figure { margin: 0; }
+  @media (max-width: 720px) { .figpair { grid-template-columns: 1fr; } }
+
+  /* Tier strip — three colored callouts for First / Second / Third */
+  .tiers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(12px, 1.5vw, 18px);
+    margin: clamp(8px, 1.5vw, 16px) 0;
+  }
+  @media (max-width: 640px) { .tiers { grid-template-columns: 1fr; } }
+  .tier {
+    padding: 14px 16px;
+    border-radius: 0;
+    border-left: 3px solid;
+    background: var(--bg-deeper);
+  }
+  .tier.first  { border-color: #C5392B; }
+  .tier.second { border-color: #C0922B; }
+  .tier.third  { border-color: #2A5DBF; }
+  .tier__label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+  }
+  .tier__name {
+    margin: 4px 0 6px;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(18px, 1.6vw, 22px);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+  .tier__copy {
+    margin: 0;
+    font-family: var(--sans);
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+
+  /* Pull-callout for the two signature surfaces */
+  .surface {
+    margin: clamp(20px, 3vw, 32px) 0;
+    padding: clamp(20px, 3vw, 32px);
+    background: var(--bg-deeper);
+    border-left: 3px solid var(--accent);
+    max-width: 700px;
+  }
+  .surface h3 {
+    margin: 0 0 8px;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(20px, 1.7vw, 24px);
+    letter-spacing: -0.01em;
+  }
+  .surface p {
+    margin: 0;
+    font-family: var(--sans);
+    font-size: clamp(15px, 1.25vw, 17px);
+    line-height: 1.55;
+    color: var(--ink);
+    max-width: 56ch;
+  }
+  .surface p + p { margin-top: 10px; }
+
+  /* Artifacts list — slightly chunkier */
+  .artifacts {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 14px;
+    font-family: var(--sans);
+    font-size: clamp(16px, 1.3vw, 18px);
+    line-height: 1.55;
+    color: var(--ink);
+    max-width: 64ch;
+  }
+  .artifacts li {
+    padding-left: 32px;
+    position: relative;
+  }
+  .artifacts li b {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+  .artifacts li::before {
+    content: counter(art, decimal-leading-zero);
+    counter-increment: art;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--accent);
+  }
+  .artifacts { counter-reset: art; }
+
+  /* Predecessor block at the bottom */
+  .predecessor {
+    margin: clamp(40px, 6vw, 80px) 0 0;
+    padding-top: clamp(24px, 3vw, 36px);
+    border-top: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 8px 28px;
+    max-width: 720px;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .predecessor dt {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-soft);
+    padding-top: 3px;
+  }
+  .predecessor dd { margin: 0; font-family: var(--sans); color: var(--ink); max-width: 56ch; }
+  @media (max-width: 640px) {
+    .predecessor { grid-template-columns: 1fr; gap: 4px 0; }
+    .predecessor dt { padding-top: 16px; }
+    .predecessor dt:first-of-type { padding-top: 0; }
+  }
+
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    margin-top: clamp(20px, 3vw, 36px);
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <a class="name" href="../index.html">Ron Bronson</a>
+  </header>
+
+  <article class="project">
+
+    <h1 class="project__title">You Go First</h1>
+    <p class="project__lede">A speculative dating-app concept built around scarcity, transparency, and portable trust. Fifteen picks a week. Three visible tiers. The signal is the product.</p>
+
+    <figure class="figure bleed">
+      <img src="../assets/ygf/01-hero-red.png" alt="The hero red waitlist page reading You go first, with a sign-up form" />
+      <figcaption>The marketing site — waitlist form on the signature crimson field.</figcaption>
+    </figure>
+
+    <div class="project__body">
+
+      <h2>Premise &amp; motivation</h2>
+
+      <p>The dating-app industry is a $12B market with ~80% churn within ninety days. Every major product is a variation on one mechanic: <b>infinite supply, zero-cost swiping, photo-first ranking.</b> The incentives are misaligned — engagement equals revenue, so the platform profits when you <i>don&rsquo;t</i> find someone. Users spend ~90 minutes a day swiping; ~75% of matches never exchange a single message.</p>
+
+      <p>YGF&rsquo;s thesis is that the problem is <b>economic, not cosmetic</b>. If attention is infinite and free, no signal a user sends carries information. So YGF treats attention as a finite resource: every user gets the same fifteen picks every week, split across three visible tiers — five Firsts, five Seconds, five Thirds. Picks expire Saturday at 11:59 PM. A new roster lands Sunday at 7 PM. You can&rsquo;t pay for more. When a slot costs something, the match that results from it <i>means</i> something.</p>
+
+      <figure class="figure bleed">
+        <img src="../assets/ygf/03-premise-dark.png" alt="The premise section on a deep ink background — It is a dating app, shaped like a draft" />
+        <figcaption>The premise, as it reads on the marketing site.</figcaption>
+      </figure>
+
+      <p>The mechanic is called <b>Stratified Preference Allocation (SPA)</b>, and it diverges from conventional preference matching in three ways:</p>
+
+      <ul>
+        <li>Classical stable matching (Gale&ndash;Shapley) assumes a closed market, full information, and unlimited proposals. Real dating markets violate every one of those assumptions.</li>
+        <li>App-style preference systems (Hinge, Tinder, Bumble) collapse the signal to a binary like — free to send, free to ignore. With no opportunity cost, a like carries no information. Hidden behind a paywall, it carries negative information.</li>
+        <li>SPA makes the cost finite and visible. Finite via the fifteen-slot weekly roster. Visible via bilateral transparency — when you draft someone First, they see &ldquo;You are one of her five Firsts this week.&rdquo; No hidden likes. No paywalled superlikes. The signal is the product.</li>
+      </ul>
+
+      <p>Three principles fall out of that:</p>
+
+      <ul>
+        <li><b>Strategic scarcity.</b> Finite slots turn swiping into resource allocation. You can&rsquo;t First everyone, so you have to choose. The revealed-preference signal is stronger than a like by orders of magnitude.</li>
+        <li><b>Bilateral transparency.</b> Recipients see exactly which tier you placed them in. Vulnerability is reciprocal by design.</li>
+        <li><b>Portable trust &amp; identity.</b> Reputation and identity are decoupled from the platform — ATProto for identity plus a behavioral trust layer — so good behavior follows you across apps and there&rsquo;s no lock-in.</li>
+      </ul>
+
+      <h2>How a week works</h2>
+
+      <div class="tiers" aria-label="The three tiers">
+        <div class="tier first">
+          <div class="tier__label">FIRST &middot; ×5</div>
+          <div class="tier__name">The most expensive signal you have.</div>
+          <p class="tier__copy">When you draft someone First, they see it. There are exactly five. There will never be six.</p>
+        </div>
+        <div class="tier second">
+          <div class="tier__label">SECOND &middot; ×5</div>
+          <div class="tier__name">Strong interest, not the top of the roster.</div>
+          <p class="tier__copy">Seconds are visible to the people you spend them on, at the right cost.</p>
+        </div>
+        <div class="tier third">
+          <div class="tier__label">THIRD &middot; ×5</div>
+          <div class="tier__name">On the radar. The cheapest pick.</div>
+          <p class="tier__copy">Thirds are how you keep someone in mind without overcommitting.</p>
+        </div>
+      </div>
+
+      <figure class="figure bleed">
+        <img src="../assets/ygf/04-how-it-works.png" alt="Three tiers, fifteen slots, one week — laid out as three columns of five" />
+        <figcaption>The mechanic, made legible on the marketing site.</figcaption>
+      </figure>
+
+      <p>The cadence is a week. Picks drop Sunday at 7 PM. The roster locks Saturday at 11:59 PM. Between those two moments, you spend your fifteen — or you don&rsquo;t.</p>
+
+      <figure class="figure bleed">
+        <img src="../assets/ygf/05-typical-week.png" alt="A weekly calendar — Sunday: the drop. Monday: first moves. Tuesday: first reveals. Wednesday: mutuals. Saturday: lock." />
+        <figcaption>Seven days, one roster, then it resets.</figcaption>
+      </figure>
+
+      <h2>Design</h2>
+
+      <p>YGF is deliberately anti&ndash;dating-app in look and feel. Most consumer dating products borrow from Spotify, Apple News, Dribbble, Steam — engagement-optimized tech surfaces. YGF leaves the category entirely and borrows from print.</p>
+
+      <table class="borrowings" aria-label="Design borrowings">
+        <thead>
+          <tr><th>Source</th><th>Borrowed pattern</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Sunday New York Times</td><td>Editorial mastheads, pull quotes, eyebrow labels</td></tr>
+          <tr><td>Old almanacs &amp; specimen books</td><td>Ordinal numbering, asymmetric grids, dignified hierarchy</td></tr>
+          <tr><td>Magazine cover design</td><td>Display italics at billboard scale, generous whitespace</td></tr>
+          <tr><td>Newspaper sports section</td><td>Mono-numeric stats, agate type, terse data presentation</td></tr>
+        </tbody>
+      </table>
+
+      <p>Four signature design decisions carry the system:</p>
+
+      <ul>
+        <li><b>Old Standard TT italic at display scale,</b> with a crimson period signing every wordmark and signal. The dot is the brand mark. A magazine-grade serif does most of the visual work without any chrome.</li>
+        <li><b>A constrained chromatic palette</b> — ink, pulp, cream, plus three signal colors (crimson = First, marigold = Second, cobalt = Third) and a field green reserved for mutual drafts. Each color has exactly one job. Crimson appears only in First-pick moments, which is what makes those moments matter.</li>
+        <li><b>Duotone portraiture.</b> Every photo runs through a tier-mapped duotone. Three problems solved at once: untinted photos read as Tinder, the treatment is the visual signature, and the tier travels with the person through the product.</li>
+        <li><b>Editorial copy as system.</b> Voice is documented in DO / DON&rsquo;T cards in the brand bible alongside type and color specs. The voice is part of the product, not an afterthought.</li>
+      </ul>
+
+      <figure class="figure bleed">
+        <img src="../assets/ygf/15-roster-board.png" alt="The Roster Board — fifteen slots arranged as three rows of five, with tier-mapped duotone portraits in the First row" />
+        <figcaption>The Roster Board — symmetrical on purpose, so the eye can count without thinking.</figcaption>
+      </figure>
+
+      <div class="figpair">
+        <figure class="figure">
+          <img src="../assets/ygf/11-color-specimen.png" alt="Color specimen page from the brand bible — Six colors, on purpose" />
+          <figcaption>Color &middot; from the brand bible.</figcaption>
+        </figure>
+        <figure class="figure">
+          <img src="../assets/ygf/12-type-specimen.png" alt="Type specimen page — Instrument Serif, Bricolage Grotesque, JetBrains Mono" />
+          <figcaption>Type system &middot; three families, three jobs.</figcaption>
+        </figure>
+      </div>
+
+      <figure class="figure bleed">
+        <img src="../assets/ygf/13-numerals.png" alt="Numerals &amp; ordinals — three display classes of numerals" />
+        <figcaption>The product is counted, ranked, drafted. Numerals carry the system.</figcaption>
+      </figure>
+
+      <h2>Two surfaces that carry the strategy</h2>
+
+      <div class="surface">
+        <h3>The List</h3>
+        <p>A fourth verb beneath Pass / Third / Second / First, with a dashed-border treatment that telegraphs <i>private, no cost</i>. Unlimited. The person you parked never sees it. The pressure isn&rsquo;t the in-the-moment choice — it&rsquo;s the Saturday lock.</p>
+        <p>This is the verb for &ldquo;I don&rsquo;t know yet, I want to think about it,&rdquo; which is the most honest response anyone has to most cards.</p>
+      </div>
+
+      <div class="surface">
+        <h3>The Night Round</h3>
+        <p>A 9 PM &rarr; midnight synchronous window, signaled by a pulsing crimson banner and a city-wide push notification. Inside, you can send up to ten multiple-choice questions to people you&rsquo;ve considered but not yet picked. They tap one of four answers.</p>
+        <p>No conversation. No chat affordance anywhere. The constraint is the feature — synchronicity, borrowed from BeReal, applied to dating.</p>
+      </div>
+
+      <div class="figpair">
+        <figure class="figure">
+          <img src="../assets/ygf/18-proto-discover.png" alt="The live prototype — discover view, picking Theo A., 34" />
+          <figcaption>Live prototype &middot; the draft surface.</figcaption>
+        </figure>
+        <figure class="figure">
+          <img src="../assets/ygf/19-proto-night.png" alt="The live prototype with the Night Round banner active" />
+          <figcaption>Night Round open &middot; +List verb appears, two people are asking you.</figcaption>
+        </figure>
+      </div>
+
+      <h2>Mechanics &amp; implementation</h2>
+
+      <p>The interesting engineering is the matching engine, which is <b>asymmetric by design</b> — your score for someone differs from theirs for you.</p>
+
+      <ol style="margin: 0; padding-left: 22px; font-family: var(--sans); font-size: clamp(16px, 1.3vw, 18px); line-height: 1.55; max-width: 64ch;">
+        <li style="margin-bottom: 10px;"><b>Relay assessment</b> — a behavioral quiz produces ten vertex scores (Reach&harr;Retreat, Voice&harr;Quiet, Spark&harr;Steady, Merge&harr;Orbit, Heat&harr;Cool), normalized into a single Temperature score on a 0&ndash;80°R scale (e.g. <code>64.7°R</code>). The integer is public; the decimal is a private hash used only by the algorithm.</li>
+        <li style="margin-bottom: 10px;"><b>Plinko priorities</b> — users allocate exactly ten chips across five traits (attractiveness, liveliness, curiosity, kindness, adaptability). This captures <i>what you want</i>, is locked permanently, and is never shown publicly.</li>
+        <li><b>Score</b> — <code>matchScore = 0.7 × plinkoAlignment + 0.3 × tempCompatibility</code>, where alignment maps your wants onto their derived traits and temperature rewards similar operating styles.</li>
+      </ol>
+
+      <h3>Supporting systems</h3>
+
+      <ul>
+        <li><b>The Roster.</b> Fifteen visible slots arranged as three rows of five (Firsts / Seconds / Thirds), plus the unlimited private List. The Roster locks Saturday at 11:59 PM. Sunday at 7 PM, a new one lands.</li>
+        <li><b>Stratified visibility.</b> Under-the-hood tiering recalibrated every fourteen days based on match success, within ~100-mile geographic regions so a small-market user isn&rsquo;t ranked against a metro. Never surfaced in the UI — no letter grades, no public ladder, nothing on profiles. The math runs; the user never feels ranked.</li>
+        <li><b>Behavioral ranking.</b> Ghosting, unmatch rate, and report rate degrade roster access; consistent quality interactions improve it. Ranking points decay over fifty-two weeks to prevent indefinite coasting.</li>
+        <li><b>Draft picks.</b> Selective cross-tier visibility that lets the engine surface someone outside your usual slice when compatibility is unusually high.</li>
+        <li><b>Safety &amp; trust.</b> Reporting, response-rate tracking, and ghosting detection feed a portable reputation layer that survives if a user moves between SPA-compatible apps.</li>
+      </ul>
+
+      <p>YGF also includes a research artifact: a simulator and writeup analyzing the SPA system — attention-inequality metrics (Gini ~0.42), match-quality convergence over twelve weeks, behavior under continuous market churn, local-stability analysis. The design choices are backed by analysis.</p>
+
+      <h2>The system, on a phone</h2>
+
+      <figure class="figure bleed">
+        <img src="../assets/ygf/16-system-at-work.png" alt="The system at work — the Roster screen and the player-card screen on iPhone frames" />
+        <figcaption>Four mobile surfaces. The same parts, recombined.</figcaption>
+      </figure>
+
+      <figure class="figure bleed">
+        <img src="../assets/ygf/17-app-flow.png" alt="App Flow — eight mobile screens covering one week, from Sunday Reset to Onboarding" />
+        <figcaption>Eight hi-fi screens covering one week of use, presented on a pan/zoom canvas.</figcaption>
+      </figure>
+
+      <figure class="figure bleed">
+        <img src="../assets/ygf/14-card.png" alt="The player card — front and back of a numbered profile card" />
+        <figcaption>Every profile is a numbered card. Front: portrait, name, ordinal. Back: a manual of me, three things they&rsquo;d cook you.</figcaption>
+      </figure>
+
+      <h2>Voice</h2>
+
+      <p>Voice is treated as a product spec, not flavor. The brand bible documents it the same way it documents type and color.</p>
+
+      <figure class="figure bleed">
+        <img src="../assets/ygf/08-voice.png" alt="Voice section — Quietly literary, not precious. DO and DON&rsquo;T cards." />
+        <figcaption>DO / DON&rsquo;T cards from the brand bible.</figcaption>
+      </figure>
+
+      <h2>The opposite of every other app</h2>
+
+      <figure class="figure bleed">
+        <img src="../assets/ygf/06-difference.png" alt="A two-column comparison table — YGF vs every other app" />
+        <figcaption>You already know what the other apps feel like. YGF is the opposite of that, on purpose.</figcaption>
+      </figure>
+
+      <h2>What it costs</h2>
+
+      <figure class="figure bleed">
+        <img src="../assets/ygf/07-pricing.png" alt="What it costs — $12 a month, one tier, founding edition" />
+        <figcaption>One price. One tier. The same fifteen for everyone.</figcaption>
+      </figure>
+
+      <h2>The five artifacts</h2>
+
+      <p>The product surfaces as five connected pieces, each shippable on its own.</p>
+
+      <ol class="artifacts">
+        <li>
+          <b>Brand Bible.</b>
+          A thirteen-section specimen book covering wordmark, type, color, voice, portrait treatment, the Roster, profile cards, and DO / DON&rsquo;T copy samples. Written like a printed manual.
+        </li>
+        <li>
+          <b>App Screens.</b>
+          Eight hi-fi mobile screens covering one week of use, from the Sunday Reset to the Saturday Recap, presented on a pan/zoom canvas.
+        </li>
+        <li>
+          <b>Interactive Prototype.</b>
+          The full matching mechanic, playable end-to-end. Draft Pass / List / Third / Second / First, watch scripted inbound reveals land, hit a mutual, open a thread, send a message, and trigger the Night Round to send multiple-choice questions with AI-suggested options.
+        </li>
+        <li>
+          <b>Marketing Site.</b>
+          A nine-section editorial landing page with a working waitlist form.
+        </li>
+        <li>
+          <b>Strategy Deck.</b>
+          Twelve slides arguing the product, from the market problem to GTM (Portland → Vancouver, WA → Seattle) to projected milestones.
+        </li>
+      </ol>
+
+      <p>Built solo, end-to-end: protocol design, product strategy, UX, brand, copy, deck.</p>
+
+      <h2>Stack</h2>
+
+      <dl class="stack-block">
+        <dt>App</dt>
+        <dd>React 18 + TypeScript, Vite, Tailwind + shadcn/ui, React Query, React Router, deployed as a PWA.</dd>
+        <dt>Backend</dt>
+        <dd>Supabase (Postgres 15, Deno edge functions, Realtime, Storage) with row-level security.</dd>
+        <dt>Identity</dt>
+        <dd><b>ATProto OAuth</b> — profile data lives in the user&rsquo;s own PDS.</dd>
+        <dt>Trust layer</dt>
+        <dd>Cross-app reputation, shared moderation, and SPA delegated to <a href="glowrm.html" style="border-bottom: 1px solid var(--rule); color: var(--ink);">Glowrm</a> — the trust infrastructure layer YGF was designed against.</dd>
+        <dt>Type</dt>
+        <dd>Old Standard TT, Bricolage Grotesque, JetBrains Mono.</dd>
+        <dt>Hosting</dt>
+        <dd>Vercel.</dd>
+      </dl>
+
+      <h2>Status</h2>
+
+      <p>YGF is a portfolio piece and the blueprint for a hypothetical funded build. The matching engine, prototype, brand bible, app screens, marketing site, and strategy deck all ship. Production infrastructure (Sentry, cron jobs, SLAs, mobile apps) sits in the roadmap.</p>
+
+      <dl class="predecessor" aria-label="Trust layer">
+        <dt>Trust layer</dt>
+        <dd>YGF&rsquo;s portable reputation, ghosting detection, response-rate tracking, and global ban behavior all run through <a href="glowrm.html" style="border-bottom: 1px solid var(--rule); color: var(--ink);">Glowrm</a> &mdash; one of three reference implementations of that API.</dd>
+      </dl>
+
+    </div>
+
+  </article>
+
+  <footer class="foot">
+    <span>Reach me at <a href="mailto:contact@ronbronson.com">contact@ronbronson.com</a>.</span>
+    <span class="legal">© Ron Bronson, 2026</span>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Draft Lab — Ron Bronson</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/site.css" />
+<script src="../assets/palette.js"></script>
+<style>
+  .project { max-width: 760px; }
+  .project__title {
+    margin: 0 0 clamp(8px, 1.5vw, 16px);
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(40px, 6vw, 76px);
+    line-height: 1.0;
+    letter-spacing: -0.025em;
+    text-wrap: balance;
+  }
+  .project__lede {
+    margin: 0 0 clamp(28px, 4vw, 48px);
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: clamp(20px, 1.8vw, 24px);
+    line-height: 1.4;
+    color: var(--ink);
+    max-width: 48ch;
+    text-wrap: pretty;
+  }
+
+  .project__body { display: grid; gap: clamp(20px, 2.6vw, 32px); }
+  .project__body > p {
+    margin: 0;
+    font-family: var(--sans);
+    font-size: clamp(17px, 1.35vw, 18px);
+    line-height: 1.65;
+    color: var(--ink);
+    max-width: 64ch;
+    text-wrap: pretty;
+  }
+
+  .project__body h2 {
+    margin: clamp(28px, 4vw, 48px) 0 4px;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(22px, 2vw, 28px);
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+  }
+
+  .project__body ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 14px;
+    font-family: var(--sans);
+    font-size: clamp(16px, 1.3vw, 18px);
+    line-height: 1.55;
+    color: var(--ink);
+    max-width: 64ch;
+  }
+  .project__body ul li { padding-left: 22px; position: relative; }
+  .project__body ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    width: 10px;
+    height: 1px;
+    background: var(--ink-soft);
+  }
+  .project__body ul li b { font-weight: 600; }
+
+  .stack-block {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 6px 28px;
+    max-width: 720px;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+  .stack-block dt {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-soft);
+    padding-top: 3px;
+  }
+  .stack-block dd { margin: 0; font-family: var(--sans); color: var(--ink); max-width: 56ch; }
+  @media (max-width: 640px) {
+    .stack-block { grid-template-columns: 1fr; gap: 4px 0; }
+    .stack-block dt { padding-top: 16px; }
+    .stack-block dt:first-of-type { padding-top: 0; }
+  }
+
+  .figure { margin: clamp(28px, 4vw, 48px) 0 0; background: var(--bg-deeper); overflow: hidden; position: relative; }
+  .figure img, .figure svg.ph { display: block; width: 100%; height: auto; }
+  .figure svg.ph { aspect-ratio: 16 / 10; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <a class="name" href="../index.html">Ron Bronson</a>
+  </header>
+
+  <article class="project">
+
+    <h1 class="project__title">Draft Lab</h1>
+    <p class="project__lede">A comparative research instrument for sports draft lottery design.</p>
+
+    <figure class="figure">
+      <svg class="ph" viewBox="0 0 1400 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <pattern id="ph-a" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(20)">
+            <rect width="16" height="16" fill="#269d85"/>
+            <line x1="0" y1="0" x2="0" y2="16" stroke="#228671" stroke-width="6"/>
+          </pattern>
+        </defs>
+        <rect width="1400" height="800" fill="url(#ph-a)"/>
+      </svg>
+      <img src="https://image.thum.io/get/width/1600/crop/1000/https://giantplanet.org" alt="Screenshot of giantplanet.org" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;" />
+    </figure>
+
+    <div class="project__body">
+
+      <p>Every major professional sports league shares one structural problem: losing is rational. When the team at the bottom of the standings receives the best odds at the next generation&rsquo;s star player, organizations face a perverse incentive to fail deliberately. Draft lotteries exist to blunt this, and every league has built its own approach.</p>
+
+      <p>Draft Lab asks one question across fifteen rule systems and six professional leagues: what does this mechanism actually reward? Each system runs through thousands of synthetic seasons, measuring how teams behave, how draft equity distributes, and whether the rules create an environment where winning is always the better strategy.</p>
+
+      <p>The centerpiece is the Chip Window, an original mechanism designed here. The window opens mid-season: teams bet chips on nightly games during a defined stretch, and those accumulated bets determine lottery position. Tanking during the window costs you picks. Competing for chips requires playing to win every night the window is open. The mechanism makes tanking structurally impossible.</p>
+
+      <h2>What it does</h2>
+
+      <p>Runs parametric Monte Carlo simulations across:</p>
+
+      <ul>
+        <li><b>15 lottery systems</b> — current NBA and NHL formats alongside original proposals including a UEFA-style rolling coefficient, a single-elimination tournament, and a fixed 30-year wheel.</li>
+        <li><b>6 leagues</b> — NBA, NHL, MLB, WNBA, PWHL, MLS — each with accurate team counts, schedule lengths, playoff structures, and published odds tables.</li>
+        <li><b>Comparative analysis</b> — any two systems can be run head-to-head, producing side-by-side breakdowns of pick distribution, competitive balance (Gini coefficient), tanking frequency, and effort curves across the season.</li>
+      </ul>
+
+      <h2>Stack &amp; method</h2>
+
+      <dl class="stack-block">
+        <dt>Backend</dt>
+        <dd>Python · FastAPI · custom Monte Carlo engine, seed-controlled for reproducibility.</dd>
+        <dt>Frontend</dt>
+        <dd>Server-rendered HTML via Jinja2 · pure SVG charting with all geometry computed server-side · minimal vanilla JavaScript for interactivity.</dd>
+        <dt>Data layer</dt>
+        <dd>Stateless simulation. Each run is fully deterministic from its seed and fully parameterized from its league config. Historical NBA seasons (2000–2026) ground the simulator against reality.</dd>
+        <dt>Architecture</dt>
+        <dd>A single <code>LeagueConfig</code> dataclass holds every league-specific parameter. A <code>LotterySystem</code> protocol defines the interface all fifteen systems implement. The simulation engine is decoupled from the web layer — it runs identically in a test, a request handler, or a notebook.</dd>
+      </dl>
+
+      <h2>The design argument</h2>
+
+      <p>Most sports reform proposals are rhetorical. They describe the outcomes they want and skip past the incentives their rules would actually create. Draft Lab treats league design the way an engineer treats load-bearing structure — something you can test, measure, and iterate before anything is built.</p>
+
+      <p>The Chip Window started as a constraint: what is the minimal change to the rules that makes tanking structurally worse than competing? The answer became a mechanism. The mechanism became a simulation. The simulation became evidence.</p>
+
+      <p style="margin-top: clamp(20px, 3vw, 36px)"><a class="live-link" href="https://giantplanet.org" target="_blank" rel="noopener">giantplanet.org</a></p>
+
+    </div>
+
+  </article>
+
+  <footer class="foot">
+    <span>Reach me at <a href="mailto:contact@ronbronson.com">contact@ronbronson.com</a>.</span>
+    <span class="legal">© Ron Bronson, 2026</span>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- ───────────────────────────────────────────────────────────────
+     PROJECT DETAIL PAGE TEMPLATE
+     Duplicate this file, rename projects/<slug>.html,
+     fill in title, prose, screenshots, domain.
+     ─────────────────────────────────────────────────────────────── -->
+<title>__NAME__ — Ron Bronson</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/site.css" />
+<style>
+  .project { max-width: 980px; }
+
+  .project__title {
+    margin: 0 0 clamp(28px, 4vw, 48px);
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(40px, 6vw, 76px);
+    line-height: 1.0;
+    letter-spacing: -0.025em;
+    text-wrap: balance;
+  }
+
+  .project__body {
+    display: grid;
+    gap: clamp(28px, 4vw, 48px);
+  }
+  .project__body > p {
+    margin: 0;
+    font-family: var(--sans);
+    font-size: clamp(17px, 1.4vw, 19px);
+    line-height: 1.6;
+    color: var(--ink);
+    max-width: 64ch;
+    text-wrap: pretty;
+  }
+
+  .figure { margin: 0; background: var(--bg-deeper); overflow: hidden; position: relative; }
+  .figure img,
+  .figure svg.ph { display: block; width: 100%; height: auto; }
+  .figure svg.ph { aspect-ratio: 16 / 10; }
+  .figure figcaption {
+    margin-top: 10px;
+    padding: 0 2px;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-soft);
+  }
+
+  .figpair { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(12px, 2vw, 18px); }
+  @media (max-width: 720px) { .figpair { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <a class="name" href="../index.html">Ron Bronson</a>
+  </header>
+
+  <article class="project">
+
+    <h1 class="project__title">__NAME__</h1>
+
+    <div class="project__body">
+
+      <!-- Body schema: mix and match.
+             <p> … </p>                          ← paragraph
+             <figure class="figure"> … </figure> ← one screenshot, optional <figcaption>
+             <div class="figpair">
+               <figure class="figure"> … </figure>
+               <figure class="figure"> … </figure>
+             </div>
+           Drop <a class="live-link" href="…">domain.tld</a> wherever you want to point to the live site.
+      -->
+
+      <p>__PARAGRAPH__</p>
+
+      <figure class="figure">
+        <svg class="ph" viewBox="0 0 1400 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs>
+            <pattern id="ph-a" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(20)">
+              <rect width="16" height="16" fill="#269d85"/>
+              <line x1="0" y1="0" x2="0" y2="16" stroke="#228671" stroke-width="6"/>
+            </pattern>
+          </defs>
+          <rect width="1400" height="800" fill="url(#ph-a)"/>
+        </svg>
+        <!-- <img src="…" alt="…" /> -->
+      </figure>
+
+      <p>__PARAGRAPH__</p>
+
+      <p><a class="live-link" href="__URL__" target="_blank" rel="noopener">__DOMAIN__</a></p>
+
+    </div>
+
+  </article>
+
+  <footer class="foot">
+    <span>Reach me at <a href="mailto:contact@ronbronson.com">contact@ronbronson.com</a>.</span>
+    <span class="legal">© Ron Bronson, 2026</span>
+  </footer>
+
+</div>
+</body>
+</html>

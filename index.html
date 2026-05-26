@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ron Bronson</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/site.css" />
+<script src="assets/palette.js"></script>
+<style>
+  /* ─────────────────────────────────────────────────────────────────
+     Index. Each project is a "spread" on a 12-col grid; per-spread
+     rules vary placement so the page reads as composed rather than
+     templated. No catalog numbering, no taglines, no editorial italics.
+     ───────────────────────────────────────────────────────────────── */
+
+  /* ── Intro ────────────────────────────── */
+  .intro {
+    padding: clamp(8px, 1.5vw, 16px) 0 clamp(72px, 12vw, 140px);
+    max-width: 56ch;
+  }
+  .intro p {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 400;
+    font-size: clamp(18px, 1.6vw, 22px);
+    line-height: 1.5;
+    color: var(--ink);
+    text-wrap: pretty;
+  }
+
+  .spreads {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(80px, 14vw, 180px);
+  }
+
+  .spread {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: clamp(12px, 1.6vw, 24px);
+    row-gap: clamp(20px, 3vw, 36px);
+    align-items: start;
+  }
+
+  /* ── Shared elements ──────────────────────────────── */
+
+  .spread__title {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(34px, 4.4vw, 56px);
+    line-height: 1.04;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    text-wrap: balance;
+  }
+  .spread__title a { color: inherit; }
+  .spread__title a:hover { color: var(--accent); }
+
+  .spread__prose {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 400;
+    font-size: clamp(16px, 1.3vw, 18px);
+    line-height: 1.55;
+    color: var(--ink);
+    max-width: 56ch;
+    text-wrap: pretty;
+  }
+  .spread__prose + .live-link { margin-top: 4px; display: inline-block; }
+
+  .spread__image {
+    display: block;
+    position: relative;
+    background: var(--bg-deeper);
+    overflow: hidden;
+    aspect-ratio: var(--ar, 4 / 3);
+  }
+  .spread__image svg.ph,
+  .spread__image img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: top center;
+  }
+  .spread__image svg.ph { z-index: 0; }
+  .spread__image img { z-index: 1; background: var(--bg-deeper); }
+
+  /* ────────────────────────────────────────────────────
+     Per-spread placement.
+     ──────────────────────────────────────────────────── */
+
+  /* 01 · title left, image right, prose under title */
+  .s01 .spread__title { grid-column: 1 / span 7; }
+  .s01 .spread__image { grid-column: 8 / span 5; --ar: 4 / 5; grid-row: span 3; }
+  .s01 .spread__prose { grid-column: 1 / span 6; }
+  .s01 .live-link    { grid-column: 1 / span 6; }
+
+  /* 02 · full-bleed image, then title + prose */
+  .s02 .spread__image { grid-column: 1 / span 12; --ar: 21 / 9; }
+  .s02 .spread__title { grid-column: 1 / span 8; }
+  .s02 .spread__prose { grid-column: 7 / span 6; }
+  .s02 .live-link    { grid-column: 7 / span 6; }
+
+  /* 03 · title, two images stacked-ish, prose right */
+  .s03 .spread__title  { grid-column: 1 / span 8; }
+  .s03 .spread__image  { grid-column: 1 / span 6; --ar: 4 / 5; }
+  .s03 .spread__image--b { grid-column: 7 / span 6; --ar: 4 / 5; margin-top: clamp(40px, 6vw, 80px); }
+  .s03 .spread__prose  { grid-column: 7 / span 6; }
+  .s03 .live-link     { grid-column: 7 / span 6; }
+
+  /* 04 · prose-led, image inset */
+  .s04 .spread__title { grid-column: 1 / span 11; }
+  .s04 .spread__prose { grid-column: 1 / span 6; }
+  .s04 .live-link    { grid-column: 1 / span 6; }
+  .s04 .spread__image { grid-column: 8 / span 5; --ar: 4 / 5; grid-row: span 3; }
+
+  /* 06 · centered title, two images */
+  .s06 .spread__title  { grid-column: 3 / span 8; text-align: center; }
+  .s06 .spread__image  { grid-column: 2 / span 6; --ar: 4 / 5; }
+  .s06 .spread__image--b { grid-column: 8 / span 4; --ar: 3 / 4; margin-top: clamp(60px, 8vw, 100px); }
+  .s06 .spread__prose  { grid-column: 4 / span 6; }
+  .s06 .live-link     { grid-column: 4 / span 6; }
+
+  /* 07 · image left, title + prose right */
+  .s07 .spread__image { grid-column: 1 / span 5; --ar: 4 / 5; grid-row: span 3; }
+  .s07 .spread__title { grid-column: 7 / span 6; }
+  .s07 .spread__prose { grid-column: 7 / span 5; }
+  .s07 .live-link    { grid-column: 7 / span 5; }
+
+  /* 08 · video-document: indented wide image, prose under */
+  .s08 .spread__title { grid-column: 2 / span 8; }
+  .s08 .spread__image { grid-column: 2 / span 10; --ar: 16 / 9; }
+  .s08 .spread__prose { grid-column: 2 / span 6; }
+  .s08 .live-link    { grid-column: 2 / span 6; }
+
+  /* 09 · title left, wide image left, prose floats right */
+  .s09 .spread__title { grid-column: 1 / span 8; }
+  .s09 .spread__image { grid-column: 1 / span 8; --ar: 16 / 10; }
+  .s09 .spread__prose { grid-column: 9 / span 4; }
+  .s09 .live-link    { grid-column: 9 / span 4; }
+
+  /* 10 · full-bleed hero image, title sits offset under the image, prose tight */
+  .s10 .spread__image  { grid-column: 1 / span 12; --ar: 16 / 9; }
+  .s10 .spread__title  { grid-column: 1 / span 9; }
+  .s10 .spread__prose  { grid-column: 1 / span 7; }
+  .s10 .live-link     { grid-column: 1 / span 7; }
+
+  /* footnote · small spread for projects demoted off the lead
+     small title, small image, used for predecessor / infra projects */
+  .footnote .spread__title {
+    grid-column: 1 / span 8;
+    font-size: clamp(24px, 2.4vw, 32px);
+    letter-spacing: -0.015em;
+    line-height: 1.1;
+  }
+  .footnote .spread__image {
+    grid-column: 9 / span 4;
+    --ar: 4 / 3;
+    grid-row: span 3;
+  }
+  .footnote .spread__prose {
+    grid-column: 1 / span 7;
+    font-size: clamp(15px, 1.2vw, 17px);
+  }
+  .footnote .live-link { grid-column: 1 / span 7; }
+
+  /* ── Mobile: single column ─ */
+  @media (max-width: 760px) {
+    .spread { grid-template-columns: 1fr; column-gap: 0; row-gap: clamp(14px, 3vw, 24px); }
+    .spread > * {
+      grid-column: 1 / -1 !important;
+      grid-row: auto !important;
+      margin-top: 0 !important;
+      text-align: left !important;
+    }
+    .spread__image { --ar: 4 / 3; }
+    .spreads { gap: clamp(60px, 12vw, 100px); }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <a class="name" href="./index.html">Ron Bronson</a>
+  </header>
+
+  <section class="intro">
+    <p>Experiments, Strategy &amp; Code</p>
+  </section>
+
+  <svg class="ph-defs" aria-hidden="true">
+    <defs>
+      <pattern id="m3a" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(20)">
+        <rect width="16" height="16" fill="#269d85"/>
+        <line x1="0" y1="0" x2="0" y2="16" stroke="#228671" stroke-width="6"/>
+      </pattern>
+    </defs>
+  </svg>
+
+  <!-- ─── Spread schema ──────────────────────────────────────────────
+       <article class="spread sNN">
+         <h2 class="spread__title"><a href="projects/SLUG.html">Name</a></h2>
+         <a class="spread__image" href="projects/SLUG.html" aria-label="Name">
+           <svg class="ph">…</svg>
+           <img src="…" alt="…" />
+         </a>
+         <p class="spread__prose">Real paragraph in your voice.</p>
+         <a class="live-link" href="https://domain.tld" target="_blank" rel="noopener">domain.tld</a>
+       </article>
+       Per-spread placement lives in the .sNN rules above.
+       ──────────────────────────────────────────────────────────────── -->
+
+  <section class="spreads" aria-label="Projects">
+
+    <article class="spread s01">
+      <h2 class="spread__title"><a href="projects/draft-lab.html">Draft Lab</a></h2>
+      <a class="spread__image" href="projects/draft-lab.html" aria-label="Draft Lab" style="--ar: 4 / 5">
+        <svg class="ph" viewBox="0 0 500 620" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="500" height="620" fill="url(#m3a)"/></svg>
+        <img src="https://image.thum.io/get/width/1000/crop/1240/https://giantplanet.org" alt="Screenshot of giantplanet.org" loading="lazy" />
+      </a>
+      <p class="spread__prose">A comparative research instrument for sports draft lottery design. Fifteen rule systems run through Monte Carlo seasons across six pro leagues, measuring what each one actually rewards.</p>
+      <a class="live-link" href="https://giantplanet.org" target="_blank" rel="noopener">giantplanet.org</a>
+    </article>
+
+    <article class="spread s10">
+      <a class="spread__image" href="projects/ygf.html" aria-label="You Go First — hero" style="--ar: 16 / 9">
+        <svg class="ph" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="900" fill="url(#m3a)"/></svg>
+        <img src="assets/ygf/01-hero-red.png" alt="You Go First waitlist hero on a deep crimson background" loading="lazy" />
+      </a>
+      <h2 class="spread__title"><a href="projects/ygf.html">You Go First</a></h2>
+      <p class="spread__prose">A speculative dating-app concept built around scarcity, transparency, and portable trust. Fifteen picks a week, three visible tiers, no swiping. Built end-to-end: protocol design, prototype, brand bible, marketing site, strategy deck.</p>
+      <a class="live-link" href="projects/ygf.html">Read the project</a>
+    </article>
+
+    <article class="spread s02">
+      <a class="spread__image" href="projects/oregon-tennis.html" aria-label="Oregon HS Tennis Power Rankings" style="--ar: 21 / 9">
+        <svg class="ph" viewBox="0 0 2100 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="2100" height="900" fill="url(#m3a)"/></svg>
+        <img src="https://image.thum.io/get/width/2000/crop/860/https://oregontennis.org" alt="Screenshot of oregontennis.org" loading="lazy" />
+      </a>
+      <h2 class="spread__title"><a href="projects/oregon-tennis.html">Oregon HS Tennis Power Rankings</a></h2>
+      <p class="spread__prose">A statewide sports-rating engine, playoff simulator, and live tournament toolkit for Oregon high school tennis. Four years of data, four original rating models, built end to end as one self-contained system.</p>
+      <a class="live-link" href="https://oregontennis.org" target="_blank" rel="noopener">oregontennis.org</a>
+    </article>
+
+    <article class="spread s03">
+      <h2 class="spread__title"><a href="projects/viperball.html">Viperball</a></h2>
+      <a class="spread__image" href="projects/viperball.html" aria-label="Viperball stats terminal — season overview" style="--ar: 16 / 10">
+        <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
+        <img src="assets/viperball/season-overview.png" alt="Viperball stats terminal showing 2026 CVL Season overview" loading="lazy" />
+      </a>
+      <a class="spread__image spread__image--b" href="projects/viperball.html" aria-label="Viperball stats terminal — officials" style="--ar: 16 / 10">
+        <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
+        <img src="assets/viperball/officials.png" alt="Viperball stats terminal showing the officials directory" loading="lazy" />
+      </a>
+      <p class="spread__prose">An invented gridiron sport with its own rulebook, a probability engine that plays it, a 280-team universe to play it in, and a Bloomberg-terminal-style stats portal serving the whole thing.</p>
+      <a class="live-link" href="https://viperball.xyz" target="_blank" rel="noopener">viperball.xyz</a>
+    </article>
+
+    <article class="spread s06">
+      <h2 class="spread__title"><a href="projects/occupant.html">Occupant Indices</a></h2>
+      <a class="spread__image" href="projects/occupant.html" aria-label="Occupant indices page" style="--ar: 4 / 3">
+        <svg class="ph" viewBox="0 0 600 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="600" height="450" fill="url(#m3a)"/></svg>
+        <img src="assets/occupant/indices.png" alt="Occupant indices page with the CPI reading 62.4" loading="lazy" />
+      </a>
+      <a class="spread__image spread__image--b" href="projects/occupant.html" aria-label="Occupant AI Economic Activity Index" style="--ar: 4 / 3">
+        <svg class="ph" viewBox="0 0 600 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="600" height="450" fill="url(#m3a)"/></svg>
+        <img src="assets/occupant/aeai.png" alt="Occupant AI Economic Activity Index page reading 503.65" loading="lazy" />
+      </a>
+      <p class="spread__prose">Public measurement infrastructure I built for the AI economy. Three live indices — a price tag for compute, an activity meter, and a labor gauge — rebuilt daily from public sources, so anyone can read the AI market cold and act on it.</p>
+      <a class="live-link" href="https://occupant.ee" target="_blank" rel="noopener">occupant.ee</a>
+    </article>
+
+    <article class="spread s07">
+      <a class="spread__image" href="projects/pdxspend.html" aria-label="PDX Spend" style="--ar: 4 / 5">
+        <svg class="ph" viewBox="0 0 500 620" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="500" height="620" fill="url(#m3a)"/></svg>
+        <img src="https://image.thum.io/get/width/1000/crop/1240/https://pdxspend.com" alt="Screenshot of pdxspend.com" loading="lazy" />
+      </a>
+      <h2 class="spread__title"><a href="projects/pdxspend.html">PDX Spend</a></h2>
+      <p class="spread__prose">For each of seven Portland-area voter-approved funds, what it could pay for at its current balance, what&rsquo;s blocking that, and who controls the lever.</p>
+      <a class="live-link" href="https://pdxspend.com" target="_blank" rel="noopener">pdxspend.com</a>
+    </article>
+
+    <article class="spread s08">
+      <h2 class="spread__title"><a href="projects/parliament-of-neighbors.html">A Parliament of Neighbors</a></h2>
+      <a class="spread__image" href="projects/parliament-of-neighbors.html" aria-label="A Parliament of Neighbors" style="--ar: 16 / 9">
+        <svg class="ph" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="900" fill="url(#m3a)"/></svg>
+        <img src="https://img.youtube.com/vi/dwemDtD4mTk/maxresdefault.jpg" alt="Video still from A Parliament of Neighbors" loading="lazy" onerror="this.src='https://img.youtube.com/vi/dwemDtD4mTk/hqdefault.jpg'" />
+      </a>
+      <p class="spread__prose">A live participatory piece on worldbuilding, speculative governance, and what we owe our neighbors. The site is offline; a documentation video remains.</p>
+      <a class="live-link" href="https://www.youtube.com/watch?v=dwemDtD4mTk" target="_blank" rel="noopener">youtube.com/watch?v=dwemDtD4mTk</a>
+    </article>
+
+    <article class="spread s09">
+      <h2 class="spread__title"><a href="projects/o27-baseball.html">O27 Baseball</a></h2>
+      <a class="spread__image" href="projects/o27-baseball.html" aria-label="O27 Baseball" style="--ar: 16 / 10">
+        <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
+        <img src="https://image.thum.io/get/width/1600/crop/1000/https://hybrid-baseball.fly.dev" alt="Screenshot of hybrid-baseball.fly.dev" loading="lazy" />
+      </a>
+      <p class="spread__prose">A baseball variant compressed into one continuous 27-out half-inning per side. Built out as a full simulation engine, recalibrated stat suite, league economy, and a live web app.</p>
+      <a class="live-link" href="https://hybrid-baseball.fly.dev" target="_blank" rel="noopener">hybrid-baseball.fly.dev</a>
+    </article>
+
+    <article class="spread footnote">
+      <h2 class="spread__title"><a href="projects/glowrm.html">Glowrm</a></h2>
+      <a class="spread__image" href="projects/glowrm.html" aria-label="Glowrm" style="--ar: 4 / 3">
+        <svg class="ph" viewBox="0 0 600 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="600" height="450" fill="url(#m3a)"/></svg>
+        <img src="https://image.thum.io/get/width/1200/crop/900/https://glowrm.tech" alt="Screenshot of glowrm.tech" loading="lazy" />
+      </a>
+      <p class="spread__prose">Trust infrastructure for ATProto social applications. Cross-app reputation, shared moderation, and a configurable resource-allocation system &mdash; the trust plumbing YGF and two other reference apps were designed against.</p>
+      <a class="live-link" href="https://glowrm.tech" target="_blank" rel="noopener">glowrm.tech</a>
+    </article>
+
+  </section>
+
+  <footer class="foot">
+    <span>Reach me at <a href="mailto:contact@ronbronson.com">contact@ronbronson.com</a>.</span>
+    <span class="legal">© Ron Bronson, 2026</span>
+  </footer>
+
+</div>
+</body>
+</html>

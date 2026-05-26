@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Occupant Indices — Ron Bronson</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/site.css" />
+<script src="../assets/palette.js"></script>
+<style>
+  .project { max-width: 760px; }
+  .project__title {
+    margin: 0 0 clamp(8px, 1.5vw, 16px);
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(40px, 6vw, 76px);
+    line-height: 1.0;
+    letter-spacing: -0.025em;
+    text-wrap: balance;
+  }
+  .project__lede {
+    margin: 0 0 clamp(28px, 4vw, 48px);
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: clamp(20px, 1.8vw, 24px);
+    line-height: 1.4;
+    color: var(--ink);
+    max-width: 52ch;
+    text-wrap: pretty;
+  }
+
+  .project__body { display: grid; gap: clamp(20px, 2.6vw, 32px); }
+  .project__body > p {
+    margin: 0;
+    font-family: var(--sans);
+    font-size: clamp(17px, 1.35vw, 18px);
+    line-height: 1.65;
+    color: var(--ink);
+    max-width: 64ch;
+    text-wrap: pretty;
+  }
+
+  .project__body h2 {
+    margin: clamp(28px, 4vw, 48px) 0 4px;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(22px, 2vw, 28px);
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+  }
+  .project__body h3 {
+    margin: clamp(20px, 2.5vw, 28px) 0 4px;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(19px, 1.6vw, 22px);
+    line-height: 1.2;
+    letter-spacing: -0.012em;
+    color: var(--ink);
+  }
+  .project__body h3 .ticker {
+    font-family: var(--mono);
+    font-weight: 500;
+    color: var(--accent);
+    margin-right: 8px;
+  }
+  .project__body h3 .signal {
+    font-family: var(--sans);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--ink-soft);
+    margin-left: 8px;
+    font-size: 0.78em;
+  }
+  .project__body h3 + p { margin-top: 0; }
+
+  .project__body ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 14px;
+    font-family: var(--sans);
+    font-size: clamp(16px, 1.3vw, 18px);
+    line-height: 1.55;
+    color: var(--ink);
+    max-width: 64ch;
+  }
+  .project__body ul li { padding-left: 22px; position: relative; }
+  .project__body ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    width: 10px;
+    height: 1px;
+    background: var(--ink-soft);
+  }
+  .project__body ul li b { font-weight: 600; }
+  .project__body code {
+    font-family: var(--mono);
+    font-size: 0.9em;
+    color: var(--accent);
+  }
+
+  .measures {
+    margin: 0;
+    font-family: var(--sans);
+    font-size: clamp(16px, 1.3vw, 18px);
+    line-height: 1.55;
+    color: var(--ink);
+    max-width: 64ch;
+  }
+  .measures b { font-weight: 600; }
+
+  .reading {
+    margin: 0;
+    padding: 12px 16px;
+    background: var(--bg-deeper);
+    border-left: 2px solid var(--accent);
+    font-family: var(--sans);
+    font-size: clamp(15px, 1.25vw, 17px);
+    line-height: 1.5;
+    color: var(--ink);
+    max-width: 64ch;
+  }
+  .reading b { font-weight: 600; }
+
+  .stack-block {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 8px 28px;
+    max-width: 720px;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+  .stack-block dt {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-soft);
+    padding-top: 3px;
+  }
+  .stack-block dd { margin: 0; font-family: var(--sans); color: var(--ink); max-width: 56ch; }
+  @media (max-width: 640px) {
+    .stack-block { grid-template-columns: 1fr; gap: 4px 0; }
+    .stack-block dt { padding-top: 16px; }
+    .stack-block dt:first-of-type { padding-top: 0; }
+  }
+
+  .figure {
+    margin: clamp(20px, 3vw, 36px) 0;
+    background: var(--bg-deeper);
+    overflow: hidden;
+    position: relative;
+    border: 1px solid var(--rule);
+  }
+  .figure img, .figure svg.ph { display: block; width: 100%; height: auto; }
+  .figure svg.ph { aspect-ratio: 16 / 10; }
+  .figure figcaption {
+    padding: 8px 12px;
+    border-top: 1px solid var(--rule);
+    background: var(--bg);
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-soft);
+  }
+  .figure.bleed {
+    margin-left: calc(-1 * clamp(20px, 4vw, 56px));
+    margin-right: calc(-1 * clamp(20px, 4vw, 56px));
+  }
+
+  .kicker {
+    margin: clamp(40px, 6vw, 64px) 0 0;
+    padding-top: clamp(20px, 3vw, 32px);
+    border-top: 1px solid var(--rule);
+    font-family: var(--sans);
+    font-style: italic;
+    font-size: clamp(17px, 1.4vw, 19px);
+    line-height: 1.5;
+    color: var(--ink-soft);
+    max-width: 60ch;
+    text-wrap: pretty;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <a class="name" href="../index.html">Ron Bronson</a>
+  </header>
+
+  <article class="project">
+
+    <h1 class="project__title">Occupant Indices</h1>
+    <p class="project__lede">Public measurement infrastructure I built for the AI economy. Three live indices that turn scattered public data into numbers you can track over time — the price tag, the activity meter, and the labor gauge for AI work.</p>
+
+    <figure class="figure bleed">
+      <img src="../assets/occupant/indices.png" alt="Occupant indices page with $CPI reading 62.4 on a soft yellow background" />
+      <figcaption>The indices page at occupant.ee — $CPI as a daily-published deflator.</figcaption>
+    </figure>
+
+    <div class="project__body">
+
+      <h2>The premise</h2>
+
+      <p>Every major input to the economy has a published number you can look up — a spot price for crude, a CPI print for groceries, a wholesale rate for electricity, a capacity factor for a wind farm. Occupant builds the same kind of instrument for AI compute: a standardized, dated, methodology-driven yardstick that anyone — a procurement officer, an investor, a policy researcher, or another model — can read cold and act on.</p>
+
+      <p>It&rsquo;s infrastructure, with the same access for everyone. The model is closer to a public yield curve than a SaaS dashboard.</p>
+
+      <h2>The indices</h2>
+
+      <h3><span class="ticker">$CPI</span>Compute Price Index<span class="signal">the price signal</span></h3>
+
+      <p class="measures"><b>Measures:</b> the price of AI <i>work</i> at the basket level.</p>
+
+      <p><code>$CPI</code> defines a fixed basket of standardized workloads and re-prices that basket every day across capability tiers, volume-weighted over 2,188 models and normalized to February 2025 = 100. It&rsquo;s a deflator: hold the basket constant, watch the cost move.</p>
+
+      <ul>
+        <li>Capability tiers: <b><code>$BULK</code></b> (commodity models under $1/MTok), <b><code>$FRONT</code></b> (frontier capability, ranked by Arena ELO), <b><code>$JUDGE</code></b> (reasoning-intensive, o1 / o3 / R1-class), <b><code>$LCTX</code></b> (long-context, 128K+).</li>
+        <li>Build Cost sub-indices apply realistic, fixed workload mixes so a reader lands on the number that matches their own usage: <b><code>$START</code></b> (startup builder), <b><code>$AGENT</code></b> (agentic systems), <b><code>$THRU</code></b> (high-throughput).</li>
+        <li>Published across multiple horizons — since-launch, year-over-year, quarter- and month-to-date, week-over-week.</li>
+      </ul>
+
+      <p class="reading"><b>Reading it:</b> at ~62.4, a basket of AI work costs about 38% less than at launch, and fell ~9.7% in the most recent month.</p>
+
+      <h3><span class="ticker">$AIU</span>AI Economic Activity Index<span class="signal">the volume signal</span></h3>
+
+      <p class="measures"><b>Measures:</b> the volume of AI economic activity, expressed as a synthetic unit (the <b>AIU</b>) modeled on the IMF&rsquo;s Special Drawing Rights.</p>
+
+      <p>The AIU is a weighted composite:</p>
+
+      <ul>
+        <li><b>60% token throughput</b> — usage intensity.</li>
+        <li><b>30% inferred spend</b> — tokens × blended pricing, the economic scale.</li>
+        <li><b>10% energy proxy</b> — a blend of token-derived energy estimate (70%) and global grid-investment growth (30%), so the energy term carries independent information.</li>
+      </ul>
+
+      <p>Baseline February 2025 = 100. At ~503.65 it reflects roughly a 5× expansion in activity over about fifteen months — on the order of 42.7 trillion tokens and $210M of inferred spend per week.</p>
+
+      <figure class="figure bleed">
+        <img src="../assets/occupant/aeai.png" alt="Occupant AI Economic Activity Index page reading 503.65, +403.6% from baseline" />
+        <figcaption>$AIU — synthetic unit measuring global AI economic activity, modeled on the IMF&rsquo;s SDR.</figcaption>
+      </figure>
+
+      <p class="reading"><b>Reading them together:</b> <i>total AI spend ≈ AIU × CPI.</i> This decomposes the headline spending figure into its two drivers — efficiency gains (price) and demand growth (volume) — which is exactly the split the &ldquo;is this a bubble?&rdquo; debate needs.</p>
+
+      <h3><span class="ticker">$LDI</span>Labor Displacement Index<span class="signal">the labor signal</span></h3>
+
+      <p class="measures"><b>Measures:</b> the pressure AI puts on real jobs, reported as two distinct numbers that answer two distinct questions. The gap between them is the finding.</p>
+
+      <ul>
+        <li><b>Cost differential (structural).</b> What AI could displace at today&rsquo;s pricing. Across nine pilot federal workloads, average human cost runs ~$53.56/unit against ~$0.0062/unit for AI — a cost ratio on the order of 37,000× and a structural displacement potential near $4.2B/year. A pressure gauge.</li>
+        <li><b>Substitution rate (observable).</b> What procurement records show actually shifting — ~3.86%.</li>
+        <li><b>Absorption dimension.</b> When a workload automates, the index classifies whether the workforce is cut, frozen, or <b>reallocated</b> — because &ldquo;cheaper&rdquo; and &ldquo;fired&rdquo; are separate events.</li>
+      </ul>
+
+      <p>Built on named public data: BLS OEWS + ECEC wages for human cost, FPDS / USAspending contractor spend as substitution proxy, OPM FedScope FTE counts for headcount, mapped through SOC and PSC crosswalks.</p>
+
+      <p class="reading"><b>Worked end-to-end:</b> the SNAP Eligibility deep dive resolves all three pillars to one real program — ~$25.13 per human review vs ~$0.000256 for AI, ~41M reviews/year, a ~2.1% substitution signal, and an &ldquo;absorption: reallocated&rdquo; verdict as caseload grows against a flat workforce. Every step is auditable on the page.</p>
+
+      <h2>The tools</h2>
+
+      <p>The indices are the readings; the tools let people act on them.</p>
+
+      <ul>
+        <li><b>LLM Cost Calculator.</b> Enter a monthly spend or raw token volumes, pick a workload profile, and compare a tiered model mix at live <code>$CPI</code> rates. Answers &ldquo;lock in now or wait a quarter?&rdquo;</li>
+        <li><b>LDI Workload Calculator.</b> Run the human-vs-AI cost and substitution math on a workload of your own.</li>
+        <li><b>AI Services Price Reasonableness Worksheet.</b> A print-ready, FAR-style determination sheet a contracting officer can fill in, sign, and attach to an RFP, built on the <code>$CPI</code> basket.</li>
+        <li><b>Market Intelligence.</b> &ldquo;Sabermetrics for models&rdquo; — Quality-Adjusted Price, cognitive arbitrage (≈90% of frontier capability at ≈40% of the cost), and tier analysis across the market.</li>
+      </ul>
+
+      <h2>How it&rsquo;s built</h2>
+
+      <p>The architecture follows directly from the infrastructure-first mandate.</p>
+
+      <dl class="stack-block">
+        <dt>Frontend</dt>
+        <dd>Vanilla HTML5 / CSS3 / JavaScript. Flat files on any static host.</dd>
+        <dt>Data pipeline</dt>
+        <dd>Python 3 in <code>src/</code>: dedicated fetchers per source (OpenRouter, LiteLLM, BLS, FPDS / USAspending, OPM FedScope, BloombergNEF grid data), calculators (<code>calculate_cpi</code>, <code>calculate_aeai</code>, <code>calculate_ldi</code>), a model-tier registry, signal derivation, and historical backfill.</dd>
+        <dt>Storage</dt>
+        <dd>Flat-file JSON in <code>data/</code>, including machine-readable endpoints another agent can pull as a grounded, dated source.</dd>
+        <dt>Automation</dt>
+        <dd>GitHub Actions on a daily cron recompute the indices and commit fresh JSON. The git history <i>is</i> the data lineage — every published number is reproducible from the commit log.</dd>
+        <dt>Algorithms</dt>
+        <dd>Deterministic, documented formulas with published weights and baselines.</dd>
+        <dt>Privacy</dt>
+        <dd>Client-side localStorage for the theme toggle only.</dd>
+        <dt>License</dt>
+        <dd>Parachute Commons: free for personal, educational, and non-commercial use; tiered terms at commercial scale.</dd>
+        <dt>Cost to operate</dt>
+        <dd>~$50/month.</dd>
+      </dl>
+
+      <h2>What this piece demonstrates</h2>
+
+      <ul>
+        <li><b>Economic index design.</b> Baskets, volume weighting, normalization, base periods, and a synthetic composite unit (the AIU&rsquo;s SDR analogy), applied to a new domain.</li>
+        <li><b>Data engineering on messy public sources.</b> Reconciling price discrepancies across OpenRouter and LiteLLM, building SOC ↔ PSC ↔ FedScope crosswalks, and designing fallback hierarchies.</li>
+        <li><b>Domain range, coherently connected.</b> CPI / macro methodology, federal procurement (FAR, FPDS, FedRAMP), labor economics (BLS, JOLTS, OPM), and energy capital expenditure.</li>
+        <li><b>Product and communication judgment.</b> Designing for a thirty-second read by a procurement officer and holding a deliberate editorial voice.</li>
+        <li><b>Pragmatic systems architecture.</b> Static-site-plus-cron with git as an audit log; three indices that compose, where the LDI consumes the live CPI basket.</li>
+      </ul>
+
+      <p class="kicker">Occupant is the price tag, the activity meter, and the labor gauge for AI — public, daily, and auditable — because a market this large deserves a shared number.</p>
+
+      <p style="margin-top: clamp(20px, 3vw, 36px)"><a class="live-link" href="https://occupant.ee" target="_blank" rel="noopener">occupant.ee</a></p>
+
+    </div>
+
+  </article>
+
+  <footer class="foot">
+    <span>Reach me at <a href="mailto:contact@ronbronson.com">contact@ronbronson.com</a>.</span>
+    <span class="legal">© Ron Bronson, 2026</span>
+  </footer>
+
+</div>
+</body>
+</html>
