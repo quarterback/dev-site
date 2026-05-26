@@ -12,23 +12,37 @@
    still lands on the chromatic ground, never beige.
    ────────────────────────────────────────────────────────── */
 
-/* ── Amerik (display) ─ */
+/* ── Amerik (display) — complete family is Regular + Slant ─ */
 @font-face {
   font-family: "Amerik";
-  src: url("fonts/amerik-regular.woff") format("woff");
-  font-weight: 400 700;
+  src: url("fonts/amerikregular.woff") format("woff");
+  font-weight: 100 900;
   font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Amerik";
+  src: url("fonts/amerikslant.woff") format("woff");
+  font-weight: 100 900;
+  font-style: italic;
   font-display: swap;
 }
 
-/* ── Trancoso Sans (body text) ─ */
-@font-face {
-  font-family: "Trancoso Sans";
-  src: url("fonts/trancoso-sans-medium.woff") format("woff");
-  font-weight: 400 600;
-  font-style: normal;
-  font-display: swap;
-}
+/* ── Trancoso Sans (body text) — full weight ladder ──────────────────
+   Drop the purchased web-font files into assets/fonts/ using these
+   names and each weight activates on its own. Only Medium (500) is in
+   the repo today; body copy requests 500 so it's the one in use.
+   Add italics later the same way (…italic.woff) if you want them.
+   ──────────────────────────────────────────────────────────────────── */
+@font-face { font-family: "Trancoso Sans"; src: url("fonts/trancososansthin.woff")       format("woff"); font-weight: 100; font-style: normal; font-display: swap; }
+@font-face { font-family: "Trancoso Sans"; src: url("fonts/trancososansextralight.woff") format("woff"); font-weight: 200; font-style: normal; font-display: swap; }
+@font-face { font-family: "Trancoso Sans"; src: url("fonts/trancososanslight.woff")      format("woff"); font-weight: 300; font-style: normal; font-display: swap; }
+@font-face { font-family: "Trancoso Sans"; src: url("fonts/trancososansregular.woff")    format("woff"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Trancoso Sans"; src: url("fonts/trancososansmedium.woff")     format("woff"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "Trancoso Sans"; src: url("fonts/trancososanssemibold.woff")   format("woff"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Trancoso Sans"; src: url("fonts/trancososansbold.woff")       format("woff"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Trancoso Sans"; src: url("fonts/trancososansextrabold.woff")  format("woff"); font-weight: 800; font-style: normal; font-display: swap; }
+@font-face { font-family: "Trancoso Sans"; src: url("fonts/trancososansblack.woff")      format("woff"); font-weight: 900; font-style: normal; font-display: swap; }
 
 :root {
   --bg: #29b095;
@@ -50,7 +64,7 @@ body {
   background: var(--bg);
   color: var(--ink);
   font-family: var(--text);
-  font-weight: 400;
+  font-weight: 500;
   font-size: 16px;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
