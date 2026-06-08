@@ -111,10 +111,8 @@ header.masthead {
 footer.foot {
   margin-top: clamp(72px, 12vw, 160px);
   padding: clamp(16px, 2vw, 24px) 0 0;
-  display: flex;
-  align-items: baseline;
-  flex-wrap: wrap;
-  gap: 8px 20px;
+  display: grid;
+  gap: clamp(16px, 2.2vw, 26px);
   font-family: var(--text);
   font-size: 14px;
   color: var(--ink-soft);
@@ -126,7 +124,29 @@ footer.foot {
   padding-bottom: 1px;
 }
 .foot a:hover { color: var(--accent); }
-.foot .legal { margin-left: auto; font-family: var(--mono); font-size: 12px; }
+.foot__contact { margin: 0; }
+
+/* ── Colophon ─────────────────────────────────────── */
+.colophon {
+  max-width: 78ch;
+  font-family: var(--mono);
+  font-size: 12px;
+  line-height: 1.65;
+  letter-spacing: 0.01em;
+  color: var(--ink-soft);
+}
+.colophon h2 {
+  margin: 0 0 8px;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.colophon p { margin: 0; }
+.colophon p + p { margin-top: 0.7em; }
+.colophon b { color: var(--ink); font-weight: 600; }
 
 /* ── Mono reference link ──────────────────────────── */
 .live-link {
