@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Ron Bronson &mdash; A Working Catalog of Complex Systems</title>
+<title>Ron Bronson &mdash; Working Catalog of Complex Systems</title>
 <meta name="description" content="Product delivery engineer and AI-native forward-deployed designer building complex systems. Platforms, simulators, market mechanisms, and measurement instruments across public infrastructure and market design." />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Ron Bronson &mdash; A Working Catalog of Complex Systems" />
+<meta name="twitter:title" content="Ron Bronson &mdash; Working Catalog of Complex Systems" />
 <meta name="twitter:description" content="Product delivery engineer and AI-native forward-deployed designer building complex systems. Platforms, simulators, market mechanisms, and measurement instruments across public infrastructure and market design." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,98 +15,48 @@
 <script src="assets/palette.js"></script>
 <style>
   /* ─────────────────────────────────────────────────────────────────
-     Index — a systems register set as a technical memorandum. The page
-     is one ruled instrument: an abstract, then a hard 2px grid of
-     identical ARTIFACT cells. The grid frame is essential structure and
-     is drawn in --ink (AAA against the ground); cells number themselves
-     with a CSS counter. Hover inverts a cell to the ink ground — the
-     one moving part, and itself AAA both directions.
+     Index — one exposed grid. Every project is the same cell: a mono
+     link, a framed screenshot, a title, a short prose block. The 2px
+     frame is the structure; the grid does the composing.
      ───────────────────────────────────────────────────────────────── */
 
-  /* ── Abstract ─────────────────────────── */
-  .abstract {
-    margin: 0 0 clamp(28px, 5vw, 56px);
-    padding: clamp(16px, 2vw, 24px) clamp(18px, 2.2vw, 28px);
-    max-width: 72ch;
-    border: var(--frame) solid var(--ink);
-    background: var(--bg-deeper);
+  /* ── Intro ────────────────────────────── */
+  .intro {
+    padding: 0 0 clamp(28px, 5vw, 52px);
+    max-width: 62ch;
   }
-  .abstract__tag {
-    display: block;
-    margin-bottom: 10px;
-    font-family: var(--mono);
-    font-size: 12px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--ink);
-  }
-  .abstract p {
+  .intro p {
     margin: 0;
     font-family: var(--text);
     font-weight: 500;
-    font-size: clamp(17px, 1.5vw, 21px);
+    font-size: clamp(18px, 1.6vw, 22px);
     line-height: 1.5;
     color: var(--ink);
     text-wrap: pretty;
   }
-  .abstract p + p { margin-top: 0.8em; }
-
-  /* ── Section rule for the index ───────── */
-  .index-head {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 12px;
-    margin-bottom: -2px; /* sit flush on the grid's top frame */
-    font-family: var(--mono);
-    font-size: 12px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--ink);
-  }
+  .intro p + p { margin-top: 1em; }
 
   /* ── The grid ─────────────────────────── */
   .index {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    counter-reset: artifact;
     border-top: var(--frame) solid var(--ink);
     border-left: var(--frame) solid var(--ink);
   }
 
   .cell {
-    counter-increment: artifact;
-    position: relative;
     border-right: var(--frame) solid var(--ink);
     border-bottom: var(--frame) solid var(--ink);
     padding: clamp(16px, 1.9vw, 26px);
     display: flex;
     flex-direction: column;
     gap: clamp(12px, 1.3vw, 18px);
-    background: var(--bg);
-    transition: background .14s ease, color .14s ease;
   }
-  .cell:hover { background: var(--ink); color: var(--bg); }
 
-  /* label bar */
-  .cell__meta {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 12px;
+  .cell__head {
     font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
+    font-size: 12px;
   }
-  .cell:hover .cell__meta { color: var(--bg-deeper); }
-  .cell__no::before {
-    content: "ARTIFACT " counter(artifact, decimal-leading-zero) " / 11";
-    color: var(--ink);
-  }
-  .cell:hover .cell__no::before { color: var(--bg); }
-  .cell:hover .live-link { color: var(--bg); border-color: var(--accent); }
 
   .cell__title {
     margin: 0;
@@ -119,7 +69,6 @@
     text-wrap: balance;
   }
   .cell__title a { color: inherit; }
-  .cell:hover .cell__title a { color: var(--bg); }
   .cell__title a:hover { color: var(--accent); }
 
   .cell__media {
@@ -142,19 +91,6 @@
   }
   .cell__media svg.ph { z-index: 0; }
   .cell__media img { z-index: 1; background: var(--bg-deeper); }
-  /* registration mark, top-right of every plate */
-  .cell__media::after {
-    content: "+";
-    position: absolute;
-    top: 4px; right: 6px;
-    z-index: 2;
-    font-family: var(--mono);
-    font-size: 14px;
-    line-height: 1;
-    color: var(--bg);
-    mix-blend-mode: difference;
-    pointer-events: none;
-  }
 
   .cell__prose {
     margin: 0;
@@ -165,7 +101,6 @@
     color: var(--ink);
     text-wrap: pretty;
   }
-  .cell:hover .cell__prose { color: var(--bg); }
 
   /* ── Responsive: collapse the grid, keep the rules ─ */
   @media (max-width: 1040px) {
@@ -173,35 +108,17 @@
   }
   @media (max-width: 680px) {
     .index { grid-template-columns: 1fr; }
-    .cell:hover { background: var(--bg); color: var(--ink); } /* no invert on touch */
-    .cell:hover .cell__title a,
-    .cell:hover .cell__prose { color: var(--ink); }
-    .cell:hover .cell__no::before { color: var(--ink); }
-    .cell:hover .cell__meta { color: var(--ink-soft); }
   }
 </style>
 </head>
 <body>
 <div class="wrap">
 
-  <div class="doc-status">
-    <span><span class="dot">&#9632;</span> SYSTEM ONLINE<span class="blink">&#9612;</span></span>
-    <span>REGISTER // BELL &middot; IBM</span>
-  </div>
-
-  <header class="masthead doc-head">
-    <a class="name" href="./index.html">Ron Bronson<span class="cur">_</span></a>
-    <p class="doc-head__role">Product delivery engineer &middot; AI-native forward-deployed designer</p>
-    <div class="doc-head__control">
-      <span>DOC. <b>RB&ndash;2026</b></span>
-      <span>CONT. <b>11 ARTIFACTS</b></span>
-      <span>REV. <b>1.0</b></span>
-      <span>CLASS. <b>COMPLEX SYSTEMS</b></span>
-    </div>
+  <header class="masthead">
+    <a class="name" href="./index.html">Ron Bronson</a>
   </header>
 
-  <section class="abstract">
-    <span class="abstract__tag">&sect;0 &mdash; Abstract</span>
+  <section class="intro">
     <p>I&rsquo;ve been building things online continuously since 1995. Over the years, I&rsquo;ve built vibrant communities online and offline, imagined things and brought them to life.</p>
     <p>This compendium isn&rsquo;t an exhaustive list of everything I&rsquo;ve made, but the theme is offering a window into how I think and approach problems.</p>
   </section>
@@ -215,17 +132,9 @@
     </defs>
   </svg>
 
-  <div class="index-head" aria-hidden="true">
-    <span>&sect;1 &mdash; Register of Artifacts</span>
-    <span>N = 11</span>
-  </div>
-
   <!-- ─── Cell schema ────────────────────────────────────────────────
        <article class="cell">
-         <div class="cell__meta">
-           <span class="cell__no"></span>            (CSS counter → "ARTIFACT NN / 11")
-           <a class="live-link" href="…">Read ▸</a>
-         </div>
+         <div class="cell__head"><a class="live-link" href="…">Read the project</a></div>
          <h2 class="cell__title"><a href="projects/SLUG.html">Name</a></h2>
          <a class="cell__media" href="projects/SLUG.html" aria-label="Name">
            <svg class="ph" …></svg>
@@ -236,13 +145,10 @@
        Every cell is identical; the grid does the composing.
        ──────────────────────────────────────────────────────────────── -->
 
-  <section class="index" aria-label="Register of artifacts">
+  <section class="index" aria-label="Projects">
 
     <article class="cell">
-      <div class="cell__meta">
-        <span class="cell__no"></span>
-        <a class="live-link" href="projects/oregon-tennis.html">Read &#9656;</a>
-      </div>
+      <div class="cell__head"><a class="live-link" href="projects/oregon-tennis.html">Read the project</a></div>
       <h2 class="cell__title"><a href="projects/oregon-tennis.html">Oregon HS Tennis Power Rankings</a></h2>
       <a class="cell__media" href="projects/oregon-tennis.html" aria-label="Oregon HS Tennis Power Rankings">
         <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
@@ -252,10 +158,7 @@
     </article>
 
     <article class="cell">
-      <div class="cell__meta">
-        <span class="cell__no"></span>
-        <a class="live-link" href="projects/occupant.html">Read &#9656;</a>
-      </div>
+      <div class="cell__head"><a class="live-link" href="projects/occupant.html">Read the project</a></div>
       <h2 class="cell__title"><a href="projects/occupant.html">Occupant Indices</a></h2>
       <a class="cell__media" href="projects/occupant.html" aria-label="Occupant Indices">
         <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
@@ -265,10 +168,7 @@
     </article>
 
     <article class="cell">
-      <div class="cell__meta">
-        <span class="cell__no"></span>
-        <a class="live-link" href="projects/pdxspend.html">Read &#9656;</a>
-      </div>
+      <div class="cell__head"><a class="live-link" href="projects/pdxspend.html">Read the project</a></div>
       <h2 class="cell__title"><a href="projects/pdxspend.html">PDX Spend</a></h2>
       <a class="cell__media" href="projects/pdxspend.html" aria-label="PDX Spend">
         <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
@@ -278,10 +178,7 @@
     </article>
 
     <article class="cell">
-      <div class="cell__meta">
-        <span class="cell__no"></span>
-        <a class="live-link" href="projects/draft-lab.html">Read &#9656;</a>
-      </div>
+      <div class="cell__head"><a class="live-link" href="projects/draft-lab.html">Read the project</a></div>
       <h2 class="cell__title"><a href="projects/draft-lab.html">Draft Lottery Lab</a></h2>
       <a class="cell__media" href="projects/draft-lab.html" aria-label="Draft Lottery Lab">
         <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
@@ -291,10 +188,7 @@
     </article>
 
     <article class="cell">
-      <div class="cell__meta">
-        <span class="cell__no"></span>
-        <a class="live-link" href="projects/viperball.html">Read &#9656;</a>
-      </div>
+      <div class="cell__head"><a class="live-link" href="projects/viperball.html">Read the project</a></div>
       <h2 class="cell__title"><a href="projects/viperball.html">Viperball</a></h2>
       <a class="cell__media" href="projects/viperball.html" aria-label="Viperball">
         <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
@@ -304,10 +198,7 @@
     </article>
 
     <article class="cell">
-      <div class="cell__meta">
-        <span class="cell__no"></span>
-        <a class="live-link" href="projects/o27-baseball.html">Read &#9656;</a>
-      </div>
+      <div class="cell__head"><a class="live-link" href="projects/o27-baseball.html">Read the project</a></div>
       <h2 class="cell__title"><a href="projects/o27-baseball.html">O27 Baseball</a></h2>
       <a class="cell__media" href="projects/o27-baseball.html" aria-label="O27 Baseball">
         <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
@@ -317,10 +208,7 @@
     </article>
 
     <article class="cell">
-      <div class="cell__meta">
-        <span class="cell__no"></span>
-        <a class="live-link" href="projects/ygf.html">Read &#9656;</a>
-      </div>
+      <div class="cell__head"><a class="live-link" href="projects/ygf.html">Read the project</a></div>
       <h2 class="cell__title"><a href="projects/ygf.html">You Go First</a></h2>
       <a class="cell__media" href="projects/ygf.html" aria-label="You Go First">
         <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
@@ -330,10 +218,7 @@
     </article>
 
     <article class="cell">
-      <div class="cell__meta">
-        <span class="cell__no"></span>
-        <a class="live-link" href="projects/glowrm.html">Read &#9656;</a>
-      </div>
+      <div class="cell__head"><a class="live-link" href="projects/glowrm.html">Read the project</a></div>
       <h2 class="cell__title"><a href="projects/glowrm.html">Glowrm</a></h2>
       <a class="cell__media" href="projects/glowrm.html" aria-label="Glowrm">
         <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
@@ -343,10 +228,7 @@
     </article>
 
     <article class="cell">
-      <div class="cell__meta">
-        <span class="cell__no"></span>
-        <a class="live-link" href="projects/parliament-of-neighbors.html">Read &#9656;</a>
-      </div>
+      <div class="cell__head"><a class="live-link" href="projects/parliament-of-neighbors.html">Read the project</a></div>
       <h2 class="cell__title"><a href="projects/parliament-of-neighbors.html">A Parliament of Neighbors</a></h2>
       <a class="cell__media" href="projects/parliament-of-neighbors.html" aria-label="A Parliament of Neighbors">
         <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
@@ -356,10 +238,7 @@
     </article>
 
     <article class="cell">
-      <div class="cell__meta">
-        <span class="cell__no"></span>
-        <a class="live-link" href="projects/finnish-baseball-game-design.html">Watch &#9656;</a>
-      </div>
+      <div class="cell__head"><a class="live-link" href="projects/finnish-baseball-game-design.html">Watch the talk</a></div>
       <h2 class="cell__title"><a href="projects/finnish-baseball-game-design.html">What Finnish Baseball Taught Me About Game Design</a></h2>
       <a class="cell__media" href="projects/finnish-baseball-game-design.html" aria-label="What Finnish Baseball Taught Me About Game Design">
         <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
@@ -369,10 +248,7 @@
     </article>
 
     <article class="cell">
-      <div class="cell__meta">
-        <span class="cell__no"></span>
-        <a class="live-link" href="projects/toccer.html">Read &#9656;</a>
-      </div>
+      <div class="cell__head"><a class="live-link" href="projects/toccer.html">Read the project</a></div>
       <h2 class="cell__title"><a href="projects/toccer.html">Tennis Polo (Toccer)</a></h2>
       <a class="cell__media" href="projects/toccer.html" aria-label="Tennis Polo (Toccer)">
         <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
@@ -384,8 +260,8 @@
   </section>
 
   <footer class="foot">
-    <span>End of document &mdash; reach me at <a href="mailto:contact@ronbronson.com">contact@ronbronson.com</a></span>
-    <span class="legal">&copy; Ron Bronson &middot; MMXXVI</span>
+    <span>Reach me at <a href="mailto:contact@ronbronson.com">contact@ronbronson.com</a>.</span>
+    <span class="legal">&copy; Ron Bronson, 2026</span>
   </footer>
 
 </div>
