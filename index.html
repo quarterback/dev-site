@@ -10,21 +10,20 @@
 <meta name="twitter:description" content="Product delivery engineer and AI-native forward-deployed designer building complex systems. Platforms, simulators, market mechanisms, and measurement instruments across public infrastructure and market design." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="assets/site.css" />
 <script src="assets/palette.js"></script>
 <style>
   /* ─────────────────────────────────────────────────────────────────
-     Index — systems register. One uniform, hairline-ruled grid; every
-     project is the same cell: a mono label bar (live link), a
-     framed screenshot, title, and a short prose block. The grid is the
-     structure — no bespoke per-project placement, no editorial spreads.
+     Index — one exposed grid. Every project is the same cell: a mono
+     link, a framed screenshot, a title, a short prose block. The 2px
+     frame is the structure; the grid does the composing.
      ───────────────────────────────────────────────────────────────── */
 
   /* ── Intro ────────────────────────────── */
   .intro {
-    padding: clamp(8px, 1.5vw, 16px) 0 clamp(28px, 4vw, 48px);
-    max-width: 60ch;
+    padding: 0 0 clamp(28px, 5vw, 52px);
+    max-width: 62ch;
   }
   .intro p {
     margin: 0;
@@ -35,43 +34,37 @@
     color: var(--ink);
     text-wrap: pretty;
   }
-  .intro p + p {
-    margin-top: 1em;
-  }
+  .intro p + p { margin-top: 1em; }
+
   /* ── The grid ─────────────────────────── */
   .index {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    border-top: 1px solid var(--rule);
-    border-left: 1px solid var(--rule);
+    border-top: var(--frame) solid var(--ink);
+    border-left: var(--frame) solid var(--ink);
   }
 
   .cell {
-    border-right: 1px solid var(--rule);
-    border-bottom: 1px solid var(--rule);
+    border-right: var(--frame) solid var(--ink);
+    border-bottom: var(--frame) solid var(--ink);
     padding: clamp(16px, 1.9vw, 26px);
     display: flex;
     flex-direction: column;
     gap: clamp(12px, 1.3vw, 18px);
   }
 
-  /* label bar: live link */
   .cell__head {
-    display: flex;
-    align-items: baseline;
-    gap: 12px;
     font-family: var(--mono);
     font-size: 12px;
-    letter-spacing: 0.02em;
   }
 
   .cell__title {
     margin: 0;
     font-family: var(--display);
-    font-weight: 600;
-    font-size: clamp(22px, 2.1vw, 30px);
-    line-height: 1.08;
-    letter-spacing: -0.02em;
+    font-weight: 700;
+    font-size: clamp(23px, 2.2vw, 32px);
+    line-height: 1.04;
+    letter-spacing: -0.025em;
     color: var(--ink);
     text-wrap: balance;
   }
@@ -83,9 +76,11 @@
     position: relative;
     overflow: hidden;
     background: var(--bg-deeper);
-    border: 1px solid var(--rule);
+    border: var(--frame) solid var(--ink);
     aspect-ratio: 16 / 10;
+    transition: border-color .14s ease;
   }
+  .cell:hover .cell__media { border-color: var(--accent); }
   .cell__media svg.ph,
   .cell__media img {
     position: absolute; inset: 0;
@@ -131,17 +126,15 @@
   <svg class="ph-defs" aria-hidden="true">
     <defs>
       <pattern id="m3a" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(20)">
-        <rect width="16" height="16" fill="#269d85"/>
-        <line x1="0" y1="0" x2="0" y2="16" stroke="#228671" stroke-width="6"/>
+        <rect width="16" height="16" fill="#a8dadc"/>
+        <line x1="0" y1="0" x2="0" y2="16" stroke="#457b9d" stroke-width="6"/>
       </pattern>
     </defs>
   </svg>
 
   <!-- ─── Cell schema ────────────────────────────────────────────────
        <article class="cell">
-         <div class="cell__head">
-           <a class="live-link" href="https://domain.tld" target="_blank" rel="noopener">domain.tld</a>
-         </div>
+         <div class="cell__head"><a class="live-link" href="…">Read the project</a></div>
          <h2 class="cell__title"><a href="projects/SLUG.html">Name</a></h2>
          <a class="cell__media" href="projects/SLUG.html" aria-label="Name">
            <svg class="ph" …></svg>
@@ -155,9 +148,7 @@
   <section class="index" aria-label="Projects">
 
     <article class="cell">
-      <div class="cell__head">
-        <a class="live-link" href="projects/oregon-tennis.html">Read the project</a>
-      </div>
+      <div class="cell__head"><a class="live-link" href="projects/oregon-tennis.html">Read the project</a></div>
       <h2 class="cell__title"><a href="projects/oregon-tennis.html">Oregon HS Tennis Power Rankings</a></h2>
       <a class="cell__media" href="projects/oregon-tennis.html" aria-label="Oregon HS Tennis Power Rankings">
         <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
@@ -167,9 +158,7 @@
     </article>
 
     <article class="cell">
-      <div class="cell__head">
-        <a class="live-link" href="projects/occupant.html">Read the project</a>
-      </div>
+      <div class="cell__head"><a class="live-link" href="projects/occupant.html">Read the project</a></div>
       <h2 class="cell__title"><a href="projects/occupant.html">Occupant Indices</a></h2>
       <a class="cell__media" href="projects/occupant.html" aria-label="Occupant Indices">
         <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
@@ -179,9 +168,7 @@
     </article>
 
     <article class="cell">
-      <div class="cell__head">
-        <a class="live-link" href="projects/pdxspend.html">Read the project</a>
-      </div>
+      <div class="cell__head"><a class="live-link" href="projects/pdxspend.html">Read the project</a></div>
       <h2 class="cell__title"><a href="projects/pdxspend.html">PDX Spend</a></h2>
       <a class="cell__media" href="projects/pdxspend.html" aria-label="PDX Spend">
         <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
@@ -191,9 +178,7 @@
     </article>
 
     <article class="cell">
-      <div class="cell__head">
-        <a class="live-link" href="projects/draft-lab.html">Read the project</a>
-      </div>
+      <div class="cell__head"><a class="live-link" href="projects/draft-lab.html">Read the project</a></div>
       <h2 class="cell__title"><a href="projects/draft-lab.html">Draft Lottery Lab</a></h2>
       <a class="cell__media" href="projects/draft-lab.html" aria-label="Draft Lottery Lab">
         <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
@@ -203,9 +188,7 @@
     </article>
 
     <article class="cell">
-      <div class="cell__head">
-        <a class="live-link" href="projects/viperball.html">Read the project</a>
-      </div>
+      <div class="cell__head"><a class="live-link" href="projects/viperball.html">Read the project</a></div>
       <h2 class="cell__title"><a href="projects/viperball.html">Viperball</a></h2>
       <a class="cell__media" href="projects/viperball.html" aria-label="Viperball">
         <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
@@ -215,9 +198,7 @@
     </article>
 
     <article class="cell">
-      <div class="cell__head">
-        <a class="live-link" href="projects/o27-baseball.html">Read the project</a>
-      </div>
+      <div class="cell__head"><a class="live-link" href="projects/o27-baseball.html">Read the project</a></div>
       <h2 class="cell__title"><a href="projects/o27-baseball.html">O27 Baseball</a></h2>
       <a class="cell__media" href="projects/o27-baseball.html" aria-label="O27 Baseball">
         <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
@@ -227,9 +208,7 @@
     </article>
 
     <article class="cell">
-      <div class="cell__head">
-        <a class="live-link" href="projects/ygf.html">Read the project</a>
-      </div>
+      <div class="cell__head"><a class="live-link" href="projects/ygf.html">Read the project</a></div>
       <h2 class="cell__title"><a href="projects/ygf.html">You Go First</a></h2>
       <a class="cell__media" href="projects/ygf.html" aria-label="You Go First">
         <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
@@ -239,9 +218,7 @@
     </article>
 
     <article class="cell">
-      <div class="cell__head">
-        <a class="live-link" href="projects/glowrm.html">Read the project</a>
-      </div>
+      <div class="cell__head"><a class="live-link" href="projects/glowrm.html">Read the project</a></div>
       <h2 class="cell__title"><a href="projects/glowrm.html">Glowrm</a></h2>
       <a class="cell__media" href="projects/glowrm.html" aria-label="Glowrm">
         <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
@@ -251,9 +228,7 @@
     </article>
 
     <article class="cell">
-      <div class="cell__head">
-        <a class="live-link" href="projects/parliament-of-neighbors.html">Read the project</a>
-      </div>
+      <div class="cell__head"><a class="live-link" href="projects/parliament-of-neighbors.html">Read the project</a></div>
       <h2 class="cell__title"><a href="projects/parliament-of-neighbors.html">A Parliament of Neighbors</a></h2>
       <a class="cell__media" href="projects/parliament-of-neighbors.html" aria-label="A Parliament of Neighbors">
         <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
@@ -263,9 +238,7 @@
     </article>
 
     <article class="cell">
-      <div class="cell__head">
-        <a class="live-link" href="projects/finnish-baseball-game-design.html">Watch the talk</a>
-      </div>
+      <div class="cell__head"><a class="live-link" href="projects/finnish-baseball-game-design.html">Watch the talk</a></div>
       <h2 class="cell__title"><a href="projects/finnish-baseball-game-design.html">What Finnish Baseball Taught Me About Game Design</a></h2>
       <a class="cell__media" href="projects/finnish-baseball-game-design.html" aria-label="What Finnish Baseball Taught Me About Game Design">
         <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
@@ -275,9 +248,7 @@
     </article>
 
     <article class="cell">
-      <div class="cell__head">
-        <a class="live-link" href="projects/toccer.html">Read the project</a>
-      </div>
+      <div class="cell__head"><a class="live-link" href="projects/toccer.html">Read the project</a></div>
       <h2 class="cell__title"><a href="projects/toccer.html">Tennis Polo (Toccer)</a></h2>
       <a class="cell__media" href="projects/toccer.html" aria-label="Tennis Polo (Toccer)">
         <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
@@ -290,7 +261,7 @@
 
   <footer class="foot">
     <span>Reach me at <a href="mailto:contact@ronbronson.com">contact@ronbronson.com</a>.</span>
-    <span class="legal">© Ron Bronson, 2026</span>
+    <span class="legal">&copy; Ron Bronson, 2026</span>
   </footer>
 
 </div>
