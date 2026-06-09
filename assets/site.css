@@ -43,6 +43,18 @@
 @font-face { font-family: "Author"; src: url("fonts/author-bold.woff")              format("woff"); font-weight: 700; font-style: normal; font-display: swap; }
 @font-face { font-family: "Author"; src: url("fonts/author-bold-italic.woff")       format("woff"); font-weight: 700; font-style: italic; font-display: swap; }
 
+/* ── Switzer (deck face) — free Fontshare/ITF grotesque. Self-host:
+   drop switzer-semibold.woff2 into assets/fonts/ and this activates;
+   until then the deck falls back to the sans stack. ─ */
+@font-face {
+  font-family: "Switzer";
+  src: url("fonts/switzer-semibold.woff2") format("woff2"),
+       url("fonts/switzer-semibold.woff")  format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* Static "Paper" fallback — palette.js overwrites these at load. */
   --bg: #f1faee;        /* Honeydew     */
