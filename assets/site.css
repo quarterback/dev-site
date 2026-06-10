@@ -175,6 +175,8 @@ footer.foot {
 .colophon p { margin: 0; }
 .colophon p + p { margin-top: 0.7em; }
 .colophon b { color: var(--ink); font-weight: 600; }
+.colophon .digression { color: var(--ink); }
+.colophon .digression::before { content: "\21B3  "; color: var(--accent); }
 
 /* ── Mono reference link ──────────────────────────── */
 .live-link {
