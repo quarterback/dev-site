@@ -322,7 +322,7 @@
       <h2>Colophon, with Digressions</h2>
       <p>Built by hand as a static site: HTML, CSS, and vanilla JavaScript &mdash; no framework, no build step. Colour is set by a small client-side palette engine that audits its own WCAG contrast, and project thumbnails are captured live by thum.io.</p>
       <p>Type currently in use: <b>Author</b> (display), <b>Switzer</b> SemiBold (deck), <b>Hanken Grotesk</b> (running text), and <b>RX100</b> (labels).</p>
-      <p class="digression" id="digression">Rooting for the Trail Blazers, against my better judgment.</p>
+      <p class="digression" id="digression">Inexplicably, a Green Bay Packers shareholder.</p>
     </section>
   </footer>
   <script>
@@ -331,12 +331,17 @@
        shows one at a time so the list never has to be spelled out. */
     (function () {
       var DIGRESSIONS = [
-        "Rooting for the Trail Blazers, against my better judgment.",
-        "Portland Timbers and Thorns, home and away.",
-        "Pesäpallo is the most underrated sport on earth.",
-        "Still think the eephus is a perfect pitch.",
-        "Will argue about draft-lottery design unprompted.",
-        "Ask me about Finnish baseball sometime."
+        "Inexplicably, a Green Bay Packers shareholder.",
+        "Favorite sports teams: Toronto Blue Jays, Vimpelin Veto, New Jersey Devils, Lapuan Virkiä, <s>New York Jets</s>, Portland Timbers, New York Knicks, Portland Thorns, Brighton &amp; Hove Albion, Sassulo, Toluca, Toronto Tempo, Montreal Expos (RIP)",
+        "<em>Have you seen my fragrance collection?</em> <a href='https://www.oksmelly.xyz/' target='_blank' rel='noopener'>it’s here</a>.",
+        "I’m a longtime tea sommelier. Ask me for loose-leaf recs!",
+        "Favorite wine regions: Slovenia, Georgia or anything that aged in amphorae or an old boot. I’m not picky.",
+        "Last.fm til they shut it down. Check out my scrobbles: <a href='https://www.last.fm/user/statechampion' target='_blank' rel='noopener'>last.fm/user/statechampion</a>",
+        "I’ve coached high school tennis for ten years across 3 states. My career varsity record apparently is 91-33-4. 1 team state championship, 4 District/Regional titles, 5 Conference titles. 4 individual state champions. So far…",
+        "Yes, I have a <a href='https://www.discogs.com/user/quarterback/collection?header=1' target='_blank' rel='noopener'>Discogs</a> 🙄",
+        "I actually grew up watching golf, because my grandfather played. I still like a Par 3 because of him.",
+        "Last time I went fishing? 1994.",
+        "Unsurprisingly, I was once a bar trivia host in Bloomington. One step closer to my true calling: game show host."
       ];
       var el = document.getElementById("digression");
       if (!el) return;
@@ -345,7 +350,7 @@
       var i = Math.floor(Math.random() * DIGRESSIONS.length);
       while (DIGRESSIONS.length > 1 && i === last) i = Math.floor(Math.random() * DIGRESSIONS.length);
       try { sessionStorage.setItem("rb-digression", i); } catch (e) {}
-      el.textContent = DIGRESSIONS[i];
+      el.innerHTML = DIGRESSIONS[i];
     })();
   </script>
 
