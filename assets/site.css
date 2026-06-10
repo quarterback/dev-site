@@ -121,8 +121,8 @@ code { font-family: var(--mono); color: var(--ink-soft); }
 
 /* ── Masthead ─────────────────────────────────────── */
 header.masthead {
-  padding: clamp(20px, 3.4vw, 44px) 0 clamp(16px, 2vw, 22px);
-  margin-bottom: clamp(28px, 5vw, 56px);
+  padding: clamp(20px, 3.4vw, 44px) 0 clamp(12px, 1.6vw, 18px);
+  margin-bottom: clamp(18px, 3vw, 32px);
 }
 .masthead .name {
   display: inline-block;
