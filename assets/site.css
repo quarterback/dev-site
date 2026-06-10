@@ -104,6 +104,7 @@ body {
   text-rendering: optimizeLegibility;
 }
 a { color: var(--ink); text-decoration: none; }
+code { font-family: var(--mono); color: var(--ink-soft); }
 ::selection { background: var(--accent); color: var(--bg); }
 :focus-visible {
   outline: var(--frame) solid var(--accent);
@@ -157,11 +158,13 @@ footer.foot {
 /* ── Colophon ─────────────────────────────────────── */
 .colophon {
   max-width: 78ch;
+  margin-left: auto;
   font-family: var(--mono);
   font-size: clamp(14px, 1.15vw, 16px);
   line-height: 1.6;
   letter-spacing: 0.01em;
   color: var(--ink-soft);
+  text-align: right;
 }
 .colophon h2 {
   margin: 0 0 10px;
