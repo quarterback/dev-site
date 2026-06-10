@@ -47,6 +47,8 @@
     text-wrap: pretty;
   }
   .intro p + p { margin-top: 1em; }
+  .intro a { color: var(--ink); border-bottom: 2px solid var(--accent); padding-bottom: 1px; }
+  .intro a:hover { color: var(--accent); }
 
   /* ── The grid ─────────────────────────── */
   .index {
@@ -166,8 +168,7 @@
   </script>
 
   <section class="intro">
-    <p>I&rsquo;ve been building things online continuously since 1995. Over the years, I&rsquo;ve built vibrant communities online and offline, imagined things and brought them to life.</p>
-    <p>This compendium isn&rsquo;t an exhaustive list of everything I&rsquo;ve made, but the theme is offering a window into how I think and approach problems.</p>
+    <p>Reach me at <a href="mailto:contact@ronbronson.com">contact@ronbronson.com</a>.</p>
   </section>
 
   <svg class="ph-defs" aria-hidden="true">
@@ -317,7 +318,6 @@
   </section>
 
   <footer class="foot">
-    <p class="foot__contact">Reach me at <a href="mailto:contact@ronbronson.com">contact@ronbronson.com</a> &middot; more of my work lives at <a href="https://ronbronson.com">ronbronson.com</a>.</p>
     <section class="colophon" aria-label="Colophon">
       <h2>Colophon</h2>
       <p>Built by hand as a static site: HTML, CSS, and vanilla JavaScript &mdash; no framework, no build step. Colour is set by a small client-side palette engine that audits its own WCAG contrast, and project thumbnails are captured live by thum.io.</p>
