@@ -68,7 +68,7 @@ Four roles, three live + one scaffolded:
 - **Author** (self-hosted Fontshare/ITF) — display / masthead name.
 - **Switzer SemiBold** (self-hosted, supplied by RB) — the rotating deck. Upright + italic, woff2 + woff.
 - **Hanken Grotesk** (Google) — running text.
-- **JetBrains Mono** (Google) — labels, metadata, the colophon.
+- **JetBrains Mono** (Google) — labels, metadata, the colophon.  _(Later swapped for self-hosted **RX100**.)_
 - **Scaffold:** `RB Display / RB Sans / RB Mono` `@font-face` slots sit first in the stacks; drop the `.woff2` files into `assets/fonts/` and they take over with no markup change.
 
 ## 6. Verification

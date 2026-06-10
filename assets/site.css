@@ -62,6 +62,15 @@
   font-display: swap;
 }
 
+/* ── RX100 (mono) — self-hosted; carries labels, metadata, colophon. ─ */
+@font-face {
+  font-family: "RX100";
+  src: url("fonts/rx100-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* Static "Paper" fallback — palette.js overwrites these at load. */
   --bg: #f1faee;        /* Honeydew     */
@@ -79,7 +88,7 @@
   --display: "RB Display", "Author", "Times New Roman", Georgia, serif;
   --text:    "RB Sans", "Hanken Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --sans:    "RB Sans", "Hanken Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --mono:    "RB Mono", "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --mono:    "RX100", ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
 * { box-sizing: border-box; }
