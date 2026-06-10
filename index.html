@@ -94,7 +94,8 @@
 
   /* ── Intro / contact ──────────────────── */
   .intro {
-    margin: clamp(36px, 6vw, 64px) 0 0;
+    margin: clamp(20px, 3vw, 32px) 0 0;
+    padding: 0 0 clamp(28px, 5vw, 52px);
     max-width: 62ch;
   }
   .intro p {
@@ -227,6 +228,26 @@
       el.innerHTML = DECKS[i].map(function (line) { return "<span>" + line + "</span>"; }).join("");
     })();
   </script>
+
+  <section class="experiments" aria-label="Concepts and experiments">
+    <h2 class="experiments__head">Concepts &amp; Experiments <span>(and other ideas&hellip;)</span></h2>
+    <ul class="experiments__list">
+
+      <li class="exp">
+        <span class="exp__name">Primitives for agentic decision-making</span>
+        <span class="exp__year">2026</span>
+        <span class="exp__links">
+          <a href="https://blog.ronbronson.com/who-holds-the-pen-why-ai-agents-need-a-manager-not-just-a-manual" target="_blank" rel="noopener">Blog post &#8599;</a>
+          <a href="https://github.com/quarterback/judgment-routing" target="_blank" rel="noopener">GitHub &#8599;</a>
+        </span>
+      </li>
+
+    </ul>
+  </section>
+
+  <section class="intro">
+    <p>Reach me at <a href="mailto:contact@ronbronson.com">contact@ronbronson.com</a>.</p>
+  </section>
 
   <svg class="ph-defs" aria-hidden="true">
     <defs>
@@ -372,26 +393,6 @@
       <p class="cell__prose">Tennis Polo is pretty straightforward. Two teams try to score goals using a tennis-sized ball, defended by a goalkeeper holding a tennis racket. The team with the most points wins. A sport I invented by accident at summer camp in 2004.</p>
     </article>
 
-  </section>
-
-  <section class="experiments" aria-label="Concepts and experiments">
-    <h2 class="experiments__head">Concepts &amp; Experiments <span>(and other ideas&hellip;)</span></h2>
-    <ul class="experiments__list">
-
-      <li class="exp">
-        <span class="exp__name">Primitives for agentic decision-making</span>
-        <span class="exp__year">2026</span>
-        <span class="exp__links">
-          <a href="https://blog.ronbronson.com/who-holds-the-pen-why-ai-agents-need-a-manager-not-just-a-manual" target="_blank" rel="noopener">Blog post &#8599;</a>
-          <a href="https://github.com/quarterback/judgment-routing" target="_blank" rel="noopener">GitHub &#8599;</a>
-        </span>
-      </li>
-
-    </ul>
-  </section>
-
-  <section class="intro">
-    <p>Reach me at <a href="mailto:contact@ronbronson.com">contact@ronbronson.com</a>.</p>
   </section>
 
   <footer class="foot">
