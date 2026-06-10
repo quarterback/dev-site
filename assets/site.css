@@ -179,6 +179,22 @@ footer.foot {
 }
 .live-link:hover { color: var(--accent); }
 
+/* ── Cross-site link (top right) ──────────────────── */
+.topnav {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: clamp(8px, 1.5vw, 14px);
+}
+.sitelink {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  border-bottom: var(--frame) solid var(--accent);
+  padding-bottom: 1px;
+}
+.sitelink:hover { color: var(--accent); }
+
 /* ── Palette dock — square, ruled ─────────────────── */
 .palette-dock {
   position: fixed;

@@ -31,7 +31,8 @@
     text-wrap: pretty;
   }
 
-  .project__body { display: grid; gap: clamp(20px, 2.6vw, 32px); }
+  .project__body { display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(20px, 2.6vw, 32px); }
+  .project__body table { display: block; width: max-content; max-width: 100%; overflow-x: auto; }
   .project__body > p {
     margin: 0;
     font-family: var(--sans);
@@ -489,7 +490,7 @@
   </article>
 
   <footer class="foot">
-    <span>Reach me at <a href="mailto:contact@ronbronson.com">contact@ronbronson.com</a> &middot; more of my work lives at <a href="https://ronbronson.com">ronbronson.com</a>.</span>
+    <span>Reach me at <a href="mailto:contact@ronbronson.com">contact@ronbronson.com</a>.</span>
   </footer>
 
 </div>

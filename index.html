@@ -47,6 +47,8 @@
     text-wrap: pretty;
   }
   .intro p + p { margin-top: 1em; }
+  .intro a { color: var(--ink); border-bottom: 2px solid var(--accent); padding-bottom: 1px; }
+  .intro a:hover { color: var(--accent); }
 
   /* ── The grid ─────────────────────────── */
   .index {
@@ -126,6 +128,10 @@
 <body>
 <div class="wrap">
 
+  <nav class="topnav">
+    <a class="sitelink" href="https://ronbronson.design">ronbronson.design &#8599;</a>
+  </nav>
+
   <header class="masthead">
     <a class="name" href="./index.html">Ron Bronson</a>
     <h2 class="tagline" id="tagline">
@@ -162,8 +168,7 @@
   </script>
 
   <section class="intro">
-    <p>I&rsquo;ve been building things online continuously since 1995. Over the years, I&rsquo;ve built vibrant communities online and offline, imagined things and brought them to life.</p>
-    <p>This compendium isn&rsquo;t an exhaustive list of everything I&rsquo;ve made, but the theme is offering a window into how I think and approach problems.</p>
+    <p>Reach me at <a href="mailto:contact@ronbronson.com">contact@ronbronson.com</a>.</p>
   </section>
 
   <svg class="ph-defs" aria-hidden="true">
@@ -191,16 +196,6 @@
   <section class="index" aria-label="Projects">
 
     <article class="cell">
-      <div class="cell__head"><a class="live-link" href="projects/oregon-tennis.html">Read the project</a></div>
-      <h2 class="cell__title"><a href="projects/oregon-tennis.html">Oregon HS Tennis Power Rankings</a></h2>
-      <a class="cell__media" href="projects/oregon-tennis.html" aria-label="Oregon HS Tennis Power Rankings">
-        <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
-        <img src="https://image.thum.io/get/width/2000/crop/860/https://oregontennis.org" alt="Screenshot of oregontennis.org" loading="lazy" />
-      </a>
-      <p class="cell__prose">A statewide sports-rating engine, playoff simulator, and live tournament toolkit for Oregon high school tennis. Four years of data, four original rating models, and a working analytics layer (Power Index, FWS, FWS+, TOSS) running across every classification &mdash; built end to end as one self-contained system.</p>
-    </article>
-
-    <article class="cell">
       <div class="cell__head"><a class="live-link" href="projects/occupant.html">Read the project</a></div>
       <h2 class="cell__title"><a href="projects/occupant.html">Occupant Indices</a></h2>
       <a class="cell__media" href="projects/occupant.html" aria-label="Occupant Indices">
@@ -211,13 +206,23 @@
     </article>
 
     <article class="cell">
-      <div class="cell__head"><a class="live-link" href="projects/pdxspend.html">Read the project</a></div>
-      <h2 class="cell__title"><a href="projects/pdxspend.html">PDX Spend</a></h2>
-      <a class="cell__media" href="projects/pdxspend.html" aria-label="PDX Spend">
+      <div class="cell__head"><a class="live-link" href="projects/play-to-clinch.html">Read the project</a></div>
+      <h2 class="cell__title"><a href="projects/play-to-clinch.html">Play To Clinch</a></h2>
+      <a class="cell__media" href="projects/play-to-clinch.html" aria-label="Play To Clinch">
         <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
-        <img src="https://image.thum.io/get/width/1000/crop/1240/https://pdxspend.com" alt="Screenshot of pdxspend.com" loading="lazy" />
+        <img src="https://image.thum.io/get/width/2000/crop/860/https://pctennis.xyz" alt="Screenshot of pctennis.xyz" loading="lazy" />
       </a>
-      <p class="cell__prose">For each of seven Portland-area voter-approved funds, what it could pay for at its current balance, what&rsquo;s blocking that, and who controls the lever.</p>
+      <p class="cell__prose">Earth&rsquo;s first-ever team tennis computer game. NCAA-format college dual matches, a junior recruiting circuit, and GTT &mdash; a co-ed pro league &mdash; all on one continuous rating scale, driven by a deterministic point-by-point Python engine. Online at pctennis.xyz.</p>
+    </article>
+
+    <article class="cell">
+      <div class="cell__head"><a class="live-link" href="projects/oregon-tennis.html">Read the project</a></div>
+      <h2 class="cell__title"><a href="projects/oregon-tennis.html">Oregon HS Tennis Power Rankings</a></h2>
+      <a class="cell__media" href="projects/oregon-tennis.html" aria-label="Oregon HS Tennis Power Rankings">
+        <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
+        <img src="https://image.thum.io/get/width/2000/crop/860/https://oregontennis.org" alt="Screenshot of oregontennis.org" loading="lazy" />
+      </a>
+      <p class="cell__prose">A statewide sports-rating engine, playoff simulator, and live tournament toolkit for Oregon high school tennis. Four years of data, four original rating models, and a working analytics layer (Power Index, FWS, FWS+, TOSS) running across every classification &mdash; built end to end as one self-contained system.</p>
     </article>
 
     <article class="cell">
@@ -231,6 +236,26 @@
     </article>
 
     <article class="cell">
+      <div class="cell__head"><a class="live-link" href="projects/finnish-baseball-game-design.html">Watch the talk</a></div>
+      <h2 class="cell__title"><a href="projects/finnish-baseball-game-design.html">What Finnish Baseball Taught Me About Game Design</a></h2>
+      <a class="cell__media" href="projects/finnish-baseball-game-design.html" aria-label="What Finnish Baseball Taught Me About Game Design">
+        <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
+        <img src="https://img.youtube.com/vi/_HAVowmb3JU/maxresdefault.jpg" alt="Still from the Donut.js 2019 game design talk" loading="lazy" onerror="this.src='https://img.youtube.com/vi/_HAVowmb3JU/hqdefault.jpg'" />
+      </a>
+      <p class="cell__prose">My 2019 Donut.js talk on what pes&auml;pallo, Finland&rsquo;s national baseball variant, taught me about game design.</p>
+    </article>
+
+    <article class="cell">
+      <div class="cell__head"><a class="live-link" href="projects/super-innings.html">Read the project</a></div>
+      <h2 class="cell__title"><a href="projects/super-innings.html">SuperInnings</a></h2>
+      <a class="cell__media" href="projects/super-innings.html" aria-label="SuperInnings">
+        <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
+        <img src="https://image.thum.io/get/width/1600/crop/1000/https://superinnin.gs" alt="Screenshot of superinnin.gs" loading="lazy" />
+      </a>
+      <p class="cell__prose">Baseball restructured into one continuous 27-out half per side &mdash; a full simulated world with its own stats, economy, and history. Online at superinnin.gs.</p>
+    </article>
+
+    <article class="cell">
       <div class="cell__head"><a class="live-link" href="projects/viperball.html">Read the project</a></div>
       <h2 class="cell__title"><a href="projects/viperball.html">Viperball</a></h2>
       <a class="cell__media" href="projects/viperball.html" aria-label="Viperball">
@@ -241,13 +266,23 @@
     </article>
 
     <article class="cell">
-      <div class="cell__head"><a class="live-link" href="projects/o27-baseball.html">Read the project</a></div>
-      <h2 class="cell__title"><a href="projects/o27-baseball.html">O27 Baseball</a></h2>
-      <a class="cell__media" href="projects/o27-baseball.html" aria-label="O27 Baseball">
+      <div class="cell__head"><a class="live-link" href="projects/parliament-of-neighbors.html">Read the project</a></div>
+      <h2 class="cell__title"><a href="projects/parliament-of-neighbors.html">A Parliament of Neighbors</a></h2>
+      <a class="cell__media" href="projects/parliament-of-neighbors.html" aria-label="A Parliament of Neighbors">
         <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
-        <img src="https://image.thum.io/get/width/1600/crop/1000/https://hybrid-baseball.fly.dev" alt="Screenshot of hybrid-baseball.fly.dev" loading="lazy" />
+        <img src="https://img.youtube.com/vi/dwemDtD4mTk/maxresdefault.jpg" alt="Video still from A Parliament of Neighbors" loading="lazy" onerror="this.src='https://img.youtube.com/vi/dwemDtD4mTk/hqdefault.jpg'" />
       </a>
-      <p class="cell__prose">For decades, I&rsquo;ve wondered how to make a syncretic version of baseball, cricket &amp; pes&auml;pallo game. Built out as a full simulation engine, a recalibrated custom analytics suite that introduces second chance at-bats, league economy, and a live web app.</p>
+      <p class="cell__prose">A live participatory piece on worldbuilding, speculative governance, and what we owe our neighbors. The site is offline; a documentation video remains.</p>
+    </article>
+
+    <article class="cell">
+      <div class="cell__head"><a class="live-link" href="projects/pdxspend.html">Read the project</a></div>
+      <h2 class="cell__title"><a href="projects/pdxspend.html">PDX Spend</a></h2>
+      <a class="cell__media" href="projects/pdxspend.html" aria-label="PDX Spend">
+        <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
+        <img src="https://image.thum.io/get/width/1000/crop/1240/https://pdxspend.com" alt="Screenshot of pdxspend.com" loading="lazy" />
+      </a>
+      <p class="cell__prose">For each of seven Portland-area voter-approved funds, what it could pay for at its current balance, what&rsquo;s blocking that, and who controls the lever.</p>
     </article>
 
     <article class="cell">
@@ -271,26 +306,6 @@
     </article>
 
     <article class="cell">
-      <div class="cell__head"><a class="live-link" href="projects/parliament-of-neighbors.html">Read the project</a></div>
-      <h2 class="cell__title"><a href="projects/parliament-of-neighbors.html">A Parliament of Neighbors</a></h2>
-      <a class="cell__media" href="projects/parliament-of-neighbors.html" aria-label="A Parliament of Neighbors">
-        <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
-        <img src="https://img.youtube.com/vi/dwemDtD4mTk/maxresdefault.jpg" alt="Video still from A Parliament of Neighbors" loading="lazy" onerror="this.src='https://img.youtube.com/vi/dwemDtD4mTk/hqdefault.jpg'" />
-      </a>
-      <p class="cell__prose">A live participatory piece on worldbuilding, speculative governance, and what we owe our neighbors. The site is offline; a documentation video remains.</p>
-    </article>
-
-    <article class="cell">
-      <div class="cell__head"><a class="live-link" href="projects/finnish-baseball-game-design.html">Watch the talk</a></div>
-      <h2 class="cell__title"><a href="projects/finnish-baseball-game-design.html">What Finnish Baseball Taught Me About Game Design</a></h2>
-      <a class="cell__media" href="projects/finnish-baseball-game-design.html" aria-label="What Finnish Baseball Taught Me About Game Design">
-        <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
-        <img src="https://img.youtube.com/vi/_HAVowmb3JU/maxresdefault.jpg" alt="Still from the Donut.js 2019 game design talk" loading="lazy" onerror="this.src='https://img.youtube.com/vi/_HAVowmb3JU/hqdefault.jpg'" />
-      </a>
-      <p class="cell__prose">My 2019 Donut.js talk on what pes&auml;pallo, Finland&rsquo;s national baseball variant, taught me about game design.</p>
-    </article>
-
-    <article class="cell">
       <div class="cell__head"><a class="live-link" href="projects/toccer.html">Read the project</a></div>
       <h2 class="cell__title"><a href="projects/toccer.html">Tennis Polo (Toccer)</a></h2>
       <a class="cell__media" href="projects/toccer.html" aria-label="Tennis Polo (Toccer)">
@@ -303,7 +318,6 @@
   </section>
 
   <footer class="foot">
-    <p class="foot__contact">Reach me at <a href="mailto:contact@ronbronson.com">contact@ronbronson.com</a> &middot; more of my work lives at <a href="https://ronbronson.com">ronbronson.com</a>.</p>
     <section class="colophon" aria-label="Colophon">
       <h2>Colophon</h2>
       <p>Built by hand as a static site: HTML, CSS, and vanilla JavaScript &mdash; no framework, no build step. Colour is set by a small client-side palette engine that audits its own WCAG contrast, and project thumbnails are captured live by thum.io.</p>
