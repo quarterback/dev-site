@@ -32,9 +32,69 @@
   }
   .tagline span { display: block; text-wrap: balance; }
 
-  /* ── Intro ────────────────────────────── */
+  /* ── Concepts & experiments — a ruled text list ─ */
+  .experiments {
+    margin: clamp(44px, 7vw, 88px) 0 0;
+  }
+  .experiments__head {
+    margin: 0 0 clamp(12px, 1.6vw, 18px);
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+  .experiments__head span {
+    text-transform: none;
+    letter-spacing: 0.01em;
+    color: var(--ink-soft);
+  }
+  .experiments__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: var(--frame) solid var(--ink);
+  }
+  .exp {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 14px;
+    padding: clamp(12px, 1.6vw, 18px) 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .exp__name {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(17px, 1.5vw, 20px);
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .exp__year {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-soft);
+  }
+  .exp__links {
+    margin-left: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+    font-family: var(--mono);
+    font-size: 12px;
+  }
+  .exp__links a {
+    color: var(--ink);
+    border-bottom: var(--frame) solid var(--accent);
+    padding-bottom: 1px;
+    white-space: nowrap;
+  }
+  .exp__links a:hover { color: var(--accent); }
+
+  /* ── Intro / contact ──────────────────── */
   .intro {
-    padding: 0 0 clamp(28px, 5vw, 52px);
+    margin: clamp(36px, 6vw, 64px) 0 0;
     max-width: 62ch;
   }
   .intro p {
@@ -167,10 +227,6 @@
       el.innerHTML = DECKS[i].map(function (line) { return "<span>" + line + "</span>"; }).join("");
     })();
   </script>
-
-  <section class="intro">
-    <p>Reach me at <a href="mailto:contact@ronbronson.com">contact@ronbronson.com</a>.</p>
-  </section>
 
   <svg class="ph-defs" aria-hidden="true">
     <defs>
@@ -316,6 +372,26 @@
       <p class="cell__prose">Tennis Polo is pretty straightforward. Two teams try to score goals using a tennis-sized ball, defended by a goalkeeper holding a tennis racket. The team with the most points wins. A sport I invented by accident at summer camp in 2004.</p>
     </article>
 
+  </section>
+
+  <section class="experiments" aria-label="Concepts and experiments">
+    <h2 class="experiments__head">Concepts &amp; Experiments <span>(and other ideas&hellip;)</span></h2>
+    <ul class="experiments__list">
+
+      <li class="exp">
+        <span class="exp__name">Primitives for agentic decision-making</span>
+        <span class="exp__year">2026</span>
+        <span class="exp__links">
+          <a href="https://blog.ronbronson.com/who-holds-the-pen-why-ai-agents-need-a-manager-not-just-a-manual" target="_blank" rel="noopener">Blog post &#8599;</a>
+          <a href="https://github.com/quarterback/judgment-routing" target="_blank" rel="noopener">GitHub &#8599;</a>
+        </span>
+      </li>
+
+    </ul>
+  </section>
+
+  <section class="intro">
+    <p>Reach me at <a href="mailto:contact@ronbronson.com">contact@ronbronson.com</a>.</p>
   </section>
 
   <footer class="foot">
