@@ -75,7 +75,10 @@
       bg:     PIG.honey,
       deeper: PIG.frost,
       ink:    PIG.navy,
-      soft:   PIG.ceru,
+      // Cerulean lands at 4.30 on Honeydew — just under AA for body text.
+      // No pigment fills the "soft text on light" slot accessibly, so this
+      // is Cerulean nudged 6% toward Navy: same hue, now AA (4.54).
+      soft:   '#437799',
       rule:   PIG.ceru,
       accent: PIG.red,
     }),

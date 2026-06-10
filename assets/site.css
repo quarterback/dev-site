@@ -62,12 +62,21 @@
   font-display: swap;
 }
 
+/* ── RX100 (mono) — self-hosted; carries labels, metadata, colophon. ─ */
+@font-face {
+  font-family: "RX100";
+  src: url("fonts/rx100-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* Static "Paper" fallback — palette.js overwrites these at load. */
   --bg: #f1faee;        /* Honeydew     */
   --bg-deeper: #a8dadc; /* Frosted Blue */
   --ink: #1d3557;       /* Oxford Navy  */
-  --ink-soft: #457b9d;  /* Cerulean     */
+  --ink-soft: #437799;  /* Cerulean, AA-tuned for soft text on honeydew */
   --rule: #457b9d;      /* Cerulean     */
   --accent: #e63946;    /* Punch Red    */
 
@@ -79,7 +88,7 @@
   --display: "RB Display", "Author", "Times New Roman", Georgia, serif;
   --text:    "RB Sans", "Hanken Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --sans:    "RB Sans", "Hanken Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --mono:    "RB Mono", "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --mono:    "RX100", ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
 * { box-sizing: border-box; }
@@ -95,6 +104,7 @@ body {
   text-rendering: optimizeLegibility;
 }
 a { color: var(--ink); text-decoration: none; }
+code { font-family: var(--mono); color: var(--ink-soft); }
 ::selection { background: var(--accent); color: var(--bg); }
 :focus-visible {
   outline: var(--frame) solid var(--accent);
@@ -148,16 +158,18 @@ footer.foot {
 /* ── Colophon ─────────────────────────────────────── */
 .colophon {
   max-width: 78ch;
+  margin-left: auto;
   font-family: var(--mono);
-  font-size: 12px;
-  line-height: 1.65;
+  font-size: clamp(14px, 1.15vw, 16px);
+  line-height: 1.6;
   letter-spacing: 0.01em;
   color: var(--ink-soft);
+  text-align: right;
 }
 .colophon h2 {
-  margin: 0 0 8px;
+  margin: 0 0 10px;
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -166,6 +178,8 @@ footer.foot {
 .colophon p { margin: 0; }
 .colophon p + p { margin-top: 0.7em; }
 .colophon b { color: var(--ink); font-weight: 600; }
+.colophon .digression { color: var(--ink); }
+.colophon .digression::before { content: "\21B3  "; color: var(--accent); }
 
 /* ── Mono reference link ──────────────────────────── */
 .live-link {
