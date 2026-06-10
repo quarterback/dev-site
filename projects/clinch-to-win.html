@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Clinch To Win — Ron Bronson</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/site.css" />
+<script src="../assets/palette.js"></script>
+<style>
+  .project { max-width: 760px; }
+  .project__title {
+    margin: 0 0 clamp(8px, 1.5vw, 16px);
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(40px, 6vw, 76px);
+    line-height: 1.0;
+    letter-spacing: -0.025em;
+    text-wrap: balance;
+  }
+  .project__lede {
+    margin: 0 0 clamp(16px, 2vw, 20px);
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: clamp(20px, 1.8vw, 24px);
+    line-height: 1.4;
+    color: var(--ink);
+    max-width: 52ch;
+    text-wrap: pretty;
+  }
+  .project__meta {
+    margin: 0 0 clamp(28px, 4vw, 48px);
+    font-family: var(--mono);
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 14px;
+    align-items: baseline;
+  }
+  .project__meta .sep { color: var(--rule); }
+
+  .project__body { display: grid; gap: clamp(20px, 2.6vw, 32px); }
+  .project__body > p {
+    margin: 0;
+    font-family: var(--sans);
+    font-size: clamp(17px, 1.35vw, 18px);
+    line-height: 1.65;
+    color: var(--ink);
+    max-width: 64ch;
+    text-wrap: pretty;
+  }
+  .project__body h2 {
+    margin: clamp(28px, 4vw, 48px) 0 4px;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(22px, 2vw, 28px);
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+  }
+  .project__body ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 14px;
+    font-family: var(--sans);
+    font-size: clamp(16px, 1.3vw, 18px);
+    line-height: 1.55;
+    color: var(--ink);
+    max-width: 64ch;
+  }
+  .project__body ul li { padding-left: 22px; position: relative; }
+  .project__body ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    width: 10px;
+    height: 1px;
+    background: var(--ink-soft);
+  }
+  .project__body ul li b { font-weight: 600; }
+
+  .figure { margin: clamp(28px, 4vw, 48px) 0 0; background: var(--bg-deeper); overflow: hidden; position: relative; }
+  .figure img, .figure svg.ph { display: block; width: 100%; height: auto; }
+  .figure svg.ph { aspect-ratio: 16 / 10; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <a class="name" href="../index.html">Ron Bronson</a>
+  </header>
+
+  <article class="project">
+
+    <h1 class="project__title">Clinch To Win</h1>
+    <p class="project__lede">Earth&rsquo;s first-ever team tennis computer game &mdash; junior circuit, college, and a co-ed pro league, on one continuous engine.</p>
+    <div class="project__meta">
+      <span>Designer &amp; sole engineer</span>
+      <span class="sep">·</span>
+      <span>2026</span>
+      <span class="sep">·</span>
+      <a class="live-link" href="https://pctennis.xyz" target="_blank" rel="noopener">pctennis.xyz &#8599;</a>
+    </div>
+
+    <figure class="figure">
+      <svg class="ph" viewBox="0 0 1400 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <pattern id="ph-a" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(20)">
+            <rect width="16" height="16" fill="#a8dadc"/>
+            <line x1="0" y1="0" x2="0" y2="16" stroke="#457b9d" stroke-width="6"/>
+          </pattern>
+        </defs>
+        <rect width="1400" height="800" fill="url(#ph-a)"/>
+      </svg>
+      <img src="https://image.thum.io/get/width/1600/crop/1000/https://pctennis.xyz" alt="Screenshot of pctennis.xyz" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;" />
+    </figure>
+
+    <div class="project__body">
+
+      <p>The only tennis games that exist are individual ones &mdash; which makes sense, because tennis is an individual sport. But for those in the know, it&rsquo;s also a team sport. For decades, high-school and college players in the US have competed in a team format where a combination of matches each count for a point, and the team that wins the most wins the tie. We crown national champions this way, the same way March Madness does for basketball.</p>
+
+      <p>And yet there&rsquo;s never been a way to play it at the team level. I wanted to build a team tennis simulation for years &mdash; back when I was a high-school coach, if nothing else, just for fun. None of the existing tennis games had anything like it. Recent sims on Steam added junior tennis that came close, but the nearest you got was developing players in a junior academy.</p>
+
+      <p>After building oregontennis.org and its suite of rankings, tools, and analysis, I had a thought: maybe now was the time. I even had an old repo where I&rsquo;d tried before. Why did it take so long? Nobody wants this but me &mdash; but it felt too worth trying not to. And I&rsquo;d just built a baseball sim, so I could port a lot of that engine work into tennis. (Credit, too, to everyone who&rsquo;s built simple open-source tennis simulations over the years; they made it plausible to attempt this myself.)</p>
+
+      <p>Under the hood it&rsquo;s just a Python engine. The UI reveals a vast world.</p>
+
+      <h2>College team tennis</h2>
+
+      <p>The core is NCAA-format dual matches. Two teams. Three doubles matches that combine into a single team point, six singles matches worth a point each &mdash; first team to four points wins. Lineups are seeded by player strength, doubles pairings are formed intelligently, and the engine simulates point by point, so you see every serve, every rally, every error. Box scores and play-by-play transcripts show exactly what happened.</p>
+
+      <p>You build a program across four years: recruit players, watch your roster age and develop, and run a full college season across D1, D2, or D3, men&rsquo;s or women&rsquo;s. Track conference standings, send your best eight to an NCAA bracket, and crown a champion. A single rating spans juniors through college through the pros &mdash; a D3 women&rsquo;s player and a D1 men&rsquo;s player sit on the same scale, and that scale is your recruiting yardstick.</p>
+
+      <h2>Junior rankings and recruiting</h2>
+
+      <p>Before college, recruits compete on a junior circuit. Results matter; badges accumulate; rankings shift. You can read a recruit&rsquo;s r&eacute;sum&eacute; &mdash; tournament history, match record, year-by-year ranking progression. The recruiting board shows the top prospects with their current rating and two independent scouting projections of where they could land. The ceiling stays hidden until you offer a spot and they commit: some players have hidden upside, some are overrated hype, some outperform expectations.</p>
+
+      <h2>GTT: the professional circuit</h2>
+
+      <p>Once players graduate, they turn pro. GTT is a global team tennis league where franchises draft college graduates each off-season and compete across a season. It&rsquo;s co-ed &mdash; three men&rsquo;s singles, three women&rsquo;s singles, three mixed doubles, first franchise to five points wins the match. Spin up a league of 8 to 16 franchises and run it week by week, watching players age and eventually retire; the top performers are drafted into the Hall of Fame, and a player&rsquo;s college and pro careers live on one continuous profile.</p>
+
+      <p>Simulate a full GTT season or step through it match by match. Every result updates the standings, the playoffs are single-elimination, and a champion is crowned each year.</p>
+
+      <h2>How it works</h2>
+
+      <p>Every match is deterministic: same seed, same result. You can reproduce a specific match, share scenarios with others, and test recruiting strategies without randomness getting in the way. The engine simulates at different levels of detail depending on the task &mdash; point by point for college and showcase matches, and a faster model for bulk junior tournaments that still lands realistic results. Both stay deterministic.</p>
+
+      <h2>The architecture</h2>
+
+      <p>The core is Python, with no dependencies outside the standard library; a Flask web app sits on top, and everything runs on SQLite. It&rsquo;s fast enough to simulate full seasons in seconds. The choices are deliberate &mdash; Python because it&rsquo;s clear and deterministic, SQLite because it&rsquo;s portable and needs no separate database, no frontend framework, no cloud lock-in. The whole thing runs offline. The web UI is just a window into an engine that exists independent of it.</p>
+
+      <h2>What you can do right now</h2>
+
+      <ul>
+        <li><b>Match Simulator</b> &mdash; create two players and simulate a match with configurable rules (NCAA format, pro sets, tiebreak variations, best of 3 or 5).</li>
+        <li><b>Dual Match Viewer</b> &mdash; watch a team match with lineups, real-time scoring, and clinch scenarios.</li>
+        <li><b>College Seasons</b> &mdash; run a full D1, D2, or D3 season and watch a bracket tournament.</li>
+        <li><b>Junior Circuit</b> &mdash; generate a recruiting class, run the junior tournaments, and see how players rank and develop.</li>
+        <li><b>Recruiting Board</b> &mdash; browse the top prospects and see their scouting reports and ceiling projections.</li>
+        <li><b>GTT League</b> &mdash; create a professional franchise league, run seasons year by year, and build a Hall of Fame.</li>
+        <li><b>Hall of Fame</b> &mdash; career records and accomplishments across college and pro.</li>
+        <li><b>Player Pages</b> &mdash; read a player&rsquo;s career from college through retirement.</li>
+        <li><b>Methodology</b> &mdash; how the rating system works and why matches are decided the way they are.</li>
+      </ul>
+
+      <p><a class="live-link" href="https://pctennis.xyz" target="_blank" rel="noopener">Play it at pctennis.xyz &#8599;</a></p>
+
+    </div>
+
+  </article>
+
+  <footer class="foot">
+    <span>Reach me at <a href="mailto:contact@ronbronson.com">contact@ronbronson.com</a> &middot; more of my work lives at <a href="https://ronbronson.com">ronbronson.com</a>.</span>
+  </footer>
+
+</div>
+</body>
+</html>
