@@ -76,7 +76,7 @@
   --bg: #f1faee;        /* Honeydew     */
   --bg-deeper: #a8dadc; /* Frosted Blue */
   --ink: #1d3557;       /* Oxford Navy  */
-  --ink-soft: #457b9d;  /* Cerulean     */
+  --ink-soft: #437799;  /* Cerulean, AA-tuned for soft text on honeydew */
   --rule: #457b9d;      /* Cerulean     */
   --accent: #e63946;    /* Punch Red    */
 
@@ -158,15 +158,15 @@ footer.foot {
 .colophon {
   max-width: 78ch;
   font-family: var(--mono);
-  font-size: 12px;
-  line-height: 1.65;
+  font-size: clamp(14px, 1.15vw, 16px);
+  line-height: 1.6;
   letter-spacing: 0.01em;
   color: var(--ink-soft);
 }
 .colophon h2 {
-  margin: 0 0 8px;
+  margin: 0 0 10px;
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;

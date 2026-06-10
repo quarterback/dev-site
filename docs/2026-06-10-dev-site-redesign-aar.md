@@ -60,6 +60,7 @@ Role assignments were chosen against measured WCAG contrast, not vibes:
 - Body text is always the AAA pair.
 - Cerulean and Punch Red are confined to **fills, borders, and large display**. On the dark ground they fail as text, so red becomes solid blocks / accents, never red type on navy.
 - **Essential structure** (the grid frame) is drawn in `--ink`, so it always clears the 3:1 non-text minimum; `--rule` (Cerulean) is decorative hairline only.
+- **Soft/secondary text on the light ground** uses Cerulean nudged ~6% toward Navy (`#437799`): plain Cerulean lands at 4.30 (just under AA), the tuned value clears it at **4.53**. No pigment filled the "soft text on light" slot accessibly, so this is the one derived colour outside the supplied five. (Dark-ground soft is Frosted Blue at 8.08 — no change needed.)
 
 ## 5. Typography
 
