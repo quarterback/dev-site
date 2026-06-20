@@ -195,7 +195,9 @@ footer.foot {
 /* ── Cross-site link (top right) ──────────────────── */
 .topnav {
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-end;
+  gap: 6px 16px;
   padding-top: clamp(8px, 1.5vw, 14px);
 }
 .sitelink {
