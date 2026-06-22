@@ -6,10 +6,10 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="icon" href="/favicon.png" type="image/png" sizes="any" />
 <title>Ron Bronson &mdash; Working Catalog of Complex Systems</title>
-<meta name="description" content="Product delivery engineer and AI-native forward-deployed designer building complex systems. Platforms, simulators, market mechanisms, and measurement instruments across public infrastructure and market design." />
+<meta name="description" content="Ron Bronson is a design leader who directs AI agents to ship complex systems. A background in service design, consequence design, and agent experience (AX), now applied to agent orchestration, human-in-the-loop delivery, eval and validation, AI governance, and context engineering — five production systems built and deployed in about five months." />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Ron Bronson &mdash; Working Catalog of Complex Systems" />
-<meta name="twitter:description" content="Product delivery engineer and AI-native forward-deployed designer building complex systems. Platforms, simulators, market mechanisms, and measurement instruments across public infrastructure and market design." />
+<meta name="twitter:description" content="Ron Bronson is a design leader who directs AI agents to ship complex systems. A background in service design, consequence design, and agent experience (AX), now applied to agent orchestration, human-in-the-loop delivery, eval and validation, AI governance, and context engineering — five production systems built and deployed in about five months." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -33,18 +33,6 @@
     color: var(--ink);
   }
   .tagline span { display: block; text-wrap: balance; }
-
-  /* ── Lead-in: one plain-English line below the deck ─ */
-  .intro-lede {
-    margin: clamp(18px, 2.6vw, 30px) 0 0;
-    max-width: 54ch;
-    font-family: var(--text);
-    font-weight: 500;
-    font-size: clamp(18px, 1.9vw, 24px);
-    line-height: 1.4;
-    color: var(--ink);
-    text-wrap: pretty;
-  }
 
   /* ── Concepts & experiments — a ruled text list ─ */
   .experiments {
@@ -198,6 +186,54 @@
   @media (max-width: 680px) {
     .index { grid-template-columns: 1fr; }
   }
+
+  /* ── Agent-direction layer ─────────────────────────
+     Additive sections that surface the "directs & ships
+     complex systems at scale" story. Same register as the
+     rest of the page: mono labels, ruled lists, the 2px
+     frame. Nothing here touches the masthead deck. */
+  .bio {
+    margin: clamp(14px, 2vw, 22px) 0 0;
+    max-width: 60ch;
+    font-family: var(--text);
+    font-weight: 500;
+    font-size: clamp(16px, 1.45vw, 19px);
+    line-height: 1.55;
+    color: var(--ink);
+    text-wrap: pretty;
+  }
+  .bio p { margin: 0; }
+  .bio strong { font-weight: 700; }
+  .bio em { font-style: italic; }
+
+  .focus { margin: clamp(30px, 4.5vw, 52px) 0 clamp(34px, 5vw, 60px); }
+  .focus__head {
+    margin: 0 0 clamp(8px, 1vw, 12px);
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .focus__line {
+    margin: 0;
+    max-width: 70ch;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(14px, 1.15vw, 16px);
+    line-height: 1.7;
+    letter-spacing: 0;
+    color: var(--ink);
+    text-wrap: pretty;
+  }
+  .focus__line .sep {
+    color: var(--accent);
+    font-weight: 400;
+    padding: 0 0.1em;
+  }
+
+  .colophon .keywords { color: var(--ink-soft); }
 </style>
 </head>
 <body>
@@ -244,7 +280,14 @@
     })();
   </script>
 
-  <p class="intro-lede">I work on how AI and automation reshape the systems people depend on, especially where service, judgment, trust, and accountability collide.</p>
+  <section class="bio" aria-label="About">
+    <p>I&rsquo;ve led design and technology delivery for millions of people, built and run practices, and shipped products. My work sits where strategy becomes structure: clarifying ambiguous goals, organizing teams and systems, improving how algorithmic decisions get made, and ensuring trust stays embedded in public tech.</p>
+  </section>
+
+  <section class="focus" aria-label="Focus areas">
+    <h2 class="focus__head">Focus</h2>
+    <p class="focus__line">AI agent orchestration <span class="sep">&middot;</span> Human-in-the-loop delivery <span class="sep">&middot;</span> Eval &amp; validation design <span class="sep">&middot;</span> AI governance <span class="sep">&middot;</span> Context engineering <span class="sep">&middot;</span> Agent experience (AX) <span class="sep">&middot;</span> Service design <span class="sep">&middot;</span> Consequence design <span class="sep">&middot;</span> Systems design</p>
+  </section>
 
   <section class="experiments" aria-label="Concepts and experiments">
     <h2 class="experiments__head">Concepts &amp; Experiments <span>(and other ideas&hellip;)</span></h2>
@@ -348,7 +391,7 @@
         <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
         <img src="https://image.thum.io/get/width/2000/crop/860/https://pctennis.xyz" alt="Screenshot of pctennis.xyz" loading="lazy" />
       </a>
-      <p class="cell__prose">Earth&rsquo;s first-ever team tennis computer game. College-format dual matches, a junior recruiting circuit, and GTT &mdash; a co-ed pro league &mdash; all on one continuous rating scale, driven by a deterministic point-by-point Python engine.</p>
+      <p class="cell__prose">Earth&rsquo;s first-ever team tennis computer game. College-format dual matches, a junior recruiting circuit, and GTT &mdash; a co-ed pro league &mdash; all on one continuous rating scale, driven by a deterministic point-by-point Python engine. Platform reuse in practice: a second sport stood up on a forked deterministic engine &mdash; directed, not hand-coded.</p>
     </article>
 
     <article class="cell">
@@ -378,7 +421,7 @@
         <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
         <img src="https://image.thum.io/get/width/1000/crop/1240/https://giantplanet.org" alt="Screenshot of giantplanet.org" loading="lazy" />
       </a>
-      <p class="cell__prose">A comparative research instrument for sports draft lottery design. Fifteen rule systems run through Monte Carlo seasons across six pro leagues &mdash; NBA, NHL, MLB, WNBA, PWHL, MLS.</p>
+      <p class="cell__prose">A comparative research instrument for sports draft lottery design. Fifteen rule systems run through Monte Carlo seasons across six pro leagues &mdash; NBA, NHL, MLB, WNBA, PWHL, MLS. Anti-tanking mechanics modeled, tested, and shipped &mdash; a directed agent build.</p>
     </article>
 
     <article class="cell">
@@ -398,7 +441,7 @@
         <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
         <img src="https://image.thum.io/get/width/1600/crop/1000/https://superinnin.gs" alt="Screenshot of superinnin.gs" loading="lazy" />
       </a>
-      <p class="cell__prose">Baseball restructured into one continuous 27-out half per side &mdash; a full simulated world with its own stats, economy, and history.</p>
+      <p class="cell__prose">Baseball restructured into one continuous 27-out half per side &mdash; a full simulated world with its own stats, economy, and history. A deterministic simulation platform, directed not hand-coded &mdash; documented across 140+ engineering decision records.</p>
     </article>
 
     <article class="cell">
@@ -408,7 +451,7 @@
         <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
         <img src="assets/viperball/season-overview.png" alt="Viperball stats terminal showing 2026 CVL Season overview" loading="lazy" />
       </a>
-      <p class="cell__prose">An invented gridiron sport with its own rulebook, a probability engine that plays it, a 280-team universe to play it in, and a terminal-style stats portal serving the whole thing &mdash; with a custom analytics framework built specifically for the sport&rsquo;s mechanics.</p>
+      <p class="cell__prose">An invented gridiron sport with its own rulebook, a probability engine that plays it, a 280-team universe to play it in, and a terminal-style stats portal serving the whole thing &mdash; with a custom analytics framework built specifically for the sport&rsquo;s mechanics. Directed agent build &mdash; ~110K lines of directed code across ~60 decision records.</p>
     </article>
 
     <article class="cell">
@@ -479,6 +522,7 @@
       <p class="digression" id="digression">Inexplicably, a Green Bay Packers shareholder.</p>
       <p>Built hastily with HTML, responsive CSS, JS, GitHub, and Vercel. Colour is set by a small client-side palette engine that audits its own WCAG contrast, and project thumbnails are captured live by thum.io.</p>
       <p>Type currently in use: <b>Author</b> (display), <b>Switzer</b> SemiBold (deck), <b>Hanken Grotesk</b> (running text), and <b>RX100</b> (labels).</p>
+      <p class="keywords">Working vocabulary: AI agent orchestration &middot; multi-agent systems &middot; human-in-the-loop delivery &middot; eval &amp; validation design &middot; AI governance &middot; context engineering &middot; agent experience (AX) &middot; service design &middot; consequence design &middot; design leadership &middot; systems thinking &middot; Claude/Anthropic agentic tooling.</p>
     </section>
   </footer>
   <script>
