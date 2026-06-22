@@ -6,10 +6,10 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="icon" href="/favicon.png" type="image/png" sizes="any" />
 <title>Ron Bronson &mdash; Working Catalog of Complex Systems</title>
-<meta name="description" content="Product delivery engineer and AI-native forward-deployed designer building complex systems. Platforms, simulators, market mechanisms, and measurement instruments across public infrastructure and market design." />
+<meta name="description" content="Ron Bronson is a design leader who directs AI agents to ship complex systems. A background in service design, consequence design, and agent experience (AX), now applied to agent orchestration, human-in-the-loop delivery, eval and validation, AI governance, and context engineering — five production systems built and deployed in about five months." />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Ron Bronson &mdash; Working Catalog of Complex Systems" />
-<meta name="twitter:description" content="Product delivery engineer and AI-native forward-deployed designer building complex systems. Platforms, simulators, market mechanisms, and measurement instruments across public infrastructure and market design." />
+<meta name="twitter:description" content="Ron Bronson is a design leader who directs AI agents to ship complex systems. A background in service design, consequence design, and agent experience (AX), now applied to agent orchestration, human-in-the-loop delivery, eval and validation, AI governance, and context engineering — five production systems built and deployed in about five months." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -198,6 +198,116 @@
   @media (max-width: 680px) {
     .index { grid-template-columns: 1fr; }
   }
+
+  /* ── Agent-direction layer ─────────────────────────
+     Additive sections that surface the "directs & ships
+     complex systems at scale" story. Same register as the
+     rest of the page: mono labels, ruled lists, the 2px
+     frame. Nothing here touches the masthead deck. */
+  .bio {
+    margin: clamp(14px, 2vw, 22px) 0 0;
+    max-width: 60ch;
+    font-family: var(--text);
+    font-weight: 500;
+    font-size: clamp(16px, 1.45vw, 19px);
+    line-height: 1.55;
+    color: var(--ink);
+    text-wrap: pretty;
+  }
+  .bio p { margin: 0; }
+  .bio strong { font-weight: 700; }
+  .bio em { font-style: italic; }
+
+  .focus { margin: clamp(30px, 4.5vw, 52px) 0 0; }
+  .focus__head {
+    margin: 0 0 clamp(12px, 1.6vw, 18px);
+    font-family: var(--mono);
+    font-size: clamp(16px, 1.9vw, 21px);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+  .focus__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: var(--frame) solid var(--ink);
+  }
+  .focus__row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 2px 16px;
+    padding: clamp(10px, 1.3vw, 14px) 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .focus__term {
+    flex: 0 0 auto;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(16px, 1.4vw, 19px);
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .focus__desc {
+    font-family: var(--text);
+    font-weight: 500;
+    font-size: clamp(14px, 1.05vw, 16px);
+    line-height: 1.45;
+    color: var(--ink-soft);
+  }
+
+  .proof {
+    margin: clamp(30px, 4.5vw, 52px) 0 0;
+    max-width: 72ch;
+    border: var(--frame) solid var(--ink);
+    padding: clamp(18px, 2.4vw, 30px);
+  }
+  .proof__head {
+    margin: 0 0 clamp(10px, 1.4vw, 16px);
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+  .proof__lede {
+    margin: 0;
+    font-family: var(--text);
+    font-weight: 500;
+    font-size: clamp(16px, 1.4vw, 19px);
+    line-height: 1.5;
+    color: var(--ink);
+    text-wrap: pretty;
+  }
+  .proof__stats {
+    margin: clamp(14px, 1.8vw, 20px) 0 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid var(--rule);
+  }
+  .proof__stats li {
+    padding: clamp(8px, 1vw, 12px) 0;
+    border-bottom: 1px solid var(--rule);
+    font-family: var(--mono);
+    font-size: clamp(13px, 1.05vw, 15px);
+    line-height: 1.45;
+    color: var(--ink);
+  }
+  .proof__stats li:last-child { border-bottom: 0; padding-bottom: 0; }
+  .proof__stats b { color: var(--ink); font-weight: 600; }
+  .proof__note {
+    margin: clamp(12px, 1.6vw, 18px) 0 0;
+    font-family: var(--text);
+    font-weight: 500;
+    font-size: clamp(14px, 1.1vw, 16px);
+    line-height: 1.5;
+    color: var(--ink-soft);
+    text-wrap: pretty;
+  }
+  .colophon .keywords { color: var(--ink-soft); }
 </style>
 </head>
 <body>
@@ -244,7 +354,37 @@
     })();
   </script>
 
-  <p class="intro-lede">I work on how AI and automation reshape the systems people depend on, especially where service, judgment, trust, and accountability collide.</p>
+  <p class="intro-lede">I work on how AI and automation reshape the systems people depend on &mdash; especially where service, judgment, trust, and accountability collide.</p>
+
+  <section class="bio" aria-label="About">
+    <p>Increasingly that means <strong>directing the AI itself.</strong> I orchestrate fleets of agents from vague intent to shipped, working software &mdash; as a <em>design leader, not an engineer</em>, which is the point: the scarce skill isn&rsquo;t typing, it&rsquo;s decomposing ambiguous goals, keeping agents on-spec when they drift, designing the evals that tell you the output is actually right, and gating quality so it ships. Recently that&rsquo;s been <strong>five production systems built and deployed in about five months</strong> &mdash; me as architect, product owner, and the human-in-the-loop gate; the agents did the typing.</p>
+  </section>
+
+  <section class="focus" aria-label="Focus areas">
+    <h2 class="focus__head">Focus</h2>
+    <ul class="focus__list">
+      <li class="focus__row"><span class="focus__term">AI agent orchestration</span><span class="focus__desc">directing multi-agent workflows to a finished result</span></li>
+      <li class="focus__row"><span class="focus__term">Human-in-the-loop (HITL) delivery</span><span class="focus__desc">review and merge gating across hundreds of PRs</span></li>
+      <li class="focus__row"><span class="focus__term">Eval &amp; validation design</span><span class="focus__desc">the part the market calls the hardest to fake</span></li>
+      <li class="focus__row"><span class="focus__term">AI governance</span><span class="focus__desc">decision records, guardrails, institutional memory</span></li>
+      <li class="focus__row"><span class="focus__term">Context engineering</span><span class="focus__desc">designing the operating context agents work inside</span></li>
+      <li class="focus__row"><span class="focus__term">Agent experience (AX)</span><span class="focus__desc">how agents read, navigate, and act on a system</span></li>
+      <li class="focus__row"><span class="focus__term">Service design</span><span class="focus__desc">the end-to-end system people actually move through</span></li>
+      <li class="focus__row"><span class="focus__term">Consequence design</span><span class="focus__desc">designing for what happens after the happy path</span></li>
+      <li class="focus__row"><span class="focus__term">Sports &amp; game-systems design</span><span class="focus__desc">rules, economies, and simulations built to be played</span></li>
+    </ul>
+  </section>
+
+  <section class="proof" aria-label="How I work">
+    <h2 class="proof__head">How I work now</h2>
+    <p class="proof__lede">I run AI agents the way you&rsquo;d run a small engineering org. Over ~5 months I directed agents to ship five live systems: real-time simulation platforms, public-data measurement infrastructure with automated daily pipelines, and a cross-source aggregation hub.</p>
+    <ul class="proof__stats">
+      <li><b>~330,000+</b> lines of directed code &middot; <b>~1,100</b> commits &middot; <b>400+</b> pull requests I reviewed and merged</li>
+      <li><b>~285</b> engineering decision records &mdash; rationale, validation, explicit non-goals</li>
+      <li><b>5</b> systems, all deployed live &middot; one person directing</li>
+    </ul>
+    <p class="proof__note">I didn&rsquo;t hand-write it &mdash; that&rsquo;s the proof. Converting agent capability into shipped reality is a leadership skill: decompose, direct, guard intent, validate, gate, ship.</p>
+  </section>
 
   <section class="experiments" aria-label="Concepts and experiments">
     <h2 class="experiments__head">Concepts &amp; Experiments <span>(and other ideas&hellip;)</span></h2>
@@ -348,7 +488,7 @@
         <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
         <img src="https://image.thum.io/get/width/2000/crop/860/https://pctennis.xyz" alt="Screenshot of pctennis.xyz" loading="lazy" />
       </a>
-      <p class="cell__prose">Earth&rsquo;s first-ever team tennis computer game. College-format dual matches, a junior recruiting circuit, and GTT &mdash; a co-ed pro league &mdash; all on one continuous rating scale, driven by a deterministic point-by-point Python engine.</p>
+      <p class="cell__prose">Earth&rsquo;s first-ever team tennis computer game. College-format dual matches, a junior recruiting circuit, and GTT &mdash; a co-ed pro league &mdash; all on one continuous rating scale, driven by a deterministic point-by-point Python engine. Platform reuse in practice: a second sport stood up on a forked deterministic engine &mdash; directed, not hand-coded.</p>
     </article>
 
     <article class="cell">
@@ -378,7 +518,7 @@
         <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
         <img src="https://image.thum.io/get/width/1000/crop/1240/https://giantplanet.org" alt="Screenshot of giantplanet.org" loading="lazy" />
       </a>
-      <p class="cell__prose">A comparative research instrument for sports draft lottery design. Fifteen rule systems run through Monte Carlo seasons across six pro leagues &mdash; NBA, NHL, MLB, WNBA, PWHL, MLS.</p>
+      <p class="cell__prose">A comparative research instrument for sports draft lottery design. Fifteen rule systems run through Monte Carlo seasons across six pro leagues &mdash; NBA, NHL, MLB, WNBA, PWHL, MLS. Anti-tanking mechanics modeled, tested, and shipped &mdash; a directed agent build.</p>
     </article>
 
     <article class="cell">
@@ -398,7 +538,7 @@
         <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
         <img src="https://image.thum.io/get/width/1600/crop/1000/https://superinnin.gs" alt="Screenshot of superinnin.gs" loading="lazy" />
       </a>
-      <p class="cell__prose">Baseball restructured into one continuous 27-out half per side &mdash; a full simulated world with its own stats, economy, and history.</p>
+      <p class="cell__prose">Baseball restructured into one continuous 27-out half per side &mdash; a full simulated world with its own stats, economy, and history. A deterministic simulation platform, directed not hand-coded &mdash; documented across 140+ engineering decision records.</p>
     </article>
 
     <article class="cell">
@@ -408,7 +548,7 @@
         <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
         <img src="assets/viperball/season-overview.png" alt="Viperball stats terminal showing 2026 CVL Season overview" loading="lazy" />
       </a>
-      <p class="cell__prose">An invented gridiron sport with its own rulebook, a probability engine that plays it, a 280-team universe to play it in, and a terminal-style stats portal serving the whole thing &mdash; with a custom analytics framework built specifically for the sport&rsquo;s mechanics.</p>
+      <p class="cell__prose">An invented gridiron sport with its own rulebook, a probability engine that plays it, a 280-team universe to play it in, and a terminal-style stats portal serving the whole thing &mdash; with a custom analytics framework built specifically for the sport&rsquo;s mechanics. Directed agent build &mdash; ~110K lines of directed code across ~60 decision records.</p>
     </article>
 
     <article class="cell">
@@ -479,6 +619,7 @@
       <p class="digression" id="digression">Inexplicably, a Green Bay Packers shareholder.</p>
       <p>Built hastily with HTML, responsive CSS, JS, GitHub, and Vercel. Colour is set by a small client-side palette engine that audits its own WCAG contrast, and project thumbnails are captured live by thum.io.</p>
       <p>Type currently in use: <b>Author</b> (display), <b>Switzer</b> SemiBold (deck), <b>Hanken Grotesk</b> (running text), and <b>RX100</b> (labels).</p>
+      <p class="keywords">Working vocabulary: AI agent orchestration &middot; multi-agent systems &middot; human-in-the-loop delivery &middot; eval &amp; validation design &middot; AI governance &middot; context engineering &middot; agent experience (AX) &middot; service design &middot; consequence design &middot; design leadership &middot; systems thinking &middot; Claude/Anthropic agentic tooling.</p>
     </section>
   </footer>
   <script>
