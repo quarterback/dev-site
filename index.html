@@ -258,55 +258,6 @@
     color: var(--ink-soft);
   }
 
-  .proof {
-    margin: clamp(30px, 4.5vw, 52px) 0 0;
-    max-width: 72ch;
-    border: var(--frame) solid var(--ink);
-    padding: clamp(18px, 2.4vw, 30px);
-  }
-  .proof__head {
-    margin: 0 0 clamp(10px, 1.4vw, 16px);
-    font-family: var(--mono);
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--ink);
-  }
-  .proof__lede {
-    margin: 0;
-    font-family: var(--text);
-    font-weight: 500;
-    font-size: clamp(16px, 1.4vw, 19px);
-    line-height: 1.5;
-    color: var(--ink);
-    text-wrap: pretty;
-  }
-  .proof__stats {
-    margin: clamp(14px, 1.8vw, 20px) 0 0;
-    padding: 0;
-    list-style: none;
-    border-top: 1px solid var(--rule);
-  }
-  .proof__stats li {
-    padding: clamp(8px, 1vw, 12px) 0;
-    border-bottom: 1px solid var(--rule);
-    font-family: var(--mono);
-    font-size: clamp(13px, 1.05vw, 15px);
-    line-height: 1.45;
-    color: var(--ink);
-  }
-  .proof__stats li:last-child { border-bottom: 0; padding-bottom: 0; }
-  .proof__stats b { color: var(--ink); font-weight: 600; }
-  .proof__note {
-    margin: clamp(12px, 1.6vw, 18px) 0 0;
-    font-family: var(--text);
-    font-weight: 500;
-    font-size: clamp(14px, 1.1vw, 16px);
-    line-height: 1.5;
-    color: var(--ink-soft);
-    text-wrap: pretty;
-  }
   .colophon .keywords { color: var(--ink-soft); }
 </style>
 </head>
@@ -373,17 +324,6 @@
       <li class="focus__row"><span class="focus__term">Consequence design</span><span class="focus__desc">designing for what happens after the happy path</span></li>
       <li class="focus__row"><span class="focus__term">Sports &amp; game-systems design</span><span class="focus__desc">rules, economies, and simulations built to be played</span></li>
     </ul>
-  </section>
-
-  <section class="proof" aria-label="How I work">
-    <h2 class="proof__head">How I work now</h2>
-    <p class="proof__lede">I run AI agents the way you&rsquo;d run a small engineering org. Over ~5 months I directed agents to ship five live systems: real-time simulation platforms, public-data measurement infrastructure with automated daily pipelines, and a cross-source aggregation hub.</p>
-    <ul class="proof__stats">
-      <li><b>~330,000+</b> lines of directed code &middot; <b>~1,100</b> commits &middot; <b>400+</b> pull requests I reviewed and merged</li>
-      <li><b>~285</b> engineering decision records &mdash; rationale, validation, explicit non-goals</li>
-      <li><b>5</b> systems, all deployed live &middot; one person directing</li>
-    </ul>
-    <p class="proof__note">I didn&rsquo;t hand-write it &mdash; that&rsquo;s the proof. Converting agent capability into shipped reality is a leadership skill: decompose, direct, guard intent, validate, gate, ship.</p>
   </section>
 
   <section class="experiments" aria-label="Concepts and experiments">
