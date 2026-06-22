@@ -34,6 +34,18 @@
   }
   .tagline span { display: block; text-wrap: balance; }
 
+  /* ── Lead-in: one plain-English line below the deck ─ */
+  .intro-lede {
+    margin: clamp(18px, 2.6vw, 30px) 0 0;
+    max-width: 54ch;
+    font-family: var(--text);
+    font-weight: 500;
+    font-size: clamp(18px, 1.9vw, 24px);
+    line-height: 1.4;
+    color: var(--ink);
+    text-wrap: pretty;
+  }
+
   /* ── Concepts & experiments — a ruled text list ─ */
   .experiments {
     margin: 0;
@@ -231,6 +243,8 @@
       el.innerHTML = DECKS[i].map(function (line) { return "<span>" + line + "</span>"; }).join("");
     })();
   </script>
+
+  <p class="intro-lede">I work on how AI and automation reshape the systems people depend on, especially where service, judgment, trust, and accountability collide.</p>
 
   <section class="experiments" aria-label="Concepts and experiments">
     <h2 class="experiments__head">Concepts &amp; Experiments <span>(and other ideas&hellip;)</span></h2>
