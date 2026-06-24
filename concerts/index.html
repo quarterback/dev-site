@@ -71,7 +71,7 @@
       <div class="metric"><span>tracked cities</span><strong>2</strong></div>
       <div class="metric"><span>source adapters</span><strong id="sourceCount">14</strong></div>
       <div class="metric"><span>match signals</span><strong>5</strong></div>
-      <p class="hint">Built as a static-first control room: safe credential capture, local demo matching, and a clear handoff for serverless scrapers on your .dev subdomain.</p>
+      <p class="hint">Built as a static-first control room with a subscribable calendar feed at <code>/shows.ics</code>. Keep your Last.fm key in deployment env vars, not in this page.</p>
     </aside>
   </header>
 
@@ -100,7 +100,7 @@
           <button class="tab" data-city="Portland" aria-pressed="false">Portland</button>
           <button class="tab" data-city="Seattle" aria-pressed="false">Seattle</button>
         </div>
-        <div class="button-row"><button id="rankShows">Rank shows</button><a class="button" id="icsLink" download="concert-scout.ics" href="#">Export .ics</a></div>
+        <div class="button-row"><button id="rankShows">Rank shows</button><a class="button" href="shows.ics">Subscribe .cal</a><a class="button" href="webcal://concerts.your-domain.dev/shows.ics">Fantastical</a><a class="button" id="icsLink" download="concert-scout.ics" href="#">Export visible .ics</a></div>
       </div>
       <div class="show-grid" id="shows"></div>
     </section>
@@ -112,7 +112,7 @@
     <article><h2>3. Alert</h2><p>The scorer boosts artists you play often, artists you collect, related openers, rare visits, Portland/Seattle proximity, and shows nearing sellout.</p></article>
   </section>
 
-  <footer class="foot"><p class="foot__contact">Ready to map as a subdirectory app: point <b>concerts.your-domain.dev</b> at this <code>/concerts/</code> directory, then replace demo data with scheduled functions, a small event store, and email/SMS digests.</p></footer>
+  <footer class="foot"><p class="foot__contact">Ready to map as a subdirectory app: point <b>concerts.your-domain.dev</b> at this <code>/concerts/</code> directory. Subscribe to <code>https://concerts.your-domain.dev/shows.ics</code>, then use scheduled functions plus <code>LASTFM_API_KEY</code> to keep it current.</p></footer>
 </div>
 <script>
 const SOURCES = [
