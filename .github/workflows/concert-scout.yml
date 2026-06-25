@@ -23,8 +23,11 @@ jobs:
           RECORD_CLUB_URL: ${{ secrets.RECORD_CLUB_URL }}
           DISCOGS_USER: ${{ secrets.DISCOGS_USER }}
           DISCOGS_URL: ${{ secrets.DISCOGS_URL }}
+          SPOTIFY_URL: ${{ secrets.SPOTIFY_URL }}
+          CORE_ARTISTS: ${{ secrets.CORE_ARTISTS }}
           RECORD_CLUB_ARTISTS: ${{ secrets.RECORD_CLUB_ARTISTS }}
           DISCOGS_ARTISTS: ${{ secrets.DISCOGS_ARTISTS }}
+          SPOTIFY_ARTISTS: ${{ secrets.SPOTIFY_ARTISTS }}
           WATCHLIST_ARTISTS: ${{ secrets.WATCHLIST_ARTISTS }}
         run: node scripts/build-concert-feed.mjs
       - name: Commit generated feeds
