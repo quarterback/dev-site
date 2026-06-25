@@ -1,10 +1,9 @@
 # Concert Scout deployment notes
 
-This repo can keep deploying from the main/root directory. Point the concerts subdomain at the same deploy; the root `index.html` redirects `concerts.*` traffic to `/concerts/`.
+This directory is intended to be published as the root of a subdomain, for example:
 
 ```text
-https://concerts.your-domain.dev/        -> redirects to /concerts/
-https://concerts.your-domain.dev/shows.ics -> root calendar feed copy
+https://concerts.your-domain.dev/
 ```
 
 ## Calendar feed
@@ -33,4 +32,4 @@ LASTFM_USER=statechampion
 RECORD_CLUB_URL=https://record.club/ron
 ```
 
-A scheduled scraper can use those environment variables to regenerate both `concerts/shows.ics` and the root `shows.ics` copy from venue events plus listening and collection signals.
+A scheduled scraper can use those environment variables to regenerate `shows.ics` from venue events plus listening and collection signals.
