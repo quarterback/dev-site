@@ -2,6 +2,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 
 const EVENTS_PATH = new URL('../concerts/events.json', import.meta.url);
 const CORE_ARTISTS_PATH = new URL('../concerts/core-artists.json', import.meta.url);
+const VENUES_PATH = new URL('../concerts/venues.json', import.meta.url);
 const CONCERTS_FEED_PATH = new URL('../concerts/shows.ics', import.meta.url);
 const ROOT_FEED_PATH = new URL('../shows.ics', import.meta.url);
 
@@ -12,6 +13,8 @@ const recordClubUrl = env.RECORD_CLUB_URL || 'https://record.club/ron';
 const discogsUser = env.DISCOGS_USER || 'quarterback';
 const discogsUrl = env.DISCOGS_URL || 'https://www.discogs.com/user/quarterback/collection?header=1';
 const spotifyUrl = env.SPOTIFY_URL || 'https://open.spotify.com/user/ronbronson';
+
+const USER_AGENT = 'Mozilla/5.0 (compatible; ConcertScout/1.0; +https://concerts.your-domain.dev)';
 
 function splitArtists(value = '') {
   return value
@@ -34,6 +37,17 @@ function uniqueArtists(artists) {
     result.push(artist.trim());
   }
   return result;
+}
+
+// True when two normalized artist names refer to the same act. Exact match, or
+// one fully contains the other with the shared token at least 5 chars long (so
+// "low" / "war" style short names don't produce noise when filtering shows).
+function namesMatch(a, b) {
+  if (!a || !b) return false;
+  if (a === b) return true;
+  if (a.includes(b) && b.length >= 5) return true;
+  if (b.includes(a) && a.length >= 5) return true;
+  return false;
 }
 
 async function fetchLastfmMethod(method, params = {}) {
@@ -65,15 +79,113 @@ async function fetchLastfmArtists() {
   ].filter(Boolean));
 }
 
+// --- Venue scrapers -------------------------------------------------------
+//
+// Each adapter knows how to pull one ticketing platform's public event data and
+// return Concert Scout's internal event shape. Add a venue by appending to
+// concerts/venues.json with a `type` that matches a key in ADAPTERS.
+
+function splitLineup(value = '') {
+  return value
+    .split(/\s*(?:,|;|\/|\+|&|\bwith\b|\bw\/\b|\bfeat\.?\b|\bft\.?\b)\s*/i)
+    .map((name) => name.trim())
+    .filter((name) => name.length > 1);
+}
+
+// WLCR is the WordPress booking plugin used by the Mississippi Studios /
+// Revolution Hall venue family. `/wp-json/wlcr/v1/events/raw` returns every
+// upcoming show across that source's rooms as structured JSON.
+async function scrapeWlcr(source) {
+  const endpoint = `${source.url.replace(/\/$/, '')}/wp-json/wlcr/v1/events/raw`;
+  const response = await fetch(endpoint, { headers: { 'User-Agent': USER_AGENT } });
+  if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
+  const raw = await response.json();
+  if (!Array.isArray(raw)) return [];
+
+  return raw
+    .map((item) => {
+      const date = (item?.start?.local || '').slice(0, 10);
+      const rawName = item?.name?.text?.trim();
+      if (!date || !rawName) return null;
+
+      // Promoters prefix the act with status flags ("SOLD OUT: Pavement").
+      // Lift those into tags so the artist name stays matchable and clean.
+      const statusMatch = rawName.match(/^(SOLD OUT|CANCELL?ED|POSTPONED|RESCHEDULED|MOVED)\b[\s:–-]*/i);
+      const artist = rawName.replace(/^(SOLD OUT|CANCELL?ED|POSTPONED|RESCHEDULED|MOVED)\b[\s:–-]*/i, '').trim() || rawName;
+
+      const venue = item?.venue?.name || source.name;
+      const support = item?.summary ? splitLineup(item.summary) : [];
+      const tags = [];
+      if (statusMatch) tags.push(statusMatch[1].toLowerCase());
+      if (item?.venue?.age_restriction) tags.push(item.venue.age_restriction);
+      if (item?.ticket_availability?.is_sold_out && !statusMatch) tags.push('sold out');
+
+      return {
+        artist,
+        lineup: [artist, ...support],
+        city: source.city,
+        venue,
+        date,
+        url: item?.url || `${source.url.replace(/\/$/, '')}/events`,
+        tags,
+        why: `Listed at ${venue}${support.length ? ` with ${support.join(', ')}` : ''}.`,
+        base: 50,
+        origin: 'venue',
+        sourceName: source.name,
+      };
+    })
+    .filter(Boolean);
+}
+
+const ADAPTERS = {
+  wlcr: scrapeWlcr,
+};
+
+// Run every configured venue adapter, isolating failures so one dead venue
+// never sinks the whole feed.
+async function fetchVenueEvents() {
+  let sources = [];
+  try {
+    sources = JSON.parse(await readFile(VENUES_PATH, 'utf8'));
+  } catch {
+    return { events: [], sourceCount: 0, ok: 0 };
+  }
+
+  const results = await Promise.all(
+    sources.map(async (source) => {
+      const adapter = ADAPTERS[source.type];
+      if (!adapter) {
+        console.warn(`No adapter for venue type "${source.type}" (${source.name}).`);
+        return null;
+      }
+      try {
+        const events = await adapter(source);
+        console.log(`  ${source.name}: ${events.length} shows`);
+        return events;
+      } catch (error) {
+        console.warn(`  ${source.name}: failed (${error.message})`);
+        return null;
+      }
+    }),
+  );
+
+  const ok = results.filter((r) => r !== null);
+  return {
+    events: ok.flat(),
+    sourceCount: sources.length,
+    ok: ok.length,
+  };
+}
+
 function scoreEvent(event, signals) {
-  const artist = normalize(event.artist);
+  const names = [event.artist, ...(event.lineup || [])].map(normalize).filter(Boolean);
   const matched = [];
   let score = event.base || 50;
 
   for (const signal of signals) {
     const candidate = normalize(signal.artist);
     if (!candidate) continue;
-    if (artist === candidate || artist.includes(candidate) || candidate.includes(artist)) {
+    if (names.some((name) => namesMatch(name, candidate))) {
       score += signal.weight;
       matched.push(signal.source);
     }
@@ -136,9 +248,38 @@ function buildCalendar(events, signalCount) {
   return `${lines.join('\r\n')}\r\n`;
 }
 
-const events = JSON.parse(await readFile(EVENTS_PATH, 'utf8'));
+// Collapse duplicate shows (same act, date, and venue), keeping the
+// higher-scored copy and preferring hand-curated events over scraped ones.
+function dedupeEvents(events) {
+  const byKey = new Map();
+  for (const event of events) {
+    const key = `${normalize(event.artist)}|${event.date}|${normalize(event.venue)}`;
+    const existing = byKey.get(key);
+    if (!existing) {
+      byKey.set(key, event);
+      continue;
+    }
+    const existingManual = existing.origin === 'manual';
+    const eventManual = event.origin === 'manual';
+    if (eventManual && !existingManual) byKey.set(key, event);
+    else if (eventManual === existingManual && event.score > existing.score) byKey.set(key, event);
+  }
+  return [...byKey.values()];
+}
+
+const today = new Date().toISOString().slice(0, 10);
+
+const manualEvents = JSON.parse(await readFile(EVENTS_PATH, 'utf8')).map((event) => ({
+  ...event,
+  origin: 'manual',
+}));
 const coreArtists = JSON.parse(await readFile(CORE_ARTISTS_PATH, 'utf8'));
-const lastfmArtists = await fetchLastfmArtists();
+console.log('Scraping venues:');
+const [lastfmArtists, venueResult] = await Promise.all([
+  fetchLastfmArtists(),
+  fetchVenueEvents(),
+]);
+const venueEvents = venueResult.events;
 const collectionArtists = uniqueArtists([
   ...splitArtists(env.CORE_ARTISTS),
   ...splitArtists(env.RECORD_CLUB_ARTISTS),
@@ -151,13 +292,21 @@ const signals = [
   ...coreArtists.map((artist) => ({ artist, source: 'core artist list', weight: 14 })),
   ...collectionArtists.map((artist) => ({ artist, source: 'record.club/Discogs/Spotify/watchlist', weight: 16 })),
 ];
-const scoredEvents = events
+
+const scoredEvents = dedupeEvents([...manualEvents, ...venueEvents])
+  .filter((event) => event.date >= today)
   .map((event) => scoreEvent(event, signals))
+  // Hand-picked events always ride along; scraped shows only make the cut when
+  // they match an artist you actually track.
+  .filter((event) => event.origin === 'manual' || event.matchedSignals.length > 0)
   .sort((a, b) => b.score - a.score || a.date.localeCompare(b.date));
+
 const calendar = buildCalendar(scoredEvents, uniqueArtists(signals.map((signal) => signal.artist)).length);
 
 await writeFile(CONCERTS_FEED_PATH, calendar);
 await writeFile(ROOT_FEED_PATH, calendar);
 
+const venueMatches = scoredEvents.filter((event) => event.origin === 'venue').length;
 console.log(`Built ${scoredEvents.length} calendar events for ${lastfmUser}.`);
 console.log(`Last.fm artists loaded: ${lastfmArtists.length}. Core artists loaded: ${coreArtists.length}. Extra collection/watchlist artists loaded: ${collectionArtists.length}.`);
+console.log(`Venues: ${venueResult.ok}/${venueResult.sourceCount} sources scraped ${venueEvents.length} upcoming shows, ${venueMatches} matched your artists.`);
