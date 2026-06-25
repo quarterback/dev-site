@@ -4,13 +4,13 @@ PRODID:-//Concert Scout//Portland Seattle Show Feed//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:Concert Scout — Portland + Seattle
-X-WR-CALDESC:Ranked show radar for Last.fm statechampion\, record.club https://record.club/ron\, Discogs quarterback (https://www.discogs.com/user/quarterback/collection?header=1)\, Spotify https://open.spotify.com/user/ronbronson\, and 99 artist signals.
+X-WR-CALDESC:Ranked show radar for Last.fm statechampion\, record.club https://record.club/ron\, Discogs quarterback (https://www.discogs.com/user/quarterback/collection?header=1)\, Spotify https://open.spotify.com/user/ronbronson\, and 98 artist signals.
 X-WR-TIMEZONE:America/Los_Angeles
 REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H
 BEGIN:VEVENT
 UID:concert-scout-waxahatchee-20260718@concerts.your-domain.dev
-DTSTAMP:20260625T065359Z
+DTSTAMP:20260625T071512Z
 DTSTART;VALUE=DATE:20260718
 SUMMARY:Waxahatchee at Revolution Hall
 LOCATION:Revolution Hall\, Portland
@@ -20,7 +20,7 @@ CATEGORIES:Concert Scout\,Portland\,new album cycle\,likely sellout\,core artist
 END:VEVENT
 BEGIN:VEVENT
 UID:concert-scout-y-la-bamba-20260911@concerts.your-domain.dev
-DTSTAMP:20260625T065359Z
+DTSTAMP:20260625T071512Z
 DTSTART;VALUE=DATE:20260911
 SUMMARY:Y La Bamba at Mississippi Studios
 LOCATION:Mississippi Studios\, Portland
@@ -30,7 +30,7 @@ CATEGORIES:Concert Scout\,Portland\,local priority\,small room\,core artist list
 END:VEVENT
 BEGIN:VEVENT
 UID:concert-scout-sudan-archives-20260803@concerts.your-domain.dev
-DTSTAMP:20260625T065359Z
+DTSTAMP:20260625T071512Z
 DTSTART;VALUE=DATE:20260803
 SUMMARY:Sudan Archives at Wonder Ballroom
 LOCATION:Wonder Ballroom\, Portland
@@ -40,7 +40,7 @@ CATEGORIES:Concert Scout\,Portland\,Portland\,onsale\,core artist list
 END:VEVENT
 BEGIN:VEVENT
 UID:concert-scout-mj-lenderman-20260726@concerts.your-domain.dev
-DTSTAMP:20260625T065359Z
+DTSTAMP:20260625T071512Z
 DTSTART;VALUE=DATE:20260726
 SUMMARY:MJ Lenderman at The Showbox
 LOCATION:The Showbox\, Seattle
@@ -49,18 +49,8 @@ DESCRIPTION:Concert Scout match 80. Seattle-only routing makes this easy to miss
 CATEGORIES:Concert Scout\,Seattle\,Seattle only\,weekend\,core artist list
 END:VEVENT
 BEGIN:VEVENT
-UID:concert-scout-wednesday-20260821@concerts.your-domain.dev
-DTSTAMP:20260625T065359Z
-DTSTART;VALUE=DATE:20260821
-SUMMARY:Wednesday at Neumos
-LOCATION:Neumos\, Seattle
-URL:https://www.neumos.com/
-DESCRIPTION:Concert Scout match 75. Collection signals can catch this even when recent plays miss it. Matched: core artist list.
-CATEGORIES:Concert Scout\,Seattle\,support unknown\,core artist list
-END:VEVENT
-BEGIN:VEVENT
 UID:concert-scout-kurt-vile-and-the-violators-20260702@concerts.your-domain.dev
-DTSTAMP:20260625T065359Z
+DTSTAMP:20260625T071512Z
 DTSTART;VALUE=DATE:20260702
 SUMMARY:Kurt Vile And The Violators at Revolution Hall
 LOCATION:Revolution Hall\, Portland
@@ -70,7 +60,7 @@ CATEGORIES:Concert Scout\,Portland\,sold out\,All Ages\,core artist list
 END:VEVENT
 BEGIN:VEVENT
 UID:concert-scout-pavement-20260718@concerts.your-domain.dev
-DTSTAMP:20260625T065359Z
+DTSTAMP:20260625T071512Z
 DTSTART;VALUE=DATE:20260718
 SUMMARY:Pavement at Revolution Hall
 LOCATION:Revolution Hall\, Portland
@@ -80,7 +70,7 @@ CATEGORIES:Concert Scout\,Portland\,sold out\,All Ages\,core artist list
 END:VEVENT
 BEGIN:VEVENT
 UID:concert-scout-kim-gordon-play-me-tour-20260726@concerts.your-domain.dev
-DTSTAMP:20260625T065359Z
+DTSTAMP:20260625T071512Z
 DTSTART;VALUE=DATE:20260726
 SUMMARY:KIM GORDON - PLAY ME TOUR at Revolution Hall
 LOCATION:Revolution Hall\, Portland
@@ -90,7 +80,7 @@ CATEGORIES:Concert Scout\,Portland\,All Ages\,core artist list
 END:VEVENT
 BEGIN:VEVENT
 UID:concert-scout-hold-steady-boys-and-girls-in-america-20-20260807@concerts.your-domain.dev
-DTSTAMP:20260625T065359Z
+DTSTAMP:20260625T071512Z
 DTSTART;VALUE=DATE:20260807
 SUMMARY:The Hold Steady: Boys and Girls in America 20 at Mississippi Studios
 LOCATION:Mississippi Studios\, Portland
@@ -100,7 +90,7 @@ CATEGORIES:Concert Scout\,Portland\,sold out\,Ages 21 and up\,core artist list
 END:VEVENT
 BEGIN:VEVENT
 UID:concert-scout-gillian-welch-david-rawlings-play-grateful-dead-acoustic-reckoning-20260814@concerts.your-domain.dev
-DTSTAMP:20260625T065359Z
+DTSTAMP:20260625T071512Z
 DTSTART;VALUE=DATE:20260814
 SUMMARY:Gillian Welch & David Rawlings play Grateful Dead acoustic Reckoning at Revolution Hall
 LOCATION:Revolution Hall\, Portland
@@ -110,7 +100,7 @@ CATEGORIES:Concert Scout\,Portland\,All Ages\,core artist list
 END:VEVENT
 BEGIN:VEVENT
 UID:concert-scout-gillian-welch-david-rawlings-play-grateful-dead-acoustic-reckoning-20260815@concerts.your-domain.dev
-DTSTAMP:20260625T065359Z
+DTSTAMP:20260625T071512Z
 DTSTART;VALUE=DATE:20260815
 SUMMARY:Gillian Welch & David Rawlings play Grateful Dead acoustic Reckoning at Revolution Hall
 LOCATION:Revolution Hall\, Portland
@@ -120,7 +110,7 @@ CATEGORIES:Concert Scout\,Portland\,sold out\,All Ages\,core artist list
 END:VEVENT
 BEGIN:VEVENT
 UID:concert-scout-gillian-welch-david-rawlings-play-grateful-dead-acoustic-reckoning-20260816@concerts.your-domain.dev
-DTSTAMP:20260625T065359Z
+DTSTAMP:20260625T071512Z
 DTSTART;VALUE=DATE:20260816
 SUMMARY:Gillian Welch & David Rawlings play Grateful Dead acoustic Reckoning at Revolution Hall
 LOCATION:Revolution Hall\, Portland
@@ -130,7 +120,7 @@ CATEGORIES:Concert Scout\,Portland\,sold out\,All Ages\,core artist list
 END:VEVENT
 BEGIN:VEVENT
 UID:concert-scout-gillian-welch-david-rawlings-play-grateful-dead-acoustic-reckoning-20260817@concerts.your-domain.dev
-DTSTAMP:20260625T065359Z
+DTSTAMP:20260625T071512Z
 DTSTART;VALUE=DATE:20260817
 SUMMARY:Gillian Welch & David Rawlings play Grateful Dead acoustic Reckoning at Revolution Hall
 LOCATION:Revolution Hall\, Portland
@@ -140,7 +130,7 @@ CATEGORIES:Concert Scout\,Portland\,All Ages\,core artist list
 END:VEVENT
 BEGIN:VEVENT
 UID:concert-scout-bill-callahan-20260825@concerts.your-domain.dev
-DTSTAMP:20260625T065359Z
+DTSTAMP:20260625T071512Z
 DTSTART;VALUE=DATE:20260825
 SUMMARY:Bill Callahan at Revolution Hall
 LOCATION:Revolution Hall\, Portland
@@ -150,7 +140,7 @@ CATEGORIES:Concert Scout\,Portland\,All Ages\,core artist list
 END:VEVENT
 BEGIN:VEVENT
 UID:concert-scout-mount-eerie-20260910@concerts.your-domain.dev
-DTSTAMP:20260625T065359Z
+DTSTAMP:20260625T071512Z
 DTSTART;VALUE=DATE:20260910
 SUMMARY:Mount Eerie at Revolution Hall
 LOCATION:Revolution Hall\, Portland
@@ -160,7 +150,7 @@ CATEGORIES:Concert Scout\,Portland\,All Ages\,core artist list
 END:VEVENT
 BEGIN:VEVENT
 UID:concert-scout-aldous-harding-20260924@concerts.your-domain.dev
-DTSTAMP:20260625T065359Z
+DTSTAMP:20260625T071512Z
 DTSTART;VALUE=DATE:20260924
 SUMMARY:ALDOUS HARDING at Revolution Hall
 LOCATION:Revolution Hall\, Portland
@@ -169,18 +159,8 @@ DESCRIPTION:Concert Scout match 68. Listed at Revolution Hall with Sam Burton. M
 CATEGORIES:Concert Scout\,Portland\,All Ages\,core artist list
 END:VEVENT
 BEGIN:VEVENT
-UID:concert-scout-wednesday-night-special-susan-rice-20260930@concerts.your-domain.dev
-DTSTAMP:20260625T065359Z
-DTSTART;VALUE=DATE:20260930
-SUMMARY:Wednesday Night Special: Susan Rice at Mississippi Studios
-LOCATION:Mississippi Studios\, Portland
-URL:https://www.etix.com/ticket/p/76477716/wednesday-night-specialsusan-rice-portland-mississippi-studios
-DESCRIPTION:Concert Scout match 68. Listed at Mississippi Studios. Matched: core artist list.
-CATEGORIES:Concert Scout\,Portland\,Ages 21 and up\,core artist list
-END:VEVENT
-BEGIN:VEVENT
 UID:concert-scout-laura-veirs-20261024@concerts.your-domain.dev
-DTSTAMP:20260625T065359Z
+DTSTAMP:20260625T071512Z
 DTSTART;VALUE=DATE:20261024
 SUMMARY:Laura Veirs at Polaris Hall
 LOCATION:Polaris Hall\, Portland
@@ -189,18 +169,8 @@ DESCRIPTION:Concert Scout match 68. Listed at Polaris Hall with Karl Blau. Match
 CATEGORIES:Concert Scout\,Portland\,Ages 21 and up\,core artist list
 END:VEVENT
 BEGIN:VEVENT
-UID:concert-scout-wednesday-night-special-kyle-kinane-20261028@concerts.your-domain.dev
-DTSTAMP:20260625T065359Z
-DTSTART;VALUE=DATE:20261028
-SUMMARY:Wednesday Night Special: Kyle Kinane at Mississippi Studios
-LOCATION:Mississippi Studios\, Portland
-URL:https://www.etix.com/ticket/p/68850278/wednesday-night-specialkyle-kinane-portland-mississippi-studios
-DESCRIPTION:Concert Scout match 68. Listed at Mississippi Studios with Don Gavitte. Matched: core artist list.
-CATEGORIES:Concert Scout\,Portland\,Ages 21 and up\,core artist list
-END:VEVENT
-BEGIN:VEVENT
 UID:concert-scout-jimmie-herrod-black-belt-eagle-scout-nick-jaina-accompanied-by-45th-parallel-string-quartet-sight-reading-musical-dialects-20261106@concerts.your-domain.dev
-DTSTAMP:20260625T065359Z
+DTSTAMP:20260625T071512Z
 DTSTART;VALUE=DATE:20261106
 SUMMARY:Jimmie Herrod\, Black Belt Eagle Scout & Nick Jaina Accompanied by 45th Parallel String Quartet: Sight Reading - Musical Dialects at First Congregational United Church of Christ
 LOCATION:First Congregational United Church of Christ\, Portland
@@ -210,7 +180,7 @@ CATEGORIES:Concert Scout\,Portland\,All Ages\,core artist list
 END:VEVENT
 BEGIN:VEVENT
 UID:concert-scout-drive-by-truckers-heathens-homecoming-west-2026-night-1-20261112@concerts.your-domain.dev
-DTSTAMP:20260625T065359Z
+DTSTAMP:20260625T071512Z
 DTSTART;VALUE=DATE:20261112
 SUMMARY:DRIVE-BY TRUCKERS - HeAthens Homecoming West 2026 (Night 1) at Revolution Hall
 LOCATION:Revolution Hall\, Portland
@@ -220,7 +190,7 @@ CATEGORIES:Concert Scout\,Portland\,All Ages\,core artist list
 END:VEVENT
 BEGIN:VEVENT
 UID:concert-scout-drive-by-truckers-heathens-homecoming-west-2026-night-2-20261113@concerts.your-domain.dev
-DTSTAMP:20260625T065359Z
+DTSTAMP:20260625T071512Z
 DTSTART;VALUE=DATE:20261113
 SUMMARY:DRIVE-BY TRUCKERS - HeAthens Homecoming West 2026 (Night 2) at Revolution Hall
 LOCATION:Revolution Hall\, Portland
@@ -230,12 +200,22 @@ CATEGORIES:Concert Scout\,Portland\,All Ages\,core artist list
 END:VEVENT
 BEGIN:VEVENT
 UID:concert-scout-drive-by-truckers-heathens-homecoming-west-2026-night-3-20261114@concerts.your-domain.dev
-DTSTAMP:20260625T065359Z
+DTSTAMP:20260625T071512Z
 DTSTART;VALUE=DATE:20261114
 SUMMARY:DRIVE-BY TRUCKERS - HeAthens Homecoming West 2026 (Night 3) at Revolution Hall
 LOCATION:Revolution Hall\, Portland
 URL:https://www.etix.com/ticket/p/54137237/driveby-truckers-heathens-homecoming-west-2026-night-3-portland-revolution-hall
 DESCRIPTION:Concert Scout match 68. Listed at Revolution Hall with The Delines. Matched: core artist list.
 CATEGORIES:Concert Scout\,Portland\,All Ages\,core artist list
+END:VEVENT
+BEGIN:VEVENT
+UID:concert-scout-wednesday-20260821@concerts.your-domain.dev
+DTSTAMP:20260625T071512Z
+DTSTART;VALUE=DATE:20260821
+SUMMARY:Wednesday at Neumos
+LOCATION:Neumos\, Seattle
+URL:https://www.neumos.com/
+DESCRIPTION:Concert Scout match 61. Collection signals can catch this even when recent plays miss it.
+CATEGORIES:Concert Scout\,Seattle\,support unknown
 END:VEVENT
 END:VCALENDAR

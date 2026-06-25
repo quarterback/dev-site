@@ -10,5 +10,17 @@
     "name": "Revolution Hall / Show Bar",
     "url": "https://www.revolutionhall.com",
     "city": "Portland"
+  },
+  {
+    "type": "ticketmaster",
+    "name": "Seattle (Ticketmaster)",
+    "city": "Seattle",
+    "stateCode": "WA"
+  },
+  {
+    "type": "ticketmaster",
+    "name": "Portland (Ticketmaster)",
+    "city": "Portland",
+    "stateCode": "OR"
   }
 ]

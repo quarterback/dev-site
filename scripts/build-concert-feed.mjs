@@ -137,8 +137,76 @@ async function scrapeWlcr(source) {
     .filter(Boolean);
 }
 
+// Ticketmaster Discovery API. Covers the larger rooms and any metro the WLCR
+// venues miss (most of Seattle, plus Portland venues outside that family).
+// Needs a free Discovery API key in TICKETMASTER_API_KEY; without it the source
+// is skipped, not fatal. A source supplies { city, stateCode }.
+async function scrapeTicketmaster(source) {
+  const apikey = env.TICKETMASTER_API_KEY || '';
+  if (!apikey) throw new Error('no TICKETMASTER_API_KEY set — skipping');
+
+  const horizonDays = Number(env.TICKETMASTER_HORIZON_DAYS || '180');
+  const now = new Date();
+  const startDateTime = `${now.toISOString().slice(0, 19)}Z`;
+  const endDateTime = `${new Date(now.getTime() + horizonDays * 86400000).toISOString().slice(0, 19)}Z`;
+
+  const events = [];
+  const maxPages = 5;
+  for (let page = 0; page < maxPages; page += 1) {
+    const url = new URL('https://app.ticketmaster.com/discovery/v2/events.json');
+    url.search = new URLSearchParams({
+      apikey,
+      classificationName: 'music',
+      city: source.city,
+      stateCode: source.stateCode,
+      size: '100',
+      page: String(page),
+      sort: 'date,asc',
+      startDateTime,
+      endDateTime,
+    }).toString();
+
+    const response = await fetch(url, { headers: { 'User-Agent': USER_AGENT } });
+    if (response.status === 429) break; // rate limited — keep what we have
+    if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
+    const data = await response.json();
+
+    for (const item of data?._embedded?.events || []) {
+      const date = item?.dates?.start?.localDate;
+      if (!date) continue; // skip date-TBA shows
+      const venue = item?._embedded?.venues?.[0];
+      const lineup = (item?._embedded?.attractions || []).map((a) => a.name).filter(Boolean);
+      const artist = lineup[0] || item.name;
+      if (!artist) continue;
+
+      const genre = item?.classifications?.[0]?.genre?.name;
+      const tags = ['Ticketmaster'];
+      if (genre && genre !== 'Undefined') tags.push(genre);
+      if (item?.dates?.status?.code === 'cancelled') tags.push('cancelled');
+
+      events.push({
+        artist,
+        lineup: lineup.length ? lineup : [artist],
+        city: venue?.city?.name || source.city,
+        venue: venue?.name || 'TBA',
+        date,
+        url: item.url || '',
+        tags,
+        why: `Listed on Ticketmaster at ${venue?.name || source.city}.`,
+        base: 50,
+        origin: 'venue',
+        sourceName: source.name,
+      });
+    }
+
+    if (page + 1 >= (data?.page?.totalPages ?? 1)) break;
+  }
+  return events;
+}
+
 const ADAPTERS = {
   wlcr: scrapeWlcr,
+  ticketmaster: scrapeTicketmaster,
 };
 
 // Run every configured venue adapter, isolating failures so one dead venue
