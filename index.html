@@ -15,6 +15,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="assets/site.css" />
 <script src="assets/palette.js"></script>
+<script>
+  /* If the concerts subdomain points at the same GitHub-backed deploy
+     as the main site, send its root URL to the Concert Scout subapp. */
+  (function () {
+    var host = window.location.hostname.toLowerCase();
+    var isConcertsHost = host === "concerts" || host.indexOf("concerts.") === 0;
+    if (isConcertsHost && window.location.pathname === "/") {
+      window.location.replace("/concerts/");
+    }
+  })();
+</script>
 <style>
   /* ─────────────────────────────────────────────────────────────────
      Index — one exposed grid. Every project is the same cell: a mono
