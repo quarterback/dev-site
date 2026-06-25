@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="/favicon.png" type="image/png" sizes="any" />
+<title>Ron Bronson &mdash; About the practice</title>
+<meta name="description" content="A practice statement: directing AI agents to design and ship complex systems, rooted in service design, consequence design, and agent experience (AX) for public-interest technology." />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Ron Bronson &mdash; About the practice" />
+<meta name="twitter:description" content="Directing AI agents to design and ship complex systems, rooted in service design, consequence design, and agent experience (AX)." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/site.css" />
+<script src="assets/palette.js"></script>
+<style>
+  /* About — a single reading column. Same register as the catalog: mono
+     section labels, the 2px frame, generous measure. No grid; the prose
+     is the structure here. */
+  .about-lede {
+    margin: clamp(18px, 3vw, 30px) 0 clamp(30px, 5vw, 56px);
+    max-width: 30ch;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(30px, 5vw, 60px);
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    text-wrap: balance;
+  }
+  .about-lede .sep { color: var(--accent); font-weight: 400; }
+
+  .statement { display: grid; gap: clamp(34px, 5vw, 58px); }
+  .block {
+    display: grid;
+    grid-template-columns: minmax(0, 16ch) minmax(0, 1fr);
+    gap: clamp(10px, 2.5vw, 40px);
+    padding-top: clamp(16px, 2vw, 24px);
+    border-top: var(--frame) solid var(--ink);
+  }
+  .block__label {
+    margin: 0;
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .block__body { margin: 0; max-width: 64ch; }
+  .block__body p {
+    margin: 0;
+    font-family: var(--text);
+    font-weight: 500;
+    font-size: clamp(17px, 1.5vw, 21px);
+    line-height: 1.55;
+    color: var(--ink);
+    text-wrap: pretty;
+  }
+  .block__body p + p { margin-top: 0.9em; }
+  .block__body strong { font-weight: 700; }
+  .block__body a { color: var(--ink); border-bottom: 2px solid var(--accent); padding-bottom: 1px; }
+  .block__body a:hover { color: var(--accent); }
+
+  .practice-line {
+    margin: 14px 0 0;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(14px, 1.15vw, 16px);
+    line-height: 1.7;
+    color: var(--ink);
+    text-wrap: pretty;
+  }
+  .practice-line .sep { color: var(--accent); font-weight: 400; padding: 0 0.1em; }
+
+  @media (max-width: 720px) {
+    .block { grid-template-columns: 1fr; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="topnav">
+    <a class="sitelink" href="./index.html">&#8592; Catalog</a>
+    <a class="sitelink" href="https://thinkingweapons.com">Studio &#8599;</a>
+    <a class="sitelink" href="https://ronbronson.design">ronbronson.design &#8599;</a>
+  </nav>
+
+  <header class="masthead">
+    <a class="name" href="./index.html">Ron Bronson</a>
+  </header>
+
+  <h1 class="about-lede">Finds messy systems. <span class="sep">Makes</span> them legible. <span class="sep">Builds</span> what&rsquo;s missing. <span class="sep">Keeps</span> them moving.</h1>
+
+  <div class="statement">
+
+    <section class="block" aria-label="The practice">
+      <h2 class="block__label">The practice</h2>
+      <div class="block__body">
+        <p>For about twenty years I&rsquo;ve worked on how technology reshapes civic life &mdash; and how public systems stay trustworthy as AI and automation move into consequential decisions. My work sits where strategy becomes structure: clarifying ambiguous goals, organizing teams and systems, and keeping trust embedded in the technology people are required to depend on.</p>
+        <p>It is not aesthetic-first or corporate-gloss work. It is infrastructure, public-interest systems, and the unglamorous plumbing that decides whether something can actually be trusted.</p>
+      </div>
+    </section>
+
+    <section class="block" aria-label="How I work now">
+      <h2 class="block__label">How I work now</h2>
+      <div class="block__body">
+        <p>Today most of that practice runs through agents. I <strong>direct AI agents to design and ship complex systems</strong> &mdash; orchestrating the work, keeping a human in the loop where judgment matters, and writing the decisions down so the system stays legible long after it ships.</p>
+        <p>The result is whole systems, not mockups: deterministic engines, analytics layers, governance tooling &mdash; built end to end and documented in decision records rather than slideware. The <a href="./index.html">catalog</a> is the evidence.</p>
+      </div>
+    </section>
+
+    <section class="block" aria-label="Where it comes from">
+      <h2 class="block__label">Where it comes from</h2>
+      <div class="block__body">
+        <p>This isn&rsquo;t a pivot. It&rsquo;s <strong>service design</strong>, <strong>consequence design</strong>, and <strong>agent experience (AX)</strong> applied to a new substrate. The questions are the ones I&rsquo;ve always asked &mdash; who bears the consequences, where does the system break, what&rsquo;s actually missing &mdash; now answered at the speed and scale that directing agents allows.</p>
+        <p class="practice-line">AI agent orchestration <span class="sep">&middot;</span> Human-in-the-loop delivery <span class="sep">&middot;</span> Eval &amp; validation design <span class="sep">&middot;</span> AI governance <span class="sep">&middot;</span> Context engineering <span class="sep">&middot;</span> Agent experience (AX) <span class="sep">&middot;</span> Service design <span class="sep">&middot;</span> Consequence design <span class="sep">&middot;</span> Systems design</p>
+      </div>
+    </section>
+
+    <section class="block" aria-label="Elsewhere">
+      <h2 class="block__label">Elsewhere &amp; contact</h2>
+      <div class="block__body">
+        <p>A companion practice site lives at <a href="https://ronbronson.design">ronbronson.design</a>, and the studio is <a href="https://thinkingweapons.com">Thinking Weapons</a>. Reach me directly at <a href="mailto:contact@ronbronson.com">contact@ronbronson.com</a>.</p>
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="foot">
+    <p class="foot__contact">This is the practice statement for <a href="./index.html">ronbronson.dev</a> &mdash; a working catalog of complex systems, directed and shipped.</p>
+  </footer>
+
+</div>
+</body>
+</html>

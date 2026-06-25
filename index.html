@@ -47,7 +47,7 @@
 
   /* ── Concepts & experiments — a ruled text list ─ */
   .experiments {
-    margin: 0;
+    margin: clamp(40px, 6vw, 72px) 0 0;
   }
   .experiments__head {
     margin: 0 0 clamp(12px, 1.6vw, 18px);
@@ -251,6 +251,7 @@
 <div class="wrap">
 
   <nav class="topnav">
+    <a class="sitelink" href="about.html">About</a>
     <a class="sitelink" href="https://thinkingweapons.com">Studio &#8599;</a>
     <a class="sitelink" href="https://ronbronson.design">ronbronson.design &#8599;</a>
   </nav>
@@ -298,77 +299,6 @@
   <section class="focus" aria-label="Focus areas">
     <h2 class="focus__head">Focus</h2>
     <p class="focus__line">AI agent orchestration <span class="sep">&middot;</span> Human-in-the-loop delivery <span class="sep">&middot;</span> Eval &amp; validation design <span class="sep">&middot;</span> AI governance <span class="sep">&middot;</span> Context engineering <span class="sep">&middot;</span> Agent experience (AX) <span class="sep">&middot;</span> Service design <span class="sep">&middot;</span> Consequence design <span class="sep">&middot;</span> Systems design</p>
-  </section>
-
-  <section class="experiments" aria-label="Concepts and experiments">
-    <h2 class="experiments__head">Concepts &amp; Experiments <span>(and other ideas&hellip;)</span></h2>
-    <ul class="experiments__list">
-
-      <li class="exp">
-        <span class="exp__name">Claude skill.md for agent AARs</span>
-        <span class="exp__year">2026</span>
-        <span class="exp__links">
-          <a href="https://blog.ronbronson.com/i-built-a-claude-skill-for-after-action-reviews-on-ai-agent-work" target="_blank" rel="noopener">Blog post &#8599;</a>
-          <a href="https://github.com/quarterback/AAR" target="_blank" rel="noopener">GitHub &#8599;</a>
-        </span>
-      </li>
-
-      <li class="exp">
-        <span class="exp__name">Primitives for agentic decision-making</span>
-        <span class="exp__year">2026</span>
-        <span class="exp__links">
-          <a href="https://blog.ronbronson.com/who-holds-the-pen-why-ai-agents-need-a-manager-not-just-a-manual" target="_blank" rel="noopener">Blog post &#8599;</a>
-          <a href="https://github.com/quarterback/judgment-routing" target="_blank" rel="noopener">GitHub &#8599;</a>
-        </span>
-      </li>
-
-      <li class="exp">
-        <span class="exp__name">Agent Experience &amp; Disintermediation</span>
-        <span class="exp__year">2025</span>
-        <span class="exp__links">
-          <a href="https://blog.ronbronson.com/service-design-for-ai-the-disintermediation-problem" target="_blank" rel="noopener">Blog post &#8599;</a>
-        </span>
-      </li>
-
-      <li class="exp">
-        <span class="exp__name">AI Statements</span>
-        <span class="exp__year">2025</span>
-        <span class="exp__links">
-          <a href="https://aistatements.org" target="_blank" rel="noopener">aistatements.org &#8599;</a>
-          <a href="https://blog.ronbronson.com/why-i-made-aistatements-org" target="_blank" rel="noopener">Blog post &#8599;</a>
-        </span>
-      </li>
-
-      <li class="exp">
-        <span class="exp__name">Parachute Commons License</span>
-        <span class="exp__year">2025</span>
-        <span class="exp__links">
-          <a href="https://github.com/quarterback/parachute-commons-license" target="_blank" rel="noopener">GitHub &#8599;</a>
-        </span>
-      </li>
-
-      <li class="exp">
-        <span class="exp__name">The Designer&rsquo;s Share of the Problem</span>
-        <span class="exp__year">2021</span>
-        <span class="exp__links">
-          <a href="https://www.ixda.no/talks/the-designers-share-of-the-problem" target="_blank" rel="noopener">Talk &#8599;</a>
-        </span>
-      </li>
-
-      <li class="exp">
-        <span class="exp__name">Consequence Design</span>
-        <span class="exp__year">2016</span>
-        <span class="exp__links">
-          <a href="https://consequencedesign.com/" target="_blank" rel="noopener">consequencedesign.com &#8599;</a>
-          <a href="https://pixelpioneers.co/blog/building-better-user-centered-products-an-interview-with-ron-bronson" target="_blank" rel="noopener">Pixel Pioneers interview &#8599;</a>
-        </span>
-      </li>
-
-    </ul>
-  </section>
-
-  <section class="intro">
-    <p>Reach me at <a href="mailto:contact@ronbronson.com">contact@ronbronson.com</a>.</p>
   </section>
 
   <svg class="ph-defs" aria-hidden="true">
@@ -525,6 +455,77 @@
       <p class="cell__prose">Trust infrastructure for ATProto social applications. Cross-app reputation, shared moderation, and a configurable resource-allocation system &mdash; the trust plumbing YGF and two other reference apps were designed against.</p>
     </article>
 
+  </section>
+
+  <section class="experiments" aria-label="Concepts and experiments">
+    <h2 class="experiments__head">Concepts &amp; Experiments <span>(and other ideas&hellip;)</span></h2>
+    <ul class="experiments__list">
+
+      <li class="exp">
+        <span class="exp__name">Claude skill.md for agent AARs</span>
+        <span class="exp__year">2026</span>
+        <span class="exp__links">
+          <a href="https://blog.ronbronson.com/i-built-a-claude-skill-for-after-action-reviews-on-ai-agent-work" target="_blank" rel="noopener">Blog post &#8599;</a>
+          <a href="https://github.com/quarterback/AAR" target="_blank" rel="noopener">GitHub &#8599;</a>
+        </span>
+      </li>
+
+      <li class="exp">
+        <span class="exp__name">Primitives for agentic decision-making</span>
+        <span class="exp__year">2026</span>
+        <span class="exp__links">
+          <a href="https://blog.ronbronson.com/who-holds-the-pen-why-ai-agents-need-a-manager-not-just-a-manual" target="_blank" rel="noopener">Blog post &#8599;</a>
+          <a href="https://github.com/quarterback/judgment-routing" target="_blank" rel="noopener">GitHub &#8599;</a>
+        </span>
+      </li>
+
+      <li class="exp">
+        <span class="exp__name">Agent Experience &amp; Disintermediation</span>
+        <span class="exp__year">2025</span>
+        <span class="exp__links">
+          <a href="https://blog.ronbronson.com/service-design-for-ai-the-disintermediation-problem" target="_blank" rel="noopener">Blog post &#8599;</a>
+        </span>
+      </li>
+
+      <li class="exp">
+        <span class="exp__name">AI Statements</span>
+        <span class="exp__year">2025</span>
+        <span class="exp__links">
+          <a href="https://aistatements.org" target="_blank" rel="noopener">aistatements.org &#8599;</a>
+          <a href="https://blog.ronbronson.com/why-i-made-aistatements-org" target="_blank" rel="noopener">Blog post &#8599;</a>
+        </span>
+      </li>
+
+      <li class="exp">
+        <span class="exp__name">Parachute Commons License</span>
+        <span class="exp__year">2025</span>
+        <span class="exp__links">
+          <a href="https://github.com/quarterback/parachute-commons-license" target="_blank" rel="noopener">GitHub &#8599;</a>
+        </span>
+      </li>
+
+      <li class="exp">
+        <span class="exp__name">The Designer&rsquo;s Share of the Problem</span>
+        <span class="exp__year">2021</span>
+        <span class="exp__links">
+          <a href="https://www.ixda.no/talks/the-designers-share-of-the-problem" target="_blank" rel="noopener">Talk &#8599;</a>
+        </span>
+      </li>
+
+      <li class="exp">
+        <span class="exp__name">Consequence Design</span>
+        <span class="exp__year">2016</span>
+        <span class="exp__links">
+          <a href="https://consequencedesign.com/" target="_blank" rel="noopener">consequencedesign.com &#8599;</a>
+          <a href="https://pixelpioneers.co/blog/building-better-user-centered-products-an-interview-with-ron-bronson" target="_blank" rel="noopener">Pixel Pioneers interview &#8599;</a>
+        </span>
+      </li>
+
+    </ul>
+  </section>
+
+  <section class="intro">
+    <p>Reach me at <a href="mailto:contact@ronbronson.com">contact@ronbronson.com</a>.</p>
   </section>
 
   <footer class="foot">
