@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="/favicon.png" type="image/png" sizes="any" />
+<title>Concert Scout &mdash; Portland + Seattle show radar</title>
+<meta name="description" content="A personal concert radar concept that combines Last.fm listening, record.club lists, and venue calendars so Portland and Seattle shows do not slip by." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/site.css" />
+<script src="../assets/palette.js"></script>
+<style>
+  .tool-hero { border-top: var(--frame) solid var(--ink); border-bottom: var(--frame) solid var(--ink); padding: clamp(24px, 5vw, 60px) 0; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(280px, .85fr); gap: clamp(24px, 4vw, 52px); align-items: end; }
+  .eyebrow, .label { font-family: var(--mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); }
+  .tool-hero h1 { margin: 10px 0 16px; font-family: var(--display); font-size: clamp(52px, 10vw, 128px); line-height: .88; letter-spacing: -.045em; }
+  .lede { margin: 0; max-width: 66ch; font-family: var(--text); font-size: clamp(18px, 1.9vw, 25px); line-height: 1.35; font-weight: 600; text-wrap: balance; }
+  .hero-card, .panel, .show-card, .source-card { border: var(--frame) solid var(--ink); background: color-mix(in srgb, var(--bg) 80%, var(--bg-deeper)); }
+  .hero-card { padding: clamp(16px, 2vw, 24px); display: grid; gap: 14px; }
+  .metric { display: flex; justify-content: space-between; gap: 20px; padding-bottom: 10px; border-bottom: 1px solid var(--rule); font-family: var(--mono); }
+  .metric strong { font-family: var(--sans); font-size: clamp(24px, 4vw, 42px); line-height: 1; color: var(--accent); }
+  .grid { display: grid; grid-template-columns: 330px minmax(0, 1fr); gap: clamp(18px, 3vw, 34px); margin-top: clamp(26px, 5vw, 56px); }
+  .panel { padding: 18px; align-self: start; }
+  .panel + .panel { margin-top: 18px; }
+  .panel h2 { margin: 0 0 14px; font-family: var(--mono); font-size: 13px; letter-spacing: .14em; text-transform: uppercase; }
+  .field { display: grid; gap: 6px; margin: 0 0 12px; }
+  label { font-family: var(--mono); font-size: 12px; color: var(--ink-soft); }
+  input, textarea, select { width: 100%; border: var(--frame) solid var(--ink); background: var(--bg); color: var(--ink); font: 600 15px/1.3 var(--sans); padding: 10px; border-radius: 0; }
+  textarea { min-height: 92px; resize: vertical; }
+  button, .button { border: var(--frame) solid var(--ink); background: var(--ink); color: var(--bg); font: 600 13px/1 var(--mono); letter-spacing: .04em; padding: 11px 13px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+  button:hover, .button:hover { background: var(--accent); color: var(--bg); }
+  .button-row { display: flex; flex-wrap: wrap; gap: 10px; }
+  .hint { margin: 8px 0 0; color: var(--ink-soft); font-size: 13px; }
+  .source-list { display: grid; gap: 10px; }
+  .source-card { padding: 12px; }
+  .source-card strong { display: block; font-size: 15px; }
+  .source-card span { display: block; font-family: var(--mono); font-size: 11px; color: var(--ink-soft); margin-top: 3px; }
+  .toolbar { display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+  .tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tab { background: transparent; color: var(--ink); }
+  .tab[aria-pressed="true"] { background: var(--accent); color: var(--bg); }
+  .show-grid { display: grid; gap: 14px; }
+  .show-card { padding: clamp(16px, 2vw, 22px); display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 16px; }
+  .show-card h3 { margin: 0; font-family: var(--display); font-size: clamp(28px, 4vw, 48px); line-height: .95; letter-spacing: -.03em; }
+  .show-meta { margin: 8px 0 0; display: flex; flex-wrap: wrap; gap: 8px 14px; font-family: var(--mono); font-size: 12px; color: var(--ink-soft); }
+  .why { margin: 14px 0 0; max-width: 70ch; font-size: 15px; }
+  .score { min-width: 86px; height: 86px; border: var(--frame) solid var(--accent); display: grid; place-items: center; font-family: var(--mono); text-align: center; }
+  .score strong { display: block; font-family: var(--sans); font-size: 30px; color: var(--accent); line-height: 1; }
+  .pill-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+  .pill { border: 1px solid var(--rule); padding: 4px 7px; font-family: var(--mono); font-size: 11px; color: var(--ink); }
+  .empty { border: var(--frame) dashed var(--rule); padding: 28px; color: var(--ink-soft); }
+  .architecture { margin-top: clamp(34px, 6vw, 72px); border-top: var(--frame) solid var(--ink); padding-top: clamp(20px, 4vw, 42px); display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .architecture article { border-left: var(--frame) solid var(--accent); padding-left: 14px; }
+  .architecture h2 { margin: 0 0 8px; font-family: var(--mono); font-size: 13px; letter-spacing: .12em; text-transform: uppercase; }
+  .architecture p { margin: 0; font-size: 15px; }
+  @media (max-width: 920px) { .tool-hero, .grid, .architecture { grid-template-columns: 1fr; } .show-card { grid-template-columns: 1fr; } .score { width: 86px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="topnav"><a class="sitelink" href="../index.html">Catalog</a><a class="sitelink" href="mailto:contact@ronbronson.com">Contact</a></nav>
+  <header class="tool-hero">
+    <div>
+      <div class="eyebrow">Personal show intelligence / Portland + Seattle</div>
+      <h1>Concert Scout</h1>
+      <p class="lede">A deployable subdomain tool for scraping venue calendars, cross-checking them against Last.fm listening and record.club, Discogs, and Spotify collecting, then ranking the shows that are easiest to miss.</p>
+    </div>
+    <aside class="hero-card" aria-label="Current radar summary">
+      <div class="metric"><span>tracked cities</span><strong>2</strong></div>
+      <div class="metric"><span>source adapters</span><strong id="sourceCount">14</strong></div>
+      <div class="metric"><span>seed artists</span><strong>99</strong></div>
+      <p class="hint">Built as a static-first control room with a subscribable calendar feed at <code>/shows.ics</code>. Keep your Last.fm key in deployment env vars, not in this page.</p>
+    </aside>
+  </header>
+
+  <main class="grid">
+    <aside>
+      <section class="panel" aria-label="Account setup">
+        <h2>Accounts</h2>
+        <div class="field"><label for="lastfmUser">Last.fm username</label><input id="lastfmUser" autocomplete="username" value="statechampion" placeholder="your-lastfm" /></div>
+        <div class="field"><label for="lastfmKey">Last.fm API key</label><input id="lastfmKey" placeholder="stored in this browser only" /></div>
+        <div class="field"><label for="recordClub">record.club profile or export URL</label><input id="recordClub" value="https://record.club/ron" placeholder="https://record.club/…" /></div>
+        <div class="field"><label for="discogsUser">Discogs username</label><input id="discogsUser" value="quarterback" placeholder="your-discogs-user" /></div>
+        <div class="field"><label for="spotifyUrl">Spotify profile</label><input id="spotifyUrl" value="https://open.spotify.com/user/ronbronson" placeholder="https://open.spotify.com/user/…" /></div>
+        <div class="field"><label for="artists">Always-watch / collection artists</label><textarea id="artists" placeholder="One artist per line; paste record.club, Discogs, or Spotify exports here until the scheduled scraper is wired up"></textarea></div>
+        <div class="button-row"><button id="saveSettings">Save radar</button><button id="loadDemo" type="button">Load demo data</button></div>
+        <p class="hint">Saving here only re-ranks this browser preview. To update the subscribed calendar feed, put <code>LASTFM_API_KEY</code>, <code>LASTFM_USER</code>, <code>CORE_ARTISTS</code>, <code>RECORD_CLUB_ARTISTS</code>, <code>DISCOGS_ARTISTS</code>, and <code>SPOTIFY_ARTISTS</code> in GitHub/deploy secrets or edit <code>concerts/core-artists.json</code>, then run the feed workflow.</p>
+      </section>
+
+      <section class="panel" aria-label="Scrape sources">
+        <h2>Scrape queue</h2>
+        <div class="source-list" id="sources"></div>
+      </section>
+    </aside>
+
+    <section aria-label="Recommended shows">
+      <div class="toolbar">
+        <div class="tabs" role="group" aria-label="City filter">
+          <button class="tab" data-city="all" aria-pressed="true">All</button>
+          <button class="tab" data-city="Portland" aria-pressed="false">Portland</button>
+          <button class="tab" data-city="Seattle" aria-pressed="false">Seattle</button>
+        </div>
+        <div class="button-row"><button id="rankShows">Rank shows</button><a class="button" href="shows.ics">Subscribe .cal</a><a class="button" href="webcal://concerts.your-domain.dev/shows.ics">Fantastical</a><a class="button" id="icsLink" download="concert-scout.ics" href="#">Export visible .ics</a></div>
+      </div>
+      <div class="show-grid" id="shows"></div>
+    </section>
+  </main>
+
+  <section class="architecture" aria-label="Build plan">
+    <article><h2>1. Scrape</h2><p>Adapters normalize venue, promoter, and ticket-page calendars into one event shape: artist, support, venue, city, date, URL, onsale state, and source confidence.</p></article>
+    <article><h2>2. Listen</h2><p>Last.fm top artists and recent scrobbles, the checked-in core artist list, record.club/Discogs/Spotify exports, and manual watchlists become weighted music-interest signals.</p></article>
+    <article><h2>3. Alert</h2><p>The scorer boosts artists you play often, artists you collect, related openers, rare visits, Portland/Seattle proximity, and shows nearing sellout.</p></article>
+  </section>
+
+  <footer class="foot"><p class="foot__contact">Ready for the existing GitHub-backed deploy: point <b>concerts.your-domain.dev</b> at the same site, let the root redirect send people to <code>/concerts/</code>, and subscribe calendars to <code>https://concerts.your-domain.dev/shows.ics</code>.</p></footer>
+</div>
+<script>
+const SOURCES = [
+  ["Mississippi Studios", "Portland", "venue"], ["Revolution Hall", "Portland", "venue"], ["Wonder Ballroom", "Portland", "venue"], ["Aladdin Theater", "Portland", "venue"], ["Holocene", "Portland", "venue"], ["Doug Fir", "Portland", "venue"], ["Pickathon / PDX Pop Now", "Portland", "festival"],
+  ["The Crocodile", "Seattle", "venue"], ["Neumos", "Seattle", "venue"], ["Showbox", "Seattle", "venue"], ["Tractor Tavern", "Seattle", "venue"], ["KEXP events", "Seattle", "radio"], ["Seattle Theatre Group", "Seattle", "promoter"], ["Songkick fallback", "Both", "aggregator"]
+];
+const DEMO_SHOWS = [
+  {artist:"Waxahatchee", city:"Portland", venue:"Revolution Hall", date:"2026-07-18", url:"https://www.revolutionhall.com/", tags:["last.fm top artist", "new album cycle", "likely sellout"], why:"High affinity from recent scrobbles and a record.club shelf match. Portland date is in a mid-size room, so alert early.", base:96},
+  {artist:"MJ Lenderman", city:"Seattle", venue:"The Showbox", date:"2026-07-26", url:"https://www.showboxpresents.com/", tags:["related artist", "Seattle only", "weekend"], why:"Not on the manual watchlist, but overlaps heavily with artists in the listening graph. Seattle-only routing makes this easy to miss.", base:88},
+  {artist:"Sudan Archives", city:"Portland", venue:"Wonder Ballroom", date:"2026-08-03", url:"https://wonderballroom.com/", tags:["loved tracks", "Portland", "onsale"], why:"Loved-track signal plus a Portland venue adapter match. Good candidate for immediate calendar hold.", base:84},
+  {artist:"Wednesday", city:"Seattle", venue:"Neumos", date:"2026-08-21", url:"https://www.neumos.com/", tags:["record.club", "support unknown"], why:"Detected from collection data rather than recent plays, which is exactly the blind spot this tool is meant to cover.", base:79},
+  {artist:"Y La Bamba", city:"Portland", venue:"Mississippi Studios", date:"2026-09-11", url:"https://mississippistudios.com/", tags:["local priority", "small room"], why:"Local artist and small venue boost. Keep on the radar even if global listening count is lower.", base:76}
+];
+const els = { sources: document.getElementById("sources"), shows: document.getElementById("shows"), sourceCount: document.getElementById("sourceCount"), ics: document.getElementById("icsLink") };
+els.sourceCount.textContent = SOURCES.length;
+els.sources.innerHTML = SOURCES.map(([name, city, type]) => `<div class="source-card"><strong>${name}</strong><span>${city} · ${type} adapter · queued</span></div>`).join("");
+function settingsArtists() { return document.getElementById("artists").value.split(/\n|,/).map(v => v.trim().toLowerCase()).filter(Boolean); }
+function score(show) { const watch = settingsArtists(); const bonus = watch.some(a => show.artist.toLowerCase().includes(a)) ? 12 : 0; return Math.min(100, show.base + bonus); }
+function render(city = "all") {
+  const rows = DEMO_SHOWS.filter(s => city === "all" || s.city === city).sort((a,b) => score(b) - score(a));
+  els.shows.innerHTML = rows.length ? rows.map(show => `<article class="show-card"><div><h3>${show.artist}</h3><div class="show-meta"><span>${show.date}</span><span>${show.venue}</span><span>${show.city}</span><a href="${show.url}" target="_blank" rel="noopener">source ↗</a></div><p class="why">${show.why}</p><div class="pill-row">${show.tags.map(t => `<span class="pill">${t}</span>`).join("")}</div></div><div class="score"><span><strong>${score(show)}</strong>match</span></div></article>`).join("") : `<div class="empty">No shows match this filter yet.</div>`;
+  const ics = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Concert Scout//Portland Seattle//EN", ...rows.flatMap(show => ["BEGIN:VEVENT", `SUMMARY:${show.artist} at ${show.venue}`, `DTSTART;VALUE=DATE:${show.date.replaceAll("-", "")}`, `URL:${show.url}`, `DESCRIPTION:${show.why}`, "END:VEVENT"]), "END:VCALENDAR"].join("\r\n");
+  els.ics.href = URL.createObjectURL(new Blob([ics], {type:"text/calendar"}));
+}
+document.querySelectorAll(".tab").forEach(tab => tab.addEventListener("click", () => { document.querySelectorAll(".tab").forEach(t => t.setAttribute("aria-pressed", "false")); tab.setAttribute("aria-pressed", "true"); render(tab.dataset.city); }));
+document.getElementById("saveSettings").addEventListener("click", () => { ["lastfmUser", "lastfmKey", "recordClub", "discogsUser", "spotifyUrl", "artists"].forEach(id => localStorage.setItem(`concertScout:${id}`, document.getElementById(id).value)); render(document.querySelector(".tab[aria-pressed='true']").dataset.city); });
+document.getElementById("loadDemo").addEventListener("click", () => { document.getElementById("lastfmUser").value = "demo_listener"; document.getElementById("recordClub").value = "https://record.club/demo"; document.getElementById("spotifyUrl").value = "https://open.spotify.com/user/demo"; document.getElementById("artists").value = "Waxahatchee\nSudan Archives\nY La Bamba"; render(document.querySelector(".tab[aria-pressed='true']").dataset.city); });
+document.getElementById("rankShows").addEventListener("click", () => render(document.querySelector(".tab[aria-pressed='true']").dataset.city));
+const DEFAULTS = { lastfmUser: "statechampion", lastfmKey: "", recordClub: "https://record.club/ron", discogsUser: "quarterback", spotifyUrl: "https://open.spotify.com/user/ronbronson", artists: "" };
+["lastfmUser", "lastfmKey", "recordClub", "discogsUser", "spotifyUrl", "artists"].forEach(id => { document.getElementById(id).value = localStorage.getItem(`concertScout:${id}`) || DEFAULTS[id] || ""; });
+render();
+</script>
+</body>
+</html>
