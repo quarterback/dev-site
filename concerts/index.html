@@ -82,10 +82,9 @@
         <div class="field"><label for="lastfmUser">Last.fm username</label><input id="lastfmUser" autocomplete="username" value="statechampion" placeholder="your-lastfm" /></div>
         <div class="field"><label for="lastfmKey">Last.fm API key</label><input id="lastfmKey" placeholder="stored in this browser only" /></div>
         <div class="field"><label for="recordClub">record.club profile or export URL</label><input id="recordClub" value="https://record.club/ron" placeholder="https://record.club/…" /></div>
-        <div class="field"><label for="discogsUser">Discogs username</label><input id="discogsUser" value="quarterback" placeholder="your-discogs-user" /></div>
-        <div class="field"><label for="artists">Always-watch / collection artists</label><textarea id="artists" placeholder="One artist per line; paste record.club or Discogs exports here until the scheduled scraper is wired up"></textarea></div>
+        <div class="field"><label for="artists">Always-watch artists</label><textarea id="artists" placeholder="One artist per line"></textarea></div>
         <div class="button-row"><button id="saveSettings">Save radar</button><button id="loadDemo" type="button">Load demo data</button></div>
-        <p class="hint">For the calendar feed, put <code>LASTFM_API_KEY</code>, <code>LASTFM_USER</code>, <code>RECORD_CLUB_ARTISTS</code>, and <code>DISCOGS_ARTISTS</code> in GitHub/deploy secrets; the feed builder uses those instead of demo-only data.</p>
+        <p class="hint">For production, move keys into Netlify/Vercel environment variables and call Last.fm from a serverless function rather than the browser.</p>
       </section>
 
       <section class="panel" aria-label="Scrape sources">
@@ -113,7 +112,7 @@
     <article><h2>3. Alert</h2><p>The scorer boosts artists you play often, artists you collect, related openers, rare visits, Portland/Seattle proximity, and shows nearing sellout.</p></article>
   </section>
 
-  <footer class="foot"><p class="foot__contact">Ready for the existing GitHub-backed deploy: point <b>concerts.your-domain.dev</b> at the same site, let the root redirect send people to <code>/concerts/</code>, and subscribe calendars to <code>https://concerts.your-domain.dev/shows.ics</code>.</p></footer>
+  <footer class="foot"><p class="foot__contact">Ready to map as a subdirectory app: point <b>concerts.your-domain.dev</b> at this <code>/concerts/</code> directory. Subscribe to <code>https://concerts.your-domain.dev/shows.ics</code>, then use scheduled functions plus <code>LASTFM_API_KEY</code> to keep it current.</p></footer>
 </div>
 <script>
 const SOURCES = [
@@ -139,11 +138,11 @@ function render(city = "all") {
   els.ics.href = URL.createObjectURL(new Blob([ics], {type:"text/calendar"}));
 }
 document.querySelectorAll(".tab").forEach(tab => tab.addEventListener("click", () => { document.querySelectorAll(".tab").forEach(t => t.setAttribute("aria-pressed", "false")); tab.setAttribute("aria-pressed", "true"); render(tab.dataset.city); }));
-document.getElementById("saveSettings").addEventListener("click", () => { ["lastfmUser", "lastfmKey", "recordClub", "discogsUser", "artists"].forEach(id => localStorage.setItem(`concertScout:${id}`, document.getElementById(id).value)); render(document.querySelector(".tab[aria-pressed='true']").dataset.city); });
+document.getElementById("saveSettings").addEventListener("click", () => { ["lastfmUser", "lastfmKey", "recordClub", "artists"].forEach(id => localStorage.setItem(`concertScout:${id}`, document.getElementById(id).value)); render(document.querySelector(".tab[aria-pressed='true']").dataset.city); });
 document.getElementById("loadDemo").addEventListener("click", () => { document.getElementById("lastfmUser").value = "demo_listener"; document.getElementById("recordClub").value = "https://record.club/demo"; document.getElementById("artists").value = "Waxahatchee\nSudan Archives\nY La Bamba"; render(document.querySelector(".tab[aria-pressed='true']").dataset.city); });
 document.getElementById("rankShows").addEventListener("click", () => render(document.querySelector(".tab[aria-pressed='true']").dataset.city));
-const DEFAULTS = { lastfmUser: "statechampion", lastfmKey: "", recordClub: "https://record.club/ron", discogsUser: "quarterback", artists: "" };
-["lastfmUser", "lastfmKey", "recordClub", "discogsUser", "artists"].forEach(id => { document.getElementById(id).value = localStorage.getItem(`concertScout:${id}`) || DEFAULTS[id] || ""; });
+const DEFAULTS = { lastfmUser: "statechampion", lastfmKey: "", recordClub: "https://record.club/ron", artists: "" };
+["lastfmUser", "lastfmKey", "recordClub", "artists"].forEach(id => { document.getElementById(id).value = localStorage.getItem(`concertScout:${id}`) || DEFAULTS[id] || ""; });
 render();
 </script>
 </body>
