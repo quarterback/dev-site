@@ -1,0 +1,61 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Concert Scout//Portland Seattle Show Feed//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Concert Scout — Portland + Seattle
+X-WR-CALDESC:Ranked show radar for Last.fm statechampion\, record.club https://record.club/ron\, Discogs quarterback (https://www.discogs.com/user/quarterback/collection?header=1).
+X-WR-TIMEZONE:America/Los_Angeles
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:concert-scout-waxahatchee-20260718@concerts.your-domain.dev
+DTSTAMP:20260625T005647Z
+DTSTART;VALUE=DATE:20260718
+SUMMARY:Waxahatchee at Revolution Hall
+LOCATION:Revolution Hall\, Portland
+URL:https://www.revolutionhall.com/
+DESCRIPTION:Concert Scout match 96. Portland date is in a mid-size room\, so alert early. Matched: record.club/Discogs/watchlist.
+CATEGORIES:Concert Scout\,Portland\,new album cycle\,likely sellout\,record.club/Discogs/watchlist
+END:VEVENT
+BEGIN:VEVENT
+UID:concert-scout-wednesday-20260821@concerts.your-domain.dev
+DTSTAMP:20260625T005647Z
+DTSTART;VALUE=DATE:20260821
+SUMMARY:Wednesday at Neumos
+LOCATION:Neumos\, Seattle
+URL:https://www.neumos.com/
+DESCRIPTION:Concert Scout match 77. Collection signals can catch this even when recent plays miss it. Matched: record.club/Discogs/watchlist.
+CATEGORIES:Concert Scout\,Seattle\,support unknown\,record.club/Discogs/watchlist
+END:VEVENT
+BEGIN:VEVENT
+UID:concert-scout-y-la-bamba-20260911@concerts.your-domain.dev
+DTSTAMP:20260625T005647Z
+DTSTART;VALUE=DATE:20260911
+SUMMARY:Y La Bamba at Mississippi Studios
+LOCATION:Mississippi Studios\, Portland
+URL:https://mississippistudios.com/
+DESCRIPTION:Concert Scout match 70. Local artist and small venue boost.
+CATEGORIES:Concert Scout\,Portland\,local priority\,small room
+END:VEVENT
+BEGIN:VEVENT
+UID:concert-scout-sudan-archives-20260803@concerts.your-domain.dev
+DTSTAMP:20260625T005647Z
+DTSTART;VALUE=DATE:20260803
+SUMMARY:Sudan Archives at Wonder Ballroom
+LOCATION:Wonder Ballroom\, Portland
+URL:https://wonderballroom.com/
+DESCRIPTION:Concert Scout match 68. Good candidate for immediate calendar hold.
+CATEGORIES:Concert Scout\,Portland\,Portland\,onsale
+END:VEVENT
+BEGIN:VEVENT
+UID:concert-scout-mj-lenderman-20260726@concerts.your-domain.dev
+DTSTAMP:20260625T005647Z
+DTSTART;VALUE=DATE:20260726
+SUMMARY:MJ Lenderman at The Showbox
+LOCATION:The Showbox\, Seattle
+URL:https://www.showboxpresents.com/
+DESCRIPTION:Concert Scout match 66. Seattle-only routing makes this easy to miss.
+CATEGORIES:Concert Scout\,Seattle\,Seattle only\,weekend
+END:VEVENT
+END:VCALENDAR

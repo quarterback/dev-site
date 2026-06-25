@@ -15,6 +15,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="assets/site.css" />
 <script src="assets/palette.js"></script>
+<script>
+  /* If the concerts subdomain points at the same GitHub-backed deploy
+     as the main site, send its root URL to the Concert Scout subapp. */
+  (function () {
+    var host = window.location.hostname.toLowerCase();
+    var isConcertsHost = host === "concerts" || host.indexOf("concerts.") === 0;
+    if (isConcertsHost && window.location.pathname === "/") {
+      window.location.replace("/concerts/");
+    }
+  })();
+</script>
 <style>
   /* ─────────────────────────────────────────────────────────────────
      Index — one exposed grid. Every project is the same cell: a mono
@@ -383,6 +394,15 @@
        ──────────────────────────────────────────────────────────────── -->
 
   <section class="index" aria-label="Projects">
+
+    <article class="cell">
+      <div class="cell__head"><a class="live-link" href="concerts/">Open the tool</a></div>
+      <h2 class="cell__title"><a href="concerts/">Concert Scout</a></h2>
+      <a class="cell__media" href="concerts/" aria-label="Concert Scout">
+        <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/><text x="90" y="190" font-family="monospace" font-size="74" fill="#1d3557">PDX / SEA</text><text x="90" y="310" font-family="monospace" font-size="112" fill="#e63946">SHOW RADAR</text><text x="90" y="430" font-family="monospace" font-size="54" fill="#1d3557">last.fm + record.club + venue scrapers</text></svg>
+      </a>
+      <p class="cell__prose">A personal concert radar for Portland and Seattle: scrape venue calendars, fold in Last.fm listening and record.club collection signals, then rank the shows most likely to be missed before they sell out.</p>
+    </article>
 
     <article class="cell">
       <div class="cell__head"><a class="live-link" href="projects/play-to-clinch.html">Read the project</a></div>

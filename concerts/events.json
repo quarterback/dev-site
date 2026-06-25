@@ -1,0 +1,52 @@
+[
+  {
+    "artist": "Waxahatchee",
+    "city": "Portland",
+    "venue": "Revolution Hall",
+    "date": "2026-07-18",
+    "url": "https://www.revolutionhall.com/",
+    "tags": ["new album cycle", "likely sellout"],
+    "why": "Portland date is in a mid-size room, so alert early.",
+    "base": 70
+  },
+  {
+    "artist": "MJ Lenderman",
+    "city": "Seattle",
+    "venue": "The Showbox",
+    "date": "2026-07-26",
+    "url": "https://www.showboxpresents.com/",
+    "tags": ["Seattle only", "weekend"],
+    "why": "Seattle-only routing makes this easy to miss.",
+    "base": 66
+  },
+  {
+    "artist": "Sudan Archives",
+    "city": "Portland",
+    "venue": "Wonder Ballroom",
+    "date": "2026-08-03",
+    "url": "https://wonderballroom.com/",
+    "tags": ["Portland", "onsale"],
+    "why": "Good candidate for immediate calendar hold.",
+    "base": 64
+  },
+  {
+    "artist": "Wednesday",
+    "city": "Seattle",
+    "venue": "Neumos",
+    "date": "2026-08-21",
+    "url": "https://www.neumos.com/",
+    "tags": ["support unknown"],
+    "why": "Collection signals can catch this even when recent plays miss it.",
+    "base": 61
+  },
+  {
+    "artist": "Y La Bamba",
+    "city": "Portland",
+    "venue": "Mississippi Studios",
+    "date": "2026-09-11",
+    "url": "https://mississippistudios.com/",
+    "tags": ["local priority", "small room"],
+    "why": "Local artist and small venue boost.",
+    "base": 60
+  }
+]

@@ -1,0 +1,40 @@
+name: Build Concert Scout feed
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 */6 * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  build-feed:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Build calendar feed
+        env:
+          LASTFM_API_KEY: ${{ secrets.LASTFM_API_KEY }}
+          LASTFM_USER: ${{ secrets.LASTFM_USER }}
+          RECORD_CLUB_URL: ${{ secrets.RECORD_CLUB_URL }}
+          DISCOGS_USER: ${{ secrets.DISCOGS_USER }}
+          DISCOGS_URL: ${{ secrets.DISCOGS_URL }}
+          RECORD_CLUB_ARTISTS: ${{ secrets.RECORD_CLUB_ARTISTS }}
+          DISCOGS_ARTISTS: ${{ secrets.DISCOGS_ARTISTS }}
+          WATCHLIST_ARTISTS: ${{ secrets.WATCHLIST_ARTISTS }}
+        run: node scripts/build-concert-feed.mjs
+      - name: Commit generated feeds
+        run: |
+          if git diff --quiet -- concerts/shows.ics shows.ics; then
+            echo "No feed changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add concerts/shows.ics shows.ics
+          git commit -m "Update Concert Scout feed"
+          git push
