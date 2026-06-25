@@ -13,13 +13,13 @@
   },
   {
     "type": "ticketmaster",
-    "name": "Seattle (Ticketmaster)",
+    "name": "Seattle (Ticketmaster, all venues)",
     "city": "Seattle",
     "stateCode": "WA"
   },
   {
     "type": "ticketmaster",
-    "name": "Portland (Ticketmaster)",
+    "name": "Portland (Ticketmaster, all venues)",
     "city": "Portland",
     "stateCode": "OR"
   }

@@ -20,6 +20,7 @@ jobs:
         env:
           LASTFM_API_KEY: ${{ secrets.LASTFM_API_KEY }}
           LASTFM_USER: ${{ secrets.LASTFM_USER }}
+          TICKETMASTER_API_KEY: ${{ secrets.TICKETMASTER_API_KEY }}
           RECORD_CLUB_URL: ${{ secrets.RECORD_CLUB_URL }}
           DISCOGS_USER: ${{ secrets.DISCOGS_USER }}
           DISCOGS_URL: ${{ secrets.DISCOGS_URL }}
