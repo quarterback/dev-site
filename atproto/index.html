@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="/favicon.png" type="image/png" sizes="any" />
+<title>Protocol-Native Applications — Ron Bronson</title>
+<meta name="description" content="Protocol-native application experiments on the AT Protocol. PBJ, Leafroll, Glowrm and more — rethinking dating, professional networking, trust, and social audio for a world where identity is portable and applications share an open protocol instead of a platform." />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Protocol-Native Applications — Ron Bronson" />
+<meta name="twitter:description" content="Protocol-native application experiments on ATProto: portable identity, trust, reputation, matching, and public social infrastructure." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/site.css" />
+<script src="../assets/palette.js"></script>
+<style>
+  /* ─────────────────────────────────────────────────────────────────
+     ATProto — a hub page in the house register. Same masthead, mono
+     labels, ruled frames, and 2px structure as the rest of the site.
+     The card grid reuses the index cell language; placeholders carry a
+     status tag instead of a screenshot so nothing renders broken.
+     ───────────────────────────────────────────────────────────────── */
+  .project { max-width: 980px; }
+
+  .project__kicker {
+    margin: clamp(8px, 1.5vw, 14px) 0 clamp(10px, 1.4vw, 14px);
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .project__title {
+    margin: 0 0 clamp(14px, 2vw, 20px);
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(38px, 5.4vw, 68px);
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    text-wrap: balance;
+  }
+  .project__lede {
+    margin: 0 0 clamp(28px, 4vw, 44px);
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: clamp(20px, 1.9vw, 25px);
+    line-height: 1.4;
+    color: var(--ink);
+    max-width: 56ch;
+    text-wrap: pretty;
+  }
+
+  .project__body { display: grid; gap: clamp(20px, 2.6vw, 30px); }
+  .project__body > p {
+    margin: 0;
+    font-family: var(--sans);
+    font-size: clamp(17px, 1.4vw, 19px);
+    line-height: 1.6;
+    color: var(--ink);
+    max-width: 64ch;
+    text-wrap: pretty;
+  }
+  .project__body > p a {
+    color: var(--ink);
+    border-bottom: var(--frame) solid var(--accent);
+    padding-bottom: 1px;
+  }
+  .project__body > p a:hover { color: var(--accent); }
+
+  .section-head {
+    margin: clamp(36px, 5vw, 60px) 0 clamp(6px, 1vw, 10px);
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  /* ── Project cards — ruled frame, status tag, link row ─ */
+  .at-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-top: var(--frame) solid var(--ink);
+    border-left: var(--frame) solid var(--ink);
+    margin-top: clamp(10px, 1.5vw, 16px);
+  }
+  @media (max-width: 680px) { .at-grid { grid-template-columns: 1fr; } }
+
+  .at-card {
+    border-right: var(--frame) solid var(--ink);
+    border-bottom: var(--frame) solid var(--ink);
+    padding: clamp(18px, 2.2vw, 28px);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(10px, 1.2vw, 14px);
+  }
+  .at-card__top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .at-card__name {
+    margin: 0;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(24px, 2.4vw, 34px);
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+  }
+  .at-card__tag {
+    flex: none;
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    border: var(--hair) solid var(--rule);
+    padding: 3px 7px;
+    white-space: nowrap;
+  }
+  .at-card__tag[data-status="live"] { color: var(--accent); border-color: var(--accent); }
+  .at-card__kind {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .at-card__prose {
+    margin: 0;
+    font-family: var(--text);
+    font-weight: 500;
+    font-size: clamp(15px, 1.15vw, 16px);
+    line-height: 1.55;
+    color: var(--ink);
+    text-wrap: pretty;
+  }
+  .at-card__links {
+    margin-top: auto;
+    padding-top: clamp(8px, 1vw, 12px);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    font-family: var(--mono);
+    font-size: 12px;
+  }
+  .at-card__links a {
+    color: var(--ink);
+    border-bottom: var(--frame) solid var(--accent);
+    padding-bottom: 1px;
+    white-space: nowrap;
+  }
+  .at-card__links a:hover { color: var(--accent); }
+  .at-card--placeholder { background: var(--bg-deeper); }
+
+  /* ── Themes — mono chips on a ruled field ─ */
+  .themes {
+    margin: clamp(12px, 1.6vw, 18px) 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 12px;
+  }
+  .themes li {
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    border: var(--hair) solid var(--rule);
+    padding: 7px 12px;
+  }
+
+  .backlinks {
+    margin: clamp(28px, 4vw, 44px) 0 0;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-soft);
+  }
+  .backlinks a {
+    color: var(--ink);
+    border-bottom: var(--frame) solid var(--accent);
+    padding-bottom: 1px;
+  }
+  .backlinks a:hover { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="topnav">
+    <a class="sitelink" href="../index.html">&#8592; Catalog</a>
+    <a class="sitelink" href="../about.html">About</a>
+    <a class="sitelink" href="https://thinkingweapons.com">Studio &#8599;</a>
+    <a class="sitelink" href="https://ronbronson.design">ronbronson.design &#8599;</a>
+  </nav>
+
+  <header class="masthead">
+    <a class="name" href="../index.html">Ron Bronson</a>
+  </header>
+
+  <article class="project">
+
+    <p class="project__kicker">Protocol-Native Applications</p>
+    <h1 class="project__title">Building on the AT Protocol</h1>
+    <p class="project__lede">A body of protocol-native application experiments exploring how open identity changes software design.</p>
+
+    <div class="project__body">
+
+      <p>I&rsquo;m interested in what social software looks like when identity is portable, applications share an open protocol, and incentives can be redesigned from the ground up. These projects explore identity, reputation, matching, trust, and public infrastructure on <a href="https://atproto.com" target="_blank" rel="noopener">ATProto</a>.</p>
+
+      <p>Each one rethinks a familiar product category through the lens of the protocol, exploring what changes once a user&rsquo;s identity and data travel with them and the relationship belongs to the person. This is work I&rsquo;ve been building and writing toward for a while.</p>
+
+      <section class="at-grid" aria-label="Protocol-native projects">
+
+        <article class="at-card">
+          <div class="at-card__top">
+            <h3 class="at-card__name">PBJ</h3>
+            <span class="at-card__tag" data-status="live">Live</span>
+          </div>
+          <p class="at-card__kind">Dating &middot; matching</p>
+          <p class="at-card__prose">Dating built around intentional scarcity and visible decisions. A finite weekly roster makes attention a real resource, and the people you prioritize can see it &mdash; the cost is the signal.</p>
+          <div class="at-card__links">
+            <a href="https://heypbj.xyz" target="_blank" rel="noopener">heypbj.xyz &#8599;</a>
+          </div>
+        </article>
+
+        <article class="at-card">
+          <div class="at-card__top">
+            <h3 class="at-card__name">Leafroll</h3>
+            <span class="at-card__tag" data-status="live">Live</span>
+          </div>
+          <p class="at-card__kind">Professional networking</p>
+          <p class="at-card__prose">Professional networking built around earned relationships. Connections are intentional and bilateral, carried by portable identity, where each one is mutual and meant.</p>
+          <div class="at-card__links">
+            <a href="https://leafroll.fun" target="_blank" rel="noopener">leafroll.fun &#8599;</a>
+            <a href="../projects/leafroll.html">Read the project</a>
+          </div>
+        </article>
+
+        <article class="at-card">
+          <div class="at-card__top">
+            <h3 class="at-card__name">Glowrm</h3>
+            <span class="at-card__tag" data-status="spec">Spec + Refs</span>
+          </div>
+          <p class="at-card__kind">Trust infrastructure</p>
+          <p class="at-card__prose">Portable identity calls for portable reputation. Glowrm is the shared trust layer these apps are designed against &mdash; cross-app reputation, shared moderation, and a configurable resource-allocation system, so accountability travels with users across apps.</p>
+          <div class="at-card__links">
+            <a href="../projects/glowrm.html">Read the project</a>
+            <a href="https://glowrm.tech" target="_blank" rel="noopener">glowrm.tech &#8599;</a>
+          </div>
+        </article>
+
+      </section>
+
+    </div>
+
+  </article>
+
+  <footer class="foot">
+    <span>Reach me at <a href="mailto:contact@ronbronson.com">contact@ronbronson.com</a>.</span>
+  </footer>
+
+</div>
+</body>
+</html>

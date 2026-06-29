@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="/favicon.png" type="image/png" sizes="any" />
+<title>Leafroll — Ron Bronson</title>
+<meta name="description" content="A protocol-native professional network built on ATProto. Leafroll replaces connection collecting with intentional, bilateral relationships and portable identity." />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Leafroll — Ron Bronson" />
+<meta name="twitter:description" content="A protocol-native professional network built on ATProto: earned relationships over connection collecting, with portable identity and trust." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/site.css" />
+<script src="../assets/palette.js"></script>
+<style>
+  .project { max-width: 820px; }
+  .project__title {
+    margin: 0 0 clamp(8px, 1.5vw, 16px);
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(40px, 6vw, 76px);
+    line-height: 1.0;
+    letter-spacing: -0.025em;
+    text-wrap: balance;
+  }
+  .project__lede {
+    margin: 0 0 clamp(28px, 4vw, 48px);
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: clamp(20px, 1.8vw, 24px);
+    line-height: 1.4;
+    color: var(--ink);
+    max-width: 52ch;
+    text-wrap: pretty;
+  }
+
+  .project__body { display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(20px, 2.6vw, 32px); }
+  .project__body > p {
+    margin: 0;
+    font-family: var(--sans);
+    font-size: clamp(17px, 1.35vw, 18px);
+    line-height: 1.65;
+    color: var(--ink);
+    max-width: 64ch;
+    text-wrap: pretty;
+  }
+  .project__body h2 {
+    margin: clamp(32px, 5vw, 56px) 0 4px;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(24px, 2.2vw, 30px);
+    line-height: 1.15;
+    letter-spacing: -0.018em;
+    color: var(--ink);
+  }
+  .project__body ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 14px;
+    font-family: var(--sans);
+    font-size: clamp(16px, 1.3vw, 18px);
+    line-height: 1.55;
+    color: var(--ink);
+    max-width: 64ch;
+  }
+  .project__body ul li { padding-left: 22px; position: relative; }
+  .project__body ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    width: 10px;
+    height: 1px;
+    background: var(--ink-soft);
+  }
+  .project__body ul li b { font-weight: 600; }
+  .project__body a {
+    color: var(--ink);
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 1px;
+  }
+  .project__body a:hover { color: var(--accent); border-color: var(--accent); }
+
+  .pitch {
+    margin: clamp(20px, 3vw, 28px) 0;
+    padding: clamp(18px, 2.5vw, 28px);
+    background: var(--bg);
+    border: 1px solid var(--ink);
+    max-width: 640px;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: clamp(17px, 1.4vw, 19px);
+    line-height: 1.45;
+    color: var(--ink);
+  }
+  .pitch .label {
+    display: block;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 10px;
+  }
+
+  .figure { margin: 0; background: var(--bg-deeper); overflow: hidden; position: relative; border: var(--frame) solid var(--ink); }
+  .figure img { display: block; width: 100%; height: auto; }
+  .figure figcaption {
+    margin-top: 10px;
+    padding: 0 2px;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-soft);
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="topnav">
+    <a class="sitelink" href="../index.html">&#8592; Catalog</a>
+    <a class="sitelink" href="../atproto/index.html">ATProto</a>
+  </nav>
+
+  <header class="masthead">
+    <a class="name" href="../index.html">Ron Bronson</a>
+  </header>
+
+  <article class="project">
+
+    <h1 class="project__title">Leafroll</h1>
+    <p class="project__lede">A protocol-native professional network built on ATProto. Leafroll replaces connection collecting with intentional, bilateral relationships and portable identity.</p>
+
+    <div class="project__body">
+
+      <div class="pitch">
+        <span class="label">The premise</span>
+        Professional networking with intention. Earned relationships, not an ever-growing contact list nobody really knows.
+      </div>
+
+      <figure class="figure">
+        <img src="https://image.thum.io/get/width/1600/crop/1000/https://leafroll.fun" alt="Screenshot of leafroll.fun" loading="lazy" />
+        <figcaption>leafroll.fun</figcaption>
+      </figure>
+
+      <h2>What it does</h2>
+
+      <p>The dominant professional networks reward accumulation: connect with everyone, broadcast to everyone, measure your worth by a number that only goes up. Leafroll starts from the opposite assumption &mdash; that the relationships worth having are earned, mutual, and finite.</p>
+
+      <ul>
+        <li><b>Bilateral by design.</b> A connection means something because both sides chose it. No one-way follows that masquerade as relationships.</li>
+        <li><b>Intentional, not infinite.</b> Reaching out costs something, so outreach carries signal instead of noise &mdash; the same logic that makes a recommendation worth more than a mass invite.</li>
+        <li><b>Portable identity.</b> Your identity and data live with you on ATProto, not inside the platform. Leafroll is one application you use, not a silo you&rsquo;re locked into.</li>
+        <li><b>Portable trust.</b> Reputation can travel with you across protocol-native apps rather than resetting every time you join a new one.</li>
+      </ul>
+
+      <h2>Why ATProto</h2>
+
+      <p>Professional networks are the clearest case of platform lock-in: your reputation, your relationships, and your history are held hostage by a single company. Building on the AT Protocol flips that. Identity is portable, the data is yours, and the network is an application on shared infrastructure rather than a walled garden. That&rsquo;s what makes &ldquo;earned, bilateral relationships&rdquo; more than a slogan &mdash; the protocol is what lets trust and identity actually move with the person.</p>
+
+      <h2>Part of a larger body of work</h2>
+
+      <p>Leafroll is one of several protocol-native experiments, each rethinking a familiar category for a world of portable identity. It shares its trust model with <a href="glowrm.html">Glowrm</a> and sits alongside <a href="../atproto/index.html">PBJ, Live Audio, and other ATProto work</a>.</p>
+
+      <p><a class="live-link" href="https://leafroll.fun" target="_blank" rel="noopener">leafroll.fun &#8599;</a></p>
+
+    </div>
+
+  </article>
+
+  <footer class="foot">
+    <span>Reach me at <a href="mailto:contact@ronbronson.com">contact@ronbronson.com</a>.</span>
+  </footer>
+
+</div>
+</body>
+</html>

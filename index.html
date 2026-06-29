@@ -190,6 +190,26 @@
     text-wrap: pretty;
   }
 
+  /* ── Feature cell — the ATProto banner. Spans the full grid width,
+       carries the accent rule and a deeper field so it reads as a
+       header, not just another project. Same frame, same register. ─ */
+  .cell--feature {
+    grid-column: 1 / -1;
+    background: var(--bg-deeper);
+    border-left: 6px solid var(--accent);
+    gap: clamp(8px, 1vw, 12px);
+  }
+  .cell--feature .cell__kicker {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .cell--feature .cell__title { font-size: clamp(26px, 3vw, 42px); max-width: 22ch; }
+  .cell--feature .cell__prose { font-size: clamp(15px, 1.2vw, 18px); max-width: 70ch; }
+
   /* ── Responsive: collapse the grid, keep the rules ─ */
   @media (max-width: 1040px) {
     .index { grid-template-columns: repeat(2, 1fr); }
@@ -251,6 +271,7 @@
 <div class="wrap">
 
   <nav class="topnav">
+    <a class="sitelink" href="atproto/index.html">ATProto</a>
     <a class="sitelink" href="about.html">About</a>
     <a class="sitelink" href="https://thinkingweapons.com">Studio &#8599;</a>
     <a class="sitelink" href="https://ronbronson.design">ronbronson.design &#8599;</a>
@@ -324,6 +345,13 @@
        ──────────────────────────────────────────────────────────────── -->
 
   <section class="index" aria-label="Projects">
+
+    <article class="cell cell--feature">
+      <div class="cell__head"><a class="live-link" href="atproto/index.html">Explore the protocol work</a></div>
+      <p class="cell__kicker">Protocol-Native Applications</p>
+      <h2 class="cell__title"><a href="atproto/index.html">Building on the AT Protocol</a></h2>
+      <p class="cell__prose">A body of protocol-native experiments &mdash; PBJ, Leafroll, Glowrm, and more &mdash; rethinking dating, professional networking, trust, and social audio for a world where identity is portable and applications share an open protocol instead of a platform. <a href="atproto/index.html" style="border-bottom: 2px solid var(--accent);">See the ATProto work &#8594;</a></p>
+    </article>
 
     <article class="cell">
       <div class="cell__head"><a class="live-link" href="projects/play-to-clinch.html">Read the project</a></div>
@@ -453,6 +481,16 @@
         <img src="https://image.thum.io/get/width/1200/crop/900/https://glowrm.tech" alt="Screenshot of glowrm.tech" loading="lazy" />
       </a>
       <p class="cell__prose">Trust infrastructure for ATProto social applications. Cross-app reputation, shared moderation, and a configurable resource-allocation system &mdash; the trust plumbing YGF and two other reference apps were designed against.</p>
+    </article>
+
+    <article class="cell">
+      <div class="cell__head"><a class="live-link" href="projects/leafroll.html">Read the project</a></div>
+      <h2 class="cell__title"><a href="projects/leafroll.html">Leafroll</a></h2>
+      <a class="cell__media" href="projects/leafroll.html" aria-label="Leafroll">
+        <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
+        <img src="https://image.thum.io/get/width/1200/crop/900/https://leafroll.fun" alt="Screenshot of leafroll.fun" loading="lazy" />
+      </a>
+      <p class="cell__prose">A protocol-native professional network built on ATProto. Leafroll replaces connection collecting with intentional, bilateral relationships and portable identity &mdash; part of a larger body of <a href="atproto/index.html" style="border-bottom: 2px solid var(--accent);">protocol-native experiments</a>.</p>
     </article>
 
   </section>
