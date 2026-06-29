@@ -47,7 +47,7 @@
 
   /* ── Concepts & experiments — a ruled text list ─ */
   .experiments {
-    margin: clamp(40px, 6vw, 72px) 0 0;
+    margin: clamp(40px, 6vw, 72px) 0;
   }
   .experiments__head {
     margin: 0 0 clamp(12px, 1.6vw, 18px);
@@ -104,6 +104,33 @@
     white-space: nowrap;
   }
   .exp__links a:hover { color: var(--accent); }
+  .exp--featured {
+    background: var(--bg-deeper);
+    border-left: 4px solid var(--accent);
+    padding-left: clamp(10px, 1.2vw, 16px);
+    padding-right: clamp(10px, 1.2vw, 16px);
+  }
+  .exp__note {
+    flex-basis: 100%;
+    margin-top: 2px;
+    font-family: var(--text);
+    font-size: clamp(13px, 1.1vw, 15px);
+    line-height: 1.5;
+    color: var(--ink-soft);
+    max-width: 72ch;
+  }
+  .tag-new {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--bg);
+    background: var(--accent);
+    padding: 2px 6px;
+    vertical-align: middle;
+  }
 
   /* ── Intro / contact ──────────────────── */
   .intro {
@@ -344,6 +371,83 @@
        Every cell is identical; the grid does the composing.
        ──────────────────────────────────────────────────────────────── -->
 
+  <section class="experiments" aria-label="Concepts and experiments">
+    <h2 class="experiments__head">Concepts &amp; Experiments <span>(and other ideas&hellip;)</span></h2>
+    <ul class="experiments__list">
+
+      <li class="exp exp--featured">
+        <span class="exp__name">closedtab <span class="tag-new">New</span></span>
+        <span class="exp__year">2026</span>
+        <span class="exp__links">
+          <a href="https://www.npmjs.com/package/closedtab" target="_blank" rel="noopener">npm &#8599;</a>
+          <a href="https://blog.ronbronson.com/closedtab-a-npm-shared-memory-for-you-and-your-ai-agents" target="_blank" rel="noopener">Blog post &#8599;</a>
+        </span>
+        <span class="exp__note">An npm tool that gives human&ndash;agent work a shared memory: a consistent after-action record of what you asked for, what the agent did, and the calls it made on its own &mdash; so the next agent and future-you inherit the same trail.</span>
+      </li>
+
+      <li class="exp">
+        <span class="exp__name">Claude skill.md for agent AARs</span>
+        <span class="exp__year">2026</span>
+        <span class="exp__links">
+          <a href="https://blog.ronbronson.com/i-built-a-claude-skill-for-after-action-reviews-on-ai-agent-work" target="_blank" rel="noopener">Blog post &#8599;</a>
+          <a href="https://github.com/quarterback/AAR" target="_blank" rel="noopener">GitHub &#8599;</a>
+        </span>
+      </li>
+
+      <li class="exp">
+        <span class="exp__name">Primitives for agentic decision-making</span>
+        <span class="exp__year">2026</span>
+        <span class="exp__links">
+          <a href="https://blog.ronbronson.com/who-holds-the-pen-why-ai-agents-need-a-manager-not-just-a-manual" target="_blank" rel="noopener">Blog post &#8599;</a>
+          <a href="https://github.com/quarterback/judgment-routing" target="_blank" rel="noopener">GitHub &#8599;</a>
+        </span>
+      </li>
+
+      <li class="exp">
+        <span class="exp__name">Agent Experience &amp; Disintermediation</span>
+        <span class="exp__year">2025</span>
+        <span class="exp__links">
+          <a href="https://blog.ronbronson.com/service-design-for-ai-the-disintermediation-problem" target="_blank" rel="noopener">Blog post &#8599;</a>
+        </span>
+      </li>
+
+      <li class="exp">
+        <span class="exp__name">AI Statements</span>
+        <span class="exp__year">2025</span>
+        <span class="exp__links">
+          <a href="https://aistatements.org" target="_blank" rel="noopener">aistatements.org &#8599;</a>
+          <a href="https://blog.ronbronson.com/why-i-made-aistatements-org" target="_blank" rel="noopener">Blog post &#8599;</a>
+        </span>
+      </li>
+
+      <li class="exp">
+        <span class="exp__name">Parachute Commons License</span>
+        <span class="exp__year">2025</span>
+        <span class="exp__links">
+          <a href="https://github.com/quarterback/parachute-commons-license" target="_blank" rel="noopener">GitHub &#8599;</a>
+        </span>
+      </li>
+
+      <li class="exp">
+        <span class="exp__name">The Designer&rsquo;s Share of the Problem</span>
+        <span class="exp__year">2021</span>
+        <span class="exp__links">
+          <a href="https://www.ixda.no/talks/the-designers-share-of-the-problem" target="_blank" rel="noopener">Talk &#8599;</a>
+        </span>
+      </li>
+
+      <li class="exp">
+        <span class="exp__name">Consequence Design</span>
+        <span class="exp__year">2016</span>
+        <span class="exp__links">
+          <a href="https://consequencedesign.com/" target="_blank" rel="noopener">consequencedesign.com &#8599;</a>
+          <a href="https://pixelpioneers.co/blog/building-better-user-centered-products-an-interview-with-ron-bronson" target="_blank" rel="noopener">Pixel Pioneers interview &#8599;</a>
+        </span>
+      </li>
+
+    </ul>
+  </section>
+
   <section class="index" aria-label="Projects">
 
     <article class="cell cell--feature">
@@ -351,6 +455,16 @@
       <p class="cell__kicker">Protocol-Native Applications</p>
       <h2 class="cell__title"><a href="atproto/index.html">Building on the AT Protocol</a></h2>
       <p class="cell__prose">A body of protocol-native experiments. PBJ, Leafroll, Glowrm, and more, rethinking dating, professional networking, and trust for a world where identity is portable and software is built on an open protocol. <a href="atproto/index.html" style="border-bottom: 2px solid var(--accent);">See the ATProto work &#8594;</a></p>
+    </article>
+
+    <article class="cell">
+      <div class="cell__head"><span class="tag-new">New</span> <a class="live-link" href="projects/beachwave.html">Read the project</a></div>
+      <h2 class="cell__title"><a href="projects/beachwave.html">Beachwave</a></h2>
+      <a class="cell__media" href="projects/beachwave.html" aria-label="Beachwave">
+        <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
+        <img src="https://image.thum.io/get/width/2000/crop/860/https://beachwave.app" alt="Screenshot of beachwave.app" loading="lazy" />
+      </a>
+      <p class="cell__prose">A deployable reference for live audio rooms on ATProto. Sign in with ATProto OAuth, create a room, publish its metadata, and connect audio through LiveKit &mdash; then fork the repo and run your own version.</p>
     </article>
 
     <article class="cell">
@@ -493,73 +607,6 @@
       <p class="cell__prose">A professional network built on ATProto. Leafroll is built on earned, bilateral relationships and identity you carry with you, one of several <a href="atproto/index.html" style="border-bottom: 2px solid var(--accent);">protocol-native experiments</a>.</p>
     </article>
 
-  </section>
-
-  <section class="experiments" aria-label="Concepts and experiments">
-    <h2 class="experiments__head">Concepts &amp; Experiments <span>(and other ideas&hellip;)</span></h2>
-    <ul class="experiments__list">
-
-      <li class="exp">
-        <span class="exp__name">Claude skill.md for agent AARs</span>
-        <span class="exp__year">2026</span>
-        <span class="exp__links">
-          <a href="https://blog.ronbronson.com/i-built-a-claude-skill-for-after-action-reviews-on-ai-agent-work" target="_blank" rel="noopener">Blog post &#8599;</a>
-          <a href="https://github.com/quarterback/AAR" target="_blank" rel="noopener">GitHub &#8599;</a>
-        </span>
-      </li>
-
-      <li class="exp">
-        <span class="exp__name">Primitives for agentic decision-making</span>
-        <span class="exp__year">2026</span>
-        <span class="exp__links">
-          <a href="https://blog.ronbronson.com/who-holds-the-pen-why-ai-agents-need-a-manager-not-just-a-manual" target="_blank" rel="noopener">Blog post &#8599;</a>
-          <a href="https://github.com/quarterback/judgment-routing" target="_blank" rel="noopener">GitHub &#8599;</a>
-        </span>
-      </li>
-
-      <li class="exp">
-        <span class="exp__name">Agent Experience &amp; Disintermediation</span>
-        <span class="exp__year">2025</span>
-        <span class="exp__links">
-          <a href="https://blog.ronbronson.com/service-design-for-ai-the-disintermediation-problem" target="_blank" rel="noopener">Blog post &#8599;</a>
-        </span>
-      </li>
-
-      <li class="exp">
-        <span class="exp__name">AI Statements</span>
-        <span class="exp__year">2025</span>
-        <span class="exp__links">
-          <a href="https://aistatements.org" target="_blank" rel="noopener">aistatements.org &#8599;</a>
-          <a href="https://blog.ronbronson.com/why-i-made-aistatements-org" target="_blank" rel="noopener">Blog post &#8599;</a>
-        </span>
-      </li>
-
-      <li class="exp">
-        <span class="exp__name">Parachute Commons License</span>
-        <span class="exp__year">2025</span>
-        <span class="exp__links">
-          <a href="https://github.com/quarterback/parachute-commons-license" target="_blank" rel="noopener">GitHub &#8599;</a>
-        </span>
-      </li>
-
-      <li class="exp">
-        <span class="exp__name">The Designer&rsquo;s Share of the Problem</span>
-        <span class="exp__year">2021</span>
-        <span class="exp__links">
-          <a href="https://www.ixda.no/talks/the-designers-share-of-the-problem" target="_blank" rel="noopener">Talk &#8599;</a>
-        </span>
-      </li>
-
-      <li class="exp">
-        <span class="exp__name">Consequence Design</span>
-        <span class="exp__year">2016</span>
-        <span class="exp__links">
-          <a href="https://consequencedesign.com/" target="_blank" rel="noopener">consequencedesign.com &#8599;</a>
-          <a href="https://pixelpioneers.co/blog/building-better-user-centered-products-an-interview-with-ron-bronson" target="_blank" rel="noopener">Pixel Pioneers interview &#8599;</a>
-        </span>
-      </li>
-
-    </ul>
   </section>
 
   <section class="intro">
