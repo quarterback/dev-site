@@ -111,6 +111,17 @@
   .figure { margin: clamp(28px, 4vw, 48px) 0 0; background: var(--bg-deeper); overflow: hidden; position: relative; }
   .figure img, .figure svg.ph { display: block; width: 100%; height: auto; }
   .figure svg.ph { aspect-ratio: 16 / 10; }
+  .figure figcaption {
+    margin-top: 10px;
+    padding: 0 2px;
+    font-family: var(--mono);
+    font-size: 12px;
+    line-height: 1.4;
+    color: var(--ink-soft);
+  }
+  .figpair { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(12px, 2vw, 18px); margin: clamp(28px, 4vw, 48px) 0 0; }
+  .figpair .figure { margin: 0; }
+  @media (max-width: 640px) { .figpair { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -149,6 +160,17 @@
     <div class="project__body">
 
       <p>I&rsquo;ve followed pes&auml;pallo &mdash; Finland&rsquo;s national baseball variant &mdash; for well over a decade. Somewhere along the way the fandom turned into something bigger: I host an English-language <a href="https://www.podchaser.com/podcasts/superpesis-roundup-podcast-1320028" target="_blank" rel="noopener">podcast about Superpesis</a>, the top division; I&rsquo;ve talked the sport up on other people&rsquo;s shows; I <a href="finnish-baseball-game-design.html">gave a conference talk</a> on what it taught me about game design; and a couple of years ago I was in the booth for the <a href="https://youtu.be/U0lsmfUmrLI" target="_blank" rel="noopener">first-ever English-language telecast</a> of a pes&auml;pallo game. For an American, I&rsquo;ve been in this a while. If you want the origin story, I wrote up <a href="https://medium.com/@ronbronson/pesapallo-9dc4d3f1ed5e" target="_blank" rel="noopener">how a guy from America starts following Finnish baseball</a>.</p>
+
+      <div class="figpair">
+        <figure class="figure">
+          <img src="../assets/mallo/telecast-booth.png" alt="Ron Bronson in the broadcast booth for the first English-language telecast of a pesäpallo game, with an on-screen name graphic and the Ruutu logo" loading="lazy" />
+          <figcaption>In the booth for the first-ever English-language pes&auml;pallo telecast, on Finland&rsquo;s Ruutu.</figcaption>
+        </figure>
+        <figure class="figure">
+          <img src="../assets/mallo/post-game.png" alt="Post Game with Ron Bronson show logo" loading="lazy" />
+          <figcaption>&ldquo;Post Game with Ron Bronson.&rdquo;</figcaption>
+        </figure>
+      </div>
 
       <p>I&rsquo;m also a lifelong baseball fan, and I&rsquo;ve been reading sabermetrics since the &rsquo;90s &mdash; buying <i>Baseball America</i> and <i>Baseball Weekly</i> off the rack years before any of this went mainstream. Pes&auml;pallo and baseball are cousins, not twins: same instincts, genuinely different sport. I&rsquo;d always wanted a way to hold both interests in the same hand. Mallo is that bridge &mdash; and building the first advanced-stats site for a sport half a world away feels like a strange kind of full circle for someone who fell for the game reading box scores as a kid.</p>
 
