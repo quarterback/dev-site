@@ -36,6 +36,16 @@
     max-width: 54ch;
     text-wrap: pretty;
   }
+  .project__lede--fi {
+    margin: -8px 0 clamp(16px, 2vw, 20px);
+    font-family: var(--sans);
+    font-weight: 400;
+    font-size: clamp(15px, 1.3vw, 17px);
+    line-height: 1.45;
+    color: var(--ink-soft);
+    max-width: 54ch;
+    text-wrap: pretty;
+  }
   .project__meta {
     margin: 0 0 clamp(28px, 4vw, 48px);
     font-family: var(--mono);
@@ -113,9 +123,10 @@
   <article class="project">
 
     <h1 class="project__title">Mallo</h1>
-    <p class="project__lede">The first advanced-analytics site for pes&auml;pallo &mdash; Finland&rsquo;s national baseball variant &mdash; borrowing what works from the baseball and basketball analytics canon.</p>
+    <p class="project__lede">The first advanced-analytics site for pes&auml;pallo &mdash; Finland&rsquo;s national baseball variant. The sabermetrics layer the sport never had, and something I&rsquo;d wanted for as long as I&rsquo;ve followed it.</p>
+    <p class="project__lede--fi" lang="fi">Ensimm&auml;inen pes&auml;pallon edistyneen analytiikan sivusto. Sarjaan suhteutetut tunnusluvut, DARKO-tyyliset ennusteet, lajin ensimm&auml;iset julkaistut kentt&auml;kertoimet ja Monte Carlo -pudotuspelitodenn&auml;k&ouml;isyydet &mdash; rakennettu virallisen tulospalvelun datasta.</p>
     <div class="project__meta">
-      <span>Designer &amp; director</span>
+      <span>A personal project</span>
       <span class="sep">·</span>
       <span>2026</span>
       <span class="sep">·</span>
@@ -137,9 +148,13 @@
 
     <div class="project__body">
 
-      <p>I&rsquo;d long wondered what a pes&auml;pallo analytics site would look like. Finland&rsquo;s national bat-and-ball sport has been played at the top level since 1922, and Superpesis keeps decades of granular records &mdash; and yet no sabermetrics layer exists for it anywhere. Working on a different project I went looking for the data, found it, and decided to build the thing that had been missing. Mallo is an attempt to be the first: an analytics engine and site for pes&auml;pallo that borrows what works from the baseball and basketball analytics canon and puts it to work on a sport that has never had it.</p>
+      <p>I&rsquo;ve followed pes&auml;pallo &mdash; Finland&rsquo;s national baseball variant &mdash; for well over a decade. Somewhere along the way the fandom turned into something bigger: I host an English-language <a href="https://www.podchaser.com/podcasts/superpesis-roundup-podcast-1320028" target="_blank" rel="noopener">podcast about Superpesis</a>, the top division; I&rsquo;ve talked the sport up on other people&rsquo;s shows; I <a href="finnish-baseball-game-design.html">gave a conference talk</a> on what it taught me about game design; and a couple of years ago I was in the booth for the <a href="https://www.mlb.com/news/first-english-language-broadcast-of-finland-baseball-game-pesapallo" target="_blank" rel="noopener">first-ever English-language telecast</a> of a pes&auml;pallo game. For an American, I&rsquo;ve been in this a while. If you want the origin story, I wrote up <a href="https://medium.com/@ronbronson/pesapallo-9dc4d3f1ed5e" target="_blank" rel="noopener">how a guy from America starts following Finnish baseball</a>.</p>
 
-      <p>It runs on real data. The official results service (<a href="https://www.pesistulokset.fi" target="_blank" rel="noopener">pesistulokset.fi</a>) turned out to be a documented JSON API rather than a scraping target &mdash; per-player, per-match rows with roughly 82 fields each: hits split by target base, advancement as batter and as runner, turns at bat, defensive position, and match context down to the stadium, weather, temperature, and attendance. Coverage reaches back to the 1940s, with granular stats to 1990. Mallo ingests the current Superpesis season keylessly and refreshes on every deploy.</p>
+      <p>I&rsquo;m also a lifelong baseball fan, and I&rsquo;ve been reading sabermetrics since the &rsquo;90s &mdash; buying <i>Baseball America</i> and <i>Baseball Weekly</i> off the rack years before any of this went mainstream. Pes&auml;pallo and baseball are cousins, not twins: same instincts, genuinely different sport. I&rsquo;d always wanted a way to hold both interests in the same hand. Mallo is that bridge &mdash; and building the first advanced-stats site for a sport half a world away feels like a strange kind of full circle for someone who fell for the game reading box scores as a kid.</p>
+
+      <p>Because here&rsquo;s the thing: there is no advanced-analytics site for pes&auml;pallo. Anywhere. The sport keeps decades of granular records and has never had a sabermetrics layer built on top of them. So I built one. It borrows openly from the analytics sites I grew up on &mdash; DARKO for projections, Baseball Savant for percentile fingerprints, FanGraphs for league-indexed rate stats, Baseball-Reference for career lines and comps &mdash; and translates each idea into the grammar of the Finnish game.</p>
+
+      <p>It runs on real data. The official results service (<a href="https://www.pesistulokset.fi" target="_blank" rel="noopener">pesistulokset.fi</a>) turned out to be a documented JSON API rather than a scraping target &mdash; per-player, per-match rows with roughly 82 fields each: hits split by target base, advancement as batter and as runner, turns at bat, defensive position, and match context down to the stadium, weather, temperature, and attendance. Coverage reaches back to the 1940s, with granular stats to 1990. Mallo ingests the current Superpesis season and refreshes on every deploy.</p>
 
       <h2>Stats that fit the sport</h2>
 
@@ -160,7 +175,7 @@
 
       <h2>How it&rsquo;s built</h2>
 
-      <p>The core is Python over SQLite &mdash; a metrics layer, the projection engine, a context model, and a Monte Carlo simulator &mdash; with a small web UI on top and charts drawn in vendored D3, no CDN. The demo league generates every stat line from known latent talent so the tests can assert the projections and park factors recover it. It&rsquo;s a directed agent build, documented in after-action reports in the repo, deployed on Fly, and released under the AGPL. There is no analytics site for this sport anywhere else; the niche was simply empty.</p>
+      <p>The core is Python over SQLite &mdash; a metrics layer, the projection engine, a context model, and a Monte Carlo simulator &mdash; with a small web UI on top and charts drawn in vendored D3, no CDN. The demo league generates every stat line from known latent talent so the tests can assert the projections and park factors recover it. It&rsquo;s a directed agent build, documented in after-action reports in the repo and released under the AGPL. Mostly, though, it&rsquo;s a fan project: the site I always wanted to exist, finally built.</p>
 
       <p><a class="live-link" href="https://www.mallo.fi" target="_blank" rel="noopener">See it at mallo.fi &#8599;</a></p>
 
