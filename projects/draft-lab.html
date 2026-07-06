@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="icon" href="/favicon.png" type="image/png" sizes="any" />
-<title>Draft Lottery Lab — Ron Bronson</title>
-<meta name="description" content="A comparative research instrument for sports draft lottery design. Fifteen rule systems run through Monte Carlo seasons across six pro leagues — NBA, NHL, MLB, WNBA, PWHL, MLS." />
+<title>Cap Buffet — Ron Bronson</title>
+<meta name="description" content="Cap Buffet builds salary-cap systems from reusable mechanics and tests any league against them. Home to Lottery Lab, its draft-lottery sibling. Client-side sports-rules tools you can test before anyone adopts them." />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Draft Lottery Lab — Ron Bronson" />
-<meta name="twitter:description" content="A comparative research instrument for sports draft lottery design across six pro leagues." />
+<meta name="twitter:title" content="Cap Buffet — Ron Bronson" />
+<meta name="twitter:description" content="A laboratory for salary-cap systems, home to Lottery Lab, its draft-lottery sibling." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -120,8 +120,9 @@
 
   <article class="project">
 
-    <h1 class="project__title">Draft Lottery Lab</h1>
-    <p class="project__lede">A comparative research instrument for sports draft lottery design.</p>
+    <h1 class="project__title">Cap Buffet</h1>
+    <p class="project__lede">A laboratory for salary-cap systems, and home to a small family of sports-rules tools.</p>
+    <p style="margin:0 0 clamp(28px,4vw,48px);"><a class="live-link" href="https://capbuffet.com" target="_blank" rel="noopener">Visit capbuffet.com &rarr;</a></p>
 
     <figure class="figure">
       <svg class="ph" viewBox="0 0 1400 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
@@ -133,45 +134,45 @@
         </defs>
         <rect width="1400" height="800" fill="url(#ph-a)"/>
       </svg>
-      <img src="https://image.thum.io/get/width/1600/crop/1000/https://giantplanet.org" alt="Screenshot of giantplanet.org" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;" />
+      <img src="https://image.thum.io/get/width/1600/crop/1000/https://capbuffet.com" alt="Screenshot of capbuffet.com" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;" />
     </figure>
 
     <div class="project__body">
 
-      <p>Every major professional sports league shares one structural problem: losing is rational. When the team at the bottom of the standings receives the best odds at the next generation&rsquo;s star player, organizations face a perverse incentive to fail deliberately. Draft lotteries exist to blunt this, and every league has built its own approach.</p>
+      <p>Cap Buffet builds salary-cap systems out of reusable parts. You stack mechanics into a ruleset, point it at a whole league, and read what happens: which teams sit over the cap, who owes tax, who falls below the floor, and what penalties apply. Change one rule and the league-wide table updates at once.</p>
 
-      <p>Draft Lottery Lab asks one question across fifteen rule systems and six professional leagues: what does this mechanism actually reward? Each system runs through thousands of synthetic seasons, measuring how teams behave, how draft equity distributes, and whether the rules create an environment where winning is always the better strategy.</p>
-
-      <p>The centerpiece is the Chip Window, an original mechanism designed here. The window opens mid-season: teams bet chips on nightly games during a defined stretch, and those accumulated bets determine lottery position. Tanking during the window costs you picks. Competing for chips requires playing to win every night the window is open. The mechanism makes tanking structurally impossible.</p>
+      <p>The major leagues arrive as presets of one composable kit, so their mechanics travel between sports. Put a second apron on the NFL, or run NBA payrolls under the NHL hard cap. Financials are arbitrary, so a minor league or a fantasy world works the same way the majors do.</p>
 
       <h2>What it does</h2>
 
-      <p>Runs parametric Monte Carlo simulations across:</p>
-
       <ul>
-        <li><b>15 lottery systems</b> — current NBA and NHL formats alongside original proposals including a UEFA-style rolling coefficient, a single-elimination tournament, and a fixed 30-year wheel.</li>
-        <li><b>6 leagues</b> — NBA, NHL, MLB, WNBA, PWHL, MLS — each with accurate team counts, schedule lengths, playoff structures, and published odds tables.</li>
-        <li><b>Comparative analysis</b> — any two systems can be run head-to-head, producing side-by-side breakdowns of pick distribution, competitive balance (Gini coefficient), tanking frequency, and effort curves across the season.</li>
+        <li><b>18 cap mechanics</b> covering revenue formulas, hard caps, salary floors, luxury taxes, aprons, allocation money, max contracts, draft-pick penalties, and workarounds like amnesty and designated players.</li>
+        <li><b>14 leagues</b> across five continents, each with real team names and generated depth, priced in any of eight currencies.</li>
+        <li><b>A live compliance report</b> for the whole league at once: illegal teams, tax collected, floor violations, and payroll balance, all recomputed the moment you change a rule.</li>
       </ul>
+
+      <h2>The wider family</h2>
+
+      <p>Cap Buffet shares a home with <a href="https://lottery.capbuffet.com" target="_blank" rel="noopener">Lottery Lab</a>, a draft-lottery simulator that runs fifteen lottery systems through Monte Carlo seasons across six leagues. Its original mechanism, the Chip Window, opens over a season&rsquo;s final stretch: teams wager chips on nightly games, and the accumulated chips set draft position, so competing for picks means winning every night the window is open. Both tools follow the same idea. Model the rules of a sport as something you can test before anyone adopts them.</p>
 
       <h2>Stack &amp; method</h2>
 
       <dl class="stack-block">
-        <dt>Backend</dt>
-        <dd>Python · FastAPI · custom Monte Carlo engine, seed-controlled for reproducibility.</dd>
         <dt>Frontend</dt>
-        <dd>Server-rendered HTML via Jinja2 · pure SVG charting with all geometry computed server-side · minimal vanilla JavaScript for interactivity.</dd>
+        <dd>React, TypeScript, and Vite. A single-page app that runs entirely in the browser.</dd>
+        <dt>Engine</dt>
+        <dd>A pure TypeScript cap engine, framework-free and unit-tested, that turns a league plus a ruleset into a compliance report. The same engine runs in a test and in the app.</dd>
         <dt>Data layer</dt>
-        <dd>Stateless simulation. Each run is fully deterministic from its seed and fully parameterized from its league config. Historical NBA seasons (2000–2026) ground the simulator against reality.</dd>
-        <dt>Architecture</dt>
-        <dd>A single <code>LeagueConfig</code> dataclass holds every league-specific parameter. A <code>LotterySystem</code> protocol defines the interface all fifteen systems implement. The simulation engine is decoupled from the web layer — it runs identically in a test, a request handler, or a notebook.</dd>
+        <dd>Rulesets are plain JSON. Save one to a file or share it as a link, and it reloads exactly. Every calculation happens client-side.</dd>
+        <dt>Hosting</dt>
+        <dd>A static build on Vercel at capbuffet.com, with Lottery Lab alongside it at lottery.capbuffet.com.</dd>
       </dl>
 
       <h2>The design argument</h2>
 
-      <p>Most sports reform proposals are rhetorical. They describe the outcomes they want and skip past the incentives their rules would actually create. Draft Lottery Lab treats league design the way an engineer treats load-bearing structure — something you can test, measure, and iterate before anything is built.</p>
+      <p>Sports-reform proposals usually describe the outcome someone wants and move past the incentives their rules would create. Cap Buffet treats league design the way an engineer treats a load-bearing structure, as something you can measure and iterate before you build it. A rule is a module. A cap is a stack of modules. The consequences are a table you can read.</p>
 
-      <p>The Chip Window started as a constraint: what is the minimal change to the rules that makes tanking structurally worse than competing? The answer became a mechanism. The mechanism became a simulation. The simulation became evidence.</p>
+      <p>Cap hits are input data in this build. A transaction sandbox for proration, dead money, and buyouts, along with side-by-side comparison of two systems, are on the roadmap.</p>
 
     </div>
 
