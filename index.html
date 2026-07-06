@@ -33,18 +33,6 @@
      frame is the structure; the grid does the composing.
      ───────────────────────────────────────────────────────────────── */
 
-  /* ── Deck / rotating tagline ──────────── */
-  .tagline {
-    margin: clamp(14px, 2vw, 22px) 0 0;
-    font-family: "Switzer", var(--sans);
-    font-weight: 600;
-    font-size: clamp(19px, 2.5vw, 30px);
-    line-height: 1.12;
-    letter-spacing: -0.015em;
-    color: var(--ink);
-  }
-  .tagline span { display: block; text-wrap: balance; }
-
   /* ── Concepts & experiments — a ruled text list ─ */
   .experiments {
     margin: clamp(40px, 6vw, 72px) 0;
@@ -245,52 +233,6 @@
     .index { grid-template-columns: 1fr; }
   }
 
-  /* ── Agent-direction layer ─────────────────────────
-     Additive sections that surface the "directs & ships
-     complex systems at scale" story. Same register as the
-     rest of the page: mono labels, ruled lists, the 2px
-     frame. Nothing here touches the masthead deck. */
-  .bio {
-    margin: clamp(14px, 2vw, 22px) 0 0;
-    max-width: 60ch;
-    font-family: var(--text);
-    font-weight: 500;
-    font-size: clamp(16px, 1.45vw, 19px);
-    line-height: 1.55;
-    color: var(--ink);
-    text-wrap: pretty;
-  }
-  .bio p { margin: 0; }
-  .bio strong { font-weight: 700; }
-  .bio em { font-style: italic; }
-
-  .focus { margin: clamp(30px, 4.5vw, 52px) 0 clamp(34px, 5vw, 60px); }
-  .focus__head {
-    margin: 0 0 clamp(8px, 1vw, 12px);
-    font-family: var(--mono);
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-  }
-  .focus__line {
-    margin: 0;
-    max-width: 70ch;
-    font-family: var(--sans);
-    font-weight: 600;
-    font-size: clamp(14px, 1.15vw, 16px);
-    line-height: 1.7;
-    letter-spacing: 0;
-    color: var(--ink);
-    text-wrap: pretty;
-  }
-  .focus__line .sep {
-    color: var(--accent);
-    font-weight: 400;
-    padding: 0 0.1em;
-  }
-
   .colophon .keywords { color: var(--ink-soft); }
 </style>
 </head>
@@ -298,7 +240,6 @@
 <div class="wrap">
 
   <nav class="topnav">
-    <a class="sitelink" href="atproto/index.html">ATProto</a>
     <a class="sitelink" href="about.html">About</a>
     <a class="sitelink" href="https://thinkingweapons.com">Studio &#8599;</a>
     <a class="sitelink" href="https://ronbronson.design">ronbronson.design &#8599;</a>
@@ -306,48 +247,7 @@
 
   <header class="masthead">
     <a class="name" href="./index.html">Ron Bronson</a>
-    <h2 class="tagline" id="tagline">
-      <span>Finds messy systems.</span>
-      <span>Makes them legible.</span>
-      <span>Builds what&rsquo;s missing.</span>
-      <span>Keeps them moving.</span>
-    </h2>
   </header>
-  <script>
-    /* Rotate the deck on every load — pick a random variant, never
-       repeating the one shown last refresh. No-JS render shows the
-       static V1 above. */
-    (function () {
-      var DECKS = [
-        ["Finds messy problems.", "Makes them legible.", "Builds things.", "Puts them into the world."],
-        ["Finds messy systems.", "Makes them legible.", "Builds what’s missing.", "Keeps them moving."],
-        ["Untangles complexity.", "Makes it understandable.", "Builds the missing pieces.", "Leaves behind working systems."],
-        ["Finds the bottleneck.", "Makes it visible.", "Builds the fix.", "Leaves others better equipped."],
-        ["Studies how things work.", "Explains why they don’t.", "Builds what they need.", "Helps them do the job."],
-        ["Makes the invisible visible.", "Makes the confusing clear.", "Builds what’s needed.", "Puts it to work."],
-        ["Finds the workarounds.", "Understands the system.", "Builds the missing infrastructure.", "Puts it into service."],
-        ["Finds the gap between policy and reality.", "Makes it legible.", "Builds the bridge.", "Puts it into the world."],
-        ["Joins the team.", "Finds what’s in the way.", "Builds what it’s missing.", "Leaves it stronger than he found it."]
-      ];
-      var el = document.getElementById("tagline");
-      if (!el) return;
-      var last = -1;
-      try { last = parseInt(sessionStorage.getItem("rb-deck"), 10); } catch (e) {}
-      var i = Math.floor(Math.random() * DECKS.length);
-      while (i === last) i = Math.floor(Math.random() * DECKS.length);
-      try { sessionStorage.setItem("rb-deck", i); } catch (e) {}
-      el.innerHTML = DECKS[i].map(function (line) { return "<span>" + line + "</span>"; }).join("");
-    })();
-  </script>
-
-  <section class="bio" aria-label="About">
-    <p>I&rsquo;ve led design and technology delivery for millions of people, built and run practices, and shipped products. My work sits where strategy becomes structure: clarifying ambiguous goals, organizing teams and systems, improving how algorithmic decisions get made, and ensuring trust stays embedded in public tech.</p>
-  </section>
-
-  <section class="focus" aria-label="Focus areas">
-    <h2 class="focus__head">Focus</h2>
-    <p class="focus__line">AI agent orchestration <span class="sep">&middot;</span> Human-in-the-loop delivery <span class="sep">&middot;</span> Eval &amp; validation design <span class="sep">&middot;</span> AI governance <span class="sep">&middot;</span> Context engineering <span class="sep">&middot;</span> Agent experience (AX) <span class="sep">&middot;</span> Service design <span class="sep">&middot;</span> Consequence design <span class="sep">&middot;</span> Systems design</p>
-  </section>
 
   <svg class="ph-defs" aria-hidden="true">
     <defs>
