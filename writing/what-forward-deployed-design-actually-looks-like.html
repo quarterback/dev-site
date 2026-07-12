@@ -50,6 +50,8 @@
   .essay-body p + p { margin-top: 1.1em; }
   .essay-body em { font-style: italic; }
   .essay-body strong { font-weight: 700; }
+  .essay-body a { color: var(--ink); border-bottom: 2px solid var(--accent); padding-bottom: 1px; }
+  .essay-body a:hover { color: var(--accent); }
   .essay-body .nb {
     margin-top: 1.6em;
     font-size: clamp(15px, 1.4vw, 18px);
@@ -66,6 +68,17 @@
   }
   .essay-foot a { color: var(--ink); border-bottom: 2px solid var(--accent); padding-bottom: 1px; }
   .essay-foot a:hover { color: var(--accent); }
+  .essay-foot__label {
+    margin: 0 0 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .essay-refs { margin: 0 0 clamp(20px, 3vw, 28px); padding: 0; list-style: none; }
+  .essay-refs li { margin: 0; }
+  .essay-refs li + li { margin-top: 8px; }
+  .essay-refs a { display: inline; line-height: 1.5; }
+  .essay-foot__note { margin: 0; }
 </style>
 </head>
 <body>
@@ -86,7 +99,7 @@
     <h1 class="essay-title">What Forward Deployed Design Actually Looks Like</h1>
 
     <div class="essay-body">
-      <p>I appreciated both Roger Wong and David Hoang&rsquo;s blog posts about Forward Deployed Design.</p>
+      <p>I appreciated both <a href="https://rogerwong.me/2026/05/forward-deployed-design-at-18f" target="_blank" rel="noopener">Roger Wong</a> and David Hoang&rsquo;s blog posts about Forward Deployed Design.</p>
 
       <p>Reading them, I kept thinking about my time at 18F, where we employed this model without calling it &lsquo;forward deployed.&rsquo; This operating posture is how most civic technology firms work too, though everyone has their own flavor and some models are more decentralized than others.</p>
 
@@ -125,7 +138,14 @@
       <p class="nb">n.b. We rotated people often, it depends on what the role was. The designer had a say too, but this was influenced by needs of the project, timeline &amp; what else we had in the pipeline that fit their skillset. We could be creative about the last part, though.</p>
     </div>
 
-    <p class="essay-foot">Originally published on <a href="https://blog.ronbronson.com/what-forward-deployed-design-actually-looks-like" target="_blank" rel="noopener">blog.ronbronson.com</a>.</p>
+    <div class="essay-foot">
+      <p class="essay-foot__label">In the conversation</p>
+      <ul class="essay-refs">
+        <li><a href="https://rogerwong.me/2026/05/forward-deployed-design-at-18f" target="_blank" rel="noopener">Roger Wong &mdash; Forward Deployed Design at 18F &#8599;</a></li>
+        <li><a href="https://www.madebymany.com/insights/were-natural-cynics-but-were-going-all-in-on-the-forward-deployed-designer" target="_blank" rel="noopener">Made by Many &mdash; We&rsquo;re natural cynics, but we&rsquo;re going all-in on the forward deployed designer &#8599;</a></li>
+      </ul>
+      <p class="essay-foot__note">Originally published on <a href="https://blog.ronbronson.com/what-forward-deployed-design-actually-looks-like" target="_blank" rel="noopener">blog.ronbronson.com</a>.</p>
+    </div>
   </main>
 
 </div>
