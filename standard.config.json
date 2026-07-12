@@ -7,9 +7,13 @@
     "preferences": { "showInDiscover": true }
   },
   "documents": {
-    "include": ["projects/*.html", "about.html"],
+    "include": ["projects/*.html", "writing/*.html", "about.html"],
     "exclude": ["projects/_template.html"],
     "titleStrip": ["Ron Bronson"],
-    "overrides": {}
+    "overrides": {
+      "writing/what-forward-deployed-design-actually-looks-like.html": {
+        "publishedAt": "2026-05-07T00:00:00Z"
+      }
+    }
   }
 }
