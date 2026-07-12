@@ -13,6 +13,9 @@
     "overrides": {
       "writing/what-forward-deployed-design-actually-looks-like.html": {
         "publishedAt": "2026-05-07T00:00:00Z"
+      },
+      "writing/forward-deployed-design.html": {
+        "publishedAt": "2026-07-12T00:00:00Z"
       }
     }
   }

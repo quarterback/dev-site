@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="/favicon.png" type="image/png" sizes="any" />
+<title>Forward Deployed Design &mdash; Ron Bronson</title>
+<meta name="description" content="Ron Bronson's running writing on forward-deployed design &mdash; the embedded, cross-functional operating model &mdash; and the wider conversation it's part of." />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Forward Deployed Design &mdash; Ron Bronson" />
+<meta name="twitter:description" content="A running collection on forward-deployed design: embedded, cross-functional, shipping working product." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/site.css" />
+<script src="../assets/palette.js"></script>
+<style>
+  .topic-meta {
+    margin: clamp(18px, 3vw, 30px) 0 clamp(14px, 2vw, 20px);
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .topic-title {
+    margin: 0 0 clamp(24px, 4vw, 40px);
+    max-width: 16ch;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(40px, 6vw, 72px);
+    line-height: 1.0;
+    letter-spacing: -0.03em;
+    text-wrap: balance;
+    color: var(--ink);
+  }
+  .topic-lede { max-width: 62ch; }
+  .topic-lede p {
+    margin: 0;
+    font-family: var(--text);
+    font-weight: 500;
+    font-size: clamp(18px, 1.7vw, 22px);
+    line-height: 1.55;
+    color: var(--ink);
+    text-wrap: pretty;
+  }
+  .topic-lede p + p { margin-top: 1em; }
+  .topic-lede a { color: var(--ink); border-bottom: 2px solid var(--accent); padding-bottom: 1px; }
+  .topic-lede a:hover { color: var(--accent); }
+
+  .collection { max-width: 66ch; margin-top: clamp(36px, 5vw, 60px); }
+  .collection__head {
+    margin: 0 0 clamp(16px, 2vw, 22px);
+    padding-bottom: 10px;
+    border-bottom: var(--frame) solid var(--ink);
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+  .collection__list { margin: 0; padding: 0; list-style: none; display: grid; gap: clamp(18px, 2.5vw, 26px); }
+  .entry__title {
+    margin: 0 0 6px;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(20px, 2vw, 26px);
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+  }
+  .entry__title a { color: var(--ink); }
+  .entry__title a:hover { color: var(--accent); }
+  .entry__meta {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .entry__note {
+    margin: 6px 0 0;
+    max-width: 60ch;
+    font-family: var(--text);
+    font-weight: 500;
+    font-size: clamp(15px, 1.4vw, 17px);
+    line-height: 1.5;
+    color: var(--ink);
+    text-wrap: pretty;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="topnav">
+    <a class="sitelink" href="../index.html">&#8592; Catalog</a>
+    <a class="sitelink" href="https://thinkingweapons.com">Studio &#8599;</a>
+    <a class="sitelink" href="https://ronbronson.design">ronbronson.design &#8599;</a>
+  </nav>
+
+  <header class="masthead">
+    <a class="name" href="../index.html">Ron Bronson</a>
+  </header>
+
+  <main>
+    <p class="topic-meta">Topic &middot; Ongoing</p>
+    <h1 class="topic-title">Forward Deployed Design</h1>
+
+    <div class="topic-lede">
+      <p>Forward-deployed design is the operating model I ran for eight years at 18F &mdash; four of them as director of a 40-person design division: designers embedded where problems actually happen, on short, problem-scoped, cross-functional engagements that ship working product, not handoffs.</p>
+      <p>I&rsquo;m going deeper on it here &mdash; more writing, more argument, and the wider conversation it belongs to. Working this way, or think it&rsquo;s wrong? <a href="mailto:contact@ronbronson.com">Tell me</a>.</p>
+    </div>
+
+    <section class="collection" aria-label="Writing">
+      <h2 class="collection__head">Writing</h2>
+      <ul class="collection__list">
+        <li class="entry">
+          <p class="entry__title"><a href="what-forward-deployed-design-actually-looks-like.html">What Forward Deployed Design Actually Looks Like</a></p>
+          <p class="entry__meta">Essay &middot; May 7, 2026</p>
+          <p class="entry__note">What it actually takes: designers who can do more than one thing, adjacent skills that build the practice, and the evangelism that makes the value legible.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="collection" aria-label="In the conversation">
+      <h2 class="collection__head">In the conversation</h2>
+      <ul class="collection__list">
+        <li class="entry">
+          <p class="entry__title"><a href="https://rogerwong.me/2026/05/forward-deployed-design-at-18f" target="_blank" rel="noopener">Forward Deployed Design at 18F &#8599;</a></p>
+          <p class="entry__meta">Roger Wong</p>
+        </li>
+        <li class="entry">
+          <p class="entry__title"><a href="https://www.madebymany.com/insights/were-natural-cynics-but-were-going-all-in-on-the-forward-deployed-designer" target="_blank" rel="noopener">We&rsquo;re natural cynics, but we&rsquo;re going all-in on the forward deployed designer &#8599;</a></p>
+          <p class="entry__meta">Made by Many</p>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+</div>
+</body>
+</html>
