@@ -138,6 +138,10 @@
   .intro p + p { margin-top: 1em; }
   .intro a { color: var(--ink); border-bottom: 2px solid var(--accent); padding-bottom: 1px; }
   .intro a:hover { color: var(--accent); }
+  .intro--lede {
+    margin-top: 0;
+    padding-bottom: clamp(20px, 3vw, 36px);
+  }
 
   /* ── The grid ─────────────────────────── */
   .index {
@@ -248,6 +252,10 @@
   <header class="masthead">
     <a class="name" href="./index.html">Ron Bronson</a>
   </header>
+
+  <section class="intro intro--lede">
+    <p>I&rsquo;ve always found it easier to design in code, going back to the early days of HTML &mdash; this is just a site for me to keep track of my projects. <a class="email-link" href="#" aria-label="Email me">Get in touch <span aria-hidden="true">&#9993;</span></a></p>
+  </section>
 
   <svg class="ph-defs" aria-hidden="true">
     <defs>
@@ -520,7 +528,7 @@
   </section>
 
   <section class="intro">
-    <p>Reach me at <a href="mailto:contact@ronbronson.com">contact@ronbronson.com</a>.</p>
+    <p>Reach me at <a class="email-link" href="#" aria-label="Email me">contact [at] this domain <span aria-hidden="true">&#9993;</span></a>.</p>
   </section>
 
   <footer class="foot">
@@ -558,6 +566,19 @@
       while (DIGRESSIONS.length > 1 && i === last) i = Math.floor(Math.random() * DIGRESSIONS.length);
       try { sessionStorage.setItem("rb-digression", i); } catch (e) {}
       el.innerHTML = DIGRESSIONS[i];
+    })();
+  </script>
+  <script>
+    /* Email links — the address never appears in the HTML source; it's
+       assembled here from parts, so basic scrapers reading the markup
+       (or even this script for a literal "mailto:") come up empty. */
+    (function () {
+      var parts = ["con", "tact", "@", "ronbronson", ".com"];
+      var addr = parts.join("");
+      var links = document.querySelectorAll("a.email-link");
+      for (var i = 0; i < links.length; i++) {
+        links[i].setAttribute("href", ["mail", "to:"].join("") + addr);
+      }
     })();
   </script>
 
