@@ -141,16 +141,9 @@
   .intro--lede {
     margin-top: 0;
     padding-bottom: clamp(20px, 3vw, 36px);
-    max-width: 92ch;
-    column-width: 34ch;
-    column-gap: clamp(28px, 4vw, 48px);
+    max-width: 100ch;
   }
-  .intro--lede p { break-inside: avoid; }
-  .intro--lede p + p { margin-top: 0; }
-  @media (max-width: 680px) {
-    .intro--lede { column-width: auto; }
-    .intro--lede p + p { margin-top: 1em; }
-  }
+  .intro--lede p { font-size: clamp(20px, 2.1vw, 27px); }
 
   /* ── The grid ─────────────────────────── */
   .index {
