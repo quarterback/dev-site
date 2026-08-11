@@ -120,6 +120,23 @@
     vertical-align: middle;
   }
 
+  /* ── Masthead statement override ──────── */
+  .masthead--statement {
+    max-width: 78ch;
+  }
+  .masthead--statement p {
+    margin: 0;
+    font-family: var(--text);
+    font-weight: 500;
+    font-size: clamp(17px, 1.5vw, 20px);
+    line-height: 1.55;
+    color: var(--ink);
+    text-wrap: pretty;
+  }
+  .masthead--statement p + p {
+    margin-top: 0.9em;
+  }
+
   /* ── Intro / contact ──────────────────── */
   .intro {
     margin: clamp(20px, 3vw, 32px) 0 0;
@@ -244,13 +261,17 @@
 <div class="wrap">
 
   <nav class="topnav">
-    <a class="sitelink" href="about.html">About</a>
+    <a class="sitelink" href="https://ronbronson.design">Design &#8599;</a>
     <a class="sitelink" href="https://thinkingweapons.com">Studio &#8599;</a>
-    <a class="sitelink" href="https://ronbronson.design">ronbronson.design &#8599;</a>
+    <a class="sitelink" href="https://gpo.delivery">Lab &#8599;</a>
+    <a class="sitelink" href="https://blog.ronbronson.com">Blog &#8599;</a>
+    <a class="sitelink" href="https://makingpublicwork.com">Public Delivery &#8599;</a>
   </nav>
 
-  <header class="masthead">
-    <a class="name" href="./index.html">Ron Bronson</a>
+  <header class="masthead masthead--statement">
+    <p>I build systems. I&rsquo;ve long been interested in technology&rsquo;s impact on everyday life, studying the service design of problems through the lens of post-contemporary economics.</p>
+    <p>Finding the subordination of critical design problematic, I&rsquo;ve long sought new ways to communicate the depth of my interests and the uniqueness of a lens that views technology not as an enabler of promise, but as a way to give bad rules a longer shelf life than they deserve.</p>
+    <p>Lately, my work has focused on using code, forensic auditing, and local-first infrastructure to diagnose how public systems extract time, hoard state capacity, and erode public trust under the guise of technical complexity.</p>
   </header>
 
   <section class="intro intro--lede">
