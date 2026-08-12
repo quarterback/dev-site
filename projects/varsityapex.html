@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="/favicon.png" type="image/png" sizes="any" />
+<title>VarsityApex — Ron Bronson</title>
+<meta name="description" content="A decentralized data platform for high school sports, built on ATProto. Ingests Hy-Tek printouts, spreadsheets, and scorebooks, normalizes and resolves identity across them, and distributes standardized records up through school, league, state, and national levels." />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="VarsityApex — Ron Bronson" />
+<meta name="twitter:description" content="A decentralized data platform for high school sports, built on ATProto. Schools own their records; athletes get one profile across every sport, all four years." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/site.css" />
+<script src="../assets/palette.js"></script>
+<style>
+  .project { max-width: 820px; }
+  .project__title {
+    margin: 0 0 clamp(8px, 1.5vw, 16px);
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(40px, 6vw, 76px);
+    line-height: 1.0;
+    letter-spacing: -0.025em;
+    text-wrap: balance;
+  }
+  .project__lede {
+    margin: 0 0 clamp(28px, 4vw, 48px);
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: clamp(20px, 1.8vw, 24px);
+    line-height: 1.4;
+    color: var(--ink);
+    max-width: 52ch;
+    text-wrap: pretty;
+  }
+
+  .project__body { display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(20px, 2.6vw, 32px); }
+  .project__body > p {
+    margin: 0;
+    font-family: var(--sans);
+    font-size: clamp(17px, 1.35vw, 18px);
+    line-height: 1.65;
+    color: var(--ink);
+    max-width: 64ch;
+    text-wrap: pretty;
+  }
+  .project__body h2 {
+    margin: clamp(32px, 5vw, 56px) 0 4px;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(24px, 2.2vw, 30px);
+    line-height: 1.15;
+    letter-spacing: -0.018em;
+    color: var(--ink);
+  }
+  .project__body ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 14px;
+    font-family: var(--sans);
+    font-size: clamp(16px, 1.3vw, 18px);
+    line-height: 1.55;
+    color: var(--ink);
+    max-width: 64ch;
+  }
+  .project__body ul li { padding-left: 22px; position: relative; }
+  .project__body ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    width: 10px;
+    height: 1px;
+    background: var(--ink-soft);
+  }
+  .project__body ul li b { font-weight: 600; }
+  .project__body a {
+    color: var(--ink);
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 1px;
+  }
+  .project__body a:hover { color: var(--accent); border-color: var(--accent); }
+
+  .figure { margin: 0; background: var(--bg-deeper); overflow: hidden; position: relative; border: var(--frame) solid var(--ink); }
+  .figure img, .figure svg.ph { display: block; width: 100%; height: auto; }
+  .figure svg.ph { aspect-ratio: 16 / 10; }
+  .figure figcaption {
+    margin-top: 10px;
+    padding: 0 2px;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-soft);
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="topnav">
+    <a class="sitelink" href="../index.html">&#8592; Catalog</a>
+    <a class="sitelink" href="../atproto/index.html">ATProto</a>
+  </nav>
+
+  <header class="masthead">
+    <a class="name" href="../index.html">Ron Bronson</a>
+  </header>
+
+  <article class="project">
+
+    <h1 class="project__title">VarsityApex</h1>
+    <p class="project__lede">A decentralized data platform for high school sports &mdash; built on ATProto.</p>
+
+    <div class="project__body">
+
+      <!-- No screenshot asset yet — drop one in ../assets/varsityapex/ and
+           swap it in below, same as every other cell here. -->
+      <figure class="figure">
+        <svg class="ph" viewBox="0 0 1400 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs>
+            <pattern id="ph-a" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(20)">
+              <rect width="16" height="16" fill="#a8dadc"/>
+              <line x1="0" y1="0" x2="0" y2="16" stroke="#457b9d" stroke-width="6"/>
+            </pattern>
+          </defs>
+          <rect width="1400" height="800" fill="url(#ph-a)"/>
+        </svg>
+        <!-- <img src="../assets/varsityapex/home.png" alt="Screenshot of the VarsityApex tour" loading="lazy" /> -->
+      </figure>
+
+      <p>Local papers covering high school sports are decimated, and what&rsquo;s left is often paywalled &mdash; so families end up with no way to follow a kid, grandkid, or former teammate&rsquo;s season from anywhere but the bleachers. Meanwhile the results themselves aren&rsquo;t actually missing: they exist in Hy-Tek printouts, spreadsheets, and scorebooks schools already produce every week. They&rsquo;re just scattered, inconsistent, and never connected to anything. VarsityApex is a demonstration of what happens if you stop treating that as unsolvable.</p>
+
+      <h2>One sport, then every sport</h2>
+
+      <p>Right now, coverage quality depends entirely on the sport: basketball gets a website, while track, swimming, wrestling, golf, and cross country get a PDF, if that. VarsityApex models every contest as one of three shapes &mdash; games, duals, or meets &mdash; so the same pipeline handles a basketball score, a wrestling dual, and a track meet without treating any of them as a special case. Results move through extraction, normalization, identity resolution, and validation, then distribute as standardized records up through school, league, state, and national levels.</p>
+
+      <h2>Why ATProto</h2>
+
+      <p>The part that makes this more than a nicer database is where the records live. VarsityApex uses ATProtocol so schools keep their results in open formats on their own personal data servers, rather than locked inside whatever vendor they happen to be using this year &mdash; so a school can migrate platforms without losing its history. It also means an athlete&rsquo;s results can follow them as a single portable profile across every sport they play, for all four years of high school, instead of living in four disconnected systems.</p>
+
+      <h2>Where it stands</h2>
+
+      <p>The prototype works, and the public tour is live. Getting this in front of real conferences or state associations is the next phase &mdash; and since, as anyone who&rsquo;s dealt with an athletic department knows, associations and schools are cash-strapped, that step likely runs through civic or grant funding rather than a sales cycle. I wrote more about the thinking behind it, and the state of high school sports data generally, in <a href="https://gamedesign.leaflet.pub/3msnpahn5r22k" target="_blank" rel="noopener">this piece</a>.</p>
+
+      <p><a class="live-link" href="https://www.varsityapex.com/tour" target="_blank" rel="noopener">Take the tour &#8599;</a></p>
+
+    </div>
+
+  </article>
+
+  <footer class="foot">
+    <span>Reach me at <a href="mailto:contact@ronbronson.com">contact@ronbronson.com</a>.</span>
+  </footer>
+
+</div>
+</body>
+</html>
