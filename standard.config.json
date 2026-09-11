@@ -1,8 +1,8 @@
 {
   "publication": {
     "url": "https://ronbronson.dev",
-    "name": "Ron Bronson — Working Catalog of Complex Systems",
-    "description": "A working catalog of complex systems by Ron Bronson — service design, consequence design, and agent experience (AX) applied to agent orchestration, human-in-the-loop delivery, eval and validation, AI governance, and context engineering.",
+    "name": "Ron Bronson — Systems design, technical strategy, and applied prototyping",
+    "description": "Ron Bronson works across product, software, data, and interaction systems: protocol-native applications, agent and interaction architecture, data and measurement systems, public and civic infrastructure, and forward-deployed design.",
     "icon": "favicon.png",
     "preferences": { "showInDiscover": true }
   },
