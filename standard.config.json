@@ -1,8 +1,8 @@
 {
   "publication": {
     "url": "https://ronbronson.dev",
-    "name": "Ron Bronson — Systems design, technical strategy, and applied prototyping",
-    "description": "Ron Bronson works across product, software, data, and interaction systems: protocol-native applications, agent and interaction architecture, data and measurement systems, public and civic infrastructure, and forward-deployed design.",
+    "name": "Ron Bronson",
+    "description": "Ron Bronson builds technical systems, measurement tools, and prototypes when the existing thing is missing, too narrow, or badly framed.",
     "icon": "favicon.png",
     "preferences": { "showInDiscover": true }
   },

@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="icon" href="/favicon.png" type="image/png" sizes="any" />
-<title>Ron Bronson &mdash; Systems design, technical strategy, and applied prototyping</title>
-<meta name="description" content="Ron Bronson works across product, software, data, and interaction systems: protocol-native applications, agent and interaction architecture, data and measurement systems, public and civic infrastructure, and forward-deployed design." />
+<title>Ron Bronson</title>
+<meta name="description" content="Ron Bronson builds technical systems, measurement tools, and prototypes when the existing thing is missing, too narrow, or badly framed." />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Ron Bronson &mdash; Systems design, technical strategy, and applied prototyping" />
-<meta name="twitter:description" content="Ron Bronson works across product, software, data, and interaction systems: protocol-native applications, agent and interaction architecture, data and measurement systems, public and civic infrastructure, and forward-deployed design." />
+<meta name="twitter:title" content="Ron Bronson" />
+<meta name="twitter:description" content="Ron Bronson builds technical systems, measurement tools, and prototypes when the existing thing is missing, too narrow, or badly framed." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -57,7 +57,7 @@
     text-wrap: pretty;
   }
   .lede p + p { margin-top: 1em; }
-  .lede .thesis { font-family: var(--display); font-weight: 700; font-size: clamp(20px, 1.9vw, 26px); letter-spacing: -0.015em; }
+  .lede p:first-child { font-family: var(--display); font-weight: 700; font-size: clamp(24px, 2.8vw, 38px); line-height: 1.1; letter-spacing: -0.02em; }
 
   /* ── Section heads — mono label over a 2px rule ─ */
   .sec { margin: 0 0 clamp(36px, 5vw, 64px); }
@@ -108,36 +108,7 @@
     color: var(--ink);
     text-wrap: balance;
   }
-  .area p { max-width: none; font-size: clamp(15px, 1.15vw, 17px); }
-  .area--wide { grid-column: 1 / -1; background: var(--bg-deeper); border-left: 6px solid var(--accent); }
-  .area--wide p { max-width: 70ch; }
-
-  /* ── Technical range — the stack as a single mono run ─ */
-  .range {
-    margin: 0 0 1em;
-    padding: clamp(14px, 1.8vw, 20px);
-    border: var(--frame) solid var(--ink);
-    background: var(--bg-deeper);
-    font-family: var(--mono);
-    font-size: clamp(13px, 1.1vw, 15px);
-    line-height: 1.7;
-    letter-spacing: 0.01em;
-    color: var(--ink);
-  }
-
-  /* ── Evidence — ruled list, no cards ─ */
-  .evidence { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--rule); }
-  .evidence li {
-    padding: clamp(12px, 1.5vw, 16px) 0;
-    border-bottom: 1px solid var(--rule);
-    max-width: 72ch;
-    font-family: var(--text);
-    font-weight: 500;
-    font-size: clamp(16px, 1.25vw, 18px);
-    line-height: 1.5;
-    color: var(--ink);
-    text-wrap: pretty;
-  }
+  .area p { max-width: none; font-size: clamp(16px, 1.25vw, 18px); }
 
   /* ── Elsewhere ─ */
   .elsewhere { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 10px 22px; }
@@ -150,39 +121,6 @@
     white-space: nowrap;
   }
   .elsewhere a:hover { color: var(--accent); }
-
-  /* ── Writing and notes — the ruled list, kept from the old page ─ */
-  .experiments__list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    border-top: 1px solid var(--rule);
-  }
-  .exp {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 4px 14px;
-    padding: clamp(12px, 1.6vw, 18px) 0;
-    border-bottom: 1px solid var(--rule);
-  }
-  .exp__name {
-    font-family: var(--sans);
-    font-weight: 600;
-    font-size: clamp(17px, 1.5vw, 20px);
-    letter-spacing: -0.01em;
-    color: var(--ink);
-  }
-  .exp__year { font-family: var(--mono); font-size: 12px; color: var(--ink-soft); }
-  .exp__links { margin-left: auto; display: flex; flex-wrap: wrap; gap: 6px 14px; font-family: var(--mono); font-size: 12px; }
-  .exp__links a { color: var(--ink); border-bottom: var(--frame) solid var(--accent); padding-bottom: 1px; white-space: nowrap; }
-  .exp__links a:hover { color: var(--accent); }
-  .exp__note { flex-basis: 100%; margin-top: 2px; font-family: var(--text); font-size: clamp(13px, 1.1vw, 15px); line-height: 1.5; color: var(--ink-soft); max-width: 72ch; }
-  .tag-new {
-    display: inline-block; font-family: var(--mono); font-size: 10px; font-weight: 700;
-    letter-spacing: 0.1em; text-transform: uppercase; color: var(--bg); background: var(--accent);
-    padding: 2px 6px; vertical-align: middle;
-  }
 
   /* ── Contact ─ */
   .contact { margin: 0 0 clamp(20px, 3vw, 32px); max-width: 62ch; }
@@ -214,132 +152,33 @@
 
   <main>
 
-  <!-- 1. Technical identity. -->
   <section class="lede">
-    <h1 class="lede__deck">Systems design, technical strategy, and applied prototyping.</h1>
-    <p>I work across product, software, data, and interaction systems. My technical practice is less about specializing in a single stack than understanding how the parts fit together: protocols, interfaces, information architecture, data models, agent behavior, operational constraints, and the decisions that shape a system before anyone writes the final code.</p>
-    <p class="thesis">I build when building is the fastest way to understand the problem.</p>
+    <p>I build technical systems, measurement tools, and prototypes when the existing thing is missing, too narrow, or badly framed.</p>
+    <p>My background is design, but most of the work I&rsquo;m interested in sits between product, software, data, and systems. I care less about the stack than whether the thing is legible, useful, and built at the right layer.</p>
   </section>
 
-  <!-- 2. What I work on. -->
   <section class="sec" aria-labelledby="areas-head">
-    <h2 class="sec__head" id="areas-head">Areas of practice</h2>
+    <h2 class="sec__head" id="areas-head">What I work on</h2>
     <div class="areas">
       <article class="area">
-        <h3>Protocol-native systems</h3>
-        <p>I&rsquo;m interested in software built around portable identity, open protocols, shared state, and relationships that do not belong exclusively to the application.</p>
-        <p>My recent work with AT Protocol has explored identity, trust, reputation, matching, moderation, and application architectures built on shared infrastructure rather than closed platforms.</p>
+        <h3>Protocols and public infrastructure</h3>
+        <p>Portable identity, trust, reputation, open protocols, <a href="https://blog.ronbronson.com/public-delivery-is-statecraft">digital public infrastructure</a>, and the systems that sit underneath products rather than inside a single app.</p>
       </article>
       <article class="area">
-        <h3>Agent and interaction architecture</h3>
-        <p>LLM products are systems, not prompts.</p>
-        <p>I work on the interaction layer around agents: context, memory, retrieval, tools, permissions, response behavior, escalation, evaluation, and the product decisions that determine what a system can see and what it is allowed to do.</p>
-        <p>This builds on a longer practice in information architecture, content systems, interaction design, and service design.</p>
+        <h3>Agents and response systems</h3>
+        <p><a href="https://blog.ronbronson.com/context-is-not-just-a-map-its-the-terrain">Context</a>, retrieval, memory, <a href="https://blog.ronbronson.com/who-holds-the-pen-why-ai-agents-need-a-manager-not-just-a-manual">tools, permissions</a>, <a href="https://blog.ronbronson.com/agent-experience-needs-failure-affordances">evals</a>, and the <a href="https://blog.ronbronson.com/skill-issue-is-not-a-product-strategy">end-to-end response experience</a> around LLM products.</p>
       </article>
       <article class="area">
-        <h3>Data and measurement systems</h3>
-        <p>I design measurement systems when the existing metrics are inadequate.</p>
-        <p>That has included economic indices, ranking systems, simulation models, projection engines, benchmarking tools, and analytical interfaces built from public or operational data.</p>
-        <p>The common problem is making a complex system legible enough to reason about.</p>
+        <h3>Measurement</h3>
+        <p>Indices, <a href="https://blog.ronbronson.com/i-built-a-power-ranking-for-oregon-high-school-tennis">ranking systems</a>, projections, simulations, benchmarking, and other ways of making systems easier to reason about.</p>
       </article>
       <article class="area">
-        <h3>Public and civic infrastructure</h3>
-        <p>I have spent much of my career working on technical systems operating in public environments, where software interacts with policy, procurement, organizational constraints, and consequences at scale.</p>
-        <p>I&rsquo;m particularly interested in digital public infrastructure: identity, registries, payments, data exchange, public service platforms, and the technical systems that increasingly function as public works.</p>
-      </article>
-      <article class="area area--wide">
         <h3>Forward-deployed design</h3>
-        <p>I spent years building and operating multidisciplinary teams in environments where designers could not afford to be downstream specialists.</p>
-        <p>My approach treats design as a technical and strategic capability embedded close to the problem: designers who can work across product, research, content, code, delivery, and organizational strategy as circumstances require.</p>
+        <p>Designers <a href="https://blog.ronbronson.com/what-forward-deployed-design-actually-looks-like">working close to the problem</a>, not downstream from it. Technical enough to build, <a href="https://blog.ronbronson.com/forward-deployed-design-is-bigger-than-engineering">broad enough to reframe</a>, and useful across product, research, content, delivery, and strategy.</p>
       </article>
     </div>
   </section>
 
-  <!-- 3. How I work. -->
-  <section class="sec" aria-labelledby="range-head">
-    <h2 class="sec__head" id="range-head">Technical range</h2>
-    <p>My work has involved:</p>
-    <p class="range">Python, JavaScript, HTML/CSS, SQL, D3, APIs, data pipelines, simulation, statistical modeling, protocol-based applications, LLM tooling, retrieval systems, agent workflows, product architecture, design systems, information architecture, and technical prototyping.</p>
-    <p>I use code primarily as a medium for reasoning, testing, and making systems concrete.</p>
-  </section>
-
-  <!-- 4. Evidence. Factual bona fides, not project cards. -->
-  <section class="sec" aria-labelledby="evidence-head">
-    <h2 class="sec__head" id="evidence-head">Selected evidence</h2>
-    <ul class="evidence">
-      <li>Former Head of Design at 18F.gov, where I helped build multidisciplinary digital-service practice across complex technical environments.</li>
-      <li>Built production and experimental software across social protocols, analytics, simulation, data visualization, AI systems, and public-service contexts.</li>
-      <li>Designed original ranking, forecasting, economic measurement, and decision-support systems using public and operational datasets.</li>
-      <li>Created and directed technical prototypes from initial concept through working implementation, often using small teams or agent-assisted development.</li>
-      <li>Teach interaction design and systems-oriented approaches to technology at the University of Michigan.</li>
-    </ul>
-  </section>
-
-  <!-- 5. Writing and technical notes. The ruled list underneath is the
-       old Concepts & Experiments list: posts, talks and tools, not
-       project cards, so it stays as the receipts under the paragraph. -->
-  <section class="sec" aria-labelledby="writing-head">
-    <h2 class="sec__head" id="writing-head">Writing and technical notes</h2>
-    <p>I write about the parts of technology work that tend to sit between disciplines: systems design, context engineering, agent behavior, technical judgment, forward-deployed design, digital public infrastructure, and the relationship between product decisions and downstream consequences.</p>
-    <p><a href="https://blog.ronbronson.com">Read the technical writing &#8594;</a></p>
-    <ul class="experiments__list" style="margin-top: clamp(16px, 2vw, 24px);">
-
-      <li class="exp">
-        <span class="exp__name">closedtab <span class="tag-new">New</span></span>
-        <span class="exp__year">2026</span>
-        <span class="exp__links">
-          <a href="https://www.npmjs.com/package/closedtab" target="_blank" rel="noopener">npm &#8599;</a>
-          <a href="https://blog.ronbronson.com/closedtab-a-npm-shared-memory-for-you-and-your-ai-agents" target="_blank" rel="noopener">Blog post &#8599;</a>
-        </span>
-        <span class="exp__note">An npm tool that gives human&ndash;agent work a shared memory: a consistent after-action record of what you asked for, what the agent did, and the calls it made on its own &mdash; so the next agent and future-you inherit the same trail.</span>
-      </li>
-
-      <li class="exp">
-        <span class="exp__name">Claude skill.md for agent AARs</span>
-        <span class="exp__year">2026</span>
-        <span class="exp__links">
-          <a href="https://blog.ronbronson.com/i-built-a-claude-skill-for-after-action-reviews-on-ai-agent-work" target="_blank" rel="noopener">Blog post &#8599;</a>
-          <a href="https://github.com/quarterback/AAR" target="_blank" rel="noopener">GitHub &#8599;</a>
-        </span>
-      </li>
-
-      <li class="exp">
-        <span class="exp__name">Agent Experience Needs Failure Affordances</span>
-        <span class="exp__year">2026</span>
-        <span class="exp__links">
-          <a href="https://blog.ronbronson.com/agent-experience-needs-failure-affordances" target="_blank" rel="noopener">Blog post &#8599;</a>
-        </span>
-      </li>
-
-      <li class="exp">
-        <span class="exp__name">Agents and the Web: Agent Experience (AX)</span>
-        <span class="exp__year">2025</span>
-        <span class="exp__links">
-          <a href="https://www.netlify.com/webinars/agent-experience-principles/" target="_blank" rel="noopener">Netlify webinar &#8599;</a>
-        </span>
-      </li>
-
-      <li class="exp">
-        <span class="exp__name">The Designer&rsquo;s Share of the Problem</span>
-        <span class="exp__year">2021</span>
-        <span class="exp__links">
-          <a href="https://www.ixda.no/talks/the-designers-share-of-the-problem" target="_blank" rel="noopener">Talk &#8599;</a>
-        </span>
-      </li>
-
-      <li class="exp">
-        <span class="exp__name">Consequence Design</span>
-        <span class="exp__year">2016</span>
-        <span class="exp__links">
-          <a href="https://consequencedesign.com/" target="_blank" rel="noopener">consequencedesign.com &#8599;</a>
-          <a href="https://pixelpioneers.co/blog/building-better-user-centered-products-an-interview-with-ron-bronson" target="_blank" rel="noopener">Pixel Pioneers interview &#8599;</a>
-        </span>
-      </li>
-
-    </ul>
-  </section>
-
-  <!-- 6. Elsewhere and contact. -->
   <section class="sec" aria-labelledby="elsewhere-head">
     <h2 class="sec__head" id="elsewhere-head">Elsewhere</h2>
     <ul class="elsewhere">
