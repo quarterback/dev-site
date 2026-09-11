@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="icon" href="/favicon.png" type="image/png" sizes="any" />
-<title>Ron Bronson &mdash; Working Catalog of Complex Systems</title>
-<meta name="description" content="Ron Bronson is a design leader who directs AI agents to ship complex systems. A background in service design, consequence design, and agent experience (AX), now applied to agent orchestration, human-in-the-loop delivery, eval and validation, AI governance, and context engineering — five production systems built and deployed in about five months." />
+<title>Ron Bronson</title>
+<meta name="description" content="Ron Bronson builds technical systems, measurement tools, and prototypes when the existing thing is missing, too narrow, or badly framed." />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Ron Bronson &mdash; Working Catalog of Complex Systems" />
-<meta name="twitter:description" content="Ron Bronson is a design leader who directs AI agents to ship complex systems. A background in service design, consequence design, and agent experience (AX), now applied to agent orchestration, human-in-the-loop delivery, eval and validation, AI governance, and context engineering — five production systems built and deployed in about five months." />
+<meta name="twitter:title" content="Ron Bronson" />
+<meta name="twitter:description" content="Ron Bronson builds technical systems, measurement tools, and prototypes when the existing thing is missing, too narrow, or badly framed." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -28,105 +28,26 @@
 </script>
 <style>
   /* ─────────────────────────────────────────────────────────────────
-     Index — one exposed grid. Every project is the same cell: a mono
-     link, a framed screenshot, a title, a short prose block. The 2px
-     frame is the structure; the grid does the composing.
+     Index — a technical credibility surface, not a catalog. One reading
+     column of Ron's words, ruled into sections by the same 2px frame the
+     rest of the site uses. Project pages stay live under projects/ and
+     atproto/ but are not linked from here on purpose: the page makes the
+     higher-level claims and the projects are receipts surfaced when one
+     is relevant.
      ───────────────────────────────────────────────────────────────── */
 
-  /* ── Concepts & experiments — a ruled text list ─ */
-  .experiments {
-    margin: clamp(40px, 6vw, 72px) 0;
-  }
-  .experiments__head {
-    margin: 0 0 clamp(12px, 1.6vw, 18px);
-    font-family: var(--mono);
-    font-size: clamp(16px, 1.9vw, 21px);
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--ink);
-  }
-  .experiments__head span {
-    text-transform: none;
-    letter-spacing: 0.01em;
-    color: var(--ink-soft);
-  }
-  .experiments__list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    border-top: var(--frame) solid var(--ink);
-  }
-  .exp {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 4px 14px;
-    padding: clamp(12px, 1.6vw, 18px) 0;
-    border-bottom: 1px solid var(--rule);
-  }
-  .exp__name {
-    font-family: var(--sans);
-    font-weight: 600;
-    font-size: clamp(17px, 1.5vw, 20px);
-    letter-spacing: -0.01em;
-    color: var(--ink);
-  }
-  .exp__year {
-    font-family: var(--mono);
-    font-size: 12px;
-    color: var(--ink-soft);
-  }
-  .exp__links {
-    margin-left: auto;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px 14px;
-    font-family: var(--mono);
-    font-size: 12px;
-  }
-  .exp__links a {
-    color: var(--ink);
-    border-bottom: var(--frame) solid var(--accent);
-    padding-bottom: 1px;
-    white-space: nowrap;
-  }
-  .exp__links a:hover { color: var(--accent); }
-  .exp--featured {
-    background: var(--bg-deeper);
-    border-left: 4px solid var(--accent);
-    padding-left: clamp(10px, 1.2vw, 16px);
-    padding-right: clamp(10px, 1.2vw, 16px);
-  }
-  .exp__note {
-    flex-basis: 100%;
-    margin-top: 2px;
-    font-family: var(--text);
-    font-size: clamp(13px, 1.1vw, 15px);
-    line-height: 1.5;
-    color: var(--ink-soft);
-    max-width: 72ch;
-  }
-  .tag-new {
-    display: inline-block;
-    font-family: var(--mono);
-    font-size: 10px;
+  .lede { margin: 0 0 clamp(36px, 5vw, 64px); max-width: 70ch; }
+  .lede__deck {
+    margin: 0 0 clamp(14px, 2vw, 22px);
+    font-family: var(--display);
     font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--bg);
-    background: var(--accent);
-    padding: 2px 6px;
-    vertical-align: middle;
+    font-size: clamp(24px, 3vw, 40px);
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+    text-wrap: balance;
   }
-
-  /* ── Intro / contact ──────────────────── */
-  .intro {
-    margin: clamp(20px, 3vw, 32px) 0 0;
-    padding: 0 0 clamp(28px, 5vw, 52px);
-    max-width: 62ch;
-  }
-  .intro p {
+  .lede p {
     margin: 0;
     font-family: var(--text);
     font-weight: 500;
@@ -135,108 +56,80 @@
     color: var(--ink);
     text-wrap: pretty;
   }
-  .intro p + p { margin-top: 1em; }
-  .intro a { color: var(--ink); border-bottom: 2px solid var(--accent); padding-bottom: 1px; }
-  .intro a:hover { color: var(--accent); }
-  .intro--lede {
-    margin-top: 0;
-    padding-bottom: clamp(20px, 3vw, 36px);
-    max-width: 100ch;
-  }
-  .intro--lede p { font-size: clamp(20px, 2.1vw, 27px); }
+  .lede p + p { margin-top: 1em; }
+  .lede p:first-child { font-family: var(--display); font-weight: 700; font-size: clamp(24px, 2.8vw, 38px); line-height: 1.1; letter-spacing: -0.02em; }
 
-  /* ── The grid ─────────────────────────── */
-  .index {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+  /* ── Section heads — mono label over a 2px rule ─ */
+  .sec { margin: 0 0 clamp(36px, 5vw, 64px); }
+  .sec__head {
+    margin: 0 0 clamp(14px, 1.8vw, 22px);
+    padding-top: clamp(12px, 1.6vw, 18px);
     border-top: var(--frame) solid var(--ink);
-    border-left: var(--frame) solid var(--ink);
-  }
-
-  .cell {
-    border-right: var(--frame) solid var(--ink);
-    border-bottom: var(--frame) solid var(--ink);
-    padding: clamp(16px, 1.9vw, 26px);
-    display: flex;
-    flex-direction: column;
-    gap: clamp(12px, 1.3vw, 18px);
-  }
-
-  .cell__head {
     font-family: var(--mono);
-    font-size: 12px;
-  }
-
-  .cell__title {
-    margin: 0;
-    font-family: var(--display);
-    font-weight: 700;
-    font-size: clamp(23px, 2.2vw, 32px);
-    line-height: 1.04;
-    letter-spacing: -0.025em;
+    font-size: clamp(14px, 1.5vw, 18px);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
     color: var(--ink);
-    text-wrap: balance;
   }
-  .cell__title a { color: inherit; }
-  .cell__title a:hover { color: var(--accent); }
-
-  .cell__media {
-    display: block;
-    position: relative;
-    overflow: hidden;
-    background: var(--bg-deeper);
-    border: var(--frame) solid var(--ink);
-    aspect-ratio: 16 / 10;
-    transition: border-color .14s ease;
-  }
-  .cell:hover .cell__media { border-color: var(--accent); }
-  .cell__media svg.ph,
-  .cell__media img {
-    position: absolute; inset: 0;
-    width: 100%; height: 100%;
-    display: block;
-    object-fit: cover;
-    object-position: top center;
-  }
-  .cell__media svg.ph { z-index: 0; }
-  .cell__media img { z-index: 1; background: var(--bg-deeper); }
-
-  .cell__prose {
+  .sec p {
     margin: 0;
+    max-width: 68ch;
     font-family: var(--text);
     font-weight: 500;
-    font-size: clamp(14px, 1.05vw, 16px);
-    line-height: 1.5;
+    font-size: clamp(16px, 1.25vw, 18px);
+    line-height: 1.55;
     color: var(--ink);
     text-wrap: pretty;
   }
+  .sec p + p { margin-top: .85em; }
+  .sec a { color: var(--ink); border-bottom: var(--frame) solid var(--accent); padding-bottom: 1px; }
+  .sec a:hover { color: var(--accent); }
 
-  /* ── Feature cell — the ATProto banner. Spans the full grid width,
-       carries the accent rule and a deeper field so it reads as a
-       header, not just another project. Same frame, same register. ─ */
-  .cell--feature {
-    grid-column: 1 / -1;
-    background: var(--bg-deeper);
-    border-left: 6px solid var(--accent);
-    gap: clamp(8px, 1vw, 12px);
+  /* ── Areas of practice — the exposed grid, text cells ─ */
+  .areas {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-top: var(--frame) solid var(--ink);
+    border-left: var(--frame) solid var(--ink);
   }
-  .cell--feature .cell__kicker {
+  .area {
+    border-right: var(--frame) solid var(--ink);
+    border-bottom: var(--frame) solid var(--ink);
+    padding: clamp(16px, 1.9vw, 26px);
+  }
+  .area h3 {
+    margin: 0 0 .5em;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(22px, 2vw, 28px);
+    line-height: 1.06;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    text-wrap: balance;
+  }
+  .area p { max-width: none; font-size: clamp(16px, 1.25vw, 18px); }
+
+  /* ── Elsewhere ─ */
+  .elsewhere { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 10px 22px; }
+  .elsewhere a {
     font-family: var(--mono);
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
+    font-size: 14px;
+    color: var(--ink);
+    border-bottom: var(--frame) solid var(--accent);
+    padding-bottom: 1px;
+    white-space: nowrap;
   }
-  .cell--feature .cell__title { font-size: clamp(26px, 3vw, 42px); max-width: 22ch; }
-  .cell--feature .cell__prose { font-size: clamp(15px, 1.2vw, 18px); max-width: 70ch; }
+  .elsewhere a:hover { color: var(--accent); }
 
-  /* ── Responsive: collapse the grid, keep the rules ─ */
-  @media (max-width: 1040px) {
-    .index { grid-template-columns: repeat(2, 1fr); }
-  }
+  /* ── Contact ─ */
+  .contact { margin: 0 0 clamp(20px, 3vw, 32px); max-width: 62ch; }
+  .contact p { margin: 0; font-family: var(--text); font-weight: 500; font-size: clamp(17px, 1.4vw, 20px); line-height: 1.5; color: var(--ink); }
+  .contact a { color: var(--ink); border-bottom: var(--frame) solid var(--accent); padding-bottom: 1px; }
+  .contact a:hover { color: var(--accent); }
+
   @media (max-width: 680px) {
-    .index { grid-template-columns: 1fr; }
+    .areas { grid-template-columns: 1fr; }
   }
 
   .colophon .keywords { color: var(--ink-soft); }
@@ -257,291 +150,56 @@
     <a class="name" href="./index.html">Ron Bronson</a>
   </header>
 
-  <!-- Longer statement, parked for now — too wordy for current taste, keeping
-       it around in case it comes back.
-  <section class="intro intro--lede">
-    <p>I build systems. I&rsquo;ve long been interested in technology&rsquo;s impact on everyday life, studying the service design of problems through the lens of post-contemporary economics.</p>
-    <p>Finding the subordination of critical design problematic, I&rsquo;ve long sought new ways to communicate the depth of my interests and the uniqueness of a lens that views technology not as an enabler of promise, but as a way to give bad rules a longer shelf life than they deserve.</p>
-    <p>Lately, my work has focused on using code, forensic auditing, and local-first infrastructure to diagnose how public systems extract time, hoard state capacity, and erode public trust under the guise of technical complexity. <a class="email-link" href="#" aria-label="Email me">Get in touch <span aria-hidden="true">&#9993;</span></a></p>
-  </section>
-  -->
+  <main>
 
-  <section class="intro intro--lede">
-    <p>I approach systems as malleable structures that can respond to the needs of their users. I also <a href="https://thinkingweapons.com" target="_blank" rel="noopener">organize events</a> and have a <a href="https://ronbronson.design" target="_blank" rel="noopener">multidisciplinary design practice</a>.</p>
+  <section class="lede">
+    <p>I build technical systems, measurement tools, and prototypes when the existing thing is missing, too narrow, or badly framed.</p>
+    <p>My background is design, but most of the work I&rsquo;m interested in sits between product, software, data, and systems. I care less about the stack than whether the thing is legible, useful, and built at the right layer.</p>
   </section>
 
-  <svg class="ph-defs" aria-hidden="true">
-    <defs>
-      <pattern id="m3a" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(20)">
-        <rect width="16" height="16" fill="#a8dadc"/>
-        <line x1="0" y1="0" x2="0" y2="16" stroke="#457b9d" stroke-width="6"/>
-      </pattern>
-    </defs>
-  </svg>
-
-  <!-- ─── Cell schema ────────────────────────────────────────────────
-       <article class="cell">
-         <div class="cell__head"><a class="live-link" href="…">Read the project</a></div>
-         <h2 class="cell__title"><a href="projects/SLUG.html">Name</a></h2>
-         <a class="cell__media" href="projects/SLUG.html" aria-label="Name">
-           <svg class="ph" …></svg>
-           <img src="…" alt="…" loading="lazy" />
-         </a>
-         <p class="cell__prose">Real paragraph in your voice.</p>
-       </article>
-       Every cell is identical; the grid does the composing.
-       ──────────────────────────────────────────────────────────────── -->
-
-  <section class="index" aria-label="Projects">
-
-    <article class="cell">
-      <div class="cell__head"><span class="tag-new">New</span> <a class="live-link" href="projects/occupant.html">Read the project</a></div>
-      <h2 class="cell__title"><a href="projects/occupant.html">Occupant Indices</a></h2>
-      <a class="cell__media" href="projects/occupant.html" aria-label="Occupant Indices">
-        <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
-        <img src="assets/occupant/indices.png" alt="Screenshot of the indices page at occupant.ee" loading="lazy" />
-      </a>
-      <p class="cell__prose">Public measurement infrastructure for the AI economy. Three live indices &mdash; a compute price deflator, a synthetic activity unit modeled on the IMF&rsquo;s SDR, and a labor displacement gauge built on federal procurement and wage data &mdash; recomputed daily from public sources, with the git history as the audit trail.</p>
-    </article>
-
-    <article class="cell">
-      <div class="cell__head"><span class="tag-new">New</span> <a class="live-link" href="projects/varsityapex.html">Read the project</a></div>
-      <h2 class="cell__title"><a href="projects/varsityapex.html">VarsityApex</a></h2>
-      <a class="cell__media" href="projects/varsityapex.html" aria-label="VarsityApex">
-        <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
-      </a>
-      <p class="cell__prose">VarsityApex is a prototype for better high school sports data. It turns school records into portable, structured data that can move across teams, leagues, and associations, while giving athletes one history across sports. Built on ATProto.</p>
-    </article>
-
-    <article class="cell">
-      <div class="cell__head"><span class="tag-new">New</span> <a class="live-link" href="projects/beachwave.html">Read the project</a></div>
-      <h2 class="cell__title"><a href="projects/beachwave.html">Beachwave</a></h2>
-      <a class="cell__media" href="projects/beachwave.html" aria-label="Beachwave">
-        <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
-        <img src="assets/beachwave/home.png" alt="Screenshot of beachwave.app" loading="lazy" />
-      </a>
-      <p class="cell__prose">A deployable reference for live audio rooms on ATProto. Sign in with ATProto OAuth, create a room, publish its metadata, and connect audio through LiveKit &mdash; then fork the repo and run your own version.</p>
-    </article>
-
-    <article class="cell">
-      <div class="cell__head"><span class="tag-new">New</span> <a class="live-link" href="projects/mallo.html">Read the project</a></div>
-      <h2 class="cell__title"><a href="projects/mallo.html">Mallo</a></h2>
-      <a class="cell__media" href="projects/mallo.html" aria-label="Mallo">
-        <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
-        <img src="assets/mallo/home.png" alt="Screenshot of mallo.fi" loading="lazy" />
-      </a>
-      <p class="cell__prose">Pes&auml;pallo, the Finnish cousin to American baseball, has long operated using conventional counting stats. As a longtime fan of the sport, I wondered if it were possible to build analytics/sabermetrics for Pes&auml;pallo. Mallo is the first successful attempt at creating pitching, defensive &amp; advanced batting metrics for the 104-year-old sport.</p>
-    </article>
-
-    <article class="cell">
-      <div class="cell__head"><a class="live-link" href="projects/play-to-clinch.html">Read the project</a></div>
-      <h2 class="cell__title"><a href="projects/play-to-clinch.html">Play To Clinch</a></h2>
-      <a class="cell__media" href="projects/play-to-clinch.html" aria-label="Play To Clinch">
-        <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
-        <img src="assets/play-to-clinch/recruiting-profile.png" alt="Screenshot of the Play To Clinch NCAA D3 championship bracket" loading="lazy" />
-      </a>
-      <p class="cell__prose">Earth&rsquo;s first-ever team tennis computer game. College-format dual matches, a junior recruiting circuit, and GTT &mdash; a co-ed pro league &mdash; all on one continuous rating scale, driven by a deterministic point-by-point Python engine. Platform reuse in practice: a second sport stood up on a forked deterministic engine &mdash; directed, not hand-coded.</p>
-    </article>
-
-    <article class="cell">
-      <div class="cell__head"><a class="live-link" href="https://www.netlify.com/webinars/agent-experience-principles/" target="_blank" rel="noopener">Watch the talk</a></div>
-      <h2 class="cell__title"><a href="https://www.netlify.com/webinars/agent-experience-principles/" target="_blank" rel="noopener">Agents and the Web: How Developers Can Build Smarter with Agent Experience (AX)</a></h2>
-      <a class="cell__media" href="https://www.netlify.com/webinars/agent-experience-principles/" target="_blank" rel="noopener" aria-label="Agents and the Web: How Developers Can Build Smarter with Agent Experience (AX)">
-        <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
-        <img src="assets/netlify/webinar.png" alt="Netlify webinar: Agents and the Web" loading="lazy" />
-      </a>
-      <p class="cell__prose">A webinar with Netlify (June 2025) on the opportunity space emerging in the nascent practice of (AI) agent experience &mdash; AX.</p>
-    </article>
-
-    <article class="cell">
-      <div class="cell__head"><a class="live-link" href="projects/oregon-tennis.html">Read the project</a></div>
-      <h2 class="cell__title"><a href="projects/oregon-tennis.html">Oregon HS Tennis Power Rankings</a></h2>
-      <a class="cell__media" href="projects/oregon-tennis.html" aria-label="Oregon HS Tennis Power Rankings">
-        <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
-        <img src="assets/oregon-tennis/home.png" alt="Screenshot of oregontennis.org" loading="lazy" />
-      </a>
-      <p class="cell__prose">A statewide sports-rating engine, playoff simulator, and live tournament toolkit for Oregon high school tennis. Four years of data, four original rating models, and a working analytics layer (Power Index, FWS, FWS+, TOSS) running across every classification &mdash; built end to end as one self-contained system.</p>
-    </article>
-
-    <article class="cell">
-      <div class="cell__head"><span class="tag-new">New</span> <a class="live-link" href="projects/draft-lab.html">Read the project</a></div>
-      <h2 class="cell__title"><a href="projects/draft-lab.html">Cap Buffet</a></h2>
-      <a class="cell__media" href="projects/draft-lab.html" aria-label="Cap Buffet">
-        <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
-        <img src="assets/capbuffet/home.png" alt="Screenshot of capbuffet.com" loading="lazy" />
-      </a>
-      <p class="cell__prose">Cap Buffet builds salary-cap systems from reusable mechanics and tests any league against them. Eighteen cap parts, fourteen leagues, eight currencies, all in the browser. Home to Lottery Lab, its draft-lottery sibling, and a directed agent build.</p>
-    </article>
-
-    <article class="cell cell--feature">
-      <div class="cell__head"><a class="live-link" href="atproto/index.html">Explore the protocol work</a></div>
-      <p class="cell__kicker">Protocol-Native Applications</p>
-      <h2 class="cell__title"><a href="atproto/index.html">Building on the AT Protocol</a></h2>
-      <p class="cell__prose">A body of protocol-native experiments. PBJ, Leafroll, Glowrm, and more, rethinking dating, professional networking, and trust for a world where identity is portable and software is built on an open protocol. <a href="atproto/index.html" style="border-bottom: 2px solid var(--accent);">See the ATProto work &#8594;</a></p>
-    </article>
-
-    <article class="cell">
-      <div class="cell__head"><a class="live-link" href="https://youtu.be/REUJCWpFOcI" target="_blank" rel="noopener">Watch the talk</a></div>
-      <h2 class="cell__title"><a href="https://youtu.be/REUJCWpFOcI" target="_blank" rel="noopener">Rebuilding a City Website on Drupal</a></h2>
-      <a class="cell__media" href="https://youtu.be/REUJCWpFOcI" target="_blank" rel="noopener" aria-label="Rebuilding a City Website on Drupal">
-        <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
-        <img src="https://img.youtube.com/vi/REUJCWpFOcI/maxresdefault.jpg" alt="Still from the DrupalCon 2018 Nashville talk" loading="lazy" onerror="this.src='https://img.youtube.com/vi/REUJCWpFOcI/hqdefault.jpg'" />
-      </a>
-      <p class="cell__prose">A talk from DrupalCon 2018 in Nashville on the award-winning redesign of the Bloomington, Indiana municipal website onto Drupal.</p>
-    </article>
-
-    <article class="cell">
-      <div class="cell__head"><a class="live-link" href="projects/super-innings.html">Read the project</a></div>
-      <h2 class="cell__title"><a href="projects/super-innings.html">SuperInnings</a></h2>
-      <a class="cell__media" href="projects/super-innings.html" aria-label="SuperInnings">
-        <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
-        <img src="assets/superinnings/home.webp" alt="Screenshot of the SuperInnings league news front" loading="lazy" />
-      </a>
-      <p class="cell__prose">Baseball restructured into one continuous 27-out half per side &mdash; a full simulated world with its own stats, economy, and history. A deterministic simulation platform, directed not hand-coded &mdash; documented across 140+ engineering decision records.</p>
-    </article>
-
-    <article class="cell">
-      <div class="cell__head"><a class="live-link" href="projects/viperball.html">Read the project</a></div>
-      <h2 class="cell__title"><a href="projects/viperball.html">Viperball</a></h2>
-      <a class="cell__media" href="projects/viperball.html" aria-label="Viperball">
-        <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
-        <img src="assets/viperball/season-overview.png" alt="Viperball stats terminal showing 2026 CVL Season overview" loading="lazy" />
-      </a>
-      <p class="cell__prose">An invented gridiron sport with its own rulebook, a probability engine that plays it, a 280-team universe to play it in, and a terminal-style stats portal serving the whole thing &mdash; with a custom analytics framework built specifically for the sport&rsquo;s mechanics. Directed agent build &mdash; ~110K lines of directed code across ~60 decision records.</p>
-    </article>
-
-    <article class="cell">
-      <div class="cell__head"><a class="live-link" href="projects/finnish-baseball-game-design.html">Watch the talk</a></div>
-      <h2 class="cell__title"><a href="projects/finnish-baseball-game-design.html">What Finnish Baseball Taught Me About Game Design</a></h2>
-      <a class="cell__media" href="projects/finnish-baseball-game-design.html" aria-label="What Finnish Baseball Taught Me About Game Design">
-        <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
-        <img src="https://img.youtube.com/vi/_HAVowmb3JU/maxresdefault.jpg" alt="Still from the Donut.js 2019 game design talk" loading="lazy" onerror="this.src='https://img.youtube.com/vi/_HAVowmb3JU/hqdefault.jpg'" />
-      </a>
-      <p class="cell__prose">My 2019 Donut.js talk on what pes&auml;pallo, Finland&rsquo;s national baseball variant, taught me about game design.</p>
-    </article>
-
-    <article class="cell">
-      <div class="cell__head"><a class="live-link" href="projects/pdxspend.html">Read the project</a></div>
-      <h2 class="cell__title"><a href="projects/pdxspend.html">PDX Spend</a></h2>
-      <a class="cell__media" href="projects/pdxspend.html" aria-label="PDX Spend">
-        <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
-        <img src="assets/pdxspend/home.png" alt="Screenshot of pdxspend.com" loading="lazy" />
-      </a>
-      <p class="cell__prose">For each of seven Portland-area voter-approved funds, what it could pay for at its current balance, what&rsquo;s blocking that, and who controls the lever.</p>
-    </article>
-
-    <article class="cell">
-      <div class="cell__head"><a class="live-link" href="projects/ygf.html">Read the project</a></div>
-      <h2 class="cell__title"><a href="projects/ygf.html">You Go First</a></h2>
-      <a class="cell__media" href="projects/ygf.html" aria-label="You Go First">
-        <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
-        <img src="assets/ygf/01-hero-red.png" alt="You Go First waitlist hero on a deep crimson background" loading="lazy" />
-      </a>
-      <p class="cell__prose">A better matching model for dating apps, built on a speculative algorithm I designed that uses game mechanics and behavioral analytics to match people.</p>
-    </article>
-
-    <article class="cell">
-      <div class="cell__head"><a class="live-link" href="projects/parliament-of-neighbors.html">Read the project</a></div>
-      <h2 class="cell__title"><a href="projects/parliament-of-neighbors.html">A Parliament of Neighbors</a></h2>
-      <a class="cell__media" href="projects/parliament-of-neighbors.html" aria-label="A Parliament of Neighbors">
-        <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
-        <img src="https://img.youtube.com/vi/dwemDtD4mTk/maxresdefault.jpg" alt="Video still from A Parliament of Neighbors" loading="lazy" onerror="this.src='https://img.youtube.com/vi/dwemDtD4mTk/hqdefault.jpg'" />
-      </a>
-      <p class="cell__prose">A live participatory piece on worldbuilding, speculative governance, and what we owe our neighbors. The site is offline; a documentation video remains.</p>
-    </article>
-
-    <article class="cell">
-      <div class="cell__head"><a class="live-link" href="projects/toccer.html">Read the project</a></div>
-      <h2 class="cell__title"><a href="projects/toccer.html">Tennis Polo (Toccer)</a></h2>
-      <a class="cell__media" href="projects/toccer.html" aria-label="Tennis Polo (Toccer)">
-        <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
-        <img src="assets/toccer/home.png" alt="Tennis Polo (Toccer) site" loading="lazy" />
-      </a>
-      <p class="cell__prose">Tennis Polo is pretty straightforward. Two teams try to score goals using a tennis-sized ball, defended by a goalkeeper holding a tennis racket. The team with the most points wins. A sport I invented by accident at summer camp in 2004.</p>
-    </article>
-
-    <article class="cell">
-      <div class="cell__head"><a class="live-link" href="projects/glowrm.html">Read the project</a></div>
-      <h2 class="cell__title"><a href="projects/glowrm.html">Glowrm</a></h2>
-      <a class="cell__media" href="projects/glowrm.html" aria-label="Glowrm">
-        <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
-        <img src="assets/glowrm/dashboard.png" alt="Screenshot of the Glowrm trust dashboard" loading="lazy" />
-      </a>
-      <p class="cell__prose">Trust infrastructure for ATProto social applications. Cross-app reputation, shared moderation, and a configurable resource-allocation system &mdash; the trust plumbing YGF and two other reference apps were designed against.</p>
-    </article>
-
-    <article class="cell">
-      <div class="cell__head"><a class="live-link" href="projects/leafroll.html">Read the project</a></div>
-      <h2 class="cell__title"><a href="projects/leafroll.html">Leafroll</a></h2>
-      <a class="cell__media" href="projects/leafroll.html" aria-label="Leafroll">
-        <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
-        <img src="assets/leafroll/home.png" alt="Screenshot of leafroll.fun" loading="lazy" />
-      </a>
-      <p class="cell__prose">A professional network built on ATProto. Leafroll is built on earned, bilateral relationships and identity you carry with you, one of several <a href="atproto/index.html" style="border-bottom: 2px solid var(--accent);">protocol-native experiments</a>.</p>
-    </article>
-
+  <section class="sec" aria-labelledby="areas-head">
+    <h2 class="sec__head" id="areas-head">What I work on</h2>
+    <div class="areas">
+      <article class="area">
+        <h3>Protocols and public infrastructure</h3>
+        <p>Portable identity, trust, reputation, open protocols, <a href="https://blog.ronbronson.com/public-delivery-is-statecraft">digital public infrastructure</a>, and the systems that sit underneath products rather than inside a single app.</p>
+      </article>
+      <article class="area">
+        <h3>Agents and response systems</h3>
+        <p><a href="https://blog.ronbronson.com/context-is-not-just-a-map-its-the-terrain">Context</a>, retrieval, memory, <a href="https://blog.ronbronson.com/who-holds-the-pen-why-ai-agents-need-a-manager-not-just-a-manual">tools, permissions</a>, <a href="https://blog.ronbronson.com/agent-experience-needs-failure-affordances">evals</a>, and the <a href="https://blog.ronbronson.com/skill-issue-is-not-a-product-strategy">end-to-end response experience</a> around LLM products.</p>
+      </article>
+      <article class="area">
+        <h3>Measurement</h3>
+        <p>Indices, <a href="https://blog.ronbronson.com/i-built-a-power-ranking-for-oregon-high-school-tennis">ranking systems</a>, projections, simulations, benchmarking, and other ways of making systems easier to reason about.</p>
+      </article>
+      <article class="area">
+        <h3>Forward-deployed design</h3>
+        <p>Designers <a href="https://blog.ronbronson.com/what-forward-deployed-design-actually-looks-like">working close to the problem</a>. Technical enough to build, <a href="https://blog.ronbronson.com/forward-deployed-design-is-bigger-than-engineering">broad enough to reframe</a>, and useful across product, research, content, delivery, and strategy.</p>
+      </article>
+    </div>
   </section>
 
-  <section class="experiments" aria-label="Concepts and experiments">
-    <h2 class="experiments__head">Concepts &amp; Experiments <span>(and other ideas&hellip;)</span></h2>
-    <ul class="experiments__list">
-
-      <li class="exp exp--featured">
-        <span class="exp__name">closedtab <span class="tag-new">New</span></span>
-        <span class="exp__year">2026</span>
-        <span class="exp__links">
-          <a href="https://www.npmjs.com/package/closedtab" target="_blank" rel="noopener">npm &#8599;</a>
-          <a href="https://blog.ronbronson.com/closedtab-a-npm-shared-memory-for-you-and-your-ai-agents" target="_blank" rel="noopener">Blog post &#8599;</a>
-        </span>
-        <span class="exp__note">An npm tool that gives human&ndash;agent work a shared memory: a consistent after-action record of what you asked for, what the agent did, and the calls it made on its own &mdash; so the next agent and future-you inherit the same trail.</span>
-      </li>
-
-      <li class="exp">
-        <span class="exp__name">Claude skill.md for agent AARs</span>
-        <span class="exp__year">2026</span>
-        <span class="exp__links">
-          <a href="https://blog.ronbronson.com/i-built-a-claude-skill-for-after-action-reviews-on-ai-agent-work" target="_blank" rel="noopener">Blog post &#8599;</a>
-          <a href="https://github.com/quarterback/AAR" target="_blank" rel="noopener">GitHub &#8599;</a>
-        </span>
-      </li>
-
-      <li class="exp">
-        <span class="exp__name">Agent Experience Needs Failure Affordances</span>
-        <span class="exp__year">2026</span>
-        <span class="exp__links">
-          <a href="https://blog.ronbronson.com/agent-experience-needs-failure-affordances" target="_blank" rel="noopener">Blog post &#8599;</a>
-        </span>
-      </li>
-
-      <li class="exp">
-        <span class="exp__name">The Designer&rsquo;s Share of the Problem</span>
-        <span class="exp__year">2021</span>
-        <span class="exp__links">
-          <a href="https://www.ixda.no/talks/the-designers-share-of-the-problem" target="_blank" rel="noopener">Talk &#8599;</a>
-        </span>
-      </li>
-
-      <li class="exp">
-        <span class="exp__name">Consequence Design</span>
-        <span class="exp__year">2016</span>
-        <span class="exp__links">
-          <a href="https://consequencedesign.com/" target="_blank" rel="noopener">consequencedesign.com &#8599;</a>
-          <a href="https://pixelpioneers.co/blog/building-better-user-centered-products-an-interview-with-ron-bronson" target="_blank" rel="noopener">Pixel Pioneers interview &#8599;</a>
-        </span>
-      </li>
-
+  <section class="sec" aria-labelledby="elsewhere-head">
+    <h2 class="sec__head" id="elsewhere-head">Elsewhere</h2>
+    <ul class="elsewhere">
+      <li><a href="https://github.com/quarterback" target="_blank" rel="noopener">GitHub &#8599;</a></li>
+      <li><a href="https://ronbronson.com">ronbronson.com &#8599;</a></li>
+      <li><a href="https://ronbronson.design">ronbronson.design &#8599;</a></li>
+      <li><a href="https://thinkingweapons.com">Thinking Weapons &#8599;</a></li>
     </ul>
   </section>
 
-  <section class="intro">
-    <p>Reach me at <a class="email-link" href="#" aria-label="Email me">contact [at] this domain <span aria-hidden="true">&#9993;</span></a>.</p>
+  <section class="contact">
+    <p>For technical strategy, product systems, research collaborations, or unusual problems: <a class="email-link" href="#" aria-label="Email me">contact [at] this domain <span aria-hidden="true">&#9993;</span></a></p>
   </section>
+
+  </main>
 
   <footer class="foot">
     <section class="colophon" aria-label="Colophon, with digressions">
       <h2>Colophon, with Digressions</h2>
       <p class="digression" id="digression">Inexplicably, a Green Bay Packers shareholder.</p>
-      <p>Built hastily with HTML, responsive CSS, JS, GitHub, and Vercel. Colour is set by a small client-side palette engine that audits its own WCAG contrast, and project thumbnails are saved static screenshots.</p>
+      <p>Built hastily with HTML, responsive CSS, JS, GitHub, and Vercel. Colour is set by a small client-side palette engine that audits its own WCAG contrast.</p>
       <p>Type currently in use: <b>Author</b> (display), <b>Switzer</b> SemiBold (deck), <b>Hanken Grotesk</b> (running text), and <b>RX100</b> (labels).</p>
       <p class="keywords">Working vocabulary: AI agent orchestration &middot; multi-agent systems &middot; human-in-the-loop delivery &middot; eval &amp; validation design &middot; AI governance &middot; context engineering &middot; agent experience (AX) &middot; service design &middot; consequence design &middot; design leadership &middot; systems thinking &middot; Claude/Anthropic agentic tooling.</p>
     </section>
