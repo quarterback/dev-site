@@ -190,6 +190,7 @@
     transition: border-color .14s ease;
   }
   .cell:hover .cell__media { border-color: var(--accent); }
+  .cell--static:hover .cell__media { border-color: var(--ink); }
   .cell__media svg.ph,
   .cell__media img {
     position: absolute; inset: 0;
@@ -343,13 +344,13 @@
       <p class="cell__prose">Earth&rsquo;s first-ever team tennis computer game. College-format dual matches, a junior recruiting circuit, and GTT &mdash; a co-ed pro league &mdash; all on one continuous rating scale, driven by a deterministic point-by-point Python engine. Platform reuse in practice: a second sport stood up on a forked deterministic engine &mdash; directed, not hand-coded.</p>
     </article>
 
-    <article class="cell">
-      <div class="cell__head"><a class="live-link" href="https://www.netlify.com/webinars/agent-experience-principles/" target="_blank" rel="noopener">Watch the talk</a></div>
-      <h2 class="cell__title"><a href="https://www.netlify.com/webinars/agent-experience-principles/" target="_blank" rel="noopener">Agents and the Web: How Developers Can Build Smarter with Agent Experience (AX)</a></h2>
-      <a class="cell__media" href="https://www.netlify.com/webinars/agent-experience-principles/" target="_blank" rel="noopener" aria-label="Agents and the Web: How Developers Can Build Smarter with Agent Experience (AX)">
+    <article class="cell cell--static">
+      <div class="cell__head">Webinar</div>
+      <h2 class="cell__title">Agents and the Web: How Developers Can Build Smarter with Agent Experience (AX)</h2>
+      <div class="cell__media">
         <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
         <img src="assets/netlify/webinar.png" alt="Netlify webinar: Agents and the Web" loading="lazy" />
-      </a>
+      </div>
       <p class="cell__prose">A webinar with Netlify (June 2025) on the opportunity space emerging in the nascent practice of (AI) agent experience &mdash; AX.</p>
     </article>
 
