@@ -51,6 +51,25 @@
     navy:  '#1d3557',
   };
 
+  /* ── Coffee: a second pigment set for the dark scheme ──
+       Dark Coffee     #432818   ink ground
+       Light Apricot   #ffe6a7   light ink        (11.01 on coffee, AAA)
+       Camel           #bb9457   soft text, rule  (4.81 on coffee, AA)
+       Burnt Tangerine #ef271b   signal           (3.20 on coffee, fills,
+                                                   borders, underlines only)
+       Watermelon      #ea1744   reserved; 1.06 against tangerine, so it
+                                 cannot carry a separate role beside it.
+     The panel ground is coffee mixed 35% toward camel (#6d4e2e), which
+     keeps apricot text at 6.16 (AA) and reads as a distinct surface. */
+  const COF = {
+    coffee:  '#432818',
+    apricot: '#ffe6a7',
+    camel:   '#bb9457',
+    tang:    '#ef271b',
+    melon:   '#ea1744',
+    panel:   '#6d4e2e',
+  };
+
   /* ── role-mapped schemes ──────────────────────────── */
   function build(label, m) {
     return {
@@ -82,13 +101,13 @@
       rule:   PIG.ceru,
       accent: PIG.red,
     }),
-    navy: build('Navy', {
-      bg:     PIG.navy,
-      deeper: PIG.ceru,
-      ink:    PIG.honey,
-      soft:   PIG.frost,
-      rule:   PIG.ceru,
-      accent: PIG.red,
+    coffee: build('Coffee', {
+      bg:     COF.coffee,
+      deeper: COF.panel,
+      ink:    COF.apricot,
+      soft:   COF.camel,
+      rule:   COF.camel,
+      accent: COF.tang,
     }),
   };
 
