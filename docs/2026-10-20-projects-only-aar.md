@@ -69,4 +69,4 @@ Recorded so later runs don't re-derive it. This is framing direction, not copy:
 3. **Masthead (ronbronson.com):** the professional and academic persona. Leadership credentials and teaching sit together (professor of practice).
 4. **Thinking Weapons:** critical designer and theory.
 
-The through-line to keep in view: a non-linear career, but more than a decade of significant work across sectors and domains. The sites should (1) let people who don't know find out that it happened, and (2) explain the through-line where it makes sense. There's currently a gap between what the sites say and what turns up in a search for his name.
+The through-line to keep in view: a non-linear career, but more than a decade of significant work across sectors and domains. The sites should (1) let people who don't know find out that it happened, and (2) explain the through-line where it makes sense. There's currently a gap between what the sites say and what turns up in a search for the founder's name.
