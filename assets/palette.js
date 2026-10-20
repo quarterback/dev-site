@@ -51,6 +51,47 @@
     navy:  '#1d3557',
   };
 
+  /* ── Snow: the pigment set for the light scheme ──
+       Snow         #fffbfa   paper ground
+       Shadow Grey  #252323   ink              (15.21 on snow, AAA)
+       Sky Aqua     #54defd   panel ground     (grey ink on it 9.86, AAA)
+       Mint Leaf    #00bd9d   decorative rule  (2.33 on snow, hairlines and
+                                                pattern stripes only)
+       Coral Glow   #f78e69   swatch; 2.26 on snow, too light for links,
+                              borders or focus rings
+     Two tuned shades keep the roles accessible:
+       soft text = Mint Leaf 40% toward grey (#0f7f6c), 4.78 on snow, AA
+       accent    = Coral Glow 20% toward grey (#cd795b), 3.15 on snow,
+                   clears the 3:1 minimum for underlines and focus rings */
+  const SNO = {
+    snow:   '#fffbfa',
+    grey:   '#252323',
+    aqua:   '#54defd',
+    mint:   '#00bd9d',
+    coral:  '#f78e69',
+    soft:   '#0f7f6c',
+    accent: '#cd795b',
+  };
+
+  /* ── Coffee: a second pigment set for the dark scheme ──
+       Dark Coffee     #432818   ink ground
+       Light Apricot   #ffe6a7   light ink        (11.01 on coffee, AAA)
+       Camel           #bb9457   soft text, rule  (4.81 on coffee, AA)
+       Burnt Tangerine #ef271b   signal           (3.20 on coffee, fills,
+                                                   borders, underlines only)
+       Watermelon      #ea1744   reserved; 1.06 against tangerine, so it
+                                 cannot carry a separate role beside it.
+     The panel ground is coffee mixed 35% toward camel (#6d4e2e), which
+     keeps apricot text at 6.16 (AA) and reads as a distinct surface. */
+  const COF = {
+    coffee:  '#432818',
+    apricot: '#ffe6a7',
+    camel:   '#bb9457',
+    tang:    '#ef271b',
+    melon:   '#ea1744',
+    panel:   '#6d4e2e',
+  };
+
   /* ── role-mapped schemes ──────────────────────────── */
   function build(label, m) {
     return {
@@ -71,24 +112,21 @@
   }
 
   const PALETTES = {
-    paper: build('Paper', {
-      bg:     PIG.honey,
-      deeper: PIG.frost,
-      ink:    PIG.navy,
-      // Cerulean lands at 4.30 on Honeydew — just under AA for body text.
-      // No pigment fills the "soft text on light" slot accessibly, so this
-      // is Cerulean nudged 6% toward Navy: same hue, now AA (4.54).
-      soft:   '#437799',
-      rule:   PIG.ceru,
-      accent: PIG.red,
+    paper: build('Snow', {
+      bg:     SNO.snow,
+      deeper: SNO.aqua,
+      ink:    SNO.grey,
+      soft:   SNO.soft,
+      rule:   SNO.mint,
+      accent: SNO.accent,
     }),
-    navy: build('Navy', {
-      bg:     PIG.navy,
-      deeper: PIG.ceru,
-      ink:    PIG.honey,
-      soft:   PIG.frost,
-      rule:   PIG.ceru,
-      accent: PIG.red,
+    coffee: build('Coffee', {
+      bg:     COF.coffee,
+      deeper: COF.panel,
+      ink:    COF.apricot,
+      soft:   COF.camel,
+      rule:   COF.camel,
+      accent: COF.tang,
     }),
   };
 

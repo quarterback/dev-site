@@ -1,8 +1,8 @@
 {
   "publication": {
     "url": "https://ronbronson.dev",
-    "name": "Ron Bronson — Side Projects",
-    "description": "A compendium of Ron Bronson’s side projects: hobby projects, tools, and that one time he invented a sport.",
+    "name": "Ron Bronson — Design Engineer",
+    "description": "Design engineer. A compendium of software, tooling, open source projects & technical side quests.",
     "icon": "favicon.png",
     "preferences": { "showInDiscover": true }
   },
