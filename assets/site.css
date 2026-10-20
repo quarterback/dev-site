@@ -72,13 +72,13 @@
 }
 
 :root {
-  /* Static "Paper" fallback — palette.js overwrites these at load. */
-  --bg: #f1faee;        /* Honeydew     */
-  --bg-deeper: #a8dadc; /* Frosted Blue */
-  --ink: #1d3557;       /* Oxford Navy  */
-  --ink-soft: #437799;  /* Cerulean, AA-tuned for soft text on honeydew */
-  --rule: #457b9d;      /* Cerulean     */
-  --accent: #e63946;    /* Punch Red    */
+  /* Static "Snow" fallback — palette.js overwrites these at load. */
+  --bg: #fffbfa;        /* Snow         */
+  --bg-deeper: #54defd; /* Sky Aqua     */
+  --ink: #252323;       /* Shadow Grey  */
+  --ink-soft: #0f7f6c;  /* Mint Leaf, AA-tuned for soft text on snow */
+  --rule: #00bd9d;      /* Mint Leaf    */
+  --accent: #cd795b;    /* Coral Glow, tuned to 3:1 on snow */
 
   /* Structure */
   --frame: 2px;         /* essential grid frame, drawn in --ink */
