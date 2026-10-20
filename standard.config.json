@@ -1,14 +1,14 @@
 {
   "publication": {
     "url": "https://ronbronson.dev",
-    "name": "Ron Bronson — Working Catalog of Complex Systems",
-    "description": "A working catalog of complex systems by Ron Bronson — service design, consequence design, and agent experience (AX) applied to agent orchestration, human-in-the-loop delivery, eval and validation, AI governance, and context engineering.",
+    "name": "Ron Bronson — Side Projects",
+    "description": "A compendium of Ron Bronson’s side projects: hobby projects, tools, and that one time he invented a sport.",
     "icon": "favicon.png",
     "preferences": { "showInDiscover": true }
   },
   "documents": {
     "include": ["projects/*.html"],
-    "exclude": ["projects/_template.html"],
+    "exclude": ["projects/_template.html", "projects/varsityapex.html", "projects/finnish-baseball-game-design.html", "projects/parliament-of-neighbors.html"],
     "titleStrip": ["Ron Bronson"],
     "overrides": {}
   }
