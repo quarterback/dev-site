@@ -1,8 +1,8 @@
 {
   "publication": {
     "url": "https://ronbronson.dev",
-    "name": "Ron Bronson — Web Developer",
-    "description": "A compendium of Ron Bronson’s technical web development & side projects.",
+    "name": "Ron Bronson — Design Engineer",
+    "description": "Design engineer. A compendium of software, tooling, open source projects & technical side quests.",
     "icon": "favicon.png",
     "preferences": { "showInDiscover": true }
   },
