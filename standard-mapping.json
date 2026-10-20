@@ -1,10 +1,6 @@
 {
   "did": "did:plc:odgxwakrg5r2zjetnrkxuh5c",
   "documents": {
-    "about.html": {
-      "rkey": "3mpfibvdhr52w",
-      "uri": "at://did:plc:odgxwakrg5r2zjetnrkxuh5c/site.standard.document/3mpfibvdhr52w"
-    },
     "projects/beachwave.html": {
       "rkey": "3mphoysxely2o",
       "uri": "at://did:plc:odgxwakrg5r2zjetnrkxuh5c/site.standard.document/3mphoysxely2o"
@@ -12,10 +8,6 @@
     "projects/draft-lab.html": {
       "rkey": "3mpfibveiyr2q",
       "uri": "at://did:plc:odgxwakrg5r2zjetnrkxuh5c/site.standard.document/3mpfibveiyr2q"
-    },
-    "projects/finnish-baseball-game-design.html": {
-      "rkey": "3mpfibvfo3u2e",
-      "uri": "at://did:plc:odgxwakrg5r2zjetnrkxuh5c/site.standard.document/3mpfibvfo3u2e"
     },
     "projects/glowrm.html": {
       "rkey": "3mpfibvgphz2j",
@@ -37,10 +29,6 @@
       "rkey": "3mpfibvk6ob2o",
       "uri": "at://did:plc:odgxwakrg5r2zjetnrkxuh5c/site.standard.document/3mpfibvk6ob2o"
     },
-    "projects/parliament-of-neighbors.html": {
-      "rkey": "3mpfibvl73a2l",
-      "uri": "at://did:plc:odgxwakrg5r2zjetnrkxuh5c/site.standard.document/3mpfibvl73a2l"
-    },
     "projects/pdxspend.html": {
       "rkey": "3mpfibvmbad27",
       "uri": "at://did:plc:odgxwakrg5r2zjetnrkxuh5c/site.standard.document/3mpfibvmbad27"
@@ -56,10 +44,6 @@
     "projects/toccer.html": {
       "rkey": "3mpfibvqfxc2a",
       "uri": "at://did:plc:odgxwakrg5r2zjetnrkxuh5c/site.standard.document/3mpfibvqfxc2a"
-    },
-    "projects/varsityapex.html": {
-      "rkey": "3msvvlqp4gw2q",
-      "uri": "at://did:plc:odgxwakrg5r2zjetnrkxuh5c/site.standard.document/3msvvlqp4gw2q"
     },
     "projects/viperball.html": {
       "rkey": "3mpfibvrjzj2o",
