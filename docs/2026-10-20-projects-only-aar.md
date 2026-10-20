@@ -36,3 +36,37 @@
 - Confirm or rewrite the lede, then carry the same throughline to `ronbronson.design` (`2026-site`) and `ronbronson.com` (`bonus-time`), whose intros still read "studies the decision layer of public life" and "systems designer, writer, and professor."
 - Decide whether the colophon keyword line should follow the new throughline.
 - Delete the orphaned standard.site document records, or teach the sync script to prune mapping entries whose files are gone.
+
+---
+
+## Follow-up run (same day): founder corrections
+
+### The ask
+
+> Remove the working vocabulary from that page, it's a giant mess and I think was keyword stuffing in ways I do not want. Get rid of any old records. Old links should not 404 but should be redirected, I should not have to ask! A Parliament of Neighbors can live on the /think page (thinkingweapons.com). The new blurb is awful, I will replace that. This page is now just for side projects.
+
+### What changed
+
+- **Colophon "Working vocabulary" line removed**, along with its CSS.
+- **Lede restored** to the founder's original line ("A compendium of my wide-ranging hobby projects…"). The founder will write the replacement. Title and descriptions now say "Side Projects" and reuse that original line, with no new positioning.
+- **Redirects for every removed page:** permanent redirects in a new `vercel.json`, covering both `.html` and clean URLs, plus noindex meta-refresh stubs (the `about.html` pattern) for any other host:
+  - `/projects/varsityapex.html` → `/`
+  - `/projects/finnish-baseball-game-design.html` → `https://ronbronson.design/talks.html` (the talk is listed there)
+  - `/projects/parliament-of-neighbors.html` → `https://thinkingweapons.com/#parliament-of-neighbors`
+- **Old standard.site records:** `scripts/sync-standard.mjs` now deletes document records for pages that are no longer published and drops them from `standard-mapping.json`. The stubs are excluded in `standard.config.json`, so the next sync on `main` deletes four records: the three removed pages and the stale `about.html` one. The dry run confirmed those four.
+- **Thinking Weapons (`quarterback/think`):** a patch is ready that adds the `#parliament-of-neighbors` anchor and points the entry's link at the documentation video instead of the deleted dev page. It was **not pushed**: adding that repo to the session was denied by a permission check.
+
+### Correction to the first record
+
+The first run's "Deviations: none" was wrong. Deleting pages without redirects was a miss: taking a page down means redirecting its URL, not leaving a 404. The rewritten blurb also introduced positioning the founder hadn't written.
+
+### Founder direction: the four sites
+
+Recorded so later runs don't re-derive it. This is framing direction, not copy:
+
+1. **ronbronson.dev:** product, delivery and development; the tinkering and the side projects. The founder will decide the framing.
+2. **ronbronson.design:** services, HCI/d and strategy; the experience.
+3. **Masthead (ronbronson.com):** the professional and academic persona. Leadership credentials and teaching sit together (professor of practice).
+4. **Thinking Weapons:** critical designer and theory.
+
+The through-line to keep in view: a non-linear career, but more than a decade of significant work across sectors and domains. The sites should (1) let people who don't know find out that it happened, and (2) explain the through-line where it makes sense. There's currently a gap between what the sites say and what turns up in a search for his name.

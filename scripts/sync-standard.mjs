@@ -384,7 +384,22 @@ async function main() {
     );
   }
 
-  // 4. Persist the rkey mapping (skip the placeholder DID from dry runs).
+  // 4. Delete records for pages that are no longer published (removed or
+  //    excluded), so standard.site stops listing them.
+  for (const rel of Object.keys(mapping.documents)) {
+    if (docs.includes(rel)) continue;
+    const { rkey, uri } = mapping.documents[rel];
+    if (!DRY_RUN) {
+      await xrpc(pds, "com.atproto.repo.deleteRecord", {
+        auth: jwt,
+        body: { repo: did, collection: DOC_COLLECTION, rkey },
+      });
+      delete mapping.documents[rel];
+    }
+    log(`  ✗ ${rel} → deleted ${uri}`);
+  }
+
+  // 5. Persist the rkey mapping (skip the placeholder DID from dry runs).
   if (!DRY_RUN) {
     writeFileSync(MAPPING_PATH, JSON.stringify(sortKeys(mapping), null, 2) + "\n");
     log(`✓ standard-mapping.json updated`);

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {"source": "/projects/varsityapex.html", "destination": "/", "permanent": true},
+    {"source": "/projects/varsityapex", "destination": "/", "permanent": true},
+    {"source": "/projects/finnish-baseball-game-design.html", "destination": "https://ronbronson.design/talks.html", "permanent": true},
+    {"source": "/projects/finnish-baseball-game-design", "destination": "https://ronbronson.design/talks.html", "permanent": true},
+    {"source": "/projects/parliament-of-neighbors.html", "destination": "https://thinkingweapons.com/#parliament-of-neighbors", "permanent": true},
+    {"source": "/projects/parliament-of-neighbors", "destination": "https://thinkingweapons.com/#parliament-of-neighbors", "permanent": true}
+  ]
+}

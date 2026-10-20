@@ -1,14 +1,14 @@
 {
   "publication": {
     "url": "https://ronbronson.dev",
-    "name": "Ron Bronson — Projects",
-    "description": "Projects by Ron Bronson, a service designer trained in HCI/d: civic data tools, sports simulations, ATProto experiments, and one invented sport.",
+    "name": "Ron Bronson — Side Projects",
+    "description": "A compendium of Ron Bronson’s side projects: hobby projects, tools, and that one time he invented a sport.",
     "icon": "favicon.png",
     "preferences": { "showInDiscover": true }
   },
   "documents": {
     "include": ["projects/*.html"],
-    "exclude": ["projects/_template.html"],
+    "exclude": ["projects/_template.html", "projects/varsityapex.html", "projects/finnish-baseball-game-design.html", "projects/parliament-of-neighbors.html"],
     "titleStrip": ["Ron Bronson"],
     "overrides": {}
   }
