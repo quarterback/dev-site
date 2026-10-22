@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex" />
+<!-- Page type: Project. Built on the Chromatic Editorial System
+     (../assets/faces.css + ../assets/core.css + ../assets/palette.js).
+     Content copied verbatim from ../projects/mallo.html; paths re-pointed from page-types/. -->
+<title>Page type: Project — ronbronson.dev</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/faces.css" />
+<link rel="stylesheet" href="../assets/core.css" />
+<script src="../assets/palette.js"></script>
+</head>
+<body class="site--dev">
+<p class="pt-label"><span>Page type &middot; Project</span><span>Source: projects/mallo.html</span><a href="index.html">All page types</a></p>
+<div class="wrap">
+
+  <header class="masthead">
+    <a class="name" href="../index.html">Ron Bronson</a>
+  </header>
+
+  <article class="project">
+
+    <h1 class="project__title">Mallo</h1>
+    <p class="project__lede">The first advanced-analytics site for pes&auml;pallo &mdash; Finland&rsquo;s national baseball variant. The sabermetrics layer the sport never had, and something I&rsquo;d wanted for as long as I&rsquo;ve followed it.</p>
+    <p class="project__lede--fi" lang="fi">Ensimm&auml;inen pes&auml;pallon edistyneen analytiikan sivusto. Sarjaan suhteutetut tunnusluvut, DARKO-tyyliset ennusteet, lajin ensimm&auml;iset julkaistut kentt&auml;kertoimet ja Monte Carlo -pudotuspelitodenn&auml;k&ouml;isyydet &mdash; rakennettu virallisen tulospalvelun datasta.</p>
+    <div class="project__meta">
+      <span>A personal project</span>
+      <span class="sep">·</span>
+      <span>2026</span>
+      <span class="sep">·</span>
+      <a class="live-link" href="https://www.mallo.fi" target="_blank" rel="noopener">mallo.fi &#8599;</a>
+    </div>
+
+    <figure class="figure">
+      <svg class="ph" viewBox="0 0 1400 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <pattern id="ph-a" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(20)">
+            <rect width="16" height="16" fill="#a8dadc"/>
+            <line x1="0" y1="0" x2="0" y2="16" stroke="#457b9d" stroke-width="6"/>
+          </pattern>
+        </defs>
+        <rect width="1400" height="800" fill="url(#ph-a)"/>
+      </svg>
+      <img src="../assets/mallo/home.png" alt="Screenshot of mallo.fi" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;" />
+    </figure>
+
+    <div class="project__body">
+
+      <p>I&rsquo;ve followed pes&auml;pallo &mdash; Finland&rsquo;s national baseball variant &mdash; for well over a decade. Somewhere along the way the fandom turned into something bigger: I&rsquo;ve talked the sport up on podcasts and other people&rsquo;s shows; I <a href="../projects/finnish-baseball-game-design.html">gave a conference talk</a> on what it taught me about game design; and a couple of years ago I was on the pre- and post-game show for the <a href="https://youtu.be/U0lsmfUmrLI" target="_blank" rel="noopener">first-ever English-language Superpesis telecast</a>. I eventually made the pilgrimage to Finland to watch it in person &mdash; Superpesis, the top league, <a href="https://www.superpesis.fi/ajankohtaista/superpesis-yhdysvaltalainen-ron-bronson-toteutti-unelmansa-ja-matkusti-suomeen-katsomaan-pesapalloa" target="_blank" rel="noopener">wrote about the trip</a>. For an American, I&rsquo;ve been in this a while. If you want the origin story, I wrote up <a href="https://medium.com/@ronbronson/pesapallo-9dc4d3f1ed5e" target="_blank" rel="noopener">how a guy from America starts following Finnish baseball</a>.</p>
+
+      <div class="figpair">
+        <figure class="figure">
+          <img src="../assets/mallo/telecast-booth.png" alt="Ron Bronson in the broadcast booth for the first English-language telecast of a pesäpallo game, with an on-screen name graphic and the Ruutu logo" loading="lazy" />
+          <figcaption>On the pre- and post-game show for the first-ever English-language Superpesis telecast, on Finland&rsquo;s Ruutu.</figcaption>
+        </figure>
+        <figure class="figure">
+          <img src="../assets/mallo/post-game.png" alt="Post Game with Ron Bronson show logo" loading="lazy" />
+          <figcaption>&ldquo;Post Game with Ron Bronson.&rdquo;</figcaption>
+        </figure>
+      </div>
+
+      <p>I&rsquo;m also a lifelong baseball fan, and I&rsquo;ve been reading sabermetrics since the &rsquo;90s &mdash; buying <i>Baseball America</i> and <i>Baseball Weekly</i> off the rack years before any of this went mainstream. Pes&auml;pallo and baseball are cousins, not twins: same instincts, genuinely different sport. I&rsquo;d always wanted a way to hold both interests in the same hand. Mallo is that bridge &mdash; and building the first advanced-stats site for a sport half a world away feels like a strange kind of full circle for someone who fell for the game reading box scores as a kid.</p>
+
+      <p>Because here&rsquo;s the thing: there is no advanced-analytics site for pes&auml;pallo. Anywhere. The sport keeps decades of granular records and has never had a sabermetrics layer built on top of them. So I built one. It borrows openly from the analytics sites I grew up on &mdash; DARKO for projections, Baseball Savant for percentile fingerprints, FanGraphs for league-indexed rate stats, Baseball-Reference for career lines and comps &mdash; and translates each idea into the grammar of the Finnish game.</p>
+
+      <p>It runs on real data. The official results service (<a href="https://www.pesistulokset.fi" target="_blank" rel="noopener">pesistulokset.fi</a>) turned out to be a documented JSON API rather than a scraping target &mdash; per-player, per-match rows with roughly 82 fields each: hits split by target base, advancement as batter and as runner, turns at bat, defensive position, and match context down to the stadium, weather, temperature, and attendance. Coverage reaches back to the 1940s, with granular stats to 1990. Mallo ingests the current Superpesis season and refreshes on every deploy.</p>
+
+      <h2>Stats that fit the sport</h2>
+
+      <p>Finnish media publish counting stats and a handful of percentages. Mallo keeps the traditional line &mdash; kunnarit, ly&ouml;dyt, tuodut, tehot &mdash; and adds the two things sabermetrics is really about: honest denominators and league context. Rate stats are computed against the attempts that actually happened, then indexed to the league. <b>TEHO+</b> is the headline &mdash; 100 is league average, era- and division-adjusted in the spirit of OPS+ and wRC+ &mdash; with a park-adjusted <b>kTEHO+</b> alongside it. Every qualified player gets a Baseball-Savant-style percentile fingerprint: diverging red-to-blue bars that read as a skill profile at a glance.</p>
+
+      <h2>Projections and context</h2>
+
+      <p><b>PARE</b> is the projection engine &mdash; DARKO&rsquo;s question transplanted to pes&auml;pallo: how much of a hot streak is real? Every game a player has ever played is weighted by exponential decay, blended toward the league mean with empirical-Bayes shrinkage that leans harder on small samples, with per-stat decay and prior strengths fitted by walk-forward scoring rather than guessed. A short 28-to-33-game season isn&rsquo;t treated as too noisy to trust &mdash; it&rsquo;s treated as unusually rich in recorded context. So the observed stats stay the headline, adjusted for the conditions they happened in: the first published park factors for the sport (kentt&auml;kertoimet), weather effects, and opponent strength to come.</p>
+
+      <h2>More than a stat page</h2>
+
+      <ul>
+        <li><b>Standings &amp; playoff odds</b> &mdash; real Superpesis points, with Monte Carlo playoff odds simulated over the remaining schedule and re-run at weekly cutoffs to draw a season-long odds chart.</li>
+        <li><b>Similarity scores</b> &mdash; Baseball-Reference-style comps: nearest neighbors over standardized rate stats, 1000 means identical.</li>
+        <li><b>Pes&auml;pallo &rarr; baseball</b> &mdash; a rank-preserving quantile map from Superpesis percentiles onto MLB distributions, so a player&rsquo;s season reads as a shareable English-language line for people who know baseball but not pes&auml;pallo.</li>
+        <li><b>Every league, first-class</b> &mdash; men&rsquo;s and women&rsquo;s Superpesis and the lower tiers all build their own navigation; the women&rsquo;s game is never buried behind a filter.</li>
+      </ul>
+
+      <h2>How it&rsquo;s built</h2>
+
+      <p>The core is Python over SQLite &mdash; a metrics layer, the projection engine, a context model, and a Monte Carlo simulator &mdash; with a small web UI on top and charts drawn in vendored D3, no CDN. The demo league generates every stat line from known latent talent so the tests can assert the projections and park factors recover it. It&rsquo;s a directed agent build, documented in after-action reports in the repo and released under the AGPL. Mostly, though, it&rsquo;s a fan project: the site I always wanted to exist, finally built.</p>
+
+      <p><a class="live-link" href="https://www.mallo.fi" target="_blank" rel="noopener">See it at mallo.fi &#8599;</a></p>
+
+    </div>
+
+  </article>
+
+  <footer class="foot">
+    <span>Reach me at <a href="mailto:contact@ronbronson.com">contact@ronbronson.com</a>.</span>
+  </footer>
+
+</div>
+</body>
+</html>
