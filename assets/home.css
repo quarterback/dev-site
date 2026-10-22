@@ -1,0 +1,20 @@
+/* ronbronson.dev on the block layer (DDR-012): site-specific rules that sit
+   on top of faces.css + core.css. Ron's rulings, shared with the other two
+   sites: nav items are plain, in the display face at the rail-heading size,
+   underlined and nothing else; no arrows anywhere; the colophon stays small
+   and monospaced, exactly as live .dev has it. */
+
+.site--blocks .topbar nav { display: flex; flex-wrap: wrap; gap: 8px 28px; }
+.site--blocks .topbar nav a { font-family: var(--display); font-weight: 800; font-size: 22px; line-height: 1; letter-spacing: -.03em; color: var(--ink); text-decoration: underline; text-underline-offset: .14em; text-decoration-thickness: 2px; }
+
+/* Colophon: RX100, 13px uppercase heading, 16px lines, right-aligned. These
+   are the live site's measured values; scale--front had blown the heading
+   up to 46px. */
+.site--dev .colophon, .site--dev .colophon p { font-family: var(--mono); font-size: 16px; font-weight: 500; letter-spacing: .01em; }
+.scale--front.site--dev .colophon h2 { margin: 0 0 8px; font-family: var(--mono); font-size: 13px; font-weight: 600; line-height: 1.5; letter-spacing: .14em; text-transform: uppercase; }
+
+/* Pages whose content starts on the plain ground (projects, AT Protocol,
+   404) get the breathing room the old masthead used to give them. */
+.site--blocks .topbar + :not(.block) { margin-top: clamp(40px, 5vw, 72px); }
+/* The TopBar's own lead-colour rule is enough; no second rule under it. */
+.site--blocks .topbar + .block::before { display: none; }

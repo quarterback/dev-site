@@ -15,20 +15,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="assets/faces.css" />
 <link rel="stylesheet" href="assets/core.css" />
+<link rel="stylesheet" href="assets/home.css" />
 <script src="assets/palette.js"></script>
 </head>
-<body class="site--dev scale--front">
-<div class="wrap">
+<body class="site--dev scale--front site--blocks">
+<div class="wrap wrap--blocks">
 
-  <nav class="topnav">
-    <a class="sitelink" href="https://ronbronson.design">Design &#8599;</a>
-    <a class="sitelink" href="https://thinkingweapons.com">Studio &#8599;</a>
-    <a class="sitelink" href="https://blog.ronbronson.com">Blog &#8599;</a>
-  </nav>
 
-  <header class="masthead">
-    <a class="name" href="index.html">Ron Bronson</a>
-  </header>
+  <header class="topbar block block--ink"><div class="topbar__in"><a class="name" href="index.html">Ron Bronson</a><nav aria-label="Main navigation"><a href="https://ronbronson.design">Design</a><a href="https://thinkingweapons.com">Studio</a><a href="https://blog.ronbronson.com">Blog</a></nav></div></header>
 
   <!-- Longer statement, parked for now — too wordy for current taste, keeping
        it around in case it comes back.
@@ -39,10 +33,10 @@
   </section>
   -->
 
-  <section class="intro intro--lede">
-    <p>Design engineer. A compendium of software, tooling, open source projects &amp; technical side quests.</p>
-    <p>Currently building <a href="https://vloora.com">Vloora</a>, an <a href="https://agentexperience.ax">AX</a> product company.</p>
-  </section>
+  <section class="hero block block--lead" id="top" aria-labelledby="h">
+<h1 id="h">Design engineer. A compendium of software, tooling, open source projects &amp; technical side quests.</h1>
+<p class="sub">Currently building <a href="https://vloora.com">Vloora</a>, an <a href="https://agentexperience.ax">AX</a> product company.</p>
+</section>
 
   <svg class="ph-defs" aria-hidden="true">
     <defs>
@@ -122,7 +116,7 @@
       <div class="cell__head"><a class="live-link" href="atproto/index.html">Explore the protocol work</a></div>
       <p class="cell__kicker">Protocol-Native Applications</p>
       <h2 class="cell__title"><a href="atproto/index.html">Building on the AT Protocol</a></h2>
-      <p class="cell__prose">A body of protocol-native experiments. PBJ, Leafroll, Glowrm, and more, rethinking dating, professional networking, and trust for a world where identity is portable and software is built on an open protocol. <a href="atproto/index.html" style="border-bottom: 2px solid var(--accent);">See the ATProto work &#8594;</a></p>
+      <p class="cell__prose">A body of protocol-native experiments. PBJ, Leafroll, Glowrm, and more, rethinking dating, professional networking, and trust for a world where identity is portable and software is built on an open protocol. <a href="atproto/index.html" style="border-bottom: 2px solid var(--accent);">See the ATProto work</a></p>
     </article>
 
     <article class="cell">
@@ -215,8 +209,8 @@
         <span class="exp__name">closedtab</span>
         <span class="exp__year">2026</span>
         <span class="exp__links">
-          <a href="https://www.npmjs.com/package/closedtab" target="_blank" rel="noopener">npm &#8599;</a>
-          <a href="https://blog.ronbronson.com/closedtab-a-npm-shared-memory-for-you-and-your-ai-agents" target="_blank" rel="noopener">Blog post &#8599;</a>
+          <a href="https://www.npmjs.com/package/closedtab" target="_blank" rel="noopener">npm</a>
+          <a href="https://blog.ronbronson.com/closedtab-a-npm-shared-memory-for-you-and-your-ai-agents" target="_blank" rel="noopener">Blog post</a>
         </span>
         <span class="exp__note">An npm tool that gives human&ndash;agent work a shared memory: a consistent after-action record of what you asked for, what the agent did, and the calls it made on its own &mdash; so the next agent and future-you inherit the same trail.</span>
       </li>
@@ -225,8 +219,8 @@
         <span class="exp__name">Claude skill.md for agent AARs</span>
         <span class="exp__year">2026</span>
         <span class="exp__links">
-          <a href="https://blog.ronbronson.com/i-built-a-claude-skill-for-after-action-reviews-on-ai-agent-work" target="_blank" rel="noopener">Blog post &#8599;</a>
-          <a href="https://github.com/quarterback/AAR" target="_blank" rel="noopener">GitHub &#8599;</a>
+          <a href="https://blog.ronbronson.com/i-built-a-claude-skill-for-after-action-reviews-on-ai-agent-work" target="_blank" rel="noopener">Blog post</a>
+          <a href="https://github.com/quarterback/AAR" target="_blank" rel="noopener">GitHub</a>
         </span>
       </li>
 
@@ -234,7 +228,7 @@
         <span class="exp__name">Consequence Design</span>
         <span class="exp__year">2016</span>
         <span class="exp__links">
-          <a href="https://consequencedesign.com/" target="_blank" rel="noopener">consequencedesign.com &#8599;</a>
+          <a href="https://consequencedesign.com/" target="_blank" rel="noopener">consequencedesign.com</a>
         </span>
       </li>
 

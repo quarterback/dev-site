@@ -193,7 +193,7 @@
   function injectUI() {
     if (document.querySelector('.palette-dock')) return;
     const dock = document.createElement('div');
-    dock.className = 'palette-dock';
+    dock.className = 'palette-dock palette-dock--fixed';
     dock.setAttribute('role', 'group');
     dock.setAttribute('aria-label', 'Theme');
 

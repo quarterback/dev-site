@@ -18,14 +18,13 @@
 <!-- /standard.site -->
 <link rel="stylesheet" href="../assets/faces.css" />
 <link rel="stylesheet" href="../assets/core.css" />
+<link rel="stylesheet" href="../assets/home.css" />
 <script src="../assets/palette.js"></script>
 </head>
-<body class="site--dev scale--front">
-<div class="wrap">
+<body class="site--dev scale--front site--blocks">
+<div class="wrap wrap--blocks">
 
-  <header class="masthead">
-    <a class="name" href="../index.html">Ron Bronson</a>
-  </header>
+  <header class="topbar block block--ink"><div class="topbar__in"><a class="name" href="../index.html">Ron Bronson</a><nav aria-label="Main navigation"><a href="https://ronbronson.design">Design</a><a href="https://thinkingweapons.com">Studio</a><a href="https://blog.ronbronson.com">Blog</a></nav></div></header>
 
   <article class="project">
 
@@ -37,7 +36,7 @@
       <span class="sep">·</span>
       <span>2026</span>
       <span class="sep">·</span>
-      <a class="live-link" href="https://www.mallo.fi" target="_blank" rel="noopener">mallo.fi &#8599;</a>
+      <a class="live-link" href="https://www.mallo.fi" target="_blank" rel="noopener">mallo.fi</a>
     </div>
 
     <figure class="figure">
@@ -87,7 +86,7 @@
       <ul>
         <li><b>Standings &amp; playoff odds</b> &mdash; real Superpesis points, with Monte Carlo playoff odds simulated over the remaining schedule and re-run at weekly cutoffs to draw a season-long odds chart.</li>
         <li><b>Similarity scores</b> &mdash; Baseball-Reference-style comps: nearest neighbors over standardized rate stats, 1000 means identical.</li>
-        <li><b>Pes&auml;pallo &rarr; baseball</b> &mdash; a rank-preserving quantile map from Superpesis percentiles onto MLB distributions, so a player&rsquo;s season reads as a shareable English-language line for people who know baseball but not pes&auml;pallo.</li>
+        <li><b>Pes&auml;pallo baseball</b> &mdash; a rank-preserving quantile map from Superpesis percentiles onto MLB distributions, so a player&rsquo;s season reads as a shareable English-language line for people who know baseball but not pes&auml;pallo.</li>
         <li><b>Every league, first-class</b> &mdash; men&rsquo;s and women&rsquo;s Superpesis and the lower tiers all build their own navigation; the women&rsquo;s game is never buried behind a filter.</li>
       </ul>
 
@@ -95,7 +94,7 @@
 
       <p>The core is Python over SQLite &mdash; a metrics layer, the projection engine, a context model, and a Monte Carlo simulator &mdash; with a small web UI on top and charts drawn in vendored D3, no CDN. The demo league generates every stat line from known latent talent so the tests can assert the projections and park factors recover it. It&rsquo;s a directed agent build, documented in after-action reports in the repo and released under the AGPL. Mostly, though, it&rsquo;s a fan project: the site I always wanted to exist, finally built.</p>
 
-      <p><a class="live-link" href="https://www.mallo.fi" target="_blank" rel="noopener">See it at mallo.fi &#8599;</a></p>
+      <p><a class="live-link" href="https://www.mallo.fi" target="_blank" rel="noopener">See it at mallo.fi</a></p>
 
     </div>
 
