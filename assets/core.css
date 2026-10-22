@@ -887,3 +887,11 @@ body.site--blocks .pt-label { margin: 0; }
   background: var(--k-bg-deeper); color: var(--k-ink);
 }
 .block .exp--featured a, .block .cell--feature a { color: var(--k-ink); }
+
+/* Inline icon, replacing the Font Awesome glyph (DDR-007). Sized from the
+   inherited font-size so the icon rows keep the scale they had as a font. */
+.icon { width: 1em; height: 1em; fill: currentColor; display: inline-block; vertical-align: -0.125em; flex: none; }
+
+/* A home page whose name is its h1. The heading carries no box of its own so
+   the masthead keeps the baseline flex layout it had as a bare link. */
+.masthead__name { margin: 0; font-size: inherit; font-weight: inherit; line-height: inherit; }

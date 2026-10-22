@@ -13,17 +13,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<script>
-  /* If the concerts subdomain points at the same GitHub-backed deploy
-     as the main site, send its root URL to the Concert Scout subapp. */
-  (function () {
-    var host = window.location.hostname.toLowerCase();
-    var isConcertsHost = host === "concerts" || host.indexOf("concerts.") === 0;
-    if (isConcertsHost && window.location.pathname === "/") {
-      window.location.replace("/concerts/");
-    }
-  })();
-</script>
 <link rel="stylesheet" href="assets/faces.css" />
 <link rel="stylesheet" href="assets/core.css" />
 <script src="assets/palette.js"></script>
