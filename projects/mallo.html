@@ -13,126 +13,18 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="../assets/site.css" />
-<script src="../assets/palette.js"></script>
-<style>
-  .project { max-width: 760px; }
-  .project__title {
-    margin: 0 0 clamp(8px, 1.5vw, 16px);
-    font-family: var(--sans);
-    font-weight: 600;
-    font-size: clamp(40px, 6vw, 76px);
-    line-height: 1.0;
-    letter-spacing: -0.025em;
-    text-wrap: balance;
-  }
-  .project__lede {
-    margin: 0 0 clamp(16px, 2vw, 20px);
-    font-family: var(--sans);
-    font-weight: 500;
-    font-size: clamp(20px, 1.8vw, 24px);
-    line-height: 1.4;
-    color: var(--ink);
-    max-width: 54ch;
-    text-wrap: pretty;
-  }
-  .project__lede--fi {
-    margin: -8px 0 clamp(16px, 2vw, 20px);
-    font-family: var(--sans);
-    font-weight: 400;
-    font-size: clamp(15px, 1.3vw, 17px);
-    line-height: 1.45;
-    color: var(--ink-soft);
-    max-width: 54ch;
-    text-wrap: pretty;
-  }
-  .project__meta {
-    margin: 0 0 clamp(28px, 4vw, 48px);
-    font-family: var(--mono);
-    font-size: 12px;
-    line-height: 1.5;
-    color: var(--ink-soft);
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px 14px;
-    align-items: baseline;
-  }
-  .project__meta .sep { color: var(--ink-soft); }
-
-  .project__body { display: grid; gap: clamp(20px, 2.6vw, 32px); }
-  .project__body > p {
-    margin: 0;
-    font-family: var(--sans);
-    font-size: clamp(17px, 1.35vw, 18px);
-    line-height: 1.65;
-    color: var(--ink);
-    max-width: 64ch;
-    text-wrap: pretty;
-  }
-  .project__body a {
-    color: var(--ink);
-    border-bottom: 2px solid var(--accent);
-    padding-bottom: 1px;
-  }
-  .project__body a:hover { color: var(--accent); }
-  .project__body h2 {
-    margin: clamp(28px, 4vw, 48px) 0 4px;
-    font-family: var(--sans);
-    font-weight: 600;
-    font-size: clamp(22px, 2vw, 28px);
-    line-height: 1.15;
-    letter-spacing: -0.015em;
-    color: var(--ink);
-  }
-  .project__body ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: grid;
-    gap: 14px;
-    font-family: var(--sans);
-    font-size: clamp(16px, 1.3vw, 18px);
-    line-height: 1.55;
-    color: var(--ink);
-    max-width: 64ch;
-  }
-  .project__body ul li { padding-left: 22px; position: relative; }
-  .project__body ul li::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0.7em;
-    width: 10px;
-    height: 1px;
-    background: var(--ink-soft);
-  }
-  .project__body ul li b { font-weight: 600; }
-
-  .figure { margin: clamp(28px, 4vw, 48px) 0 0; background: var(--bg-deeper); overflow: hidden; position: relative; }
-  .figure img, .figure svg.ph { display: block; width: 100%; height: auto; }
-  .figure svg.ph { aspect-ratio: 16 / 10; }
-  .figure figcaption {
-    margin-top: 10px;
-    padding: 0 2px;
-    font-family: var(--mono);
-    font-size: 12px;
-    line-height: 1.4;
-    color: var(--ink-soft);
-  }
-  .figpair { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(12px, 2vw, 18px); margin: clamp(28px, 4vw, 48px) 0 0; }
-  .figpair .figure { margin: 0; }
-  @media (max-width: 640px) { .figpair { grid-template-columns: 1fr; } }
-</style>
 <!-- standard.site -->
 <link rel="site.standard.document" href="at://did:plc:odgxwakrg5r2zjetnrkxuh5c/site.standard.document/3mpomspcnun2v" />
 <!-- /standard.site -->
+<link rel="stylesheet" href="../assets/faces.css" />
+<link rel="stylesheet" href="../assets/core.css" />
+<link rel="stylesheet" href="../assets/home.css" />
+<script src="../assets/palette.js"></script>
 </head>
-<body>
-<div class="wrap">
+<body class="site--dev scale--front site--blocks">
+<div class="wrap wrap--blocks">
 
-  <header class="masthead">
-    <a class="name" href="../index.html">Ron Bronson</a>
-  </header>
+  <header class="topbar block block--ink"><div class="topbar__in"><a class="name" href="../index.html">Ron Bronson</a><nav aria-label="Main navigation"><a href="https://ronbronson.design">Design</a><a href="https://thinkingweapons.com">Studio</a><a href="https://blog.ronbronson.com">Blog</a></nav></div></header>
 
   <article class="project">
 
@@ -144,7 +36,7 @@
       <span class="sep">·</span>
       <span>2026</span>
       <span class="sep">·</span>
-      <a class="live-link" href="https://www.mallo.fi" target="_blank" rel="noopener">mallo.fi &#8599;</a>
+      <a class="live-link" href="https://www.mallo.fi" target="_blank" rel="noopener">mallo.fi</a>
     </div>
 
     <figure class="figure">
@@ -162,7 +54,7 @@
 
     <div class="project__body">
 
-      <p>I&rsquo;ve followed pes&auml;pallo &mdash; Finland&rsquo;s national baseball variant &mdash; for well over a decade. Somewhere along the way the fandom turned into something bigger: I&rsquo;ve talked the sport up on podcasts and other people&rsquo;s shows; I <a href="finnish-baseball-game-design.html">gave a conference talk</a> on what it taught me about game design; and a couple of years ago I was on the pre- and post-game show for the <a href="https://youtu.be/U0lsmfUmrLI" target="_blank" rel="noopener">first-ever English-language Superpesis telecast</a>. I eventually made the pilgrimage to Finland to watch it in person &mdash; Superpesis, the top league, <a href="https://www.superpesis.fi/ajankohtaista/superpesis-yhdysvaltalainen-ron-bronson-toteutti-unelmansa-ja-matkusti-suomeen-katsomaan-pesapalloa" target="_blank" rel="noopener">wrote about the trip</a>. For an American, I&rsquo;ve been in this a while. If you want the origin story, I wrote up <a href="https://medium.com/@ronbronson/pesapallo-9dc4d3f1ed5e" target="_blank" rel="noopener">how a guy from America starts following Finnish baseball</a>.</p>
+      <p>I&rsquo;ve followed pes&auml;pallo &mdash; Finland&rsquo;s national baseball variant &mdash; for well over a decade. Somewhere along the way the fandom turned into something bigger: I&rsquo;ve talked the sport up on podcasts and other people&rsquo;s shows; I <a href="../projects/finnish-baseball-game-design.html">gave a conference talk</a> on what it taught me about game design; and a couple of years ago I was on the pre- and post-game show for the <a href="https://youtu.be/U0lsmfUmrLI" target="_blank" rel="noopener">first-ever English-language Superpesis telecast</a>. I eventually made the pilgrimage to Finland to watch it in person &mdash; Superpesis, the top league, <a href="https://www.superpesis.fi/ajankohtaista/superpesis-yhdysvaltalainen-ron-bronson-toteutti-unelmansa-ja-matkusti-suomeen-katsomaan-pesapalloa" target="_blank" rel="noopener">wrote about the trip</a>. For an American, I&rsquo;ve been in this a while. If you want the origin story, I wrote up <a href="https://medium.com/@ronbronson/pesapallo-9dc4d3f1ed5e" target="_blank" rel="noopener">how a guy from America starts following Finnish baseball</a>.</p>
 
       <div class="figpair">
         <figure class="figure">
@@ -194,7 +86,7 @@
       <ul>
         <li><b>Standings &amp; playoff odds</b> &mdash; real Superpesis points, with Monte Carlo playoff odds simulated over the remaining schedule and re-run at weekly cutoffs to draw a season-long odds chart.</li>
         <li><b>Similarity scores</b> &mdash; Baseball-Reference-style comps: nearest neighbors over standardized rate stats, 1000 means identical.</li>
-        <li><b>Pes&auml;pallo &rarr; baseball</b> &mdash; a rank-preserving quantile map from Superpesis percentiles onto MLB distributions, so a player&rsquo;s season reads as a shareable English-language line for people who know baseball but not pes&auml;pallo.</li>
+        <li><b>Pes&auml;pallo baseball</b> &mdash; a rank-preserving quantile map from Superpesis percentiles onto MLB distributions, so a player&rsquo;s season reads as a shareable English-language line for people who know baseball but not pes&auml;pallo.</li>
         <li><b>Every league, first-class</b> &mdash; men&rsquo;s and women&rsquo;s Superpesis and the lower tiers all build their own navigation; the women&rsquo;s game is never buried behind a filter.</li>
       </ul>
 
@@ -202,7 +94,7 @@
 
       <p>The core is Python over SQLite &mdash; a metrics layer, the projection engine, a context model, and a Monte Carlo simulator &mdash; with a small web UI on top and charts drawn in vendored D3, no CDN. The demo league generates every stat line from known latent talent so the tests can assert the projections and park factors recover it. It&rsquo;s a directed agent build, documented in after-action reports in the repo and released under the AGPL. Mostly, though, it&rsquo;s a fan project: the site I always wanted to exist, finally built.</p>
 
-      <p><a class="live-link" href="https://www.mallo.fi" target="_blank" rel="noopener">See it at mallo.fi &#8599;</a></p>
+      <p><a class="live-link" href="https://www.mallo.fi" target="_blank" rel="noopener">See it at mallo.fi</a></p>
 
     </div>
 

@@ -60,16 +60,16 @@
        Coral Glow   #f78e69   swatch; 2.26 on snow, too light for links,
                               borders or focus rings
      Two tuned shades keep the roles accessible:
-       soft text = Mint Leaf 40% toward grey (#0f7f6c), 4.78 on snow, AA
+       soft text = Mint Leaf toward grey (#127463), APCA Lc 76 on snow
        accent    = Coral Glow 20% toward grey (#cd795b), 3.15 on snow,
                    clears the 3:1 minimum for underlines and focus rings */
   const SNO = {
     snow:   '#fffbfa',
     grey:   '#252323',
-    aqua:   '#54defd',
+    aqua:   '#65e1fd',  /* Sky Aqua 10% toward Snow: grey on it Lc 76 (DDR-013) */
     mint:   '#00bd9d',
     coral:  '#f78e69',
-    soft:   '#0f7f6c',
+    soft:   '#127463',
     accent: '#cd795b',
   };
 
@@ -87,6 +87,7 @@
     coffee:  '#432818',
     apricot: '#ffe6a7',
     camel:   '#bb9457',
+    camelLt: '#efd294',  /* Camel 76% toward Apricot: soft text, Lc 76 on Coffee (DDR-013) */
     tang:    '#ef271b',
     melon:   '#ea1744',
     panel:   '#6d4e2e',
@@ -124,11 +125,24 @@
       bg:     COF.coffee,
       deeper: COF.panel,
       ink:    COF.apricot,
-      soft:   COF.camel,
+      soft:   COF.camelLt,
       rule:   COF.camel,
       accent: COF.tang,
     }),
   };
+
+  /* ── colour blocks (DDR-012) ──────────────────────
+     lead / on-lead fills the bar and hero; deep / on-deep fills one
+     chapter. Text on each fill is checked by the audit below. */
+  const BLOCKS = {
+    paper: { lead: '#f78e69', onLead: '#252323', deep: '#0f7f6c', onDeep: '#fffbfa' },
+    coffee: { lead: '#c6a164', onLead: '#432818', deep: '#962819', onDeep: '#ffe6a7' },
+  };
+  for (const [k, b] of Object.entries(BLOCKS)) {
+    Object.assign(PALETTES[k], b);
+    PALETTES[k]._audit['on-lead / lead'] = +contrast(b.onLead, b.lead).toFixed(2);
+    PALETTES[k]._audit['on-deep / deep'] = +contrast(b.onDeep, b.deep).toFixed(2);
+  }
 
   const DEFAULT = 'paper';
 
@@ -141,6 +155,10 @@
     r.setProperty('--ink-soft',  p.soft);
     r.setProperty('--rule',      p.rule);
     r.setProperty('--accent',    p.accent);
+    r.setProperty('--lead',      p.lead);
+    r.setProperty('--on-lead',   p.onLead);
+    r.setProperty('--deep',      p.deep);
+    r.setProperty('--on-deep',   p.onDeep);
   }
 
   function recolorPatterns(p) {
@@ -175,7 +193,7 @@
   function injectUI() {
     if (document.querySelector('.palette-dock')) return;
     const dock = document.createElement('div');
-    dock.className = 'palette-dock';
+    dock.className = 'palette-dock palette-dock--fixed';
     dock.setAttribute('role', 'group');
     dock.setAttribute('aria-label', 'Theme');
 

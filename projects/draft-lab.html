@@ -13,116 +13,24 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="../assets/site.css" />
-<script src="../assets/palette.js"></script>
-<style>
-  .project { max-width: 760px; }
-  .project__title {
-    margin: 0 0 clamp(8px, 1.5vw, 16px);
-    font-family: var(--sans);
-    font-weight: 600;
-    font-size: clamp(40px, 6vw, 76px);
-    line-height: 1.0;
-    letter-spacing: -0.025em;
-    text-wrap: balance;
-  }
-  .project__lede {
-    margin: 0 0 clamp(28px, 4vw, 48px);
-    font-family: var(--sans);
-    font-weight: 500;
-    font-size: clamp(20px, 1.8vw, 24px);
-    line-height: 1.4;
-    color: var(--ink);
-    max-width: 48ch;
-    text-wrap: pretty;
-  }
-
-  .project__body { display: grid; gap: clamp(20px, 2.6vw, 32px); }
-  .project__body > p {
-    margin: 0;
-    font-family: var(--sans);
-    font-size: clamp(17px, 1.35vw, 18px);
-    line-height: 1.65;
-    color: var(--ink);
-    max-width: 64ch;
-    text-wrap: pretty;
-  }
-
-  .project__body h2 {
-    margin: clamp(28px, 4vw, 48px) 0 4px;
-    font-family: var(--sans);
-    font-weight: 600;
-    font-size: clamp(22px, 2vw, 28px);
-    line-height: 1.15;
-    letter-spacing: -0.015em;
-    color: var(--ink);
-  }
-
-  .project__body ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: grid;
-    gap: 14px;
-    font-family: var(--sans);
-    font-size: clamp(16px, 1.3vw, 18px);
-    line-height: 1.55;
-    color: var(--ink);
-    max-width: 64ch;
-  }
-  .project__body ul li { padding-left: 22px; position: relative; }
-  .project__body ul li::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0.7em;
-    width: 10px;
-    height: 1px;
-    background: var(--ink-soft);
-  }
-  .project__body ul li b { font-weight: 600; }
-
-  .stack-block {
-    display: grid;
-    grid-template-columns: 140px 1fr;
-    gap: 6px 28px;
-    max-width: 720px;
-    font-size: 15px;
-    line-height: 1.55;
-  }
-  .stack-block dt {
-    font-family: var(--mono);
-    font-size: 12px;
-    color: var(--ink-soft);
-    padding-top: 3px;
-  }
-  .stack-block dd { margin: 0; font-family: var(--sans); color: var(--ink); max-width: 56ch; }
-  @media (max-width: 640px) {
-    .stack-block { grid-template-columns: 1fr; gap: 4px 0; }
-    .stack-block dt { padding-top: 16px; }
-    .stack-block dt:first-of-type { padding-top: 0; }
-  }
-
-  .figure { margin: clamp(28px, 4vw, 48px) 0 0; background: var(--bg-deeper); overflow: hidden; position: relative; }
-  .figure img, .figure svg.ph { display: block; width: 100%; height: auto; }
-  .figure svg.ph { aspect-ratio: 16 / 10; }
-</style>
 <!-- standard.site -->
 <link rel="site.standard.document" href="at://did:plc:odgxwakrg5r2zjetnrkxuh5c/site.standard.document/3mpfibveiyr2q" />
 <!-- /standard.site -->
+<link rel="stylesheet" href="../assets/faces.css" />
+<link rel="stylesheet" href="../assets/core.css" />
+<link rel="stylesheet" href="../assets/home.css" />
+<script src="../assets/palette.js"></script>
 </head>
-<body>
-<div class="wrap">
+<body class="site--dev scale--front site--blocks">
+<div class="wrap wrap--blocks">
 
-  <header class="masthead">
-    <a class="name" href="../index.html">Ron Bronson</a>
-  </header>
+  <header class="topbar block block--ink"><div class="topbar__in"><a class="name" href="../index.html">Ron Bronson</a><nav aria-label="Main navigation"><a href="https://ronbronson.design">Design</a><a href="https://thinkingweapons.com">Studio</a><a href="https://blog.ronbronson.com">Blog</a></nav></div></header>
 
   <article class="project">
 
     <h1 class="project__title">Cap Buffet</h1>
     <p class="project__lede">A laboratory for salary-cap systems, and home to a small family of sports-rules tools.</p>
-    <p style="margin:0 0 clamp(28px,4vw,48px);"><a class="live-link" href="https://capbuffet.com" target="_blank" rel="noopener">Visit capbuffet.com &rarr;</a></p>
+    <p style="margin:0 0 clamp(28px,4vw,48px);"><a class="live-link" href="https://capbuffet.com" target="_blank" rel="noopener">Visit capbuffet.com</a></p>
 
     <figure class="figure">
       <svg class="ph" viewBox="0 0 1400 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
