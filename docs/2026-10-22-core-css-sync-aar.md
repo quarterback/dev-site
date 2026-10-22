@@ -23,7 +23,9 @@ This repo was not named. It was touched only because `assets/core.css` is shared
 
 **What the agent did (step by step):** pre-launch work on `2026-site` added two rules to its `assets/core.css`: `.icon`, for inline SVGs replacing Font Awesome (DDR-007), and `.masthead__name`, so a home page's name can be an `h1` without changing the masthead's flex layout. The file was copied verbatim into this repo and into `bonus-time`, and the three checksums were confirmed equal.
 
-**What it produced or changed:** `assets/core.css` only. Verified identical: `283bc271a4df0a6035d55d448c35e02a` in all three repos.
+**What it produced or changed:** `assets/core.css` only.
+
+**Corrected after the fact.** The first version of this sync copied a 695-line `core.css` into all three repos. Nothing had been fetched, so the agent did not know that `bonus-time`'s `main` had already moved to an 889-line version carrying the DDR-012 colour blocks and the DDR-013 contrast fixes. Propagating the older file would have rolled those out of `bonus-time`. The shared layer is now rebuilt from `bonus-time`'s version plus the two new rules, 897 lines, and copied into all three.
 
 **Where actual behavior differed from the instruction:** none.
 
@@ -55,7 +57,7 @@ This repo was not named. It was touched only because `assets/core.css` is shared
 
 **Downstream affected parties:** `2026-site` and `bonus-time`.
 
-**Expected failure if this run happened 100 times:** an agent edits `core.css` in whichever repo it happens to be working in and never looks at the other two.
+**Expected failure if this run happened 100 times:** an agent edits `core.css` in whichever repo it happens to be working in and never looks at the other two, or, as here, syncs all three from a stale checkout and quietly reverts whichever repo was ahead. The second failure is worse, because it looks like diligence: three matching checksums and a passing check, on the wrong file.
 
 ## 6. Change — what happens next
 
