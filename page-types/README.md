@@ -15,7 +15,12 @@ Every page type here is a copy of a live page's `<body>`, content verbatim, with
 | File | Page type | Built from |
 | --- | --- | --- |
 | `catalogue.html` | Catalogue | `index.html` |
+| `catalogue-story.html` | Catalogue, story version | `index.html`, rebuilt in the Front door structure (DDR-011) |
 | `project.html` | Project | `projects/mallo.html` |
+
+## Scale (DDR-011)
+
+Every page here carries `body.scale--front`: the Front door scale (hero 112, subtitle 46, intro 23, H2 78, H3 37, body 25) and no uppercase labels, in this site's own faces. Remove the class to see the previous scale.
 
 ## Left for cleanup before launch
 

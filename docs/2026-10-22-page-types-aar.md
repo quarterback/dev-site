@@ -42,3 +42,11 @@
 **Keep doing:** copy content verbatim; leave copy to Ron.
 **Should not be delegated to an agent at all:** the site copy.
 **Signal that the change worked:** live pages load only `faces.css` + `core.css` + the palette engine, and `page-types/` is deleted.
+
+---
+
+## Follow-up: .design and .dev take the Front door scale (DDR-011)
+
+**Instruction given (actual wording):** "now do the same for .design and .dev" — clarified by Ron's pick: "Same scale, own faces".
+**What changed:** `assets/core.css` (identical in all three repos) gains `body.scale--front`: hero 112, subtitle 46, intro 23, H2 78, H3 37, body 25, no uppercase labels, each site's own faces. Every page type here carries it. New story-version home built in the Front door structure from the live index, copy verbatim (on .design the subtitle is the page's own `og:description`). Read the live design system first; no newer .design/.dev boards exist.
+**Judgment calls:** mapped components onto the scale (section labels → H2, list items and article body → body, cell titles and in-article headings → H3, ledes → subtitle); kept the 12px colophon text Ron asked for; project screenshots stay 16:10 top-anchored.
