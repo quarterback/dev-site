@@ -8,6 +8,7 @@
 
    Roles   --bg --bg-deeper --ink --ink-soft --rule --accent
            --field --on-ink --digression --mark --shadow
+           --lead --on-lead --deep --on-deep   (colour blocks, DDR-012)
    Slots   --display --deck --text --sans --mono --std --ui
    ────────────────────────────────────────────────────────── */
 
@@ -693,3 +694,187 @@ body.site--masthead .pt-label { margin: calc(-1 * clamp(12px, 2.5vw, 34px)) calc
   .cg { grid-template-columns: 1fr; }
   .site--masthead .doors, .site--masthead .doors--3, .doors { grid-template-columns: 1fr; }
 }
+
+/* ══════════════════════════════════════════════════════════
+   COLOUR BLOCKS (DDR-012) — the Front door's colour structure,
+   portable to every site. A block is a full-bleed band filled
+   from one of five pairs. Inside it the roles re-point to that
+   pair, so every component in the block (links, frames, buttons,
+   photos, highlights) stays legible with no per-block rules.
+
+     .block--bg      bg       / ink       plain ground
+     .block--deeper  bg-deeper/ ink       the soft fill (Jasmine,
+                                          Steel Blue, Sky Aqua)
+     .block--lead    lead     / on-lead   the loud fill: bar, hero
+     .block--deep    deep     / on-deep   one dark chapter
+     .block--ink     ink      / on-ink    band, strip, footer
+
+   Page rhythm, as on the Front door: bar + hero in lead, then
+   chapters alternating bg and deeper with one deep, the band and
+   the strip in ink. The bar and hero share lead; otherwise no two
+   blocks of the same fill sit next to each other.
+   ══════════════════════════════════════════════════════════ */
+
+/* Page-level copies of the roles. A :root custom property resolves
+   once against the page scheme, so blocks can read the page colours
+   after they re-point the role names. */
+:root {
+  --k-bg: var(--bg);
+  --k-bg-deeper: var(--bg-deeper);
+  --k-ink: var(--ink);
+  --k-accent: var(--accent);
+  --k-lead: var(--lead, var(--bg-deeper));
+  --k-on-lead: var(--on-lead, var(--ink));
+  --k-deep: var(--deep, var(--ink));
+  --k-on-deep: var(--on-deep, var(--bg));
+  --k-on-ink: var(--on-ink, var(--bg));
+}
+
+/* Bleeding fills must never widen the page. */
+html:has(.block), body:has(.block) { overflow-x: clip; }
+
+.block {
+  position: relative;
+  background: var(--bg);
+  color: var(--ink);
+  /* bleed the fill to the viewport edges from inside any container */
+  box-shadow: 0 0 0 100vmax var(--bg);
+  clip-path: inset(0 -100vmax);
+}
+.block--bg {
+  --bg: var(--k-bg); --ink: var(--k-ink); --accent: var(--k-accent);
+}
+.block--deeper {
+  --bg: var(--k-bg-deeper); --bg-deeper: var(--k-bg); --ink: var(--k-ink); --ink-soft: var(--k-ink);
+  --rule: var(--k-ink); --accent: var(--k-ink);
+}
+.block--lead {
+  --bg: var(--k-lead); --bg-deeper: var(--k-bg-deeper); --ink: var(--k-on-lead); --ink-soft: var(--k-on-lead);
+  --rule: var(--k-on-lead); --accent: var(--k-on-lead);
+}
+.block--deep {
+  --bg: var(--k-deep); --bg-deeper: var(--k-bg-deeper); --ink: var(--k-on-deep); --ink-soft: var(--k-on-deep);
+  --rule: var(--k-on-deep); --accent: var(--k-on-deep);
+}
+.block--ink {
+  --bg: var(--k-ink); --bg-deeper: var(--k-bg-deeper); --ink: var(--k-on-ink); --ink-soft: var(--k-on-ink);
+  --rule: var(--k-on-ink); --accent: var(--k-on-ink);
+}
+/* The structural rule between blocks stays in page ink, edge to edge. */
+.block + .block::before {
+  content: ""; position: absolute; top: 0; left: -100vmax; right: -100vmax;
+  height: var(--frame-heavy); background: var(--k-ink); pointer-events: none;
+}
+.block.hero, .block.chapter, .block.band, .block.strip { border-bottom: 0; }
+
+/* Text and links inside a block take the block's ink. Inside a filled
+   block (any but bg) the signal colour equals the text colour, so a
+   hover inverts the link instead of recolouring it. */
+.block a { color: var(--ink); }
+.block .hero__more a, .block .more a, .block.chapter a, .block .chapter__body a, .block .go {
+  text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 4px;
+  text-decoration-color: var(--accent); border-bottom: 0; padding-bottom: 0;
+}
+.block--lead a:hover, .block--deep a:hover, .block--ink a:hover, .block--deeper a:hover {
+  background: var(--ink); color: var(--bg); text-decoration-color: var(--bg);
+}
+.block--bg a:hover { color: var(--accent); }
+/* The subtitle highlight is always the page's soft fill with page ink. */
+.block .sub b { background: var(--k-bg-deeper); color: var(--k-ink); }
+.block--deeper .sub b { background: var(--k-bg); }
+
+/* A page built from blocks: the page wrap keeps its width and gutter
+   but no top or bottom padding, so the first block meets the top. */
+.wrap--blocks { padding-top: 0; padding-bottom: clamp(32px, 4vw, 56px); }
+.wrap--blocks > .block:not(.topbar):not(.band) { padding-left: clamp(0px, 2vw, 24px); padding-right: clamp(0px, 2vw, 24px); }
+.wrap--blocks > .colophon { margin-top: clamp(24px, 3vw, 40px); }
+
+/* ── TopBar: the sticky name bar ─────────────────── */
+.topbar { position: sticky; top: 0; z-index: 20; }
+.topbar.block { clip-path: inset(0 -100vmax -12px); }
+.topbar__in { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 24px; padding: 18px 0; }
+.topbar .name { font-family: var(--display); font-weight: 900; font-size: clamp(28px, 2.8vw, 40px); line-height: 1; letter-spacing: -.05em; color: var(--ink); text-decoration: none; }
+.topbar nav { display: flex; flex-wrap: wrap; align-items: center; gap: clamp(14px, 2.4vw, 32px); font-family: var(--ui); font-weight: 500; font-size: 15px; }
+.topbar nav a { color: var(--ink); text-decoration: none; }
+.topbar nav a:hover { background: none; color: var(--ink); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 5px; }
+@media (max-width: 760px) { .topbar { position: static; } }
+
+/* ── Buttons: framed, hard shadow, square ────────── */
+.btn, .btn-icon {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  border: var(--frame-heavy) solid var(--k-ink); background: var(--k-bg); color: var(--k-ink);
+  box-shadow: 4px 4px 0 var(--k-ink);
+  font-family: var(--ui); font-weight: 500; font-size: 15px; line-height: 1.1; text-decoration: none;
+  cursor: pointer; transition: transform .12s ease, box-shadow .12s ease;
+}
+.btn { min-height: 44px; padding: 9px 16px; }
+.btn-icon { width: 48px; height: 48px; padding: 0; }
+.btn-icon svg { width: 22px; height: 22px; display: block; }
+.btn:hover, .btn-icon:hover, .block .btn:hover, .block .btn-icon:hover {
+  background: var(--k-deep); color: var(--k-on-deep); text-decoration: none;
+  transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--k-ink);
+}
+
+/* ── Hero inside a block ─────────────────────────── */
+.hero.block { padding-top: clamp(56px, 7vw, 112px); padding-bottom: clamp(64px, 8vw, 128px); }
+.hero.block h1 { max-width: 1180px; }
+.hero.block .sub { max-width: 1100px; }
+
+/* ── Band: one line of live data in ink ──────────── */
+a.band.block, .band.block { display: flex; padding-top: 28px; padding-bottom: 28px; border-bottom: 0; color: var(--ink); text-decoration: none; }
+.band.block:hover { background: var(--bg); color: var(--ink); }
+.band.block:hover .band__t { text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 5px; }
+.band.block svg { color: var(--k-bg-deeper); width: 28px; height: 28px; }
+.band.block .band__a { font-size: 18px; }
+
+/* ── Chapter inside a block ──────────────────────── */
+.chapter.block { padding-top: clamp(80px, 10vw, 144px); padding-bottom: clamp(80px, 10vw, 144px); }
+.chapter.block img { border-color: var(--k-ink); box-shadow: 8px 8px 0 var(--k-ink); }
+.block--deep.chapter img, .block--ink.chapter img { box-shadow: 8px 8px 0 var(--k-bg-deeper); }
+.block--deeper.chapter img { box-shadow: 8px 8px 0 var(--k-lead); }
+
+/* ── Strip: closing shelf in ink ─────────────────── */
+.strip.block { padding-top: 56px; padding-bottom: 60px; }
+.strip.block h2 { color: var(--ink); }
+.strip.block .covers { background: transparent; border: 0; gap: 8px; }
+.strip.block .covers span { background: var(--k-bg-deeper); color: var(--k-ink); border: var(--frame-heavy) solid var(--k-ink); }
+
+/* ── Photo row: three framed photos on ink ───────── */
+.photos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3px; background: var(--k-ink); padding: 3px 0; box-shadow: 0 0 0 100vmax var(--k-ink); clip-path: inset(0 -100vmax); }
+.photos img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+@media (max-width: 760px) { .photos { grid-template-columns: 1fr; } }
+
+/* ── Socials: icon squares, no words ─────────────── */
+.socials { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.soc { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: var(--frame-heavy) solid var(--ink); background: var(--bg); color: var(--ink); text-decoration: none; }
+.soc svg { width: 20px; height: 20px; display: block; fill: currentColor; }
+.soc i { font-size: 19px; line-height: 1; }
+.block .soc:hover, .soc:hover { background: var(--k-deep); color: var(--k-on-deep); }
+.foot-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding-top: 22px; padding-bottom: 22px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .btn, .btn-icon { transition: none; }
+}
+
+/* A masthead page built from blocks drops the field ground, the
+   framed shell spacing and the underlined link default. */
+body.site--blocks { padding: 0; background: var(--k-bg); background-image: none; }
+body.site--blocks .pt-label { margin: 0; }
+.site--blocks a.soc, .site--blocks .soc { color: var(--k-ink); text-decoration: none; }
+.site--blocks .block a:not(.soc):not(.btn):not(.btn-icon) { color: var(--ink); }
+.site--blocks .topbar a, .site--blocks a.band { text-decoration: none; }
+.site--blocks .colophon h2, .scale--front.site--blocks .colophon h2 {
+  font-family: var(--display); font-weight: 900; font-size: clamp(24px, 2.2vw, 32px); line-height: 1;
+  letter-spacing: -.04em; text-transform: none; color: var(--k-ink);
+}
+.foot-bar-wrap { padding-top: 24px; }
+.foot-bar-wrap > .socials { margin-bottom: 8px; }
+.site--blocks .foot { margin-top: clamp(24px, 3vw, 40px); }
+/* Soft-filled items inside a dark block (featured rows and cells)
+   take the page's own ink, the pair that passes on bg-deeper. */
+.block--ink .exp--featured, .block--deep .exp--featured, .block--lead .exp--featured,
+.block--ink .cell--feature, .block--deep .cell--feature, .block--lead .cell--feature {
+  --ink: var(--k-ink); --ink-soft: var(--k-ink); --accent: var(--k-ink);
+  background: var(--k-bg-deeper); color: var(--k-ink);
+}
+.block .exp--featured a, .block .cell--feature a { color: var(--k-ink); }

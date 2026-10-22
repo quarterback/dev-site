@@ -130,6 +130,19 @@
     }),
   };
 
+  /* ── colour blocks (DDR-012) ──────────────────────
+     lead / on-lead fills the bar and hero; deep / on-deep fills one
+     chapter. Text on each fill is checked by the audit below. */
+  const BLOCKS = {
+    paper: { lead: '#f78e69', onLead: '#252323', deep: '#0f7f6c', onDeep: '#fffbfa' },
+    coffee: { lead: '#bb9457', onLead: '#432818', deep: '#c9271a', onDeep: '#ffe6a7' },
+  };
+  for (const [k, b] of Object.entries(BLOCKS)) {
+    Object.assign(PALETTES[k], b);
+    PALETTES[k]._audit['on-lead / lead'] = +contrast(b.onLead, b.lead).toFixed(2);
+    PALETTES[k]._audit['on-deep / deep'] = +contrast(b.onDeep, b.deep).toFixed(2);
+  }
+
   const DEFAULT = 'paper';
 
   /* ── application ──────────────────────────────────── */
@@ -141,6 +154,10 @@
     r.setProperty('--ink-soft',  p.soft);
     r.setProperty('--rule',      p.rule);
     r.setProperty('--accent',    p.accent);
+    r.setProperty('--lead',      p.lead);
+    r.setProperty('--on-lead',   p.onLead);
+    r.setProperty('--deep',      p.deep);
+    r.setProperty('--on-deep',   p.onDeep);
   }
 
   function recolorPatterns(p) {

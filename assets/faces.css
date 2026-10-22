@@ -19,6 +19,7 @@
 :root {
   --bg: #fffbfa; --bg-deeper: #54defd; --ink: #252323; --ink-soft: #0f7f6c; --rule: #00bd9d; --accent: #cd795b;
   --field: var(--bg); --on-ink: var(--bg); --digression: var(--ink);
+  --lead: #f78e69; --on-lead: #252323; --deep: #0f7f6c; --on-deep: #fffbfa;
 
   --display: "Author", "Times New Roman", Georgia, serif;
   --deck:    "Hanken Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
