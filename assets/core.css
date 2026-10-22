@@ -230,7 +230,8 @@ a { color: var(--ink); text-decoration: none; }
 .colophon__digression { color: var(--digression); }
 .colophon__digression::before { content: "\21B3  "; color: var(--accent); }
 .digression__label { font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-right: 6px; }
-.site--dev .colophon { font-size: clamp(14px, 1.15vw, 16px); line-height: 1.6; }
+/* One colophon size on every site; .dev keeps its right alignment. */
+.site--dev .colophon { margin-left: auto; text-align: right; }
 
 /* ── Footer ──────────────────────────────────────── */
 .foot { padding: clamp(16px, 2vw, 24px) 0 0; font-size: 14px; color: var(--ink-soft); border-top: var(--frame) solid var(--ink); }
