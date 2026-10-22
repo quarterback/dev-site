@@ -38,3 +38,13 @@
 **Specific changes before next run:** move the live home pages onto `faces.css` + `core.css` with blocks; add the CI check that `core.css` matches across repos.
 **Keep doing:** read the live design system and the latest main before building.
 **Should not be delegated to an agent at all:** the site copy and the pigment choices once Ron sees them.
+
+---
+
+## Follow-up: readability (DDR-013)
+
+**Instruction given (actual wording):** "blue on black text is surely unreadable did you WCAG any of this stuff before shipping? i shared colorways that were a lot better than any of these" · then "Just use the ones you have for right now I just wanna get this up and running I'll I'll add more later"
+**Root cause:** the agent checked fill and text pairs against WCAG 2 only (4.5:1). WCAG 2 overrates dark text on mid tones: black on Steel Blue passed at 5.09 and scores APCA Lc 38. The agent also never measured the rendered pages, only the token pairs.
+**What changed:** APCA floors by size on every text pair; mid-tone fills carry large type only; the top bar moved to ink; soft fills, soft text, digressions and links retuned in all six schemes. PRs were moved to draft while this was fixed.
+**Check:** a headless audit measures every text node and icon on every page type in both schemes of each site; all pass.
+**Change for next run:** run the rendered-page audit (WCAG 2 and APCA) before opening a PR, every time.
