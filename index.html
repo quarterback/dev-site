@@ -13,8 +13,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="assets/site.css" />
-<script src="assets/palette.js"></script>
 <script>
   /* If the concerts subdomain points at the same GitHub-backed deploy
      as the main site, send its root URL to the Concert Scout subapp. */
@@ -26,211 +24,11 @@
     }
   })();
 </script>
-<style>
-  /* ─────────────────────────────────────────────────────────────────
-     Index — one exposed grid. Every project is the same cell: a mono
-     link, a framed screenshot, a title, a short prose block. The 2px
-     frame is the structure; the grid does the composing.
-     ───────────────────────────────────────────────────────────────── */
-
-  /* ── Concepts & experiments — a ruled text list ─ */
-  .experiments {
-    margin: clamp(40px, 6vw, 72px) 0;
-  }
-  .experiments__head {
-    margin: 0 0 clamp(12px, 1.6vw, 18px);
-    font-family: var(--mono);
-    font-size: clamp(16px, 1.9vw, 21px);
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--ink);
-  }
-  .experiments__head span {
-    text-transform: none;
-    letter-spacing: 0.01em;
-    color: var(--ink-soft);
-  }
-  .experiments__list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    border-top: var(--frame) solid var(--ink);
-  }
-  .exp {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 4px 14px;
-    padding: clamp(12px, 1.6vw, 18px) 0;
-    border-bottom: 1px solid var(--rule);
-  }
-  .exp__name {
-    font-family: var(--sans);
-    font-weight: 600;
-    font-size: clamp(17px, 1.5vw, 20px);
-    letter-spacing: -0.01em;
-    color: var(--ink);
-  }
-  .exp__year {
-    font-family: var(--mono);
-    font-size: 12px;
-    color: var(--ink-soft);
-  }
-  .exp__links {
-    margin-left: auto;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px 14px;
-    font-family: var(--mono);
-    font-size: 12px;
-  }
-  .exp__links a {
-    color: var(--ink);
-    border-bottom: var(--frame) solid var(--accent);
-    padding-bottom: 1px;
-    white-space: nowrap;
-  }
-  .exp__links a:hover { color: var(--accent); }
-  .exp--featured {
-    background: var(--bg-deeper);
-    border-left: 4px solid var(--accent);
-    padding-left: clamp(10px, 1.2vw, 16px);
-    padding-right: clamp(10px, 1.2vw, 16px);
-  }
-  .exp__note {
-    flex-basis: 100%;
-    margin-top: 2px;
-    font-family: var(--text);
-    font-size: clamp(13px, 1.1vw, 15px);
-    line-height: 1.5;
-    color: var(--ink-soft);
-    max-width: 72ch;
-  }
-
-  /* ── Intro / contact ──────────────────── */
-  .intro {
-    margin: clamp(20px, 3vw, 32px) 0 0;
-    padding: 0 0 clamp(28px, 5vw, 52px);
-    max-width: 62ch;
-  }
-  .intro p {
-    margin: 0;
-    font-family: var(--text);
-    font-weight: 500;
-    font-size: clamp(18px, 1.6vw, 22px);
-    line-height: 1.5;
-    color: var(--ink);
-    text-wrap: pretty;
-  }
-  .intro p + p { margin-top: 1em; }
-  .intro a { color: var(--ink); border-bottom: 2px solid var(--accent); padding-bottom: 1px; }
-  .intro a:hover { color: var(--accent); }
-  .intro--lede {
-    margin-top: 0;
-    padding-bottom: clamp(20px, 3vw, 36px);
-    max-width: 100ch;
-  }
-  .intro--lede p { font-size: clamp(20px, 2.1vw, 27px); }
-
-  /* ── The grid ─────────────────────────── */
-  .index {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    border-top: var(--frame) solid var(--ink);
-    border-left: var(--frame) solid var(--ink);
-  }
-
-  .cell {
-    border-right: var(--frame) solid var(--ink);
-    border-bottom: var(--frame) solid var(--ink);
-    padding: clamp(16px, 1.9vw, 26px);
-    display: flex;
-    flex-direction: column;
-    gap: clamp(12px, 1.3vw, 18px);
-  }
-
-  .cell__head {
-    font-family: var(--mono);
-    font-size: 12px;
-  }
-
-  .cell__title {
-    margin: 0;
-    font-family: var(--display);
-    font-weight: 700;
-    font-size: clamp(23px, 2.2vw, 32px);
-    line-height: 1.04;
-    letter-spacing: -0.025em;
-    color: var(--ink);
-    text-wrap: balance;
-  }
-  .cell__title a { color: inherit; }
-  .cell__title a:hover { color: var(--accent); }
-
-  .cell__media {
-    display: block;
-    position: relative;
-    overflow: hidden;
-    background: var(--bg-deeper);
-    border: var(--frame) solid var(--ink);
-    aspect-ratio: 16 / 10;
-    transition: border-color .14s ease;
-  }
-  .cell:hover .cell__media { border-color: var(--accent); }
-  .cell--static:hover .cell__media { border-color: var(--ink); }
-  .cell__media svg.ph,
-  .cell__media img {
-    position: absolute; inset: 0;
-    width: 100%; height: 100%;
-    display: block;
-    object-fit: cover;
-    object-position: top center;
-  }
-  .cell__media svg.ph { z-index: 0; }
-  .cell__media img { z-index: 1; background: var(--bg-deeper); }
-
-  .cell__prose {
-    margin: 0;
-    font-family: var(--text);
-    font-weight: 500;
-    font-size: clamp(14px, 1.05vw, 16px);
-    line-height: 1.5;
-    color: var(--ink);
-    text-wrap: pretty;
-  }
-
-  /* ── Feature cell — the ATProto banner. Spans the full grid width,
-       carries the accent rule and a deeper field so it reads as a
-       header, not just another project. Same frame, same register. ─ */
-  .cell--feature {
-    grid-column: 1 / -1;
-    background: var(--bg-deeper);
-    border-left: 6px solid var(--accent);
-    gap: clamp(8px, 1vw, 12px);
-  }
-  .cell--feature .cell__kicker {
-    font-family: var(--mono);
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-  }
-  .cell--feature .cell__title { font-size: clamp(26px, 3vw, 42px); max-width: 22ch; }
-  .cell--feature .cell__prose { font-size: clamp(15px, 1.2vw, 18px); max-width: 70ch; }
-
-  /* ── Responsive: collapse the grid, keep the rules ─ */
-  @media (max-width: 1040px) {
-    .index { grid-template-columns: repeat(2, 1fr); }
-  }
-  @media (max-width: 680px) {
-    .index { grid-template-columns: 1fr; }
-  }
-
-</style>
+<link rel="stylesheet" href="assets/faces.css" />
+<link rel="stylesheet" href="assets/core.css" />
+<script src="assets/palette.js"></script>
 </head>
-<body>
+<body class="site--dev scale--front">
 <div class="wrap">
 
   <nav class="topnav">
@@ -240,7 +38,7 @@
   </nav>
 
   <header class="masthead">
-    <a class="name" href="./index.html">Ron Bronson</a>
+    <a class="name" href="index.html">Ron Bronson</a>
   </header>
 
   <!-- Longer statement, parked for now — too wordy for current taste, keeping
