@@ -693,3 +693,11 @@ body.site--masthead .pt-label { margin: calc(-1 * clamp(12px, 2.5vw, 34px)) calc
   .cg { grid-template-columns: 1fr; }
   .site--masthead .doors, .site--masthead .doors--3, .doors { grid-template-columns: 1fr; }
 }
+
+/* Inline icon, replacing the Font Awesome glyph (DDR-007). Sized from the
+   inherited font-size so the icon rows keep the scale they had as a font. */
+.icon { width: 1em; height: 1em; fill: currentColor; display: inline-block; vertical-align: -0.125em; flex: none; }
+
+/* The home page's name is its h1. The heading carries no box of its own so
+   the masthead keeps the baseline flex layout it had as a bare link. */
+.masthead__name { margin: 0; font-size: inherit; font-weight: inherit; line-height: inherit; }
