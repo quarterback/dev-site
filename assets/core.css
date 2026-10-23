@@ -895,3 +895,12 @@ body.site--blocks .pt-label { margin: 0; }
 /* A home page whose name is its h1. The heading carries no box of its own so
    the masthead keeps the baseline flex layout it had as a bare link. */
 .masthead__name { margin: 0; font-size: inherit; font-weight: inherit; line-height: inherit; }
+
+/* The TopBar name is a link inside the ink block. The block's hover rule
+   inverts links (background takes the ink colour), and the name keeps its
+   own light colour, so on hover the name became a blank light box. The name
+   never inverts: on hover it keeps its colour and takes an underline. */
+.site--blocks .topbar a.name:hover, .site--blocks .topbar .name a:hover,
+.site--blocks .topbar a.name:focus-visible, .site--blocks .topbar .name a:focus-visible {
+  background: none; color: var(--ink); text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: .12em;
+}
