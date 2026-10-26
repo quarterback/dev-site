@@ -1,0 +1,46 @@
+name: Editorial check
+
+# Runs Ron's own editorial tooling over the files a pull request changes.
+#
+# Changed files only, on purpose. The corpus predates this check and a gate
+# that fails on day one is a gate someone turns off. New and edited prose has
+# to clear it; the back catalogue surfaces when a page is next touched.
+#
+# The rules live in .editorial.json, the rulings behind them in EDITORIAL.md.
+# STYLE-04 (dashes) and STYLE-05 (date order) are off there because both fight
+# Ron's established house style; see EDITORIAL.md for the reasoning.
+#
+# A passing run proves nothing about accuracy or voice. It means no pattern
+# matched. Semantic review is still a person's job.
+
+on:
+  pull_request:
+    paths:
+      - "**/*.html"
+      - "**/*.md"
+      - "**/*.mdx"
+      - "**/*.txt"
+      - ".editorial.json"
+      - ".github/workflows/editorial.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  prosekeep:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Fetch the base branch
+        run: git fetch --no-tags --depth=1 origin "${{ github.base_ref || 'main' }}"
+
+      - name: prosekeep, on the changed files
+        run: npx --yes prosekeep@0.3.0 check --changed --base "origin/${{ github.base_ref || 'main' }}"

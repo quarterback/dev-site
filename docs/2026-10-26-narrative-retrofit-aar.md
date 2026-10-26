@@ -126,7 +126,15 @@ The owner's instruction said to run the copy through his editorial repos. The fi
 
 **What the editorial pass deliberately did not change:** Ron's own sentences. Six of the masthead's remaining plain-language flags and three of `.dev`'s are his existing live copy, including the 18F team sentence and the Portland Digital Corps paragraph. The humanizer skill defers to the writer's sample, and prosekeep's own note says a passing or failing check establishes nothing about quality. Rewriting his sentences to satisfy a heuristic is exactly the AI-slop failure the instruction was guarding against.
 
-**Two of the tools disagree, and the record keeps the closedtab form.** `prosekeep check --profile vloora` flags nine em dashes in this file. Every one of them is either a section heading or a field label that `closedtab/SKILL.md` prescribes verbatim (`## 1. Intent — what was supposed to happen`). The skill defines the shape of this record, so its wording wins. Em dashes used as ordinary punctuation elsewhere in this file were removed, and the ones in table cells meaning "not applicable" now say so.
+**The configs now exist, so this is enforced rather than remembered.** The three repos had no `.editorial.json`, which is why the default profile was what ran. Each now carries one, generated with `prosekeep init --profile vloora` and then tuned, plus a filled-in `EDITORIAL.md` and a `.github/workflows/editorial.yml` that runs the check on the files a pull request changes.
+
+**Two rules are off, and the reason matters.** On first run the vloora profile reported 760 findings across the three repos. `STYLE-04` (prose punctuation rather than dashes) accounted for 720 of them and `STYLE-05` (month-first dates) for 18. Both fight Ron's established house style: his corpus uses em dashes throughout by choice, and every colophon and the career register use day-first dates. The humanizer skill defers to the writer's sample on dashes, and this is the sample. Turning them off leaves 22 findings that are actually worth reading, and it also resolved a clash where `STYLE-04` was flagging the section headings `closedtab/SKILL.md` prescribes verbatim for this record.
+
+**CI checks changed files only.** The corpus predates the check and a gate that fails on day one is a gate someone turns off. New and edited prose has to clear it; the back catalogue surfaces when a page is next touched.
+
+**One house-style finding no tool caught.** Ron uses the serial comma consistently. The new copy was mixed, and nine places were corrected by hand. That convention is now written down in `EDITORIAL.md`, along with contractions, date order, dashes, and the evidence states a claim has to sit in before it can be published.
+
+**Repo state after tuning:** `.design` and `.dev` pass repo-wide. The masthead reports 5, left deliberately rather than cleaned up inside a change about something else: four `STYLE-07` headings reading "Overview" on the course pages, and one `STYLE-03` in an archived record. Named in that repo's `EDITORIAL.md`.
 
 **Still unresolved:** the factual claims listed in the site-specific section below. No editorial tool can check those. They need Ron.
 
