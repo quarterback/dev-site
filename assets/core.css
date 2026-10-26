@@ -984,3 +984,27 @@ body.site--blocks .pt-label { margin: 0; }
 .site--blocks .block .btn--ghost:hover { background: var(--k-ink); color: var(--k-bg); }
 /* A small button for a card: the offer cards carry one each. */
 .btn--sm, .site--blocks .block .btn--sm { font-size: 16px; min-height: 44px; padding: 9px 16px; box-shadow: 4px 4px 0 var(--k-ink); }
+
+/* ── A card that takes the lead fill, and a card that is a link. Both
+      work on .offer, .step and .ev, so a card can carry its own colour
+      without a section of its own, and a card can be the way to a page. ── */
+/* .card--lead is the bright mid-tone fill. DDR-013 caps it at large type
+   only, so put nothing under 28px on it. For a card carrying body copy or a
+   list, use .card--deep, whose pair is audited at normal sizes. */
+.card--lead, .block .card--lead { background: var(--k-lead); color: var(--k-on-lead); border-color: var(--k-ink); }
+.block .card--lead a { color: var(--k-on-lead); }
+.card--lead .kw { color: var(--k-on-lead); }
+.card--lead .kw li:not(:last-child)::after { color: var(--k-on-lead); }
+a.step, a.offer, .site--blocks .block a.step, .site--blocks .block a.offer {
+  text-decoration: none; transition: transform .12s ease;
+}
+.site--blocks .block a.step:hover, .site--blocks .block a.offer:hover {
+  transform: translateY(-3px); background: var(--k-ink); color: var(--k-bg); text-decoration: none;
+}
+.site--blocks .block a.step:hover p, .site--blocks .block a.offer:hover p { color: var(--k-bg); }
+.card--deep, .block .card--deep { background: var(--k-deep); color: var(--k-on-deep); border-color: var(--k-ink); }
+.block .card--deep a { color: var(--k-on-deep); }
+.card--deep p, .card--deep ul, .card--deep li { color: var(--k-on-deep); }
+/* A list of topics inside a card: readable size, no mono, no middots. */
+.card__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 7px; font-family: var(--text); font-weight: 500; font-size: clamp(15px, 1.1vw, 16px); line-height: 1.35; }
+@media (prefers-reduced-motion: reduce) { a.step, a.offer { transition: none; } }

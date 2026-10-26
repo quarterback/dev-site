@@ -8,12 +8,15 @@ This document belongs to Ron Bronson. His latest explicit instruction takes prec
 - **Primary readers and tasks:** engineers, and people checking whether he builds or only talks. Someone who followed a link from a project, a conference organiser confirming he ships, a collaborator evaluating a protocol experiment.
 - **What this publication should help people accomplish:** find a working thing, understand the problem it solves, and see what his own contribution to it was.
 - **Source of approved product facts:** each project's own page in `projects/`, and `atproto/index.html` for protocol work status.
+- **This site's blog is Sideline Engineering, at `blog.ronbronson.dev`.** `blog.ronbronson.com` is the other publication and its posts 404 here. Never swap one host for the other in a URL; check the post exists where you are pointing.
 
 ## Voice and register
 
 **A representative paragraph we want to preserve**, from the live site:
 
-> An invented gridiron sport with its own rulebook, a probability engine that plays it, a 280-team universe to play it in, and a terminal-style stats portal serving the whole thing.
+> Tennis Polo is pretty straightforward. Two teams try to score goals using a tennis-sized ball, defended by a goalkeeper holding a tennis racket. The team with the most points wins. A sport I invented by accident at summer camp in 2004.
+
+Short sentences, no staging, and a fact at the end that only he could supply. This card was the one the October 2026 rewrite left untouched, because it was already written like a person.
 
 **Language we deliberately use:** concrete nouns and counts. What it is, who it is for, what it took. "Directed agent build" where that is what happened, with the split between technical direction and agent-authored code stated rather than blurred.
 
