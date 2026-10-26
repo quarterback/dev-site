@@ -95,6 +95,41 @@ Supplied with the instruction: four screenshot mockups (two for `.design`, one f
 
 **Signal that the change worked:** someone who does not know Ron can read any one of the three sites and say what he is responsible for and what changed because of it, and every claim survives being asked "says who?".
 
+## 7. Editorial pass — added 2026-10-26, after the first push
+
+The owner's instruction said to run the copy through his editorial repos. The first pass ran only `prosekeep check` on the default profile, which is mechanical and the weakest of the three profiles. That was not what he asked for. This section records the real pass.
+
+**What was run, and what it found:**
+
+| Tool | How it was run | Result |
+| --- | --- | --- |
+| `prosekeep check --profile vloora` | strictest profile, all seven STYLE rules, on the three pages | 12 findings, **all in pre-existing content**: JS code comments, Ron's own rotating digressions, and colophon dates. None in the new copy. |
+| `prosekeep audit` | heading structure and outline | clean, after demoting `.dev` project titles to `h3` and dropping the duplicate `h1` on `.design` |
+| `prosekeep review --profile vloora` | the semantic review protocol | eight review prompts, performed by hand against the copy. Findings below. |
+| `prosekeep compare` | pre-edit against post-edit rendered copy | `.dev` and masthead: no numeric or citation drift. `.design`: seven numbers reported, all traced to the rotating digression picking a different line per page load. Not a copy change. |
+| `plain-as-day check` | the extracted visible copy | design 7 to 4, dev 9 to 3, masthead 8 to 6. Everything remaining is either a heading-boundary artifact or one of Ron's own sentences. The 48 new sentences, measured on their own, return zero long-sentence findings. |
+| humanizer skill | read by hand against the new prose | findings below |
+
+**A note on the tools themselves:** `plain-as-day check` reads a file as prose. Pointed at an HTML page it scores the markup, the inline scripts and the ATProto fetch code, which buried the real signal under 30 findings. The copy was extracted from the rendered page first, with a terminating full stop added to headings, buttons and definition-list rows, because without one the checker runs the next sentence onto the previous block and reports long sentences no reader ever sees. Both scripts are in the session scratchpad, not the repo.
+
+**What the editorial pass actually changed:**
+
+- **Voice.** The new copy used no contractions anywhere: "I will tell you", "I am the right person", "what is wrong", "whatever is blocking". Ron's own first-person pages use them throughout ("I'm a systems designer", "Build what's missing"). This was the clearest signal that someone else wrote the new sections. Fixed across all three sites.
+- **Forced lists** (humanizer §6). Three cards on `.design` opened with a flat run of items and closed with a purpose clause. "Methods, staffing, governance, coaching the leads, and clearing whatever is blocking delivery, with the aim of leaving the team able to run it" became two sentences with a subject doing the work.
+- **A clipped negative tail** (humanizer §1). "done inside the team rather than handed to it" was a tail standing in for a claim. It is now the claim: "You don't get a deck at the end of it."
+- **Repetition.** "the work running differently and the team able to keep it running" used *running* twice, two paragraphs after "how the work actually runs."
+- **A welded sentence, which was this agent's own error.** On the masthead, two separate sentences of Ron's had been fused into one 50-word sentence about Thinking Weapons and the speaking record. Split back; the second half is his wording, verbatim.
+- **Two long sentences** carrying several distinct claims each: the Vloora/closedtab sentence on the masthead (45 words) and the 18F authorities sentence.
+- **A section note that explained the page to itself** (humanizer §5). "They are different kinds of thing and the page keeps them apart" became "A detail isn't a job, so they don't share a list."
+- **A contorted heading.** "A publishing program the work could be read through" became "A publishing program that kept up with the work."
+- **A stock phrase.** "had to survive contact with people using it" on `.dev`.
+
+**What the editorial pass deliberately did not change:** Ron's own sentences. Six of the masthead's remaining plain-language flags and three of `.dev`'s are his existing live copy, including the 18F team sentence and the Portland Digital Corps paragraph. The humanizer skill defers to the writer's sample, and prosekeep's own note says a passing or failing check establishes nothing about quality. Rewriting his sentences to satisfy a heuristic is exactly the AI-slop failure the instruction was guarding against.
+
+**Two of the tools disagree, and the record keeps the closedtab form.** `prosekeep check --profile vloora` flags nine em dashes in this file. Every one of them is either a section heading or a field label that `closedtab/SKILL.md` prescribes verbatim (`## 1. Intent — what was supposed to happen`). The skill defines the shape of this record, so its wording wins. Em dashes used as ordinary punctuation elsewhere in this file were removed, and the ones in table cells meaning "not applicable" now say so.
+
+**Still unresolved:** the factual claims listed in the site-specific section below. No editorial tool can check those. They need Ron.
+
 ## Site-specific: ronbronson.dev (dev-site)
 
 **Structure now on `index.html`:** the hero and the project catalogue were already close to the mockup. The retrofit gave the catalogue a frame and a reason, and added the writing that argues for it.
@@ -106,7 +141,7 @@ Supplied with the instruction: four screenshot mockups (two for `.design`, one f
 | Built, released, in use | bg | the existing project grid, now under a heading and a standfirst. Every card carries a `.specs` list: Status, Audience, My contribution. |
 | Writing | deeper | new tile grid: four posts and the blog |
 | Concepts & Experiments | bg | unchanged |
-| Contact + colophon | — | unchanged |
+| Contact + colophon | n/a | unchanged |
 
 **Heading levels:** the project titles were `h2` with nothing above them. They are now `h3` under the `Built, released, in use` `h2`. The class names did not change, so no CSS moved.
 
