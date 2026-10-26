@@ -31,20 +31,10 @@
     <h1 class="project__title">Occupant Indices</h1>
     <p class="project__lede">Public measurement infrastructure I built for the AI economy. Three live indices that turn scattered public data into numbers you can track over time — the price tag, the activity meter, and the labor gauge for AI work.</p>
 
-    <div class="phones bleed">
-      <figure class="figure">
-        <img src="../assets/occupant/cpi.png" alt="Compute Price Index screen: 62.4 on an orange block, down 9.7% in one month, with an all-time chart and tier prices" />
-        <figcaption>$CPI, May 16, 2026. The basket price, the chart since launch, and the four tiers.</figcaption>
-      </figure>
-      <figure class="figure">
-        <img src="../assets/occupant/aiu.png" alt="AI Market Index screen: 504.1 on a sky blue block, up 2.2% in two weeks, with the three weighted components below" />
-        <figcaption>$AIU. Token volume, inferred spend and the energy proxy, weighted 60 / 30 / 10.</figcaption>
-      </figure>
-      <figure class="figure">
-        <img src="../assets/occupant/ldi.png" alt="Labor Displacement Index screen: substitution rate 3.86% on a yellow block, with nine federal workloads listed by human and AI cost per unit" />
-        <figcaption>$LDI. Nine federal workloads, human cost against AI cost per unit.</figcaption>
-      </figure>
-    </div>
+    <figure class="figure bleed">
+      <img src="../assets/occupant/dashboard.webp" alt="Occupant dashboard on desktop: a ticker strip of all eight readings, $CPI 62.4 on an orange chart block, $AIU 504.1 and $LDI 3.86% beside it, and the four tier prices below" />
+      <figcaption>The Occupant home screen, desktop. Every index and tier price on one surface, June 2, 2026.</figcaption>
+    </figure>
 
     <div class="project__body">
 
@@ -55,6 +45,21 @@
       <p>It&rsquo;s infrastructure, with the same access for everyone. The model is closer to a public yield curve than a SaaS dashboard.</p>
 
       <h2>The indices</h2>
+
+    <div class="phones">
+        <figure class="figure">
+          <img src="../assets/occupant/cpi.png" alt="Compute Price Index screen: 62.4 on an orange block, down 9.7% in one month, with an all-time chart and tier prices" />
+          <figcaption>$CPI, May 16, 2026. The basket price, the chart since launch, and the four tiers.</figcaption>
+        </figure>
+        <figure class="figure">
+          <img src="../assets/occupant/aiu.png" alt="AI Market Index screen: 504.1 on a sky blue block, up 2.2% in two weeks, with the three weighted components below" />
+          <figcaption>$AIU. Token volume, inferred spend and the energy proxy, weighted 60 / 30 / 10.</figcaption>
+        </figure>
+        <figure class="figure">
+          <img src="../assets/occupant/ldi.png" alt="Labor Displacement Index screen: substitution rate 3.86% on a yellow block, with nine federal workloads listed by human and AI cost per unit" />
+          <figcaption>$LDI. Nine federal workloads, human cost against AI cost per unit.</figcaption>
+        </figure>
+      </div>
 
       <h3><span class="ticker">$CPI</span>Compute Price Index<span class="signal">the price signal</span></h3>
 
@@ -69,6 +74,17 @@
       </ul>
 
       <p class="reading"><b>Reading it:</b> at ~62.4, a basket of AI work costs about 38% less than at launch, and fell ~9.7% in the most recent month.</p>
+
+      <div class="phones">
+        <figure class="figure">
+          <img src="../assets/occupant/workload-tiers.png" alt="Workload tiers screen: $FRONT $11.33, $JUDGE $10.37, $LCTX $1.39, $BULK $0.60, and the all-tier basket at $25.68 per 1,000 workloads" />
+          <figcaption>The four capability tiers and the volume-weighted basket.</figcaption>
+        </figure>
+        <figure class="figure">
+          <img src="../assets/occupant/who-pays-what.png" alt="Who pays what screen: three buyer profiles, five basket methods as bars, price deflation by horizon, and the cognition premium of $10.73" />
+          <figcaption>Build Cost sub-indices by buyer profile, and deflation across five horizons.</figcaption>
+        </figure>
+      </div>
 
       <h3><span class="ticker">$AIU</span>AI Economic Activity Index<span class="signal">the volume signal</span></h3>
 
@@ -121,6 +137,17 @@
         <li><b>AI Services Price Reasonableness Worksheet.</b> A print-ready, FAR-style determination sheet a contracting officer can fill in, sign, and attach to an RFP, built on the <code>$CPI</code> basket.</li>
         <li><b>Market Intelligence.</b> &ldquo;Sabermetrics for models&rdquo; — Quality-Adjusted Price, cognitive arbitrage (≈90% of frontier capability at ≈40% of the cost), and tier analysis across the market.</li>
       </ul>
+
+      <div class="phones">
+        <figure class="figure">
+          <img src="../assets/occupant/market.png" alt="Market intelligence screen: weekly tokens 41.8T, reasoning share 7.4%, provider share of volume, five value leaders by quality adjusted price, and average price and Elo by tier" />
+          <figcaption>Market Intelligence. Quality-adjusted price puts Gemini 2.0 Flash at the top of the value table.</figcaption>
+        </figure>
+        <figure class="figure">
+          <img src="../assets/occupant/model-prices.png" alt="Model prices screen: blended price per million tokens for each model, grouped by Frontier, Reasoning and Budget tier with a bar for each" />
+          <figcaption>Model prices per million tokens, grouped by tier, with the tier average on each header.</figcaption>
+        </figure>
+      </div>
 
       <h2>How it&rsquo;s built</h2>
 

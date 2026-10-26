@@ -32,7 +32,7 @@ Supplied with the instruction: five phone screenshots in the first message (Comp
 6. Updated two numbers in the prose to match the screens: the $AIU reading (503.65 to ~504) and the SNAP AI cost per review ($0.000256 to $0.0003).
 7. Checked: rendered in headless Chromium at 1280px and 390px, all five images load, no JavaScript errors, no new horizontal overflow; `prosekeep check --profile vloora` on the four changed pages, zero mechanical findings.
 
-**Where actual behavior differed from the instruction:** the second batch of screenshots (Benchmarks, Model prices, Market intelligence) never arrived as files in the session. Only the first five are on the page. The owner will need to send those three again if they belong on it.
+**Where actual behavior differed from the instruction:** the second batch of screenshots (Benchmarks, Model prices, Market intelligence) never arrived as files. The owner sent a third batch, which did: Model prices, Market intelligence, Who pays what, Workload tiers, and a desktop dashboard. All five were added in a second commit. The desktop dashboard became the hero and the catalogue card; the three phone index screens moved under "The indices"; Workload tiers and Who pays what sit after the $CPI reading; Market intelligence and Model prices sit under "The tools". The Benchmarks screen is still not on disk and is not on the page.
 
 **Stayed within granted authority?** Yes.
 
@@ -50,7 +50,7 @@ Supplied with the instruction: five phone screenshots in the first message (Comp
 
 ## 4. Deviation — the gaps
 
-**Gaps between intent and action, and why (root cause):** three of eight screens are missing because the files were not delivered to the container. Nothing to fix in the repo; they can be added to the same `.phones` grid pattern.
+**Gaps between intent and action, and why (root cause):** one screen (Benchmarks) is missing because the file was not delivered to the container. It can be added to the `.phones` grid under "The tools".
 
 **Good deviations:** not rewriting the $AIU methodology from a screenshot.
 
@@ -66,7 +66,7 @@ Supplied with the instruction: five phone screenshots in the first message (Comp
 
 ## 6. Change — what happens next
 
-**Specific changes before next run:** Ron confirms the $AIU baseline and name, and resends the Benchmarks, Model prices and Market intelligence screens if they belong on the page. A natural home for them is a "The tools" figure row, since that section already describes Market Intelligence and the price reasonableness bands.
+**Specific changes before next run:** Ron confirms the $AIU baseline and name, and resends the Benchmarks screen if it belongs on the page, next to the price reasonableness worksheet it illustrates.
 
 **Keep doing:** rendering the page before calling it done; checking that every number in prose still matches the evidence beside it.
 
