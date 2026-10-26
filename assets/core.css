@@ -1015,8 +1015,20 @@ a.step, a.offer, .site--blocks .block a.step, .site--blocks .block a.offer {
    changing: the image is capped at the cell's height and centred, so a
    wordmark SVG and a square logo both sit on the same baseline. */
 .marks { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; }
-.mark { display: flex; align-items: center; justify-content: center; min-height: 104px; padding: 18px 16px; background: var(--k-bg); color: var(--k-ink); border: var(--frame) solid var(--k-ink); text-align: center; }
+.mark { display: flex; align-items: center; justify-content: center; min-height: 92px; padding: 16px 14px; color: var(--ink); text-align: center; }
 .mark span { font-family: var(--display); font-weight: 800; font-size: clamp(16px, 1.4vw, 20px); line-height: 1.1; letter-spacing: -.03em; text-wrap: balance; }
 .mark img { max-height: 44px; width: auto; max-width: 100%; object-fit: contain; }
 .block .marks a.mark { text-decoration: none; }
 .site--blocks .block a.mark:hover { background: var(--k-ink); color: var(--k-bg); }
+
+/* ── Gallery ──────────────────────────────────────
+   A row of photographs that takes however many there are. auto-fit means
+   two, three, five or eight all lay out without touching the CSS, and a
+   short row never stretches one image across the page. Add an <img> and
+   stop. A <figure> with a <figcaption> works in the same grid. */
+.gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: clamp(28px, 4vw, 44px) 0; }
+.gallery > * { margin: 0; min-width: 0; }
+.gallery img { display: block; width: 100%; height: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: var(--bg-deeper); }
+.gallery figcaption { margin-top: 8px; font-family: var(--mono); font-size: 12px; line-height: 1.45; color: var(--ink-soft); }
+.gallery--tall img { aspect-ratio: 3 / 4; }
+@media (max-width: 520px) { .gallery { grid-template-columns: minmax(0, 1fr); } }
