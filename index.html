@@ -22,7 +22,7 @@
 <div class="wrap wrap--blocks">
 
 
-  <header class="topbar block block--ink"><div class="topbar__in"><a class="name" href="index.html">Ron Bronson</a><nav aria-label="Main navigation"><a href="https://ronbronson.design">Design</a><a href="https://thinkingweapons.com">Studio</a><a href="https://blog.ronbronson.com">Blog</a></nav></div></header>
+  <header class="topbar block block--ink"><div class="topbar__in"><a class="name" href="index.html">Ron Bronson</a><nav aria-label="Main navigation"><a href="https://ronbronson.design">Design</a><a href="https://thinkingweapons.com">Studio</a><a href="https://blog.ronbronson.dev">Blog</a></nav></div></header>
 
   <!-- Longer statement, parked for now — too wordy for current taste, keeping
        it around in case it comes back.
@@ -36,6 +36,7 @@
   <section class="hero block block--lead" id="top" aria-labelledby="h">
 <h1 id="h">Design engineer. A compendium of software, tooling, open source projects &amp; technical side quests.</h1>
 <p class="sub">Currently building <a href="https://vloora.com">Vloora</a>, an <a href="https://agentexperience.ax">AX</a> product company.</p>
+<p class="more"><span class="cta-row"><a class="btn btn--lead" href="#built">See what&rsquo;s live</a><a class="btn btn--ghost" href="https://blog.ronbronson.dev">Read the writing</a></span></p>
 </section>
 
   <svg class="ph-defs" aria-hidden="true">
@@ -60,160 +61,288 @@
        Every cell is identical; the grid does the composing.
        ──────────────────────────────────────────────────────────────── -->
 
+  <!-- ══════════ BUILT, RELEASED, IN USE ══════════
+       Each card carries the specs the project copy can support:
+       status, who it is for, and what Ron's own contribution was.
+       There is deliberately no adoption row. Usage here has not been
+       measured, and an unmeasured number is not evidence. Add the row
+       per project once a real figure exists, never as a placeholder. -->
+  <section class="block block--bg nar-sec" id="built" aria-labelledby="h-built">
+  <h2 class="nar-h" id="h-built">Built, released, in use</h2>
+  <p class="nar-note">Things I shipped because a problem deserved a better tool. Each one started with a question I wanted answered, and ended up as something other people could use.</p>
+
   <section class="index" aria-label="Projects">
 
     <article class="cell">
       <div class="cell__head"><a class="live-link" href="projects/beachwave.html">Read the project</a></div>
-      <h2 class="cell__title"><a href="projects/beachwave.html">Beachwave</a></h2>
+      <h3 class="cell__title"><a href="projects/beachwave.html">Beachwave</a></h3>
       <a class="cell__media" href="projects/beachwave.html" aria-label="Beachwave">
         <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
         <img src="assets/beachwave/home.png" alt="Screenshot of beachwave.app" loading="lazy" />
       </a>
-      <p class="cell__prose">A deployable reference for live audio rooms on ATProto. Sign in with ATProto OAuth, create a room, publish its metadata, and connect audio through LiveKit &mdash; then fork the repo and run your own version.</p>
+      <p class="cell__prose">A reference implementation for live audio rooms on ATProto. You sign in with ATProto OAuth, create a room, publish its metadata, and connect audio through LiveKit. Fork the repo and run your own.</p>
+      <dl class="specs">
+        <dt>Status</dt><dd>Live, open source</dd>
+        <dt>Audience</dt><dd>ATProto developers</dd>
+        <dt>My contribution</dt><dd>Reference implementation, design, build</dd>
+      </dl>
     </article>
 
     <article class="cell">
       <div class="cell__head"><a class="live-link" href="projects/mallo.html">Read the project</a></div>
-      <h2 class="cell__title"><a href="projects/mallo.html">Mallo</a></h2>
+      <h3 class="cell__title"><a href="projects/mallo.html">Mallo</a></h3>
       <a class="cell__media" href="projects/mallo.html" aria-label="Mallo">
         <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
         <img src="assets/mallo/home.png" alt="Screenshot of mallo.fi" loading="lazy" />
       </a>
-      <p class="cell__prose">Pes&auml;pallo, the Finnish cousin to American baseball, has long operated using conventional counting stats. As a longtime fan of the sport, I wondered if it were possible to build analytics/sabermetrics for Pes&auml;pallo. Mallo is the first successful attempt at creating pitching, defensive &amp; advanced batting metrics for the 104-year-old sport.</p>
+      <p class="cell__prose">Pes&auml;pallo is the Finnish cousin to American baseball, and after 104 years it was still being scored with counting stats. I&rsquo;m a longtime fan and wanted to know whether the sport could carry real analytics. Mallo is the first set of pitching, defensive, and advanced batting metrics built for it.</p>
+      <dl class="specs">
+        <dt>Status</dt><dd>Live</dd>
+        <dt>Audience</dt><dd>Pes&auml;pallo analysts, clubs, and fans</dd>
+        <dt>My contribution</dt><dd>Metric design, data model, build</dd>
+      </dl>
     </article>
 
     <article class="cell">
       <div class="cell__head"><a class="live-link" href="projects/play-to-clinch.html">Read the project</a></div>
-      <h2 class="cell__title"><a href="projects/play-to-clinch.html">Play To Clinch</a></h2>
+      <h3 class="cell__title"><a href="projects/play-to-clinch.html">Play To Clinch</a></h3>
       <a class="cell__media" href="projects/play-to-clinch.html" aria-label="Play To Clinch">
         <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
         <img src="assets/play-to-clinch/recruiting-profile.png" alt="Screenshot of the Play To Clinch NCAA D3 championship bracket" loading="lazy" />
       </a>
-      <p class="cell__prose">Earth&rsquo;s first-ever team tennis computer game. College-format dual matches, a junior recruiting circuit, and GTT &mdash; a co-ed pro league &mdash; all on one continuous rating scale, driven by a deterministic point-by-point Python engine. Platform reuse in practice: a second sport stood up on a forked deterministic engine &mdash; directed, not hand-coded.</p>
+      <p class="cell__prose">Earth&rsquo;s first-ever team tennis computer game. College-format dual matches, a junior recruiting circuit, and GTT, a co-ed pro league, all run on one continuous rating scale. Underneath it is a deterministic point-by-point Python engine. This is the second sport I&rsquo;ve stood up on a fork of that engine, and I directed the build rather than writing the code myself.</p>
+      <dl class="specs">
+        <dt>Status</dt><dd>Live</dd>
+        <dt>Audience</dt><dd>Tennis followers and sports-sim players</dd>
+        <dt>My contribution</dt><dd>Game design, rating system, directed engine build</dd>
+      </dl>
     </article>
 
     <article class="cell">
       <div class="cell__head"><a class="live-link" href="projects/oregon-tennis.html">Read the project</a></div>
-      <h2 class="cell__title"><a href="projects/oregon-tennis.html">Oregon HS Tennis Power Rankings</a></h2>
+      <h3 class="cell__title"><a href="projects/oregon-tennis.html">Oregon HS Tennis Power Rankings</a></h3>
       <a class="cell__media" href="projects/oregon-tennis.html" aria-label="Oregon HS Tennis Power Rankings">
         <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
         <img src="assets/oregon-tennis/home.png" alt="Screenshot of oregontennis.org" loading="lazy" />
       </a>
-      <p class="cell__prose">A statewide sports-rating engine, playoff simulator, and live tournament toolkit for Oregon high school tennis. Four years of data, four original rating models, and a working analytics layer (Power Index, FWS, FWS+, TOSS) running across every classification &mdash; built end to end as one self-contained system.</p>
+      <p class="cell__prose">A statewide rating engine, playoff simulator, and live tournament toolkit for Oregon high school tennis. It runs on four years of match data and four rating models I wrote, with an analytics layer (Power Index, FWS, FWS+, TOSS) covering every classification. I built the whole thing end to end.</p>
+      <dl class="specs">
+        <dt>Status</dt><dd>Live</dd>
+        <dt>Audience</dt><dd>Oregon high school coaches, players, and families</dd>
+        <dt>My contribution</dt><dd>Product design, rating models, technical direction, deployment</dd>
+      </dl>
     </article>
 
     <article class="cell">
       <div class="cell__head"><a class="live-link" href="projects/draft-lab.html">Read the project</a></div>
-      <h2 class="cell__title"><a href="projects/draft-lab.html">Cap Buffet</a></h2>
+      <h3 class="cell__title"><a href="projects/draft-lab.html">Cap Buffet</a></h3>
       <a class="cell__media" href="projects/draft-lab.html" aria-label="Cap Buffet">
         <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
         <img src="assets/capbuffet/home.png" alt="Screenshot of capbuffet.com" loading="lazy" />
       </a>
-      <p class="cell__prose">Cap Buffet builds salary-cap systems from reusable mechanics and tests any league against them. Eighteen cap parts, fourteen leagues, eight currencies, all in the browser. Home to Lottery Lab, its draft-lottery sibling, and a directed agent build.</p>
+      <p class="cell__prose">Cap Buffet builds salary-cap systems out of reusable parts and tests any league against them. Eighteen cap mechanics, fourteen leagues, and eight currencies, all in the browser. It also houses Lottery Lab, its draft-lottery sibling. Another directed agent build.</p>
+      <dl class="specs">
+        <dt>Status</dt><dd>Live</dd>
+        <dt>Audience</dt><dd>League designers and cap analysts</dd>
+        <dt>My contribution</dt><dd>Product design, cap mechanics, directed agent build</dd>
+      </dl>
     </article>
 
     <article class="cell cell--feature">
       <div class="cell__head"><a class="live-link" href="atproto/index.html">Explore the protocol work</a></div>
       <p class="cell__kicker">Protocol-Native Applications</p>
-      <h2 class="cell__title"><a href="atproto/index.html">Building on the AT Protocol</a></h2>
-      <p class="cell__prose">A body of protocol-native experiments. PBJ, Leafroll, Glowrm, and more, rethinking dating, professional networking, and trust for a world where identity is portable and software is built on an open protocol. <a href="atproto/index.html" style="border-bottom: 2px solid var(--accent);">See the ATProto work</a></p>
+      <h3 class="cell__title"><a href="atproto/index.html">Building on the AT Protocol</a></h3>
+      <p class="cell__prose">Protocol-native experiments: PBJ, Leafroll, Glowrm, and others. Each one asks what dating, professional networking, or trust looks like when identity is portable and the software sits on an open protocol. <a href="atproto/index.html" style="border-bottom: 2px solid var(--accent);">See the ATProto work</a></p>
     </article>
 
     <article class="cell">
       <div class="cell__head"><a class="live-link" href="projects/super-innings.html">Read the project</a></div>
-      <h2 class="cell__title"><a href="projects/super-innings.html">SuperInnings</a></h2>
+      <h3 class="cell__title"><a href="projects/super-innings.html">SuperInnings</a></h3>
       <a class="cell__media" href="projects/super-innings.html" aria-label="SuperInnings">
         <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
         <img src="assets/superinnings/home.webp" alt="Screenshot of the SuperInnings league news front" loading="lazy" />
       </a>
-      <p class="cell__prose">Baseball restructured into one continuous 27-out half per side &mdash; a full simulated world with its own stats, economy, and history. A deterministic simulation platform, directed not hand-coded &mdash; documented across 140+ engineering decision records.</p>
+      <p class="cell__prose">Baseball restructured into one continuous 27-out half per side, with a full simulated world behind it: its own stats, economy, and history. The simulation is deterministic. I directed the build rather than writing the code, and the reasoning sits in more than 140 engineering decision records.</p>
+      <dl class="specs">
+        <dt>Status</dt><dd>Live</dd>
+        <dt>Audience</dt><dd>Simulation readers and baseball-stat people</dd>
+        <dt>My contribution</dt><dd>Simulation design, directed agent build, 140+ decision records</dd>
+      </dl>
     </article>
 
     <article class="cell">
       <div class="cell__head"><a class="live-link" href="projects/viperball.html">Read the project</a></div>
-      <h2 class="cell__title"><a href="projects/viperball.html">Viperball</a></h2>
+      <h3 class="cell__title"><a href="projects/viperball.html">Viperball</a></h3>
       <a class="cell__media" href="projects/viperball.html" aria-label="Viperball">
         <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
         <img src="assets/viperball/season-overview.png" alt="Viperball stats terminal showing 2026 CVL Season overview" loading="lazy" />
       </a>
-      <p class="cell__prose">An invented gridiron sport with its own rulebook, a probability engine that plays it, a 280-team universe to play it in, and a terminal-style stats portal serving the whole thing &mdash; with a custom analytics framework built specifically for the sport&rsquo;s mechanics. Directed agent build &mdash; ~110K lines of directed code across ~60 decision records.</p>
+      <p class="cell__prose">A gridiron sport I invented, with a rulebook, a probability engine that plays it, and a 280-team universe to play it in. A terminal-style stats portal serves the whole thing, on an analytics framework written for this sport&rsquo;s mechanics. Another directed agent build: roughly 110,000 lines across about 60 decision records.</p>
+      <dl class="specs">
+        <dt>Status</dt><dd>Live</dd>
+        <dt>Audience</dt><dd>Sports-sim readers</dd>
+        <dt>My contribution</dt><dd>Sport design, probability engine, directed agent build across ~60 decision records</dd>
+      </dl>
     </article>
 
     <article class="cell">
       <div class="cell__head"><a class="live-link" href="projects/pdxspend.html">Read the project</a></div>
-      <h2 class="cell__title"><a href="projects/pdxspend.html">PDX Spend</a></h2>
+      <h3 class="cell__title"><a href="projects/pdxspend.html">PDX Spend</a></h3>
       <a class="cell__media" href="projects/pdxspend.html" aria-label="PDX Spend">
         <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
         <img src="assets/pdxspend/home.png" alt="Screenshot of pdxspend.com" loading="lazy" />
       </a>
       <p class="cell__prose">For each of seven Portland-area voter-approved funds, what it could pay for at its current balance, what&rsquo;s blocking that, and who controls the lever.</p>
+      <dl class="specs">
+        <dt>Status</dt><dd>Live</dd>
+        <dt>Audience</dt><dd>Portland-area voters and reporters</dd>
+        <dt>My contribution</dt><dd>Research, data model, build</dd>
+      </dl>
     </article>
 
     <article class="cell">
       <div class="cell__head"><a class="live-link" href="projects/ygf.html">Read the project</a></div>
-      <h2 class="cell__title"><a href="projects/ygf.html">You Go First</a></h2>
+      <h3 class="cell__title"><a href="projects/ygf.html">You Go First</a></h3>
       <a class="cell__media" href="projects/ygf.html" aria-label="You Go First">
         <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
         <img src="assets/ygf/01-hero-red.png" alt="You Go First waitlist hero on a deep crimson background" loading="lazy" />
       </a>
-      <p class="cell__prose">A better matching model for dating apps, built on a speculative algorithm I designed that uses game mechanics and behavioral analytics to match people.</p>
+      <p class="cell__prose">A better matching model for dating apps. The algorithm is speculative and mine, built on game mechanics and behavioral analytics.</p>
+      <dl class="specs">
+        <dt>Status</dt><dd>Waitlist</dd>
+        <dt>Audience</dt><dd>People who use dating apps</dd>
+        <dt>My contribution</dt><dd>Matching algorithm, product design</dd>
+      </dl>
     </article>
 
     <article class="cell">
       <div class="cell__head"><a class="live-link" href="projects/toccer.html">Read the project</a></div>
-      <h2 class="cell__title"><a href="projects/toccer.html">Tennis Polo (Toccer)</a></h2>
+      <h3 class="cell__title"><a href="projects/toccer.html">Tennis Polo (Toccer)</a></h3>
       <a class="cell__media" href="projects/toccer.html" aria-label="Tennis Polo (Toccer)">
         <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
         <img src="assets/toccer/home.png" alt="Tennis Polo (Toccer) site" loading="lazy" />
       </a>
       <p class="cell__prose">Tennis Polo is pretty straightforward. Two teams try to score goals using a tennis-sized ball, defended by a goalkeeper holding a tennis racket. The team with the most points wins. A sport I invented by accident at summer camp in 2004.</p>
+      <dl class="specs">
+        <dt>Status</dt><dd>Live</dd>
+        <dt>Audience</dt><dd>Camps, coaches, and anyone who wants to try it</dd>
+        <dt>My contribution</dt><dd>Invented the sport, wrote the rules, built the site</dd>
+      </dl>
     </article>
 
     <article class="cell">
       <div class="cell__head"><a class="live-link" href="projects/glowrm.html">Read the project</a></div>
-      <h2 class="cell__title"><a href="projects/glowrm.html">Glowrm</a></h2>
+      <h3 class="cell__title"><a href="projects/glowrm.html">Glowrm</a></h3>
       <a class="cell__media" href="projects/glowrm.html" aria-label="Glowrm">
         <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
         <img src="assets/glowrm/dashboard.png" alt="Screenshot of the Glowrm trust dashboard" loading="lazy" />
       </a>
-      <p class="cell__prose">Trust infrastructure for ATProto social applications. Cross-app reputation, shared moderation, and a configurable resource-allocation system &mdash; the trust plumbing YGF and two other reference apps were designed against.</p>
+      <p class="cell__prose">Trust infrastructure for ATProto social apps: cross-app reputation, shared moderation, and a configurable resource-allocation system. It&rsquo;s the plumbing YGF and two other reference apps were designed against.</p>
+      <dl class="specs">
+        <dt>Status</dt><dd>Spec and reference apps</dd>
+        <dt>Audience</dt><dd>ATProto app developers</dd>
+        <dt>My contribution</dt><dd>Trust model, spec, reference implementation</dd>
+      </dl>
     </article>
 
     <article class="cell">
       <div class="cell__head"><a class="live-link" href="projects/leafroll.html">Read the project</a></div>
-      <h2 class="cell__title"><a href="projects/leafroll.html">Leafroll</a></h2>
+      <h3 class="cell__title"><a href="projects/leafroll.html">Leafroll</a></h3>
       <a class="cell__media" href="projects/leafroll.html" aria-label="Leafroll">
         <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
         <img src="assets/leafroll/home.png" alt="Screenshot of leafroll.fun" loading="lazy" />
       </a>
-      <p class="cell__prose">A professional network built on ATProto. Leafroll is built on earned, bilateral relationships and identity you carry with you, one of several <a href="atproto/index.html" style="border-bottom: 2px solid var(--accent);">protocol-native experiments</a>.</p>
+      <p class="cell__prose">A professional network on ATProto. Connections are earned and bilateral, and the identity is one you carry with you. One of several <a href="atproto/index.html" style="border-bottom: 2px solid var(--accent);">protocol-native experiments</a>.</p>
+      <dl class="specs">
+        <dt>Status</dt><dd>Live</dd>
+        <dt>Audience</dt><dd>People tired of the professional network they have</dd>
+        <dt>My contribution</dt><dd>Product design, protocol work, build</dd>
+      </dl>
     </article>
 
     <article class="cell">
       <div class="cell__head"><a class="live-link" href="projects/occupant.html">Read the project</a></div>
-      <h2 class="cell__title"><a href="projects/occupant.html">Occupant Indices</a></h2>
+      <h3 class="cell__title"><a href="projects/occupant.html">Occupant Indices</a></h3>
       <a class="cell__media" href="projects/occupant.html" aria-label="Occupant Indices">
         <svg class="ph" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="1000" fill="url(#m3a)"/></svg>
         <img src="assets/occupant/indices.png" alt="Screenshot of the indices page at occupant.ee" loading="lazy" />
       </a>
-      <p class="cell__prose">Public measurement infrastructure for the AI economy. Three live indices &mdash; a compute price deflator, a synthetic activity unit modeled on the IMF&rsquo;s SDR, and a labor displacement gauge built on federal procurement and wage data &mdash; recomputed daily from public sources, with the git history as the audit trail.</p>
+      <p class="cell__prose">Public measurement infrastructure for the AI economy. Three live indices: a compute price deflator, a synthetic activity unit modeled on the IMF&rsquo;s SDR, and a labor displacement gauge built on federal procurement and wage data. All three recompute daily from public sources, and the git history is the audit trail.</p>
+      <dl class="specs">
+        <dt>Status</dt><dd>Live, recomputed daily</dd>
+        <dt>Audience</dt><dd>Researchers, reporters, and policy readers</dd>
+        <dt>My contribution</dt><dd>Index design, data pipeline, publication</dd>
+      </dl>
     </article>
 
   </section>
+  </section>
 
+  <!-- ══════════ ON NPM ══════════
+       Published packages, not experiments. Each line is the package name, the
+       current version on npm, where to get it, and what it does in one
+       sentence. Bump the version here when one is released. -->
+  <section class="block block--deeper nar-sec" id="npm" aria-labelledby="h-npm">
+  <h2 class="nar-h" id="h-npm">On npm</h2>
+  <p class="nar-note">Three tools I publish and use daily. prosekeep and plain-language-default check the copy on this site and on the other two.</p>
+  <ul class="experiments__list">
+
+    <li class="exp">
+      <span class="exp__name">closedtab</span>
+      <span class="exp__year">0.5.0</span>
+      <span class="exp__links">
+        <a href="https://www.npmjs.com/package/closedtab" target="_blank" rel="noopener">npm</a>
+        <a href="https://github.com/quarterback/closedtab" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://blog.ronbronson.com/closedtab-a-npm-shared-memory-for-you-and-your-ai-agents" target="_blank" rel="noopener">Write-up</a>
+      </span>
+      <span class="exp__note">Reviews the work AI agents do. Each run leaves an after-action record of what you asked for, what the agent did, and the calls it made on its own. It scores that record and reconciles it against a trace of what actually happened. CLI and MCP.</span>
+    </li>
+
+    <li class="exp">
+      <span class="exp__name">prosekeep</span>
+      <span class="exp__year">0.3.0</span>
+      <span class="exp__links">
+        <a href="https://www.npmjs.com/package/prosekeep" target="_blank" rel="noopener">npm</a>
+        <a href="https://github.com/quarterback/prosekeep" target="_blank" rel="noopener">GitHub</a>
+      </span>
+      <span class="exp__note">Carries an author&rsquo;s editorial decisions across repositories and agent tools. Plain-language and house-style checks, source comparisons, a review protocol, an Agent Skill, a CLI, and an MCP server. It is what stops an agent turning your argument into generic AI writing.</span>
+    </li>
+
+    <li class="exp">
+      <span class="exp__name">plain-language-default</span>
+      <span class="exp__year">0.1.0</span>
+      <span class="exp__links">
+        <a href="https://www.npmjs.com/package/plain-language-default" target="_blank" rel="noopener">npm</a>
+        <a href="https://github.com/quarterback/plain-as-day" target="_blank" rel="noopener">GitHub</a>
+      </span>
+      <span class="exp__note">Federal plain-language rules packaged for agents. It installs as a project skill and writes the rules where an agent will actually read them. It also checks a draft from the CLI or over MCP.</span>
+    </li>
+
+  </ul>
+  </section>
+
+  <!-- ══════════ WRITING ══════════
+       The argument behind the projects, on the blog. Kept short: the
+       blog is the archive, this is the way in. -->
+  <section class="block block--bg nar-sec" aria-labelledby="h-writing">
+  <h2 class="nar-h" id="h-writing">Writing</h2>
+  <p class="nar-note">Sideline Engineering, the development log for these projects.</p>
+  <div class="tg">
+    <a class="tile" href="https://blog.ronbronson.dev/3mxstvdgpw22u"><span class="lab">24 September 2026</span><b>Revamping Coaching &amp; Player Development</b></a>
+    <a class="tile" href="https://blog.ronbronson.dev/3mxsmnjjcp224"><span class="lab">4 September 2026</span><b>What if you could mix &amp; match salary caps?</b></a>
+    <a class="tile" href="https://blog.ronbronson.dev/3msnpahn5r22k"><span class="lab">9 August 2026</span><b>Introducing ApexVarsity</b></a>
+    <a class="tile" href="https://blog.ronbronson.dev/3moabn4yk5s23"><span class="lab">14 June 2026</span><b>Built a tennis sim. Brought back the sports pages?</b></a>
+    <a class="tile" href="https://blog.ronbronson.dev/3morm3vffvs2u"><span class="lab">21 June 2026</span><b>Bringing a cricket-style lineup to baseball</b></a>
+    <a class="tile tile--lead" href="https://blog.ronbronson.dev"><span class="lab"></span><b>Sideline Engineering</b></a>
+  </div>
+  </section>
+
+  <section class="block block--bg nar-sec" aria-label="Concepts and experiments">
   <section class="experiments" aria-label="Concepts and experiments">
     <h2 class="experiments__head">Concepts &amp; Experiments <span>(and other ideas&hellip;)</span></h2>
     <ul class="experiments__list">
 
-      <li class="exp exp--featured">
-        <span class="exp__name">closedtab</span>
-        <span class="exp__year">2026</span>
-        <span class="exp__links">
-          <a href="https://www.npmjs.com/package/closedtab" target="_blank" rel="noopener">npm</a>
-          <a href="https://blog.ronbronson.com/closedtab-a-npm-shared-memory-for-you-and-your-ai-agents" target="_blank" rel="noopener">Blog post</a>
-        </span>
-        <span class="exp__note">An npm tool that gives human&ndash;agent work a shared memory: a consistent after-action record of what you asked for, what the agent did, and the calls it made on its own &mdash; so the next agent and future-you inherit the same trail.</span>
-      </li>
+
 
       <li class="exp">
         <span class="exp__name">Claude skill.md for agent AARs</span>
@@ -233,6 +362,7 @@
       </li>
 
     </ul>
+  </section>
   </section>
 
   <section class="intro">

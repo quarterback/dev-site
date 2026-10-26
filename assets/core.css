@@ -904,3 +904,131 @@ body.site--blocks .pt-label { margin: 0; }
 .site--blocks .topbar a.name:focus-visible, .site--blocks .topbar .name a:focus-visible {
   background: none; color: var(--ink); text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: .12em;
 }
+
+/* ══════════════════════════════════════════════════════════
+   NARRATIVE LAYER (DDR-014) — the structure the three sites
+   share so one career reads the same way across them.
+
+   Order on a page: hero (the claim), offers or steps (how the
+   work starts), evidence (what it did), tiles (the public
+   record), cta (the way in). Each piece is a plain framed box
+   in the block's own roles, so it inherits whatever colour the
+   block and the site's palette engine give it. No site-specific
+   colour belongs in here.
+
+     .nar-sec / .nar-h / .nar-note   section, heading, standfirst
+     .offers / .offer                what someone can engage
+     .steps  / .step                 how an engagement starts
+     .evg    / .ev                   evidence: a role, what changed
+     .specs                          measured facts under a card
+     .cta                            the closing invitation
+
+   Set on a bg, deeper, deep or ink block. Not on lead: DDR-013
+   caps a lead fill at large type only, and these carry body copy.
+   ══════════════════════════════════════════════════════════ */
+
+.nar-sec { padding-top: clamp(44px, 5.5vw, 80px); padding-bottom: clamp(44px, 5.5vw, 80px); }
+.nar-h { margin: 0 0 14px; font-family: var(--display); font-weight: 900; font-size: clamp(34px, 3.6vw, 52px); line-height: .95; letter-spacing: -.055em; color: var(--ink); text-wrap: balance; }
+.nar-note { margin: 0 0 28px; max-width: 58ch; font-family: var(--deck); font-weight: 500; font-size: clamp(17px, 1.4vw, 20px); line-height: 1.45; color: var(--ink); text-wrap: pretty; }
+.nar-note:last-child { margin-bottom: 0; }
+
+/* ── Offers: what someone can actually engage ────── */
+.offers { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 16px; }
+.offer { display: flex; flex-direction: column; gap: 14px; padding: 22px 22px 24px; border: var(--frame-heavy) solid var(--k-ink); background: var(--k-bg); color: var(--k-ink); }
+.offer h3 { margin: 0; font-family: var(--display); font-weight: 800; font-size: clamp(21px, 1.8vw, 26px); line-height: 1.12; letter-spacing: -.03em; }
+.offer p { margin: 0; font-family: var(--text); font-weight: 500; font-size: clamp(16px, 1.15vw, 17px); line-height: 1.5; text-wrap: pretty; }
+.offer .btn { align-self: start; margin-top: auto; }
+.block .offer a:not(.btn) { color: var(--k-ink); }
+
+/* ── Steps: how an engagement starts ─────────────── */
+.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px; }
+.step { padding: 20px 20px 22px; border: var(--frame-heavy) solid var(--k-ink); background: var(--k-bg); color: var(--k-ink); }
+.step b { display: block; margin-bottom: 10px; font-family: var(--display); font-weight: 800; font-size: clamp(20px, 1.6vw, 24px); line-height: 1.1; letter-spacing: -.03em; }
+.step p { margin: 0; font-family: var(--text); font-weight: 500; font-size: clamp(15px, 1.1vw, 16px); line-height: 1.5; text-wrap: pretty; }
+
+/* ── Evidence: a role, and what changed because of it ─ */
+.evg { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+.ev { display: flex; flex-direction: column; border: var(--frame-heavy) solid var(--k-ink); background: var(--k-bg); color: var(--k-ink); }
+.ev img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-bottom: var(--frame-heavy) solid var(--k-ink); }
+.ev__b { display: flex; flex-direction: column; gap: 10px; padding: 18px 20px 20px; }
+.ev__lab { font-family: var(--deck); font-weight: 500; font-size: 15px; line-height: 1.3; color: var(--k-ink); }
+.ev__t { margin: 0; font-family: var(--display); font-weight: 800; font-size: clamp(20px, 1.7vw, 25px); line-height: 1.12; letter-spacing: -.03em; }
+.ev__p { margin: 0; font-family: var(--text); font-weight: 500; font-size: clamp(15px, 1.1vw, 17px); line-height: 1.5; text-wrap: pretty; }
+.block .ev a { color: var(--k-ink); }
+
+/* ── Specs: measured facts, one row each. A row is only
+      written when the value is known; an empty row is a
+      claim the page cannot support, so it is left out. ── */
+.specs { margin: 2px 0 0; display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 5px 16px; font-family: var(--text); font-size: 15px; line-height: 1.45; }
+.specs dt { font-family: var(--deck); font-weight: 500; color: var(--k-ink); }
+.specs dd { margin: 0; font-weight: 500; }
+
+/* ── CTA: the closing invitation ─────────────────── */
+.cta { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 80px); align-items: start; padding-top: clamp(56px, 6.5vw, 96px); padding-bottom: clamp(56px, 6.5vw, 96px); }
+.cta h2 { margin: 0; font-family: var(--display); font-weight: 900; font-size: clamp(40px, 5vw, 72px); line-height: .92; letter-spacing: -.06em; color: var(--ink); text-wrap: balance; }
+.cta__b { display: grid; gap: 22px; justify-items: start; }
+.cta__b p { margin: 0; max-width: 46ch; font-family: var(--deck); font-weight: 500; font-size: clamp(17px, 1.4vw, 20px); line-height: 1.45; color: var(--ink); text-wrap: pretty; }
+
+@media (max-width: 860px) { .cta { grid-template-columns: minmax(0, 1fr); } }
+
+/* ── Button row and the two button weights. Promoted here from
+      the masthead's home.css so all three sites offer the same
+      two ways in: the filled primary and the framed secondary.
+      masthead's home.css still restates these after core.css
+      with the same values, so its pages are unchanged. ── */
+.cta-row { display: flex; flex-wrap: wrap; gap: 14px; }
+.btn--lead, .site--blocks .block .btn--lead { background: var(--k-ink); color: var(--k-bg); border-color: var(--k-ink); box-shadow: 5px 5px 0 var(--k-lead); font-family: var(--deck); font-weight: 500; font-size: 18px; min-height: 52px; padding: 12px 24px; gap: 10px; }
+.btn--ghost, .site--blocks .block .btn--ghost { background: var(--k-bg); color: var(--k-ink); border-color: var(--k-ink); box-shadow: 5px 5px 0 var(--k-ink); font-family: var(--deck); font-weight: 500; font-size: 18px; min-height: 52px; padding: 12px 24px; }
+.btn--lead svg { width: 18px; height: 18px; }
+.site--blocks .block .btn--lead:hover { background: var(--k-bg); color: var(--k-ink); }
+.site--blocks .block .btn--ghost:hover { background: var(--k-ink); color: var(--k-bg); }
+/* A small button for a card: the offer cards carry one each. */
+.btn--sm, .site--blocks .block .btn--sm { font-size: 16px; min-height: 44px; padding: 9px 16px; box-shadow: 4px 4px 0 var(--k-ink); }
+
+/* ── A card that takes the lead fill, and a card that is a link. Both
+      work on .offer, .step and .ev, so a card can carry its own colour
+      without a section of its own, and a card can be the way to a page. ── */
+/* .card--lead is the bright mid-tone fill. DDR-013 caps it at large type
+   only, so put nothing under 28px on it. For a card carrying body copy or a
+   list, use .card--deep, whose pair is audited at normal sizes. */
+.card--lead, .block .card--lead { background: var(--k-lead); color: var(--k-on-lead); border-color: var(--k-ink); }
+.block .card--lead a { color: var(--k-on-lead); }
+.card--lead .kw { color: var(--k-on-lead); }
+.card--lead .kw li:not(:last-child)::after { color: var(--k-on-lead); }
+a.step, a.offer, .site--blocks .block a.step, .site--blocks .block a.offer {
+  text-decoration: none; transition: transform .12s ease;
+}
+.site--blocks .block a.step:hover, .site--blocks .block a.offer:hover {
+  transform: translateY(-3px); background: var(--k-ink); color: var(--k-bg); text-decoration: none;
+}
+.site--blocks .block a.step:hover p, .site--blocks .block a.offer:hover p { color: var(--k-bg); }
+.card--deep, .block .card--deep { background: var(--k-deep); color: var(--k-on-deep); border-color: var(--k-ink); }
+.block .card--deep a { color: var(--k-on-deep); }
+.card--deep p, .card--deep ul, .card--deep li { color: var(--k-on-deep); }
+/* A list of topics inside a card: readable size, no mono, no middots. */
+.card__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 7px; font-family: var(--text); font-weight: 500; font-size: clamp(15px, 1.1vw, 16px); line-height: 1.35; }
+@media (prefers-reduced-motion: reduce) { a.step, a.offer { transition: none; } }
+
+/* ── Wordmark wall ────────────────────────────────
+   Places someone has worked, as marks rather than a table of roles.
+   A cell holds a word today and takes an <img> later without the grid
+   changing: the image is capped at the cell's height and centred, so a
+   wordmark SVG and a square logo both sit on the same baseline. */
+.marks { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; }
+.mark { display: flex; align-items: center; justify-content: center; min-height: 92px; padding: 16px 14px; color: var(--ink); text-align: center; }
+.mark span { font-family: var(--display); font-weight: 800; font-size: clamp(16px, 1.4vw, 20px); line-height: 1.1; letter-spacing: -.03em; text-wrap: balance; }
+.mark img { max-height: 44px; width: auto; max-width: 100%; object-fit: contain; }
+.block .marks a.mark { text-decoration: none; }
+.site--blocks .block a.mark:hover { background: var(--k-ink); color: var(--k-bg); }
+
+/* ── Gallery ──────────────────────────────────────
+   A row of photographs that takes however many there are. auto-fit means
+   two, three, five or eight all lay out without touching the CSS, and a
+   short row never stretches one image across the page. Add an <img> and
+   stop. A <figure> with a <figcaption> works in the same grid. */
+.gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: clamp(28px, 4vw, 44px) 0; }
+.gallery > * { margin: 0; min-width: 0; }
+.gallery img { display: block; width: 100%; height: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: var(--bg-deeper); }
+.gallery figcaption { margin-top: 8px; font-family: var(--mono); font-size: 12px; line-height: 1.45; color: var(--ink-soft); }
+.gallery--tall img { aspect-ratio: 3 / 4; }
+@media (max-width: 520px) { .gallery { grid-template-columns: minmax(0, 1fr); } }
