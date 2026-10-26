@@ -6,10 +6,10 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="icon" href="/favicon.png" type="image/png" sizes="any" />
 <title>You Go First — Ron Bronson</title>
-<meta name="description" content="A speculative dating-app concept built around scarcity, transparency, and portable trust. Fifteen picks a week. Three visible tiers. The signal is the product." />
+<meta name="description" content="A speculative dating-app concept built around scarcity, transparency, and portable trust. Fifteen picks a week, in three tiers everyone can see." />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="You Go First — Ron Bronson" />
-<meta name="twitter:description" content="A speculative dating-app concept built around scarcity, transparency, and portable trust. The signal is the product." />
+<meta name="twitter:description" content="A speculative dating-app concept built around scarcity, transparency, and portable trust. Fifteen picks a week, in three tiers everyone can see." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -29,7 +29,7 @@
   <article class="project">
 
     <h1 class="project__title">You Go First</h1>
-    <p class="project__lede">A speculative dating-app concept built around scarcity, transparency, and portable trust. Fifteen picks a week. Three visible tiers. The signal is the product.</p>
+    <p class="project__lede">A speculative dating-app concept built around scarcity, transparency, and portable trust. Fifteen picks a week, in three tiers everyone can see.</p>
 
     <figure class="figure bleed">
       <img src="../assets/ygf/01-hero-red.png" alt="The hero red waitlist page reading You go first, with a sign-up form" />
@@ -40,9 +40,9 @@
 
       <h2>Premise &amp; motivation</h2>
 
-      <p>The dating-app industry is a $12B market with ~80% churn within ninety days. Every major product is a variation on one mechanic: <b>infinite supply, zero-cost swiping, photo-first ranking.</b> The incentives are misaligned — engagement equals revenue, so the platform profits when you <i>don&rsquo;t</i> find someone. Users spend ~90 minutes a day swiping; ~75% of matches never exchange a single message.</p>
+      <p>The dating-app industry is a $12B market with ~80% churn within ninety days. Every major product is a variation on one mechanic: <b>infinite supply, zero-cost swiping, photo-first ranking.</b> Engagement is revenue, so the platform earns more when you don&rsquo;t find someone. Users spend ~90 minutes a day swiping; ~75% of matches never exchange a single message.</p>
 
-      <p>YGF&rsquo;s thesis is that the problem is <b>economic, not cosmetic</b>. If attention is infinite and free, no signal a user sends carries information. So YGF treats attention as a finite resource: every user gets the same fifteen picks every week, split across three visible tiers — five Firsts, five Seconds, five Thirds. Picks expire Saturday at 11:59 PM. A new roster lands Sunday at 7 PM. You can&rsquo;t pay for more. When a slot costs something, the match that results from it <i>means</i> something.</p>
+      <p>YGF&rsquo;s thesis is that the problem is economic. If attention is infinite and free, no signal a user sends carries information. So YGF treats attention as a finite resource: every user gets the same fifteen picks every week, split across three visible tiers — five Firsts, five Seconds, five Thirds. Picks expire Saturday at 11:59 PM. A new roster lands Sunday at 7 PM. You can&rsquo;t pay for more. A match that cost a slot carries more information than a free like.</p>
 
       <figure class="figure bleed">
         <img src="../assets/ygf/03-premise-dark.png" alt="The premise section on a deep ink background — It is a dating app, shaped like a draft" />
@@ -54,14 +54,14 @@
       <ul>
         <li>Classical stable matching (Gale&ndash;Shapley) assumes a closed market, full information, and unlimited proposals. Real dating markets violate every one of those assumptions.</li>
         <li>App-style preference systems (Hinge, Tinder, Bumble) collapse the signal to a binary like — free to send, free to ignore. With no opportunity cost, a like carries no information. Hidden behind a paywall, it carries negative information.</li>
-        <li>SPA makes the cost finite and visible. Finite via the fifteen-slot weekly roster. Visible via bilateral transparency — when you draft someone First, they see &ldquo;You are one of her five Firsts this week.&rdquo; No hidden likes. No paywalled superlikes. The signal is the product.</li>
+        <li>SPA makes the cost finite and visible. Finite via the fifteen-slot weekly roster. Visible via bilateral transparency — when you draft someone First, they see &ldquo;You are one of her five Firsts this week.&rdquo; There are no hidden likes and no paywalled superlikes.</li>
       </ul>
 
       <p>Three principles fall out of that:</p>
 
       <ul>
-        <li><b>Strategic scarcity.</b> Finite slots turn swiping into resource allocation. You can&rsquo;t First everyone, so you have to choose. The revealed-preference signal is stronger than a like by orders of magnitude.</li>
-        <li><b>Bilateral transparency.</b> Recipients see exactly which tier you placed them in. Vulnerability is reciprocal by design.</li>
+        <li><b>Strategic scarcity.</b> Finite slots turn swiping into resource allocation. You can&rsquo;t First everyone, so you have to choose. A First tells the recipient far more than a like does.</li>
+        <li><b>Bilateral transparency.</b> Recipients see exactly which tier you placed them in. Both sides take the same risk.</li>
         <li><b>Portable trust &amp; identity.</b> Reputation and identity are decoupled from the platform — ATProto for identity plus a behavioral trust layer — so good behavior follows you across apps and there&rsquo;s no lock-in.</li>
       </ul>
 
@@ -71,7 +71,7 @@
         <div class="tier first">
           <div class="tier__label">FIRST &middot; ×5</div>
           <div class="tier__name">The most expensive signal you have.</div>
-          <p class="tier__copy">When you draft someone First, they see it. There are exactly five. There will never be six.</p>
+          <p class="tier__copy">When you draft someone First, they see it. There are five, and you can&rsquo;t buy a sixth.</p>
         </div>
         <div class="tier second">
           <div class="tier__label">SECOND &middot; ×5</div>
@@ -90,7 +90,7 @@
         <figcaption>The mechanic, made legible on the marketing site.</figcaption>
       </figure>
 
-      <p>The cadence is a week. Picks drop Sunday at 7 PM. The roster locks Saturday at 11:59 PM. Between those two moments, you spend your fifteen — or you don&rsquo;t.</p>
+      <p>The cadence is a week. Picks drop Sunday at 7 PM. The roster locks Saturday at 11:59 PM. Between those two moments you spend your fifteen, or you don&rsquo;t.</p>
 
       <figure class="figure bleed">
         <img src="../assets/ygf/05-typical-week.png" alt="A weekly calendar — Sunday: the drop. Monday: first moves. Tuesday: first reveals. Wednesday: mutuals. Saturday: lock." />
@@ -99,7 +99,7 @@
 
       <h2>Design</h2>
 
-      <p>YGF is deliberately anti&ndash;dating-app in look and feel. Most consumer dating products borrow from Spotify, Apple News, Dribbble, Steam — engagement-optimized tech surfaces. YGF leaves the category entirely and borrows from print.</p>
+      <p>YGF doesn&rsquo;t look like a dating app. Most of them borrow from Spotify, Apple News, Dribbble, or Steam. YGF borrows from print.</p>
 
       <table class="borrowings" aria-label="Design borrowings">
         <thead>
@@ -113,18 +113,18 @@
         </tbody>
       </table>
 
-      <p>Four signature design decisions carry the system:</p>
+      <p>Four design decisions carry the system:</p>
 
       <ul>
-        <li><b>Old Standard TT italic at display scale,</b> with a crimson period signing every wordmark and signal. The dot is the brand mark. A magazine-grade serif does most of the visual work without any chrome.</li>
-        <li><b>A constrained chromatic palette</b> — ink, pulp, cream, plus three signal colors (crimson = First, marigold = Second, cobalt = Third) and a field green reserved for mutual drafts. Each color has exactly one job. Crimson appears only in First-pick moments, which is what makes those moments matter.</li>
-        <li><b>Duotone portraiture.</b> Every photo runs through a tier-mapped duotone. Three problems solved at once: untinted photos read as Tinder, the treatment is the visual signature, and the tier travels with the person through the product.</li>
-        <li><b>Editorial copy as system.</b> Voice is documented in DO / DON&rsquo;T cards in the brand bible alongside type and color specs. The voice is part of the product, not an afterthought.</li>
+        <li><b>Old Standard TT italic at display scale,</b> with a crimson period signing every wordmark and signal. The dot is the brand mark, and the serif does most of the visual work.</li>
+        <li><b>A constrained chromatic palette</b> — ink, pulp, cream, plus three signal colors (crimson = First, marigold = Second, cobalt = Third) and a field green reserved for mutual drafts. Each color has one job. Crimson appears only in First-pick moments.</li>
+        <li><b>Duotone portraiture.</b> Every photo runs through a tier-mapped duotone. Untinted photos read as Tinder, and the tint carries the tier with the person through the product.</li>
+        <li><b>Editorial copy as system.</b> Voice is documented in DO / DON&rsquo;T cards in the brand bible alongside type and color specs.</li>
       </ul>
 
       <figure class="figure bleed">
         <img src="../assets/ygf/15-roster-board.png" alt="The Roster Board — fifteen slots arranged as three rows of five, with tier-mapped duotone portraits in the First row" />
-        <figcaption>The Roster Board — symmetrical on purpose, so the eye can count without thinking.</figcaption>
+        <figcaption>The Roster Board, symmetrical so you can count at a glance.</figcaption>
       </figure>
 
       <div class="figpair">
@@ -140,21 +140,21 @@
 
       <figure class="figure bleed">
         <img src="../assets/ygf/13-numerals.png" alt="Numerals &amp; ordinals — three display classes of numerals" />
-        <figcaption>The product is counted, ranked, drafted. Numerals carry the system.</figcaption>
+        <figcaption>Numerals carry the system.</figcaption>
       </figure>
 
-      <h2>Two surfaces that carry the strategy</h2>
+      <h2>Two more surfaces</h2>
 
       <div class="surface">
         <h3>The List</h3>
-        <p>A fourth verb beneath Pass / Third / Second / First, with a dashed-border treatment that telegraphs <i>private, no cost</i>. Unlimited. The person you parked never sees it. The pressure isn&rsquo;t the in-the-moment choice — it&rsquo;s the Saturday lock.</p>
+        <p>A fourth verb beneath Pass / Third / Second / First, with a dashed-border treatment that telegraphs <i>private, no cost</i>. Unlimited. The person you parked never sees it. The Saturday lock is where the pressure is.</p>
         <p>This is the verb for &ldquo;I don&rsquo;t know yet, I want to think about it,&rdquo; which is the most honest response anyone has to most cards.</p>
       </div>
 
       <div class="surface">
         <h3>The Night Round</h3>
         <p>A 9 PM midnight synchronous window, signaled by a pulsing crimson banner and a city-wide push notification. Inside, you can send up to ten multiple-choice questions to people you&rsquo;ve considered but not yet picked. They tap one of four answers.</p>
-        <p>No conversation. No chat affordance anywhere. The constraint is the feature — synchronicity, borrowed from BeReal, applied to dating.</p>
+        <p>There is no chat anywhere in it. The synchronous window is borrowed from BeReal.</p>
       </div>
 
       <div class="figpair">
@@ -170,7 +170,7 @@
 
       <h2>Mechanics &amp; implementation</h2>
 
-      <p>The interesting engineering is the matching engine, which is <b>asymmetric by design</b> — your score for someone differs from theirs for you.</p>
+      <p>The matching engine is asymmetric: your score for someone differs from theirs for you.</p>
 
       <ol style="margin: 0; padding-left: 22px; font-family: var(--sans); font-size: clamp(16px, 1.3vw, 18px); line-height: 1.55; max-width: 64ch;">
         <li style="margin-bottom: 10px;"><b>Relay assessment</b> — a behavioral quiz produces ten vertex scores (Reach&harr;Retreat, Voice&harr;Quiet, Spark&harr;Steady, Merge&harr;Orbit, Heat&harr;Cool), normalized into a single Temperature score on a 0&ndash;80°R scale (e.g. <code>64.7°R</code>). The integer is public; the decimal is a private hash used only by the algorithm.</li>
@@ -182,19 +182,19 @@
 
       <ul>
         <li><b>The Roster.</b> Fifteen visible slots arranged as three rows of five (Firsts / Seconds / Thirds), plus the unlimited private List. The Roster locks Saturday at 11:59 PM. Sunday at 7 PM, a new one lands.</li>
-        <li><b>Stratified visibility.</b> Under-the-hood tiering recalibrated every fourteen days based on match success, within ~100-mile geographic regions so a small-market user isn&rsquo;t ranked against a metro. Never surfaced in the UI — no letter grades, no public ladder, nothing on profiles. The math runs; the user never feels ranked.</li>
+        <li><b>Stratified visibility.</b> Under-the-hood tiering recalibrated every fourteen days based on match success, within ~100-mile geographic regions so a small-market user isn&rsquo;t ranked against a metro. Never surfaced in the UI — no letter grades, no public ladder, nothing on profiles.</li>
         <li><b>Behavioral ranking.</b> Ghosting, unmatch rate, and report rate degrade roster access; consistent quality interactions improve it. Ranking points decay over fifty-two weeks to prevent indefinite coasting.</li>
         <li><b>Draft picks.</b> Selective cross-tier visibility that lets the engine surface someone outside your usual slice when compatibility is unusually high.</li>
         <li><b>Safety &amp; trust.</b> Reporting, response-rate tracking, and ghosting detection feed a portable reputation layer that survives if a user moves between SPA-compatible apps.</li>
       </ul>
 
-      <p>YGF also includes a research artifact: a simulator and writeup analyzing the SPA system — attention-inequality metrics (Gini ~0.42), match-quality convergence over twelve weeks, behavior under continuous market churn, local-stability analysis. The design choices are backed by analysis.</p>
+      <p>YGF also includes a research artifact: a simulator and writeup analyzing the SPA system — attention-inequality metrics (Gini ~0.42), match-quality convergence over twelve weeks, behavior under continuous market churn, local-stability analysis.</p>
 
       <h2>The system, on a phone</h2>
 
       <figure class="figure bleed">
         <img src="../assets/ygf/16-system-at-work.png" alt="The system at work — the Roster screen and the player-card screen on iPhone frames" />
-        <figcaption>Four mobile surfaces. The same parts, recombined.</figcaption>
+        <figcaption>Four mobile surfaces.</figcaption>
       </figure>
 
       <figure class="figure bleed">
@@ -209,7 +209,7 @@
 
       <h2>Voice</h2>
 
-      <p>Voice is treated as a product spec, not flavor. The brand bible documents it the same way it documents type and color.</p>
+      <p>The brand bible specifies voice the same way it specifies type and color.</p>
 
       <figure class="figure bleed">
         <img src="../assets/ygf/08-voice.png" alt="Voice section — Quietly literary, not precious. DO and DON&rsquo;T cards." />
@@ -220,7 +220,7 @@
 
       <figure class="figure bleed">
         <img src="../assets/ygf/06-difference.png" alt="A two-column comparison table — YGF vs every other app" />
-        <figcaption>You already know what the other apps feel like. YGF is the opposite of that, on purpose.</figcaption>
+        <figcaption>The comparison panel from the marketing site.</figcaption>
       </figure>
 
       <h2>What it costs</h2>
@@ -257,7 +257,7 @@
         </li>
       </ol>
 
-      <p>Built solo, end-to-end: protocol design, product strategy, UX, brand, copy, deck.</p>
+      <p>I did all of it: protocol design, product strategy, UX, brand, copy, and the deck.</p>
 
       <h2>Stack</h2>
 

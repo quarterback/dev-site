@@ -6,7 +6,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="icon" href="/favicon.png" type="image/png" sizes="any" />
 <title>Glowrm — Ron Bronson</title>
-<meta name="description" content="Trust infrastructure for ATProto social applications. Apps plug in for cross-app reputation, shared moderation, and a configurable resource-allocation system — the trust plumbing nobody should have to rebuild from scratch." />
+<meta name="description" content="Trust infrastructure for ATProto social applications. Apps plug in for cross-app reputation, shared moderation, and a configurable resource-allocation system, so each app doesn&rsquo;t rebuild the same trust plumbing." />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Glowrm — Ron Bronson" />
 <meta name="twitter:description" content="Trust infrastructure for ATProto social applications: cross-app reputation, shared moderation, and portable trust." />
@@ -29,7 +29,7 @@
   <article class="project">
 
     <h1 class="project__title">Glowrm</h1>
-    <p class="project__lede">Trust infrastructure for ATProto social applications. Apps plug in for cross-app reputation, shared moderation, and a configurable resource-allocation system — the trust plumbing nobody should have to rebuild from scratch.</p>
+    <p class="project__lede">Trust infrastructure for ATProto social applications. Apps plug in for cross-app reputation, shared moderation, and a configurable resource-allocation system, so each app doesn&rsquo;t rebuild the same trust plumbing.</p>
 
     <div class="project__body">
 
@@ -40,7 +40,7 @@
 
       <h2>What it does</h2>
 
-      <p>Think of Glowrm as Stripe for reputation. Instead of every dating app, professional network, or friendship platform building its own trust and moderation systems, apps plug into Glowrm to share a common reputation layer.</p>
+      <p>Instead of every dating app, professional network, or friendship platform building its own trust and moderation systems, apps plug into Glowrm to share a common reputation layer.</p>
 
       <ul>
         <li><b>Cross-app reputation.</b> User trust scores on a 20&ndash;80 scale that travel between apps. Good behavior on a dating app means you start with that same reputation on a professional network.</li>
@@ -51,11 +51,11 @@
 
       <h2>The problem it solves</h2>
 
-      <p>ATProto gives users portable identity — your DID and profile follow you across apps, you own your data, no app can lock you in. The trade-off has a dark side: get banned from one dating app, join another with a clean slate. Harass someone, switch platforms, fresh start. Bad behavior has no long-term consequences.</p>
+      <p>ATProto gives users portable identity — your DID and profile follow you across apps, you own your data, no app can lock you in. The trade-off: get banned from one dating app, join another with a clean slate. Harass someone, switch platforms, fresh start. Bad behavior has no long-term consequences.</p>
 
       <p>Traditional platforms solve this with centralized control. Facebook bans you, you&rsquo;re banned everywhere Facebook operates — but you&rsquo;re also locked into Facebook&rsquo;s ecosystem. You trade freedom for safety.</p>
 
-      <p>Glowrm enables both: users keep the freedom to move between apps, and reputation follows them. Accountability without lock-in.</p>
+      <p>With Glowrm, users keep the freedom to move between apps, and their reputation follows them.</p>
 
       <h2>How it works in practice</h2>
 
@@ -71,7 +71,7 @@
           <li><b>Bob tries to join Roster,</b> a professional network. Roster asks Glowrm to register his DID. Glowrm finds the existing identity, returns <code>{ reputation: 20, status: &quot;banned&quot; }</code>. Roster declines.</li>
           <li><b>Alice joins Roster.</b> Glowrm returns <code>{ reputation: 51, status: &quot;active&quot; }</code>. Roster shows her as a trusted user from day one.</li>
         </ol>
-        <p class="key">Alice&rsquo;s good behavior on YGF gave her a head start on Roster. Bob&rsquo;s bad behavior on YGF kept him out. Neither app had to build that coordination — Glowrm did.</p>
+        <p class="key">Alice&rsquo;s good behavior on YGF gave her a head start on Roster. Bob&rsquo;s bad behavior on YGF kept him out. Neither app had to build that coordination.</p>
       </div>
 
       <h2>Reputation scores (20&ndash;80)</h2>
@@ -111,7 +111,7 @@
 
       <h2>Strategic Profile Allocation (SPA)</h2>
 
-      <p>Unlimited actions invite spam. Tinder-style swiping creates a spray-and-pray default. LinkedIn InMail becomes a sales pitch fire hose. SPA fixes that at the infrastructure layer: every app issues users finite <i>units</i> per period, and recipients see how many units someone spent on them. The cost is the signal.</p>
+      <p>Unlimited actions invite spam. Tinder-style swiping creates a spray-and-pray default. LinkedIn InMail becomes a sales pitch fire hose. SPA fixes that at the infrastructure layer: every app issues users finite <i>units</i> per period, and recipients see how many units someone spent on them.</p>
 
       <p>Each app configures its own SPA shape:</p>
 
@@ -145,7 +145,7 @@
         <dd>Glowrm</dd>
       </dl>
 
-      <p>The separation is the design: users own their content (ATProto principle), apps own their unique features, Glowrm owns the shared trust layer. No single point of failure for user data.</p>
+      <p>Users own their content, apps own their features, and Glowrm owns the shared trust layer. No single store holds all of a user&rsquo;s data.</p>
 
       <h2>Reference implementations</h2>
 
@@ -183,7 +183,7 @@
 
       <h2>Status</h2>
 
-      <p>Glowrm is a working spec with a published API, three reference implementations, and a documentation site. It&rsquo;s the trust plumbing that <a href="ygf.html" style="border-bottom: 1px solid var(--rule); color: var(--ink);">YGF</a> sits on top of and that Roster and Roomies are designed against. The harder work — operating a real trust clearinghouse at scale (governance, appeals, due-process, regulatory standing) — is what the spec is in service of arguing about.</p>
+      <p>Glowrm is a working spec with a published API, three reference implementations, and a documentation site. It&rsquo;s the trust plumbing that <a href="ygf.html" style="border-bottom: 1px solid var(--rule); color: var(--ink);">YGF</a> sits on top of and that Roster and Roomies are designed against. The harder work is operating a real trust clearinghouse at scale: governance, appeals, due process, regulatory standing. The spec exists to make that argument concrete.</p>
 
     </div>
 
