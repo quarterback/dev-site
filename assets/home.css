@@ -30,3 +30,10 @@
 .site--blocks .block a.tile:hover { transform: translateY(-3px); background: var(--k-lead); color: var(--k-on-lead); text-decoration: none; }
 .site--blocks .block a.tile:hover .lab { color: var(--k-on-lead); }
 @media (prefers-reduced-motion: reduce) { .tile { transition: none; } }
+
+/* Phone screens, for project pages whose evidence is a mobile app. Each
+   frame keeps the screenshot's own proportions; the grid, not object-fit,
+   decides how many sit side by side, so nothing gets cropped. */
+.phones { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: clamp(12px, 2vw, 18px); margin: clamp(28px, 4vw, 48px) 0 0; }
+.phones .figure { margin: 0; }
+.phones .figure img { border: var(--frame) solid var(--ink); }

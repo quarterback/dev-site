@@ -31,10 +31,20 @@
     <h1 class="project__title">Occupant Indices</h1>
     <p class="project__lede">Public measurement infrastructure I built for the AI economy. Three live indices that turn scattered public data into numbers you can track over time — the price tag, the activity meter, and the labor gauge for AI work.</p>
 
-    <figure class="figure bleed">
-      <img src="../assets/occupant/indices.png" alt="Occupant indices page with $CPI reading 62.4 on a soft yellow background" />
-      <figcaption>The indices page at occupant.ee — $CPI as a daily-published deflator.</figcaption>
-    </figure>
+    <div class="phones bleed">
+      <figure class="figure">
+        <img src="../assets/occupant/cpi.png" alt="Compute Price Index screen: 62.4 on an orange block, down 9.7% in one month, with an all-time chart and tier prices" />
+        <figcaption>$CPI, May 16, 2026. The basket price, the chart since launch, and the four tiers.</figcaption>
+      </figure>
+      <figure class="figure">
+        <img src="../assets/occupant/aiu.png" alt="AI Market Index screen: 504.1 on a sky blue block, up 2.2% in two weeks, with the three weighted components below" />
+        <figcaption>$AIU. Token volume, inferred spend and the energy proxy, weighted 60 / 30 / 10.</figcaption>
+      </figure>
+      <figure class="figure">
+        <img src="../assets/occupant/ldi.png" alt="Labor Displacement Index screen: substitution rate 3.86% on a yellow block, with nine federal workloads listed by human and AI cost per unit" />
+        <figcaption>$LDI. Nine federal workloads, human cost against AI cost per unit.</figcaption>
+      </figure>
+    </div>
 
     <div class="project__body">
 
@@ -72,12 +82,7 @@
         <li><b>10% energy proxy</b> — a blend of token-derived energy estimate (70%) and global grid-investment growth (30%), so the energy term carries independent information.</li>
       </ul>
 
-      <p>Baseline February 2025 = 100. At ~503.65 it reflects roughly a 5× expansion in activity over about fifteen months — on the order of 42.7 trillion tokens and $210M of inferred spend per week.</p>
-
-      <figure class="figure bleed">
-        <img src="../assets/occupant/aeai.png" alt="Occupant AI Economic Activity Index page reading 503.65, +403.6% from baseline" />
-        <figcaption>$AIU — synthetic unit measuring global AI economic activity, modeled on the IMF&rsquo;s SDR.</figcaption>
-      </figure>
+      <p>Baseline February 2025 = 100. At ~504 it reflects roughly a 5× expansion in activity over about fifteen months — on the order of 42.7 trillion tokens and $210M of inferred spend per week.</p>
 
       <p class="reading"><b>Reading them together:</b> <i>total AI spend ≈ AIU × CPI.</i> This decomposes the headline spending figure into its two drivers — efficiency gains (price) and demand growth (volume) — which is exactly the split the &ldquo;is this a bubble?&rdquo; debate needs.</p>
 
@@ -91,9 +96,20 @@
         <li><b>Absorption dimension.</b> When a workload automates, the index classifies whether the workforce is cut, frozen, or <b>reallocated</b> — because &ldquo;cheaper&rdquo; and &ldquo;fired&rdquo; are separate events.</li>
       </ul>
 
+      <div class="phones">
+        <figure class="figure">
+          <img src="../assets/occupant/snap.png" alt="SNAP eligibility screen: $25.13 per human review against $0.0003 per AI review, a 98,176 times cost ratio, and 16,500 federal staff marked reallocated" />
+          <figcaption>The SNAP eligibility deep dive. Every number on the screen traces to a named source.</figcaption>
+        </figure>
+        <figure class="figure">
+          <img src="../assets/occupant/procurement.png" alt="AI procurement screen: Department of Defense obligated $1.18B, up 12%, with nine more agencies ranked by FY2024 spend and change" />
+          <figcaption>AI procurement by agency, FY2024 against FY2023, from USAspending.</figcaption>
+        </figure>
+      </div>
+
       <p>Built on named public data: BLS OEWS + ECEC wages for human cost, FPDS / USAspending contractor spend as substitution proxy, OPM FedScope FTE counts for headcount, mapped through SOC and PSC crosswalks.</p>
 
-      <p class="reading"><b>Worked end-to-end:</b> the SNAP Eligibility deep dive resolves all three pillars to one real program — ~$25.13 per human review vs ~$0.000256 for AI, ~41M reviews/year, a ~2.1% substitution signal, and an &ldquo;absorption: reallocated&rdquo; verdict as caseload grows against a flat workforce. Every step is auditable on the page.</p>
+      <p class="reading"><b>Worked end-to-end:</b> the SNAP Eligibility deep dive resolves all three pillars to one real program — ~$25.13 per human review vs ~$0.0003 for AI, ~41M reviews/year, a ~2.1% substitution signal, and an &ldquo;absorption: reallocated&rdquo; verdict as caseload grows against a flat workforce. Every step is auditable on the page.</p>
 
       <h2>The tools</h2>
 
