@@ -1008,3 +1008,15 @@ a.step, a.offer, .site--blocks .block a.step, .site--blocks .block a.offer {
 /* A list of topics inside a card: readable size, no mono, no middots. */
 .card__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 7px; font-family: var(--text); font-weight: 500; font-size: clamp(15px, 1.1vw, 16px); line-height: 1.35; }
 @media (prefers-reduced-motion: reduce) { a.step, a.offer { transition: none; } }
+
+/* ── Wordmark wall ────────────────────────────────
+   Places someone has worked, as marks rather than a table of roles.
+   A cell holds a word today and takes an <img> later without the grid
+   changing: the image is capped at the cell's height and centred, so a
+   wordmark SVG and a square logo both sit on the same baseline. */
+.marks { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; }
+.mark { display: flex; align-items: center; justify-content: center; min-height: 104px; padding: 18px 16px; background: var(--k-bg); color: var(--k-ink); border: var(--frame) solid var(--k-ink); text-align: center; }
+.mark span { font-family: var(--display); font-weight: 800; font-size: clamp(16px, 1.4vw, 20px); line-height: 1.1; letter-spacing: -.03em; text-wrap: balance; }
+.mark img { max-height: 44px; width: auto; max-width: 100%; object-fit: contain; }
+.block .marks a.mark { text-decoration: none; }
+.site--blocks .block a.mark:hover { background: var(--k-ink); color: var(--k-bg); }
