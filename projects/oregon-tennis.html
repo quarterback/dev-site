@@ -46,25 +46,25 @@
 
     <div class="project__body">
 
-      <p>This is the first analytics platform of its kind in the state. Four years of statewide results, four original rating models I designed, a playoff simulator, and a suite of live tournament tools. I built the whole thing end to end, from the formula to the site, all generated from raw match data and served as a single static site. It ran on live data all through the 2026 season, used by coaches and teams across Oregon as a working reference.</p>
+      <p>Four years of statewide results, four rating models I designed, a playoff simulator, and a set of live tournament tools, all generated from raw match data and served as one static site.</p>
 
       <p>I worked on this in the open. Back in <a href="https://blog.ronbronson.com/ranking-the-unrankable-building-a-better-system-for-oregon-high-school-tennis/" target="_blank" rel="noopener">an April 2025 writeup</a> I shared an early version of the formula and the thinking behind it, the proof of concept that the live system grew out of.</p>
 
-      <p>It&rsquo;s also the data layer behind a real institutional change — the analysis that supported Oregon&rsquo;s adoption of a dual team tennis championship. The format is now on the calendar: power-ranking-seeded brackets debuting in spring 2027, with 12 teams at 6A and 8 at 5A and 4A-1A, per gender, higher seed hosting through to a final at the state championship site. Underneath the format change is a small, fully transparent system built to make the argument possible.</p>
+      <p>It&rsquo;s also the data behind an institutional change: the analysis that supported Oregon&rsquo;s adoption of a dual team tennis championship. The format is now on the calendar: power-ranking-seeded brackets debuting in spring 2027, with 12 teams at 6A and 8 at 5A and 4A-1A, per gender, higher seed hosting through to a final at the state championship site.</p>
 
       <h2>The long game</h2>
 
-      <p>The tools are the visible half. The other half was governance — a multi-year effort to change how a state runs a sport, where the work is persuading an institution as much as shipping code.</p>
+      <p>The tools are half of it. The other half was six years of persuading the OSAA to change how it runs the sport.</p>
 
       <dl class="timeline">
         <dt>2019</dt>
-        <dd>The gap surfaces. Oregon&rsquo;s high school tennis program has no team championship.</dd>
+        <dd>Oregon&rsquo;s high school tennis program has no team championship.</dd>
 
         <dt>2020 — 2021</dt>
         <dd>The case goes public in writing: split the seasons, raise the match limit, add a power-ranking-seeded team tournament.</dd>
 
         <dt>early 2020s</dt>
-        <dd>The argument meets reality. Concerns about scheduling, travel, and roster viability get worked through with the OSAA. Hard data becomes necessary.</dd>
+        <dd>Concerns about scheduling, travel, and roster viability get worked through with the OSAA. The argument needs data.</dd>
 
         <dt>Dec 2025</dt>
         <dd>After refining the rating model through earlier prototypes, I build the full site and put it online on live statewide data.</dd>
@@ -76,13 +76,13 @@
         <dd>The first dual team championships are played.</dd>
       </dl>
 
-      <p>Six years from &ldquo;someone should fix this&rdquo; to a line on the state calendar. The software is what made the late innings winnable: once the questions turned concrete — who qualifies, how do you seed it, what does it cost in travel — the answers were already computed and public.</p>
+      <p>Once the questions turned concrete (who qualifies, how do you seed it, what does it cost in travel) the answers were already computed and public.</p>
 
       <h2>The problem it models</h2>
 
-      <p>A tennis dual meet is eight concurrent matches — <i>matches within matches</i>. Four singles, four doubles; win five flights and you win the meet. That structure breaks ordinary ranking. A 5–3 win at the bottom of the lineup looks identical to a 5–3 win at the top, win-loss records skip over who you played, and lineups can be &ldquo;stacked&rdquo; to game any naive metric.</p>
+      <p>A tennis dual meet is eight concurrent matches. Four singles, four doubles; win five flights and you win the meet. That structure breaks ordinary ranking. A 5–3 win at the bottom of the lineup looks identical to a 5–3 win at the top, win-loss records skip over who you played, and lineups can be &ldquo;stacked&rdquo; to game any naive metric.</p>
 
-      <p>Central data was sparse, and existing ratings handled none of this. The system had to invent the measurement, then build everything on top of it: ingestion, rating models, simulation, and the public tools. Real-world mess gets absorbed along the way — forfeits, ties, six-flight meets, classification changes, dirty source data.</p>
+      <p>Central data was sparse, and existing ratings handled none of this. I had to define the measurement first, then build ingestion, rating models, simulation, and the public tools on top of it. It also has to absorb forfeits, ties, six-flight meets, classification changes, and dirty source data.</p>
 
       <h2>The models</h2>
 
@@ -102,7 +102,7 @@
       <p>A later model folding in game-share margin. A/B-tested against the Power Index with results reported.</p>
 
       <h3>H2H engine</h3>
-      <p>When teams are close, head-to-head breaks the tie — only when it avoids a rock-paper-scissors loop (A beats B beats C beats A). Split series defer to the metrics. The edge cases are the whole job.</p>
+      <p>When teams are close, head-to-head breaks the tie — only when it avoids a rock-paper-scissors loop (A beats B beats C beats A). Split series defer to the metrics.</p>
 
       <h2>On the site</h2>
 
@@ -140,11 +140,11 @@
 
       <h2>Design decisions</h2>
 
-      <p>The boring choices are deliberate. Static HTML with embedded JSON serves the audience — coaches and athletic directors — who need something fast, free, and saveable. A dataset this size belongs in the page. The model exposes raw, intuitive scores (0–3.95 FWS, ERA+-style FWS+) up front and keeps the normalized math underneath.</p>
+      <p>Static HTML with embedded JSON serves coaches and athletic directors, who need something fast, free, and saveable. A dataset this size belongs in the page. The model exposes raw, intuitive scores (0–3.95 FWS, ERA+-style FWS+) up front and keeps the normalized math underneath.</p>
 
-      <p>The interesting choices are everywhere else: a rating design that makes stacking pointless, tiebreaker logic that refuses circular results, travel optimization that protects top seeds while cutting miles for the rest, and a methodology published in full so the numbers carry their own evidence.</p>
+      <p>The design work went into the model: a rating design that makes stacking pointless, tiebreaker logic that refuses circular results, travel optimization that protects top seeds while cutting miles for the rest, and a methodology published in full so the numbers carry their own evidence.</p>
 
-      <p>The throughline: a clear, fully transparent model — built end to end, from raw API to live tournament board — credible enough, and patient enough, to move an institution. The code was the easy part. Sticking with it for six years until the institution said yes was the project.</p>
+      <p>The model had to be transparent enough for an institution to trust, and I had to keep it running long enough for the institution to say yes.</p>
 
       <p style="margin-top: clamp(20px, 3vw, 36px)"><a class="live-link" href="https://oregontennis.org" target="_blank" rel="noopener">oregontennis.org</a></p>
 
