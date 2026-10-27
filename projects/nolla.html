@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="/favicon.png" type="image/png" sizes="any" />
+<title>Nolla — Ron Bronson</title>
+<meta name="description" content="A question desk built on a large language model. It posts a price before it answers, routes questions to the people who handle them, and refunds wrong answers line by line." />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Nolla — Ron Bronson" />
+<meta name="twitter:description" content="A question desk built on a large language model. It posts a price before it answers, routes questions to the people who handle them, and refunds wrong answers line by line." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/faces.css" />
+<link rel="stylesheet" href="../assets/core.css" />
+<link rel="stylesheet" href="../assets/home.css" />
+<script src="../assets/palette.js"></script>
+</head>
+<body class="site--dev scale--front site--blocks">
+<div class="wrap wrap--blocks">
+
+  <header class="topbar block block--ink"><div class="topbar__in"><a class="name" href="../index.html">Ron Bronson</a><nav aria-label="Main navigation"><a href="https://ronbronson.design">Design</a><a href="https://thinkingweapons.com">Studio</a><a href="https://blog.ronbronson.com">Blog</a></nav></div></header>
+
+  <article class="project">
+
+    <h1 class="project__title">Nolla</h1>
+    <p class="project__lede">A question desk I built on a large language model. You ask a question, the desk sorts it and posts a price, the answer writes itself while a meter runs, and you get a receipt. When the answer is wrong, the receipt goes to a counter for a refund.</p>
+
+    <figure class="figure bleed">
+      <img src="../assets/nolla/flow-light.webp" alt="Three phone screens in chartreuse and indigo. The first shows a question about a kept deposit with four priced options and an Ask button for 520 tkn. The second shows the answer streaming with a meter reading 397 tkn. The third shows the finished answer, a question back with No selected, and the next step." />
+      <figcaption>One call through the desk: the question priced as it&rsquo;s typed, the answer metered as it&rsquo;s written, the finished answer.</figcaption>
+    </figure>
+
+    <div class="project__body">
+
+      <h2>The problem</h2>
+
+      <p>Chat products charge a monthly subscription, and the cost of each answer stays hidden. Their interfaces are tuned to keep the conversation going, and they answer whatever you type, including questions a pharmacist, a librarian, or a tenants hotline would answer better. When an answer is wrong, the cost stays with the person who paid for it.</p>
+
+      <h2>How the desk works</h2>
+
+      <p>Every question is a call. The desk charges 40 tkn to sort it. Then it posts four prices before any work runs. A routing slip costs 100 tkn and a quick answer costs 200 tkn. An answer with sources costs 520 tkn, and a fuller look costs 840 tkn. Each price follows a fixed schedule you can check. A source costs 120 tkn to open, each word costs 1 tkn, and checking the answer against its sources costs 80 tkn. Each earlier turn in a thread adds 10%.</p>
+
+      <p>The answer streams onto the screen while a meter counts the words and the tokens spent, and the balance drops in the corner. The finished page gives the short answer, what the law says with its citation, the people who handle this kind of question, one question back, and a receipt. Every figure carries its unit. The balance refills each Monday.</p>
+
+      <div class="phones">
+        <figure class="figure">
+          <img src="../assets/nolla/answer.webp" alt="A finished answer about a kept deposit: the short answer, the rules on wear and carpet cleaning with citations, what would change the answer, three places that handle deposit disputes, and a question back" />
+          <figcaption>The finished answer, with the people who handle deposit disputes.</figcaption>
+        </figure>
+        <figure class="figure">
+          <img src="../assets/nolla/counter.webp" alt="The refund counter: the question, the itemized charge of 520 tkn, and five reasons to pick from" />
+          <figcaption>The refund counter, with the charge itemized line by line.</figcaption>
+        </figure>
+      </div>
+
+      <h2>Where the desk sends people</h2>
+
+      <p>The desk answers what belongs at a reference desk and routes the rest. A deposit dispute goes to ORS 90.300 and the Community Alliance of Tenants. A medication question goes to a pharmacist. A question about opening a shop goes to the small business development center, and the desk asks whether you know someone who has run one. It suggests kinds of people and asks whether you know one. Your question stays at the top of the page in your own words.</p>
+
+      <h2>Refunds</h2>
+
+      <p>In <i>Moffatt v. Air Canada</i>, 2024 BCCRT 149, the British Columbia Civil Resolution Tribunal held Air Canada responsible for a refund policy its chatbot made up. I built the refund system on that case. Every charge is itemized, so every failure has a price. The counter refunds checkable problems on the spot, up to 300 tkn a call and 1,000 tkn a week. A claim above that goes to a manager desk, which asks three questions, runs the checks, and issues a decision receipt. A person reviews appeals within 7 days.</p>
+
+      <div class="phones">
+        <figure class="figure">
+          <img src="../assets/nolla/manager.webp" alt="The manager desk, step 1 of 3: What went wrong, with four answers to pick from" />
+          <figcaption>The manager desk asks three questions.</figcaption>
+        </figure>
+        <figure class="figure">
+          <img src="../assets/nolla/approved.webp" alt="Manager decision, approved: 520 tkn back and a free redo, the failed source check highlighted, and the decision receipt" />
+          <figcaption>Approved. The answer gave 30 days; the statute says 31.</figcaption>
+        </figure>
+        <figure class="figure">
+          <img src="../assets/nolla/partly-approved.webp" alt="Manager decision, partly approved: 18 tkn back, the missing section check highlighted, and the decision receipt" />
+          <figcaption>Partly approved. A required section was missing.</figcaption>
+        </figure>
+        <figure class="figure">
+          <img src="../assets/nolla/denied.webp" alt="Manager decision, denied: no tokens back and one free redo, every check passed, and the decision receipt" />
+          <figcaption>Denied. Every check passed.</figcaption>
+        </figure>
+      </div>
+
+      <h2>Two colorways</h2>
+
+      <p>The desk runs in chartreuse and indigo in light mode and in teal and peach in dark mode. I computed the contrast ratio for every color pairing before it shipped: indigo on chartreuse is 13.6 to 1, peach on teal is 10.1 to 1.</p>
+
+      <figure class="figure bleed">
+        <img src="../assets/nolla/flow-dark.webp" alt="The same three phone screens in teal and peach, with mint buttons" />
+        <figcaption>The same call in the dark colorway.</figcaption>
+      </figure>
+
+      <h2>How it&rsquo;s built</h2>
+
+      <dl class="stack-block">
+        <dt>Rules</dt>
+        <dd>A written skill gates an existing model: how to sort a call, what each price covers, how an answer is shaped, and when a refund applies.</dd>
+        <dt>App</dt>
+        <dd>Hono on Cloudflare Workers, a React and Vite front end, and zod schemas for the model&rsquo;s structured output.</dd>
+        <dt>Arithmetic</dt>
+        <dd>Prices and refunds come from one shared module with tests, so every decision receipt can be recomputed.</dd>
+        <dt>Access</dt>
+        <dd>Cloudflare Access. The desk at 0000th.ai is invite only and stays that way.</dd>
+        <dt>Copy</dt>
+        <dd>An editorial policy for the desk, checked with prosekeep and plain-language-default.</dd>
+        <dt>Records</dt>
+        <dd>Agents wrote much of the code. Each build run ends with a closedtab after action record.</dd>
+      </dl>
+
+      <h2>What changed after the first build</h2>
+
+      <p>The first agent build added things outside the approved design. It put an exchange rate in the header, a formula under every option, and a footnote under the ask button, and it added a list of sample questions. I wrote UI guidelines that name each addition and rule out anything absent from the approved screens. They&rsquo;re in the repo for the next build.</p>
+
+    </div>
+
+  </article>
+
+  <footer class="foot">
+    <span>Reach me at <a href="mailto:contact@ronbronson.com">contact@ronbronson.com</a>.</span>
+  </footer>
+
+</div>
+</body>
+</html>
