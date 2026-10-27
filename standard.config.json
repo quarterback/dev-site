@@ -8,7 +8,7 @@
   },
   "documents": {
     "include": ["projects/*.html"],
-    "exclude": ["projects/_template.html", "projects/varsityapex.html", "projects/finnish-baseball-game-design.html", "projects/parliament-of-neighbors.html"],
+    "exclude": ["projects/_template.html", "projects/varsityapex.html", "projects/finnish-baseball-game-design.html"],
     "titleStrip": ["Ron Bronson"],
     "overrides": {}
   }
