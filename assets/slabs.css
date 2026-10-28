@@ -165,3 +165,49 @@ a:hover { color: var(--blue); }
   .pkg { padding: 22px 20px; }
   .pkg__cmd { font-size: 19px; }
 }
+
+/* Project page extras: tables, definition lists, reference cards, tiers */
+.project__body table { display: block; overflow-x: auto; width: 100%; margin: 8px 0 32px; border-collapse: collapse; font-size: 18px; line-height: 1.45; }
+.project__body th { text-align: left; padding: 10px 24px 10px 0; border-bottom: 2px solid var(--blue); font-family: var(--mono); font-size: 15px; font-weight: 600; color: var(--muted); white-space: nowrap; }
+.project__body td { padding: 12px 24px 12px 0; border-bottom: 1px solid var(--hair); vertical-align: top; }
+.project__body dl { display: grid; grid-template-columns: minmax(140px, 220px) minmax(0, 1fr); margin: 8px 0 32px; font-size: 19px; line-height: 1.5; }
+.project__body dt, .project__body dd { margin: 0; padding: 12px 0; border-top: 1px solid var(--hair); }
+.project__body dt { padding-right: 24px; font-family: var(--mono); font-size: 16px; font-weight: 600; color: var(--blue); }
+.rep-scale { margin: 8px 0 32px; font-size: 19px; line-height: 1.45; }
+.rep-scale__head, .rep-scale__row { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 24px; padding: 12px 0; border-top: 1px solid var(--hair); }
+.rep-scale__head { border-top: 0; border-bottom: 2px solid var(--blue); font-family: var(--mono); font-size: 15px; font-weight: 600; color: var(--muted); }
+.rep-scale .range { font-family: var(--mono); font-weight: 600; color: var(--blue); }
+.rep-scale .label { font-weight: 700; }
+.refs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin: 8px 0 32px; }
+.ref { display: grid; gap: 8px; align-content: start; padding-top: 16px; border-top: 2px solid var(--blue); font-size: 18px; line-height: 1.45; }
+.ref__type { font-family: var(--mono); font-size: 15px; color: var(--muted); }
+.ref__name { font-family: var(--display); font-weight: 800; font-size: 30px; line-height: 1; letter-spacing: -.03em; }
+.tiers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin: 8px 0 32px; }
+.tier { display: grid; gap: 8px; align-content: start; padding-top: 16px; border-top: 2px solid var(--blue); font-size: 18px; line-height: 1.45; }
+.tier__label { font-family: var(--mono); font-size: 15px; font-weight: 600; color: var(--blue); }
+.tier__name { font-weight: 700; }
+.ticker { display: inline-block; margin-right: 14px; font-family: var(--mono); font-size: .55em; font-weight: 600; letter-spacing: 0; color: var(--blue); vertical-align: middle; }
+.signal { display: block; margin-top: 8px; font-family: var(--mono); font-size: 16px; font-weight: 400; letter-spacing: 0; color: var(--muted); }
+.project__body h3 { margin: 40px 0 14px; font-family: var(--display); font-weight: 800; font-size: 30px; line-height: 1.05; letter-spacing: -.03em; }
+.project__body code { font-family: var(--mono); font-size: .88em; }
+.project__body figcaption { margin-top: 10px; font-family: var(--mono); font-size: 14px; line-height: 1.45; color: var(--muted); }
+.project__body a { overflow-wrap: anywhere; }
+@media (max-width: 900px) {
+  .refs, .tiers { grid-template-columns: 1fr; }
+  .project__body dl { grid-template-columns: 1fr; }
+  .project__body dd { border-top: 0; padding-top: 0; }
+  .rep-scale__head, .rep-scale__row { grid-template-columns: 88px minmax(0, 1fr); gap: 14px; }
+  .project__body .live-link { font-size: 28px; }
+}
+
+/* Envelope contact button in the nav */
+.nav-mail { display: inline-flex; align-items: center; color: inherit; }
+.nav-mail svg { display: block; width: 22px; height: 22px; }
+.nav-mail:hover { color: var(--blue); }
+
+/* Project pages use the blue colorway from the Paper secondary-page mockup */
+body.pg-blue { --paper: #1f2bff; --ink: #ffffff; --blue: #ffffff; --muted: #c9ccff; --hair: rgba(255, 255, 255, .32); }
+body.pg-blue a:hover { color: #c9ccff; }
+body.pg-blue .project__meta .sep { color: #7f86ff; }
+body.pg-blue .project > .figure, body.pg-blue .figpair img { background: #fff; }
+@media (max-width: 600px) { .project__title { font-size: 13vw; overflow-wrap: anywhere; } }
