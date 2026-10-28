@@ -431,3 +431,16 @@ body.pg-blue .project > .figure, body.pg-blue .figpair img { background: #fff; }
   .fields li + li::before { margin: 0 .25em; }
 }
 @media (max-width: 600px) { .fac__h { font-size: 19vw; } .hero--reach h1 { font-size: 15.5vw; } .top nav { gap: 8px 22px; font-size: 16px; } }
+
+/* Other projects: two columns, same size type for every description */
+.op { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 40px 64px; }
+.op__i { display: grid; gap: 10px; align-content: start; }
+.op__t { margin: 0; font-family: var(--display); font-weight: 600; font-size: var(--t-h3); line-height: 1.08; letter-spacing: -.025em; }
+.op__t a { text-decoration: none; }
+.op__t a[data-shot] { background-image: linear-gradient(var(--blue), var(--blue)); background-size: 100% 3px; background-position: 0 100%; background-repeat: no-repeat; padding-bottom: 2px; }
+.op__t a:hover { color: var(--blue); }
+.op__d { margin: 0; max-width: 30em; font-family: var(--text); font-size: var(--t-note); line-height: 1.52; color: var(--muted); }
+.shot-pop { position: fixed; left: 0; top: 0; z-index: 50; width: 420px; pointer-events: none; opacity: 0; transition: opacity .12s; background: var(--ink); box-shadow: 0 18px 40px rgba(11, 11, 20, .28); }
+.shot-pop.is-on { opacity: 1; }
+.shot-pop img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top left; }
+@media (max-width: 900px) { .op { grid-template-columns: 1fr; gap: 28px; } }
