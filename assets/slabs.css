@@ -459,3 +459,14 @@ body.pg-blue .project > .figure, body.pg-blue .figpair img { background: #fff; }
   .mq blockquote { padding-top: 64px; }
   .mq blockquote::before { left: -4px; top: 0; width: auto; text-align: left; font-size: 120px; }
 }
+
+/* About: speaking block. Offerings page. */
+.fac__p, .off__p { margin: 0 0 24px; max-width: 34em; font-family: var(--text); font-size: var(--t-stand); line-height: 1.5; }
+.fac__talk { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 28px; align-items: end; margin-top: 8px; }
+.fac__talk .vid { width: 100%; }
+.fac__links { display: flex; flex-wrap: wrap; gap: 12px 32px; margin: 28px 0 0; font-family: var(--mono); font-size: 18px; color: var(--blue); }
+.off__i { margin-top: 104px; max-width: 980px; }
+.off__i h2 { margin: 0 0 20px; font-family: var(--display); font-weight: 800; font-size: var(--t-h2); line-height: .98; letter-spacing: -.04em; }
+.off__i .reach__btn { margin-top: 8px; }
+.off .fac__lede { max-width: 32em; }
+@media (max-width: 900px) { .fac__talk { grid-template-columns: 1fr; } .off__i { margin-top: 80px; } }
