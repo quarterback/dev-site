@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="icon" href="/favicon.png" type="image/png" sizes="any" />
-<title>Oregon HS Tennis Power Rankings — Ron Bronson</title>
+<title>Oregon HS Tennis Power Rankings | Ron Bronson</title>
 <meta name="description" content="The first power ranking for Oregon high school tennis teams. I designed the formula, built the entire site, and put it online on live statewide data, used as a reference all through the 2026 season." />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Oregon HS Tennis Power Rankings — Ron Bronson" />
-<meta name="twitter:description" content="The first power ranking for Oregon high school tennis teams — formula, site, and live statewide data." />
+<meta name="twitter:title" content="Oregon HS Tennis Power Rankings | Ron Bronson" />
+<meta name="twitter:description" content="The first power ranking for Oregon high school tennis teams, with the formula, site, and live statewide data." />
 <link rel="preload" as="font" type="font/woff2" href="../assets/fonts/gallery/PPNeueMontreal-Extrabold.woff2" crossorigin />
 <!-- standard.site -->
 <link rel="site.standard.document" href="at://did:plc:odgxwakrg5r2zjetnrkxuh5c/site.standard.document/3mpfibvk6ob2o" />
@@ -53,13 +53,13 @@
 
       <h2>The long game</h2>
 
-      <p>The tools are half of it. The other half was six years of persuading the OSAA to change how it runs the sport.</p>
+      <p>Alongside the tools came six years of persuading the OSAA to change how it runs the sport.</p>
 
       <dl class="timeline">
         <dt>2019</dt>
         <dd>Oregon&rsquo;s high school tennis program has no team championship.</dd>
 
-        <dt>2020 — 2021</dt>
+        <dt>2020 to 2021</dt>
         <dd>The case goes public in writing: split the seasons, raise the match limit, add a power-ranking-seeded team tournament.</dd>
 
         <dt>early 2020s</dt>
@@ -79,29 +79,29 @@
 
       <h2>The problem it models</h2>
 
-      <p>A tennis dual meet is eight concurrent matches. Four singles, four doubles; win five flights and you win the meet. That structure breaks ordinary ranking. A 5–3 win at the bottom of the lineup looks identical to a 5–3 win at the top, win-loss records skip over who you played, and lineups can be &ldquo;stacked&rdquo; to game any naive metric.</p>
+      <p>A tennis dual meet is eight concurrent matches, four singles and four doubles, and the team that wins five flights wins the meet. That structure breaks ordinary ranking. A 5-3 win at the bottom of the lineup looks identical to a 5-3 win at the top, win-loss records skip over who you played, and lineups can be &ldquo;stacked&rdquo; to game any naive metric.</p>
 
-      <p>Central data was sparse, and existing ratings handled none of this. I had to define the measurement first, then build ingestion, rating models, simulation, and the public tools on top of it. It also has to absorb forfeits, ties, six-flight meets, classification changes, and dirty source data.</p>
+      <p>Central data was sparse, and existing ratings handled none of this. I had to define the measurement before building ingestion, rating models, simulation, and the public tools on top of it. It also has to absorb forfeits, ties, six-flight meets, classification changes, and dirty source data.</p>
 
       <h2>The models</h2>
 
-      <h3>APR — Adjusted Power Rating</h3>
+      <h3>APR: Adjusted Power Rating</h3>
       <p>RPI-style strength of schedule, aligned with what the OSAA already uses: your wins matter, your opponents&rsquo; more, theirs too. <i>&ldquo;How good are you, given who you played?&rdquo;</i></p>
 
-      <h3>FWS — Flight-Weighted Score</h3>
-      <p>Scores all eight flights on a weighted curve (1st singles / doubles = 1.00 down to 4th doubles = 0.10, max 3.95). The top of the lineup drives the number, and depth counts — a 7–1 sweep outscores a 5–3 win with the same top flights, which makes stacking pointless. Normalized for flights actually contested, so a six-flight meet still produces a clean number.</p>
+      <h3>FWS: Flight-Weighted Score</h3>
+      <p>Scores all eight flights on a weighted curve (1st singles / doubles = 1.00 down to 4th doubles = 0.10, max 3.95). The top of the lineup drives the number, but depth still counts: a 7-1 sweep outscores a 5-3 win with the same top flights, which makes stacking pointless. Normalized for flights actually contested, so a six-flight meet still produces a clean number.</p>
 
       <h3>FWS+</h3>
       <p>FWS made legible, indexed like baseball&rsquo;s ERA+. 100 is exactly average for the classification; 115 is 15% above. It recalibrates as the season fills in, so a team&rsquo;s standing reads in real time and across history.</p>
 
       <h3>Power Index</h3>
-      <p>The blend: <code>(APR × 0.50) + (FWS × 0.50)</code>. Opponent quality and flight dominance in one number.</p>
+      <p>The blend: <code>(APR × 0.50) + (FWS × 0.50)</code>. It combines opponent quality and flight dominance in one number.</p>
 
       <h3>TOSS</h3>
       <p>A later model folding in game-share margin. A/B-tested against the Power Index with results reported.</p>
 
       <h3>H2H engine</h3>
-      <p>When teams are close, head-to-head breaks the tie — only when it avoids a rock-paper-scissors loop (A beats B beats C beats A). Split series defer to the metrics.</p>
+      <p>When teams are close, head-to-head breaks the tie, but only when it avoids a rock-paper-scissors loop (A beats B beats C beats A). Split series defer to the metrics.</p>
 
       <h2>On the site</h2>
 
@@ -110,10 +110,10 @@
       <ul>
         <li><b>Rankings dashboard.</b> Every team rated by all four models, filterable by year, classification, and league.</li>
         <li><b>Playoff simulator.</b> What-if brackets, with a regional mode that optimizes travel against competitive integrity.</li>
-        <li><b>Comparison view.</b> Head-to-head and model-vs-model, plus rating-vs-actual results — how well dual-meet strength predicts the individual tournament.</li>
+        <li><b>Comparison view.</b> Head-to-head and model-vs-model, plus rating-vs-actual results, showing how well dual-meet strength predicts the individual tournament.</li>
         <li><b>Methodology.</b> The Power Index explained in plain language, so the rankings are auditable.</li>
         <li><b>Weekly in-season rankings.</b> Snapshots, week by week, live.</li>
-        <li><b>All-State archive.</b> Teams from 2022–2025 in one place.</li>
+        <li><b>All-State archive.</b> Teams from 2022 to 2025 in one place.</li>
         <li><b>Bracket tools.</b> A permutation explorer and a fair-bracket generator that stress-test how different seedings actually play out.</li>
         <li><b>SD1 draw suite.</b> A live seeding board, draw tool, and printable / live brackets built to run an actual special-district tournament in the room, on the day, with cloud-saved state.</li>
         <li><b>2027 format tools.</b> A mixed-doubles standby-list tool and the dual team finals format, matching the adopted bracket structure and seeding.</li>
@@ -134,16 +134,16 @@
         <dt>Hosting</dt>
         <dd>Netlify. Static, zero-infrastructure, offline-capable.</dd>
         <dt>Data</dt>
-        <dd>~1,200 team-seasons, every flight, 2021 — present, straight from the OSAA source API.</dd>
+        <dd>~1,200 team-seasons, every flight, 2021 to present, straight from the OSAA source API.</dd>
       </dl>
 
       <h2>Design decisions</h2>
 
-      <p>Static HTML with embedded JSON serves coaches and athletic directors, who need something fast, free, and saveable. A dataset this size belongs in the page. The model exposes raw, intuitive scores (0–3.95 FWS, ERA+-style FWS+) up front and keeps the normalized math underneath.</p>
+      <p>Static HTML with embedded JSON serves coaches and athletic directors, who need something fast, free, and saveable. A dataset this size belongs in the page. The model exposes raw, intuitive scores (0 to 3.95 FWS, ERA+-style FWS+) up front and keeps the normalized math underneath.</p>
 
       <p>The design work went into the model: a rating design that makes stacking pointless, tiebreaker logic that refuses circular results, travel optimization that protects top seeds while cutting miles for the rest, and a methodology published in full so the numbers carry their own evidence.</p>
 
-      <p>The model had to be transparent enough for an institution to trust, and I had to keep it running long enough for the institution to say yes.</p>
+      <p>The model had to be transparent enough for an institution to trust, which meant keeping it running in public until the OSAA said yes.</p>
 
       <p style="margin-top: clamp(20px, 3vw, 36px)"><a class="live-link" href="https://oregontennis.org" target="_blank" rel="noopener">oregontennis.org</a></p>
 

@@ -5,41 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="icon" href="/favicon.png" type="image/png" sizes="any" />
-<title>404 &mdash; Ron Bronson</title>
+<title>404 | Ron Bronson</title>
 <meta name="robots" content="noindex" />
-<meta name="description" content="Page not found." />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/assets/faces.css" />
-<link rel="stylesheet" href="/assets/core.css" />
-<link rel="stylesheet" href="/assets/home.css" />
-<script src="/assets/palette.js"></script>
-<style>
-  .e404 { font-family:var(--display); font-weight:700; font-size:clamp(96px,26vw,300px); letter-spacing:-0.04em; line-height:0.86; margin:clamp(18px,3vw,36px) 0 0; color:var(--ink); }
-  .lead { max-width:54ch; margin:clamp(14px,2vw,22px) 0 clamp(26px,4vw,40px); font-family:var(--text); font-weight:500; font-size:clamp(18px,1.6vw,22px); line-height:1.5; color:var(--ink); text-wrap:pretty; }
-  .backlinks { list-style:none; margin:0; padding:clamp(16px,2.2vw,24px) 0 0; border-top:var(--frame) solid var(--ink); display:flex; flex-wrap:wrap; gap:10px 22px; font-family:var(--mono); font-size:13px; }
-  .backlinks a { color:var(--ink); border-bottom:var(--frame) solid var(--accent); padding-bottom:1px; white-space:nowrap; }
-  .backlinks a:hover { color:var(--accent); }
-</style>
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/gallery/PPNeueMontreal-Extrabold.woff2" crossorigin />
+<link rel="stylesheet" href="/assets/slabs.css" />
 <script src="/assets/contact.js" defer></script>
 </head>
-<body class="site--dev scale--front site--blocks">
-<div class="wrap wrap--blocks">
+<body class="pg-blue">
+<div class="s-wrap">
 
 
-  <header class="topbar block block--ink"><div class="topbar__in"><a class="name" href="/index.html">Ron Bronson</a><nav aria-label="Main navigation"><a href="https://ronbronson.design">Product Leadership</a><a href="https://thinkingweapons.com">Studio</a><a href="https://blog.ronbronson.dev">Blog</a><a class="nav__contact" href="#contact" data-contact aria-label="Contact"><span aria-hidden="true">&#9993;</span></a></nav></div></header>
+  <header class="top">
+    <p class="top__name"><a href="/index.html">Ron Bronson</a></p>
+    <nav aria-label="Main navigation"><a href="/index.html">All projects</a><a href="https://ronbronson.design">Product &amp; Design</a><a href="https://blog.ronbronson.dev">Blog</a><a class="nav-mail" href="#contact" data-contact aria-label="Email" title="Email"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14"/><path d="M3 6l9 7 9-7"/></svg></a></nav>
+  </header>
 
-  <p class="e404">404</p>
-  <p class="lead">That page isn&rsquo;t here. It may have moved, been retired, or never existed. Head back to the working catalog:</p>
+  <article class="project">
+    <h1 class="project__title">404</h1>
+    <p class="project__lede">That page isn&rsquo;t here. It may have moved, been retired, or never existed. Head back to the working catalog:</p>
+    <p class="e404__links"><a href="/index.html">The catalog</a> &middot; <a href="https://ronbronson.design">ronbronson.design</a></p>
+  </article>
 
-  <ul class="backlinks">
-    <li><a href="/index.html">The catalog</a></li>
-    <li><a href="https://ronbronson.design">ronbronson.design</a></li>
-  </ul>
-
-  <footer class="foot">
-    <p><a href="#contact" data-contact>Contact</a></p>
+  <footer class="foot" id="contact">
+    <p class="contact"><a href="#contact" data-contact>Contact</a></p>
   </footer>
 
 </div>

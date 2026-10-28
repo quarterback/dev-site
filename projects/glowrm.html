@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="icon" href="/favicon.png" type="image/png" sizes="any" />
-<title>Glowrm — Ron Bronson</title>
-<meta name="description" content="Trust infrastructure for ATProto social applications. Apps plug in for cross-app reputation, shared moderation, and a configurable resource-allocation system, so each app doesn&rsquo;t rebuild the same trust plumbing." />
+<title>Glowrm | Ron Bronson</title>
+<meta name="description" content="Trust infrastructure for ATProto social applications. Apps plug in for cross-app reputation, shared moderation, and a configurable resource-allocation system, so apps share one set of trust plumbing." />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Glowrm — Ron Bronson" />
+<meta name="twitter:title" content="Glowrm | Ron Bronson" />
 <meta name="twitter:description" content="Trust infrastructure for ATProto social applications: cross-app reputation, shared moderation, and portable trust." />
 <link rel="preload" as="font" type="font/woff2" href="../assets/fonts/gallery/PPNeueMontreal-Extrabold.woff2" crossorigin />
 <!-- standard.site -->
@@ -28,21 +28,21 @@
   <article class="project">
 
     <h1 class="project__title">Glowrm</h1>
-    <p class="project__lede">Trust infrastructure for ATProto social applications. Apps plug in for cross-app reputation, shared moderation, and a configurable resource-allocation system, so each app doesn&rsquo;t rebuild the same trust plumbing.</p>
+    <p class="project__lede">Trust infrastructure for ATProto social applications. Apps plug in for cross-app reputation, shared moderation, and a configurable resource-allocation system, so apps share one set of trust plumbing.</p>
 
     <div class="project__body">
 
       <div class="pitch">
         <span class="label">The pitch</span>
-        Portable identity (ATProto) needs portable reputation. Glowrm makes trust travel with users.
+        Portable identity (ATProto) needs portable reputation, so Glowrm makes a user&rsquo;s trust travel with them.
       </div>
 
       <h2>What it does</h2>
 
-      <p>Instead of every dating app, professional network, or friendship platform building its own trust and moderation systems, apps plug into Glowrm to share a common reputation layer.</p>
+      <p>Dating apps, professional networks, and friendship platforms plug into Glowrm to share one reputation layer for trust and moderation.</p>
 
       <ul>
-        <li><b>Cross-app reputation.</b> User trust scores on a 20&ndash;80 scale that travel between apps. Good behavior on a dating app means you start with that same reputation on a professional network.</li>
+        <li><b>Cross-app reputation.</b> User trust scores on a 20 to 80 scale that travel between apps. Good behavior on a dating app means you start with that same reputation on a professional network.</li>
         <li><b>Shared moderation.</b> When someone gets reported on one app, it affects their reputation across the network. Bad actors can&rsquo;t platform-hop into a clean slate.</li>
         <li><b>Resource allocation (SPA).</b> A configurable system that caps how many people a user can contact per period. Each app picks its own units, count, and refresh cadence.</li>
         <li><b>Identity registry.</b> Maps ATProto DIDs to apps, tracks verification status, lets apps query each other&rsquo;s coverage without storing each other&rsquo;s user data.</li>
@@ -50,11 +50,11 @@
 
       <h2>The problem it solves</h2>
 
-      <p>ATProto gives users portable identity — your DID and profile follow you across apps, you own your data, no app can lock you in. The trade-off: get banned from one dating app, join another with a clean slate. Harass someone, switch platforms, fresh start. Bad behavior has no long-term consequences.</p>
+      <p>ATProto gives users portable identity: your DID and profile follow you across apps, you own your data, and no app can lock you in. The trade-off is that someone banned from one dating app can join another with a clean slate, and someone who harasses people can switch platforms and start fresh, so bad behavior carries no long-term consequences.</p>
 
-      <p>Traditional platforms solve this with centralized control. Facebook bans you, you&rsquo;re banned everywhere Facebook operates — but you&rsquo;re also locked into Facebook&rsquo;s ecosystem. You trade freedom for safety.</p>
+      <p>Traditional platforms solve this with centralized control. If Facebook bans you, you&rsquo;re banned everywhere Facebook operates, and you&rsquo;re also locked into Facebook&rsquo;s ecosystem, which trades your freedom for safety.</p>
 
-      <p>With Glowrm, users keep the freedom to move between apps, and their reputation follows them.</p>
+      <p>Glowrm lets users move freely between apps while their reputation follows them.</p>
 
       <h2>How it works in practice</h2>
 
@@ -62,7 +62,7 @@
 
       <div class="flow">
         <ol>
-          <li><b>Alice signs into YGF</b> with ATProto. YGF tells Glowrm to register her DID. Glowrm creates an identity record, starts her reputation at <code>50</code>, gives her fifteen jars for the week.</li>
+          <li><b>Alice signs into YGF</b> with ATProto. YGF tells Glowrm to register her DID. Glowrm creates an identity record, starts her reputation at <code>50</code>, and gives her fifteen jars for the week.</li>
           <li><b>Alice sends five jars to Bob.</b> YGF asks Glowrm to deduct five units. Balance: <code>10</code>.</li>
           <li><b>Bob and Alice match.</b> YGF reports a <code>positive_interaction</code>. Both reputations tick up by one.</li>
           <li><b>Alice reports Bob for harassment.</b> YGF posts a high-severity trust event. Bob&rsquo;s reputation drops three points and the event flags for admin review.</li>
@@ -70,21 +70,21 @@
           <li><b>Bob tries to join Roster,</b> a professional network. Roster asks Glowrm to register his DID. Glowrm finds the existing identity, returns <code>{ reputation: 20, status: &quot;banned&quot; }</code>. Roster declines.</li>
           <li><b>Alice joins Roster.</b> Glowrm returns <code>{ reputation: 51, status: &quot;active&quot; }</code>. Roster shows her as a trusted user from day one.</li>
         </ol>
-        <p class="key">Alice&rsquo;s good behavior on YGF gave her a head start on Roster. Bob&rsquo;s bad behavior on YGF kept him out. Neither app had to build that coordination.</p>
+        <p class="key">Alice&rsquo;s good behavior on YGF gave her a head start on Roster, Bob&rsquo;s bad behavior kept him out, and Glowrm handled that coordination for both apps.</p>
       </div>
 
-      <h2>Reputation scores (20&ndash;80)</h2>
+      <h2>Reputation scores (20 to 80)</h2>
 
       <p>The scale is borrowed from baseball scouting. <code>50</code> is average. Scores cluster around the middle; outliers at either extreme are rare and meaningful.</p>
 
       <div class="rep-scale" role="table" aria-label="Reputation bands">
         <div class="rep-scale__head"><span>Range</span><span>Band</span></div>
-        <div class="rep-scale__row"><span class="range">70 — 80</span><span><span class="label">Exceptional.</span> <span class="desc">Consistently positive interactions; helpful, responsive.</span></span></div>
-        <div class="rep-scale__row"><span class="range">60 — 69</span><span><span class="label">Above average.</span> <span class="desc">Good track record; few issues.</span></span></div>
-        <div class="rep-scale__row"><span class="range">50 — 59</span><span><span class="label">Average.</span> <span class="desc">Normal range for a new or moderately active user.</span></span></div>
-        <div class="rep-scale__row"><span class="range">40 — 49</span><span><span class="label">Below average.</span> <span class="desc">Some negative events; approaching problematic.</span></span></div>
-        <div class="rep-scale__row"><span class="range">30 — 39</span><span><span class="label">Poor.</span> <span class="desc">Multiple reports, blocks, or suspicious patterns.</span></span></div>
-        <div class="rep-scale__row"><span class="range">20 — 29</span><span><span class="label">Critical.</span> <span class="desc">Banned or serial bad actor.</span></span></div>
+        <div class="rep-scale__row"><span class="range">70 to 80</span><span><span class="label">Exceptional.</span> <span class="desc">Consistently positive interactions; helpful, responsive.</span></span></div>
+        <div class="rep-scale__row"><span class="range">60 to 69</span><span><span class="label">Above average.</span> <span class="desc">Good track record; few issues.</span></span></div>
+        <div class="rep-scale__row"><span class="range">50 to 59</span><span><span class="label">Average.</span> <span class="desc">Normal range for a new or moderately active user.</span></span></div>
+        <div class="rep-scale__row"><span class="range">40 to 49</span><span><span class="label">Below average.</span> <span class="desc">Some negative events; approaching problematic.</span></span></div>
+        <div class="rep-scale__row"><span class="range">30 to 39</span><span><span class="label">Poor.</span> <span class="desc">Multiple reports, blocks, or suspicious patterns.</span></span></div>
+        <div class="rep-scale__row"><span class="range">20 to 29</span><span><span class="label">Critical.</span> <span class="desc">Banned or serial bad actor.</span></span></div>
       </div>
 
       <p>Scoring is designed to be hard to game. Multiple low scores are required to move a rating; outliers are dropped; recent events weigh more; reports from trusted users count for more.</p>
@@ -99,9 +99,9 @@
         </thead>
         <tbody>
           <tr><td>Positive interaction (match, conversation, completed transaction)</td><td>+1 (capped at +15 from this source)</td></tr>
-          <tr><td>Report — low severity</td><td>−1</td></tr>
-          <tr><td>Report — medium severity</td><td>−2</td></tr>
-          <tr><td>Report — high severity</td><td>−3</td></tr>
+          <tr><td>Report, low severity</td><td>−1</td></tr>
+          <tr><td>Report, medium severity</td><td>−2</td></tr>
+          <tr><td>Report, high severity</td><td>−3</td></tr>
           <tr><td>Block</td><td>−3</td></tr>
           <tr><td>Warn / suspend</td><td>weighted</td></tr>
           <tr><td>Ban</td><td>sets to 20</td></tr>
@@ -110,7 +110,7 @@
 
       <h2>Strategic Profile Allocation (SPA)</h2>
 
-      <p>Unlimited actions invite spam. Tinder-style swiping creates a spray-and-pray default. LinkedIn InMail becomes a sales pitch fire hose. SPA fixes that at the infrastructure layer: every app issues users finite <i>units</i> per period, and recipients see how many units someone spent on them.</p>
+      <p>Unlimited actions invite spam: Tinder-style swiping defaults to spray-and-pray, and LinkedIn InMail turns into a fire hose of sales pitches. SPA fixes that at the infrastructure layer: every app issues users finite <i>units</i> per period, and recipients see how many units someone spent on them.</p>
 
       <p>Each app configures its own SPA shape:</p>
 
@@ -119,8 +119,8 @@
           <tr><th>App</th><th>Units</th><th>Name</th><th>Period</th><th>Variable?</th></tr>
         </thead>
         <tbody>
-          <tr><td>YGF (dating)</td><td>15</td><td>jars</td><td>7 days</td><td>Yes (1&ndash;10)</td></tr>
-          <tr><td>Roster (professional)</td><td>10</td><td>credits</td><td>30 days</td><td>Yes (1&ndash;5)</td></tr>
+          <tr><td>YGF (dating)</td><td>15</td><td>jars</td><td>7 days</td><td>Yes (1 to 10)</td></tr>
+          <tr><td>Roster (professional)</td><td>10</td><td>credits</td><td>30 days</td><td>Yes (1 to 5)</td></tr>
           <tr><td>Roomies (roommate)</td><td>20</td><td>waves</td><td>14 days</td><td>No (1 only)</td></tr>
         </tbody>
       </table>
@@ -144,23 +144,23 @@
         <dd>Glowrm</dd>
       </dl>
 
-      <p>Users own their content, apps own their features, and Glowrm owns the shared trust layer. No single store holds all of a user&rsquo;s data.</p>
+      <p>No single store holds all of a user&rsquo;s data: content belongs to the user, features to each app, and the shared trust layer to Glowrm.</p>
 
       <h2>Reference implementations</h2>
 
-      <p>Three apps were sketched against the Glowrm API to demonstrate the delegation model end-to-end. Each picks its own SPA shape — different units, different cadence, different rules — but speaks the same trust layer underneath.</p>
+      <p>Three apps were sketched against the Glowrm API to show the delegation model end to end. Each picks its own SPA shape, with its own units, cadence, and rules, and all three use the same trust layer underneath.</p>
 
       <div class="refs">
         <div class="ref">
           <div class="ref__type">Dating</div>
           <div class="ref__name">YGF</div>
-          <div class="ref__spec"><b>15 jars / 7 days</b> · variable 1&ndash;10 · bilateral exchange unlocks messaging · recipients see what you spent.</div>
+          <div class="ref__spec"><b>15 jars / 7 days</b> · variable 1 to 10 · bilateral exchange unlocks messaging · recipients see what you spent.</div>
           <a href="ygf.html">Read the project</a>
         </div>
         <div class="ref">
           <div class="ref__type">Professional</div>
           <div class="ref__name">Roster</div>
-          <div class="ref__spec"><b>10 credits / 30 days</b> · variable 1&ndash;5 · one credit = a quick question, five = a mentorship request.</div>
+          <div class="ref__spec"><b>10 credits / 30 days</b> · variable 1 to 5 · one credit = a quick question, five = a mentorship request.</div>
           <span style="font-family: var(--mono); font-size: 12px; color: var(--ink-soft);">Spec only</span>
         </div>
         <div class="ref">
@@ -171,7 +171,7 @@
         </div>
       </div>
 
-      <h2>What Glowrm is not</h2>
+      <h2>Outside its scope</h2>
 
       <ul>
         <li>A dating app or social app itself.</li>
@@ -182,7 +182,7 @@
 
       <h2>Status</h2>
 
-      <p>Glowrm is a working spec with a published API, three reference implementations, and a documentation site. It&rsquo;s the trust plumbing that <a href="ygf.html" style="border-bottom: 1px solid var(--rule); color: var(--ink);">YGF</a> sits on top of and that Roster and Roomies are designed against. The harder work is operating a real trust clearinghouse at scale: governance, appeals, due process, regulatory standing. The spec exists to make that argument concrete.</p>
+      <p>Glowrm is a working spec with a published API, three reference implementations, and a documentation site. It&rsquo;s the trust plumbing that <a href="ygf.html" style="border-bottom: 1px solid var(--rule); color: var(--ink);">YGF</a> sits on top of and that Roster and Roomies are designed against. The spec is there to make concrete the harder work of operating a real trust clearinghouse at scale: governance, appeals, due process, and regulatory standing.</p>
 
     </div>
 
