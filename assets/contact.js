@@ -14,3 +14,12 @@
     window.location.href = 'mailto:' + address(link.getAttribute('data-contact')) + (subj ? '?subject=' + encodeURIComponent(subj) : '');
   });
 })();
+
+/* Sticky header: tighten it once the page has scrolled. */
+(function () {
+  var top = document.querySelector('.top');
+  if (!top) return;
+  function onScroll() { top.classList.toggle('is-stuck', window.scrollY > 24); }
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+})();
