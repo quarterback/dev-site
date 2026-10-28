@@ -211,3 +211,16 @@ body.pg-blue a:hover { color: #c9ccff; }
 body.pg-blue .project__meta .sep { color: #7f86ff; }
 body.pg-blue .project > .figure, body.pg-blue .figpair img { background: #fff; }
 @media (max-width: 600px) { .project__title { font-size: 13vw; overflow-wrap: anywhere; } }
+
+/* No hard dividers. Sections separate through space and type scale. */
+.slab, .talk, .also__i, .wrow, .exp li, .foot, .slab__by, .ref, .tier, .project__body h2, .project__body li, .project__body dt, .project__body dd, .rep-scale__row { border-top: 0; }
+.project__meta { border-top: 0; border-bottom: 0; padding: 0; }
+.npm { border: 0; }
+.pkg + .pkg { border-top: 0; }
+.slabs { gap: 112px; }
+.slab { padding-top: 0; }
+.talk { padding-top: 0; margin-top: 128px; }
+.foot { margin-top: 140px; }
+.project__body h2 { padding-top: 0; margin-top: 72px; }
+.project__body li { padding: 8px 0; }
+.wrow { padding: 14px 0; }
