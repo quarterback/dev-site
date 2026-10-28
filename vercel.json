@@ -50,6 +50,16 @@
       "source": "/projects/ygf",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/offerings.html",
+      "destination": "/work-with-me.html",
+      "permanent": true
+    },
+    {
+      "source": "/offerings",
+      "destination": "/work-with-me.html",
+      "permanent": true
     }
   ]
 }

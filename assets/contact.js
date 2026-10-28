@@ -1,8 +1,9 @@
 /* Contact links. The address is assembled on click so it never appears in
    the page source, which keeps it out of scraped spam lists. Any element with
-   data-contact opens a new email to it; data-subject fills in the subject line. */
+   data-contact opens a new email to it; data-subject fills in the subject line. data-contact="umich" sends to the Michigan address. */
 (function () {
-  function address() {
+  function address(which) {
+    if (which === 'umich') return 'ude.hcimu@rnosnorb'.split('').reverse().join('');
     return 'moc.nosnorbnor@nor'.split('').reverse().join('');
   }
   document.addEventListener('click', function (e) {
@@ -10,6 +11,6 @@
     if (!link) return;
     e.preventDefault();
     var subj = link.getAttribute('data-subject');
-    window.location.href = 'mailto:' + address() + (subj ? '?subject=' + encodeURIComponent(subj) : '');
+    window.location.href = 'mailto:' + address(link.getAttribute('data-contact')) + (subj ? '?subject=' + encodeURIComponent(subj) : '');
   });
 })();
