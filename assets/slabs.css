@@ -471,3 +471,5 @@ body.pg-blue .project > .figure, body.pg-blue .figpair img { background: #fff; }
 .off .fac__lede { max-width: 32em; }
 @media (max-width: 900px) { .fac__talk { grid-template-columns: 1fr; } .off__i { margin-top: 80px; } }
 .off__btn { margin-top: 36px; }
+.courses__t { margin: 6px 0 0; font-family: var(--mono); font-size: var(--t-meta); color: var(--muted); }
+.courses__t a { color: var(--blue); }
