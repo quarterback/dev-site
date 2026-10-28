@@ -342,3 +342,6 @@ body.pg-blue .project > .figure, body.pg-blue .figpair img { background: #fff; }
   .ref__name { font-size: 24px; }
   .project__body .reading { margin-bottom: 22px; }
 }
+
+/* 404 */
+.e404__links { margin: 28px 0 120px; font-family: var(--mono); font-size: 18px; }
