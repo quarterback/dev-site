@@ -355,3 +355,79 @@ body.pg-blue .project > .figure, body.pg-blue .figpair img { background: #fff; }
 .reach__btn::after { content: ""; width: 22px; height: 16px; background: currentColor; -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4'%3E%3Crect x='2.5' y='5' width='19' height='14'/%3E%3Cpath d='M3 6l9 7 9-7'/%3E%3C/svg%3E") center / contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4'%3E%3Crect x='2.5' y='5' width='19' height='14'/%3E%3Cpath d='M3 6l9 7 9-7'/%3E%3C/svg%3E") center / contain no-repeat; }
 .reach__btn:hover { background: var(--ink); color: var(--paper); }
 @media (max-width: 760px) { .reach { padding-top: 104px; } .reach__ask { font-size: 18px; } .reach__btn { font-size: 21px; padding: 16px 24px; } }
+
+/* ──────────────────────────────────────────────────────────
+   Faculty and serious play front page (Oct 28, 2026)
+   The call to action leads the front page; research fields,
+   teaching, faculty page, talks page and the unlinked more page.
+   ────────────────────────────────────────────────────────── */
+.nav-gh { display: inline-flex; align-items: center; color: inherit; }
+.nav-gh svg { display: block; width: 22px; height: 22px; }
+.nav-gh:hover { color: var(--blue); }
+.top nav { align-items: center; }
+.top nav a[aria-current="page"] { color: var(--blue); }
+
+.hero--reach { gap: 0; padding-bottom: 72px; }
+.hero--reach h1 { font-size: clamp(64px, 11.5vw, 176px); line-height: .88; letter-spacing: -.055em; max-width: 11ch; }
+.hero--reach p { margin-top: 40px; max-width: 30em; }
+.hero--reach .hero__ask { margin-top: 22px; max-width: 38em; font-weight: 400; font-size: var(--t-stand); line-height: 1.5; color: var(--muted); }
+.hero--reach .reach__btn { justify-self: start; margin-top: 36px; }
+
+.sec--tight { padding-top: 32px; padding-bottom: 104px; }
+.sec__link { font-family: var(--mono); font-size: 17px; color: var(--blue); }
+.fields { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 0; }
+.fields li { display: flex; align-items: baseline; }
+.fields li + li::before { content: "/"; margin: 0 .35em; font-family: var(--display); font-weight: 600; font-size: clamp(32px, 3.6vw, 52px); color: var(--blue); }
+.fields h3 { margin: 0; font-family: var(--display); font-weight: 600; font-size: clamp(32px, 3.6vw, 52px); line-height: 1.05; letter-spacing: -.035em; }
+.fields--page h3, .fields--page li + li::before { font-size: clamp(28px, 2.8vw, 40px); }
+
+.courses { list-style: none; margin: 0; padding: 0; display: grid; gap: 22px; }
+.courses li { display: flex; align-items: baseline; gap: 28px; }
+.courses__c { flex: 0 0 120px; font-family: var(--mono); font-size: var(--t-meta); color: var(--blue); }
+.courses h3 { margin: 0; font-family: var(--display); font-weight: 600; font-size: var(--t-h3); line-height: 1.1; letter-spacing: -.025em; }
+.courses h3 a { text-decoration: none; }
+.courses h3 a:hover { text-decoration: underline; }
+
+/* Faculty page */
+.fac { padding: 40px var(--gut) 0; }
+.fac__h { margin: 0; font-family: var(--display); font-weight: 800; font-size: clamp(80px, 14vw, 210px); line-height: .86; letter-spacing: -.06em; color: var(--blue); }
+.fac__lede { margin: 40px 0 0; max-width: 30em; font-weight: 300; font-size: var(--t-lede); line-height: 1.32; letter-spacing: -.012em; }
+.fac__dek { margin: 18px 0 0; max-width: 34em; font-weight: 500; font-size: var(--t-stand); line-height: 1.45; }
+.fac__photo { margin: 56px 0 0; width: min(980px, 100%); height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+.fac__sec { margin-top: 104px; max-width: 980px; }
+.fac__sec h2 { margin: 0 0 28px; font-family: var(--display); font-weight: 800; font-size: var(--t-h2); line-height: .98; letter-spacing: -.04em; }
+.fac__sub { margin: 48px 0 18px; font-family: var(--mono); font-weight: 600; font-size: var(--t-label); letter-spacing: .06em; text-transform: uppercase; color: var(--blue); }
+.fac__sec h2 + .fac__sub { margin-top: 8px; }
+.fac__more { margin: 0; font-family: var(--mono); font-size: 18px; color: var(--blue); }
+.items { list-style: none; margin: 0; padding: 0; display: grid; gap: 26px; }
+.item { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 24px; align-items: baseline; }
+.item__code { font-family: var(--mono); font-size: var(--t-meta); color: var(--blue); }
+.item__t { margin: 0; font-family: var(--display); font-weight: 600; font-size: var(--t-h3); line-height: 1.1; letter-spacing: -.025em; }
+.item__t a { text-decoration: none; }
+.item__t a:hover { text-decoration: underline; }
+.item__meta { margin: 6px 0 0; font-family: var(--mono); font-size: var(--t-meta); color: var(--muted); }
+.item__d { margin: 8px 0 0; max-width: 36em; font-size: var(--t-note); line-height: 1.52; }
+
+/* Talks page */
+.talk--first { margin-top: 64px; }
+.tyr { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 32px; padding: 96px var(--gut) 0; }
+.tyr__h { margin: 0; font-family: var(--display); font-weight: 800; font-size: var(--t-h2-front); line-height: .9; letter-spacing: -.045em; color: var(--blue); }
+.tlist { list-style: none; margin: 0; padding: 0; display: grid; gap: 34px; max-width: 920px; }
+.tlist li { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 24px; align-items: baseline; }
+.tlist__date { font-family: var(--mono); font-size: var(--t-meta); color: var(--blue); }
+.tlist__t { margin: 0 0 6px; font-family: var(--display); font-weight: 600; font-size: var(--t-h3); line-height: 1.1; letter-spacing: -.025em; }
+.tlist__m { margin: 0; font-size: var(--t-note); font-weight: 600; line-height: 1.45; }
+.tlist__d { margin: 10px 0 0; max-width: 38em; font-size: var(--t-note); line-height: 1.55; color: var(--muted); }
+.tlist__links { display: flex; gap: 18px; margin: 10px 0 0; font-family: var(--mono); font-size: var(--t-meta); color: var(--blue); }
+.tnote { margin: 96px var(--gut) 0; font-family: var(--mono); font-size: 17px; }
+.slabs--more { padding-top: 72px; }
+
+@media (max-width: 900px) {
+  .tyr { grid-template-columns: 1fr; gap: 20px; padding-top: 72px; }
+  .tlist li, .item { grid-template-columns: 1fr; gap: 6px; }
+  .courses li { flex-direction: column; gap: 4px; }
+  .courses__c { flex: none; }
+  .fac__sec { margin-top: 80px; }
+  .fields li + li::before { margin: 0 .25em; }
+}
+@media (max-width: 600px) { .fac__h { font-size: 19vw; } .hero--reach h1 { font-size: 15.5vw; } .top nav { gap: 8px 22px; font-size: 16px; } }
