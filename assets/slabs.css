@@ -345,3 +345,13 @@ body.pg-blue .project > .figure, body.pg-blue .figpair img { background: #fff; }
 
 /* 404 */
 .e404__links { margin: 28px 0 120px; font-family: var(--mono); font-size: 18px; }
+
+/* Closing call to action: heading, subhead, the ask, one email button */
+.reach { padding-top: 160px; max-width: 1100px; }
+.reach__h { margin: 0; font-family: var(--display); font-weight: 800; font-size: clamp(56px, 8vw, 128px); line-height: .9; letter-spacing: -.05em; color: var(--blue); }
+.reach__sub { margin: 32px 0 0; max-width: 900px; font-family: var(--text); font-weight: 400; font-size: clamp(24px, 2.3vw, 32px); line-height: 1.38; color: var(--ink); }
+.reach__ask { margin: 24px 0 0; max-width: 780px; font-family: var(--text); font-size: 21px; line-height: 1.55; color: var(--muted); }
+.reach__btn { display: inline-flex; align-items: center; gap: 12px; margin-top: 36px; padding: 18px 30px; background: var(--blue); color: #fff; font-family: var(--display); font-weight: 800; font-size: 24px; letter-spacing: -.02em; text-decoration: none; }
+.reach__btn::after { content: ""; width: 22px; height: 16px; background: currentColor; -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4'%3E%3Crect x='2.5' y='5' width='19' height='14'/%3E%3Cpath d='M3 6l9 7 9-7'/%3E%3C/svg%3E") center / contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4'%3E%3Crect x='2.5' y='5' width='19' height='14'/%3E%3Cpath d='M3 6l9 7 9-7'/%3E%3C/svg%3E") center / contain no-repeat; }
+.reach__btn:hover { background: var(--ink); color: var(--paper); }
+@media (max-width: 760px) { .reach { padding-top: 104px; } .reach__ask { font-size: 18px; } .reach__btn { font-size: 21px; padding: 16px 24px; } }
