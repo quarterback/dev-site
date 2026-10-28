@@ -444,3 +444,18 @@ body.pg-blue .project > .figure, body.pg-blue .figpair img { background: #fff; }
 .shot-pop.is-on { opacity: 1; }
 .shot-pop img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top left; }
 @media (max-width: 900px) { .op { grid-template-columns: 1fr; gap: 28px; } }
+
+/* Mention: quote type in the .dev house style */
+.mention { padding-top: 128px; }
+.mq { margin: 0; display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 8px 32px; max-width: 1180px; }
+.mq blockquote { grid-column: 2; margin: 0; position: relative; }
+.mq blockquote::before { content: "\201C"; position: absolute; left: -132px; top: -.08em; width: 120px; text-align: right; font-family: var(--display); font-weight: 800; font-size: clamp(120px, 12vw, 180px); line-height: .8; color: var(--blue); }
+.mq blockquote p { margin: 0; font-family: var(--display); font-weight: 600; font-size: clamp(32px, 3.6vw, 54px); line-height: 1.04; letter-spacing: -.03em; }
+.mq figcaption { grid-column: 2; margin-top: 22px; font-family: var(--mono); font-size: var(--t-meta); line-height: 1.5; color: var(--muted); }
+.mq figcaption b { font-family: var(--text); font-weight: 700; font-size: var(--t-note); color: var(--ink); }
+@media (max-width: 760px) {
+  .mq { grid-template-columns: 1fr; }
+  .mq blockquote, .mq figcaption { grid-column: 1; }
+  .mq blockquote { padding-top: 64px; }
+  .mq blockquote::before { left: -4px; top: 0; width: auto; text-align: left; font-size: 120px; }
+}
