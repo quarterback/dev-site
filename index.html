@@ -33,7 +33,8 @@
     <div class="cta"><a href="#built">Browse projects</a><a href="https://blog.ronbronson.dev">Read the writing</a></div>
   </section>
 
-  <section class="slabs" id="built" aria-label="Projects">
+  <section class="slabs" id="built" aria-labelledby="h-built">
+    <h2 class="vh" id="h-built">Projects</h2>
     <article class="slab">
       <a class="slab__shot" href="projects/oregon-tennis.html" aria-label="Oregon HS Tennis Power Rankings"><img src="assets/oregon-tennis/home.png" alt="Screenshot of oregontennis.org" loading="lazy" /></a>
       <div class="slab__tx">
@@ -71,11 +72,12 @@
     </article>
   </section>
 
-  <section class="talk" aria-label="Talk">
+  <section class="talk" aria-labelledby="h-talk">
+    <h2 class="vh" id="h-talk">Talk</h2>
     <a class="vid" href="https://www.youtube.com/watch?v=_HAVowmb3JU" target="_blank" rel="noopener" aria-label="Watch What Finnish Baseball Taught Me About Game Design on YouTube"><img src="https://i.ytimg.com/vi/_HAVowmb3JU/hqdefault.jpg" alt="" loading="lazy" /><span class="play"></span></a>
     <div class="talk__tx">
-      <span class="talk__k">Donut.js, Portland, Nov. 2019</span>
-      <p class="talk__t"><a href="https://www.youtube.com/watch?v=_HAVowmb3JU" target="_blank" rel="noopener">What Finnish Baseball Taught Me About Game Design</a></p>
+      <h3 class="talk__t"><a href="https://www.youtube.com/watch?v=_HAVowmb3JU" target="_blank" rel="noopener">What Finnish Baseball Taught Me About Game Design</a></h3>
+      <p class="talk__k">Donut.js, Portland, Nov. 2019</p>
       <a class="talk__go" href="https://www.youtube.com/watch?v=_HAVowmb3JU" target="_blank" rel="noopener">Watch the talk</a>
     </div>
   </section>
@@ -98,9 +100,9 @@
   <section class="sec" id="npm" aria-labelledby="h-npm">
     <div class="sec__head"><h2 id="h-npm">On npm</h2><p class="sec__note">Three tools I publish and use daily. prosekeep and plain-language-default check the copy on this site and on the other two.</p></div>
     <div class="npm">
-      <div class="pkg"><div class="pkg__head"><span class="pkg__cmd">$ npm i closedtab</span><span class="pkg__v">0.5.0</span></div><p>Reviews the work AI agents do. Each run leaves an after-action record of what you asked for, what the agent did, and the calls it made on its own. It scores that record and reconciles it against a trace of what actually happened. CLI and MCP.</p><div class="pkg__links"><a href="https://www.npmjs.com/package/closedtab" target="_blank" rel="noopener">npm</a> <a href="https://github.com/quarterback/closedtab" target="_blank" rel="noopener">GitHub</a> <a href="https://blog.ronbronson.com/closedtab-a-npm-shared-memory-for-you-and-your-ai-agents" target="_blank" rel="noopener">Write-up</a></div></div>
-      <div class="pkg"><div class="pkg__head"><span class="pkg__cmd">$ npm i prosekeep</span><span class="pkg__v">0.3.0</span></div><p>Carries an author&rsquo;s editorial decisions across repositories and agent tools. Plain-language and house-style checks, source comparisons, a review protocol, an Agent Skill, a CLI, and an MCP server. It keeps an agent from turning your argument into generic AI writing.</p><div class="pkg__links"><a href="https://www.npmjs.com/package/prosekeep" target="_blank" rel="noopener">npm</a> <a href="https://github.com/quarterback/prosekeep" target="_blank" rel="noopener">GitHub</a></div></div>
-      <div class="pkg"><div class="pkg__head"><span class="pkg__cmd">$ npm i plain-language-default</span><span class="pkg__v">0.1.0</span></div><p>Federal plain-language rules packaged for agents. It installs as a project skill and writes the rules where an agent will actually read them. It also checks a draft from the CLI or over MCP.</p><div class="pkg__links"><a href="https://www.npmjs.com/package/plain-language-default" target="_blank" rel="noopener">npm</a> <a href="https://github.com/quarterback/plain-as-day" target="_blank" rel="noopener">GitHub</a></div></div>
+      <div class="pkg"><div class="pkg__head"><h3 class="pkg__cmd">$ npm i closedtab</h3><span class="pkg__v">0.5.0</span></div><p>Reviews the work AI agents do. Each run leaves an after-action record of what you asked for, what the agent did, and the calls it made on its own. It scores that record and reconciles it against a trace of what actually happened. CLI and MCP.</p><div class="pkg__links"><a href="https://www.npmjs.com/package/closedtab" target="_blank" rel="noopener">npm</a> <a href="https://github.com/quarterback/closedtab" target="_blank" rel="noopener">GitHub</a> <a href="https://blog.ronbronson.com/closedtab-a-npm-shared-memory-for-you-and-your-ai-agents" target="_blank" rel="noopener">Write-up</a></div></div>
+      <div class="pkg"><div class="pkg__head"><h3 class="pkg__cmd">$ npm i prosekeep</h3><span class="pkg__v">0.3.0</span></div><p>Carries an author&rsquo;s editorial decisions across repositories and agent tools. Plain-language and house-style checks, source comparisons, a review protocol, an Agent Skill, a CLI, and an MCP server. It keeps an agent from turning your argument into generic AI writing.</p><div class="pkg__links"><a href="https://www.npmjs.com/package/prosekeep" target="_blank" rel="noopener">npm</a> <a href="https://github.com/quarterback/prosekeep" target="_blank" rel="noopener">GitHub</a></div></div>
+      <div class="pkg"><div class="pkg__head"><h3 class="pkg__cmd">$ npm i plain-language-default</h3><span class="pkg__v">0.1.0</span></div><p>Federal plain-language rules packaged for agents. It installs as a project skill and writes the rules where an agent will actually read them. It also checks a draft from the CLI or over MCP.</p><div class="pkg__links"><a href="https://www.npmjs.com/package/plain-language-default" target="_blank" rel="noopener">npm</a> <a href="https://github.com/quarterback/plain-as-day" target="_blank" rel="noopener">GitHub</a></div></div>
     </div>
   </section>
 
@@ -108,11 +110,11 @@
     <div class="sec__head"><h2 id="h-writing">Writing</h2></div>
     <p class="sec__note">Sideline Engineering is where I write about what I built, what changed along the way, and the experiments that got out of hand.</p>
     <div class="wlist">
-      <a class="wrow" href="https://blog.ronbronson.dev/3mxstvdgpw22u"><span>24 September 2026</span><b>Revamping Coaching &amp; Player Development</b></a>
-      <a class="wrow" href="https://blog.ronbronson.dev/3mxsmnjjcp224"><span>4 September 2026</span><b>What if you could mix &amp; match salary caps?</b></a>
-      <a class="wrow" href="https://blog.ronbronson.dev/3msnpahn5r22k"><span>9 August 2026</span><b>Introducing ApexVarsity</b></a>
-      <a class="wrow" href="https://blog.ronbronson.dev/3moabn4yk5s23"><span>14 June 2026</span><b>Built a tennis sim. Brought back the sports pages?</b></a>
-      <a class="wrow" href="https://blog.ronbronson.dev/3morm3vffvs2u"><span>21 June 2026</span><b>Bringing a cricket-style lineup to baseball</b></a>
+      <a class="wrow" href="https://blog.ronbronson.dev/3mxstvdgpw22u"><span class="wrow__d">24 September 2026</span><h3 class="wrow__t">Revamping Coaching &amp; Player Development</h3></a>
+      <a class="wrow" href="https://blog.ronbronson.dev/3mxsmnjjcp224"><span class="wrow__d">4 September 2026</span><h3 class="wrow__t">What if you could mix &amp; match salary caps?</h3></a>
+      <a class="wrow" href="https://blog.ronbronson.dev/3msnpahn5r22k"><span class="wrow__d">9 August 2026</span><h3 class="wrow__t">Introducing ApexVarsity</h3></a>
+      <a class="wrow" href="https://blog.ronbronson.dev/3moabn4yk5s23"><span class="wrow__d">14 June 2026</span><h3 class="wrow__t">Built a tennis sim. Brought back the sports pages?</h3></a>
+      <a class="wrow" href="https://blog.ronbronson.dev/3morm3vffvs2u"><span class="wrow__d">21 June 2026</span><h3 class="wrow__t">Bringing a cricket-style lineup to baseball</h3></a>
     </div>
     <p style="margin-top:20px"><a class="also__more" href="https://blog.ronbronson.dev">Sideline Engineering</a></p>
   </section>
@@ -120,8 +122,8 @@
   <section class="sec" aria-labelledby="h-exp">
     <div class="sec__head"><h2 id="h-exp">Concepts &amp; experiments</h2></div>
     <ul class="exp">
-      <li><b>Claude skill.md for agent AARs</b><span class="yr">2026</span><a href="https://blog.ronbronson.com/i-built-a-claude-skill-for-after-action-reviews-on-ai-agent-work" target="_blank" rel="noopener">Blog post</a> <a href="https://github.com/quarterback/AAR" target="_blank" rel="noopener">GitHub</a></li>
-      <li><b>Consequence Design</b><span class="yr">2016</span><a href="https://consequencedesign.com/" target="_blank" rel="noopener">consequencedesign.com</a></li>
+      <li><h3 class="exp__t">Claude skill.md for agent AARs</h3><span class="yr">2026</span><a href="https://blog.ronbronson.com/i-built-a-claude-skill-for-after-action-reviews-on-ai-agent-work" target="_blank" rel="noopener">Blog post</a> <a href="https://github.com/quarterback/AAR" target="_blank" rel="noopener">GitHub</a></li>
+      <li><h3 class="exp__t">Consequence Design</h3><span class="yr">2016</span><a href="https://consequencedesign.com/" target="_blank" rel="noopener">consequencedesign.com</a></li>
     </ul>
   </section>
 
