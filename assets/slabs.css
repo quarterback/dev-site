@@ -500,3 +500,7 @@ body.pg-blue .project > .figure, body.pg-blue .figpair img { background: #fff; }
 @media (max-width: 760px) { .topics li { grid-template-columns: 1fr; } }
 .off__h3 { margin: 72px 0 24px; font-family: var(--display); font-weight: 800; font-size: clamp(30px, 3vw, 44px); line-height: 1; letter-spacing: -.035em; }
 .wlinks { display: flex; flex-wrap: wrap; gap: 12px 32px; margin-top: 24px; }
+/* Viperball: one pixel sprite as the picture */
+.slab--sprite .slab__shot { background: #0b3d2e; display: grid; place-items: center; }
+.slab .slab--sprite .slab__shot img, .slab--sprite .slab__shot img { width: 62%; height: auto; object-fit: contain; image-rendering: pixelated; image-rendering: crisp-edges; }
+.slabs { padding-top: 120px; }
