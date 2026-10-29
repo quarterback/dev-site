@@ -504,3 +504,5 @@ body.pg-blue .project > .figure, body.pg-blue .figpair img { background: #fff; }
 .slab--sprite .slab__shot { background: #0b3d2e; display: grid; place-items: center; }
 .slab .slab--sprite .slab__shot img, .slab--sprite .slab__shot img { width: 62%; height: auto; object-fit: contain; image-rendering: pixelated; image-rendering: crisp-edges; }
 .slabs { padding-top: 120px; }
+.slab:nth-of-type(6) .slab__shot { width: 46%; aspect-ratio: 640 / 460; }
+.slab:nth-of-type(7) .slab__shot { width: 32%; aspect-ratio: 520 / 640; }
