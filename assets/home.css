@@ -40,3 +40,9 @@
 
 /* Contact: envelope in the nav, plain link in the footer. */
 .topbar nav .nav__contact { text-decoration: none; font-size: 1.2em; line-height: 1; }
+
+/* Social row: the same icons as .design and the masthead, above the colophon. */
+.hx-icons { display: flex; flex-wrap: wrap; gap: 12px 20px; margin: 0 0 28px; }
+.hx-i { display: inline-flex; width: 22px; height: 22px; color: var(--ink); }
+.hx-i svg { width: 100%; height: 100%; }
+.hx-i:hover { color: var(--accent); }

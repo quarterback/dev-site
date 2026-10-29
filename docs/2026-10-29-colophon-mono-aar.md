@@ -32,4 +32,10 @@ Rendered at 390px in headless Chromium on all five pages: the colophon is 12/13p
 
 ## 6. Change
 
-Say whether .dev should get a social row. Until then, the Last.fm link appears nowhere on .dev.
+None open.
+
+## Follow-up: social row added
+
+Ron's reply: "Add the social row to dev site". The same twelve icons as .design, Last.fm included, now sit at the top of the footer on every page with a footer: the homepage, about, more, talks, work-with-me, 404, the ATProto page and all thirteen project pages, including the template. `slabs.css` styles the row in ink with a blue hover. `home.css` styles it for the ATProto page, which still uses the older stylesheets, with the accent colour on hover. On the blue project pages the icons are white, inherited from the page.
+
+Checked at 390px and 1280px: no new horizontal scroll and no script errors. The ATProto page was already wider than the screen before this change, and it clips the overflow, so readers never see it.
