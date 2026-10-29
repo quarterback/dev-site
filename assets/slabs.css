@@ -495,6 +495,7 @@ body.pg-blue .project > .figure, body.pg-blue .figpair img { background: #fff; }
 .off__go a:hover { color: var(--ink); }
 .topics { list-style: none; margin: 8px 0 36px; padding: 0; display: grid; gap: 26px; max-width: 900px; }
 .topics li { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 8px 40px; align-items: baseline; }
-.topics h3 { margin: 0; font-family: var(--display); font-weight: 600; font-size: var(--t-h3); line-height: 1.1; letter-spacing: -.025em; }
+.topics h3, .topics h4 { margin: 0; font-family: var(--display); font-weight: 600; font-size: var(--t-h3); line-height: 1.1; letter-spacing: -.025em; }
 .topics p { margin: 0; font-size: var(--t-body); line-height: 1.5; }
 @media (max-width: 760px) { .topics li { grid-template-columns: 1fr; } }
+.off__h3 { margin: 72px 0 24px; font-family: var(--display); font-weight: 800; font-size: clamp(30px, 3vw, 44px); line-height: 1; letter-spacing: -.035em; }

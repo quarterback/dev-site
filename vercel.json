@@ -60,6 +60,16 @@
       "source": "/offerings",
       "destination": "/work-with-me.html",
       "permanent": true
+    },
+    {
+      "source": "/digital-statecraft.html",
+      "destination": "/work-with-me.html#statecraft",
+      "permanent": false
+    },
+    {
+      "source": "/digital-statecraft",
+      "destination": "/work-with-me.html#statecraft",
+      "permanent": false
     }
   ]
 }
