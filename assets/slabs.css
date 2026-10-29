@@ -499,3 +499,4 @@ body.pg-blue .project > .figure, body.pg-blue .figpair img { background: #fff; }
 .topics p { margin: 0; font-size: var(--t-body); line-height: 1.5; }
 @media (max-width: 760px) { .topics li { grid-template-columns: 1fr; } }
 .off__h3 { margin: 72px 0 24px; font-family: var(--display); font-weight: 800; font-size: clamp(30px, 3vw, 44px); line-height: 1; letter-spacing: -.035em; }
+.wlinks { display: flex; flex-wrap: wrap; gap: 12px 32px; margin-top: 24px; }

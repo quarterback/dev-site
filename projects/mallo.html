@@ -6,7 +6,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="icon" href="/favicon.png" type="image/png" sizes="any" />
 <title>Mallo | Ron Bronson</title>
-<meta name="description" content="The first advanced-analytics site for pesäpallo, Finland's national baseball variant, with league-indexed stats, DARKO-style projections, park factors, and playoff odds, built on the official results API. Online at mallo.fi." />
+<meta name="description" content="The first advanced-analytics site for pesäpallo, Finland's national baseball variant, with league-indexed stats, DARKO-style projections, park factors, and playoff odds, built on the official results API." />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Mallo | Ron Bronson" />
 <meta name="twitter:description" content="The first advanced-analytics site for pesäpallo, with league-indexed stats, projections, park factors, and playoff odds, built on the official results API." />
@@ -35,7 +35,7 @@
       <span class="sep">·</span>
       <span>2026</span>
       <span class="sep">·</span>
-      <a class="live-link" href="https://www.mallo.fi" target="_blank" rel="noopener">mallo.fi</a>
+      <a class="live-link" href="https://www.mallo.fi" target="_blank" rel="noopener">Mallo</a>
     </div>
 
     <figure class="figure">
@@ -68,7 +68,7 @@
 
       <p>Before Mallo there was no advanced-analytics site for pes&auml;pallo anywhere, even though the sport keeps decades of granular records. Mallo borrows openly from the analytics sites I grew up on (DARKO for projections, Baseball Savant for percentile fingerprints, FanGraphs for league-indexed rate stats, Baseball-Reference for career lines and comps) and translates each idea into the grammar of the Finnish game.</p>
 
-      <p>Mallo runs on real data from the official results service (<a href="https://www.pesistulokset.fi" target="_blank" rel="noopener">pesistulokset.fi</a>), which turned out to be a documented JSON API with per-player, per-match rows of roughly 82 fields each: hits split by target base, advancement as batter and as runner, turns at bat, defensive position, and match context down to the stadium, weather, temperature, and attendance. Coverage reaches back to the 1940s, with granular stats to 1990. Mallo ingests the current Superpesis season and refreshes on every deploy.</p>
+      <p>Mallo runs on real data from the official results service (<a href="https://www.pesistulokset.fi" target="_blank" rel="noopener">Pesistulokset</a>), which turned out to be a documented JSON API with per-player, per-match rows of roughly 82 fields each: hits split by target base, advancement as batter and as runner, turns at bat, defensive position, and match context down to the stadium, weather, temperature, and attendance. Coverage reaches back to the 1940s, with granular stats to 1990. Mallo ingests the current Superpesis season and refreshes on every deploy.</p>
 
       <h2>Stats that fit the sport</h2>
 
@@ -91,7 +91,7 @@
 
       <p>The core is Python over SQLite (a metrics layer, the projection engine, a context model, and a Monte Carlo simulator), with a small web UI on top and charts drawn in vendored D3 without a CDN. The demo league generates every stat line from known latent talent so the tests can assert the projections and park factors recover it. It&rsquo;s a directed agent build, documented in after-action reports in the repo and released under the AGPL. Mostly it&rsquo;s a fan project, the site I always wanted to exist.</p>
 
-      <p><a class="live-link" href="https://www.mallo.fi" target="_blank" rel="noopener">See it at mallo.fi</a></p>
+      <p><a class="live-link" href="https://www.mallo.fi" target="_blank" rel="noopener">See Mallo</a></p>
 
     </div>
 
