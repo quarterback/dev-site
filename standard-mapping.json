@@ -5,6 +5,10 @@
       "rkey": "3mphoysxely2o",
       "uri": "at://did:plc:odgxwakrg5r2zjetnrkxuh5c/site.standard.document/3mphoysxely2o"
     },
+    "projects/coalition.html": {
+      "rkey": "3mz4piigocm24",
+      "uri": "at://did:plc:odgxwakrg5r2zjetnrkxuh5c/site.standard.document/3mz4piigocm24"
+    },
     "projects/draft-lab.html": {
       "rkey": "3mpfibveiyr2q",
       "uri": "at://did:plc:odgxwakrg5r2zjetnrkxuh5c/site.standard.document/3mpfibveiyr2q"
@@ -32,6 +36,10 @@
     "projects/oregon-tennis.html": {
       "rkey": "3mpfibvk6ob2o",
       "uri": "at://did:plc:odgxwakrg5r2zjetnrkxuh5c/site.standard.document/3mpfibvk6ob2o"
+    },
+    "projects/pbbg-content-schema.html": {
+      "rkey": "3mz4piittsc2t",
+      "uri": "at://did:plc:odgxwakrg5r2zjetnrkxuh5c/site.standard.document/3mz4piittsc2t"
     },
     "projects/play-to-clinch.html": {
       "rkey": "3mpfibvnj5o2x",
