@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="/favicon.png" type="image/png" sizes="any" />
+<title>PBBG Content Schema | Ron Bronson</title>
+<meta name="description" content="JSON Schemas, scoped writing policies, and a linter CLI that separate interface copy, narrative, and game definitions in browser games built with agents. Extracted by Ron Bronson from his escape game Coalition and published under the Eclipse Public License." />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="PBBG Content Schema | Ron Bronson" />
+<meta name="twitter:description" content="Schemas and writing policies that keep an agent from changing a die roll while it fixes a sentence. Extracted from Ron Bronson's game Coalition." />
+<link rel="preload" as="font" type="font/woff2" href="../assets/fonts/gallery/PPNeueMontreal-Extrabold.woff2" crossorigin />
+<link rel="stylesheet" href="../assets/slabs.css" />
+<script src="../assets/contact.js" defer></script>
+</head>
+<body class="pg-blue">
+<div class="s-wrap">
+
+  <header class="top">
+    <p class="top__name"><a href="../index.html">Ron Bronson</a></p>
+    <nav aria-label="Main navigation"><a href="../about.html">About</a><a href="../work-with-me.html">Work with me</a><a href="https://ronbronson.design">Product &amp; Design</a><a class="nav-gh" href="https://github.com/quarterback" target="_blank" rel="me noopener" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 496 512" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 26 31.4 26 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 82 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8z"/></svg></a><a class="nav-mail" href="#contact" data-contact aria-label="Email" title="Email"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14"/><path d="M3 6l9 7 9-7"/></svg></a></nav>
+  </header>
+
+  <article class="project">
+
+    <h1 class="project__title">PBBG Content Schema</h1>
+    <p class="project__lede">A content architecture for browser games built with agents. JSON Schemas, scoped writing policies, and a linter that keep three things apart: the words on the buttons, the words in the story, and the numbers that decide what happens. I pulled it out of <a href="coalition.html">Coalition</a> and published it on its own.</p>
+
+    <figure class="figure bleed">
+      <img src="../assets/pbbg-content-schema/check.webp" alt="Two terminal panels. Left: pbbg-content check passes a clean bundle, then reports two errors on a broken one, a terminal period on an action label and a placeholder with no binding, each with a repair hint. Right: a content entry in JSON with its domain, pattern, text, audience, phases, and a binding that reads the turns cost from an action." />
+      <figcaption>The checker on a clean bundle and a broken one, and the content entry it&rsquo;s checking. The <code>{turns}</code> in the sentence binds to the action&rsquo;s declared cost, so changing the cost changes the sentence.</figcaption>
+    </figure>
+
+    <div class="project__body">
+
+      <h2>The problem</h2>
+      <p>Building Coalition with agents showed the same failure over and over. Ask an agent to shorten a line of dialogue and it rewrites a button. Ask it to add a scene and it infers the costs and the prerequisites from scattered prose and code, and where it can&rsquo;t infer, it invents something plausible. Ask it to fix the copy on an action and the die roll under that action moves with it. Interface copy, story, and rules lived in the same strings, so no edit was safe.</p>
+
+      <h2>What it separates</h2>
+      <p>A bundle declares four kinds of thing with four owners. <i>Game definitions</i> own costs, requirements, conditions, and typed effects. <i>Narrative</i> owns scene text, dialogue, and who&rsquo;s speaking. <i>Interface</i> owns labels, headings, status lines, and errors. A <i>content policy</i> supplies the writing rules for each, scoped by domain and pattern. No terminal punctuation on a label. No action label over six words. No raw HTML in prose.</p>
+
+      <p>Text never carries a number of its own. A sentence template binds <code>{turns}</code> to a declared action cost. It can bind a name to a public entity, or a value to a fact the reader&rsquo;s role and phase are allowed to see. Change the cost in the game definitions and every sentence that names it changes with it. Declare a fact as hidden from a role and the renderer refuses to put it in that role&rsquo;s text. That last part is what Coalition&rsquo;s government side needs: a player who must never see the candidate&rsquo;s real position while the engine knows it exactly.</p>
+
+      <h2>The checker</h2>
+      <p>A local CLI validates a bundle against the schema, then runs reference and policy checks. It catches duplicate IDs, dangling references between scenes and events, and conditions on facts that don&rsquo;t exist. It catches placeholders with no binding, speakers that aren&rsquo;t declared, and text that a role shouldn&rsquo;t receive. Every finding carries a rule ID, a JSON pointer, a message, and a repair hint. The whole report is available as JSON, so an agent can read it as a tool result. A second command, <code>guidance</code>, returns the rules the checker enforces plus the writing guidance for one domain and pattern. A host can put the policy in front of a model before it edits rather than after.</p>
+
+      <p>There are fourteen content patterns across the two domains. Action label, navigation or heading, action preview, blocked action, and arrangement status. Report, dialogue, scene, and card. Action result, technical error, empty state, tutorial, and ending. Every one of them exists because Coalition has it.</p>
+
+      <h2>How it&rsquo;s built</h2>
+
+      <dl class="stack-block">
+        <dt>Schemas</dt>
+        <dd>Two JSON Schemas, one for bundles and one for policies, validated with Ajv. Version 0.5.0 rejects unknown fields and versions, so a misspelled key fails instead of becoming ignored data.</dd>
+        <dt>Reference code</dt>
+        <dd>A small Node module for validation, role and phase projection, text rendering, and task guidance, and a CLI over it. Node 20 or later, no network calls, no model calls, no telemetry.</dd>
+        <dt>Example</dt>
+        <dd>A fictional transit station with no connection to Coalition&rsquo;s setting, so the format is shown without the game.</dd>
+        <dt>Policy</dt>
+        <dd>An editable base policy with separate interface and narrative guidance. A project replaces it whole with <code>--policy</code>; there is no inheritance to reason about.</dd>
+        <dt>License</dt>
+        <dd>Eclipse Public License 2.0, with the plain-language and design sources attributed in the docs.</dd>
+      </dl>
+
+      <h2>What it doesn&rsquo;t do</h2>
+      <p>It doesn&rsquo;t simulate anything. The host engine evaluates conditions, runs effects, keeps the clock, and decides disclosure. Declaring a fact hidden in a JSON file is not server security. It doesn&rsquo;t extract strings from an existing game, migrate saves, or check whether a story contradicts itself. And as of 0.5.0 no game has moved its content onto it, Coalition included. The station example is an architecture fixture, not proof the format travels. I wrote that into the docs rather than wait for a second game to find out.</p>
+
+      <p class="tech-line">Repo: <a href="https://github.com/quarterback/pbbg-content-schema" target="_blank" rel="noopener">quarterback/pbbg-content-schema</a>. Related: <a href="https://agentexperience.ax" target="_blank" rel="noopener">agentexperience.ax</a>.</p>
+
+    </div>
+
+  </article>
+
+  <footer class="foot" id="contact">
+    <div class="hx-icons" aria-label="Elsewhere"><a class="hx-i" href="https://bsky.app/profile/ronbronson.com" target="_blank" rel="me noopener" aria-label="Bluesky" title="Bluesky"><svg viewBox="0 0 576 512" fill="currentColor" aria-hidden="true"><path d="M407.8 294.7c-3.3-.4-6.7-.8-10-1.3 3.4 .4 6.7 .9 10 1.3zM288 227.1C261.9 176.4 190.9 81.9 124.9 35.3 61.6-9.4 37.5-1.7 21.6 5.5 3.3 13.8 0 41.9 0 58.4S9.1 194 15 213.9c19.5 65.7 89.1 87.9 153.2 80.7 3.3-.5 6.6-.9 10-1.4-3.3 .5-6.6 1-10 1.4-93.9 14-177.3 48.2-67.9 169.9 120.3 124.6 164.8-26.7 187.7-103.4 22.9 76.7 49.2 222.5 185.6 103.4 102.4-103.4 28.1-156-65.8-169.9-3.3-.4-6.7-.8-10-1.3 3.4 .4 6.7 .9 10 1.3 64.1 7.1 133.6-15.1 153.2-80.7 5.9-19.9 15-138.9 15-155.5s-3.3-44.7-21.6-52.9c-15.8-7.1-40-14.9-103.2 29.8-66.1 46.6-137.1 141.1-163.2 191.8z"></path></svg></a><a class="hx-i" href="https://github.com/quarterback" target="_blank" rel="me noopener" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M216.5 362.5c-66-8-112.5-55.5-112.5-117 0-25 9-52 24-70-6.5-16.5-5.5-51.5 2-66 20-2.5 47 8 63 22.5 19-6 39-9 63.5-9s44.5 3 62.5 8.5c15.5-14 43-24.5 63-22 7 13.5 8 48.5 1.5 65.5 16 19 24.5 44.5 24.5 70.5 0 61.5-46.5 108-113.5 116.5 17 11 28.5 35 28.5 62.5l0 52C323 491.5 335.5 500 350.5 494 441 459.5 512 369 512 257 512 115.5 397 0 255.5 0S0 115.5 0 257c0 111 70.5 203 165.5 237.5 13.5 5 26.5-4 26.5-17.5l0-40c-7 3-16 5-24 5-33 0-52.5-18-66.5-51.5-5.5-13.5-11.5-21.5-23-23-6-.5-8-3-8-6 0-6 10-10.5 20-10.5 14.5 0 27 9 40 27.5 10 14.5 20.5 21 33 21s20.5-4.5 32-16c8.5-8.5 15-16 21-21z"></path></svg></a><a class="hx-i" rel="me" href="mailto:ron@ronbronson.com" aria-label="Email" title="Email"><svg viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M48 64c-26.5 0-48 21.5-48 48 0 15.1 7.1 29.3 19.2 38.4l208 156c17.1 12.8 40.5 12.8 57.6 0l208-156c12.1-9.1 19.2-23.3 19.2-38.4 0-26.5-21.5-48-48-48L48 64zM0 196L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-188-198.4 148.8c-34.1 25.6-81.1 25.6-115.2 0L0 196z"></path></svg></a></div>
+  </footer>
+
+</div>
+</body>
+</html>
