@@ -38,3 +38,23 @@ Rendered at 1440px and 390px in headless Chromium: no horizontal scroll and no s
 - Added the PBBG skill. It ships inside `pbbg-content-schema` 0.6.0 with an MCP server, installed with `npx -y github:quarterback/pbbg-content-schema install-skill`. The description is the package README's opening sentence; links go to the project page and GitHub.
 - The shelf note opened "Three tools I publish and use daily." That stopped being true, so the opening sentence came out, the rest stays, and a STAND-IN comment asks Ron to reword it. The heading "On npm" is unchanged, though two entries aren't on npm.
 - Removed the `.npm__also` style, which is no longer used.
+
+## Follow-up: say both offers before any project
+
+> front page needs to allude decisively to both wargaming and agent experience … spelled out explicitly way before you get to them, the packages should be higher than the projects
+>
+> restore some writing, or find a way to weave it naturally
+>
+> not saying "Wargaming" but rather finding what other people call it
+
+- New section after the hero, in two halves of prose with no cards:
+  - **Tabletop exercises and policy simulations:** the heading uses the names buyers in government, emergency management and corporate risk use. The body is the opening of `work-with-me.html` plus "I call this live-action service design."
+  - **Agent experience:** the body is Ron's front door draft (bonus-time `page-types/front-door.html`), put in first person.
+- Writing is woven in: under each half, three of Ron's posts.
+  - Wargaming: On the Simulation of Governance; Civil Futures and the Speculative Present; A Parliament of Neighbors.
+  - Agents: Agent Experience Needs Failure Affordances; Who Holds the Pen?; Bringing AX to Life.
+  - The halves end in "Work with me" and "The tools" (to `#npm`).
+- Order is now hero, the two halves, On npm, Things I made, participatory work, teaching and talks.
+- The Work with me teaser is gone; the first half does its job.
+- No agent experience page was made, at Ron's request.
+- `work-with-me.html` still heads its section "Immersive scenario wargaming". That's Ron's copy and is unchanged.

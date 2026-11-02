@@ -568,7 +568,15 @@ body.pg-blue .project > .figure, body.pg-blue .figpair img { background: #fff; }
   .tw { margin-top: 72px; }
 }
 
-/* The offer teaser (2 November 2026) */
-.teaser { padding-top: 72px; }
-.teaser__go { margin: 0; font-family: var(--display); font-weight: 800; font-size: clamp(32px, 3.2vw, 44px); letter-spacing: -.035em; }
-.teaser__go a { color: var(--blue); text-decoration-thickness: 3px; text-underline-offset: 6px; }
+
+/* Wargaming and agent experience, spelled out before the projects
+   (2 November 2026). Two halves of prose, each with its own posts. */
+.sig { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px 72px; padding: 24px var(--gut) 0; }
+.sig h2 { margin: 0 0 22px; font-family: var(--display); font-weight: 800; font-size: clamp(40px, 4.2vw, 60px); line-height: .95; letter-spacing: -.04em; color: var(--blue); }
+.sig__i > p { margin: 0 0 16px; font-size: 21px; line-height: 1.5; max-width: 34em; }
+.sig__w { list-style: none; margin: 24px 0 0; padding: 0; display: grid; gap: 10px; }
+.sig__w a { font-family: var(--display); font-weight: 600; font-size: 21px; line-height: 1.25; letter-spacing: -.015em; }
+.sig .sig__go { margin-top: 26px; font-family: var(--display); font-weight: 800; font-size: 26px; letter-spacing: -.03em; }
+.sig .sig__go a { color: var(--blue); text-decoration-thickness: 3px; text-underline-offset: 6px; }
+.sig + .sec { padding-top: 104px; }
+@media (max-width: 860px) { .sig { grid-template-columns: 1fr; } }
