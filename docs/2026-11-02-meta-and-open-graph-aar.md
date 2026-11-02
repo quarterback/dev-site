@@ -23,3 +23,8 @@
 - **Left alone:** the three redirect stubs (`finnish-baseball-game-design`, `parliament-of-neighbors`, `varsityapex`). They forward elsewhere and have canonical links to their targets.
 - **Hyphens:** several existing project descriptions contain hyphenated compounds ("single-file", "salary-cap", "co-ed"). They're Ron's copy, so they're unchanged even though the house rule bars dashes.
 - **Domain:** `ronbronson.dev` redirects (307) to `www.ronbronson.dev`, but canonical links use the non-www address.
+
+## Follow-up: a current share card
+
+- `assets/social-card.png` showed an old version of the site. It's redrawn at 1200 by 630 from a new source, `assets/og-card.html`: "Ron Bronson", the hero's "Problems Are Designed" with "Are" in blue, and the line "Agent tooling, tabletop exercises, policy simulations, games and software." Beside it are the workshop photo and the content schema checker, one image for each offer.
+- Every page declares the image size, and the alt text describes the new card.

@@ -1,0 +1,34 @@
+<!doctype html>
+<!-- Source for assets/social-card.png, the 1200 by 630 share card for
+     ronbronson.dev. Render it at 1200 by 630 with no device scale factor and
+     save the screenshot as assets/social-card.png. Redrawn 2 November 2026
+     for the builder front page: the hero, the two offers, one image each. -->
+<html lang="en"><head><meta charset="utf-8" /><title>ronbronson.dev social card source</title>
+<style>
+@font-face { font-family: "PP Neue Montreal"; src: url("fonts/gallery/PPNeueMontreal-Extrabold.woff2") format("woff2"); font-weight: 800; }
+@font-face { font-family: "Hanken Grotesk"; src: url("fonts/gallery/hanken-grotesk-variable.woff2") format("woff2"); font-weight: 100 900; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1200px; height: 630px; overflow: hidden; }
+body { display: grid; grid-template-columns: 1fr 470px; background: #fff; color: #0b0b14; font-family: "Hanken Grotesk", Arial, sans-serif; }
+.tx { display: flex; flex-direction: column; padding: 48px 52px 44px; }
+.nm { font-family: "PP Neue Montreal", Arial, sans-serif; font-weight: 800; font-size: 32px; letter-spacing: -.04em; }
+.h { margin-top: auto; font-family: "PP Neue Montreal", Arial, sans-serif; font-weight: 800; font-size: 118px; line-height: .86; letter-spacing: -.045em; }
+.h span { display: block; }
+.h span:nth-child(2) { color: #1e4fff; }
+.d { margin-top: 28px; font-size: 24px; line-height: 1.35; max-width: 600px; }
+.im { display: grid; grid-template-rows: 1fr 1fr; }
+.im img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.im img:first-child { object-position: 30% 40%; }
+.im img:last-child { object-position: 0 0; background: #0b0b14; }
+</style></head>
+<body>
+  <div class="tx">
+    <p class="nm">Ron Bronson</p>
+    <p class="h"><span>Problems</span><span>Are</span><span>Designed</span></p>
+    <p class="d">Agent tooling, tabletop exercises, policy simulations, games and software.</p>
+  </div>
+  <div class="im">
+    <img src="workshop-easels.jpg" alt="" />
+    <img src="pbbg-content-schema/check.webp" alt="" />
+  </div>
+</body></html>
