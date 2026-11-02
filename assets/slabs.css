@@ -568,9 +568,7 @@ body.pg-blue .project > .figure, body.pg-blue .figpair img { background: #fff; }
   .tw { margin-top: 72px; }
 }
 
-/* Tooling shelf extra line and the offer teaser (2 November 2026) */
-.npm__also { margin: 20px 0 0; max-width: 52em; font-size: 18px; line-height: 1.5; }
-.npm__also a { font-family: var(--mono); font-weight: 600; color: var(--blue); }
+/* The offer teaser (2 November 2026) */
 .teaser { padding-top: 72px; }
 .teaser__go { margin: 0; font-family: var(--display); font-weight: 800; font-size: clamp(32px, 3.2vw, 44px); letter-spacing: -.035em; }
 .teaser__go a { color: var(--blue); text-decoration-thickness: 3px; text-underline-offset: 6px; }

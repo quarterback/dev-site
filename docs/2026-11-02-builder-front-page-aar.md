@@ -29,3 +29,12 @@ From the 1 November handoff: ronbronson.dev keeps the wargaming and scenario off
 ## 4. Consequence
 
 Rendered at 1440px and 390px in headless Chromium: no horizontal scroll and no script errors. Talks checked at 1440px.
+
+## Follow-up: the shelf holds all five tools
+
+> it's missing the pbbg skill that i also made recently and i have no idea why that aar skill is hanging off as a 4th thing in a poorly designed way
+
+- The after action review skill was a loose line under the shelf. It's now an entry like the others: *Agent After-Action Review*, labelled Claude Skill, with links to GitHub (`quarterback/AAR`) and the write-up. The description is the existing one.
+- Added the PBBG skill. It ships inside `pbbg-content-schema` 0.6.0 with an MCP server, installed with `npx -y github:quarterback/pbbg-content-schema install-skill`. The description is the package README's opening sentence; links go to the project page and GitHub.
+- The shelf note opened "Three tools I publish and use daily." That stopped being true, so the opening sentence came out, the rest stays, and a STAND-IN comment asks Ron to reword it. The heading "On npm" is unchanged, though two entries aren't on npm.
+- Removed the `.npm__also` style, which is no longer used.
