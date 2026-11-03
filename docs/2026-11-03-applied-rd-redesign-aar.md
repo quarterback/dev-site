@@ -118,3 +118,9 @@ His follow-up: "I still want tabletop and simulations to be on there, don't get 
 - `prosekeep check` returned 0 findings.
 
 **Judgment.** "Evals" covers the checks the projects actually run: Coalition's seeded-run harness and replay tests, the PBBG content checker, and prosekeep in CI. Ron should confirm the term fits how he'd describe them.
+
+## Addendum: Shipping with teams removed
+
+**Intent.** Ron: "Remove shipping with teams. It makes it seem like I only had two jobs."
+
+**Action.** Removed the section and its CSS from the home page. Writing now follows How I build.

@@ -596,13 +596,9 @@ body.pg-blue .project > .figure, body.pg-blue .figpair img { background: #fff; }
 @media (max-width: 1100px) { .sig--three { grid-template-columns: 1fr; } }
 @media (max-width: 760px) { .stack__l div { grid-template-columns: 1fr; gap: 4px; } .stack__l dd { font-size: 20px; } }
 
-/* Applied R&D content in the Slabs layout (3 November 2026): shipping with
-   teams, writing by theme, the teaching pointer. No dividers. */
-.proof h2, .wr2 h2 { margin-bottom: 32px; }
-.proof__l { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 48px; }
-.proof__l li { padding-top: 0; }
-.proof__l h3 { margin: 0 0 10px; font-family: var(--display); font-weight: 800; font-size: 28px; line-height: 1.05; letter-spacing: -.03em; }
-.proof__l p { margin: 0; font-size: 18px; line-height: 1.5; }
+/* Applied R&D content in the Slabs layout (3 November 2026): writing by
+   theme, the teaching pointer. No dividers. */
+.wr2 h2 { margin-bottom: 32px; }
 
 .wr2__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 56px; }
 .wr2__grid h3 { margin: 0 0 12px; font-family: var(--mono); font-weight: 600; font-size: 16px; color: var(--blue); text-transform: uppercase; letter-spacing: .06em; }
@@ -611,8 +607,7 @@ body.pg-blue .project > .figure, body.pg-blue .figpair img { background: #fff; }
 
 .foot__teach { font-family: var(--mono); font-size: 16px; }
 
-@media (max-width: 1000px) { .proof__l { grid-template-columns: 1fr; } }
-@media (max-width: 860px) { .wr2__grid { grid-template-columns: 1fr; } }
+@media (max-width: 1000px) { @media (max-width: 860px) { .wr2__grid { grid-template-columns: 1fr; } }
 
 /* Short summary on featured project pages. Space, no rules. */
 .glance { max-width: 900px; margin: 48px 0 0; display: grid; gap: 16px; }
