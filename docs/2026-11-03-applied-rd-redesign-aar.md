@@ -50,3 +50,16 @@ His follow-up: "I still want tabletop and simulations to be on there, don't get 
 - Ron supplies the mission engineering essay link.
 - Ron reviews the Result lines.
 - Ron decides whether `about.html` stays and whether the restored pages get the Slabs styling.
+
+## Addendum: You Go First as a featured engine
+
+**Intent.** Ron: "the algo for you go first is the thing worth sharing it's just as good as the capbuffet and occupant stuff its in the heypbj repo."
+
+**Action.**
+- You Go First is now a featured project in Engines & simulations, alongside Coalition and Cap Buffet. It carries the six-part summary on the home page and on `projects/ygf.html`.
+- The summary was written from the heypbj repo: the README, `src/lib/matchingAlgorithm.ts` (the 0.7/0.3 score), the research memo and the simulator.
+- It links to heypbj.xyz and the live simulator. The repo itself is private, so it isn't linked.
+
+**Judgment.** No simulation figures are quoted. The memo reports a Gini of 0.71 for Gale-Shapley against 0.42 for SPA. But the distributions it lists compute to 0.51 and 0.30, and the live simulator at /stable-matching-comparison currently reports SPA 0.30 against Gale-Shapley 0.08, with a Week 12 match quality of 0.0. The existing YGF page body still says "Gini ~0.42", and Ron needs to decide on it.
+
+**Also fixed.** The metadata script was adding a duplicate `robots` line to `404.html` on every run. It now strips the old line first.

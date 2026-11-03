@@ -616,7 +616,7 @@ body.pg-blue .project > .figure, body.pg-blue .figpair img { background: #fff; }
 .work h2 { margin-bottom: 8px; }
 .wgroup { padding-top: 64px; }
 .wgroup__h { margin: 0 0 8px; font-family: var(--mono); font-weight: 600; font-size: 18px; color: var(--blue); text-transform: uppercase; letter-spacing: .06em; }
-.case { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); grid-template-areas: "head head" "shot glance"; gap: 20px 48px; padding: 32px 0 40px; border-top: 2px solid var(--blue); }
+.case { scroll-margin-top: 104px; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); grid-template-areas: "head head" "shot glance"; gap: 20px 48px; padding: 32px 0 40px; border-top: 2px solid var(--blue); }
 .case--noshot { grid-template-areas: "head head" "glance glance"; }
 .case__head { grid-area: head; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 12px 32px; }
 .case h4 { margin: 0; font-family: var(--display); font-weight: 800; font-size: clamp(36px, 3.6vw, 52px); line-height: 1; letter-spacing: -.04em; }
