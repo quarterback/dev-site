@@ -63,3 +63,16 @@ His follow-up: "I still want tabletop and simulations to be on there, don't get 
 **Judgment.** No simulation figures are quoted. The memo reports a Gini of 0.71 for Gale-Shapley against 0.42 for SPA. But the distributions it lists compute to 0.51 and 0.30, and the live simulator at /stable-matching-comparison currently reports SPA 0.30 against Gale-Shapley 0.08, with a Week 12 match quality of 0.0. The existing YGF page body still says "Gini ~0.42", and Ron needs to decide on it.
 
 **Also fixed.** The metadata script was adding a duplicate `robots` line to `404.html` on every run. It now strips the old line first.
+
+## Addendum: no dividers, shorter text
+
+**Intent.** Ron: "I made a rule earlier that I want no dividers. I hate those lines, it's ugly and hard to read. Sentences or brevity on my sites, and also use prosekeep and humanizer on the text if you generated it."
+
+**Deviation.** `slabs.css` already had a "No hard dividers" rule, and the first pass of this redesign broke it. The new sections had rules between columns, cases, summary rows, one-line projects and the delivery list.
+
+**Action.**
+- Removed every border from the new sections. They're now separated by space alone.
+- Cut the six-part summaries for all nine featured projects down to one or two short sentences each. They're in `devbuild/brief.py` in the session scratchpad.
+- Shortened the Shipping with teams lines.
+- Ran the generated home page text through the humanizer patterns and through `prosekeep check` (0.3.0). It returned 0 mechanical findings.
+- Left Ron's own words as they were: the hero, the brief's sentences, the FDD paragraph and the tabletop section.
