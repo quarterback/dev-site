@@ -35,9 +35,9 @@
   </header>
 
   <!-- ══════════ FRONT PAGE (2 November 2026) ══════════
-       Hero, then wargaming and agent experience spelled out, the tooling
-       shelf, things made (two groups), participatory work on ink, teaching
-       and talks. -->
+       Hero; the point of view on delivery and deployment (tabletop
+       exercises, agent experience, forward deployed design); the tools; the
+       tech stack; things made (two groups); participatory work on ink. -->
   <section class="hero hero--split" id="top" aria-labelledby="h">
     <h1 id="h">Problems <span>Are</span> Designed</h1>
     <div>
@@ -53,7 +53,7 @@
        wargaming half is the opening of work-with-me.html; the agent half is
        his front door draft (bonus-time page-types/front-door.html), put in
        first person. Under each, three of his posts on the subject. -->
-  <section class="sig" aria-label="What I build">
+  <section class="sig sig--three" aria-label="Point of view on delivery and deployment">
     <div class="sig__i">
       <h2 id="h-war">Tabletop exercises and policy simulations</h2>
       <p>New policies, technologies and organizational changes create situations people have never faced. I design games, simulations and live exercises that help organizations explore possible futures and rehearse difficult decisions while there&rsquo;s still time to change the plan.</p>
@@ -77,6 +77,19 @@
       </ul>
       <p class="sig__go"><a href="#npm">The tools</a></p>
     </div>
+    <div class="sig__i">
+      <h2 id="h-fdd">Forward deployed design</h2>
+      <p>I ran forward deployed design at 18F for four years before it had a name: short, problem-scoped, cross-functional deployments that shipped working product, procurement packages, or capability handoffs. We need designers embedded where problems happen, before the framing is done.</p>
+      <p class="sig__cite">Cited by <a href="https://rogerwong.me/2026/05/forward-deployed-design-at-18f">Roger Wong</a> and by <a href="https://www.madebymany.com/insights/were-natural-cynics-but-were-going-all-in-on-the-forward-deployed-designer">Tim Malbon at Made by Many</a>.</p>
+      <ul class="sig__w">
+        <li><a href="https://blog.ronbronson.com/what-forward-deployed-design-actually-looks-like/">What Forward Deployed Design Actually Looks Like</a></li>
+        <li><a href="https://blog.ronbronson.com/forward-deployed-design-is-bigger-than-engineering/">Forward Deployed Design Is Bigger Than Engineering</a></li>
+        <li><a href="https://blog.ronbronson.com/public-delivery-is-statecraft/">Public Delivery Is Statecraft</a></li>
+      </ul>
+      <!-- STAND-IN: mission engineering belongs here once Ron supplies the
+           link to his piece on it. -->
+      <p class="sig__go"><a href="https://deployed.design/guide/">The field guide</a></p>
+    </div>
   </section>
 
   <section class="sec" id="npm" aria-labelledby="h-npm">
@@ -90,6 +103,21 @@
       <div class="pkg"><div class="pkg__head"><h3 class="pkg__cmd">Agent After-Action Review</h3><span class="pkg__v">Claude Skill</span></div><p>A Claude skill that writes up an agent&rsquo;s run: what you asked for, what it did and the calls it made on its own.</p><div class="pkg__links"><a href="https://github.com/quarterback/AAR" target="_blank" rel="noopener">GitHub</a> <a href="https://blog.ronbronson.com/i-built-a-claude-skill-for-after-action-reviews-on-ai-agent-work" target="_blank" rel="noopener">Write-up</a></div></div>
     </div>
   </section>
+
+  <!-- Tech stack: what the projects on this site are built with, taken from
+       each project page. -->
+  <section class="sec stack" id="stack" aria-labelledby="h-stack">
+    <h2 id="h-stack">Tech stack</h2>
+    <dl class="stack__l">
+      <div><dt>Languages</dt><dd>Python, TypeScript, JavaScript</dd></div>
+      <div><dt>Front ends</dt><dd>React, Vite, D3, single-file HTML5 games</dd></div>
+      <div><dt>Back ends and data</dt><dd>FastAPI, Flask, Hono, SQLite, pandas, NumPy, Monte Carlo simulation</dd></div>
+      <div><dt>Protocols</dt><dd>ATProto, OAuth, LiveKit</dd></div>
+      <div><dt>Agent tooling</dt><dd>MCP servers, Claude skills, JSON Schema with Ajv, npm command line tools</dd></div>
+      <div><dt>Deployment</dt><dd>Cloudflare Workers, Vercel, Netlify, Fly.io, Docker, GitHub Actions</dd></div>
+    </dl>
+  </section>
+
 
   <section class="sec made" id="built" aria-labelledby="h-made">
     <h2 id="h-made">Things I made</h2>
@@ -123,20 +151,6 @@
       <li><span class="tl__y">2017</span><h3><a href="https://consequencedesign.com/">Consequence Design</a></h3><p>A framework for examining how technology affects real lives after deployment.</p></li>
       <li><span class="tl__y">2016</span><h3>Pensulo Cards</h3><p>A deck of 46 cards for breaking creative block and provoking ideas.</p></li>
     </ul>
-  </section>
-
-  <!-- Teaching and talks. STAND-IN: the board leaves room for a line on
-       where Ron has spoken, or the agencies he has worked with. -->
-  <section class="tr" aria-labelledby="h-tr">
-    <div>
-      <h2 id="h-tr">Teaching, research and talks</h2>
-      <a class="reach__btn reach__btn--go" href="https://ronbronson.com">Learn more</a>
-    </div>
-    <div>
-      <ul class="courses"><li><span class="courses__c">UT 402</span><div><h3><a href="https://taubmancollege.umich.edu/course/ut402-public-mechanics-how-services-work-section-1-fall-2026/">Public Mechanics: How Services Work</a></h3><p class="courses__t"><a href="https://taubmancollege.umich.edu/course/ut402-public-mechanics-how-services-work-section-1-fall-2026/">Fall 2026</a> &middot; <a href="https://taubmancollege.umich.edu/course/ut402-public-mechanics-how-services-work-section-5-winter-2026/">Winter 2026</a></p></div></li><li><span class="courses__c">UT 330</span><div><h3><a href="https://taubmancollege.umich.edu/course/ut330-interaction-design-and-urban-experiences-section-1-fall-2026/">Interaction Design and Urban Experiences</a></h3><p class="courses__t"><a href="https://taubmancollege.umich.edu/course/ut330-interaction-design-and-urban-experiences-section-1-fall-2026/">Fall 2026</a></p></div></li><li><span class="courses__c">UT 360</span><div><h3><a href="https://taubmancollege.umich.edu/course/ut360-advanced-studio-service-design-and-urban-needs-section-2-winter-2026/">Service Design and Urban Needs</a></h3><p class="courses__t"><a href="https://taubmancollege.umich.edu/course/ut360-advanced-studio-service-design-and-urban-needs-section-2-winter-2026/">Winter 2026</a></p></div></li></ul>
-      <a class="vid tr__vid" href="https://www.youtube.com/watch?v=hnAScuK-oMo" target="_blank" rel="noopener" aria-label="Watch Beyond Civic Tech: Public Mechanics Starts at Home, CUGOS Fall Fling keynote, on YouTube"><img src="https://i.ytimg.com/vi/hnAScuK-oMo/hqdefault.jpg" alt="" loading="lazy" /><span class="play"></span></a>
-      <a class="talk__go" href="talks.html">All talks</a>
-    </div>
   </section>
 
   <!-- Other projects: one standard length description each, no dates,
