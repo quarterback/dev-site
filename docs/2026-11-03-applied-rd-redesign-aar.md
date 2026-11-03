@@ -105,3 +105,16 @@ His follow-up: "I still want tabletop and simulations to be on there, don't get 
 - The ClosedTab and prosekeep pages use the summary in place of the prose.
 - The restored pages are unchanged and still listed on More: You Go First, PDX Spend, VarsityApex, Parliament of Neighbors and the Finnish baseball talk.
 - The home page stays in the earlier layout.
+
+## Addendum: projects before the stack, and how I build
+
+**Intent.** Ron: "Projects ahead of the stack. I don't want people to think I know all those things like a poser. I just think being able to show 0 to 1 agentic skill at managing multi-agent teams, and saying so in contemporary language that FAANG, SV and HN people would recognize."
+
+**Action.**
+- The home page order is now hero, point of view, Things I made, On npm, How I build, Shipping with teams, Writing.
+- The Tech stack list is replaced by How I build. It explains how Ron works (orchestrating multi-agent teams from 0 to 1; he owns the spec, the architecture and the evals; agents write most of the code; every run ends with a ClosedTab record) and names the projects built that way.
+- The stack is reduced to one small "Shipped on" line, so it reads as what the projects run on.
+- "Directed agent builds" moved out of Shipping with teams and into How I build.
+- `prosekeep check` returned 0 findings.
+
+**Judgment.** "Evals" covers the checks the projects actually run: Coalition's seeded-run harness and replay tests, the PBBG content checker, and prosekeep in CI. Ron should confirm the term fits how he'd describe them.

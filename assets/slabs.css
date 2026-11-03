@@ -599,7 +599,7 @@ body.pg-blue .project > .figure, body.pg-blue .figpair img { background: #fff; }
 /* Applied R&D content in the Slabs layout (3 November 2026): shipping with
    teams, writing by theme, the teaching pointer. No dividers. */
 .proof h2, .wr2 h2 { margin-bottom: 32px; }
-.proof__l { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 48px; }
+.proof__l { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 48px; }
 .proof__l li { padding-top: 0; }
 .proof__l h3 { margin: 0 0 10px; font-family: var(--display); font-weight: 800; font-size: 28px; line-height: 1.05; letter-spacing: -.03em; }
 .proof__l p { margin: 0; font-size: 18px; line-height: 1.5; }
@@ -620,3 +620,9 @@ body.pg-blue .project > .figure, body.pg-blue .figpair img { background: #fff; }
 .glance dt { font-family: var(--mono); font-size: 15px; color: var(--blue); padding-top: 4px; }
 .glance dd { margin: 0; font-size: 19px; line-height: 1.5; }
 @media (max-width: 600px) { .glance div { grid-template-columns: 1fr; gap: 2px; } }
+
+/* How I build: the agent-team method first, the stack as one small line. */
+.build h2 { margin-bottom: 28px; }
+.build__lede { margin: 0 0 16px; max-width: 40em; font-size: 22px; line-height: 1.5; }
+.build__on { margin: 28px 0 0; max-width: 60em; font-family: var(--mono); font-size: 15px; line-height: 1.6; color: var(--muted); }
+.build__on span { color: var(--blue); margin-right: 12px; }

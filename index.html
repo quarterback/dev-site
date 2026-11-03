@@ -95,33 +95,6 @@
     </div>
   </section>
 
-  <section class="sec" id="npm" aria-labelledby="h-npm">
-    <div class="sec__head"><h2 id="h-npm">On npm</h2><!-- STAND-IN: the note used to open "Three tools I publish and use daily." The shelf now has five, two of them skills; Ron to reword. -->
-    <p class="sec__note">prosekeep and plain-language-default check the copy on this site and on the other two.</p></div>
-    <div class="npm">
-      <div class="pkg"><div class="pkg__head"><h3 class="pkg__cmd">$ npm i closedtab</h3><span class="pkg__v">0.5.0</span></div><p>Reviews the work AI agents do. Each run leaves an after-action record of what you asked for, what the agent did, and the calls it made on its own. It scores that record and reconciles it against a trace of what actually happened. CLI and MCP.</p><div class="pkg__links"><a href="https://www.npmjs.com/package/closedtab" target="_blank" rel="noopener">npm</a> <a href="https://github.com/quarterback/closedtab" target="_blank" rel="noopener">GitHub</a> <a href="https://blog.ronbronson.com/closedtab-a-npm-shared-memory-for-you-and-your-ai-agents" target="_blank" rel="noopener">Write-up</a></div></div>
-      <div class="pkg"><div class="pkg__head"><h3 class="pkg__cmd">$ npm i prosekeep</h3><span class="pkg__v">0.3.0</span></div><p>Carries an author&rsquo;s editorial decisions across repositories and agent tools. Plain-language and house-style checks, source comparisons, a review protocol, an Agent Skill, a CLI, and an MCP server. It keeps an agent from turning your argument into generic AI writing.</p><div class="pkg__links"><a href="https://www.npmjs.com/package/prosekeep" target="_blank" rel="noopener">npm</a> <a href="https://github.com/quarterback/prosekeep" target="_blank" rel="noopener">GitHub</a></div></div>
-      <div class="pkg"><div class="pkg__head"><h3 class="pkg__cmd">$ npm i plain-language-default</h3><span class="pkg__v">0.1.0</span></div><p>Federal plain-language rules packaged for agents. It installs as a project skill and writes the rules where an agent will actually read them. It also checks a draft from the CLI or over MCP.</p><div class="pkg__links"><a href="https://www.npmjs.com/package/plain-language-default" target="_blank" rel="noopener">npm</a> <a href="https://github.com/quarterback/plain-as-day" target="_blank" rel="noopener">GitHub</a></div></div>
-          <div class="pkg"><div class="pkg__head"><h3 class="pkg__cmd">$ npx -y github:quarterback/pbbg-content-schema install-skill</h3><span class="pkg__v">0.6.0</span></div><p>A standalone content architecture package for separating interface language, narrative structure, and game definitions in browser games developed with agents. It provides JSON Schemas, scoped writing policies, a neutral fictional example, reference projection tooling, a local linter CLI, an agent skill, and a local MCP server.</p><div class="pkg__links"><a href="projects/pbbg-content-schema.html">Project page</a> <a href="https://github.com/quarterback/pbbg-content-schema" target="_blank" rel="noopener">GitHub</a></div></div>
-      <div class="pkg"><div class="pkg__head"><h3 class="pkg__cmd">Agent After-Action Review</h3><span class="pkg__v">Claude Skill</span></div><p>A Claude skill that writes up an agent&rsquo;s run: what you asked for, what it did and the calls it made on its own.</p><div class="pkg__links"><a href="https://github.com/quarterback/AAR" target="_blank" rel="noopener">GitHub</a> <a href="https://blog.ronbronson.com/i-built-a-claude-skill-for-after-action-reviews-on-ai-agent-work" target="_blank" rel="noopener">Write-up</a></div></div>
-    </div>
-  </section>
-
-  <!-- Tech stack: only what the projects below use, from their pages and READMEs. -->
-  <section class="sec stack" id="stack" aria-labelledby="h-stack">
-    <h2 id="h-stack">Tech stack</h2>
-    <dl class="stack__l">
-      <div><dt>Languages</dt><dd>Python, TypeScript, JavaScript on Node.js</dd></div>
-      <div><dt>Engines and models</dt><dd>Pure TypeScript and Python rule engines, Monte Carlo simulation, seeded runs, published index formulas</dd></div>
-      <div><dt>Schemas and data</dt><dd>JSON Schema with Ajv, SQLite, Supabase, flat JSON endpoints, pandas, NumPy</dd></div>
-      <div><dt>Front ends</dt><dd>React, Vite, Tailwind, D3, p5.js, Web Audio, single-file HTML5</dd></div>
-      <div><dt>Services</dt><dd>FastAPI, Flask, Hono, Deno</dd></div>
-      <div><dt>Protocols</dt><dd>AT Protocol and standard.site records, OAuth, LiveKit</dd></div>
-      <div><dt>Agent tooling</dt><dd>MCP servers, Agent Skills, npm command line tools</dd></div>
-      <div><dt>Pipelines and hosting</dt><dd>GitHub Actions on a schedule, Cloudflare Workers, Vercel, Netlify, Fly.io, Docker</dd></div>
-    </dl>
-  </section>
-
   <section class="sec made" id="work" aria-labelledby="h-made">
     <h2 id="h-made">Things I made</h2>
     <h3 class="grp">Systems</h3>
@@ -143,13 +116,34 @@
     <p class="made__more"><a href="more.html">Everything else I&rsquo;ve built</a></p>
   </section>
 
+  <section class="sec" id="npm" aria-labelledby="h-npm">
+    <div class="sec__head"><h2 id="h-npm">On npm</h2><!-- STAND-IN: the note used to open "Three tools I publish and use daily." The shelf now has five, two of them skills; Ron to reword. -->
+    <p class="sec__note">prosekeep and plain-language-default check the copy on this site and on the other two.</p></div>
+    <div class="npm">
+      <div class="pkg"><div class="pkg__head"><h3 class="pkg__cmd">$ npm i closedtab</h3><span class="pkg__v">0.5.0</span></div><p>Reviews the work AI agents do. Each run leaves an after-action record of what you asked for, what the agent did, and the calls it made on its own. It scores that record and reconciles it against a trace of what actually happened. CLI and MCP.</p><div class="pkg__links"><a href="https://www.npmjs.com/package/closedtab" target="_blank" rel="noopener">npm</a> <a href="https://github.com/quarterback/closedtab" target="_blank" rel="noopener">GitHub</a> <a href="https://blog.ronbronson.com/closedtab-a-npm-shared-memory-for-you-and-your-ai-agents" target="_blank" rel="noopener">Write-up</a></div></div>
+      <div class="pkg"><div class="pkg__head"><h3 class="pkg__cmd">$ npm i prosekeep</h3><span class="pkg__v">0.3.0</span></div><p>Carries an author&rsquo;s editorial decisions across repositories and agent tools. Plain-language and house-style checks, source comparisons, a review protocol, an Agent Skill, a CLI, and an MCP server. It keeps an agent from turning your argument into generic AI writing.</p><div class="pkg__links"><a href="https://www.npmjs.com/package/prosekeep" target="_blank" rel="noopener">npm</a> <a href="https://github.com/quarterback/prosekeep" target="_blank" rel="noopener">GitHub</a></div></div>
+      <div class="pkg"><div class="pkg__head"><h3 class="pkg__cmd">$ npm i plain-language-default</h3><span class="pkg__v">0.1.0</span></div><p>Federal plain-language rules packaged for agents. It installs as a project skill and writes the rules where an agent will actually read them. It also checks a draft from the CLI or over MCP.</p><div class="pkg__links"><a href="https://www.npmjs.com/package/plain-language-default" target="_blank" rel="noopener">npm</a> <a href="https://github.com/quarterback/plain-as-day" target="_blank" rel="noopener">GitHub</a></div></div>
+          <div class="pkg"><div class="pkg__head"><h3 class="pkg__cmd">$ npx -y github:quarterback/pbbg-content-schema install-skill</h3><span class="pkg__v">0.6.0</span></div><p>A standalone content architecture package for separating interface language, narrative structure, and game definitions in browser games developed with agents. It provides JSON Schemas, scoped writing policies, a neutral fictional example, reference projection tooling, a local linter CLI, an agent skill, and a local MCP server.</p><div class="pkg__links"><a href="projects/pbbg-content-schema.html">Project page</a> <a href="https://github.com/quarterback/pbbg-content-schema" target="_blank" rel="noopener">GitHub</a></div></div>
+      <div class="pkg"><div class="pkg__head"><h3 class="pkg__cmd">Agent After-Action Review</h3><span class="pkg__v">Claude Skill</span></div><p>A Claude skill that writes up an agent&rsquo;s run: what you asked for, what it did and the calls it made on its own.</p><div class="pkg__links"><a href="https://github.com/quarterback/AAR" target="_blank" rel="noopener">GitHub</a> <a href="https://blog.ronbronson.com/i-built-a-claude-skill-for-after-action-reviews-on-ai-agent-work" target="_blank" rel="noopener">Write-up</a></div></div>
+    </div>
+  </section>
+
+  <!-- How I build: 0-to-1 with agent teams. The stack is what those builds
+       ship on, chosen per project, listed small so it reads as the projects'
+       stack rather than a skills list. -->
+  <section class="sec build" id="build" aria-labelledby="h-build">
+    <h2 id="h-build">How I build</h2>
+    <p class="build__lede">I take products from 0 to 1 by orchestrating multi-agent teams. I own the spec, the architecture and the evals each change has to pass. Agents write most of the code, and every run ends with a <a href="projects/closedtab.html">ClosedTab</a> record of what was asked, what shipped and where an agent made its own call.</p>
+    <p class="build__lede">Coalition, Occupant Indices, the PBBG Content Schema, SuperInnings and the tools on npm were all built this way.</p>
+    <p class="build__on"><span>Shipped on</span> Python, TypeScript and Node; React and Vite; FastAPI, Flask and Hono; SQLite and Supabase; AT Protocol; MCP servers and Agent Skills; GitHub Actions, Vercel, Netlify, Cloudflare Workers and Fly.io.</p>
+  </section>
+
   <!-- Delivery: shipping with teams. -->
   <section class="sec proof" aria-labelledby="h-proof">
     <h2 id="h-proof">Shipping with teams</h2>
     <ul class="proof__l">
       <li><h3>18F</h3><p>Four years running a 40-person design division on short, problem-scoped deployments across federal agencies. We set up the government&rsquo;s first service design practice.</p></li>
       <li><h3><a href="https://digitalcorpspdx.org">Portland Digital Corps</a></h3><p>I started it in 2025. Fifty volunteers rebuilt six nonprofit websites in eight-week sprints.</p></li>
-      <li><h3>Directed agent builds</h3><p>Agents wrote most of the code for Coalition, Occupant Indices, the PBBG Content Schema and SuperInnings. I set the designs, rules and records.</p></li>
     </ul>
   </section>
 
