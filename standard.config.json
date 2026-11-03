@@ -2,14 +2,22 @@
   "publication": {
     "url": "https://ronbronson.dev",
     "name": "Ron Bronson — Design Engineer",
-    "description": "Design engineer. A compendium of software, tooling, open source projects & technical side quests.",
+    "description": "Ron Bronson's technical and applied R&D site: schemas, decision models, simulations, tools and working software for messy 0-to-1 problems.",
     "icon": "favicon.png",
-    "preferences": { "showInDiscover": true }
+    "preferences": {
+      "showInDiscover": true
+    }
   },
   "documents": {
-    "include": ["projects/*.html"],
-    "exclude": ["projects/_template.html", "projects/varsityapex.html", "projects/finnish-baseball-game-design.html", "projects/parliament-of-neighbors.html"],
-    "titleStrip": ["Ron Bronson"],
+    "include": [
+      "projects/*.html"
+    ],
+    "exclude": [
+      "projects/_template.html"
+    ],
+    "titleStrip": [
+      "Ron Bronson"
+    ],
     "overrides": {}
   }
 }
