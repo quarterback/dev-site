@@ -41,12 +41,9 @@
     <h1 class="project__title">ClosedTab</h1>
     <p class="project__lede">A shared record for human and agent teams: what you asked for, what the agent did, and what it understood the instruction to be.</p>
     <p class="case__go"><code class="case__cmd">$ npm i -g closedtab</code><a href="https://www.npmjs.com/package/closedtab">npm</a><a href="https://github.com/quarterback/closedtab">GitHub</a><a href="https://blog.ronbronson.com/closedtab-a-npm-shared-memory-for-you-and-your-ai-agents">Write-up</a></p>
-    <div class="project__body">
-    <p>When you build fast with agents, the reasoning behind each decision disappears. A week later you can&rsquo;t say what you asked for or what the agent did.</p>
-    <p>ClosedTab writes an Agent Action Record for each piece of agent work, in six parts: Intent, Action, Judgment, Deviation, Consequence and Change. <code>check</code> scores a record. <code>reconcile</code> lines it up against a machine trace and reports where the record claims more than the trace shows.</p>
-    <p>Private fences keep sensitive text in a gitignored store, and an unclosed fence fails closed. Every agent run on my sites ends with a record in the repo, and Vloora requires one for every handoff.</p>
-    <p class="row__by">Node.js on npm (0.5.0), <code>closedtab-mcp</code> stdio server, Agent Skill</p>
-    </div>
+    <!-- At a glance (3 November 2026) -->
+    <dl class="glance"><div><dt>Problem</dt><dd>When you build fast with agents, the reasoning behind each decision disappears. A week later you can&rsquo;t say what you asked for or what the agent did.</dd></div><div><dt>System</dt><dd>An npm CLI, Agent Skill and MCP server that write and score a record of each piece of agent work.</dd></div><div><dt>Mechanics</dt><dd>Each record has six parts: Intent, Action, Judgment, Deviation, Consequence and Change. <code>reconcile</code> checks a record against a machine trace and reports where they disagree.</dd></div><div><dt>Stack</dt><dd>Node.js on npm (0.5.0); <code>closedtab-mcp</code>; Agent Skill.</dd></div><div><dt>Result</dt><dd>Published on npm and required as the handoff record at Vloora.</dd></div></dl>
+
 
   </article>
 

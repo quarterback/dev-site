@@ -94,3 +94,14 @@ His follow-up: "I still want tabletop and simulations to be on there, don't get 
 - The six-part blocks are gone from every project page, so those pages are back to their earlier text. ClosedTab and prosekeep have short prose pages.
 - Removed the unused CSS.
 - `prosekeep check` returned 0 findings on the generated text.
+
+## Addendum: the short summaries go back on the project pages
+
+**Intent.** Ron: "I do want the project pages that aren't visible to stay, and all that was what I asked for. I just didn't want it to be a portfolio with too much text."
+
+**Action.**
+- The short summary is back on the nine featured project pages: Problem, System, Mechanics, Stack and Result, one or two sentences each, placed under the lede. The "My role" row is gone.
+- The summary has no dividers.
+- The ClosedTab and prosekeep pages use the summary in place of the prose.
+- The restored pages are unchanged and still listed on More: You Go First, PDX Spend, VarsityApex, Parliament of Neighbors and the Finnish baseball talk.
+- The home page stays in the earlier layout.

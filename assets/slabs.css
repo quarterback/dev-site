@@ -613,3 +613,10 @@ body.pg-blue .project > .figure, body.pg-blue .figpair img { background: #fff; }
 
 @media (max-width: 1000px) { .proof__l { grid-template-columns: 1fr; } }
 @media (max-width: 860px) { .wr2__grid { grid-template-columns: 1fr; } }
+
+/* Short summary on featured project pages. Space, no rules. */
+.glance { max-width: 900px; margin: 48px 0 0; display: grid; gap: 16px; }
+.glance div { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 20px; }
+.glance dt { font-family: var(--mono); font-size: 15px; color: var(--blue); padding-top: 4px; }
+.glance dd { margin: 0; font-size: 19px; line-height: 1.5; }
+@media (max-width: 600px) { .glance div { grid-template-columns: 1fr; gap: 2px; } }
