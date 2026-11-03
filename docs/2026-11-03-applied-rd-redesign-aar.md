@@ -76,3 +76,21 @@ His follow-up: "I still want tabletop and simulations to be on there, don't get 
 - Shortened the Shipping with teams lines.
 - Ran the generated home page text through the humanizer patterns and through `prosekeep check` (0.3.0). It returned 0 mechanical findings.
 - Left Ron's own words as they were: the hero, the brief's sentences, the FDD paragraph and the tabletop section.
+
+## Addendum: back to the earlier layout
+
+**Intent.** Ron: "When I said technical chops, tech stacks and proof of work, I didn't mean a portfolio. The agent's instructions about my role and all that were wrong; I'm not an IC. The old modality was the right lens. I just wanted the shape of what was on the site updated to match."
+
+**Deviation.** The redesign turned the home page into a portfolio. It had six-part case blocks with screenshots and a "My role" row on nine projects. Ron didn't ask for that layout.
+
+**Action.**
+- The home page is rebuilt from the earlier Slabs layout (`ce5ffb4`), keeping its order: hero, point of view, On npm, Tech stack, Things I made as screenshot rows. Each row has a one-line stack in place of a role.
+- Content updated to the brief:
+  - the new hero;
+  - mission engineering added to the point of view, which is now two by two with tabletop exercises, agent experience and forward deployed design;
+  - the fuller stack list;
+  - Things I made in the brief's groups: Systems (VarsityApex, Oregon), Engines and simulations (Coalition, Cap Buffet, You Go First, Play To Clinch), and Research and experiments (Occupant).
+- Shipping with teams and Writing now replace the participatory and workshop section.
+- The six-part blocks are gone from every project page, so those pages are back to their earlier text. ClosedTab and prosekeep have short prose pages.
+- Removed the unused CSS.
+- `prosekeep check` returned 0 findings on the generated text.

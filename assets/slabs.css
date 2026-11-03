@@ -596,53 +596,8 @@ body.pg-blue .project > .figure, body.pg-blue .figpair img { background: #fff; }
 @media (max-width: 1100px) { .sig--three { grid-template-columns: 1fr; } }
 @media (max-width: 760px) { .stack__l div { grid-template-columns: 1fr; gap: 4px; } .stack__l dd { font-size: 20px; } }
 
-/* Applied R&D front page (3 November 2026): how I work in three, the work
-   in four groups with a six-part summary per featured project, tabletop
-   exercises, stack, shipping with teams, writing by theme. */
-.hero__go { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 32px; }
-.hero--split .hero__go .reach__btn { margin-top: 28px; }
-.hero__alt { margin-top: 28px; font-family: var(--mono); font-size: 18px; color: var(--blue); }
-
-.how3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 48px; padding: 24px var(--gut) 0; }
-.how3__i { padding-top: 0; }
-.how3 h3 { margin: 0 0 16px; font-family: var(--display); font-weight: 800; font-size: clamp(30px, 2.8vw, 40px); line-height: 1; letter-spacing: -.035em; color: var(--blue); }
-.how3 p { margin: 0 0 14px; font-size: 19px; line-height: 1.5; }
-.how3__steps { margin: 0; padding-left: 1.4em; font-size: 19px; line-height: 1.5; }
-.how3__steps li { margin-bottom: 6px; }
-.how3__steps li::marker { font-family: var(--mono); color: var(--blue); }
-.how3__cite { font-family: var(--mono); font-size: 15px !important; color: var(--muted); }
-.how3__cite a { color: var(--ink); }
-
-.work h2 { margin-bottom: 8px; }
-.wgroup { padding-top: 64px; }
-.wgroup__h { margin: 0 0 8px; font-family: var(--mono); font-weight: 600; font-size: 18px; color: var(--blue); text-transform: uppercase; letter-spacing: .06em; }
-.case { scroll-margin-top: 104px; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); grid-template-areas: "head head" "shot glance"; gap: 20px 48px; padding: 72px 0 0; }
-.case--noshot { grid-template-areas: "head head" "glance glance"; }
-.case__head { grid-area: head; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 12px 32px; }
-.case h4 { margin: 0; font-family: var(--display); font-weight: 800; font-size: clamp(36px, 3.6vw, 52px); line-height: 1; letter-spacing: -.04em; }
-.case h4 a { text-decoration: none; }
-.case__go { margin: 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 24px; font-family: var(--mono); font-size: 16px; }
-.case__go a { color: var(--blue); }
-.case__cmd { font-family: var(--mono); font-size: 15px; color: var(--muted); }
-.case__shot { grid-area: shot; align-self: start; display: block; overflow: hidden; background: #ececf2; aspect-ratio: 4 / 3; }
-.case__shot img { width: 100%; height: 100%; object-fit: cover; object-position: top left; }
-.glance { grid-area: glance; margin: 0; display: grid; }
-.glance div { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 20px; padding: 0 0 18px; }
-.glance dt { font-family: var(--mono); font-size: 15px; color: var(--blue); padding-top: 3px; }
-.glance dd { margin: 0; font-size: 18px; line-height: 1.5; }
-.glance--page { max-width: 900px; margin-top: 48px; }
-.case--noshot .glance { max-width: 1000px; }
-
-.minis { list-style: none; margin: 72px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px 40px; }
-.minis li { padding-top: 0; }
-.minis h4 { margin: 0 0 6px; font-family: var(--display); font-weight: 600; font-size: 22px; line-height: 1.2; letter-spacing: -.015em; }
-.minis p { margin: 0; font-size: 17px; line-height: 1.45; color: var(--muted); }
-
-.tabletop h2 { margin-bottom: 24px; color: var(--blue); }
-.tabletop > p { margin: 0 0 16px; font-size: 21px; line-height: 1.5; max-width: 40em; }
-.tabletop .sig__go { margin-top: 26px; font-family: var(--display); font-weight: 800; font-size: 26px; letter-spacing: -.03em; }
-.tabletop .sig__go a { color: var(--blue); text-decoration-thickness: 3px; text-underline-offset: 6px; }
-
+/* Applied R&D content in the Slabs layout (3 November 2026): shipping with
+   teams, writing by theme, the teaching pointer. No dividers. */
 .proof h2, .wr2 h2 { margin-bottom: 32px; }
 .proof__l { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 48px; }
 .proof__l li { padding-top: 0; }
@@ -656,10 +611,5 @@ body.pg-blue .project > .figure, body.pg-blue .figpair img { background: #fff; }
 
 .foot__teach { font-family: var(--mono); font-size: 16px; }
 
-@media (max-width: 1000px) { .how3, .proof__l { grid-template-columns: 1fr; } }
-@media (max-width: 860px) {
-  .case, .case--noshot { grid-template-columns: 1fr; grid-template-areas: "head" "shot" "glance"; }
-  .case--noshot { grid-template-areas: "head" "glance"; }
-  .wr2__grid { grid-template-columns: 1fr; }
-}
-@media (max-width: 600px) { .glance div { grid-template-columns: 1fr; gap: 2px; } .glance dd { font-size: 17px; } }
+@media (max-width: 1000px) { .proof__l { grid-template-columns: 1fr; } }
+@media (max-width: 860px) { .wr2__grid { grid-template-columns: 1fr; } }
