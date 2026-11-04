@@ -580,3 +580,44 @@ body.pg-blue .project > .figure, body.pg-blue .figpair img { background: #fff; }
 .sig .sig__go a { color: var(--blue); text-decoration-thickness: 3px; text-underline-offset: 6px; }
 .sig + .sec { padding-top: 104px; }
 @media (max-width: 860px) { .sig { grid-template-columns: 1fr; } }
+
+/* Point of view in three (3 November 2026): tabletop exercises, agent
+   experience, forward deployed design. The tech stack follows the tools. */
+.sig--three { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 56px 48px; }
+.sig--three h2 { font-size: clamp(34px, 3.2vw, 46px); }
+.sig--three .sig__i > p { font-size: 19px; }
+.sig__cite { font-family: var(--mono); font-size: 15px !important; color: var(--muted); }
+.sig__cite a { color: var(--ink); }
+.stack h2 { margin-bottom: 32px; }
+.stack__l { margin: 0; display: grid; gap: 0; }
+.stack__l div { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 24px; padding: 14px 0; }
+.stack__l dt { font-family: var(--mono); font-size: 16px; color: var(--blue); padding-top: 3px; }
+.stack__l dd { margin: 0; font-family: var(--display); font-weight: 600; font-size: 24px; line-height: 1.3; letter-spacing: -.02em; }
+@media (max-width: 1100px) { .sig--three { grid-template-columns: 1fr; } }
+@media (max-width: 760px) { .stack__l div { grid-template-columns: 1fr; gap: 4px; } .stack__l dd { font-size: 20px; } }
+
+/* Applied R&D content in the Slabs layout (3 November 2026): writing by
+   theme, the teaching pointer. No dividers. */
+.wr2 h2 { margin-bottom: 32px; }
+
+.wr2__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 56px; }
+.wr2__grid h3 { margin: 0 0 12px; font-family: var(--mono); font-weight: 600; font-size: 16px; color: var(--blue); text-transform: uppercase; letter-spacing: .06em; }
+.wr2__grid ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.wr2__grid a { font-family: var(--display); font-weight: 600; font-size: 21px; line-height: 1.25; letter-spacing: -.015em; }
+
+.foot__teach { font-family: var(--mono); font-size: 16px; }
+
+@media (max-width: 1000px) { @media (max-width: 860px) { .wr2__grid { grid-template-columns: 1fr; } }
+
+/* Short summary on featured project pages. Space, no rules. */
+.glance { max-width: 900px; margin: 48px 0 0; display: grid; gap: 16px; }
+.glance div { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 20px; }
+.glance dt { font-family: var(--mono); font-size: 15px; color: var(--blue); padding-top: 4px; }
+.glance dd { margin: 0; font-size: 19px; line-height: 1.5; }
+@media (max-width: 600px) { .glance div { grid-template-columns: 1fr; gap: 2px; } }
+
+/* How I build: the agent-team method first, the stack as one small line. */
+.build h2 { margin-bottom: 28px; }
+.build__lede { margin: 0 0 16px; max-width: 40em; font-size: 22px; line-height: 1.5; }
+.build__on { margin: 28px 0 0; max-width: 60em; font-family: var(--mono); font-size: 15px; line-height: 1.6; color: var(--muted); }
+.build__on span { color: var(--blue); margin-right: 12px; }
