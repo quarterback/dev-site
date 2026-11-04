@@ -5,6 +5,10 @@
       "rkey": "3mphoysxely2o",
       "uri": "at://did:plc:odgxwakrg5r2zjetnrkxuh5c/site.standard.document/3mphoysxely2o"
     },
+    "projects/closedtab.html": {
+      "rkey": "3mzil2q2agp26",
+      "uri": "at://did:plc:odgxwakrg5r2zjetnrkxuh5c/site.standard.document/3mzil2q2agp26"
+    },
     "projects/coalition.html": {
       "rkey": "3mz4piigocm24",
       "uri": "at://did:plc:odgxwakrg5r2zjetnrkxuh5c/site.standard.document/3mz4piigocm24"
@@ -12,6 +16,10 @@
     "projects/draft-lab.html": {
       "rkey": "3mpfibveiyr2q",
       "uri": "at://did:plc:odgxwakrg5r2zjetnrkxuh5c/site.standard.document/3mpfibveiyr2q"
+    },
+    "projects/finnish-baseball-game-design.html": {
+      "rkey": "3mzil2q4tvf2s",
+      "uri": "at://did:plc:odgxwakrg5r2zjetnrkxuh5c/site.standard.document/3mzil2q4tvf2s"
     },
     "projects/glowrm.html": {
       "rkey": "3mpfibvgphz2j",
@@ -37,13 +45,25 @@
       "rkey": "3mpfibvk6ob2o",
       "uri": "at://did:plc:odgxwakrg5r2zjetnrkxuh5c/site.standard.document/3mpfibvk6ob2o"
     },
+    "projects/parliament-of-neighbors.html": {
+      "rkey": "3mzil2qbpxt2t",
+      "uri": "at://did:plc:odgxwakrg5r2zjetnrkxuh5c/site.standard.document/3mzil2qbpxt2t"
+    },
     "projects/pbbg-content-schema.html": {
       "rkey": "3mz4piittsc2t",
       "uri": "at://did:plc:odgxwakrg5r2zjetnrkxuh5c/site.standard.document/3mz4piittsc2t"
     },
+    "projects/pdxspend.html": {
+      "rkey": "3mzil2qdnkl2i",
+      "uri": "at://did:plc:odgxwakrg5r2zjetnrkxuh5c/site.standard.document/3mzil2qdnkl2i"
+    },
     "projects/play-to-clinch.html": {
       "rkey": "3mpfibvnj5o2x",
       "uri": "at://did:plc:odgxwakrg5r2zjetnrkxuh5c/site.standard.document/3mpfibvnj5o2x"
+    },
+    "projects/prosekeep.html": {
+      "rkey": "3mzil2qffue2t",
+      "uri": "at://did:plc:odgxwakrg5r2zjetnrkxuh5c/site.standard.document/3mzil2qffue2t"
     },
     "projects/super-innings.html": {
       "rkey": "3mpfibvp4zt27",
@@ -53,9 +73,17 @@
       "rkey": "3mpfibvqfxc2a",
       "uri": "at://did:plc:odgxwakrg5r2zjetnrkxuh5c/site.standard.document/3mpfibvqfxc2a"
     },
+    "projects/varsityapex.html": {
+      "rkey": "3mzil2qia5n2s",
+      "uri": "at://did:plc:odgxwakrg5r2zjetnrkxuh5c/site.standard.document/3mzil2qia5n2s"
+    },
     "projects/viperball.html": {
       "rkey": "3mpfibvrjzj2o",
       "uri": "at://did:plc:odgxwakrg5r2zjetnrkxuh5c/site.standard.document/3mpfibvrjzj2o"
+    },
+    "projects/ygf.html": {
+      "rkey": "3mzil2qkded2t",
+      "uri": "at://did:plc:odgxwakrg5r2zjetnrkxuh5c/site.standard.document/3mzil2qkded2t"
     }
   },
   "icon": {
