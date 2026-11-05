@@ -6,12 +6,12 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="icon" href="/favicon.png" type="image/png" sizes="any" />
 <title>VarsityApex — Ron Bronson</title>
-<meta name="description" content="A decentralized data platform for high school sports, built on ATProto. Ingests Hy-Tek printouts, spreadsheets, and scorebooks, normalizes and resolves identity across them, and distributes standardized records up through school, league, state, and national levels." />
+<meta name="description" content="A proof of concept for data portability in legacy record systems. It ingests Hy-Tek printouts, spreadsheets and scorebooks, normalizes them, resolves identity across them and publishes durable, attributable records on ATProto. High school sports is the test case." />
 <link rel="canonical" href="https://ronbronson.dev/projects/varsityapex.html" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Ron Bronson" />
 <meta property="og:title" content="VarsityApex — Ron Bronson" />
-<meta property="og:description" content="A decentralized data platform for high school sports, built on ATProto. Ingests Hy-Tek printouts, spreadsheets, and scorebooks, normalizes and resolves identity across them, and distributes standardized records up through school, league, state, and national levels." />
+<meta property="og:description" content="A proof of concept for data portability in legacy record systems. It ingests Hy-Tek printouts, spreadsheets and scorebooks, normalizes them, resolves identity across them and publishes durable, attributable records on ATProto. High school sports is the test case." />
 <meta property="og:url" content="https://ronbronson.dev/projects/varsityapex.html" />
 <meta property="og:image" content="https://ronbronson.dev/assets/social-card.png" />
 <meta property="og:image:width" content="1200" />
@@ -19,7 +19,7 @@
 <meta property="og:image:alt" content="Ron Bronson beside the words Problems Are Designed, with a workshop photo and a content schema check." />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="VarsityApex — Ron Bronson" />
-<meta name="twitter:description" content="A decentralized data platform for high school sports, built on ATProto. Ingests Hy-Tek printouts, spreadsheets, and scorebooks, normalizes and resolves identity across them, and distributes standardized records up through school, league, state, and national levels." />
+<meta name="twitter:description" content="A proof of concept for data portability in legacy record systems. It ingests Hy-Tek printouts, spreadsheets and scorebooks, normalizes them, resolves identity across them and publishes durable, attributable records on ATProto. High school sports is the test case." />
 <meta name="twitter:image" content="https://ronbronson.dev/assets/social-card.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -127,7 +127,7 @@
   <article class="project">
 
     <h1 class="project__title">VarsityApex</h1>
-    <p class="project__lede">A decentralized data platform for high school sports &mdash; built on ATProto.</p>
+    <p class="project__lede">A proof of concept for data portability in legacy record systems, built on ATProto. High school sports is the test case.</p>
     <!-- At a glance (3 November 2026) -->
     <dl class="glance"><div><dt>Problem</dt><dd>Most results systems expect two teams and one score. Track, swimming, wrestling, golf and cross country end up as PDFs, or never get posted.</dd></div><div><dt>System</dt><dd>It imports the files schools already make and publishes results that a school, conference or state association can each run a site from.</dd></div><div><dt>Mechanics</dt><dd>Every contest is a GAME, a DUAL or a MEET, so one site carries all 45 activities. A resolver matches school names and holds unclear ones for a person. Each import keeps its file name, parser and SHA-256 hash.</dd></div><div><dt>Stack</dt><dd>AT Protocol and standard.site records; parsers for Hy-Tek reports, CSV box scores and match cards.</dd></div><div><dt>Result</dt><dd>A working prototype that publishes a sample state season, 7A to 1A, from the original files with nothing retyped.</dd></div></dl>
 
