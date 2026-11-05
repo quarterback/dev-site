@@ -156,3 +156,5 @@ Ron: "i'm ready to implement dev as proof of work revamp on the dev-site. Implem
 - The Other projects names now show their screenshot on hover, using the existing `assets/shots.js`. Pensulo Cards has no screenshot in the repo, so it has no preview. Touch screens just follow the link.
 
 **Consequence.** Rendered at 1440px with no errors and no horizontal scroll. prosekeep found 0 findings.
+
+**Further change.** Ron: "remove this 'I call this live-action service design.'" The line is removed from Preparing leaders, along with the style that enlarged it.
