@@ -146,3 +146,15 @@ Ron: "i'm ready to implement dev as proof of work revamp on the dev-site. Implem
 **Action.** The home page nav is now a single Contact link (email), plus the two colour swatches. The section anchors and the Design link are gone.
 
 **Deviation.** The anchor labels were the design artboard's. Last run I kept them after renaming the headings, so the two stopped matching.
+
+## Addendum: VarsityApex first, hover previews
+
+**Intent.** Ron: "varsityapex should be on this page, it's far too interesting a project with its own blog post not to be showcased ahead of the games". He also asked: "is it possible for a popup of the project artifacts to pop up when they get rolled over".
+
+**Action.**
+- VarsityApex is now the first Recent project, ahead of Coalition. It carries its copy from the 3 November home page, the write-up and live demo links, and its stack line.
+- The Other projects names now show their screenshot on hover, using the existing `assets/shots.js`. Pensulo Cards has no screenshot in the repo, so it has no preview. Touch screens just follow the link.
+
+**Consequence.** Rendered at 1440px with no errors and no horizontal scroll. prosekeep found 0 findings.
+
+**Further change.** Ron: "remove this 'I call this live-action service design.'" The line is removed from Preparing leaders, along with the style that enlarged it.
