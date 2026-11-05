@@ -97,8 +97,12 @@ h1, h2, h3 { margin: 0; font-family: var(--display); }
 .bench__more { margin: 8px 0 0; font-size: 18px; }
 
 /* In real life */
-.irl { margin: 28px 0 48px; }
-.irl img { width: 100%; height: 520px; object-fit: cover; object-position: center 35%; }
+.irl { margin: 28px 0 48px; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 4fr) minmax(0, 3fr); grid-template-rows: 260px 260px; gap: 16px; }
+.irl img { width: 100%; height: 100%; object-fit: cover; }
+.irl__a { grid-column: 1; grid-row: 1 / span 2; }
+.irl__b { grid-column: 2; grid-row: 1; }
+.irl__d { grid-column: 2; grid-row: 2; }
+.irl__c { grid-column: 3; grid-row: 1 / span 2; }
 
 /* Photo band between the hero and Recent projects */
 .band { margin: 16px 0 0; }
@@ -133,7 +137,11 @@ h1, h2, h3 { margin: 0; font-family: var(--display); }
   .feat li:nth-child(even) .feat__shot { order: 0; }
   .feat li { gap: 20px; }
   .bench { columns: 1; }
-  .irl img { height: 300px; }
+  .irl { grid-template-columns: 1fr 1fr; grid-template-rows: 220px 220px 220px; }
+  .irl__a { grid-column: 1 / span 2; grid-row: 1; }
+  .irl__b { grid-column: 1; grid-row: 2; }
+  .irl__d { grid-column: 2; grid-row: 2; }
+  .irl__c { grid-column: 1 / span 2; grid-row: 3; }
   .rooms li { gap: 6px; }
   .npm li { gap: 6px; }
 }
