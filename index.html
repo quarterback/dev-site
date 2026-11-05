@@ -24,6 +24,7 @@
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/gallery/PPNeueMontreal-Extrabold.woff2" crossorigin />
 <link rel="stylesheet" href="assets/workshop.css" />
 <script>try { if (localStorage.getItem("rb-theme") === "coffee") document.documentElement.setAttribute("data-theme", "coffee"); } catch (e) {}</script>
+<script src="assets/shots.js" defer></script>
 </head>
 <body>
 <div class="w-wrap">
@@ -49,6 +50,7 @@
   <section class="g sec" id="work" aria-labelledby="h-made">
     <h2 id="h-made">Recent projects</h2>
     <ul class="feat">
+      <li id="varsityapex"><a class="feat__shot" href="projects/varsityapex.html" tabindex="-1" aria-hidden="true"><img src="assets/varsityapex/home.png" alt="" loading="lazy" /></a><div><h3><a href="projects/varsityapex.html">VarsityApex</a></h3><p>Results for high school sports, imported from the files schools already make. Every contest is a game, a dual or a meet, so one site carries 45 activities. Each import keeps its source file&rsquo;s hash. <a href="https://blog.ronbronson.dev/3msnpahn5r22k">Write-up</a> &middot; <a href="https://varsityapex.com/tour/">Live demo</a></p><span class="feat__t">AT Protocol, standard.site, Hy-Tek and CSV parsers, SHA-256 provenance</span></div></li>
       <li id="coalition"><a class="feat__shot" href="projects/coalition.html" tabindex="-1" aria-hidden="true"><img src="assets/coalition/play.webp" alt="" loading="lazy" /></a><div><h3><a href="projects/coalition.html">Coalition</a></h3><p>An escape game in one HTML file, set in my Nelosphere universe. You lost an election, a court has barred you from leaving, and you have 72 hours to reach the border and a jet.</p><span class="feat__t">Game design, fiction, content rules</span></div></li>
       <li id="oregon-tennis"><a class="feat__shot" href="projects/oregon-tennis.html" tabindex="-1" aria-hidden="true"><img src="assets/oregon-tennis/home.png" alt="" loading="lazy" /></a><div><h3><a href="projects/oregon-tennis.html">Oregon HS Tennis Power Rankings</a></h3><p>A statewide rating system for Oregon high school tennis, built on four years of match data. The OSAA adopted a dual team championship for 2027, with brackets seeded from these rankings.</p><span class="feat__t">Rating models, simulation, product design</span></div></li>
       <li id="draft-lab"><a class="feat__shot" href="projects/draft-lab.html" tabindex="-1" aria-hidden="true"><img src="assets/capbuffet/home.png" alt="" loading="lazy" /></a><div><h3><a href="projects/draft-lab.html">Cap Buffet</a></h3><p>A browser lab for testing salary cap systems before a league adopts them. Its 18 mechanics, from luxury taxes and aprons to amnesty, are modules in a pure TypeScript engine.</p><span class="feat__t">Mechanism design, TypeScript engine</span></div></li>
@@ -77,12 +79,12 @@
   <section class="g sec" id="bench" aria-labelledby="h-bench">
     <h2 id="h-bench">Other projects</h2>
     <div class="bench">
-      <div><h3><a href="projects/play-to-clinch.html">Play To Clinch</a></h3><p>Earth&rsquo;s first-ever team tennis computer game. Juniors, college programs and a coed pro league share one rating scale, and a point-by-point engine plays every serve and rally, ported from my baseball simulation.</p></div>
-      <div><h3><a href="projects/viperball.html">Viperball</a></h3><p>An invented gridiron sport with its own rulebook, a probability engine that plays it, a 280-team universe to play it in, and a terminal-style stats portal serving the whole thing.</p></div>
-      <div><h3><a href="projects/super-innings.html">SuperInnings</a></h3><p>Baseball restructured into one continuous 27-out half per side. A full simulated world with its own stats, economy, and history, documented across 140+ engineering decision records.</p></div>
-      <div><h3><a href="projects/toccer.html">Tennis Polo (Toccer)</a></h3><p>Tennis Polo is pretty straightforward. Two teams try to score goals using a tennis-sized ball, defended by a goalkeeper holding a tennis racket. The team with the most points wins. A sport I invented by accident at summer camp in 2004.</p></div>
-      <div><h3><a href="projects/ygf.html">You Go First</a></h3><p>A better matching model for dating apps, built on a speculative algorithm I designed that uses game mechanics and behavioral analytics to match people.</p></div>
-      <div><h3><a href="projects/beachwave.html">Beachwave</a></h3><p>A deployable reference for live audio rooms on ATProto. Sign in with ATProto OAuth, create a room, publish its metadata, and connect audio through LiveKit, then fork the repo and run your own version.</p></div>
+      <div><h3><a href="projects/play-to-clinch.html" data-shot="assets/play-to-clinch/recruiting-profile.png">Play To Clinch</a></h3><p>Earth&rsquo;s first-ever team tennis computer game. Juniors, college programs and a coed pro league share one rating scale, and a point-by-point engine plays every serve and rally, ported from my baseball simulation.</p></div>
+      <div><h3><a href="projects/viperball.html" data-shot="assets/viperball/season-overview.png">Viperball</a></h3><p>An invented gridiron sport with its own rulebook, a probability engine that plays it, a 280-team universe to play it in, and a terminal-style stats portal serving the whole thing.</p></div>
+      <div><h3><a href="projects/super-innings.html" data-shot="assets/superinnings/home.webp">SuperInnings</a></h3><p>Baseball restructured into one continuous 27-out half per side. A full simulated world with its own stats, economy, and history, documented across 140+ engineering decision records.</p></div>
+      <div><h3><a href="projects/toccer.html" data-shot="assets/toccer/home.png">Tennis Polo (Toccer)</a></h3><p>Tennis Polo is pretty straightforward. Two teams try to score goals using a tennis-sized ball, defended by a goalkeeper holding a tennis racket. The team with the most points wins. A sport I invented by accident at summer camp in 2004.</p></div>
+      <div><h3><a href="projects/ygf.html" data-shot="assets/ygf/16-system-at-work.png">You Go First</a></h3><p>A better matching model for dating apps, built on a speculative algorithm I designed that uses game mechanics and behavioral analytics to match people.</p></div>
+      <div><h3><a href="projects/beachwave.html" data-shot="assets/beachwave/home.png">Beachwave</a></h3><p>A deployable reference for live audio rooms on ATProto. Sign in with ATProto OAuth, create a room, publish its metadata, and connect audio through LiveKit, then fork the repo and run your own version.</p></div>
       <div><h3><a href="https://dribbble.com/shots/3794375-Pensulo-Card-Deck">Pensulo Cards</a></h3><p>A deck of 46 cards for breaking creative block and provoking ideas.</p></div>
     </div>
     <p class="bench__more"><a href="more.html">Everything else I&rsquo;ve built</a></p>

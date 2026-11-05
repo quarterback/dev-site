@@ -151,3 +151,8 @@ h1, h2, h3 { margin: 0; font-family: var(--display); }
 /* The ask: one question and the address, before the footer */
 .ask p { margin: 18px 0 0; font-family: var(--display); font-weight: 600; font-size: 40px; line-height: 1.1; }
 @media (max-width: 860px) { .ask p { font-size: 26px; overflow-wrap: anywhere; } }
+
+/* Screenshot preview on hover for Other projects (assets/shots.js) */
+.shot-pop { position: fixed; left: 0; top: 0; z-index: 50; width: 420px; pointer-events: none; opacity: 0; transition: opacity .12s; background: var(--shot); box-shadow: 0 18px 40px rgba(0, 0, 0, .28); }
+.shot-pop.is-on { opacity: 1; }
+.shot-pop img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top left; }
