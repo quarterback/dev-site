@@ -232,3 +232,5 @@ The hero is the only large type left.
 - Preparing leaders now has a four-photo grid in place of the single easel photo: the easel photo plus three from the folder (pointing to the wall, the "What is UX in the year 2040?" sheet, and the room from above). The grid stacks on phones.
 - The three new photos are resized to 1,400px in `assets/death-to-ux/`.
 - Future runs leave out fact-check flags on numbers and claims.
+
+**Further change.** Ron: "i wanted a different photo in the bottom than what you had there." The grid is replaced by one photo, `studio.jpg`, the file Ron had named in the Death to UX folder. The other three grid images are removed.
