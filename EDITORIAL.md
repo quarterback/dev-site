@@ -35,7 +35,7 @@ Each project card carries `Status`, `Audience`, and `My contribution`. There is 
 
 `Status` is a claim about the world. "Live" means live today. Check it before a release, and change it when a project goes quiet.
 
-**This site is the proof that software shipped.** The service practice belongs on ronbronson.design; the person belongs on ronbronson.com.
+**This site is a campaign, not a personal site.** It argues one thing, "Problems are designed", and the games, simulations, live exercises and software on it are the record behind that claim. Every section should read as evidence for it, and the page ends with an ask. The service practice belongs on ronbronson.design; the person belongs on ronbronson.com. Set by Ron on 5 November 2026.
 
 ## Writing mechanics
 
@@ -64,7 +64,7 @@ Conventions taken from Ron's existing corpus, not imposed on it.
 
 **Decisions an agent may not revise on its own:**
 
-- Positioning. Which of the three sites makes which argument is set by rule 7 of the 25 October editorial reference: masthead is the person and the worldview, `.design` is a service practice, `.dev` is proof that software shipped.
+- Positioning. Which of the three sites makes which argument is set by rule 7 of the 25 October editorial reference: masthead is the person and the worldview, `.design` is a service practice, `.dev` is a campaign for "Problems are designed", with shipped software as its proof (changed by Ron, 5 November 2026).
 - Any claim of authority held: headcount set, hiring approved, who he advised, what he was accountable for.
 - Any project's status. "Live" is a claim about the world, not a style choice.
 - Any number. A figure may be carried from existing copy or from the career register. It may not be rounded, upgraded, or invented.

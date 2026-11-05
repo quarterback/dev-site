@@ -48,7 +48,7 @@ h1, h2, h3 { margin: 0; font-family: var(--display); }
 /* Top bar */
 .top { position: sticky; top: 0; z-index: 5; background: var(--bg); transition: background .2s; }
 .top__in { display: flex; justify-content: space-between; align-items: center; gap: 12px 24px; padding-top: 22px; padding-bottom: 22px; }
-.top__name { font-family: var(--display); font-weight: 800; font-size: 22px; text-decoration: none; }
+.top__name { font-family: var(--display); font-weight: 800; font-size: 22px; text-decoration: none; white-space: nowrap; }
 .top nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px 26px; align-items: center; font-weight: 600; font-size: 17px; }
 .top nav a { text-decoration: none; }
 .top nav a:hover { text-decoration: underline; }
@@ -148,3 +148,7 @@ h1, h2, h3 { margin: 0; font-family: var(--display); }
 .wr { list-style: none; margin: 28px 0 0; padding: 0; columns: 2; column-gap: 72px; }
 .wr li { break-inside: avoid; padding: 0 0 18px; font-family: var(--display); font-weight: 600; font-size: 26px; line-height: 1.15; }
 @media (max-width: 860px) { .wr { columns: 1; } .wr li { font-size: 22px; } }
+
+/* The ask: one question and the address, before the footer */
+.ask p { margin: 18px 0 0; font-family: var(--display); font-weight: 600; font-size: 40px; line-height: 1.1; }
+@media (max-width: 860px) { .ask p { font-size: 26px; overflow-wrap: anywhere; } }

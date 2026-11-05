@@ -96,3 +96,23 @@ Ron: "i'm ready to implement dev as proof of work revamp on the dev-site. Implem
 **Consequence.**
 - Rendered at 1440px and 390px with no horizontal scroll, no errors and no failed requests.
 - prosekeep found 0 mechanical findings on `index.html` and `about.html`.
+
+## Addendum: positioned as a campaign, "Problems are designed"
+
+**Intent.** Ron: "Other agents have asvised do a search of referenfe sites and find a good postioning this isnt a personal site its a campaign." I looked at Bret Victor, Dynamicland, Ink & Switch, Code for America, the King's Wargaming Network, PAXsims, Jane McGonigal and Nicky Case. I offered three hero options and Ron picked "Problems are designed".
+
+**Action.**
+- **Hero:** "Problems are designed", followed by "I build games, simulations and software that make the design visible, so people can change the rules before they live under them." The "Ron Bronson" headline, the serious-play lede and the stand line are gone. The name stays in the top bar.
+- **Title, description, OG and Twitter text** now lead with the claim, in the third person.
+- **New closing ask before the footer:** "Got a decision to rehearse?" followed by the email address.
+- **`EDITORIAL.md`:** .dev is now recorded as a campaign for "Problems are designed", with shipped software as its proof. Ron changed this on 5 November 2026, replacing the earlier "proof that software shipped".
+
+**Judgment.**
+- **New wording to confirm.** The headline is Ron's, from the 3 November hero. The sentence under it and the ask line are mine, built from his tabletop paragraph. Ron should confirm or rewrite both.
+- **Serious play left out.** "For decades, I've been engaged in serious play" no longer appears on the page. It could come back as a line in Preparing leaders if Ron wants it.
+- **Not reached.** I couldn't fetch Jen Pahlka's site from this session's network.
+
+**Consequence.**
+- Rendered at 1440px and 390px with no horizontal scroll and no errors.
+- prosekeep found 0 mechanical findings on `index.html` and `EDITORIAL.md`.
+- The social card still says "Problems Are Designed", which now matches the hero.
