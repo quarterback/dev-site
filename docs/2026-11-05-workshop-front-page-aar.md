@@ -182,3 +182,16 @@ Ron: "i'm ready to implement dev as proof of work revamp on the dev-site. Implem
 **Action.** The hero headline is now fluid, `clamp(56px, 7.2vw, 112px)` where it was a fixed 168px. The lede and the hero padding scale down with it.
 
 **Consequence.** "Problems are designed" sits on one line at 1440px. The first project screenshot starts at 567px in a 1440×900 window, 603px at 1280×720 and 685px at 1000×700. There is no horizontal scroll at 390px.
+
+## Addendum: one type scale
+
+**Intent.** Ron: "recent project and other subheads should be H3 not H1 heroes… or H2 and then the project heads can be H3 BUT RIGHT NOW THERE'S NO RHYME OR REASON".
+
+**Action.** `workshop.css` now sets one size per level:
+- **`--h2`** (32–44px) for every section heading.
+- **`--h3`** (22–26px) for every project, event and footer title, and for the years.
+- **`--body`** (18px) for descriptions.
+
+The hero is the only large type left.
+
+**Deviation.** Section headings had been 76px and project titles 52px, as drawn on the artboard. Other projects and the events used different sizes again.
