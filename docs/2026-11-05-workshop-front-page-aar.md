@@ -223,3 +223,12 @@ The hero is the only large type left.
 - Rendered at 1440px and 390px with no horizontal scroll and no errors.
 - prosekeep found 0 findings.
 - The first project now starts below the fold at 1440×900; the photo band takes the space above it, as Ron placed it.
+
+## Addendum: Death to UX photos
+
+**Intent.** Ron shared a Dropbox folder, "Death to UX", with nine workshop photos. He also said: "nobody cares about accuracy or numbers least of all me, stop with that fact checking."
+
+**Action.**
+- Preparing leaders now has a four-photo grid in place of the single easel photo: the easel photo plus three from the folder (pointing to the wall, the "What is UX in the year 2040?" sheet, and the room from above). The grid stacks on phones.
+- The three new photos are resized to 1,400px in `assets/death-to-ux/`.
+- Future runs leave out fact-check flags on numbers and claims.
