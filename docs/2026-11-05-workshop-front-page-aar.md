@@ -174,3 +174,11 @@ Ron: "i'm ready to implement dev as proof of work revamp on the dev-site. Implem
 - **On `projects/varsityapex.html`,** the lede, description, OG and Twitter text lead with "a proof of concept for data portability in legacy record systems". The body paragraphs are unchanged.
 
 **Judgment.** The sentence "A proof of concept for the tooling stalled legacy modernization projects need" is my summary of the write-up's legacy-modernization paragraph. Ron should check it.
+
+## Addendum: hero sized to the fold
+
+**Intent.** Ron, with a screenshot: "this is far too big, it's killing the fold".
+
+**Action.** The hero headline is now fluid, `clamp(56px, 7.2vw, 112px)` where it was a fixed 168px. The lede and the hero padding scale down with it.
+
+**Consequence.** "Problems are designed" sits on one line at 1440px. The first project screenshot starts at 567px in a 1440×900 window, 603px at 1280×720 and 685px at 1000×700. There is no horizontal scroll at 390px.
