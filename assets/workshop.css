@@ -97,8 +97,12 @@ h1, h2, h3 { margin: 0; font-family: var(--display); }
 .bench__more { margin: 8px 0 0; font-size: 18px; }
 
 /* In real life */
-.irl { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 20px; margin: 28px 0 48px; }
-.irl img { width: 100%; height: 520px; object-fit: cover; }
+.irl { margin: 28px 0 48px; }
+.irl img { width: 100%; height: 520px; object-fit: cover; object-position: center 35%; }
+
+/* Photo band between the hero and Recent projects */
+.band { margin: 16px 0 0; }
+.band img { width: 100%; height: auto; aspect-ratio: 2400 / 1290; max-height: 640px; object-fit: cover; }
 .rooms { list-style: none; margin: 0; padding: 0; }
 .rooms li { display: grid; grid-template-columns: 140px minmax(0, 1fr) minmax(0, 1.3fr); gap: 32px; padding: 18px 0; align-items: baseline; }
 .rooms__y { font-family: var(--display); font-weight: 800; font-size: var(--h3); line-height: 1.1; color: var(--accent); }
@@ -125,7 +129,7 @@ h1, h2, h3 { margin: 0; font-family: var(--display); }
 
 @media (max-width: 860px) {
   :root { --gut: 16px; }
-  .feat li, .feat li:nth-child(even), .rooms li, .npm li, .foot, .irl { grid-template-columns: 1fr; }
+  .feat li, .feat li:nth-child(even), .rooms li, .npm li, .foot { grid-template-columns: 1fr; }
   .feat li:nth-child(even) .feat__shot { order: 0; }
   .feat li { gap: 20px; }
   .bench { columns: 1; }
