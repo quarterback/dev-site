@@ -234,3 +234,9 @@ The hero is the only large type left.
 - Future runs leave out fact-check flags on numbers and claims.
 
 **Further change.** Ron: "i wanted a different photo in the bottom than what you had there." The grid is replaced by one photo, `studio.jpg`, the file Ron had named in the Death to UX folder. The other three grid images are removed.
+
+## Addendum: Design and Blog back in the nav
+
+**Intent.** Ron: ".dev doesn't have a nav that takes you to .design or blog.ronbronson.dev and it ought to".
+
+**Action.** The home nav is now Design (ronbronson.design), Blog (blog.ronbronson.dev) and Contact. The project and secondary pages get Blog after their Design link.
