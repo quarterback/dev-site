@@ -131,7 +131,6 @@ h1, h2, h3 { margin: 0; font-family: var(--display); }
   .irl img { height: 300px; }
   .rooms li { gap: 6px; }
   .npm li { gap: 6px; }
-  .top nav .hide { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   body, .top, .feat img { transition: none; }

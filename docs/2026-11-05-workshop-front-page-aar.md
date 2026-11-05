@@ -138,3 +138,11 @@ Ron: "i'm ready to implement dev as proof of work revamp on the dev-site. Implem
 **Action.** The three event headings in Preparing leaders now link to those sites.
 
 **Consequence.** designforthepublic.com and digitalcorpspdx.org returned 200. yearsahead.io reset the connection from this sandbox, so it was linked on Ron's word.
+
+## Addendum: nav cut to Contact
+
+**Intent.** Ron: "get rid of the nav, i hate all of those fucking words you have for headings which don't match… they're just anchors anyway, contact is needed the rest is not".
+
+**Action.** The home page nav is now a single Contact link (email), plus the two colour swatches. The section anchors and the Design link are gone.
+
+**Deviation.** The anchor labels were the design artboard's. Last run I kept them after renaming the headings, so the two stopped matching.
