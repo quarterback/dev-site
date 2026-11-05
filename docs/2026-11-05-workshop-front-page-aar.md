@@ -158,3 +158,19 @@ Ron: "i'm ready to implement dev as proof of work revamp on the dev-site. Implem
 **Consequence.** Rendered at 1440px with no errors and no horizontal scroll. prosekeep found 0 findings.
 
 **Further change.** Ron: "remove this 'I call this live-action service design.'" The line is removed from Preparing leaders, along with the style that enlarged it.
+
+## Addendum: VarsityApex reframed
+
+**Intent.** Ron: "for varsityapex the fictional aspects are not worth noting, focus on the underlying schema and technical bona fides of how it's proof of concept for a much more consequential set of tooling since that's what it's really about not a sports demo", with the write-up link.
+
+**Action.**
+- **Home page entry rewritten** from the write-up's own points:
+  - the legacy modernization framing
+  - the pipeline: extraction, normalization, identity resolution, review, durable record
+  - the resolver that records how each name was matched and declines ambiguous ones
+  - the three contest shapes
+  - open standard.site records and source-file hashes
+- **Tag line** is now "Schema design, identity resolution, AT Protocol, standard.site, SHA-256 provenance".
+- **On `projects/varsityapex.html`,** the lede, description, OG and Twitter text lead with "a proof of concept for data portability in legacy record systems". The body paragraphs are unchanged.
+
+**Judgment.** The sentence "A proof of concept for the tooling stalled legacy modernization projects need" is my summary of the write-up's legacy-modernization paragraph. Ron should check it.
