@@ -130,3 +130,11 @@ Ron: "i'm ready to implement dev as proof of work revamp on the dev-site. Implem
 **Change.**
 - `2026-site` has a `SERIOUS-PLAY-EDITORIAL-GUIDE.md` that teaches agents this frame. Ron should decide whether it stays.
 - The Preparing leaders section should be rewritten around convening and training, in Ron's words.
+
+## Addendum: event links
+
+**Intent.** Ron: "years ahead is online at yearsahead.io, design for the public at designforthepublic.com, digital corps at digitalcorpspdx.org".
+
+**Action.** The three event headings in Preparing leaders now link to those sites.
+
+**Consequence.** designforthepublic.com and digitalcorpspdx.org returned 200. yearsahead.io reset the connection from this sandbox, so it was linked on Ron's word.
