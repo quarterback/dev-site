@@ -195,3 +195,31 @@ Ron: "i'm ready to implement dev as proof of work revamp on the dev-site. Implem
 The hero is the only large type left.
 
 **Deviation.** Section headings had been 76px and project titles 52px, as drawn on the artboard. Other projects and the events used different sizes again.
+
+## Addendum: DFP photo band and one-sentence technical summaries
+
+**Intent.**
+- "the group shot from design for the public 24 should be the image between the hero and the first project, the 2nd photo can live at the bottom where it is now."
+- "for all the tools the technical bona fides, the novelty of the idea and how sophisticated the design is, is what matters… this is for all projects especially the games… the blog.ronbronson.dev talks about these in detail, you should do an exhaustive look at them". Follow-ups: "no more than a sentence", "on the front page", "run them all against humanizer".
+
+**Action.**
+- **Photo band.** The full-width DFP 2024 photo (`assets/dfp24.jpg`, resized from the 2026-site original) now sits between the hero and Recent projects. Preparing leaders keeps only the easel photo, and `assets/dfp-room.jpg`, a crop of the same photo, is removed.
+- **Blog read.** A subagent read all 26 Sideline Engineering posts and the 15 project pages, and extracted verbatim quotes and numbers for each project.
+- **Summaries.** Every Recent project, Other project and Tool on the front page now has a one-sentence technical summary. Each sentence went through the humanizer pass, and the project pages are unchanged.
+- **Coalition tag** is now "Game design, service blueprinting, single-file build". The old one was "Game design, fiction, content rules".
+
+**Sources for the numbers.**
+- From posts: 49 graded attributes and 295,219 Oregon varsity appearances (Play To Clinch); the 22-game chip window (Cap Buffet / Chip Window); the full season of drive data for the zero-sum kickoff (Viperball).
+- From the earlier home page and project pages: 18 mechanics (Cap Buffet), 2,188 models (Occupant), the 2027 OSAA seeding (Oregon), and the fifteen picks and Gale-Shapley benchmark (You Go First).
+
+**Judgment.**
+- **Mappings.** SuperInnings is taken to be the O27 posts. Mallo, Occupant, You Go First, Beachwave and the tools have no posts, so their sentences come from their project pages.
+- **Flags from the subagent** where posts and project pages disagree. These are left for Ron, and the front page uses neither disputed figure:
+  - Viperball: 198 or 280 teams.
+  - Play To Clinch: 49 or 51 attributes.
+  - The Chip Window example bids exceed its own 10/25 wager rule.
+
+**Consequence.**
+- Rendered at 1440px and 390px with no horizontal scroll and no errors.
+- prosekeep found 0 findings.
+- The first project now starts below the fold at 1440×900; the photo band takes the space above it, as Ron placed it.
