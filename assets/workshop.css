@@ -137,3 +137,14 @@ h1, h2, h3 { margin: 0; font-family: var(--display); }
   body, .top, .feat img { transition: none; }
   .feat li:hover img { transform: none; }
 }
+
+/* Preparing leaders: the tabletop and simulation practice, set as a
+   wide lead before the photos and the rooms. */
+.lead { max-width: 40em; margin-top: 20px; }
+.lead p { margin: 0 0 16px; font-size: 21px; }
+.lead p:nth-child(2) { font-family: var(--display); font-weight: 600; font-size: 28px; line-height: 1.2; }
+
+/* Writing: titles only */
+.wr { list-style: none; margin: 28px 0 0; padding: 0; columns: 2; column-gap: 72px; }
+.wr li { break-inside: avoid; padding: 0 0 18px; font-family: var(--display); font-weight: 600; font-size: 26px; line-height: 1.15; }
+@media (max-width: 860px) { .wr { columns: 1; } .wr li { font-size: 22px; } }

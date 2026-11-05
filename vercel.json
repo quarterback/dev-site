@@ -3,23 +3,33 @@
   "redirects": [
     {
       "source": "/offerings.html",
-      "destination": "/work-with-me.html",
+      "destination": "https://ronbronson.design",
       "permanent": true
     },
     {
       "source": "/offerings",
-      "destination": "/work-with-me.html",
+      "destination": "https://ronbronson.design",
       "permanent": true
     },
     {
       "source": "/digital-statecraft.html",
-      "destination": "/work-with-me.html#statecraft",
-      "permanent": false
+      "destination": "https://ronbronson.design",
+      "permanent": true
     },
     {
       "source": "/digital-statecraft",
-      "destination": "/work-with-me.html#statecraft",
-      "permanent": false
+      "destination": "https://ronbronson.design",
+      "permanent": true
+    },
+    {
+      "source": "/work-with-me.html",
+      "destination": "https://ronbronson.design",
+      "permanent": true
+    },
+    {
+      "source": "/work-with-me",
+      "destination": "https://ronbronson.design",
+      "permanent": true
     }
   ]
 }

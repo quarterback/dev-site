@@ -70,3 +70,29 @@ Ron: "i'm ready to implement dev as proof of work revamp on the dev-site. Implem
 - I removed both STAND-IN comments, for the Other projects framing line and the In real life intro. Neither area shows anything; the headings go straight to the content.
 
 **Still open.** The State Capacity AI EIR line, the 2022 date, the dropped home page sections and the social card image (see section 6). Ron chose to launch without settling these.
+
+## Addendum: Preparing leaders, contact nav and writing
+
+**Intent.** Ron: the tabletop work should be woven into the storyline, and the heading should be "Preparing Leaders (For the challenges ahead)" or similar. "No work-with-me page here, just a contact link in the nav to email me." The nav should link to .design and not the raw blog. A section at the end should hold about four posts from blog.ronbronson.dev, technical posts from blog.ronbronson.com and, if worthwhile, makingpublicwork.com, as titles only with no descriptions or dates. He also said "the hero needs to be revised".
+
+**Action.**
+- **"In real life" became "Preparing leaders for the challenges ahead"** and moved up to second place, after Recent projects and above Other projects. It opens with the three tabletop paragraphs from the 3 November home page, in Ron's words, followed by the photos and the five events.
+- **Home nav:** Things I made, Preparing leaders, On the bench, On npm, Design (ronbronson.design), and Contact (mailto:ron@ronbronson.com). The Blog link is gone.
+- **New Writing section** before the footer. Titles only, each checked live on its own host:
+  - blog.ronbronson.dev: "Storyboarding the escape" (Coalition) and "What if you could mix & match salary caps? Or invent your own draft lottery?" (Cap Buffet).
+  - blog.ronbronson.com: "Bringing AX to Life…" and "I Built a Claude Skill for After-Action Reviews on AI Agent Work". These titles are copied from the earlier home page.
+- **`work-with-me.html` is deleted.**
+  - `vercel.json` now sends /work-with-me, /offerings and /digital-statecraft to ronbronson.design.
+  - The "Work with me" and "Blog" links are gone from every other page's nav.
+  - The "Invite me to speak" link in `about.html` now opens an email.
+
+**Judgment.**
+- **No Making Public Work post.** Its feed is essays on public-sector practice ("Agents Against Bureaucracy", "Technologist is not a job"), not development writing.
+- **No ClosedTab write-up.** Its published title is auto title-cased ("Closedtab: A Npm…"), so the real casing couldn't be confirmed.
+- **Heading in sentence case** to fit STYLE-07, without the parentheses.
+- **Hero not changed.** Ron said it needs revising but gave no direction, so I asked him.
+- **Old navs left alone.** `archive/` and the two restored legacy pages keep their own navs.
+
+**Consequence.**
+- Rendered at 1440px and 390px with no horizontal scroll, no errors and no failed requests.
+- prosekeep found 0 mechanical findings on `index.html` and `about.html`.
