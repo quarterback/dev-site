@@ -60,3 +60,13 @@ Ron: "i'm ready to implement dev as proof of work revamp on the dev-site. Implem
 - Ron confirms the State Capacity AI EIR line and the 2022 workshop date.
 - Ron decides whether the point-of-view material and Writing lists move to another page or stay off the site.
 - The social card needs a new image to match the new hero.
+
+## Addendum: cleared for launch
+
+**Intent.** Ron, with the Pensulo link https://dribbble.com/shots/3794375-Pensulo-Card-Deck: "where there is no commited text remove those areas i'm not doing to do that rightn ow but i still want to launch".
+
+**Action.**
+- Pensulo Cards now links to its Dribbble shot.
+- I removed both STAND-IN comments, for the Other projects framing line and the In real life intro. Neither area shows anything; the headings go straight to the content.
+
+**Still open.** The State Capacity AI EIR line, the 2022 date, the dropped home page sections and the social card image (see section 6). Ron chose to launch without settling these.
