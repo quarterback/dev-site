@@ -116,3 +116,17 @@ Ron: "i'm ready to implement dev as proof of work revamp on the dev-site. Implem
 - Rendered at 1440px and 390px with no horizontal scroll and no errors.
 - prosekeep found 0 mechanical findings on `index.html` and `EDITORIAL.md`.
 - The social card still says "Problems Are Designed", which now matches the hero.
+
+## Addendum: no "serious play"
+
+**Intent.** Ron: "I hate engaged in serious play, not how I talk." He prefers "convening, training leadership, preparing people for leadership." Framing it as play gets the work dismissed.
+
+**Action.**
+- The phrase was already off the page after the hero change. A search of the site found no remaining "serious play" or "engaged in".
+- `EDITORIAL.md` now carries the ruling under "Language we avoid", naming convening, training and preparing leaders as the way to describe this work.
+
+**Deviation.** The line came from the design artboard's hero. I carried it over word for word and didn't question whether it was how Ron talks.
+
+**Change.**
+- `2026-site` has a `SERIOUS-PLAY-EDITORIAL-GUIDE.md` that teaches agents this frame. Ron should decide whether it stays.
+- The Preparing leaders section should be rewritten around convening and training, in Ron's words.

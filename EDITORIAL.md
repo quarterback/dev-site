@@ -22,6 +22,8 @@ Short sentences, no staging, and a fact at the end that only he could supply. Th
 
 **Language we avoid:** claims of adoption, usage, or traction that nobody measured.
 
+**Never frame the leadership and convening work as play.** No "serious play", "engaged in play", "playful", or games-as-fun framing for the exercises, trainings and convenings. Ron's ruling, 5 November 2026: it reads as dismissive of the work. Describe it the way he does: convening people, training leaders, and preparing people for leadership and for the decisions ahead. The games and simulations are the instruments, not the frame.
+
 ## Page responsibilities
 
 | Type | Reader question and job | Required sections | Primary source |
