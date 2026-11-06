@@ -218,3 +218,4 @@ h1, h2, h3 { margin: 0; font-family: var(--display); }
 .media figcaption span { display: block; margin-top: 4px; font-family: var(--text); font-weight: 400; font-size: 15px; color: var(--soft); }
 .ep { display: block; width: 100%; max-width: 660px; height: 175px; margin-top: 40px; border: 0; background: transparent; }
 @media (max-width: 860px) { .media { grid-template-columns: 1fr; } }
+.ep + .ep { margin-top: 16px; }

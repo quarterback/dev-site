@@ -277,3 +277,5 @@ The hero is the only large type left.
 - **Request.** Ron: "Service Design Show can go on .dev along with the CUGOS keynote from last november and a donuts.js video".
 - **Change.** Technically Speaking leaves the "Problems are designed" theme and moves to .design. A new "Talks and conversations" section sits after Recent projects. It holds two YouTube embeds, "Beyond Civic Tech: Public Mechanics Starts at Home" (CUGOS Fall Fling keynote, November 2025) and "What Finnish Baseball Taught Me About Game Design" (Donut.js, November 2019), followed by the Service Design Show episode 236 player.
 - **Repeats.** The Service Design Show is removed from .design in quarterback/2026-site#140. YouTube oEmbed confirmed both video titles.
+
+**Further change.** Ron: "Technically speaking can stay on .dev thats fine." Its Apple Podcasts player now sits under the Service Design Show player in Talks and conversations.
