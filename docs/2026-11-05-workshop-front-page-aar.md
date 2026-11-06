@@ -240,3 +240,25 @@ The hero is the only large type left.
 **Intent.** Ron: ".dev doesn't have a nav that takes you to .design or blog.ronbronson.dev and it ought to".
 
 **Action.** The home nav is now Design (ronbronson.design), Blog (blog.ronbronson.dev) and Contact. The project and secondary pages get Blog after their Design link.
+
+## Addendum: long form themes, then projects with images (6 November 2026)
+
+**Intent.** Ron: "dev-site has been revised but i still need to add content but redesign it using dev-site using longform", with the canvas board ".dev workshop, long form themes then projects with images" (`DevWorkshopWrite.dc.html`). Then: "open a pr do not publish before i'm ready".
+
+**Action.**
+- **Order:** a full-width lead photo (`assets/dev-ron-mic.jpg`, from the canvas), then the statement "Building software to reimagine intractable problems and speculative futures." The board's three intro paragraphs follow, covering Vloora, Michigan, State Capacity AI and 18F.
+- **Theme essays.** Two of them, "Problems are designed" and "(Serious) Game design", built as the board drew them, with dashed drafting slots for the standfirst, subheads and body. Ron is still writing these.
+- **Recent projects** is now one list holding all twelve projects. Each has a title, the board's sentence and a tag, and its screenshot appears on hover or keyboard focus, using CSS only.
+- **Tools** carry the board's longer descriptions.
+- **Footer** is the colophon only.
+- **Text face** is Switzer, copied from the .design repo into `assets/fonts/switzer/`.
+- **Removed, as the board has none of them:** the DFP photo band, Preparing leaders, the separate Other projects section, Writing, the closing ask, the Elsewhere icons and `shots.js`.
+
+**Judgment.**
+- VarsityApex is not on the board, but it stays first in the list, because Ron asked on 5 November to showcase it ahead of the games.
+- I fixed two spelling slips in the board's copy: "intracible" to "intractable" and "Enterpreneur" to "Entrepreneur".
+- The project titles keep their links to the project pages.
+
+**Consequence.**
+- Rendered at 1440px and 390px with no horizontal scroll, no page errors and no failed requests. prosekeep found 0 findings.
+- The pull request is open and NOT merged. The theme slots must be written before it ships.
