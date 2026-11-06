@@ -264,3 +264,5 @@ The hero is the only large type left.
 - The pull request is open and NOT merged. The theme slots must be written before it ships.
 
 **Further change.** Ron: "i want the social icons back, every site should have them" and "put varsityapex on the site under projects". The Elsewhere column, with all twelve icons and the ronbronson.com line, is back in the footer beside the colophon. VarsityApex is already the first entry under Recent projects, linked to its page, with its screenshot on hover.
+
+**Further change, no repeats.** Ron: "just make sure none of the content is repeat content". The intro drops "Previously, I was Entrepreneur in Residence at State Capacity AI and before that, Head of Design & Special Initiatives at 18F.", because masthead's introduction carries the work history.
