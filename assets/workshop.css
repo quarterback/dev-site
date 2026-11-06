@@ -204,3 +204,9 @@ h1, h2, h3 { margin: 0; font-family: var(--display); }
   .th-a { padding-bottom: 72px; }
 }
 @media (prefers-reduced-motion: reduce) { .pl img { transition: none; } }
+
+/* Video inside a theme essay */
+.th-a__media { margin: 48px 0 0; max-width: 880px; }
+.vidwrap { position: relative; aspect-ratio: 16 / 9; background: var(--shot); }
+.vidwrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.th-a__media figcaption { margin-top: 10px; font-size: 15px; color: var(--soft); }

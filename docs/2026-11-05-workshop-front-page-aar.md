@@ -266,3 +266,9 @@ The hero is the only large type left.
 **Further change.** Ron: "i want the social icons back, every site should have them" and "put varsityapex on the site under projects". The Elsewhere column, with all twelve icons and the ronbronson.com line, is back in the footer beside the colophon. VarsityApex is already the first entry under Recent projects, linked to its page, with its screenshot on hover.
 
 **Further change, no repeats.** Ron: "just make sure none of the content is repeat content". The intro drops "Previously, I was Entrepreneur in Residence at State Capacity AI and before that, Head of Design & Special Initiatives at 18F.", because masthead's introduction carries the work history.
+
+**Further change, a video not on any site.**
+- **Request.** Ron: "i want to put a video of something that's not on any site already on the new .dev site prototype", then "no use a podcast then".
+- **What I checked.** Every video and podcast in the four repos is already on at least one page. A web search found two appearances on none of the sites: Technically Speaking with Harrison Wheeler, "Consequence Design" (June 2020), and Revision Path episode 409.
+- **Change.** The Technically Speaking episode is a podcast and also has a YouTube recording, so it covers both requests. It is embedded inside the "Problems are designed" theme with the `youtube-nocookie` player. The caption links the Apple Podcasts episode.
+- **Check.** YouTube oEmbed confirms the video can be embedded. YouTube is blocked in the sandbox, so the player renders as an empty 16:9 frame in local screenshots.
