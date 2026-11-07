@@ -368,3 +368,15 @@ The home intro and the Projects page are now first person, with contractions per
 - **Photo.** The lead photo is now `clamp(200px, 30vh, 340px)` tall (220px on phones) and the hero top padding is 40px. At 1440×900 the headline sits at 395–669px and the bio starts at 717px.
 
 **Headline.** Ron: "Building tools for the speculative present for the main .dev rather than what's there now, is too long." The h1 and the page title now read "Building tools for the speculative present".
+
+## Addendum, 7 November 2026: plain-language bio under the headline
+
+**Instruction.** Ron pasted a third-person bio (software for people and AI agents; CEO of Vloora; Taubman; Global Office of Public Delivery; State Capacity AI and the Occupant Indices; 18F) and said it was "bloviating and wordy": use plainlanguage.gov and the humanizer to clean it up.
+
+**What changed.** Replaced the three-paragraph "economic sociologist" intro in `.hero__intro` with the cleaned bio, in first person per the voice rule for .dev. Plain-language edits: shorter words ("most interested", "use information", "cover", "gives permission", "direct the work", "test what comes back"), active voice, and one long sentence split in two after the plain-language checker flagged it. AP: titles lowercase when they don't come right before the name; house serial comma kept. "World's largest forward-deployed design team inside the federal government" became "the largest forward-deployed design team in the federal government", since the original contradicts itself.
+
+**Evidence.** plain-language-default 0.1.0: 0 problems after the split (1 long sentence before). unslop --deterministic: 0 AI-isms. prosekeep 0.3.0: PASS. Chromium render at 1440 and 390: no page errors.
+
+**Judgment calls.** Kept the Vloora and Taubman links from the old intro. Left the meta and OG descriptions unchanged; they still describe the site accurately.
+
+**Risk.** The old intro's "economic sociologist" framing and "consequence and repair" line are gone from .dev; if Ron wants either back, it needs a new home.
