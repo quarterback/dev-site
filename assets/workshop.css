@@ -219,3 +219,22 @@ h1, h2, h3 { margin: 0; font-family: var(--display); }
 .ep { display: block; width: 100%; max-width: 660px; height: 175px; margin-top: 40px; border: 0; background: transparent; }
 @media (max-width: 860px) { .media { grid-template-columns: 1fr; } }
 .ep + .ep { margin-top: 16px; }
+
+
+/* ── The fork, 7 November 2026 ── Systems, writing, and the door into the
+   other room (projects.html). */
+.sys { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 24px 72px; padding: 56px 0 0; }
+.sys h3 { font-weight: 800; font-size: var(--h3); line-height: 1.05; letter-spacing: -.02em; }
+.sys h3 a { text-decoration: none; }
+.sys h3 a:hover { text-decoration: underline; }
+.sys code { display: block; margin-top: 14px; font-family: var(--mono); font-size: 15px; font-weight: 600; overflow-wrap: anywhere; color: var(--soft); }
+.sys__idea { margin: 0 0 20px; font-size: clamp(20px, 1.7vw, 24px); line-height: 1.45; }
+.sys__b p { margin: 0 0 16px; font-size: var(--body); }
+.wlist { list-style: none; margin: 32px 0 0; padding: 0; max-width: 60em; }
+.wlist li { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 24px; padding: 0 0 18px; align-items: baseline; }
+.wlist__d { font-size: 15px; color: var(--soft); }
+.wlist a { font-family: var(--display); font-weight: 600; font-size: clamp(20px, 1.8vw, 26px); line-height: 1.2; text-decoration: none; }
+.wlist a:hover { text-decoration: underline; }
+.door { margin-top: 120px; }
+.door__l { font-family: var(--display); font-weight: 600; font-size: clamp(26px, 2.6vw, 40px); line-height: 1.2; text-decoration-thickness: 3px !important; text-underline-offset: 8px !important; }
+@media (max-width: 860px) { .sys, .wlist li { grid-template-columns: 1fr; gap: 6px; } }

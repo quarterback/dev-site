@@ -279,3 +279,34 @@ The hero is the only large type left.
 - **Repeats.** The Service Design Show is removed from .design in quarterback/2026-site#140. YouTube oEmbed confirmed both video titles.
 
 **Further change.** Ron: "Technically speaking can stay on .dev thats fine." Its Apple Podcasts player now sits under the Service Design Show player in Talks and conversations.
+
+## Addendum: the fork and the other room (7 November 2026)
+
+**Intent.** Ron: "redoing the dev site with the two newest designs: dev forked and the dev the other room". The canvas boards are ".dev forked: agent systems up front, link to the other room above the colophon" (`DevFork.dc.html`) and ".dev, the other room (its own page)" (`DevForkRoom.dc.html`).
+
+**Action.**
+- **Home (`index.html`).**
+  - Nav: Projects, Design, Blog, Contact, plus the swatches.
+  - Lead photo, then the board's statement, "Building software for agentic systems, public services, and speculative futures.", and its two third-person bio paragraphs.
+  - **Systems:** PBBG Content Schema, closedtab, Prosekeep and plain-language-default. Each has its install command, the board's description and its write-up links.
+  - **Writing:** five dated posts.
+  - Talks and conversations is kept, because Ron placed those four items on .dev.
+  - A link into the other room sits above the footer. The Elsewhere icons and the colophon are kept.
+  - Removed: the theme slots and the project list, which moved to the other room.
+- **The other room (`projects.html`, new).** It uses its own `assets/room.css`: cobalt and white, IBM Plex Sans Condensed and Plex Mono, with the fonts in `assets/fonts/plex/` under OFL.
+  - "(Serious) Game design" and its intro.
+  - The board's map of projects and shared techniques. It highlights connections on hover or keyboard focus and is hidden on phones.
+  - Three essays, then the project list with screenshots on hover.
+  - Elsewhere icons and a colophon.
+
+**Judgment.**
+- The board links posts on `blog.ronbronson.design`, which does not resolve. All six were checked on `blog.ronbronson.com` (200) and link there instead.
+- VarsityApex and Coalition were added to the other room's list, because they were missing from the board and Ron asked for VarsityApex to be shown.
+- Project names link to their project pages, and the list ends with a link to `more.html`.
+- The "[Scenario wargames]" node and list entry are left as the board drew them, marked STAND-IN, until Ron names the product.
+- The board has no wording for the door link. I wrote "The other room: games, simulations and the rest of the projects". Ron should replace it if he wants different words.
+- "Agent Experience Needs Failure Affordances" is now on .dev, so it is removed from the .design home page in quarterback/2026-site#141.
+
+**Consequence.**
+- Both pages rendered at 1440px and 390px with no horizontal scroll and no errors. prosekeep found 0 findings.
+- The video and podcast players show blank in the sandbox.

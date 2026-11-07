@@ -1,0 +1,96 @@
+/* ──────────────────────────────────────────────────────────
+   room.css — ronbronson.dev/projects.html, "the other room" from the
+   design canvas (7 November 2026). Cobalt and white, set in IBM Plex
+   Sans Condensed and Plex Mono (OFL, assets/fonts/plex/). The map of
+   projects and techniques highlights its links on hover or focus with
+   :has(); phones get the list only.
+   ────────────────────────────────────────────────────────── */
+@font-face { font-family: "Plex Cond"; src: url("fonts/plex/ibm-plex-sans-condensed-400.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Plex Cond"; src: url("fonts/plex/ibm-plex-sans-condensed-700.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Plex Mono"; src: url("fonts/plex/ibm-plex-mono-400.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Plex Mono"; src: url("fonts/plex/ibm-plex-mono-500.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "PP Neue Montreal"; src: url("fonts/gallery/PPNeueMontreal-Extrabold.woff2") format("woff2"); font-weight: 800; font-display: swap; }
+@font-face { font-family: "PP Neue Montreal"; src: url("fonts/gallery/PPNeueMontreal-Semibold.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+
+:root { --cobalt: #1f2bff; --dim: #c9ccff; --lime: #d7ff3d; --gut: 56px; color-scheme: dark; }
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; overflow-x: clip; }
+body { margin: 0; min-width: 320px; background: var(--cobalt); color: #fff; }
+img { display: block; max-width: 100%; }
+.r { font-family: "Plex Cond", "Arial Narrow", sans-serif; font-size: 20px; line-height: 1.5; overflow-x: clip; }
+.r a { color: inherit; text-decoration-thickness: 1.5px; text-underline-offset: 4px; }
+.r a:focus-visible, .r [tabindex]:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+
+/* Top bar, the same links as the home page */
+.rt { position: sticky; top: 0; z-index: 5; background: var(--cobalt); display: flex; flex-wrap: wrap; gap: 10px 24px; justify-content: space-between; align-items: center; padding: 22px var(--gut); }
+.rt__nm { font-family: "PP Neue Montreal", Arial, sans-serif; font-weight: 800; font-size: 22px; text-decoration: none; }
+.rt nav { display: flex; flex-wrap: wrap; gap: 8px 26px; align-items: center; font-family: "PP Neue Montreal", Arial, sans-serif; font-weight: 600; font-size: 17px; }
+.rt nav a { text-decoration: none; }
+.rt nav a:hover { text-decoration: underline; }
+.rt nav a[aria-current="page"] { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; }
+
+.se { padding: 56px var(--gut) 40px; }
+.se h1, .se h3 { font-family: "Plex Cond", sans-serif; font-weight: 700; letter-spacing: -.02em; margin: 0; }
+.in h1 { font-size: clamp(56px, 8vw, 128px); line-height: .86; }
+.in p { margin: 28px 0 0; max-width: 30em; font-size: clamp(24px, 2.8vw, 40px); line-height: 1.25; color: var(--dim); }
+
+/* The map: projects along the top and bottom, techniques in the middle */
+.gr { display: block; width: 100%; height: auto; margin: 72px 0 0; overflow: visible; }
+.gr .l { stroke: var(--dim); stroke-opacity: .35; stroke-width: 1.5; transition: stroke .15s, stroke-opacity .15s; }
+.gr circle { fill: #fff; }
+.gr .n text { fill: #fff; font-family: "Plex Cond", sans-serif; font-weight: 700; font-size: 21px; }
+.gr .pr text { fill: var(--lime); font-family: "Plex Mono", monospace; font-size: 15px; }
+.gr g { cursor: default; outline: none; }
+.gr .n:hover text, .gr .n:focus text { text-decoration: underline; }
+.gr:has(.n-mallo:hover, .n-mallo:focus) .l-mallo,
+.gr:has(.n-ortn:hover, .n-ortn:focus) .l-ortn,
+.gr:has(.n-ptc:hover, .n-ptc:focus) .l-ptc,
+.gr:has(.n-si:hover, .n-si:focus) .l-si,
+.gr:has(.n-vb:hover, .n-vb:focus) .l-vb,
+.gr:has(.n-occ:hover, .n-occ:focus) .l-occ,
+.gr:has(.n-cap:hover, .n-cap:focus) .l-cap,
+.gr:has(.n-wg:hover, .n-wg:focus) .l-wg,
+.gr:has(.n-ygf:hover, .n-ygf:focus) .l-ygf,
+.gr:has(.n-pen:hover, .n-pen:focus) .l-pen { stroke: #fff; stroke-opacity: 1; stroke-width: 2.5; }
+.gr:has(.pr-rate:hover, .pr-rate:focus) .l-rate,
+.gr:has(.pr-sim:hover, .pr-sim:focus) .l-sim,
+.gr:has(.pr-prob:hover, .pr-prob:focus) .l-prob,
+.gr:has(.pr-mech:hover, .pr-mech:focus) .l-mech,
+.gr:has(.pr-match:hover, .pr-match:focus) .l-match,
+.gr:has(.pr-scen:hover, .pr-scen:focus) .l-scen,
+.gr:has(.pr-meas:hover, .pr-meas:focus) .l-meas { stroke: var(--lime); stroke-opacity: 1; stroke-width: 2.5; }
+
+/* Essays */
+.q { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 24px 72px; padding: 96px 0 0; }
+.q h3 { font-size: clamp(32px, 3.6vw, 56px); line-height: .96; }
+.q h3 a { text-decoration: none; }
+.q h3 a:hover, .q h3 a:focus-visible { text-decoration: underline; text-decoration-thickness: 3px; }
+.q .st { margin: 16px 0 0; font-family: "Plex Mono", monospace; font-size: 14px; color: var(--dim); }
+.q .tx p { margin: 0 0 18px; font-size: 22px; line-height: 1.45; max-width: 36em; }
+
+/* Projects, with a screenshot on hover or focus */
+.plist { list-style: none; margin: 96px 0 0; padding: 0; }
+.plist li { position: relative; display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 6px 40px; padding: 0 0 16px; }
+.plist b { font-size: 26px; line-height: 1.1; }
+.plist b a { text-decoration: none; }
+.plist b a:hover, .plist b a:focus-visible { text-decoration: underline; }
+.plist span { font-size: 19px; }
+.pop { position: absolute; z-index: 6; right: 0; top: 50%; width: 420px; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; background: #0a1a8f; box-shadow: 0 18px 40px rgba(0, 0, 0, .3); opacity: 0; pointer-events: none; transform: translateY(-40%) rotate(-1.5deg); transition: opacity .2s, transform .25s; }
+.plist li:hover .pop, .plist li:focus-within .pop { opacity: 1; transform: translateY(-50%) rotate(-1.5deg); }
+.more { margin: 24px 0 0; font-family: "Plex Mono", monospace; font-size: 15px; }
+
+/* Colophon and the social icons */
+.rc { padding: 72px var(--gut) 64px; font-family: "Plex Mono", monospace; font-size: 13px; line-height: 1.6; color: var(--dim); }
+.rc h2 { margin: 32px 0 6px; font-family: "Plex Cond", sans-serif; font-size: 24px; color: #fff; }
+.rc p { margin: 0; }
+.rc a { color: #fff; }
+.foot__icons { display: flex; flex-wrap: wrap; gap: 14px 18px; }
+.foot__icons a { display: inline-flex; width: 22px; height: 22px; color: #fff; }
+.foot__icons svg { width: 100%; height: 100%; }
+
+@media (max-width: 860px) {
+  :root { --gut: 16px; }
+  .q, .plist li { grid-template-columns: 1fr; }
+  .pop, .gr { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { .pop, .gr .l { transition: none; } }
