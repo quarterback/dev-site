@@ -76,7 +76,6 @@ img { display: block; max-width: 100%; }
 .plist span { font-size: 19px; }
 .pop { position: absolute; z-index: 6; right: 0; top: 50%; width: 420px; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; background: #0a1a8f; box-shadow: 0 18px 40px rgba(0, 0, 0, .3); opacity: 0; pointer-events: none; transform: translateY(-40%) rotate(-1.5deg); transition: opacity .2s, transform .25s; }
 .plist li:hover .pop, .plist li:focus-within .pop { opacity: 1; transform: translateY(-50%) rotate(-1.5deg); }
-.more { margin: 24px 0 0; font-family: "Plex Mono", monospace; font-size: 15px; }
 
 /* Colophon and the social icons */
 .rc { padding: 72px var(--gut) 64px; font-family: "Plex Mono", monospace; font-size: 13px; line-height: 1.6; color: var(--dim); }

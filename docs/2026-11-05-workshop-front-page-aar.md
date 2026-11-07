@@ -318,3 +318,5 @@ The hero is the only large type left.
 - **Removed from the other room:** the "[Scenario wargames]" map node, its three connections and the CSS rule for them, the list entry, and both STAND-IN comments. Scenario play stays on the map, linked to Pensulo Cards.
 - **Checked across all three sites.** I scanned the visible text of every live page on .dev, .design and masthead for bracketed placeholder text, and none was left.
 - **Standing rule:** where content doesn't exist, the reference is deleted, never left as a placeholder.
+
+**Correction.** Ron: "get rid of 'everything else I build', I didn't ask you for that, and the projects page should [say] projects". The "Everything else I've built" link at the foot of the project list is removed. The page heading is now "Projects" instead of "(Serious) Game design".
