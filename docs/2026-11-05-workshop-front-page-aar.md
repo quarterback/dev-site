@@ -240,3 +240,83 @@ The hero is the only large type left.
 **Intent.** Ron: ".dev doesn't have a nav that takes you to .design or blog.ronbronson.dev and it ought to".
 
 **Action.** The home nav is now Design (ronbronson.design), Blog (blog.ronbronson.dev) and Contact. The project and secondary pages get Blog after their Design link.
+
+## Addendum: long form themes, then projects with images (6 November 2026)
+
+**Intent.** Ron: "dev-site has been revised but i still need to add content but redesign it using dev-site using longform", with the canvas board ".dev workshop, long form themes then projects with images" (`DevWorkshopWrite.dc.html`). Then: "open a pr do not publish before i'm ready".
+
+**Action.**
+- **Order:** a full-width lead photo (`assets/dev-ron-mic.jpg`, from the canvas), then the statement "Building software to reimagine intractable problems and speculative futures." The board's three intro paragraphs follow, covering Vloora, Michigan, State Capacity AI and 18F.
+- **Theme essays.** Two of them, "Problems are designed" and "(Serious) Game design", built as the board drew them, with dashed drafting slots for the standfirst, subheads and body. Ron is still writing these.
+- **Recent projects** is now one list holding all twelve projects. Each has a title, the board's sentence and a tag, and its screenshot appears on hover or keyboard focus, using CSS only.
+- **Tools** carry the board's longer descriptions.
+- **Footer** is the colophon only.
+- **Text face** is Switzer, copied from the .design repo into `assets/fonts/switzer/`.
+- **Removed, as the board has none of them:** the DFP photo band, Preparing leaders, the separate Other projects section, Writing, the closing ask, the Elsewhere icons and `shots.js`.
+
+**Judgment.**
+- VarsityApex is not on the board, but it stays first in the list, because Ron asked on 5 November to showcase it ahead of the games.
+- I fixed two spelling slips in the board's copy: "intracible" to "intractable" and "Enterpreneur" to "Entrepreneur".
+- The project titles keep their links to the project pages.
+
+**Consequence.**
+- Rendered at 1440px and 390px with no horizontal scroll, no page errors and no failed requests. prosekeep found 0 findings.
+- The pull request is open and NOT merged. The theme slots must be written before it ships.
+
+**Further change.** Ron: "i want the social icons back, every site should have them" and "put varsityapex on the site under projects". The Elsewhere column, with all twelve icons and the ronbronson.com line, is back in the footer beside the colophon. VarsityApex is already the first entry under Recent projects, linked to its page, with its screenshot on hover.
+
+**Further change, no repeats.** Ron: "just make sure none of the content is repeat content". The intro drops "Previously, I was Entrepreneur in Residence at State Capacity AI and before that, Head of Design & Special Initiatives at 18F.", because masthead's introduction carries the work history.
+
+**Further change, a video not on any site.**
+- **Request.** Ron: "i want to put a video of something that's not on any site already on the new .dev site prototype", then "no use a podcast then".
+- **What I checked.** Every video and podcast in the four repos is already on at least one page. A web search found two appearances on none of the sites: Technically Speaking with Harrison Wheeler, "Consequence Design" (June 2020), and Revision Path episode 409.
+- **Change.** The Technically Speaking episode is a podcast and also has a YouTube recording, so it covers both requests. It is embedded inside the "Problems are designed" theme with the `youtube-nocookie` player. The caption links the Apple Podcasts episode.
+- **Check.** YouTube oEmbed confirms the video can be embedded. YouTube is blocked in the sandbox, so the player renders as an empty 16:9 frame in local screenshots.
+
+**Further change, media placed by site.**
+- **Request.** Ron: "Service Design Show can go on .dev along with the CUGOS keynote from last november and a donuts.js video".
+- **Change.** Technically Speaking leaves the "Problems are designed" theme and moves to .design. A new "Talks and conversations" section sits after Recent projects. It holds two YouTube embeds, "Beyond Civic Tech: Public Mechanics Starts at Home" (CUGOS Fall Fling keynote, November 2025) and "What Finnish Baseball Taught Me About Game Design" (Donut.js, November 2019), followed by the Service Design Show episode 236 player.
+- **Repeats.** The Service Design Show is removed from .design in quarterback/2026-site#140. YouTube oEmbed confirmed both video titles.
+
+**Further change.** Ron: "Technically speaking can stay on .dev thats fine." Its Apple Podcasts player now sits under the Service Design Show player in Talks and conversations.
+
+## Addendum: the fork and the other room (7 November 2026)
+
+**Intent.** Ron: "redoing the dev site with the two newest designs: dev forked and the dev the other room". The canvas boards are ".dev forked: agent systems up front, link to the other room above the colophon" (`DevFork.dc.html`) and ".dev, the other room (its own page)" (`DevForkRoom.dc.html`).
+
+**Action.**
+- **Home (`index.html`).**
+  - Nav: Projects, Design, Blog, Contact, plus the swatches.
+  - Lead photo, then the board's statement, "Building software for agentic systems, public services, and speculative futures.", and its two third-person bio paragraphs.
+  - **Systems:** PBBG Content Schema, closedtab, Prosekeep and plain-language-default. Each has its install command, the board's description and its write-up links.
+  - **Writing:** five dated posts.
+  - Talks and conversations is kept, because Ron placed those four items on .dev.
+  - A link into the other room sits above the footer. The Elsewhere icons and the colophon are kept.
+  - Removed: the theme slots and the project list, which moved to the other room.
+- **The other room (`projects.html`, new).** It uses its own `assets/room.css`: cobalt and white, IBM Plex Sans Condensed and Plex Mono, with the fonts in `assets/fonts/plex/` under OFL.
+  - "(Serious) Game design" and its intro.
+  - The board's map of projects and shared techniques. It highlights connections on hover or keyboard focus and is hidden on phones.
+  - Three essays, then the project list with screenshots on hover.
+  - Elsewhere icons and a colophon.
+
+**Judgment.**
+- The board links posts on `blog.ronbronson.design`, which does not resolve. All six were checked on `blog.ronbronson.com` (200) and link there instead.
+- VarsityApex and Coalition were added to the other room's list, because they were missing from the board and Ron asked for VarsityApex to be shown.
+- Project names link to their project pages, and the list ends with a link to `more.html`.
+- The "[Scenario wargames]" node and list entry are left as the board drew them, marked STAND-IN, until Ron names the product.
+- The board has no wording for the door link. I wrote "The other room: games, simulations and the rest of the projects". Ron should replace it if he wants different words.
+- "Agent Experience Needs Failure Affordances" is now on .dev, so it is removed from the .design home page in quarterback/2026-site#141.
+
+**Consequence.**
+- Both pages rendered at 1440px and 390px with no horizontal scroll and no errors. prosekeep found 0 findings.
+- The video and podcast players show blank in the sandbox.
+
+**Correction.** Ron: "i specifically said i do not want it in the footer anymore, keep it in the nav as projects". The link to the other room that sat above the footer, and its CSS, are removed. Projects in the nav is now the only way in. I had built the link from the board's title ("link to the other room above the colophon") and missed Ron's instruction.
+
+**Correction, no placeholders.**
+- **Instruction.** Ron: "remove the wargaming thing too, i don't want any tk lines on any page, if the content doesn't exist, delete the reference".
+- **Removed from the other room:** the "[Scenario wargames]" map node, its three connections and the CSS rule for them, the list entry, and both STAND-IN comments. Scenario play stays on the map, linked to Pensulo Cards.
+- **Checked across all three sites.** I scanned the visible text of every live page on .dev, .design and masthead for bracketed placeholder text, and none was left.
+- **Standing rule:** where content doesn't exist, the reference is deleted, never left as a placeholder.
+
+**Correction.** Ron: "get rid of 'everything else I build', I didn't ask you for that, and the projects page should [say] projects". The "Everything else I've built" link at the foot of the project list is removed. The page heading is now "Projects" instead of "(Serious) Game design".
