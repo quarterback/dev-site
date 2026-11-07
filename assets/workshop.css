@@ -236,3 +236,9 @@ h1, h2, h3 { margin: 0; font-family: var(--display); }
 .wlist a { font-family: var(--display); font-weight: 600; font-size: clamp(20px, 1.8vw, 26px); line-height: 1.2; text-decoration: none; }
 .wlist a:hover { text-decoration: underline; }
 @media (max-width: 860px) { .sys, .wlist li { grid-template-columns: 1fr; gap: 6px; } }
+
+/* Worked example: one long-form account under its section heading */
+.essay { max-width: 40em; margin-top: 32px; }
+.essay p { margin: 0 0 18px; font-size: var(--body); line-height: 1.6; }
+.essay .essay__lede { font-size: clamp(20px, 1.7vw, 24px); line-height: 1.5; }
+.essay h3 { margin: 40px 0 12px; font-weight: 600; font-size: var(--h3); line-height: 1.15; }

@@ -337,3 +337,8 @@ The hero is the only large type left.
 
 **Voice change (7 November 2026).** Ron: ".design should be third person. Dev first person and first person for masthead too."
 The home intro and the Projects page are now first person, with contractions per EDITORIAL.md. "I design and build software…", "I run Vloora, where I'm building…", "I design games…", "I examine…" and "I developed…" replace the third-person lines. Meta descriptions stay third person. The voice rule is recorded in EDITORIAL.md.
+
+**Further change, worked orchestration example.**
+- **Request.** Ron supplied a worked example, "Multi-agent orchestration: building PBBG Content Schema", drawn from the repository's action records. It covers the release scope, the MIT to EPL 2.0 owner decision, the bounded Agent Skill and MCP extension, what was tested and what wasn't finished, and the publishing failure recorded without a guessed diagnosis.
+- **Change.** The example is added after Systems as one long-form section with its four stage headings, in the first person to match the voice rule ("I chose…", "I asked Claude…"). Verb tenses are kept in the past where the source described a past state.
+- **Check.** prosekeep found 0 findings. Rendered at 1440px and 390px with no horizontal scroll.
