@@ -92,3 +92,7 @@ img { display: block; max-width: 100%; }
   .pop, .gr { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { .pop, .gr .l { transition: none; } }
+
+
+/* Pixel dissolve (assets/dissolve.js): hide the page until the cover is drawn */
+html.dissolving body { visibility: hidden; }

@@ -320,3 +320,67 @@ The hero is the only large type left.
 - **Standing rule:** where content doesn't exist, the reference is deleted, never left as a placeholder.
 
 **Correction.** Ron: "get rid of 'everything else I build', I didn't ask you for that, and the projects page should [say] projects". The "Everything else I've built" link at the foot of the project list is removed. The page heading is now "Projects" instead of "(Serious) Game design".
+
+## Addendum: design practice and multi-agent work named in the intro (7 November 2026)
+
+**Intent.** Ron pasted guidance to name the design practice near the top, and to put multi-agent orchestration in the first paragraph with what he coordinates, carries, reviews and keeps. Each project should name its design contribution where the project supports it. All copy goes through the humanizer pass and prosekeep.
+
+**Action.**
+- **First intro paragraph** now reads: "Ron Bronson designs and builds software, drawing on a practice that spans UX, service design, information architecture, and content design. His current work includes multi-agent orchestration, context engineering, and agent experience: coordinating agents with distinct responsibilities, carrying context and decisions between them, reviewing their work, and keeping product direction in human hands. He also builds reusable tools for those workflows." The second paragraph (Vloora, Michigan, 18F) is unchanged.
+- **PBBG Content Schema** adds its information architecture decision and the checker that enforces it.
+- **Prosekeep** adds the content design framing: editorial authority carried into editing and review.
+- **Meta description** names multi-agent work and the four disciplines.
+- **`EDITORIAL.md`** gets the "Identity across the three sites" rule. It also records Ron's rule against placeholders.
+
+**Consequence.** Rendered at 1440px and 390px with no horizontal scroll. prosekeep found 0 findings.
+
+
+**Voice change (7 November 2026).** Ron: ".design should be third person. Dev first person and first person for masthead too."
+The home intro and the Projects page are now first person, with contractions per EDITORIAL.md. "I design and build software…", "I run Vloora, where I'm building…", "I design games…", "I examine…" and "I developed…" replace the third-person lines. Meta descriptions stay third person. The voice rule is recorded in EDITORIAL.md.
+
+**Further change, worked orchestration example.**
+- **Request.** Ron supplied a worked example, "Multi-agent orchestration: building PBBG Content Schema", drawn from the repository's action records. It covers the release scope, the MIT to EPL 2.0 owner decision, the bounded Agent Skill and MCP extension, what was tested and what wasn't finished, and the publishing failure recorded without a guessed diagnosis.
+- **Change.** The example is added after Systems as one long-form section with its four stage headings, in the first person to match the voice rule ("I chose…", "I asked Claude…"). Verb tenses are kept in the past where the source described a past state.
+- **Check.** prosekeep found 0 findings. Rendered at 1440px and 390px with no horizontal scroll.
+
+**AP and unslop pass.** Ron: "Just run it against ap style and https://github.com/MohamedAbdallah-14/unslop". I ran unslop 0.x with `--deterministic --dry-run`, offline. It found 0 AI-isms in the new copy. Its only rewrite was curly apostrophes to straight ones, which was not applied because the house style uses typographic quotes. AP fixes applied: titles that are not directly before a name are lowercased ("assistant professor of practice", "entrepreneur in residence", "head of design and special initiatives"), and "&" is spelled out as "and". House style overrides AP on the serial comma, day-first dates and dashes, per EDITORIAL.md.
+
+**Further change, a dissolve between Home and Projects.**
+- **Request.** Ron asked for "some kind of dissolving animation or transition between the main page on .dev and projects".
+- **Change.** Both `workshop.css` and `room.css` opt into cross-document view transitions with `@view-transition { navigation: auto; }`. The root crossfade is set to 0.6s ease-in-out. There is no JavaScript. Reduced-motion users get an instant switch. Browsers without support (Firefox today) navigate normally.
+- **Check.** In Chromium 153, clicking Projects shows the cream page dissolving into cobalt.
+- **Dropped.** I first tried holding the top bar in place with its own transition name. The two pages' navs differ, so it ghosted, and I removed it.
+
+**Further change: pixel dissolve, Projects lead, new bio, smaller photo.**
+- **Requests.** Ron: "i don't want a crossfade, i want a kind of animated dissolve or some other way to animate"; "the projects page should lead with the headline 'problems are designed' and then lead into the projects"; replace "the buzzword soup under my name" with his new bio after a humanizer pass and AP check, and decide whether it lives on .dev or masthead; "photo is too big and i can't see the hero or the first text".
+- **Dissolve.** The view-transition crossfade is removed. A new `assets/dissolve.js` handles links marked `data-dissolve` (Projects in the home nav, and the name on the Projects page).
+  - Leaving, the page fills with 24px squares of the next page's colour in random order over 0.56s, then navigates.
+  - Arriving, the page starts covered and clears in random order.
+  - An inline head script hides the page until the cover is drawn, with a 1s fallback. Back/forward cache leftovers are cleared.
+  - Reduced motion and modifier clicks navigate normally.
+  - Tested in Chromium in both directions: no errors and no leftover canvas.
+- **Projects page.** The heading is "Problems are designed" and the intro is kept. The project list now follows straight after it, then the map, then the essays.
+- **Bio.** It goes on .dev, replacing the discipline list under the headline: that is where Ron saw the problem, and masthead keeps its own bio, so nothing repeats.
+  - It is in first person for .dev's voice.
+  - The humanizer pass replaced three em dashes with sentences and changed "forms he uses" to "I use each".
+  - AP changes: "fifteen" became "15", and the title is lowercased.
+  - unslop (deterministic) found 0 AI-isms, and prosekeep found 0 findings.
+- **Photo.** The lead photo is now `clamp(200px, 30vh, 340px)` tall (220px on phones) and the hero top padding is 40px. At 1440×900 the headline sits at 395–669px and the bio starts at 717px.
+
+**Headline.** Ron: "Building tools for the speculative present for the main .dev rather than what's there now, is too long." The h1 and the page title now read "Building tools for the speculative present".
+
+## Addendum, 7 November 2026: plain-language bio under the headline
+
+**Instruction.** Ron pasted a third-person bio (software for people and AI agents; CEO of Vloora; Taubman; Global Office of Public Delivery; State Capacity AI and the Occupant Indices; 18F) and said it was "bloviating and wordy": use plainlanguage.gov and the humanizer to clean it up.
+
+**What changed.** Replaced the three-paragraph "economic sociologist" intro in `.hero__intro` with the cleaned bio, in first person per the voice rule for .dev. Plain-language edits: shorter words ("most interested", "use information", "cover", "gives permission", "direct the work", "test what comes back"), active voice, and one long sentence split in two after the plain-language checker flagged it. AP: titles lowercase when they don't come right before the name; house serial comma kept. "World's largest forward-deployed design team inside the federal government" became "the largest forward-deployed design team in the federal government", since the original contradicts itself.
+
+**Evidence.** plain-language-default 0.1.0: 0 problems after the split (1 long sentence before). unslop --deterministic: 0 AI-isms. prosekeep 0.3.0: PASS. Chromium render at 1440 and 390: no page errors.
+
+**Judgment calls.** Kept the Vloora and Taubman links from the old intro. Left the meta and OG descriptions unchanged; they still describe the site accurately.
+
+**Follow-up.** At Ron's note, the 18F line now reads "where I scaled the world's largest forward-deployed design team"; "in the federal government" was redundant with 18F.
+
+**Risk.** The old intro's "economic sociologist" framing and "consequence and repair" line are gone from .dev; if Ron wants either back, it needs a new home.
+
+**Follow-up, humanizer pass.** Ron: "Too many couplets." Reran the bio against the humanizer patterns. Removed the paired sentence openings ("I'm CEO… I'm also…"), the repeated "where I…, where I…" clauses, and three of the four triads ("use information, follow rules, and make decisions"; "design the architecture, direct the work, and test"; "who gives permission, when they should stop, and who answers"). Kept the two real lists (the four tool types, the four project areas). No facts added or dropped. prosekeep PASS; unslop 0 AI-isms.
