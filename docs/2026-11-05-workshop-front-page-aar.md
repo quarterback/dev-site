@@ -312,3 +312,9 @@ The hero is the only large type left.
 - The video and podcast players show blank in the sandbox.
 
 **Correction.** Ron: "i specifically said i do not want it in the footer anymore, keep it in the nav as projects". The link to the other room that sat above the footer, and its CSS, are removed. Projects in the nav is now the only way in. I had built the link from the board's title ("link to the other room above the colophon") and missed Ron's instruction.
+
+**Correction, no placeholders.**
+- **Instruction.** Ron: "remove the wargaming thing too, i don't want any tk lines on any page, if the content doesn't exist, delete the reference".
+- **Removed from the other room:** the "[Scenario wargames]" map node, its three connections and the CSS rule for them, the list entry, and both STAND-IN comments. Scenario play stays on the map, linked to Pensulo Cards.
+- **Checked across all three sites.** I scanned the visible text of every live page on .dev, .design and masthead for bracketed placeholder text, and none was left.
+- **Standing rule:** where content doesn't exist, the reference is deleted, never left as a placeholder.

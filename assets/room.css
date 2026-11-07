@@ -49,7 +49,6 @@ img { display: block; max-width: 100%; }
 .gr:has(.n-vb:hover, .n-vb:focus) .l-vb,
 .gr:has(.n-occ:hover, .n-occ:focus) .l-occ,
 .gr:has(.n-cap:hover, .n-cap:focus) .l-cap,
-.gr:has(.n-wg:hover, .n-wg:focus) .l-wg,
 .gr:has(.n-ygf:hover, .n-ygf:focus) .l-ygf,
 .gr:has(.n-pen:hover, .n-pen:focus) .l-pen { stroke: #fff; stroke-opacity: 1; stroke-width: 2.5; }
 .gr:has(.pr-rate:hover, .pr-rate:focus) .l-rate,
