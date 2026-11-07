@@ -320,3 +320,16 @@ The hero is the only large type left.
 - **Standing rule:** where content doesn't exist, the reference is deleted, never left as a placeholder.
 
 **Correction.** Ron: "get rid of 'everything else I build', I didn't ask you for that, and the projects page should [say] projects". The "Everything else I've built" link at the foot of the project list is removed. The page heading is now "Projects" instead of "(Serious) Game design".
+
+## Addendum: design practice and multi-agent work named in the intro (7 November 2026)
+
+**Intent.** Ron pasted guidance to name the design practice near the top, and to put multi-agent orchestration in the first paragraph with what he coordinates, carries, reviews and keeps. Each project should name its design contribution where the project supports it. All copy goes through the humanizer pass and prosekeep.
+
+**Action.**
+- **First intro paragraph** now reads: "Ron Bronson designs and builds software, drawing on a practice that spans UX, service design, information architecture, and content design. His current work includes multi-agent orchestration, context engineering, and agent experience: coordinating agents with distinct responsibilities, carrying context and decisions between them, reviewing their work, and keeping product direction in human hands. He also builds reusable tools for those workflows." The second paragraph (Vloora, Michigan, 18F) is unchanged.
+- **PBBG Content Schema** adds its information architecture decision and the checker that enforces it.
+- **Prosekeep** adds the content design framing: editorial authority carried into editing and review.
+- **Meta description** names multi-agent work and the four disciplines.
+- **`EDITORIAL.md`** gets the "Identity across the three sites" rule. It also records Ron's rule against placeholders.
+
+**Consequence.** Rendered at 1440px and 390px with no horizontal scroll. prosekeep found 0 findings.

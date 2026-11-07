@@ -39,6 +39,18 @@ Each project card carries `Status`, `Audience`, and `My contribution`. There is 
 
 **This site is a campaign, not a personal site.** It argues one thing, "Problems are designed", and the games, simulations, live exercises and software on it are the record behind that claim. Every section should read as evidence for it, and the page ends with an ask. The service practice belongs on ronbronson.design; the person belongs on ronbronson.com. Set by Ron on 5 November 2026.
 
+## Identity across the three sites
+
+Set by Ron, 7 November 2026. Every edit to any of the three sites keeps this:
+
+- Ron is a designer, a technology executive, and a hands-on AI practitioner, all in the present tense.
+- Name multi-agent orchestration, context engineering, and agent tooling explicitly, alongside UX, service design, information architecture, and content design. Masthead also spells out human-computer interaction (HCI).
+- Describe what he directs, builds, and tests. Keep Michigan, 18F, and Vloora prominent.
+- Support technical claims with specific workflows and artifacts, and keep the broader range of his work visible.
+- The test: a visitor to any one site can tell what kind of designer he is, see that he still practices, and see how his responsibility and thinking have grown.
+- New copy goes through the humanizer pass and prosekeep before it ships.
+- No placeholders on any page. If the content doesn't exist, delete the reference.
+
 ## Writing mechanics
 
 Conventions taken from Ron's existing corpus, not imposed on it.
