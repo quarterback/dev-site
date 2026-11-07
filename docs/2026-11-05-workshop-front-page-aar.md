@@ -379,4 +379,6 @@ The home intro and the Projects page are now first person, with contractions per
 
 **Judgment calls.** Kept the Vloora and Taubman links from the old intro. Left the meta and OG descriptions unchanged; they still describe the site accurately.
 
+**Follow-up.** At Ron's note, the 18F line now reads "where I scaled the world's largest forward-deployed design team"; "in the federal government" was redundant with 18F.
+
 **Risk.** The old intro's "economic sociologist" framing and "consequence and repair" line are gone from .dev; if Ron wants either back, it needs a new home.
