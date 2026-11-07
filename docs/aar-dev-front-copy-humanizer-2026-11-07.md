@@ -23,3 +23,9 @@ Branched from `claude/friendly-allen-7u5gyo` (PR #107, unmerged), so this PR tar
 
 ## 6. Next time
 Run the suite on whole pages, not one block at a time; triads come back when single paragraphs are fixed in isolation.
+
+## Addendum: Red Pen Editor
+**Instruction.** Ron: "I made a new npm package https://github.com/quarterback/red-pen-editor".
+**Change.** Added a Red Pen Editor card to Systems, between Prosekeep and plain-language-default. The install line is `npx -y github:quarterback/red-pen-editor` because the npm registry returns 404 for `red-pen-editor` (the README says it hasn't been published); I ran that command and it works. Switch the line to `npm i red-pen-editor` once it's on npm.
+**Dogfood.** Ran the package on the page copy: `inspect` found no repeated sentences or paragraphs. Using the skill's method, cut one sentence that only announced the next two ("The records also keep the limits of that result."); `applyEdits` accepted it with no protected literal lost. The package's tests pass (`npm test`).
+**Checks.** plain-language-default 0 problems, unslop 0 AI-isms on the new card; prosekeep PASS; Chromium 1440/390 no errors.
