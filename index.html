@@ -6,12 +6,12 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="icon" href="/favicon.png" type="image/png" sizes="any" />
 <title>Ron Bronson | Building tools for the speculative present</title>
-<meta name="description" content="Ron Bronson designs and builds software and tools for multi-agent work, drawing on a practice in UX, service design, information architecture, and content design." />
+<meta name="description" content="Ron Bronson builds software for people and AI agents: developer tools, agent skills, MCP integrations, and experimental apps." />
 <link rel="canonical" href="https://ronbronson.dev/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Ron Bronson" />
 <meta property="og:title" content="Ron Bronson" />
-<meta property="og:description" content="Ron Bronson designs and builds software and tools for multi-agent work, drawing on a practice in UX, service design, information architecture, and content design." />
+<meta property="og:description" content="Ron Bronson builds software for people and AI agents: developer tools, agent skills, MCP integrations, and experimental apps." />
 <meta property="og:url" content="https://ronbronson.dev/" />
 <meta property="og:image" content="https://ronbronson.dev/assets/social-card.png" />
 <meta property="og:image:width" content="1200" />
@@ -19,7 +19,7 @@
 <meta property="og:image:alt" content="Ron Bronson beside the words Problems Are Designed, with a workshop photo and a content schema check." />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Ron Bronson" />
-<meta name="twitter:description" content="Ron Bronson designs and builds software and tools for multi-agent work, drawing on a practice in UX, service design, information architecture, and content design." />
+<meta name="twitter:description" content="Ron Bronson builds software for people and AI agents: developer tools, agent skills, MCP integrations, and experimental apps." />
 <meta name="twitter:image" content="https://ronbronson.dev/assets/social-card.png" />
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/gallery/PPNeueMontreal-Extrabold.woff2" crossorigin />
 <link rel="stylesheet" href="assets/workshop.css" />
@@ -56,10 +56,10 @@
 
   <section class="g sec" id="systems" aria-labelledby="h-sys">
     <h2 id="h-sys">Systems</h2>
-    <article class="sys"><div><h3><a href="projects/pbbg-content-schema.html">PBBG Content Schema</a></h3><code>npx -y github:quarterback/pbbg-content-schema install-skill</code></div><div class="sys__b"><p class="sys__idea">A reusable content architecture for browser games built with AI agents. Separates interface copy, narrative, rules, and game state so agents can change one without breaking the others. The information architecture gives each layer its own responsibility and makes the links between them explicit, and the checker lets an agent test whether an edit respects those boundaries.</p><p><a href="https://blog.ronbronson.com/bringing-ax-to-life-building-a-content-schema-for-browser-games-developed-with-agents/">Bringing AX to Life: Building a Content Schema for Browser Games Developed With Agents</a></p></div></article>
-    <article class="sys"><div><h3><a href="projects/closedtab.html">closedtab</a></h3><code>npm i closedtab</code></div><div class="sys__b"><p class="sys__idea">Shared memory for people and AI agents. Records decisions, deviations, and consequences that ordinary test results and agent logs can miss, preserving context across sessions.</p><p><a href="https://blog.ronbronson.com/closedtab-a-npm-shared-memory-for-you-and-your-ai-agents">Closedtab: A npm shared memory for you and your AI agents</a><br /><a href="https://blog.ronbronson.com/agent-experience-needs-failure-affordances/">Agent Experience Needs Failure Affordances</a></p></div></article>
-    <article class="sys"><div><h3><a href="projects/prosekeep.html">Prosekeep</a></h3><code>npm i prosekeep</code></div><div class="sys__b"><p class="sys__idea">An editorial system for teams writing with AI agents. Carries writing standards, author decisions, source requirements, and publishing workflows across repositories and agent tools. It treats editorial authority as a content design problem, carrying an author&rsquo;s decisions into editing and review as the writing moves between tools.</p></div></article>
-    <article class="sys"><div><h3><a href="https://www.npmjs.com/package/plain-language-default">plain-language-default</a></h3><code>npm i plain-language-default</code></div><div class="sys__b"><p class="sys__idea">A reusable writing standard for AI agents based on the U.S. Federal Plain Language Guidelines. Gives agents consistent rules for writing clear, direct, accessible content.</p></div></article>
+    <article class="sys"><div><h3><a href="projects/pbbg-content-schema.html">PBBG Content Schema</a></h3><code>npx -y github:quarterback/pbbg-content-schema install-skill</code></div><div class="sys__b"><p class="sys__idea">A reusable content architecture for browser games built with AI agents. It keeps interface copy, narrative, rules, and game state apart, so an agent can change one without breaking the others. Each layer has its own job and the links between them are written down. A checker tells the agent whether an edit stayed inside its layer.</p><p><a href="https://blog.ronbronson.com/bringing-ax-to-life-building-a-content-schema-for-browser-games-developed-with-agents/">Bringing AX to Life: Building a Content Schema for Browser Games Developed With Agents</a></p></div></article>
+    <article class="sys"><div><h3><a href="projects/closedtab.html">closedtab</a></h3><code>npm i closedtab</code></div><div class="sys__b"><p class="sys__idea">Shared memory for people and AI agents. It records what an agent decided and where it went off plan, which test results and agent logs often miss. The next session starts with that record.</p><p><a href="https://blog.ronbronson.com/closedtab-a-npm-shared-memory-for-you-and-your-ai-agents">Closedtab: A npm shared memory for you and your AI agents</a><br /><a href="https://blog.ronbronson.com/agent-experience-needs-failure-affordances/">Agent Experience Needs Failure Affordances</a></p></div></article>
+    <article class="sys"><div><h3><a href="projects/prosekeep.html">Prosekeep</a></h3><code>npm i prosekeep</code></div><div class="sys__b"><p class="sys__idea">An editorial system for teams writing with AI agents. It carries writing standards, author decisions, source requirements, and publishing workflows across repositories and agent tools. I treat editorial authority as a content design problem: an author&rsquo;s decisions should still hold when the writing reaches editing and review in another tool.</p></div></article>
+    <article class="sys"><div><h3><a href="https://www.npmjs.com/package/plain-language-default">plain-language-default</a></h3><code>npm i plain-language-default</code></div><div class="sys__b"><p class="sys__idea">A reusable writing standard for AI agents based on the U.S. Federal Plain Language Guidelines. It gives every agent the same rules for writing plainly.</p></div></article>
   </section>
 
   <section class="g sec" id="orchestration" aria-labelledby="h-orch">
@@ -68,17 +68,17 @@
       <p class="essay__lede">I developed PBBG Content Schema after agent-assisted work on Coalition exposed recurring problems with language and game logic. Agents mixed narrative with interface copy and rebuilt action costs or conditions from scattered code. The response was a reusable architecture that separates those responsibilities and gives agents tools to inspect them.</p>
       <h3>Define the release and its boundaries</h3>
       <p>I chose to release the reusable architecture before building another game around it. I directed the work to stay independent of other editorial tools and to use a neutral example. Codex prepared the initial package: schemas, writing policies, reference checks, text rendering, a command-line tool, tests, and adoption documentation.</p>
-      <p>The action record also keeps an owner decision that changed the agent&rsquo;s first choice. Codex picked an MIT license; I specified the Eclipse Public License 2.0, and the record notes the change and the package updates that followed.</p>
+      <p>The action record also keeps an owner decision that changed the agent&rsquo;s first choice. Codex picked an MIT license. I specified the Eclipse Public License 2.0, and the record notes the change and the package updates that followed.</p>
       <h3>Give the next agent a bounded extension</h3>
       <p>Next I asked for an Agent Skill and a Model Context Protocol server so agents could use the package directly. Claude added that access layer and left the content format, schemas, and existing validation rules unchanged.</p>
       <p>The server exposes five read-only tools. An agent can retrieve writing guidance, validate a content bundle, inspect schemas, check which facts a role may see, and preview rendered text. Each tool calls the existing library functions, so the command-line checks and the agent&rsquo;s checks stay consistent.</p>
       <h3>Record what was tested and what wasn&rsquo;t finished</h3>
       <p>The implementation records describe checks for invalid references, hidden facts, action-cost rendering, and policy scope. The second stage added tests for the server and documented a connection through an MCP client.</p>
-      <p>The records also keep the limits of that result. Coalition supplied the original problem and the extraction reference, but at that point its inline content hadn&rsquo;t moved to the package. Passing the checks established particular structural properties; narrative quality, complete string coverage, and a working game integration were separate questions.</p>
+      <p>The records also keep the limits of that result. Coalition supplied the original problem and the extraction reference, but at that point its inline content hadn&rsquo;t moved to the package. Passing the checks proved the structure held. They didn&rsquo;t test the writing itself, string coverage, or the game integration.</p>
       <h3>Handle a failure without inventing a diagnosis</h3>
       <p>The first publishing attempt failed after the package checks passed. I asked Claude to investigate. It could inspect the failed step but couldn&rsquo;t see the raw log or the secret settings, so it recorded that the cause was unconfirmed.</p>
       <p>Claude changed the workflow to check authentication before publishing and to surface errors on the run page. Its handoff documented the change, the evidence still needed, and the step I had to take to rerun the workflow.</p>
-      <p>Across those stages, I set the purpose, the release scope, the implementation boundaries, and the decisions that need an owner. The agents contributed code, tests, and documented technical judgment. Each stage left a record separating finished work, verified behavior, and open questions.</p>
+      <p>At each stage I set the purpose and scope and made the calls that needed an owner. The agents wrote the code and tests and explained their technical choices. Every stage ended with a record of what was finished and checked, and what was still open.</p>
     </div>
   </section>
 
