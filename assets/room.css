@@ -92,3 +92,10 @@ img { display: block; max-width: 100%; }
   .pop, .gr { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { .pop, .gr .l { transition: none; } }
+
+/* Dissolve between the home page and the Projects page. Cross-document
+   view transitions: same-origin navigations crossfade in Chrome, Edge
+   and Safari; other browsers navigate normally. */
+@view-transition { navigation: auto; }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: .6s; animation-timing-function: ease-in-out; }
+@media (prefers-reduced-motion: reduce) { @view-transition { navigation: none; } }

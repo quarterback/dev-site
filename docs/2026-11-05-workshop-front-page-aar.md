@@ -344,3 +344,9 @@ The home intro and the Projects page are now first person, with contractions per
 - **Check.** prosekeep found 0 findings. Rendered at 1440px and 390px with no horizontal scroll.
 
 **AP and unslop pass.** Ron: "Just run it against ap style and https://github.com/MohamedAbdallah-14/unslop". I ran unslop 0.x with `--deterministic --dry-run`, offline. It found 0 AI-isms in the new copy. Its only rewrite was curly apostrophes to straight ones, which was not applied because the house style uses typographic quotes. AP fixes applied: titles that are not directly before a name are lowercased ("assistant professor of practice", "entrepreneur in residence", "head of design and special initiatives"), and "&" is spelled out as "and". House style overrides AP on the serial comma, day-first dates and dashes, per EDITORIAL.md.
+
+**Further change, a dissolve between Home and Projects.**
+- **Request.** Ron asked for "some kind of dissolving animation or transition between the main page on .dev and projects".
+- **Change.** Both `workshop.css` and `room.css` opt into cross-document view transitions with `@view-transition { navigation: auto; }`. The root crossfade is set to 0.6s ease-in-out. There is no JavaScript. Reduced-motion users get an instant switch. Browsers without support (Firefox today) navigate normally.
+- **Check.** In Chromium 153, clicking Projects shows the cream page dissolving into cobalt.
+- **Dropped.** I first tried holding the top bar in place with its own transition name. The two pages' navs differ, so it ghosted, and I removed it.
