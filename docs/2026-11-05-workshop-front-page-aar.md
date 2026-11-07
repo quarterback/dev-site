@@ -333,3 +333,7 @@ The hero is the only large type left.
 - **`EDITORIAL.md`** gets the "Identity across the three sites" rule. It also records Ron's rule against placeholders.
 
 **Consequence.** Rendered at 1440px and 390px with no horizontal scroll. prosekeep found 0 findings.
+
+
+**Voice change (7 November 2026).** Ron: ".design should be third person. Dev first person and first person for masthead too."
+The home intro and the Projects page are now first person, with contractions per EDITORIAL.md. "I design and build software…", "I run Vloora, where I'm building…", "I design games…", "I examine…" and "I developed…" replace the third-person lines. Meta descriptions stay third person. The voice rule is recorded in EDITORIAL.md.

@@ -50,6 +50,7 @@ Set by Ron, 7 November 2026. Every edit to any of the three sites keeps this:
 - The test: a visitor to any one site can tell what kind of designer he is, see that he still practices, and see how his responsibility and thinking have grown.
 - New copy goes through the humanizer pass and prosekeep before it ships.
 - No placeholders on any page. If the content doesn't exist, delete the reference.
+- Voice: ronbronson.design is written in the third person; ronbronson.dev and masthead are written in the first person, with contractions. Meta descriptions and OG tags are third person on all three. Set by Ron, 7 November 2026.
 
 ## Writing mechanics
 
