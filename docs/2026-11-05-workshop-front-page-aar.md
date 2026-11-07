@@ -382,3 +382,5 @@ The home intro and the Projects page are now first person, with contractions per
 **Follow-up.** At Ron's note, the 18F line now reads "where I scaled the world's largest forward-deployed design team"; "in the federal government" was redundant with 18F.
 
 **Risk.** The old intro's "economic sociologist" framing and "consequence and repair" line are gone from .dev; if Ron wants either back, it needs a new home.
+
+**Follow-up, humanizer pass.** Ron: "Too many couplets." Reran the bio against the humanizer patterns. Removed the paired sentence openings ("I'm CEO… I'm also…"), the repeated "where I…, where I…" clauses, and three of the four triads ("use information, follow rules, and make decisions"; "design the architecture, direct the work, and test"; "who gives permission, when they should stop, and who answers"). Kept the two real lists (the four tool types, the four project areas). No facts added or dropped. prosekeep PASS; unslop 0 AI-isms.
