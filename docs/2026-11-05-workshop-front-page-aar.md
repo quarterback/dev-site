@@ -310,3 +310,5 @@ The hero is the only large type left.
 **Consequence.**
 - Both pages rendered at 1440px and 390px with no horizontal scroll and no errors. prosekeep found 0 findings.
 - The video and podcast players show blank in the sandbox.
+
+**Correction.** Ron: "i specifically said i do not want it in the footer anymore, keep it in the nav as projects". The link to the other room that sat above the footer, and its CSS, are removed. Projects in the nav is now the only way in. I had built the link from the board's title ("link to the other room above the colophon") and missed Ron's instruction.
