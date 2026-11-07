@@ -24,6 +24,8 @@
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/gallery/PPNeueMontreal-Extrabold.woff2" crossorigin />
 <link rel="stylesheet" href="assets/workshop.css" />
 <script>try { if (localStorage.getItem("rb-theme") === "coffee") document.documentElement.setAttribute("data-theme", "coffee"); } catch (e) {}</script>
+<script>try{if(sessionStorage.getItem("rb-dissolve")){document.documentElement.classList.add("dissolving");setTimeout(function(){document.documentElement.classList.remove("dissolving")},1000)}}catch(e){}</script>
+<script src="assets/dissolve.js" defer></script>
 </head>
 <body>
 <div class="w-wrap">
@@ -36,7 +38,7 @@
   <header class="top">
     <div class="top__in g">
       <a class="top__name" href="#top">Ron Bronson</a>
-      <nav aria-label="Main navigation"><a href="projects.html">Projects</a><a href="https://ronbronson.design">Design</a><a href="https://blog.ronbronson.dev">Blog</a><a href="mailto:ron@ronbronson.com">Contact</a><span class="sw" role="group" aria-label="Colour theme"><button type="button" class="sw--snow" data-theme-pick="snow" aria-pressed="true" aria-label="Snow theme" title="Snow"></button><button type="button" class="sw--coffee" data-theme-pick="coffee" aria-pressed="false" aria-label="Coffee theme" title="Coffee"></button></span></nav>
+      <nav aria-label="Main navigation"><a href="projects.html" data-dissolve="room">Projects</a><a href="https://ronbronson.design">Design</a><a href="https://blog.ronbronson.dev">Blog</a><a href="mailto:ron@ronbronson.com">Contact</a><span class="sw" role="group" aria-label="Colour theme"><button type="button" class="sw--snow" data-theme-pick="snow" aria-pressed="true" aria-label="Snow theme" title="Snow"></button><button type="button" class="sw--coffee" data-theme-pick="coffee" aria-pressed="false" aria-label="Coffee theme" title="Coffee"></button></span></nav>
     </div>
   </header>
 
@@ -46,8 +48,9 @@
   <section class="g hero" id="top" aria-labelledby="h">
     <h1 id="h" class="hero__stand">Building software for agentic systems, public services, and speculative futures.</h1>
     <div class="hero__intro">
-      <p>I design and build software, drawing on a practice that spans UX, service design, information architecture, and content design. My current work includes multi-agent orchestration, context engineering, and agent experience: coordinating agents with distinct responsibilities, carrying context and decisions between them, reviewing their work, and keeping product direction in human hands. I also build reusable tools for those workflows.</p>
-      <p>I run <a href="https://vloora.com">Vloora</a>, where I&rsquo;m building the rails for the agentic web. I&rsquo;m an <a href="https://taubmancollege.umich.edu/faculty/directory/ron-bronson/">assistant professor of practice</a> at the University of Michigan. Previously, I was entrepreneur in residence at State Capacity AI and head of design and special initiatives at 18F.</p>
+      <p>I&rsquo;m an economic sociologist and writer. My practice looks at how technology, markets, and rules shape collective life, and how people gain the authority to change the systems they depend on.</p>
+      <p>I work through experimental software and participatory projects. I bring 15 years of design practice, including leading design at 18F, to a newer problem: AI agents that act for people and have to answer for what they do. I&rsquo;m an <a href="https://taubmancollege.umich.edu/faculty/directory/ron-bronson/">assistant professor of practice</a> at the University of Michigan&rsquo;s Taubman College, and I run <a href="https://vloora.com">Vloora</a>.</p>
+      <p>My work spans public services, games and simulations, and multi-agent AI systems. I use each to test how decisions get made and who carries the responsibility. I also write about consequence and repair.</p>
     </div>
   </section>
 
