@@ -366,3 +366,5 @@ The home intro and the Projects page are now first person, with contractions per
   - AP changes: "fifteen" became "15", and the title is lowercased.
   - unslop (deterministic) found 0 AI-isms, and prosekeep found 0 findings.
 - **Photo.** The lead photo is now `clamp(200px, 30vh, 340px)` tall (220px on phones) and the hero top padding is 40px. At 1440×900 the headline sits at 395–669px and the bio starts at 717px.
+
+**Headline.** Ron: "Building tools for the speculative present for the main .dev rather than what's there now, is too long." The h1 and the page title now read "Building tools for the speculative present".
