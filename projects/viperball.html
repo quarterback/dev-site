@@ -97,7 +97,7 @@
       <h2>The method</h2>
       <p>Design specs and after-action reports for every major system.</p>
 
-      <p>Every major system shipped with a written rationale: 30+ design specifications and after-action reports documenting <i>why</i> each mechanic exists and what changed. I treated balance as a measurement problem, running 200+ game batch simulations and validating aggregate scoring, turnover rates, and conversion cascades against explicit design targets before shipping a change.</p>
+      <p>I keep decision records for major changes and run batch simulations to see what the rules actually produce. One <a href="https://github.com/quarterback/viperball/blob/main/docs/AAR_bonus_possession_inversion.md">after-action report</a> traces a nasty mistake: after an interception, the engine gave a bonus possession to the team that threw the pass. The game kept running and producing stats, but the rule worked backward. Fixing the assignment meant rerunning the season. The report records the affected statistics and the test the engine needed.</p>
 
       <p class="tech-line">30+ specs and after-action reports <span class="sep">·</span> 200+ game validation batches.</p>
 
