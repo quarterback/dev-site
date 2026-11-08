@@ -97,7 +97,7 @@ const stack = ({ state, d, setState }) => {
         id="lens"
         transform={translate(s.x - 8, SOCK_Y - 22)}
         dragologyZIndex={1}
-        dragologyOnDrag={() => d.between(STATES).withDropTransition("elastic-out")}
+        dragologyOnDrag={() => d.between(STATES).withDropTransition("cubic-out")}
         style={{ cursor: "grab" }}
       >
         <rect width={s.w + 16} height={34} fill={LIME} />
