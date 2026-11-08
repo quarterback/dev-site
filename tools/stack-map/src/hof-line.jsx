@@ -20,6 +20,9 @@ const LABELS = ["John Olerud", "Lou Whitaker", "Bobby Grich", "Nomar Garciaparra
 const MONO = "var(--uth-mono)";
 const KIND = { hof: "Hall of Famer", out: "Not in", nlg: "Negro Leagues inductee", mgr: "In as a manager or executive", ban: "Banned" };
 
+// AP style: spell out numbers under 10.
+const num = (n) => (n < 10 ? ["none", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"][n] : String(n));
+
 function hash(s) { let h = 2166136261; for (let i = 0; i < s.length; i++) h = Math.imul(h ^ s.charCodeAt(i), 16777619); return ((h >>> 0) % 1000) / 1000; }
 
 function prep(data) {
@@ -187,8 +190,8 @@ function List({ lanes, size, pick, setPick }) {
         {lanes.map((l, i) => <button type="button" className="ghost" aria-pressed={i === pick} onClick={() => setPick(i)}>{l.pos}</button>)}
       </div>
       <p className="hl__sum" aria-live="polite">
-        {size === REAL ? `The Hall has ${lane.n} players at ${lane.pos}. ` : `With ${N} seats at ${lane.pos} instead of ${lane.n}, `}
-        {`${outAbove.length} who aren't in rank above the line, and ${inBelow.length} who are in rank below it.`}
+        {size === REAL ? `The Hall has ${lane.n} players at ${lane.pos}. ` : `With ${N} seats at ${lane.pos} instead of ${lane.n}: `}
+        {`Above the line, ${num(outAbove.length)} ${outAbove.length === 1 ? "isn't" : "aren't"} in. Below it, ${num(inBelow.length)} ${inBelow.length === 1 ? "is" : "are"}.`}
       </p>
       <ol className="hl__rank" start={from + 1}>
         {ranked.slice(from, to).map((p, j) => (

@@ -40,3 +40,17 @@ Ron asked whether his new tooling could bring his post "How Do You Evaluate a (B
 
 ## 6. Next time
 If Ron builds out the vote-adjusted index, it could share this chart, with the first-ballot vote as a second view.
+
+## Addendum: title and intro
+**Instruction.** Ron: "Titled the data viz as Marginal Player Line a two sentence intro from my post; use my editorial tools to enusure its not slop". He also said: "You'd have to ge tthe data yourself its easily findable". The data was already pulled from Baseball Reference, so nothing depends on him.
+**Change.**
+- The heading is now "Marginal Player Line".
+- The intro is two sentences taken from the post: "Count the Hall of Famers at a position, rank everyone there by JAWS, and find the player who would occupy that final slot. What happens when the people that system recognizes don't resemble the people our existing measures tell us had careers of comparable quality?"
+- The link to the post moved into the source line.
+- The note under the chart names John Olerud in full.
+- The list summary spells out numbers under 10, AP style, and no longer starts a sentence with a figure.
+**Editorial tools.**
+- plain-language-default flagged the first draft's opening sentence as too long. That sentence was the post's "Rather than defining the bottom of the Hall…", and its "rather than" contrast is also a humanizer tell. I cut it to the post's own clause.
+- Final runs on the intro and on all other text in the piece: plain-language-default 0 problems, prosekeep PASS, unslop (deterministic) 0 AI-isms.
+- unslop warned that "Marginal Player Line" is title case. I kept it, because Ron gave the title.
+**Evidence.** Playwright at 1440 and on iPhone 14 emulation: "The Hall has 25 players at SS. Above the line, six aren't in. Below it, six are." At 120%: "With 30 seats at SS instead of 25: Above the line, nine aren't in. Below it, four are." No errors.
