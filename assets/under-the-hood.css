@@ -123,3 +123,4 @@
 .uth .term__pop code { display: block; margin: 0 0 10px; font: 13px/1.4 var(--uth-mono); color: var(--uth-accent); white-space: normal; }
 .uth .term__pop a { color: var(--uth-fg); }
 .uth button.term__x { position: absolute; top: 6px; right: 6px; width: 32px; height: 32px; padding: 0; font: 22px/1 var(--uth-mono); color: var(--uth-dim); background: none; border: 0; }
+.uth .uth-piece { position: relative; }

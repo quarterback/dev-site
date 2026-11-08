@@ -72,7 +72,16 @@ the line = the Nth player, where N = Hall of Famers at the position</code>
           <div class="head">
             <div><h3>You Go First match score</h3></div>
             <div>
-              <p>Scores are asymmetric. What you want, 10 chips across five traits, is scored against what they are, a behavioral quiz: 0.7 × alignment + 0.3 × temperature. Move the chips and both scores change.</p>
+              <p>Scores are asymmetric. What you want, 10 chips across five traits, is scored against what they are, a behavioral quiz: 0.7 × <button type="button" class="term" aria-expanded="false" aria-controls="term-alignment">alignment</button> + 0.3 × <button type="button" class="term" aria-expanded="false" aria-controls="term-temperature">temperature</button>. Move the chips and both scores change.</p>
+            <div class="term__pop" id="term-temperature" role="dialog" aria-label="What temperature means" hidden>
+              <p>Everyone takes a 10-question behavioral quiz that gives them a Relay score from 0 to 80 degrees. Temperature compares two people&rsquo;s scores, and the closer they are, the higher it goes.</p>
+              <button type="button" class="term__x" aria-label="Close">&times;</button>
+            </div>
+            <div class="term__pop" id="term-alignment" role="dialog" aria-label="What alignment means" hidden>
+              <p>Alignment is how well someone&rsquo;s traits fit what you want. Each chip you put on a trait is worth a tenth of the other person&rsquo;s score on it, so the total comes out of 100.</p>
+              <code>alignment = Σ (your chips on a trait ÷ 10 × their score on it)</code>
+              <button type="button" class="term__x" aria-label="Close">&times;</button>
+            </div>
               <code class="eq">score = 0.7 × alignment + 0.3 × temperature
       temperature = max(0, 100 − 2 × |quiz gap|)</code>
             </div>
@@ -90,7 +99,11 @@ the line = the Nth player, where N = Hall of Famers at the position</code>
         <div class="head">
           <div><h3>You Go First: a week of matching</h3></div>
           <div>
-            <p>Swiping makes attention free, so a like tells you nothing and a few profiles get most of them. Everyone gets 15 picks a week in three tiers, and the other person sees the tier.</p>
+            <p>Swiping makes attention free, so a like tells you nothing and a few profiles get most of them. Everyone gets 15 picks a week in <button type="button" class="term" aria-expanded="false" aria-controls="term-tiers">three tiers</button>, and the other person sees the tier.</p>
+            <div class="term__pop" id="term-tiers" role="dialog" aria-label="What three tiers means" hidden>
+              <p>Picks work like a draft, sorted into Firsts, Seconds, and Thirds. The simulator gives everyone 3 Firsts, 5 Seconds, and 7 Thirds.</p>
+              <button type="button" class="term__x" aria-label="Close">&times;</button>
+            </div>
             <p>These are the app&rsquo;s 14 test profiles in its simulator. Click a person to see who they picked.</p>
           </div>
         </div>
@@ -105,7 +118,12 @@ the line = the Nth player, where N = Hall of Famers at the position</code>
               <div><small>Average match score</small><span class="big" id="ygwAvg">0</span></div>
             </div>
             <p class="cap" id="ygwNote" aria-live="polite"></p>
-            <p class="why">The textbook stable-matching algorithm pairs all 14, but only by assuming everyone knows everyone and can propose without limit. Fifteen picks a week matched 12 by week 2.</p>
+            <p class="why">The textbook <button type="button" class="term" aria-expanded="false" aria-controls="term-stable">stable-matching</button> algorithm pairs all 14, but only by assuming everyone knows everyone and can propose without limit. Fifteen picks a week matched 12 by week 2.</p>
+            <div class="term__pop" id="term-stable" role="dialog" aria-label="What stable-matching means" hidden>
+              <p>Stable matching pairs people so that no two of them would both rather be with each other than with the person they got.</p>
+              <p><a href="https://en.wikipedia.org/wiki/Stable_marriage_problem">The stable matching problem</a></p>
+              <button type="button" class="term__x" aria-label="Close">&times;</button>
+            </div>
             <p class="src">Source: heypbj/src/lib/stableMatchingSimulator.ts and src/data/mockSimulation.ts, default seed.</p>
           </div>
         </div>
@@ -135,7 +153,11 @@ the line = the Nth player, where N = Hall of Famers at the position</code>
               </div>
             </div>
           </div>
-          <div class="why">In a dual, every match is decided before the first one finishes. Clinching only changes the order you see results in.</div>
+          <div class="why">In a <button type="button" class="term" aria-expanded="false" aria-controls="term-dual">dual</button>, every match is decided before the first one finishes. Clinching only changes the order you see results in.</div>
+            <div class="term__pop" id="term-dual" role="dialog" aria-label="What dual means" hidden>
+              <p>A dual is one team-against-team meet. A team that reaches four points has clinched it.</p>
+              <button type="button" class="term__x" aria-label="Close">&times;</button>
+            </div>
           <div class="src">Source: tennis-team-manager/engine/rally.py and match.py, NCAA dual format (best of three, no-ad, tiebreak sets). Point odds computed with the engine's own functions; match odds checked against 1,500 simulated matches (73.7% vs 73.7% at a 6-point gap).</div>
         </section>
 
@@ -143,7 +165,15 @@ the line = the Nth player, where N = Hall of Famers at the position</code>
           <div class="head">
             <div><h3>Play To Clinch high school careers</h3></div>
             <div>
-              <p>The first high school model put seniors in 85.7% of No. 1 singles spots. I compared that with six seasons of Oregon boys tennis, then rebuilt development around starting ability, career peak, annual growth, and actual playing time. JV matches count for half the exposure of varsity, so five freshmen with the same ceiling can end up with very different careers.</p>
+              <p>The first high school model put seniors in 85.7% of <button type="button" class="term" aria-expanded="false" aria-controls="term-no1">No. 1 singles</button> spots. I compared that with six seasons of Oregon boys tennis, then rebuilt development around starting ability, career peak, annual growth, and actual playing time. JV matches count for half the <button type="button" class="term" aria-expanded="false" aria-controls="term-exposure">exposure</button> of varsity, so five freshmen with the same ceiling can end up with very different careers.</p>
+            <div class="term__pop" id="term-exposure" role="dialog" aria-label="What exposure means" hidden>
+              <p>Exposure is how much of a year&rsquo;s growth a player gets to use, and it comes from playing matches. JV, or junior varsity, is the level below varsity.</p>
+              <button type="button" class="term__x" aria-label="Close">&times;</button>
+            </div>
+            <div class="term__pop" id="term-no1" role="dialog" aria-label="What No. 1 singles means" hidden>
+              <p>A high school team ranks its singles players. The best plays No. 1 against the other team&rsquo;s best, the next best plays No. 2, and so on down the lineup.</p>
+              <button type="button" class="term__x" aria-label="Close">&times;</button>
+            </div>
               <code class="eq">gain = year's budget × playing time
       playing time: bench 0.55 · full JV 0.81 · varsity 1.00</code>
             </div>
@@ -169,7 +199,20 @@ the line = the Nth player, where N = Hall of Famers at the position</code>
           <div class="head">
             <div><h3>Viperball kick decisions</h3></div>
             <div>
-              <p>Viperball has six downs to gain 20 yards, and the ball moves by running, lateral chains, and kick passes. A live-play drop kick is worth 5 and a place kick 3. Every rule creates a strategy, so on a late down the coach weighs both kicks against going for it.</p>
+              <p>Viperball has six downs to gain 20 yards, and the ball moves by running, <button type="button" class="term" aria-expanded="false" aria-controls="term-laterals">lateral chains</button>, and <button type="button" class="term" aria-expanded="false" aria-controls="term-kickpass">kick passes</button>. A live-play <button type="button" class="term" aria-expanded="false" aria-controls="term-dropkick">drop kick</button> is worth 5 and a place kick 3. Every rule creates a strategy, so on a late down the coach weighs both kicks against going for it.</p>
+            <div class="term__pop" id="term-dropkick" role="dialog" aria-label="What drop kick means" hidden>
+              <p>A drop kick is dropped, bounced once, and kicked through the uprights while the play is live. A place kick is a field goal kicked off a holder.</p>
+              <button type="button" class="term__x" aria-label="Close">&times;</button>
+            </div>
+            <div class="term__pop" id="term-kickpass" role="dialog" aria-label="What kick passes means" hidden>
+              <p>A kick pass is a kick to a teammate downfield, and it does the job a forward pass does in football. If nobody catches it, the offense keeps the ball and loses the down.</p>
+              <button type="button" class="term__x" aria-label="Close">&times;</button>
+            </div>
+            <div class="term__pop" id="term-laterals" role="dialog" aria-label="What lateral chains means" hidden>
+              <p>Viperball has no forward pass, so players toss the ball to a teammate beside or behind them. A chain is several laterals on one play, sometimes five, and every toss risks a fumble.</p>
+              <p><a href="https://github.com/quarterback/viperball#the-lateral-game">The Viperball rules</a></p>
+              <button type="button" class="term__x" aria-label="Close">&times;</button>
+            </div>
               <code class="eq">distance = (100 − field position) + 10
       drop kick EV = 5 × P(drop)   place kick EV = 3 × P(place)</code>
             </div>
@@ -202,7 +245,12 @@ the line = the Nth player, where N = Hall of Famers at the position</code>
           <div class="head">
             <div><h3>O27 college prospects</h3></div>
             <div>
-              <p>In O27, a prospect&rsquo;s box-score grade and actual ceiling are different things. Each player has a hidden ceiling and a fixed lens on it, so the grade you see is ceiling times lens. Two scouting reports estimate that ceiling with their own errors. I kept the lens fixed through college: a hidden gem can still look ordinary when draft day arrives. The decision is whether to trust the box score or two imperfect scouting reports. I explain the model in <a href="https://blog.ronbronson.dev/3mn7c3uzctk2a">the development write-up</a>.</p>
+              <p>In <button type="button" class="term" aria-expanded="false" aria-controls="term-o27">O27</button>, a prospect&rsquo;s box-score grade and actual ceiling are different things. Each player has a hidden ceiling and a fixed lens on it, so the grade you see is ceiling times lens. Two scouting reports estimate that ceiling with their own errors. I kept the lens fixed through college: a hidden gem can still look ordinary when draft day arrives. The decision is whether to trust the box score or two imperfect scouting reports. I explain the model in <a href="https://blog.ronbronson.dev/3mn7c3uzctk2a">the development write-up</a>.</p>
+            <div class="term__pop" id="term-o27" role="dialog" aria-label="What O27 means" hidden>
+              <p>O27 is baseball with one structural change: each side bats until they record 27 outs. There are no innings. It&rsquo;s a computer sport, like Viperball.</p>
+              <p><a href="https://github.com/quarterback/hybrid-baseball">The O27 rules</a></p>
+              <button type="button" class="term__x" aria-label="Close">&times;</button>
+            </div>
               <code class="eq">shown  = round(ceiling × lens)     lens 0.40–0.95
       growth = min(rate × ceiling, cap)  cap 15 → 4
       scout  = ceiling ± fog             fog 7–31</code>
@@ -222,7 +270,21 @@ the line = the Nth player, where N = Hall of Famers at the position</code>
           <div class="head">
             <div><h3>Oregon high school tennis rankings</h3></div>
             <div>
-              <p>Win-loss records ignore who you played and count every flight the same, so a coach could stack a lineup to look better. My flight-weighted score weights the eight flights from 1.00 down to 0.10, so depth counts and stacking stops paying. The Power Index blends it with an RPI-style strength of schedule.</p>
+              <p>Win-loss records ignore who you played and count every <button type="button" class="term" aria-expanded="false" aria-controls="term-flights">flight</button> the same, so a coach could stack a lineup to look better. My flight-weighted score weights the eight flights from 1.00 down to 0.10, so depth counts and stacking stops paying. The <button type="button" class="term" aria-expanded="false" aria-controls="term-pi">Power Index</button> blends it with an <button type="button" class="term" aria-expanded="false" aria-controls="term-rpi">RPI</button>-style strength of schedule.</p>
+            <div class="term__pop" id="term-rpi" role="dialog" aria-label="What RPI means" hidden>
+              <p>RPI, the rating percentage index, scores a team on its own winning percentage and on its schedule. Its opponents&rsquo; record counts twice as much as its own.</p>
+              <code>RPI = 25% own win % + 50% opponents&rsquo; win % + 25% opponents&rsquo; opponents&rsquo; win %</code>
+              <p><a href="https://en.wikipedia.org/wiki/Rating_percentage_index">Rating percentage index</a></p>
+              <button type="button" class="term__x" aria-label="Close">&times;</button>
+            </div>
+            <div class="term__pop" id="term-pi" role="dialog" aria-label="What Power Index means" hidden>
+              <p>The Power Index is what the rankings sort by. APR, the biggest part, is a team&rsquo;s record adjusted for schedule strength. FQI is the flight-weighted score, adjusted for each opponent, and oGS is the share of games won, adjusted the same way.</p>
+              <button type="button" class="term__x" aria-label="Close">&times;</button>
+            </div>
+            <div class="term__pop" id="term-flights" role="dialog" aria-label="What flight means" hidden>
+              <p>A high school tennis dual has eight flights: four singles matches and four doubles matches, numbered from 1, the strongest, to 4. Each flight is one match.</p>
+              <button type="button" class="term__x" aria-label="Close">&times;</button>
+            </div>
               <code class="eq">PI = 0.65·APR + 0.25·FQI + 0.10·oGS
       FQI = (Σ flight_score·opp_strength + 5×0.5) / (duals + 5)</code>
             </div>

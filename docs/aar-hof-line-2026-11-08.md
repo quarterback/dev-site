@@ -150,3 +150,47 @@ Ron's two-sentence intro wasn't edited.
 - Escape closes it and returns focus to "JAWS". A click outside closes it too.
 - On the phone it fits from 16 to 374 of 390px.
 - No page errors and no horizontal overflow.
+
+## Addendum: definition cards for the other models
+**Instruction.** Asked whether FQI, RPI, WAR and the like should get the same treatment as JAWS, Ron said: "Yes".
+**Change.** There are now 14 more cards on Projects, on the first visible reference of each term (never inside a formula block):
+
+| Model | Terms |
+| --- | --- |
+| You Go First match score | alignment, temperature |
+| You Go First: a week of matching | three tiers, stable-matching |
+| Play To Clinch point engine | dual |
+| Play To Clinch high school careers | No. 1 singles, exposure (with JV) |
+| Viperball kick decisions | lateral chains, kick passes, drop kick |
+| O27 college prospects | O27 |
+| Oregon rankings | flight, Power Index, RPI |
+
+- The home page's careers piece gets the same two cards.
+- `.uth .uth-piece` is now `position: relative`, so cards opened from a note line up with their word.
+- Formulas appear in a card only when the formula isn't already on screen: alignment and RPI. Links go to Wikipedia (stable matching, RPI) and to Ron's repos (Viperball rules, O27 rules).
+
+**Sources checked.**
+- heypbj `calculateCompatibilityScore`, ARCHITECTURE.md and IMPLEMENTATION.md: alignment = Σ(chips/10 × trait); Relay score 0–80°R; temperature = max(0, 100 − 2 × gap).
+- `stableMatchingSimulator.ts` ROSTER: 3 Firsts, 5 Seconds, 7 Thirds.
+- tennis-team-manager `app/jhsaa.py`: "varsity appearances count double a JV one".
+- viperball README: laterals, kick passes, snap or drop kick versus place kick, and missed kick passes.
+- hybrid-baseball README: Ron's own definition of O27.
+- or-tennis-data `generate_site.py`:
+  - APR = 0.25 WP + 0.50 OWP + 0.25 OOWP.
+  - TOSS PI = 0.65 APR + 0.25 FQI + 0.10 oGS.
+  - Its `public/methodology.html` still lists 40/40/20 weights. The code wins, so the cards don't use that page's weights.
+- No OSAA mention, per Ron's standing rule.
+
+**Editorial tools.**
+1. `red-pen-editor brief` (audience: people who don't know these sports or apps).
+2. Plain language, prosekeep and unslop on the first draft. That flagged one long sentence (exposure) and one run of three same-length sentences (Power Index). The other plain-language flags were caused by headings without periods.
+3. `red-pen-editor apply`, round 1: 3 edits accepted. They split exposure, rewrote Power Index around "APR, the biggest part", and moved O27 closer to Ron's README wording ("a computer sport, like Viperball").
+4. `red-pen-editor apply`, round 2: 5 edits accepted, cutting duplicates of the paragraph beside each card. Gone: the 10 chips; "the other person sees the tier"; "first to four"; JV half-weight plus 0.81 and 0.55 (in `allowLoss`, since the formula shows them); drop and place kick points (in `allowLoss`, since the paragraph gives them).
+5. Final: plain-language-default 0, prosekeep PASS, unslop 0 AI-isms. About 400 words, down from 490.
+
+**Evidence.** Playwright opened all 15 cards on Projects and both on Home, at 1440 and on iPhone 14 emulation.
+- Each card opens 0–30px below its word, inside the screen.
+- Escape closes each one.
+- No page errors and no horizontal overflow, in both the cobalt Projects theme and the home page's Snow theme.
+
+**Risk.** On the careers blurb "JV" appears one word before "exposure". The exposure card defines both.
