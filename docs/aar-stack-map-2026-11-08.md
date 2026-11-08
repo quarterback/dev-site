@@ -24,3 +24,9 @@ Playwright Chromium: at 1440 and 1024, the map mounts; dragging the marker from 
 
 ## 6. Next time
 If Ron wants the map on phones, it needs its own vertical layout rather than scaling.
+
+## Addendum: Occupant Indices ticker
+**Instruction.** Ron: "More than one project, like maybe pull data from my indices as a stock ticker style deal and then maybe something else. Cap Buffet not that interesting."
+**Change.** `assets/ticker.js` and a `.tk` band under the Projects intro. At load it fetches `compute-cpi.json`, `aeai/latest.json` and `ldi/latest.json` from the public `quarterback/improved-succotash` repo (raw.githubusercontent.com, CORS open) and builds a tape: $CPI, the four tier prices, $START/$AGENT/$THRU, $COG-P, $AIU, $LDI. Each group carries its publish date. The tape scrolls, pauses on hover or focus, and can be dragged to scrub; a click opens the Occupant project page. Reduced motion: hand-scrolled, no auto-scroll. If the fetch fails the band stays hidden.
+**Data note.** The repo's latest files are dated 16 May ($CPI), 2 Jun ($AIU) and 13 Apr ($LDI) 2026, although its workflows are scheduled daily. Ron declined access to the private Occupant-App repo, so I couldn't check whether newer data lives there. The ticker shows the dates rather than implying the values are current, and it will pick up new numbers whenever the public files update.
+**Evidence.** Chromium at 1440 and 390: ticker renders, no errors, no horizontal overflow.
