@@ -285,8 +285,102 @@ function StackMap({ host }) {
   );
 }
 
+// Phones: the techniques sit in a small two-column panel with the marker,
+// and the projects are an ordinary HTML list below it, so the page still
+// scrolls when you touch the list. Only the small panel captures the finger.
+const P_COLS = 2;
+const P_CELL_H = 40;
+const P_H = Math.ceil(TECH.length / P_COLS) * P_CELL_H + 8;
+const P_LABEL = (t) => (t.id === "all" ? "All projects" : t.label);
+
+function makePanel(width) {
+  const cw = width / P_COLS;
+  const at = (i) => [(i % P_COLS) * cw, Math.floor(i / P_COLS) * P_CELL_H];
+  return ({ state, d, setState }) => {
+    const [mx, my] = at(state.lens);
+    return (
+      <g>
+        {TECH.map((t, i) => {
+          const [x, y] = at(i);
+          return (
+            <g id={`phit-${t.id}`} transform={translate(x, y)} onClick={() => setState({ lens: i })} style={{ cursor: "pointer" }}>
+              <rect width={cw - 6} height={P_CELL_H - 6} fill="rgba(255,255,255,0.06)" />
+            </g>
+          );
+        })}
+        <g id="plens" transform={translate(mx, my)} dragologyZIndex={1} dragologyOnDrag={() => d.between(STATES).withDropTransition("cubic-out")}>
+          <rect width={cw - 6} height={P_CELL_H - 6} fill={LIME} />
+        </g>
+        {TECH.map((t, i) => {
+          const [x, y] = at(i);
+          return (
+            <g id={`plab-${t.id}`} transform={translate(x + 10, y + 22)} dragologyZIndex={2} pointerEvents="none">
+              <text fontFamily={MONO} fontSize={13} fontWeight={500} fill={i === state.lens ? "#1f2bff" : "#fff"}>
+                {P_LABEL(t)}
+              </text>
+            </g>
+          );
+        })}
+      </g>
+    );
+  };
+}
+
+function PhoneMap() {
+  const [lens, setLens] = useState(0);
+  const [shown, setShown] = useState(0);
+  const [width, setWidth] = useState(0);
+  const wrap = useRef(null);
+  useEffect(() => {
+    const ro = new ResizeObserver(([e]) => setWidth(Math.floor(e.contentRect.width)));
+    ro.observe(wrap.current);
+    return () => ro.disconnect();
+  }, []);
+  const panel = useMemo(() => (width ? makePanel(width) : null), [width]);
+  const state = useMemo(() => ({ lens }), [lens]);
+  const t = TECH[shown];
+  const rows = order(shown);
+  return (
+    <div className="smp" ref={wrap}>
+      <p className="smp__hint">Drag the marker, or tap a technique.</p>
+      <div className="smp__panel" aria-hidden="true">
+        {panel && (
+          <DraggableRenderer
+            draggable={panel}
+            state={state}
+            onDragState={(s) => setShown(s.lens)}
+            onDropState={(s) => { setLens(s.lens); setShown(s.lens); }}
+            width={width}
+            height={P_H}
+          />
+        )}
+      </div>
+      <p className="sm__live" aria-live="polite">
+        {shown === 0 ? "Showing every project." : `${t.label}: ${rows.filter((p) => p.uses.includes(t.id)).map((p) => p.name).join(", ")}.`}
+      </p>
+      <ul className="smp__list">
+        {rows.map((p) => {
+          const on = shown === 0 || p.uses.includes(t.id);
+          return (
+            <li key={p.id} className={on ? "" : "is-dim"}>
+              <a href={p.href}>{p.name}</a>
+              <span>
+                {p.uses.map((u) => (
+                  <em key={u} className={u === t.id ? "is-on" : ""}>{TECH.find((x) => x.id === u).tag}</em>
+                ))}
+              </span>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+}
+
 const host = document.getElementById("stack-map");
-if (host && matchMedia("(min-width: 861px)").matches) {
+if (host) {
   host.classList.add("sm--on");
-  createRoot(host.querySelector(".sm__mount")).render(<StackMap host={host} />);
+  const wide = matchMedia("(min-width: 861px)").matches;
+  host.classList.toggle("sm--phone", !wide);
+  createRoot(host.querySelector(".sm__mount")).render(wide ? <StackMap host={host} /> : <PhoneMap />);
 }
