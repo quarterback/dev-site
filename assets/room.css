@@ -128,3 +128,8 @@ img { display: block; max-width: 100%; }
 
 /* Pixel dissolve (assets/dissolve.js): hide the page until the cover is drawn */
 html.dissolving body { visibility: hidden; }
+
+/* Colophon: facts first, labels bold, the digression set apart below */
+.rc p b { display: inline-block; min-width: 6.5em; font-weight: 500; color: #fff; }
+.rc p + p { margin-top: .3em; }
+.rc #digression { margin-top: 1.2em; }

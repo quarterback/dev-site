@@ -246,3 +246,7 @@ h1, h2, h3 { margin: 0; font-family: var(--display); }
 
 /* Pixel dissolve (assets/dissolve.js): hide the page until the cover is drawn */
 html.dissolving body { visibility: hidden; }
+
+/* Colophon: facts first, labels bold, the digression set apart below */
+.foot p b { display: inline-block; min-width: 6.5em; font-weight: 600; color: var(--ink); }
+.foot p.digression { margin-top: 1.2em; }
