@@ -123,3 +123,8 @@ Ron's two-sentence intro wasn't edited.
 - Clicking the Oregon, Marginal Player Line, and Viperball links puts each heading 119px from the top, below the header.
 - The models appear in the new order.
 - No page errors and no horizontal overflow.
+
+## Addendum: formulas on phones
+**Instruction.** Ron sent a phone screenshot of the piece. It came from an older preview build, still showing the earlier two-sentence intro. The formula box was cut off at the right edge.
+**Change.** On screens 560px and narrower, `.uth .eq` wraps (`white-space: pre-wrap`) at 13px instead of scrolling sideways. This applies to all seven models with a formula.
+**Evidence.** On iPhone 14 emulation, no formula on the page is wider than its box, and the Marginal Player Line formula wraps onto four lines.

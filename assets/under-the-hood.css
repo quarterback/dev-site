@@ -111,3 +111,5 @@
 .uth .uth__toc ul { list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 22px; font-family: var(--uth-mono); font-size: 14px; }
 .uth .uth__toc a { color: var(--uth-fg); }
 .uth .uth-piece { scroll-margin-top: 90px; }
+/* Phones: formulas wrap instead of running off the screen */
+@media (max-width: 560px) { .uth .eq { white-space: pre-wrap; overflow-x: visible; font-size: 13px; } }
