@@ -28,3 +28,10 @@ Ron wanted the math inside his projects shown, not just linked: "a single repres
 
 ## 6. Evidence
 Chromium: home at 1440 and 390 in Snow and Coffee, Projects at 1440 and 390; no page or console errors, no horizontal scroll; every piece mounts with expected values (Lincoln on top, DROP KICK at the default kick, 73.7% match, 82.27 score).
+
+## Addendum: no-slop-ui pass
+**Instruction.** Ron: apply https://github.com/LeoStehlik/no-slop-ui (SKILL.md, references/banned-patterns.md, examples/review-checklist.md) to the latest additions; he called out eyebrow lines.
+**Removed.** Eyebrow labels above every piece; decorative headings ("Depth beats stacking", "Five points or three", "The box score lies, on purpose", "Small edges compound", "Same ceiling, five careers", "Scores run one way") replaced with functional ones naming the project and mechanism; the accent-bar callout boxes (thick decorative left border on a filled panel) now plain paragraphs; uppercase letter-spaced card labels; the hero-size "Top team" readout that repeated the table's first row; the slide animation on re-rank and width transitions on bars; the "·" placeholders in the change column. Large numbers scaled from 40-64px to 28-36px; section heading from 96px to 56px max.
+**Kept.** The site's existing fonts and palette (the skill defers to an existing design system). Square buttons and 1px rules already met its limits. The lime "call" chip in Viperball carries real data.
+**Checklist verdict.** PASS after these changes (no hard bans present). Copy unchanged apart from headings and two captions that named colors ("Lime…", "White…") now describe the lines instead, since the colors differ by theme.
+**Evidence.** Chromium: home (Snow, Coffee) and Projects at 1440 and 390, no errors, no horizontal scroll, every piece still renders its values.
