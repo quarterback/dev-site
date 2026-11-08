@@ -31,3 +31,5 @@ Run the suite on whole pages, not one block at a time; triads come back when sin
 **Checks.** plain-language-default 0 problems, unslop 0 AI-isms on the new card; prosekeep PASS; Chromium 1440/390 no errors.
 
 **Follow-up.** Ron: npm publish is coming, so show the npm install. The card now reads `npm i red-pen-editor`; it will 404 until the package is published.
+
+**Follow-up, 8 November.** Ron sent the npm page. Card title now links to npmjs.com/package/red-pen-editor (PR #110). npm `latest` is `0.0.0-stage`, a placeholder (README and package.json only) awaiting staged release; `npm i` installs the stub until 0.2.0 is released. Flagged to Ron.
