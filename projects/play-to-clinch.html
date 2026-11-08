@@ -89,6 +89,8 @@
 
       <p>Every match is deterministic: same seed, same result. You can reproduce a specific match, share scenarios with others, and test recruiting strategies without randomness getting in the way. The engine simulates at different levels of detail depending on the task: point by point for college and showcase matches, and a faster model for bulk junior tournaments that still lands realistic results. Both stay deterministic.</p>
 
+      <p>The schedule has rules too. An early high school season generator kept adding rounds until it finished, even when that pushed the postseason into December. The issue was that the calendar had no end date. I changed the model so the season window comes first and the dates must fit inside it. The <a href="https://github.com/quarterback/tennis-team-manager/blob/main/docs/AAR-jhsaa-season-window.md">after-action report</a> also explains why the first symptom, missing weeks, pointed toward the wrong cause.</p>
+
       <h2>The architecture</h2>
 
       <p>The core is Python, with no dependencies outside the standard library; a Flask web app sits on top, and everything runs on SQLite. It&rsquo;s fast enough to simulate full seasons in seconds. I chose Python for its clarity and determinism, and SQLite because it&rsquo;s portable and needs no separate database. There&rsquo;s no frontend framework and nothing in the cloud, so the whole thing runs offline. The web UI is one view of the engine, and the engine runs without it.</p>
