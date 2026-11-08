@@ -56,30 +56,31 @@
   <section class="g sec uth uth--home" id="under-the-hood" aria-labelledby="h-uth">
     <h2 id="h-uth">Under the hood</h2>
     <p class="uth__lede">One of the models inside my projects. The rest are on the <a href="projects.html" data-dissolve="room">Projects</a> page.</p>
-    <section class="uth-piece" id="uth-ygfweek">
-      <div class="head">
-        <div><h3>You Go First: a week of matching</h3></div>
-        <div>
-          <p>Swiping makes attention free, so a like tells you nothing and a few profiles get most of them. Everyone gets 15 picks a week in three tiers, and the other person sees the tier.</p>
-          <p>These are the app&rsquo;s 14 test profiles in its simulator. Click a person to see who they picked.</p>
-        </div>
-      </div>
-      <div class="stage">
-        <div class="panel">
-          <svg id="ygwRing" viewBox="0 0 520 520" role="img" aria-label="Fourteen people in a ring, with lines for picks and matches"></svg>
-        </div>
-        <div class="panel">
-          <div class="yrs" role="group" aria-label="What to show" id="ygwView"><button type="button" class="ghost" data-v="w1" aria-pressed="true">Week 1</button><button type="button" class="ghost" data-v="w2">After week 2</button><button type="button" class="ghost" data-v="gs">Textbook stable matching</button></div>
-          <div class="read" style="margin-top:18px">
-            <div><small>People matched</small><span class="big" id="ygwMatched">0</span></div>
-            <div><small>Average match score</small><span class="big" id="ygwAvg">0</span></div>
+    <section class="uth-piece" id="uth-careers">
+        <div class="head">
+          <div><h3>Play To Clinch high school careers</h3></div>
+          <div>
+            <p>Each player starts with an ability, a career peak and a development budget for each year. Playing time decides how much of that budget he realizes, and a JV match counts half a varsity one. Two players with similar starting ability can have very different four-year careers.</p>
+            <code class="eq">gain = year's budget × playing time
+    playing time: bench 0.55 · full JV 0.81 · varsity 1.00</code>
           </div>
-          <p class="cap" id="ygwNote" aria-live="polite"></p>
-          <p class="why">The textbook stable-matching algorithm pairs all 14, but only by assuming everyone knows everyone and can propose without limit. Fifteen picks a week matched 12 by week 2.</p>
-          <p class="src">Source: heypbj/src/lib/stableMatchingSimulator.ts and src/data/mockSimulation.ts, default seed.</p>
         </div>
-      </div>
-    </section>
+        <div class="stage">
+          <div class="panel">
+            <svg id="crChart" viewBox="0 0 520 300" role="img" aria-label="Five careers from grade 9 to 12"></svg>
+            <div class="yrs" role="group" aria-label="Playing time each season" id="crExpo" style="margin-top:10px">
+              <button type="button" class="ghost" data-x="0.55">Bench</button><button type="button" class="ghost" data-x="0.807">Full JV</button><button type="button" class="ghost" data-x="0.871">JV + varsity</button><button type="button" class="ghost" data-x="1" aria-pressed="true">Varsity</button>
+            </div>
+            <p class="cap">Five freshmen from one generated roster, all with the same ceiling. Dashes mark each career peak. Change their playing time.</p>
+          </div>
+          <div class="panel">
+            <svg id="crNo1" viewBox="0 0 520 300" role="img" aria-label="Share of No. 1 singles by grade"></svg>
+            <p class="cap">Who plays No. 1 singles, by grade: Oregon boys over six seasons, and my sim before and after the change.</p>
+          </div>
+        </div>
+        <div class="why">Under the old model, seniors held 85.7% of No. 1 singles seats. A player who is ready at 14 can now enter the simulation ready at 14.</div>
+        <div class="src">Source: tennis-team-manager/app/jhsaa.py (_career_plan, career_ability, exposure odometer). Careers generated with the game's own functions (school "SCHOOL", entry 2040, seats 25, 4, 10, 8, 18); the port here matches career_ability exactly. No. 1 singles shares from "Rebuilding player development in a PC sports sim," August 2026.</div>
+      </section>
   </section>
 
   <section class="g sec" id="talks" aria-labelledby="h-talks">
@@ -132,6 +133,11 @@
       <p class="digression" id="digression">Inexplicably, a Green Bay Packers shareholder.</p>
     </div>
   </footer>
+  <a class="pull" id="pull" href="projects.html" data-dissolve="room" aria-label="Projects" draggable="false">
+    <span class="pull__room" aria-hidden="true"><span class="pull__h">Problems are designed</span><span class="pull__p">I design games, simulations, and rule-based systems to explore how decisions produce outcomes.</span></span>
+    <span class="pull__label" aria-hidden="true">Projects</span>
+  </a>
+  <script src="assets/pull.js" defer></script>
   <script src="assets/under-the-hood.js" defer></script>
   <script>
     /* Colour theme: the two swatches in the top bar set data-theme on

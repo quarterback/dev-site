@@ -264,3 +264,27 @@ html.dissolving body { visibility: hidden; }
 .eps .ep { margin: 0; max-width: none; }
 .eps .ep + .ep { margin-top: 0; }
 @media (max-width: 860px) { .eps { grid-template-columns: minmax(0, 1fr); gap: 16px; } }
+
+/* Pull tab: the Projects room waiting at the right edge (bottom on phones) */
+@font-face { font-family: "Plex Cond"; src: url("fonts/plex/ibm-plex-sans-condensed-700.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Plex Cond"; src: url("fonts/plex/ibm-plex-sans-condensed-400.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+.pull { position: fixed; z-index: 40; top: 0; right: 0; bottom: 0; width: 12px; overflow: hidden; background: #1f2bff; color: #fff; text-decoration: none; cursor: grab; touch-action: none; user-select: none; -webkit-user-select: none; transition: width .15s ease; }
+.pull:hover, .pull:focus-visible { width: 30px; }
+.pull:focus-visible { outline: 3px solid #d7ff3d; outline-offset: -3px; }
+.pull.is-drag { cursor: grabbing; transition: none; }
+.pull__label { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-90deg); white-space: nowrap; font-family: "Plex Cond", sans-serif; font-weight: 700; font-size: 15px; opacity: 0; transition: opacity .15s; }
+.pull:hover .pull__label, .pull:focus-visible .pull__label { opacity: 1; }
+.pull__room { position: absolute; top: 0; left: 0; width: 100vw; padding: 40px 56px; opacity: 0; transition: opacity .15s; }
+.pull.is-open .pull__room { opacity: 1; }
+.pull.is-open .pull__label { opacity: 0; }
+.pull__h { display: block; margin-top: 64px; font-family: "Plex Cond", sans-serif; font-weight: 700; font-size: clamp(56px, 8vw, 128px); line-height: .86; letter-spacing: -.02em; }
+.pull__p { display: block; margin-top: 28px; max-width: 30em; font-family: "Plex Cond", sans-serif; font-size: clamp(22px, 2.6vw, 36px); line-height: 1.25; color: #c9ccff; }
+@media (max-width: 860px) {
+  .pull { top: auto; left: 0; width: auto; height: calc(14px + env(safe-area-inset-bottom, 0px)); }
+  .pull:hover, .pull:focus-visible { width: auto; height: calc(28px + env(safe-area-inset-bottom, 0px)); }
+  .pull__label { top: 14px; transform: translate(-50%, -50%); }
+  .pull__room { height: 100vh; padding: 32px 16px; }
+  .pull__h { margin-top: 24px; }
+  body { padding-bottom: 14px; }
+}
+@media (prefers-reduced-motion: reduce) { .pull, .pull__label, .pull__room { transition: none; } }
