@@ -194,3 +194,7 @@ Ron's two-sentence intro wasn't edited.
 - No page errors and no horizontal overflow, in both the cobalt Projects theme and the home page's Snow theme.
 
 **Risk.** On the careers blurb "JV" appears one word before "exposure". The exposure card defines both.
+
+## Addendum: lede removed
+**Instruction.** Ron: "Remove this blurb! \"These models use calculations and data from their source projects, checked against the originals. Coding agents brought them into the browser.\""
+**Change.** Deleted that paragraph from projects.html, so the jump links now come right after the "Under the hood" heading. The `.uth__lede` styles stay because the home page still uses them.
