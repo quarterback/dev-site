@@ -72,5 +72,5 @@ Chromium: home at 1440 and 390 in Snow and Coffee, Projects at 1440 and 390; no 
 ## Addendum: after Ron's editorial pass
 **Context.** Two editorial commits by Ron (d2e83ee, 6e78816) rewrote the Under the hood ledes, the Projects intro, the O27 and career texts, an essay summary, and added two essays to Writing on the home page.
 **Change.** The home page's copy of the career piece still had the earlier text, because the edits landed only in projects.html; it now matches. Added serial commas (house style) to five lists, including two from the editorial pass and three of mine. No other wording changed.
-**Note for Ron.** The Projects lede links to PR #112 as the build record; after merge you may prefer a link to docs/aar-under-the-hood-2026-11-08.md on main.
+**Follow-up.** Ron agreed: the "build record" link now points to docs/aar-under-the-hood-2026-11-08.md on main, which exists once this PR merges (the link goes live at the same time).
 **Evidence.** Chromium home and Projects: no errors, pull tab and career chart work; prosekeep PASS.
