@@ -62,21 +62,13 @@ function oregon(OR) {
   const rows = new Map();
   function drawRank() {
     const o = order().slice(0, 12);
-    document.getElementById("orTop").textContent = o[0].t.n;
-    const first = new Map(); rows.forEach((li, k) => first.set(k, li.getBoundingClientRect().top));
     list.innerHTML = "";
     o.forEach(({ t, v }, i) => {
       let li = rows.get(t.n);
       if (!li) { li = document.createElement("li"); rows.set(t.n, li); }
       const d = base.get(t.n) - (i + 1);
-      li.innerHTML = `<span class="r">${i + 1}</span><span class="n">${t.n}</span><span class="pi">${v.toFixed(4)}</span><span class="d ${d > 0 ? "up" : d < 0 ? "dn" : ""}">${d > 0 ? "+" + d : d < 0 ? d : "·"}</span>`;
+      li.innerHTML = `<span class="r">${i + 1}</span><span class="n">${t.n}</span><span class="pi">${v.toFixed(4)}</span><span class="d ${d > 0 ? "up" : d < 0 ? "dn" : ""}">${d > 0 ? "+" + d : d < 0 ? d : ""}</span>`;
       list.appendChild(li);
-    });
-    if (!reduce) list.querySelectorAll("li").forEach((li) => {
-      const k = li.querySelector(".n").textContent; const was = first.get(k);
-      if (was == null) return;
-      const dy = was - li.getBoundingClientRect().top;
-      if (dy) { li.style.transition = "none"; li.style.transform = `translateY(${dy}px)`; requestAnimationFrame(() => { li.style.transition = ""; li.style.transform = ""; }); }
     });
   }
   let drag = null;
