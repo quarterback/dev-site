@@ -97,25 +97,23 @@
 
   <section class="g sec" id="writing" aria-labelledby="h-wr">
     <h2 id="h-wr">Writing</h2>
-    <p class="sec__st">I keep finding cases where a system works as written but its result tells the wrong story. My tennis sim made seniority look like ability. Portland counted the first permit review without counting the corrections. An agent can report a renewal complete before the office accepts it. These are questions about the rules and evidence behind what software says happened.</p>
+    <p class="sec__st">A simulation can run without errors while rewarding the wrong team. A model can recommend that an agent's request be reviewed without granting permission to act. A service can acknowledge a request without completing the job. I write about the rules, records, and checks that make those differences visible.</p>
     <ul class="wlist">
-      <li><span class="wlist__d">Oct 2026</span><a href="https://vloora.com/writing/permit-review-delays/">Permit review statistics can hide long delays</a></li>
-      <li><span class="wlist__d">Oct 2026</span><a href="https://vloora.com/writing/when-software-acts-for-people/">When software acts for people</a></li>
+      <li><span class="wlist__d">Nov 2026</span><a href="https://vloora.com/writing/the-permission-layer/">The permission layer</a></li>
       <li><span class="wlist__d">Oct 2026</span><a href="https://blog.ronbronson.com/bringing-ax-to-life-building-a-content-schema-for-browser-games-developed-with-agents/">Bringing AX to Life: Building a Content Schema for Browser Games Developed With Agents</a></li>
+      <li><span class="wlist__d">Oct 2026</span><a href="https://vloora.com/writing/permit-review-delays/">Permit review statistics can hide long delays</a></li>
       <li><span class="wlist__d">Sep 2026</span><a href="https://vloora.com/writing/decision-models-and-judgment/">Using decision models to flag agent requests for review</a></li>
       <li><span class="wlist__d">Aug 2026</span><a href="https://blog.ronbronson.dev/3mudm62kyes2n">Rebuilding player development in a PC sports sim</a></li>
       <li><span class="wlist__d">Aug 2026</span><a href="https://blog.ronbronson.dev/3msnpahn5r22k">Introducing ApexVarsity</a></li>
-      <li><span class="wlist__d">Aug 2026</span><a href="https://blog.ronbronson.com/agent-experience-needs-failure-affordances/">Agent Experience Needs Failure Affordances</a></li>
-      <li><span class="wlist__d">Jun 2026</span><a href="https://blog.ronbronson.com/closedtab-a-npm-shared-memory-for-you-and-your-ai-agents">Closedtab: A npm shared memory for you and your AI agents</a></li>
+      <li><span class="wlist__d">Jul 2026</span><a href="https://vloora.com/writing/proof-an-agent-did-its-job/">What counts as proof that an agent did its job?</a></li>
       <li><span class="wlist__d">Jan 2026</span><a href="https://blog.ronbronson.com/who-holds-the-pen-why-ai-agents-need-a-manager-not-just-a-manual">Who Holds the Pen? Why AI Agents Need a Manager, Not Just a Manual</a></li>
       <li><span class="wlist__d">Jun 2025</span><a href="https://blog.ronbronson.com/context-engineering-for-llms-starts-with-systems-not-prompts">Context Engineering for LLMs Starts With Systems, Not Prompts</a></li>
-      <li><span class="wlist__d">Feb 2025</span><a href="https://blog.ronbronson.com/context-aware-agents-designing-for-alignment-in-ax/">Context-Aware Agents: Designing for Alignment in AX</a></li>
-      <li><span class="wlist__d">Feb 2025</span><a href="https://blog.ronbronson.com/service-design-for-ai-the-disintermediation-problem/">Service Design for AI: The Disintermediation Problem</a></li>
     </ul>
   </section>
 
   <section class="g sec" id="systems" aria-labelledby="h-sys">
     <h2 id="h-sys">Systems</h2>
+    <p class="sec__st">These are small pieces of agent plumbing I needed while building larger projects. They keep editorial decisions, game rules, and work records from getting lost or changed as a task moves between agents, tools, and sessions.</p>
     <article class="sys"><div><h3><a href="https://www.npmjs.com/package/red-pen-editor">Red Pen Editor</a></h3><code>npm i red-pen-editor</code></div><div class="sys__b"><p class="sys__idea">An editor for AI agents with permission to cut. It looks for what a draft can lose without changing what it says, and it refuses any cut that would drop the last mention of a number, date, or link. Agents can use it as a skill or through an MCP server. It runs locally, with no API key.</p></div></article>
     <article class="sys"><div><h3><a href="projects/pbbg-content-schema.html">PBBG Content Schema</a></h3><code>npx -y github:quarterback/pbbg-content-schema install-skill</code></div><div class="sys__b"><p class="sys__idea">A content format and checker that keeps a browser game&rsquo;s rules, story, and interface text apart, so AI agents can edit one without breaking the others.</p></div></article>
     <article class="sys"><div><h3><a href="projects/closedtab.html">closedtab</a></h3><code>npm i closedtab</code></div><div class="sys__b"><p class="sys__idea">Shared memory for people and AI agents. It records what an agent decided and where it went off plan, which test results and agent logs often miss. The next session starts with that record.</p><p><a href="https://blog.ronbronson.com/closedtab-a-npm-shared-memory-for-you-and-your-ai-agents">Closedtab: A npm shared memory for you and your AI agents</a><br /><a href="https://blog.ronbronson.com/agent-experience-needs-failure-affordances/">Agent Experience Needs Failure Affordances</a></p></div></article>
