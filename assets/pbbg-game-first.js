@@ -78,7 +78,7 @@
     if (inspector) {
       const help = document.createElement("p");
       help.className = "pd-inspect-explain";
-      help.textContent = "This entry defines the selected text. Linked facts, entities, and action costs appear below.";
+      help.textContent = "This entry defines the selected text. Linked facts, entities and action costs appear below.";
       inspector.querySelector("pre")?.before(help);
       const explanations = {
         "residence.arrive": "The residence description is story text. It doesn't set action costs.",
