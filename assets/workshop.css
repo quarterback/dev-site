@@ -279,12 +279,7 @@ html.dissolving body { visibility: hidden; }
 .pull.is-open .pull__label { opacity: 0; }
 .pull__h { display: block; margin-top: 64px; font-family: "Plex Cond", sans-serif; font-weight: 700; font-size: clamp(56px, 8vw, 128px); line-height: .86; letter-spacing: -.02em; }
 .pull__p { display: block; margin-top: 28px; max-width: 30em; font-family: "Plex Cond", sans-serif; font-size: clamp(22px, 2.6vw, 36px); line-height: 1.25; color: #c9ccff; }
-@media (max-width: 860px) {
-  .pull { top: auto; left: 0; width: auto; height: calc(14px + env(safe-area-inset-bottom, 0px)); }
-  .pull:hover, .pull:focus-visible { width: auto; height: calc(28px + env(safe-area-inset-bottom, 0px)); }
-  .pull__label { top: 14px; transform: translate(-50%, -50%); }
-  .pull__room { height: 100vh; padding: 32px 16px; }
-  .pull__h { margin-top: 24px; }
-  body { padding-bottom: 14px; }
-}
+/* Desktop only: on phones and touch screens the strip is hidden and the nav
+   link to Projects is the way in */
+@media (max-width: 860px), (hover: none) { .pull { display: none; } }
 @media (prefers-reduced-motion: reduce) { .pull, .pull__label, .pull__room { transition: none; } }

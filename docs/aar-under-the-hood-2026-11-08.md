@@ -84,3 +84,8 @@ Chromium: home at 1440 and 390 in Snow and Coffee, Projects at 1440 and 390; no 
 **Instruction.** Ron: the Projects copy fails plain language and "says nothing"; it should say "These are some examples of project ranging from games to tools and system demos that show how I leverage multi-agent orchestrate and my own models to bring ideas to life."
 **Change.** Projects intro, and the pull tab's preview of it on the home page, now read: "These are examples of my projects, from games to tools and system demos. They show how I use multi-agent orchestration and my own models to bring ideas to life." Edits to Ron's text: plural "projects", "orchestration", "use" for "leverage" (plainlanguage.gov's word list), split into two sentences.
 **Check.** plain-language-default over all Projects page prose: 0 flags (a heuristic; it doesn't judge whether the copy says anything).
+
+## Addendum: pull tab is desktop only
+**Instruction.** Ron (screenshot from the live site on an iPhone): the pull interaction doesn't work on mobile, isn't obvious, and looks bad; make it desktop only.
+**Change.** The strip is hidden at 860px and below and on any screen without hover (`@media (max-width: 860px), (hover: none)`), and `pull.js` does nothing there. Phones use the Projects link in the nav. Removing the fixed bottom strip also stops Safari from tinting its toolbar cobalt, which was the blue band in the screenshot.
+**Evidence.** Playwright iPhone 14 emulation: strip `display: none`, no overflow, no errors. Desktop 1440: a long drag still opens projects.html.
