@@ -32,6 +32,11 @@
       "<p class='pd-game-link'><a href='/projects/coalition.html'>Coalition project</a></p>" +
     "</div>";
   root.append(opening, workshop);
+  if (!location.pathname.includes("/projects/")) {
+    const link = opening.querySelector(".pd-game-link a");
+    link.href = "/projects/pbbg-content-schema.html";
+    link.textContent = "How I built it";
+  }
 
   const reveal = opening.querySelector(".pd-reveal");
   const motionReduced = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
