@@ -40,17 +40,17 @@
     <div id="stack-map" class="sm">
       <div class="sm__mount"></div>
       <svg class="gr" viewBox="0 0 1340 560" role="img" aria-label="How the experimental projects connect through the techniques they share"><line class="l l-mallo l-rate" x1="90" y1="82" x2="150" y2="266"></line><line class="l l-ortn l-rate" x1="300" y1="82" x2="150" y2="266"></line><line class="l l-ortn l-sim" x1="300" y1="82" x2="390" y2="266"></line><line class="l l-ptc l-rate" x1="560" y1="82" x2="150" y2="266"></line><line class="l l-ptc l-sim" x1="560" y1="82" x2="390" y2="266"></line><line class="l l-si l-sim" x1="760" y1="82" x2="390" y2="266"></line><line class="l l-si l-prob" x1="760" y1="82" x2="620" y2="266"></line><line class="l l-vb l-prob" x1="960" y1="82" x2="620" y2="266"></line><line class="l l-vb l-sim" x1="960" y1="82" x2="390" y2="266"></line><line class="l l-occ l-meas" x1="1210" y1="82" x2="1290" y2="266"></line><line class="l l-cap l-mech" x1="560" y1="478" x2="840" y2="294"></line><line class="l l-ygf l-match" x1="1040" y1="478" x2="990" y2="294"></line><line class="l l-ygf l-mech" x1="1040" y1="478" x2="840" y2="294"></line><line class="l l-pen l-scen" x1="1230" y1="478" x2="1125" y2="294"></line><g class="n n-mallo" tabindex="0"><circle cx="90" cy="70" r="7"></circle><text x="90" y="56" text-anchor="middle">Mallo</text></g><g class="n n-ortn" tabindex="0"><circle cx="300" cy="70" r="7"></circle><text x="300" y="56" text-anchor="middle">Oregon HS Tennis Power Rankings</text></g><g class="n n-ptc" tabindex="0"><circle cx="560" cy="70" r="7"></circle><text x="560" y="56" text-anchor="middle">Play To Clinch</text></g><g class="n n-si" tabindex="0"><circle cx="760" cy="70" r="7"></circle><text x="760" y="56" text-anchor="middle">SuperInnings</text></g><g class="n n-vb" tabindex="0"><circle cx="960" cy="70" r="7"></circle><text x="960" y="56" text-anchor="middle">Viperball</text></g><g class="n n-occ" tabindex="0"><circle cx="1210" cy="70" r="7"></circle><text x="1210" y="56" text-anchor="middle">Occupant Indices</text></g><g class="n n-cap" tabindex="0"><circle cx="560" cy="490" r="7"></circle><text x="560" y="520" text-anchor="middle">Cap Buffet</text></g><g class="n n-ygf" tabindex="0"><circle cx="1040" cy="490" r="7"></circle><text x="1040" y="520" text-anchor="middle">You Go First</text></g><g class="n n-pen" tabindex="0"><circle cx="1230" cy="490" r="7"></circle><text x="1230" y="520" text-anchor="middle">Pensulo Cards</text></g><g class="pr pr-rate" tabindex="0"><text x="150" y="286" text-anchor="middle">Rating models</text></g><g class="pr pr-sim" tabindex="0"><text x="390" y="286" text-anchor="middle">Simulated worlds</text></g><g class="pr pr-prob" tabindex="0"><text x="620" y="286" text-anchor="middle">Probability engines</text></g><g class="pr pr-mech" tabindex="0"><text x="840" y="286" text-anchor="middle">Mechanism design</text></g><g class="pr pr-match" tabindex="0"><text x="990" y="286" text-anchor="middle">Matching</text></g><g class="pr pr-scen" tabindex="0"><text x="1125" y="286" text-anchor="middle">Scenario play</text></g><g class="pr pr-meas" tabindex="0"><text x="1290" y="286" text-anchor="middle">Measurement</text></g></svg>
-      <p class="sm__cap">Drag the lime marker along the techniques, or use the arrow keys. Dragging built with <a href="https://github.com/declarative-dragging/dragology">Dragology</a>, from Joshua Horowitz, Andrew Blinn and Jeffrey Heer, &ldquo;<a href="https://declarative-dragging.github.io">Declarative Dragging</a>,&rdquo; UIST 2026.</p>
+      <p class="sm__cap">Drag the marker along the techniques, or use the arrow keys.</p>
     </div>
     <script>if(matchMedia("(min-width: 861px)").matches){var s=document.createElement("script");s.src="assets/stack-map.js";s.defer=true;document.currentScript.after(s)}</script>
     <div class="uth" id="under-the-hood">
       <h2 class="uth__h">Under the hood</h2>
-      <p class="uth__lede">Seven live models of the math inside these projects, each running on its project&rsquo;s own code and data.</p>
+      <p class="uth__lede">How seven of these projects work, running on each one&rsquo;s own code and data.</p>
       <section class="uth-piece" id="uth-oregon">
           <div class="head">
             <div><h3>Oregon high school tennis rankings</h3></div>
             <div>
-              <p>A dual is eight flights. A team's flight score weights each one, so a win at No. 1 singles counts ten times a win at No. 4. That score, adjusted for opponent strength, feeds the Power Index the OSAA now seeds from.</p>
+              <p>Win-loss records ignore who you played and count every flight the same, so a coach could stack a lineup to look better. My flight-weighted score weights the eight flights from 1.00 down to 0.10, so depth counts and stacking stops paying. The Power Index blends it with an RPI-style strength of schedule, and the OSAA now seeds its dual team championship from it.</p>
               <code class="eq">PI = 0.65·APR + 0.25·FQI + 0.10·oGS
       FQI = (Σ flight_score·opp_strength + 5×0.5) / (duals + 5)</code>
             </div>
@@ -59,14 +59,14 @@
             <div class="panel">
               <svg class="bars" id="orBars" viewBox="0 0 520 300" role="img" aria-label="Flight weights. Drag a bar to change its weight."></svg>
               <div class="ctls"><button class="ghost" id="orReset" type="button">Reset to the real weights</button></div>
-              <p class="cap">Drag a bar up or down. The table re-ranks all 121 ranked 2026 boys teams live.</p>
+              <p class="cap">Drag a bar to change a flight&rsquo;s weight. All 121 ranked 2026 boys teams re-rank.</p>
             </div>
             <div class="panel">
               <ol class="rank" id="orRank" aria-live="polite"></ol>
-              <p class="cap">Top 12 by Power Index. The right column shows the change from the real weights.</p>
+              <p class="cap">Top 12 by Power Index, with each team&rsquo;s change from the real weights.</p>
             </div>
           </div>
-          <div class="why">The official No. 1 is Grant, with a lower Power Index (.7399) than Lincoln (.7467). They tied 4-4 on April 22, Grant won the tiebreak on sets, and the head-to-head rule lifted Grant above Lincoln. The tiebreak loser's record shows a tie, so statewide wins and losses never balance, on purpose.</div>
+          <div class="why">Grant is the official No. 1 with a lower Power Index than Lincoln, .7399 to .7467. They tied 4-4 on April 22, Grant won the tiebreak on sets, and the head-to-head rule put Grant first.</div>
           <div class="src">Source: or-tennis-data/generate_site.py (FLIGHT_WEIGHTS, TOSS weights, FQI with 5 phantom matches). FQI recomputed here matches the published value for all 121 teams.</div>
         </section>
 
@@ -74,7 +74,7 @@
           <div class="head">
             <div><h3>Viperball kick decisions</h3></div>
             <div>
-              <p>Six downs to gain 20 yards, no forward pass. On a kick, the drop kick is worth 5 and the place kick 3, each with its own success curve set by the kicker. The coach takes the bigger expected value, inside rules about downs, score and field position.</p>
+              <p>Viperball has six downs to gain 20 yards, and the ball moves by running, lateral chains and kick passes. A live-play drop kick is worth 5 and a place kick 3. Every rule creates a strategy, so on a late down the coach weighs both kicks against going for it.</p>
               <code class="eq">distance = (100 − field position) + 10
       drop kick EV = 5 × P(drop)   place kick EV = 3 × P(place)</code>
             </div>
@@ -82,7 +82,7 @@
           <div class="stage">
             <div class="panel">
               <svg id="vbChart" viewBox="0 0 520 300" role="img" aria-label="Kick success by distance"></svg>
-              <p class="cap">Highlighted line: drop kick (5 points). Plain line: place kick (3 points). The marker is the current distance; drag it.</p>
+              <p class="cap">Drag the marker to change the kick distance. Highlighted line: drop kick. Plain line: place kick.</p>
             </div>
             <div class="panel">
               <div class="ctls">
@@ -99,7 +99,7 @@
               <p class="cap" id="vbWhy"></p>
             </div>
           </div>
-          <div class="why">The engine is built to grind. Early downs average about two yards against 20 to go, so drives routinely reach 5th and 6th down, where this decision lives. A missed drop kick on downs 1 to 5 usually keeps the ball, so the 5-point try is cheaper than it looks.</div>
+          <div class="why">Early downs gain about 2 yards against 20 to go, so drives reach fifth and sixth down, where this call gets made. A missed drop kick on the first five downs usually keeps the ball.</div>
           <div class="src">Source: viperball/engine/game_engine.py (_drop_kick_success, _place_kick_success, select_kick_decision). Shown with no clock pressure, no coaching traits, style aggression 1.0.</div>
         </section>
 
@@ -107,7 +107,7 @@
           <div class="head">
             <div><h3>O27 college prospects</h3></div>
             <div>
-              <p>Every college hitter has a hidden ceiling and a hidden lens on it. The box score, and the game engine, only ever see the ceiling through the lens. Each prospect also has a hidden yearly growth rate, so some climb fast and some barely move. Scouts try to see the ceiling, through fog.</p>
+              <p>In a sim, scouting is the point of the game. Every college player has a true ceiling and a lens on it, and the grade in the box score is the ceiling times the lens. The lens never changes, so a hidden gem stays hidden all through college. Two scouting reports guess at the ceiling, each blurred on its own.</p>
               <code class="eq">shown  = round(ceiling × lens)     lens 0.40–0.95
       growth = min(rate × ceiling, cap)  cap 15 → 4
       scout  = ceiling ± fog             fog 7–31</code>
@@ -116,10 +116,10 @@
           <div class="ctls" style="max-width:640px">
             <div class="yrs" role="group" aria-label="College year"><button type="button" class="ghost" data-y="0">Freshman</button><button type="button" class="ghost" data-y="1">Sophomore</button><button type="button" class="ghost" data-y="2">Junior</button><button type="button" class="ghost" data-y="3" aria-pressed="true">Senior</button></div>
           </div>
-          <p class="cap">Pick the one you'd draft (click a card), then sign them all and see what was under the lens. The plain bar is what the box score shows. The highlighted bar is the real grade.</p>
+          <p class="cap">Pick the one you&rsquo;d draft, then sign them and the lens drops. The plain bar is the box score. The highlighted bar is the real grade.</p>
           <div class="board" id="o27Board"></div>
           <div class="ctls" style="max-width:640px"><button type="button" id="o27Sign">Sign them: lift the lens</button><button type="button" class="ghost" id="o27Reset">Put the lens back</button></div>
-          <div class="why">Nobody regresses. Every prospect improves every year, and the late bloomer isn't a dice roll mid-career; their rate was set the day they were generated. The kid who looks like a star on draft day is often the one whose lens was clearer.</div>
+          <div class="why">Each player&rsquo;s development rate is set when he&rsquo;s generated. Nobody regresses. Everyone develops. The mystery is in who develops fast and how much they can hide it while getting there.</div>
           <div class="src">Source: hybrid-baseball/o27v2/college.py and college_potential.py. These four prospects were generated by the game's own generate_college_player and advance_one_year (seeds 330, 245, 20, 219); reports drawn with make_scouting_report. Players get three growth years before they can sign.</div>
         </section>
 
@@ -127,14 +127,14 @@
           <div class="head">
             <div><h3>Play To Clinch point engine</h3></div>
             <div>
-              <p>Every point is simulated: first serve, second serve, ace, then a rally decided on a logistic curve of the two players' skill. A gap that barely moves a single point turns into a decisive edge over a best-of-three match.</p>
+              <p>College tennis is a team sport: three doubles matches make one point, six singles matches are a point each, and the first team to four wins. My engine plays every point, so a small edge per point adds up over a match.</p>
               <code class="eq">P(server wins rally) = logistic(0.9·Δrally + 0.36 first | 0.10 second + …)</code>
             </div>
           </div>
           <div class="stage">
             <div class="panel">
               <svg id="ptcChart" viewBox="0 0 520 300" role="img" aria-label="Win probability by skill gap"></svg>
-              <p class="cap">Drag the marker. Skill gap on the game's 20-80 scouting scale. Curves are exact for two even-tempered players.</p>
+              <p class="cap">Drag to change the skill gap, on the game&rsquo;s 20-80 scale.</p>
             </div>
             <div class="panel">
               <div class="read">
@@ -147,7 +147,7 @@
               </div>
             </div>
           </div>
-          <div class="why">In a dual, all nine matches are decided before the first one "finishes." Clinching only changes which results you see first, never who wins.</div>
+          <div class="why">In a dual, every match is decided before the first one finishes. Clinching only changes the order you see results in.</div>
           <div class="src">Source: tennis-team-manager/engine/rally.py and match.py, NCAA dual format (best of three, no-ad, tiebreak sets). Point odds computed with the engine's own functions; match odds checked against 1,500 simulated matches (73.7% vs 73.7% at a 6-point gap).</div>
         </section>
 
@@ -155,7 +155,7 @@
           <div class="head">
             <div><h3>Play To Clinch high school careers</h3></div>
             <div>
-              <p>Each freshman is generated with a starting level, a career peak and a hidden development budget for every year. A budget is usually a few points, but three times in ten it's a big year of 7 to 15. Playing time decides how much of each budget a player actually uses. Peak isn't a hard limit; past it, a fifth of each gain still counts.</p>
+              <p>Each player starts with an ability, a career peak and a development budget for each year. Playing time decides how much of that budget he realizes, and a JV match counts half a varsity one. Two players with similar starting ability can have very different four-year careers.</p>
               <code class="eq">gain = year's budget × playing time
       playing time: bench 0.55 · full JV 0.81 · varsity 1.00</code>
             </div>
@@ -166,14 +166,14 @@
               <div class="yrs" role="group" aria-label="Playing time each season" id="crExpo" style="margin-top:10px">
                 <button type="button" class="ghost" data-x="0.55">Bench</button><button type="button" class="ghost" data-x="0.807">Full JV</button><button type="button" class="ghost" data-x="0.871">JV + varsity</button><button type="button" class="ghost" data-x="1" aria-pressed="true">Varsity</button>
               </div>
-              <p class="cap">Five real freshmen from one generated roster, all drawn from the same 55 ceiling. Dashes mark each player's career peak. Change their playing time and watch who still makes it.</p>
+              <p class="cap">Five freshmen from one generated roster, all with the same ceiling. Dashes mark each career peak. Change their playing time.</p>
             </div>
             <div class="panel">
               <svg id="crNo1" viewBox="0 0 520 300" role="img" aria-label="Share of No. 1 singles by grade"></svg>
-              <p class="cap">Who plays No. 1 singles, by grade. Real Oregon boys (six seasons of OSAA results) against the sim before and after the career model.</p>
+              <p class="cap">Who plays No. 1 singles, by grade: Oregon boys over six seasons, and my sim before and after the change.</p>
             </div>
           </div>
-          <div class="why">The old model let everyone improve on a similar schedule, so seniors held 85.7% of No. 1 singles seats and rosters barely reshuffled. Splitting where a player starts from how much each year can give, and tying that to playing time, put underclassmen back at the top of lineups.</div>
+          <div class="why">Under the old model, seniors held 85.7% of No. 1 singles seats. A player who is ready at 14 can now enter the simulation ready at 14.</div>
           <div class="src">Source: tennis-team-manager/app/jhsaa.py (_career_plan, career_ability, exposure odometer). Careers generated with the game's own functions (school "SCHOOL", entry 2040, seats 25, 4, 10, 8, 18); the port here matches career_ability exactly. No. 1 singles shares from "Rebuilding player development in a PC sports sim," August 2026.</div>
         </section>
 
@@ -181,7 +181,7 @@
           <div class="head">
             <div><h3>You Go First match score</h3></div>
             <div>
-              <p>You spend ten chips on what you want across five traits. Your score for someone weights their quiz traits by your chips, so your score for them and theirs for you can differ. A temperature term rewards similar overall quiz scores.</p>
+              <p>Scores are asymmetric. What you want, 10 chips across five traits, is scored against what they are, a behavioral quiz: 0.7 × alignment + 0.3 × temperature. Move the chips and both scores change.</p>
               <code class="eq">score = 0.7 × alignment + 0.3 × temperature
       temperature = max(0, 100 − 2 × |quiz gap|)</code>
             </div>
@@ -191,7 +191,7 @@
             <div><small class="t" style="font-family:var(--mono);font-size:12px;color:var(--dim)">Alex's score for Blake</small><div class="big" id="ygfAB">0</div><small class="t" id="ygfABx" style="font-family:var(--mono);font-size:12px;color:var(--dim)"></small></div>
             <div><small class="t" style="font-family:var(--mono);font-size:12px;color:var(--dim)">Blake's score for Alex</small><div class="big" id="ygfBA">0</div><small class="t" id="ygfBAx" style="font-family:var(--mono);font-size:12px;color:var(--dim)"></small></div>
           </div>
-          <div class="why">Both people need 60 or more for each other before a match is possible, and each person only has 3 top picks, 5 second picks and 7 third picks a week. Against the textbook stable-matching algorithm on the same 14-person pool, this matched 12 instead of 14 but spread attention more evenly.</div>
+          <div class="why">Both scores have to reach 60 before a match is possible.</div>
           <div class="src">Source: heypbj/src/data/mockSimulation.ts (calculateCompatibilityScore, sample users Alex and Blake), src/lib/stableMatchingSimulator.ts.</div>
         </section>
 
@@ -199,8 +199,8 @@
         <div class="head">
           <div><h3>You Go First: a week of matching</h3></div>
           <div>
-            <p>Dating apps run on unlimited swiping, so attention piles onto a few people. You Go First gives everyone three top picks, five second picks and seven third picks a week. A match needs picks in both directions and a score of at least 60 each way.</p>
-            <p>These are the app&rsquo;s 14 test profiles, run through its own simulator. Click a person to see who they picked.</p>
+            <p>Swiping makes attention free, so a like tells you nothing and a few profiles get most of them. Everyone gets 15 picks a week in three tiers, and the other person sees the tier.</p>
+            <p>These are the app&rsquo;s 14 test profiles in its simulator. Click a person to see who they picked.</p>
           </div>
         </div>
         <div class="stage">
@@ -214,7 +214,7 @@
               <div><small>Average match score</small><span class="big" id="ygwAvg">0</span></div>
             </div>
             <p class="cap" id="ygwNote" aria-live="polite"></p>
-            <p class="why">Over twelve simulated weeks, the textbook algorithm pairs all 14, but it assumes everyone knows everyone and can propose without limit. Scarce picks match 12 and spread attention more evenly across the pool.</p>
+            <p class="why">The textbook stable-matching algorithm pairs all 14, but only by assuming everyone knows everyone and can propose without limit. Fifteen picks a week matched 12 by week 2.</p>
             <p class="src">Source: heypbj/src/lib/stableMatchingSimulator.ts and src/data/mockSimulation.ts, default seed.</p>
           </div>
         </div>
