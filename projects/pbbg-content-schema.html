@@ -23,6 +23,8 @@
 <meta name="twitter:image" content="https://ronbronson.dev/assets/social-card.png" />
 <link rel="preload" as="font" type="font/woff2" href="../assets/fonts/gallery/PPNeueMontreal-Extrabold.woff2" crossorigin />
 <link rel="stylesheet" href="../assets/slabs.css" />
+<link rel="stylesheet" href="../assets/pbbg-demo.css" />
+<script src="../assets/pbbg-demo.js" defer></script>
 <script src="../assets/contact.js" defer></script>
 <!-- standard.site -->
 <link rel="site.standard.document" href="at://did:plc:odgxwakrg5r2zjetnrkxuh5c/site.standard.document/3mz4piittsc2t" />
@@ -45,10 +47,12 @@
 
 
 
-    <figure class="figure bleed">
-      <img src="../assets/pbbg-content-schema/check.webp" alt="Two terminal panels. Left: pbbg-content check passes a clean bundle, then reports two errors on a broken one, a terminal period on an action label and a placeholder with no binding, each with a repair hint. Right: a content entry in JSON with its domain, pattern, text, audience, phases, and a binding that reads the turns cost from an action." />
-      <figcaption>The checker on a clean bundle and a broken one, and the content entry it&rsquo;s checking. The <code>{turns}</code> in the sentence binds to the action&rsquo;s declared cost, so changing the cost changes the sentence.</figcaption>
-    </figure>
+    <section class="pd-wrap" aria-label="Try the schema on an example">
+      <div class="pd" id="pbbg-demo">
+        <noscript><img src="../assets/pbbg-content-schema/check.webp" alt="Two terminal panels. Left: pbbg-content check passes a clean bundle, then reports two errors on a broken one, a terminal period on an action label and a placeholder with no binding, each with a repair hint. Right: a content entry in JSON with its domain, pattern, text, audience, phases, and a binding that reads the turns cost from an action." /></noscript>
+      </div>
+      <p class="pd-note">This is an example bundle I wrote from the first level of Coalition. The game itself still keeps its text in its own files and hasn&rsquo;t moved to the schema. The text on the screen comes from the schema&rsquo;s <code>renderText</code>, and every problem listed comes from its <code>validateBundle</code>, running in your browser.</p>
+    </section>
 
     <div class="project__body">
 

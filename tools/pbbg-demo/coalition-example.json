@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "0.5.0",
+  "id": "coalition-residence-example",
+  "roles": ["candidate", "investigator"],
+  "phases": ["run"],
+  "entities": [
+    { "id": "nando", "name": "Nando", "kind": "person" },
+    { "id": "aide", "name": "Gianlūka", "kind": "person" },
+    { "id": "card.decoy", "name": "Two more cars like yours", "kind": "card" },
+    { "id": "card.influence", "name": "The party machine", "kind": "card" }
+  ],
+  "facts": [
+    { "id": "has.decoy", "type": "boolean", "audience": ["candidate"], "phases": ["run"] },
+    { "id": "has.influence", "type": "boolean", "audience": ["candidate"], "phases": ["run"] },
+    { "id": "is.night", "type": "boolean", "audience": ["candidate", "investigator"], "phases": ["run"] },
+    { "id": "exposure", "type": "number", "audience": ["candidate"], "phases": ["run"] },
+    { "id": "candidate.location", "type": "string", "audience": ["candidate"], "phases": ["run"] },
+    { "id": "report.place", "type": "string", "audience": ["investigator"], "phases": ["run"] }
+  ],
+  "effectTypes": [
+    { "id": "exposure.change", "targetKind": "fact", "valueType": "number" },
+    { "id": "ally.commit", "targetKind": "entity", "valueType": "boolean" }
+  ],
+  "actions": [
+    { "id": "decoy", "cost": { "hours": 3, "dc": 3 }, "requires": [{ "ref": "has.decoy", "op": "eq", "value": true }], "effects": [{ "type": "exposure.change", "target": "exposure", "value": -1 }] },
+    { "id": "service", "cost": { "hours": 1, "dc": 4 }, "requires": [{ "ref": "is.night", "op": "eq", "value": true }], "effects": [] },
+    { "id": "partycar", "cost": { "hours": 1, "dc": 2 }, "requires": [{ "ref": "has.influence", "op": "eq", "value": true }], "effects": [{ "type": "ally.commit", "target": "aide", "value": true }] },
+    { "id": "gov.ask", "cost": { "hours": 6 }, "effects": [] }
+  ],
+  "content": [
+    { "id": "residence.title", "domain": "interface", "pattern": "navigation-heading", "text": "The residence, Portô Venla", "audience": ["candidate"], "phases": ["run"] },
+    { "id": "residence.objective", "domain": "narrative", "pattern": "scene", "text": "Get past the watch.", "audience": ["candidate"], "phases": ["run"] },
+    { "id": "residence.arrive", "domain": "narrative", "pattern": "scene", "text": "Two unmarked cars watch the house. The court has barred you from leaving the country. Your second passport is in your coat.", "audience": ["candidate"], "phases": ["run"] },
+    { "id": "decoy.label", "domain": "interface", "pattern": "action-label", "text": "Send out a decoy convoy", "audience": ["candidate"], "phases": ["run"] },
+    { "id": "decoy.preview", "domain": "interface", "pattern": "action-preview", "text": "Nando, your driver, sends three cars out at once so the watch follows the wrong one.", "audience": ["candidate"], "phases": ["run"] },
+    { "id": "decoy.takes", "domain": "interface", "pattern": "action-preview", "text": "{hours} hr", "audience": ["candidate"], "phases": ["run"], "bindings": { "hours": { "source": "action-cost", "ref": "decoy", "key": "hours" } } },
+    { "id": "decoy.needs", "domain": "interface", "pattern": "blocked-action", "text": "You need {card} first.", "audience": ["candidate"], "phases": ["run"], "bindings": { "card": { "source": "entity", "ref": "card.decoy" } } },
+    { "id": "decoy.fail", "domain": "interface", "pattern": "action-result", "text": "The police stop the second car on the avenue. Nando talks his way out, and they are watching the house more closely now.", "audience": ["candidate"], "phases": ["run"] },
+    { "id": "service.label", "domain": "interface", "pattern": "action-label", "text": "Leave by the service door", "audience": ["candidate"], "phases": ["run"] },
+    { "id": "service.preview", "domain": "interface", "pattern": "action-preview", "text": "The kitchen staff go home after 10 p.m., and you leave with them.", "audience": ["candidate"], "phases": ["run"] },
+    { "id": "service.takes", "domain": "interface", "pattern": "action-preview", "text": "{hours} hr", "audience": ["candidate"], "phases": ["run"], "bindings": { "hours": { "source": "action-cost", "ref": "service", "key": "hours" } } },
+    { "id": "service.needs", "domain": "interface", "pattern": "arrangement-status", "text": "Only at night, from 10 at night to 5 in the morning.", "audience": ["candidate"], "phases": ["run"] },
+    { "id": "partycar.label", "domain": "interface", "pattern": "action-label", "text": "The party's official car", "audience": ["candidate"], "phases": ["run"] },
+    { "id": "partycar.preview", "domain": "interface", "pattern": "action-preview", "text": "Gianlūka, the party's chief of staff, drives you out in his official car. In return, he wants you to say in public that he leads the party.", "audience": ["candidate"], "phases": ["run"] },
+    { "id": "partycar.takes", "domain": "interface", "pattern": "action-preview", "text": "{hours} hr", "audience": ["candidate"], "phases": ["run"], "bindings": { "hours": { "source": "action-cost", "ref": "partycar", "key": "hours" } } },
+    { "id": "partycar.needs", "domain": "interface", "pattern": "blocked-action", "text": "You need {card} first.", "audience": ["candidate"], "phases": ["run"], "bindings": { "card": { "source": "entity", "ref": "card.influence" } } },
+    { "id": "aide.line", "domain": "narrative", "pattern": "dialogue", "text": "\"The party meets tonight, and you gave your word. Send your endorsement.\"", "audience": ["candidate"], "phases": ["run"], "speakerRef": "aide" },
+    { "id": "gov.title", "domain": "interface", "pattern": "navigation-heading", "text": "Ministry desk", "audience": ["investigator"], "phases": ["run"] },
+    { "id": "gov.brief", "domain": "narrative", "pattern": "scene", "text": "The newest report, which came in an hour ago, comes from {place}.", "audience": ["investigator"], "phases": ["run"], "bindings": { "place": { "source": "fact", "ref": "report.place" } } },
+    { "id": "gov.report", "domain": "narrative", "pattern": "report", "text": "The house is dark and nobody has come or gone for an hour.", "audience": ["investigator"], "phases": ["run"] },
+    { "id": "gov.ask.label", "domain": "interface", "pattern": "action-label", "text": "Ask for six hours", "audience": ["investigator"], "phases": ["run"] },
+    { "id": "gov.ask.takes", "domain": "interface", "pattern": "action-preview", "text": "{hours} hr", "audience": ["investigator"], "phases": ["run"], "bindings": { "hours": { "source": "action-cost", "ref": "gov.ask", "key": "hours" } } }
+  ],
+  "scenes": [
+    { "id": "residence", "next": [], "contentRefs": ["residence.title", "residence.objective", "residence.arrive", "decoy.preview", "decoy.takes", "decoy.needs", "service.preview", "service.takes", "service.needs", "partycar.preview", "partycar.takes", "partycar.needs", "aide.line"], "actionRefs": ["decoy", "service", "partycar"] },
+    { "id": "desk", "next": [], "contentRefs": ["gov.title", "gov.brief", "gov.report", "gov.ask.takes"], "actionRefs": ["gov.ask"] }
+  ],
+  "events": [
+    { "id": "residence.watch", "sceneRefs": ["residence"], "titleRef": "residence.title", "bodyRef": "residence.arrive", "choices": [
+      { "id": "decoy", "labelRef": "decoy.label", "actionRef": "decoy" },
+      { "id": "service", "labelRef": "service.label", "actionRef": "service" },
+      { "id": "partycar", "labelRef": "partycar.label", "actionRef": "partycar" }
+    ] },
+    { "id": "desk.hunt", "sceneRefs": ["desk"], "titleRef": "gov.title", "bodyRef": "gov.report", "choices": [
+      { "id": "ask", "labelRef": "gov.ask.label", "actionRef": "gov.ask" }
+    ] }
+  ],
+  "outcomes": []
+}
