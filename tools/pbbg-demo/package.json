@@ -1,0 +1,9 @@
+{
+  "name": "pbbg-demo",
+  "private": true,
+  "type": "module",
+  "description": "Builds assets/pbbg-demo.js, the interactive Coalition example on projects/pbbg-content-schema.html.",
+  "scripts": { "build": "node build.mjs" },
+  "dependencies": { "ajv": "8.20.0" },
+  "devDependencies": { "esbuild": "0.25.5" }
+}
