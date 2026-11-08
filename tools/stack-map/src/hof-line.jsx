@@ -177,6 +177,20 @@ function Names({ lanes, g }) {
   return <>{out}</>;
 }
 
+const PLURAL = { C: "catchers", "1B": "first basemen", "2B": "second basemen", "3B": "third basemen", SS: "shortstops", LF: "left fielders", CF: "center fielders", RF: "right fielders", SP: "starting pitchers", RP: "relief pitchers" };
+// One sentence per case, AP style: numbers under 10 spelled out, and no
+// sentence starts with a figure.
+function summary(lane, N, size, out, inn) {
+  const pl = PLURAL[lane.pos];
+  const hofs = (n) => (n === 0 ? "no Hall of Famer" : n === 1 ? "one Hall of Famer" : `${num(n)} Hall of Famers`);
+  if (size === REAL) {
+    const above = out === 0 ? "every player is in it" : out === 1 ? "one player isn't in it" : `${num(out)} players aren't in it`;
+    return `The Hall has ${num(lane.n)} ${pl}. Above the line, ${above}, and ${hofs(inn)} ${inn === 1 ? "ranks" : "rank"} below it.`;
+  }
+  const above = out === 0 ? "every player above the line would be in it" : out === 1 ? "one player above the line wouldn't be in it" : `${num(out)} players above the line wouldn't be in it`;
+  return `If the Hall had ${num(N)} ${pl} instead of ${num(lane.n)}, ${above}, and ${hofs(inn)} would rank below it.`;
+}
+
 function List({ lanes, size, pick, setPick }) {
   const lane = lanes[pick];
   const N = lane.seats(size);
@@ -190,8 +204,7 @@ function List({ lanes, size, pick, setPick }) {
         {lanes.map((l, i) => <button type="button" className="ghost" aria-pressed={i === pick} onClick={() => setPick(i)}>{l.pos}</button>)}
       </div>
       <p className="hl__sum" aria-live="polite">
-        {size === REAL ? `The Hall has ${lane.n} players at ${lane.pos}. ` : `With ${N} seats at ${lane.pos} instead of ${lane.n}: `}
-        {`Above the line, ${num(outAbove.length)} ${outAbove.length === 1 ? "isn't" : "aren't"} in. Below it, ${num(inBelow.length)} ${inBelow.length === 1 ? "is" : "are"}.`}
+        {summary(lane, N, size, outAbove.length, inBelow.length)}
       </p>
       <ol className="hl__rank" start={from + 1}>
         {ranked.slice(from, to).map((p, j) => (
@@ -229,7 +242,7 @@ function HallLine({ data }) {
         {g && <div className="hl__svg"><DraggableRenderer draggable={chart} state={{ s: size }} onDropState={(s) => setSize(s.s)} width={W} height={H} /></div>}
         {g && <Names lanes={lanes} g={g} />}
       </div>
-      <p className="cap">Hall size: {Math.round(SIZES[size] * 100)}% of today&rsquo;s. Drag the handle. Lime dots are players above the line who aren&rsquo;t in. Pink dots are Hall of Famers below it. Rings are Negro Leagues inductees, whose recorded stats are incomplete, so they don&rsquo;t take a seat.</p>
+      <p className="cap">Drag the marker above the chart to make the Hall bigger or smaller. Each lime dot is a player above his position&rsquo;s line who isn&rsquo;t in the Hall, and each pink dot is a Hall of Famer below it. Negro Leagues inductees are drawn as rings and left out of the count, because their recorded stats cover only part of their careers.</p>
       <List lanes={lanes} size={size} pick={pick} setPick={setPick} />
     </>
   );

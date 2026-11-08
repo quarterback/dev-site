@@ -54,3 +54,25 @@ If Ron builds out the vote-adjusted index, it could share this chart, with the f
 - Final runs on the intro and on all other text in the piece: plain-language-default 0 problems, prosekeep PASS, unslop (deterministic) 0 AI-isms.
 - unslop warned that "Marginal Player Line" is title case. I kept it, because Ron gave the title.
 **Evidence.** Playwright at 1440 and on iPhone 14 emulation: "The Hall has 25 players at SS. Above the line, six aren't in. Below it, six are." At 120%: "With 30 seats at SS instead of 25: Above the line, nine aren't in. Below it, four are." No errors.
+
+## Addendum: caption and descriptions after Ron's correction
+**Instruction.** Ron: "You clearly didnt use my editorial toolson these slop caption/descriptions", quoting the chart caption.
+**What went wrong.** I had run only the tools' mechanical checks (prosekeep check, plain-language-default check, unslop) and reported them as if they were an editorial review. They passed text that red-pen-editor's brief and prosekeep's ai-writing standard would reject:
+- a caption that repeated the chart's own size readout;
+- "Drag the handle" without saying which handle;
+- three sentences opening "Lime dots are… Pink dots are… Rings are…";
+- the "take a seat" metaphor, used twice, which hid the rule that those people aren't counted.
+
+Reading every generated sentence also found "none players", a sentence opening with "21", and "9 relief pitchers", none of which the checkers caught.
+**How the tools were used this time.**
+- Ran `red-pen-editor brief` (audience: readers of the projects page; purpose: chart caption) and `prosekeep standards ai-writing`, then reviewed against them.
+- Made the caption edit through `red-pen-editor apply --edits` with a stated reason. Its anchor check rejected the first try because the "100" would disappear, so I declared it in `allowLoss`, since the number is on the chart's 100% tick.
+- Used Playwright to write out every sentence the piece can show: 10 positions at four Hall sizes, plus the caption, intro, note, and source.
+- Ran plain-language-default, prosekeep, and unslop over all of it, then read every sentence.
+- red-pen-editor flagged the position summaries as near-duplicates. Only one shows at a time, and each now reads as its own sentence.
+**Change.**
+- **Caption:** "Drag the marker above the chart to make the Hall bigger or smaller. Each lime dot is a player above his position's line who isn't in the Hall, and each pink dot is a Hall of Famer below it. Negro Leagues inductees are drawn as rings and left out of the count, because their recorded stats cover only part of their careers."
+- **Summaries:** full position names, numbers under 10 spelled out, and separate wording for zero and one. Example: "The Hall has 25 shortstops. Above the line, six players aren't in it, and six Hall of Famers rank below it." When the size changes: "If the Hall had 35 shortstops instead of 25, 12 players above the line wouldn't be in it, and two Hall of Famers would rank below it."
+- **Note under the chart:** "With the Hall as it is, … all rank above their lines. So do Pete Rose and Shoeless Joe Jackson, who are banned, and Barry Bonds and Roger Clemens, who aged off the ballot after 10 years."
+- **Source line:** "Only people elected as players count toward a position's total, so managers, executives, and Negro Leagues inductees don't."
+**Result.** plain-language-default 0 problems, prosekeep PASS, and unslop 0 AI-isms across all 1,288 words. No page errors.
