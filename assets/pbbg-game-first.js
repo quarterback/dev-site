@@ -14,11 +14,10 @@
   // Move the initialized nodes. Their event listeners and live data stay intact.
   [...root.children].forEach((node) => workshop.appendChild(node));
 
-  const explanation = document.createElement("div");
-  explanation.className = "pd-workshop-intro";
-  explanation.innerHTML = "<h3>Inspect the scene</h3>" +
-    "<p>Switch roles or select a line to see its source. Change a cost or the dialogue to check the result.</p>";
-  workshop.prepend(explanation);
+  const instruction = document.createElement("p");
+  instruction.className = "pd-workshop-intro";
+  instruction.textContent = "Select a line to see its source. Change text or an action cost to test the checker.";
+  workshop.prepend(instruction);
 
   const opening = document.createElement("section");
   opening.className = "pd-opening";
@@ -28,7 +27,7 @@
       "<img src='../assets/coalition/play.webp' loading='lazy' alt='Coalition game screen showing a house at dusk, the escape clock and available moves.'>" +
     "</figure>" +
     "<div class='pd-brief'>" +
-      "<p>In Coalition, editing dialogue with coding agents sometimes changed buttons or game rules. I built PBBG Content Schema to keep those parts separate. Change the text or an action cost to see how the checks work.</p>" +
+      "<p>When I asked coding agents to edit Coalition's dialogue, they sometimes changed buttons or rules. I built PBBG Content Schema to keep those parts separate. Try changing the text or an action cost.</p>" +
       "<button type='button' class='pd-reveal' aria-expanded='false' aria-controls='pd-workshop'>Inspect the scene</button>" +
       "<p class='pd-game-link'><a href='/projects/coalition.html'>Coalition project</a></p>" +
     "</div>";
@@ -58,24 +57,8 @@
   });
 
 
-  const editControls = workshop.querySelector(".pd-tools");
-  if (editControls) {
-    const editIntro = document.createElement("div");
-    editIntro.className = "pd-edit-intro";
-    editIntro.innerHTML = "<h3>Change one part</h3>" +
-      "<p>Move the hours slider to change the time shown in the scene. Edit Gianlūka's dialogue to see that the action costs stay the same.</p>";
-    editControls.before(editIntro);
-  }
-  const breakButtons = workshop.querySelector(".pd-breaks");
-  if (breakButtons) {
-    const breakIntro = document.createElement("div");
-    breakIntro.className = "pd-edit-intro";
-    breakIntro.innerHTML = "<h3>Introduce an error</h3>" +
-      "<p>Break a placeholder, reference, or writing rule. The PBBG checker names the error and blocks the invalid example.</p>";
-    const label = breakButtons.previousElementSibling;
-    if (label?.classList.contains("pd-small")) label.replaceWith(breakIntro);
-    else breakButtons.before(breakIntro);
-  }
+  // The original inspector already labels the fields and error cases.
+  // Keep those controls as written; the entry paragraph carries the explanation.
 
   // The original diagnostic panel uses validateBundle. Summarize that actual
   // result without changing the checks or claiming the example is the game.
