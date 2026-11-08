@@ -20,7 +20,7 @@
        Condensed and Plex Mono. Styles in assets/room.css. -->
   <header class="rt"><a class="rt__nm" href="index.html" data-dissolve="home">Ron Bronson</a><nav aria-label="Main navigation"><a href="projects.html" aria-current="page">Projects</a><a href="https://ronbronson.design">Design</a><a href="https://blog.ronbronson.dev">Blog</a><a href="mailto:ron@ronbronson.com">Contact</a></nav></header>
   <main class="se" id="other-room" aria-labelledby="h-se">
-    <div class="in"><h1 id="h-se">Problems are designed</h1><p>I design games, simulations, and rule-based systems to explore how decisions produce outcomes. The work spans sports rankings, probability models, invented games, and scenario exercises.</p></div>
+    <div class="in"><h1 id="h-se">Problems are designed</h1><p>I build games and simulations to find out what their rules actually produce. In SuperInnings (O27), I let the rules set the scoring environment instead of tuning toward a target. In Play To Clinch, I rebuilt player development when the sim made seniority look like ability. I direct coding agents on implementation and check the results against source data and repeatable runs.</p></div>
     <section id="ticker" class="tk" aria-label="Occupant Indices, latest published values" hidden><a class="tk__lab" href="projects/occupant.html">Occupant Indices</a><div class="tk__win"><div class="tk__tape"></div></div></section>
     <script src="assets/ticker.js" defer></script>
     <ul class="plist" aria-label="Projects">
@@ -45,7 +45,7 @@
     <script>if(matchMedia("(min-width: 861px)").matches){var s=document.createElement("script");s.src="assets/stack-map.js";s.defer=true;document.currentScript.after(s)}</script>
     <div class="uth" id="under-the-hood">
       <h2 class="uth__h">Under the hood</h2>
-      <p class="uth__lede">How seven of these projects work, running on each one&rsquo;s own code and data.</p>
+      <p class="uth__lede">These models use calculations and data from their source projects, checked against the originals. Coding agents brought them into the browser. The <a href="https://github.com/quarterback/dev-site/pull/112">build record</a> shows the checks, the open questions, and where the code disagreed with the docs.</p>
       <section class="uth-piece" id="uth-oregon">
           <div class="head">
             <div><h3>Oregon high school tennis rankings</h3></div>
@@ -107,7 +107,7 @@
           <div class="head">
             <div><h3>O27 college prospects</h3></div>
             <div>
-              <p>In a sim, scouting is the point of the game. Every college player has a true ceiling and a lens on it, and the grade in the box score is the ceiling times the lens. The lens never changes, so a hidden gem stays hidden all through college. Two scouting reports guess at the ceiling, each blurred on its own.</p>
+              <p>In O27, a prospect&rsquo;s box-score grade and actual ceiling are different things. Each player has a hidden ceiling and a fixed lens on it, so the grade you see is ceiling times lens. Two scouting reports estimate that ceiling with their own errors. I kept the lens fixed through college: a hidden gem can still look ordinary when draft day arrives.</p>
               <code class="eq">shown  = round(ceiling × lens)     lens 0.40–0.95
       growth = min(rate × ceiling, cap)  cap 15 → 4
       scout  = ceiling ± fog             fog 7–31</code>
@@ -155,7 +155,7 @@
           <div class="head">
             <div><h3>Play To Clinch high school careers</h3></div>
             <div>
-              <p>Each player starts with an ability, a career peak and a development budget for each year. Playing time decides how much of that budget he realizes, and a JV match counts half a varsity one. Two players with similar starting ability can have very different four-year careers.</p>
+              <p>The first high school model put seniors in 85.7% of No. 1 singles spots. I compared that with six seasons of Oregon boys tennis, then rebuilt development around starting ability, career peak, annual growth and actual playing time. JV matches count for half the exposure of varsity, so five freshmen with the same ceiling can end up with very different careers.</p>
               <code class="eq">gain = year's budget × playing time
       playing time: bench 0.55 · full JV 0.81 · varsity 1.00</code>
             </div>
@@ -173,7 +173,7 @@
               <p class="cap">Who plays No. 1 singles, by grade: Oregon boys over six seasons, and my sim before and after the change.</p>
             </div>
           </div>
-          <div class="why">Under the old model, seniors held 85.7% of No. 1 singles seats. A player who is ready at 14 can now enter the simulation ready at 14.</div>
+          <div class="why">A player who is ready for No. 1 singles at 14 can now play there at 14. Change the playing-time control to see how four years of exposure alter the result.</div>
           <div class="src">Source: tennis-team-manager/app/jhsaa.py (_career_plan, career_ability, exposure odometer). Careers generated with the game's own functions (school "SCHOOL", entry 2040, seats 25, 4, 10, 8, 18); the port here matches career_ability exactly. No. 1 singles shares from "Rebuilding player development in a PC sports sim," August 2026.</div>
         </section>
 
@@ -221,7 +221,7 @@
       </section>
     </div>
     <script src="assets/under-the-hood.js" defer></script>
-    <article class="q"><div><h3><a href="https://blog.ronbronson.com/context-engineering-for-llms-starts-with-systems-not-prompts/">Context Engineering for LLMs Starts With Systems, Not Prompts</a></h3><p class="st">June 20, 2025</p></div><div class="tx"><p>Context engineering starts with understanding what a system does, how its rules interact, and what happens when something changes. Prompts alone cannot supply that structure. Agents working with games, public services, or business processes need access to the rules, relationships, and consequences that define a system, along with clear boundaries for what they can change.</p></div></article>
+    <article class="q"><div><h3><a href="https://blog.ronbronson.com/context-engineering-for-llms-starts-with-systems-not-prompts/">Context Engineering for LLMs Starts With Systems, Not Prompts</a></h3><p class="st">June 20, 2025</p></div><div class="tx"><p>More memory cannot tell an agent what a system is supposed to do. This essay starts with the rules of the place the agent is entering, the people affected, and the ways its actions can be corrected, escalated or stopped.</p></div></article>
     <article class="q"><div><h3><a href="https://blog.ronbronson.com/context-aware-agents-designing-for-alignment-in-ax/">Context-Aware Agents: Designing for Alignment in AX</a></h3><p class="st">February 23, 2025</p></div><div class="tx"><p>Agents operate within existing systems of rules, responsibilities, and decisions. When those relationships are missing from their context, agents can complete a task while misunderstanding its purpose. I examine how context, authority, and oversight shape agent behavior, and why judging task completion alone misses important consequences.</p></div></article>
     <article class="q"><div><h3><a href="https://blog.ronbronson.com/bringing-ax-to-life-building-a-content-schema-for-browser-games-developed-with-agents/">Bringing AX to Life: Building a Content Schema for Browser Games Developed With Agents</a></h3><p class="st">October 2026</p></div><div class="tx"><p>Building Coalition with AI agents exposed a recurring problem: game rules, interface copy, and narrative kept getting mixed together. I developed a content schema that gives each a defined place, so agents can work on dialogue, game mechanics, or interface language while preserving the relationships between them. The schema is available as a standalone package.</p></div></article>
   </main>
