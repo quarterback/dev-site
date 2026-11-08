@@ -68,3 +68,9 @@ Chromium: home at 1440 and 390 in Snow and Coffee, Projects at 1440 and 390; no 
 **Change.** `assets/pull.js` and styles in `workshop.css`: a 12px cobalt strip at the right edge (14px along the bottom on phones) that widens to show "Projects" on hover or focus. Dragging it in reveals the Projects room ("Problems are designed"); past a third of the screen it opens projects.html through the existing dissolve; a short drag slides back; a tap or Enter is a plain link. Links drag natively in browsers, so the strip sets `draggable="false"` and cancels `dragstart`. The home featured piece is now "Play To Clinch high school careers" (same as on Projects); the You Go First matching week stays on Projects only.
 **Not adopted from Ron's pasted review (yet).** Its suggested primer text (Ron is writing the primer), and a Closedtab demo (the review argues both for and against it). Its Systems, Projects-intro and record-link suggestions are listed for Ron to approve.
 **Evidence.** Chromium at 1440 and 390: short drag stays on the home page, long drag and tap both arrive at projects.html; career chart renders; no errors.
+
+## Addendum: after Ron's editorial pass
+**Context.** Two editorial commits by Ron (d2e83ee, 6e78816) rewrote the Under the hood ledes, the Projects intro, the O27 and career texts, an essay summary, and added two essays to Writing on the home page.
+**Change.** The home page's copy of the career piece still had the earlier text, because the edits landed only in projects.html; it now matches. Added serial commas (house style) to five lists, including two from the editorial pass and three of mine. No other wording changed.
+**Note for Ron.** The Projects lede links to PR #112 as the build record; after merge you may prefer a link to docs/aar-under-the-hood-2026-11-08.md on main.
+**Evidence.** Chromium home and Projects: no errors, pull tab and career chart work; prosekeep PASS.

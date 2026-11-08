@@ -60,7 +60,7 @@
         <div class="head">
           <div><h3>Play To Clinch high school careers</h3></div>
           <div>
-            <p>Each player starts with an ability, a career peak and a development budget for each year. Playing time decides how much of that budget he realizes, and a JV match counts half a varsity one. Two players with similar starting ability can have very different four-year careers.</p>
+            <p>The first high school model put seniors in 85.7% of No. 1 singles spots. I compared that with six seasons of Oregon boys tennis, then rebuilt development around starting ability, career peak, annual growth, and actual playing time. JV matches count for half the exposure of varsity, so five freshmen with the same ceiling can end up with very different careers.</p>
             <code class="eq">gain = year's budget × playing time
     playing time: bench 0.55 · full JV 0.81 · varsity 1.00</code>
           </div>
@@ -78,7 +78,7 @@
             <p class="cap">Who plays No. 1 singles, by grade: Oregon boys over six seasons, and my sim before and after the change.</p>
           </div>
         </div>
-        <div class="why">Under the old model, seniors held 85.7% of No. 1 singles seats. A player who is ready at 14 can now enter the simulation ready at 14.</div>
+        <div class="why">A player who is ready for No. 1 singles at 14 can now play there at 14. Change the playing-time control to see how four years of exposure alter the result.</div>
         <div class="src">Source: tennis-team-manager/app/jhsaa.py (_career_plan, career_ability, exposure odometer). Careers generated with the game's own functions (school "SCHOOL", entry 2040, seats 25, 4, 10, 8, 18); the port here matches career_ability exactly. No. 1 singles shares from "Rebuilding player development in a PC sports sim," August 2026.</div>
       </section>
   </section>
@@ -111,7 +111,7 @@
   <section class="g sec" id="systems" aria-labelledby="h-sys">
     <h2 id="h-sys">Systems</h2>
     <article class="sys"><div><h3><a href="https://www.npmjs.com/package/red-pen-editor">Red Pen Editor</a></h3><code>npm i red-pen-editor</code></div><div class="sys__b"><p class="sys__idea">An editor for AI agents with permission to cut. It looks for what a draft can lose without changing what it says, and it refuses any cut that would drop the last mention of a number, date, or link. Agents can use it as a skill or through an MCP server. It runs locally, with no API key.</p></div></article>
-    <article class="sys"><div><h3><a href="projects/pbbg-content-schema.html">PBBG Content Schema</a></h3><code>npx -y github:quarterback/pbbg-content-schema install-skill</code></div><div class="sys__b"><p class="sys__idea">A content format and checker that keeps a browser game&rsquo;s rules, story and interface text apart, so AI agents can edit one without breaking the others.</p></div></article>
+    <article class="sys"><div><h3><a href="projects/pbbg-content-schema.html">PBBG Content Schema</a></h3><code>npx -y github:quarterback/pbbg-content-schema install-skill</code></div><div class="sys__b"><p class="sys__idea">A content format and checker that keeps a browser game&rsquo;s rules, story, and interface text apart, so AI agents can edit one without breaking the others.</p></div></article>
     <article class="sys"><div><h3><a href="projects/closedtab.html">closedtab</a></h3><code>npm i closedtab</code></div><div class="sys__b"><p class="sys__idea">Shared memory for people and AI agents. It records what an agent decided and where it went off plan, which test results and agent logs often miss. The next session starts with that record.</p><p><a href="https://blog.ronbronson.com/closedtab-a-npm-shared-memory-for-you-and-your-ai-agents">Closedtab: A npm shared memory for you and your AI agents</a><br /><a href="https://blog.ronbronson.com/agent-experience-needs-failure-affordances/">Agent Experience Needs Failure Affordances</a></p></div></article>
     <article class="sys"><div><h3><a href="projects/prosekeep.html">Prosekeep</a></h3><code>npm i prosekeep</code></div><div class="sys__b"><p class="sys__idea">An editorial system for teams writing with AI agents. It carries writing standards, author decisions, source requirements, and publishing workflows across repositories and agent tools. I treat editorial authority as a content design problem: an author&rsquo;s decisions should still hold when the writing reaches editing and review in another tool.</p></div></article>
     <article class="sys"><div><h3><a href="https://www.npmjs.com/package/plain-language-default">plain-language-default</a></h3><code>npm i plain-language-default</code></div><div class="sys__b"><p class="sys__idea">A reusable writing standard for AI agents based on the U.S. Federal Plain Language Guidelines. It gives every agent the same rules for writing plainly.</p></div></article>
