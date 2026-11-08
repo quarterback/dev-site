@@ -8,6 +8,7 @@
 <title>Projects | Ron Bronson</title>
 <meta name="description" content="Games, simulations, and rule-based systems by Ron Bronson: sports rankings, probability models, invented games, and scenario exercises." />
 <link rel="stylesheet" href="assets/room.css" />
+<link rel="stylesheet" href="assets/under-the-hood.css" />
 <script>try{if(sessionStorage.getItem("rb-dissolve")){document.documentElement.classList.add("dissolving");setTimeout(function(){document.documentElement.classList.remove("dissolving")},1000)}}catch(e){}</script>
 <script src="assets/dissolve.js" defer></script>
 </head>
@@ -42,6 +43,160 @@
       <p class="sm__cap">Drag the lime marker along the techniques, or use the arrow keys. Dragging built with <a href="https://github.com/declarative-dragging/dragology">Dragology</a>, from Joshua Horowitz, Andrew Blinn and Jeffrey Heer, &ldquo;<a href="https://declarative-dragging.github.io">Declarative Dragging</a>,&rdquo; UIST 2026.</p>
     </div>
     <script>if(matchMedia("(min-width: 861px)").matches){var s=document.createElement("script");s.src="assets/stack-map.js";s.defer=true;document.currentScript.after(s)}</script>
+    <div class="uth" id="under-the-hood">
+      <h2 class="uth__h">Under the hood</h2>
+      <p class="uth__lede">The math inside six of these projects, running on each project&rsquo;s own code and data. Drag anything highlighted.</p>
+      <section class="uth-piece" id="uth-oregon">
+          <div class="head">
+            <div><div class="eyebrow">Oregon HS tennis rankings · real 2026 boys data</div><h3>Depth beats stacking</h3></div>
+            <div>
+              <p>A dual is eight flights. A team's flight score weights each one, so a win at No. 1 singles counts ten times a win at No. 4. That score, adjusted for opponent strength, feeds the Power Index the OSAA now seeds from.</p>
+              <code class="eq">PI = 0.65·APR + 0.25·FQI + 0.10·oGS
+      FQI = (Σ flight_score·opp_strength + 5×0.5) / (duals + 5)</code>
+            </div>
+          </div>
+          <div class="stage">
+            <div class="panel">
+              <svg class="bars" id="orBars" viewBox="0 0 520 300" role="img" aria-label="Flight weights. Drag a bar to change its weight."></svg>
+              <div class="ctls"><button class="ghost" id="orReset" type="button">Reset to the real weights</button></div>
+              <p class="cap">Drag a bar up or down. The table re-ranks all 121 ranked 2026 boys teams live.</p>
+            </div>
+            <div class="panel">
+              <div class="read"><div><small>Top team by Power Index</small><span class="big" id="orTop">Lincoln</span></div></div>
+              <ol class="rank" id="orRank" aria-live="polite"></ol>
+              <p class="cap">Rank by Power Index, change from the real weights in the right column.</p>
+            </div>
+          </div>
+          <div class="why">The official No. 1 is Grant, with a lower Power Index (.7399) than Lincoln (.7467). They tied 4-4 on April 22, Grant won the tiebreak on sets, and the head-to-head rule lifted Grant above Lincoln. The tiebreak loser's record shows a tie, so statewide wins and losses never balance, on purpose.</div>
+          <div class="src">Source: or-tennis-data/generate_site.py (FLIGHT_WEIGHTS, TOSS weights, FQI with 5 phantom matches). FQI recomputed here matches the published value for all 121 teams.</div>
+        </section>
+
+      <section class="uth-piece" id="uth-viper">
+          <div class="head">
+            <div><div class="eyebrow">Viperball · the kick decision</div><h3>Five points or three</h3></div>
+            <div>
+              <p>Six downs to gain 20 yards, no forward pass. On a kick, the drop kick is worth 5 and the place kick 3, each with its own success curve set by the kicker. The coach takes the bigger expected value, inside rules about downs, score and field position.</p>
+              <code class="eq">distance = (100 − field position) + 10
+      drop kick EV = 5 × P(drop)   place kick EV = 3 × P(place)</code>
+            </div>
+          </div>
+          <div class="stage">
+            <div class="panel">
+              <svg id="vbChart" viewBox="0 0 520 300" role="img" aria-label="Kick success by distance"></svg>
+              <p class="cap">Lime: drop kick (5 points). White: place kick (3 points). The marker is the current distance; drag it.</p>
+            </div>
+            <div class="panel">
+              <div class="ctls">
+                <label class="ctl" for="vbSkill">Kicker skill <output id="vbSkillO">80</output><input id="vbSkill" type="range" min="60" max="95" value="80"></label>
+                <label class="ctl" for="vbYtg">Yards to go <output id="vbYtgO">9</output><input id="vbYtg" type="range" min="1" max="20" value="9"></label>
+                <label class="ctl" for="vbDown">Down<select id="vbDown"><option value="5">5th</option><option value="6" selected>6th</option></select></label>
+                <label class="ctl" for="vbScore">Score<select id="vbScore"><option value="0" selected>Tied or ahead</option><option value="-1">Trailing</option></select></label>
+              </div>
+              <div class="read" style="margin-top:18px">
+                <div><small>Drop kick</small><span class="big" id="vbDk">0%</span><small id="vbDkEv">EV 0</small></div>
+                <div><small>Place kick</small><span class="big" id="vbPk">0%</span><small id="vbPkEv">EV 0</small></div>
+              </div>
+              <p style="margin:16px 0 0">The call: <span class="tag" id="vbCall">GO FOR IT</span></p>
+              <p class="cap" id="vbWhy"></p>
+            </div>
+          </div>
+          <div class="why">The engine is built to grind. Early downs average about two yards against 20 to go, so drives routinely reach 5th and 6th down, where this decision lives. A missed drop kick on downs 1 to 5 usually keeps the ball, so the 5-point try is cheaper than it looks.</div>
+          <div class="src">Source: viperball/engine/game_engine.py (_drop_kick_success, _place_kick_success, select_kick_decision). Shown with no clock pressure, no coaching traits, style aggression 1.0.</div>
+        </section>
+
+      <section class="uth-piece" id="uth-o27">
+          <div class="head">
+            <div><div class="eyebrow">O27 baseball · college prospects</div><h3>The box score lies, on purpose</h3></div>
+            <div>
+              <p>Every college hitter has a hidden ceiling and a hidden lens on it. The box score, and the game engine, only ever see the ceiling through the lens. Each prospect also has a hidden yearly growth rate, so some climb fast and some barely move. Scouts try to see the ceiling, through fog.</p>
+              <code class="eq">shown  = round(ceiling × lens)     lens 0.40–0.95
+      growth = min(rate × ceiling, cap)  cap 15 → 4
+      scout  = ceiling ± fog             fog 7–31</code>
+            </div>
+          </div>
+          <div class="ctls" style="max-width:640px">
+            <div class="yrs" role="group" aria-label="College year"><button type="button" class="ghost" data-y="0">Freshman</button><button type="button" class="ghost" data-y="1">Sophomore</button><button type="button" class="ghost" data-y="2">Junior</button><button type="button" class="ghost" data-y="3" aria-pressed="true">Senior</button></div>
+          </div>
+          <p class="cap">Pick the one you'd draft (click a card), then sign them all and see what was under the lens. White is what the box score shows. Lime is the real grade.</p>
+          <div class="board" id="o27Board"></div>
+          <div class="ctls" style="max-width:640px"><button type="button" id="o27Sign">Sign them: lift the lens</button><button type="button" class="ghost" id="o27Reset">Put the lens back</button></div>
+          <div class="why">Nobody regresses. Every prospect improves every year, and the late bloomer isn't a dice roll mid-career; their rate was set the day they were generated. The kid who looks like a star on draft day is often the one whose lens was clearer.</div>
+          <div class="src">Source: hybrid-baseball/o27v2/college.py and college_potential.py. These four prospects were generated by the game's own generate_college_player and advance_one_year (seeds 330, 245, 20, 219); reports drawn with make_scouting_report. Players get three growth years before they can sign.</div>
+        </section>
+
+      <section class="uth-piece" id="uth-ptc">
+          <div class="head">
+            <div><div class="eyebrow">Play To Clinch · the point engine</div><h3>Small edges compound</h3></div>
+            <div>
+              <p>Every point is simulated: first serve, second serve, ace, then a rally decided on a logistic curve of the two players' skill. A gap that barely moves a single point turns into a decisive edge over a best-of-three match.</p>
+              <code class="eq">P(server wins rally) = logistic(0.9·Δrally + 0.36 first | 0.10 second + …)</code>
+            </div>
+          </div>
+          <div class="stage">
+            <div class="panel">
+              <svg id="ptcChart" viewBox="0 0 520 300" role="img" aria-label="Win probability by skill gap"></svg>
+              <p class="cap">Drag the marker. Skill gap on the game's 20-80 scouting scale. Curves are exact for two even-tempered players.</p>
+            </div>
+            <div class="panel">
+              <div class="read">
+                <div><small>A wins a point (avg)</small><span class="big" id="ptcPt">50%</span></div>
+                <div><small>A holds serve</small><span class="big" id="ptcGm">50%</span></div>
+              </div>
+              <div class="read" style="margin-top:14px">
+                <div><small>A wins a set</small><span class="big" id="ptcSet">50%</span></div>
+                <div><small>A wins the match</small><span class="big" id="ptcMt" style="color:var(--lime)">50%</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="why">In a dual, all nine matches are decided before the first one "finishes." Clinching only changes which results you see first, never who wins.</div>
+          <div class="src">Source: tennis-team-manager/engine/rally.py and match.py, NCAA dual format (best of three, no-ad, tiebreak sets). Point odds computed with the engine's own functions; match odds checked against 1,500 simulated matches (73.7% vs 73.7% at a 6-point gap).</div>
+        </section>
+
+      <section class="uth-piece" id="uth-careers">
+          <div class="head">
+            <div><div class="eyebrow">Play To Clinch · high school careers</div><h3>Same ceiling, five careers</h3></div>
+            <div>
+              <p>Each freshman is generated with a starting level, a career peak and a hidden development budget for every year. A budget is usually a few points, but three times in ten it's a big year of 7 to 15. Playing time decides how much of each budget a player actually uses. Peak isn't a hard limit; past it, a fifth of each gain still counts.</p>
+              <code class="eq">gain = year's budget × playing time
+      playing time: bench 0.55 · full JV 0.81 · varsity 1.00</code>
+            </div>
+          </div>
+          <div class="stage">
+            <div class="panel">
+              <svg id="crChart" viewBox="0 0 520 300" role="img" aria-label="Five careers from grade 9 to 12"></svg>
+              <div class="yrs" role="group" aria-label="Playing time each season" id="crExpo" style="margin-top:10px">
+                <button type="button" class="ghost" data-x="0.55">Bench</button><button type="button" class="ghost" data-x="0.807">Full JV</button><button type="button" class="ghost" data-x="0.871">JV + varsity</button><button type="button" class="ghost" data-x="1" aria-pressed="true">Varsity</button>
+              </div>
+              <p class="cap">Five real freshmen from one generated roster, all drawn from the same 55 ceiling. Dashes mark each player's career peak. Change their playing time and watch who still makes it.</p>
+            </div>
+            <div class="panel">
+              <svg id="crNo1" viewBox="0 0 520 300" role="img" aria-label="Share of No. 1 singles by grade"></svg>
+              <p class="cap">Who plays No. 1 singles, by grade. Real Oregon boys (six seasons of OSAA results) against the sim before and after the career model.</p>
+            </div>
+          </div>
+          <div class="why">The old model let everyone improve on a similar schedule, so seniors held 85.7% of No. 1 singles seats and rosters barely reshuffled. Splitting where a player starts from how much each year can give, and tying that to playing time, put underclassmen back at the top of lineups.</div>
+          <div class="src">Source: tennis-team-manager/app/jhsaa.py (_career_plan, career_ability, exposure odometer). Careers generated with the game's own functions (school "SCHOOL", entry 2040, seats 25, 4, 10, 8, 18); the port here matches career_ability exactly. No. 1 singles shares from "Rebuilding player development in a PC sports sim," August 2026.</div>
+        </section>
+
+      <section class="uth-piece" id="uth-ygf">
+          <div class="head">
+            <div><div class="eyebrow">You Go First · the match score</div><h3>Scores run one way</h3></div>
+            <div>
+              <p>You spend ten chips on what you want across five traits. Your score for someone weights their quiz traits by your chips, so your score for them and theirs for you can differ. A temperature term rewards similar overall quiz scores.</p>
+              <code class="eq">score = 0.7 × alignment + 0.3 × temperature
+      temperature = max(0, 100 − 2 × |quiz gap|)</code>
+            </div>
+          </div>
+          <div class="pair" id="ygfPair"></div>
+          <div class="score">
+            <div><small class="t" style="font-family:var(--mono);font-size:12px;color:var(--dim)">Alex's score for Blake</small><div class="big" id="ygfAB">0</div><small class="t" id="ygfABx" style="font-family:var(--mono);font-size:12px;color:var(--dim)"></small></div>
+            <div><small class="t" style="font-family:var(--mono);font-size:12px;color:var(--dim)">Blake's score for Alex</small><div class="big" id="ygfBA">0</div><small class="t" id="ygfBAx" style="font-family:var(--mono);font-size:12px;color:var(--dim)"></small></div>
+          </div>
+          <div class="why">Both people need 60 or more for each other before a match is possible, and each person only has 3 top picks, 5 second picks and 7 third picks a week. Against the textbook stable-matching algorithm on the same 14-person pool, this matched 12 instead of 14 but spread attention more evenly.</div>
+          <div class="src">Source: heypbj/src/data/mockSimulation.ts (calculateCompatibilityScore, sample users Alex and Blake), src/lib/stableMatchingSimulator.ts.</div>
+        </section>
+    </div>
+    <script src="assets/under-the-hood.js" defer></script>
     <article class="q"><div><h3><a href="https://blog.ronbronson.com/context-engineering-for-llms-starts-with-systems-not-prompts/">Context Engineering for LLMs Starts With Systems, Not Prompts</a></h3><p class="st">June 20, 2025</p></div><div class="tx"><p>Context engineering starts with understanding what a system does, how its rules interact, and what happens when something changes. Prompts alone cannot supply that structure. Agents working with games, public services, or business processes need access to the rules, relationships, and consequences that define a system, along with clear boundaries for what they can change.</p></div></article>
     <article class="q"><div><h3><a href="https://blog.ronbronson.com/context-aware-agents-designing-for-alignment-in-ax/">Context-Aware Agents: Designing for Alignment in AX</a></h3><p class="st">February 23, 2025</p></div><div class="tx"><p>Agents operate within existing systems of rules, responsibilities, and decisions. When those relationships are missing from their context, agents can complete a task while misunderstanding its purpose. I examine how context, authority, and oversight shape agent behavior, and why judging task completion alone misses important consequences.</p></div></article>
     <article class="q"><div><h3><a href="https://blog.ronbronson.com/bringing-ax-to-life-building-a-content-schema-for-browser-games-developed-with-agents/">Bringing AX to Life: Building a Content Schema for Browser Games Developed With Agents</a></h3><p class="st">October 2026</p></div><div class="tx"><p>Building Coalition with AI agents exposed a recurring problem: game rules, interface copy, and narrative kept getting mixed together. I developed a content schema that gives each a defined place, so agents can work on dialogue, game mechanics, or interface language while preserving the relationships between them. The schema is available as a standalone package.</p></div></article>
@@ -51,6 +206,8 @@
     <h2>Colophon, with digressions</h2>
     <p id="digression">Inexplicably, a Green Bay Packers shareholder.</p>
     <p>This room is set in IBM Plex Sans Condensed and Plex Mono.</p>
+    <p>Under the hood is hand-written SVG and JavaScript with no libraries. Each model is ported from its project&rsquo;s code, and the data comes from the projects themselves: the 2026 Oregon boys results, prospects and careers generated by the O27 and Play To Clinch engines, and Play To Clinch point odds computed with its own functions.</p>
+    <p>The Occupant ticker prices its basket on every visit from OpenRouter&rsquo;s public model list, using the Occupant Indices method with current models in each tier.</p>
     <p>The project map&rsquo;s dragging is built with <a href="https://github.com/declarative-dragging/dragology">Dragology</a> (MIT), from Joshua Horowitz, Andrew Blinn and Jeffrey Heer, &ldquo;<a href="https://declarative-dragging.github.io">Declarative Dragging</a>,&rdquo; <i>Proceedings of the 39th Annual ACM Symposium on User Interface Software and Technology</i> (UIST &rsquo;26).</p>
   </footer>
 </div>
