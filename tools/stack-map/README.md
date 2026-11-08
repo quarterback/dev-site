@@ -13,3 +13,7 @@ The build bundles React and [Dragology](https://github.com/declarative-dragging/
 The project and technique pairings live in `src/stack-map.jsx` (`PROJECTS`). Edit them there, rebuild, and commit both files.
 
 Dragology is MIT licensed. Cite the paper: Joshua Horowitz, Andrew Blinn and Jeffrey Heer, "Declarative Dragging," UIST 2026.
+
+## Hall of Fame line
+
+`src/hof-line.jsx` is bundled into the same `assets/stack-map.js`, so the page loads React once. It mounts on `#hof-line` in the Under the hood section of projects.html and fetches `assets/uth/hof-line.json`. Data notes are in `hof-data/README.md`.

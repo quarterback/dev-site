@@ -88,3 +88,22 @@
 .uth--home .uth__lede { font-size: 20px; color: var(--uth-fg); }
 .uth .uth-piece:first-of-type { margin-top: 40px; }
 .uth--home .head p { color: var(--uth-fg); }
+/* Hall of Fame line (assets/stack-map.js, tools/stack-map/src/hof-line.jsx) */
+.uth .hl { margin-top: 24px; }
+.uth .hl__wrap { position: relative; touch-action: pan-y; user-select: none; }
+.uth .hl__wrap:focus-visible { outline: 3px solid var(--uth-fg); outline-offset: 4px; }
+.uth .hl__gl, .uth .hl__svg { position: absolute; inset: 0; }
+.uth .hl__svg svg { display: block; overflow: visible; }
+.uth .hl__nm { position: absolute; font: 600 11px var(--uth-mono); color: var(--uth-fg); white-space: nowrap; pointer-events: none; text-shadow: 0 0 3px var(--uth-bg), 0 0 3px var(--uth-bg); }
+.uth .hl__list { margin-top: 20px; }
+.uth .hl__list .yrs { display: flex; flex-wrap: wrap; gap: 6px; }
+.uth .hl__list button[aria-pressed="true"] { background: var(--uth-accent); color: var(--uth-on-accent); border-color: var(--uth-accent); }
+.uth .hl__sum { margin: 14px 0 8px; max-width: 40em; }
+.uth .hl__rank { list-style: none; margin: 0; padding: 0; max-width: 640px; }
+.uth .hl__rank li { display: grid; grid-template-columns: 34px minmax(0, 1fr) 40px minmax(0, 13em); gap: 8px; padding: 5px 0; border-bottom: 1px solid var(--uth-grid); font-variant-numeric: tabular-nums; }
+.uth .hl__rank li.is-last { border-bottom: 3px solid var(--uth-accent); }
+.uth .hl__rank .r, .uth .hl__rank .v, .uth .hl__rank .t { font-family: var(--uth-mono); font-size: 13px; color: var(--uth-dim); }
+.uth .hl__rank .v { text-align: right; }
+.uth .hl__rank .n { font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.uth .hl__rank .k-hof .t { color: var(--uth-fg); }
+@media (max-width: 560px) { .uth .hl__rank li { grid-template-columns: 28px minmax(0, 1fr) 36px; padding-right: 4px; } .uth .hl__rank .t { grid-column: 2 / -1; font-size: 12px; } }

@@ -7,6 +7,7 @@
 import { DraggableRenderer, translate } from "dragology";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
+import "./hof-line.jsx";
 
 const W = 1240;
 const H = 640;
