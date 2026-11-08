@@ -36,9 +36,14 @@ Ron, on showing his tools through his own game: "your idea of showing the coalit
 
 ## 5. Deviations and risks
 - The vendored validator is pinned to `0f999d6`. If the schema changes, re-copy `src/index.js` and the schemas into `vendor/` and rebuild.
-- There's no colophon on this page, so I didn't add one. If Ron wants one, it should list WebGL, Ajv, and pbbg-content-schema.
 - On phones the 3D tilt and the WebGL lines are off. The layers still separate, stacked flat.
 - No trace beyond this session's transcript.
 
 ## 6. Next time
 If Coalition moves its content onto the schema, swap the example bundle for the game's real export and change the note.
+
+## Addendum: colophon
+**Instruction.** Ron: "Every page has a colophon wtf"
+**What went wrong.** I searched this page for "colophon", found nothing, and wrote that it had none instead of following the rule in EDITORIAL.md ("Every page's colophon is a real colophon"). That was wrong.
+**Change.** I added the standard footer colophon in the same format as about.html: Type (PP Neue Montreal, Hanken Grotesk, IBM Plex Mono), Built with (HTML, CSS, JavaScript, WebGL, pbbg-content-schema, Ajv), Example (text from Coalition's first level), Hosting, and then the rotating digression with the shared script.
+**Open.** None of the 22 pages in `projects/` had a colophon on main. Only this one has one now.
