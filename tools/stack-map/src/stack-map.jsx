@@ -326,23 +326,35 @@ function makePanel(width) {
   };
 }
 
-function PhoneMap() {
+function PhoneMap({ list }) {
   const [lens, setLens] = useState(0);
   const [shown, setShown] = useState(0);
   const [width, setWidth] = useState(0);
   const wrap = useRef(null);
+  const items = useMemo(() => [...list.children], [list]);
   useEffect(() => {
     const ro = new ResizeObserver(([e]) => setWidth(Math.floor(e.contentRect.width)));
     ro.observe(wrap.current);
     return () => ro.disconnect();
   }, []);
+  // Re-sort the page's own project list: projects that use the technique
+  // first, the rest after and dimmed. "All projects" restores the original order.
+  useEffect(() => {
+    const t = TECH[shown].id;
+    const uses = (li) => {
+      const href = li.querySelector("a")?.getAttribute("href");
+      const p = PROJECTS.find((x) => x.href === href);
+      return !!p && p.uses.includes(t);
+    };
+    const sorted = shown === 0 ? items : [...items.filter(uses), ...items.filter((li) => !uses(li))];
+    sorted.forEach((li) => { list.appendChild(li); li.classList.toggle("is-dim", shown !== 0 && !uses(li)); });
+  }, [shown, items, list]);
   const panel = useMemo(() => (width ? makePanel(width) : null), [width]);
   const state = useMemo(() => ({ lens }), [lens]);
   const t = TECH[shown];
-  const rows = order(shown);
   return (
     <div className="smp" ref={wrap}>
-      <p className="smp__hint">Drag the marker, or tap a technique.</p>
+      <p className="smp__hint">Drag the marker, or tap a technique, to sort the projects.</p>
       <div className="smp__panel" aria-hidden="true">
         {panel && (
           <DraggableRenderer
@@ -356,31 +368,23 @@ function PhoneMap() {
         )}
       </div>
       <p className="sm__live" aria-live="polite">
-        {shown === 0 ? "Showing every project." : `${t.label}: ${rows.filter((p) => p.uses.includes(t.id)).map((p) => p.name).join(", ")}.`}
+        {shown === 0 ? "Showing every project." : `${t.label}: ${PROJECTS.filter((p) => p.uses.includes(t.id)).map((p) => p.name).join(", ")}.`}
       </p>
-      <ul className="smp__list">
-        {rows.map((p) => {
-          const on = shown === 0 || p.uses.includes(t.id);
-          return (
-            <li key={p.id} className={on ? "" : "is-dim"}>
-              <a href={p.href}>{p.name}</a>
-              <span>
-                {p.uses.map((u) => (
-                  <em key={u} className={u === t.id ? "is-on" : ""}>{TECH.find((x) => x.id === u).tag}</em>
-                ))}
-              </span>
-            </li>
-          );
-        })}
-      </ul>
     </div>
   );
 }
 
 const host = document.getElementById("stack-map");
-if (host) {
+const plist = document.querySelector(".plist");
+if (host && matchMedia("(min-width: 861px)").matches) {
   host.classList.add("sm--on");
-  const wide = matchMedia("(min-width: 861px)").matches;
-  host.classList.toggle("sm--phone", !wide);
-  createRoot(host.querySelector(".sm__mount")).render(wide ? <StackMap host={host} /> : <PhoneMap />);
+  createRoot(host.querySelector(".sm__mount")).render(<StackMap host={host} />);
+} else if (plist) {
+  // Phones: one list. The technique panel sits above the page's project list
+  // and sorts it; the desktop map (and its own list) isn't shown.
+  const mount = document.createElement("div");
+  mount.className = "smp__mount";
+  plist.before(mount);
+  document.documentElement.classList.add("has-smp");
+  createRoot(mount).render(<PhoneMap list={plist} />);
 }

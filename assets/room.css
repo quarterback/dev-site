@@ -134,15 +134,11 @@ html.dissolving body { visibility: hidden; }
 .rc p + p { margin-top: .3em; }
 .rc #digression { margin-top: 1.2em; }
 
-/* Project map on phones: a small technique panel to drag on, and a plain
-   list underneath so the page still scrolls under your thumb */
-.sm--phone .sm__cap { display: none; }
+/* Project map on phones: a small technique panel above the page's own
+   project list, which it sorts. The desktop map is hidden there. */
+.smp__mount { margin: 56px 0 0; }
+.has-smp .plist { margin-top: 20px; }
 .smp__hint { margin: 0 0 10px; font-family: "Plex Mono", monospace; font-size: 13px; color: var(--dim); }
 .smp__panel svg { display: block; }
-.smp__list { list-style: none; margin: 18px 0 0; padding: 0; }
-.smp__list li { display: grid; gap: 2px; padding: 10px 0; border-top: 1px solid rgba(201, 204, 255, .25); transition: opacity .15s; }
-.smp__list li.is-dim { opacity: .35; }
-.smp__list a { font-weight: 700; font-size: 20px; text-decoration: none; }
-.smp__list span { display: flex; flex-wrap: wrap; gap: 4px 12px; font-family: "Plex Mono", monospace; font-size: 13px; color: var(--dim); }
-.smp__list em { font-style: normal; }
-.smp__list em.is-on { color: var(--lime); }
+.plist li.is-dim { opacity: .35; }
+@media (max-width: 860px) { .sm { display: none; } }
