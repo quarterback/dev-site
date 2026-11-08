@@ -70,7 +70,7 @@
 
       <p>A tennis dual meet is eight concurrent matches, four singles and four doubles, and the team that wins five flights wins the meet. That structure breaks ordinary ranking. A 5-3 win at the bottom of the lineup looks identical to a 5-3 win at the top, win-loss records skip over who you played, and lineups can be &ldquo;stacked&rdquo; to game any naive metric.</p>
 
-      <p>Central data was sparse, and existing ratings handled none of this. I had to define the measurement before building ingestion, rating models, simulation, and the public tools on top of it. It also has to absorb forfeits, ties, six-flight meets, classification changes, and dirty source data.</p>
+      <p>Existing ratings handled none of this. I had to define the measurement before building the rating models, simulation, and the public tools on top of it. It also has to absorb forfeits, ties, six-flight meets, classification changes, and messy results.</p>
 
       <h2>The models</h2>
 
@@ -122,8 +122,6 @@
         <dd>Netlify Functions (v2) + Netlify Blobs for the cloud-saved SD1 draw.</dd>
         <dt>Hosting</dt>
         <dd>Netlify. Static, zero-infrastructure, offline-capable.</dd>
-        <dt>Data</dt>
-        <dd>~1,200 team-seasons, every flight, 2021 to present.</dd>
       </dl>
 
       <h2>Design decisions</h2>
