@@ -4,7 +4,7 @@
    back. A click or Enter is an ordinary link. */
 (() => {
   const pull = document.getElementById("pull");
-  if (!pull) return;
+  if (!pull || matchMedia("(max-width: 860px), (hover: none)").matches) return;
   const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const phone = () => matchMedia("(max-width: 860px)").matches;
   const rest = () => (phone() ? pull.offsetHeight : pull.offsetWidth);
