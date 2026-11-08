@@ -256,3 +256,8 @@ footer.foot {
 
 /* ── Hatch defs sit invisibly in markup ───────────── */
 .ph-defs { position: absolute; width: 0; height: 0; pointer-events: none; }
+
+/* Colophon in the footer (project pages on this stylesheet) */
+.colo { display: grid; gap: 6px; }
+.colo h2 { margin: 0 0 4px; font-size: 17px; line-height: 1.3; }
+.colo p { margin: 0; }
