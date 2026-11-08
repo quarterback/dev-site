@@ -45,83 +45,63 @@
     <script src="assets/stack-map.js" defer></script>
     <div class="uth" id="under-the-hood">
       <h2 class="uth__h">Under the hood</h2>
+      <nav class="uth__toc" aria-label="Models on this page"><ul><li><a href="#uth-hof">Marginal Player Line</a></li><li><a href="#uth-ygf">You Go First match score</a></li><li><a href="#uth-ygfweek">You Go First: a week of matching</a></li><li><a href="#uth-ptc">Play To Clinch point engine</a></li><li><a href="#uth-careers">Play To Clinch high school careers</a></li><li><a href="#uth-viper">Viperball kick decisions</a></li><li><a href="#uth-o27">O27 college prospects</a></li><li><a href="#uth-oregon">Oregon high school tennis rankings</a></li></ul></nav>
       <p class="uth__lede">These models use calculations and data from their source projects, checked against the originals. Coding agents brought them into the browser.</p>
-      <section class="uth-piece" id="uth-oregon">
+      <section class="uth-piece" id="uth-hof">
+        <div class="head">
+          <div><h3>Marginal Player Line</h3></div>
+          <div>
+            <p>I wrote a blog post, <a href="https://blog.ronbronson.com/how-do-you-evaluate-a-baseball-hall-of-famer">How Do You Evaluate a (Baseball) Hall of Famer</a>, after reading <a href="https://community.fangraphs.com/boog-and-the-hall-of-fame-part-2-infielders/">Michael Mountain&rsquo;s idea of the marginal player</a>. Count the Hall of Famers at a position, rank everyone there, and the marginal player is the one who would fill the last slot. I was curious what happens when the people the Hall recognizes don&rsquo;t resemble the people our existing measures say had careers of comparable quality. This chart ranks every retired player at each position by JAWS and draws a line where the Hall&rsquo;s own count runs out.</p>
+            <code class="eq">Career Index = JAWS &divide; Hall standard at the position &times; 100
+the line = the Nth player, where N = Hall of Famers at the position</code>
+          </div>
+        </div>
+        <div class="hl" id="hof-line" data-src="assets/uth/hof-line.json"></div>
+        <div class="src">Source: Baseball Reference JAWS leaderboards for each position and its Hall of Fame list, pulled 8 November 2026. Hall standards are each position&rsquo;s Hall of Fame average JAWS. People elected as managers or executives don&rsquo;t count toward a position&rsquo;s total. Players not yet eligible are left out.</div>
+      </section>
+
+      <section class="uth-piece" id="uth-ygf">
           <div class="head">
-            <div><h3>Oregon high school tennis rankings</h3></div>
+            <div><h3>You Go First match score</h3></div>
             <div>
-              <p>Win-loss records ignore who you played and count every flight the same, so a coach could stack a lineup to look better. My flight-weighted score weights the eight flights from 1.00 down to 0.10, so depth counts and stacking stops paying. The Power Index blends it with an RPI-style strength of schedule.</p>
-              <code class="eq">PI = 0.65·APR + 0.25·FQI + 0.10·oGS
-      FQI = (Σ flight_score·opp_strength + 5×0.5) / (duals + 5)</code>
+              <p>Scores are asymmetric. What you want, 10 chips across five traits, is scored against what they are, a behavioral quiz: 0.7 × alignment + 0.3 × temperature. Move the chips and both scores change.</p>
+              <code class="eq">score = 0.7 × alignment + 0.3 × temperature
+      temperature = max(0, 100 − 2 × |quiz gap|)</code>
             </div>
           </div>
-          <div class="stage">
-            <div class="panel">
-              <svg class="bars" id="orBars" viewBox="0 0 520 300" role="img" aria-label="Flight weights. Drag a bar to change its weight."></svg>
-              <div class="ctls"><button class="ghost" id="orReset" type="button">Reset to the real weights</button></div>
-              <p class="cap">Drag a bar to change a flight&rsquo;s weight. All 121 ranked 2026 boys teams re-rank.</p>
-            </div>
-            <div class="panel">
-              <ol class="rank" id="orRank" aria-live="polite"></ol>
-              <p class="cap">Top 12 by Power Index, with each team&rsquo;s change from the real weights.</p>
-            </div>
+          <div class="pair" id="ygfPair"></div>
+          <div class="score">
+            <div><small class="t" style="font-family:var(--mono);font-size:12px;color:var(--dim)">Alex's score for Blake</small><div class="big" id="ygfAB">0</div><small class="t" id="ygfABx" style="font-family:var(--mono);font-size:12px;color:var(--dim)"></small></div>
+            <div><small class="t" style="font-family:var(--mono);font-size:12px;color:var(--dim)">Blake's score for Alex</small><div class="big" id="ygfBA">0</div><small class="t" id="ygfBAx" style="font-family:var(--mono);font-size:12px;color:var(--dim)"></small></div>
           </div>
-          <div class="why">Grant is No. 1 in the rankings with a lower Power Index than Lincoln, .7399 to .7467. They tied 4-4 on April 22, Grant won the tiebreak on sets, and the head-to-head rule put Grant first.</div>
-          <div class="src">Source: or-tennis-data/generate_site.py (FLIGHT_WEIGHTS, TOSS weights, FQI with 5 phantom matches). FQI recomputed here matches the published value for all 121 teams.</div>
+          <div class="why">Both scores have to reach 60 before a match is possible.</div>
+          <div class="src">Source: heypbj/src/data/mockSimulation.ts (calculateCompatibilityScore, sample users Alex and Blake), src/lib/stableMatchingSimulator.ts.</div>
         </section>
 
-      <section class="uth-piece" id="uth-viper">
-          <div class="head">
-            <div><h3>Viperball kick decisions</h3></div>
-            <div>
-              <p>Viperball has six downs to gain 20 yards, and the ball moves by running, lateral chains, and kick passes. A live-play drop kick is worth 5 and a place kick 3. Every rule creates a strategy, so on a late down the coach weighs both kicks against going for it.</p>
-              <code class="eq">distance = (100 − field position) + 10
-      drop kick EV = 5 × P(drop)   place kick EV = 3 × P(place)</code>
-            </div>
+      <section class="uth-piece" id="uth-ygfweek">
+        <div class="head">
+          <div><h3>You Go First: a week of matching</h3></div>
+          <div>
+            <p>Swiping makes attention free, so a like tells you nothing and a few profiles get most of them. Everyone gets 15 picks a week in three tiers, and the other person sees the tier.</p>
+            <p>These are the app&rsquo;s 14 test profiles in its simulator. Click a person to see who they picked.</p>
           </div>
-          <div class="stage">
-            <div class="panel">
-              <svg id="vbChart" viewBox="0 0 520 300" role="img" aria-label="Kick success by distance"></svg>
-              <p class="cap">Drag the marker to change the kick distance. Highlighted line: drop kick. Plain line: place kick.</p>
-            </div>
-            <div class="panel">
-              <div class="ctls">
-                <label class="ctl" for="vbSkill">Kicker skill <output id="vbSkillO">80</output><input id="vbSkill" type="range" min="60" max="95" value="80"></label>
-                <label class="ctl" for="vbYtg">Yards to go <output id="vbYtgO">9</output><input id="vbYtg" type="range" min="1" max="20" value="9"></label>
-                <label class="ctl" for="vbDown">Down<select id="vbDown"><option value="5">5th</option><option value="6" selected>6th</option></select></label>
-                <label class="ctl" for="vbScore">Score<select id="vbScore"><option value="0" selected>Tied or ahead</option><option value="-1">Trailing</option></select></label>
-              </div>
-              <div class="read" style="margin-top:18px">
-                <div><small>Drop kick</small><span class="big" id="vbDk">0%</span><small id="vbDkEv">EV 0</small></div>
-                <div><small>Place kick</small><span class="big" id="vbPk">0%</span><small id="vbPkEv">EV 0</small></div>
-              </div>
-              <p style="margin:16px 0 0">The call: <span class="tag" id="vbCall">GO FOR IT</span></p>
-              <p class="cap" id="vbWhy"></p>
-            </div>
+        </div>
+        <div class="stage">
+          <div class="panel">
+            <svg id="ygwRing" viewBox="0 0 520 520" role="img" aria-label="Fourteen people in a ring, with lines for picks and matches"></svg>
           </div>
-          <div class="why">Early downs gain about 2 yards against 20 to go, so drives reach fifth and sixth down, where this call gets made. A missed drop kick on the first five downs usually keeps the ball.</div>
-          <div class="src">Source: viperball/engine/game_engine.py (_drop_kick_success, _place_kick_success, select_kick_decision). Shown with no clock pressure, no coaching traits, style aggression 1.0.</div>
-        </section>
-
-      <section class="uth-piece" id="uth-o27">
-          <div class="head">
-            <div><h3>O27 college prospects</h3></div>
-            <div>
-              <p>In O27, a prospect&rsquo;s box-score grade and actual ceiling are different things. Each player has a hidden ceiling and a fixed lens on it, so the grade you see is ceiling times lens. Two scouting reports estimate that ceiling with their own errors. I kept the lens fixed through college: a hidden gem can still look ordinary when draft day arrives. The decision is whether to trust the box score or two imperfect scouting reports. I explain the model in <a href="https://blog.ronbronson.dev/3mn7c3uzctk2a">the development write-up</a>.</p>
-              <code class="eq">shown  = round(ceiling × lens)     lens 0.40–0.95
-      growth = min(rate × ceiling, cap)  cap 15 → 4
-      scout  = ceiling ± fog             fog 7–31</code>
+          <div class="panel">
+            <div class="yrs" role="group" aria-label="What to show" id="ygwView"><button type="button" class="ghost" data-v="w1" aria-pressed="true">Week 1</button><button type="button" class="ghost" data-v="w2">After week 2</button><button type="button" class="ghost" data-v="gs">Textbook stable matching</button></div>
+            <div class="read" style="margin-top:18px">
+              <div><small>People matched</small><span class="big" id="ygwMatched">0</span></div>
+              <div><small>Average match score</small><span class="big" id="ygwAvg">0</span></div>
             </div>
+            <p class="cap" id="ygwNote" aria-live="polite"></p>
+            <p class="why">The textbook stable-matching algorithm pairs all 14, but only by assuming everyone knows everyone and can propose without limit. Fifteen picks a week matched 12 by week 2.</p>
+            <p class="src">Source: heypbj/src/lib/stableMatchingSimulator.ts and src/data/mockSimulation.ts, default seed.</p>
           </div>
-          <div class="ctls" style="max-width:640px">
-            <div class="yrs" role="group" aria-label="College year"><button type="button" class="ghost" data-y="0">Freshman</button><button type="button" class="ghost" data-y="1">Sophomore</button><button type="button" class="ghost" data-y="2">Junior</button><button type="button" class="ghost" data-y="3" aria-pressed="true">Senior</button></div>
-          </div>
-          <p class="cap">Pick the one you&rsquo;d draft, then sign them and the lens drops. The plain bar is the box score. The highlighted bar is the real grade.</p>
-          <div class="board" id="o27Board"></div>
-          <div class="ctls" style="max-width:640px"><button type="button" id="o27Sign">Sign them: lift the lens</button><button type="button" class="ghost" id="o27Reset">Put the lens back</button></div>
-          <div class="why">Each player&rsquo;s development rate is set when he&rsquo;s generated. Nobody regresses. Everyone develops. The mystery is in who develops fast and how much they can hide it while getting there.</div>
-          <div class="src">Source: hybrid-baseball/o27v2/college.py and college_potential.py. These four prospects were generated by the game's own generate_college_player and advance_one_year (seeds 330, 245, 20, 219); reports drawn with make_scouting_report. Players get three growth years before they can sign.</div>
-        </section>
+        </div>
+      </section>
 
       <section class="uth-piece" id="uth-ptc">
           <div class="head">
@@ -177,62 +157,82 @@
           <div class="src">Source: tennis-team-manager/app/jhsaa.py (_career_plan, career_ability, exposure odometer). Careers generated with the game's own functions (school "SCHOOL", entry 2040, seats 25, 4, 10, 8, 18); the port here matches career_ability exactly. No. 1 singles shares from "Rebuilding player development in a PC sports sim," August 2026.</div>
         </section>
 
-      <section class="uth-piece" id="uth-ygf">
+      <section class="uth-piece" id="uth-viper">
           <div class="head">
-            <div><h3>You Go First match score</h3></div>
+            <div><h3>Viperball kick decisions</h3></div>
             <div>
-              <p>Scores are asymmetric. What you want, 10 chips across five traits, is scored against what they are, a behavioral quiz: 0.7 × alignment + 0.3 × temperature. Move the chips and both scores change.</p>
-              <code class="eq">score = 0.7 × alignment + 0.3 × temperature
-      temperature = max(0, 100 − 2 × |quiz gap|)</code>
+              <p>Viperball has six downs to gain 20 yards, and the ball moves by running, lateral chains, and kick passes. A live-play drop kick is worth 5 and a place kick 3. Every rule creates a strategy, so on a late down the coach weighs both kicks against going for it.</p>
+              <code class="eq">distance = (100 − field position) + 10
+      drop kick EV = 5 × P(drop)   place kick EV = 3 × P(place)</code>
             </div>
           </div>
-          <div class="pair" id="ygfPair"></div>
-          <div class="score">
-            <div><small class="t" style="font-family:var(--mono);font-size:12px;color:var(--dim)">Alex's score for Blake</small><div class="big" id="ygfAB">0</div><small class="t" id="ygfABx" style="font-family:var(--mono);font-size:12px;color:var(--dim)"></small></div>
-            <div><small class="t" style="font-family:var(--mono);font-size:12px;color:var(--dim)">Blake's score for Alex</small><div class="big" id="ygfBA">0</div><small class="t" id="ygfBAx" style="font-family:var(--mono);font-size:12px;color:var(--dim)"></small></div>
+          <div class="stage">
+            <div class="panel">
+              <svg id="vbChart" viewBox="0 0 520 300" role="img" aria-label="Kick success by distance"></svg>
+              <p class="cap">Drag the marker to change the kick distance. Highlighted line: drop kick. Plain line: place kick.</p>
+            </div>
+            <div class="panel">
+              <div class="ctls">
+                <label class="ctl" for="vbSkill">Kicker skill <output id="vbSkillO">80</output><input id="vbSkill" type="range" min="60" max="95" value="80"></label>
+                <label class="ctl" for="vbYtg">Yards to go <output id="vbYtgO">9</output><input id="vbYtg" type="range" min="1" max="20" value="9"></label>
+                <label class="ctl" for="vbDown">Down<select id="vbDown"><option value="5">5th</option><option value="6" selected>6th</option></select></label>
+                <label class="ctl" for="vbScore">Score<select id="vbScore"><option value="0" selected>Tied or ahead</option><option value="-1">Trailing</option></select></label>
+              </div>
+              <div class="read" style="margin-top:18px">
+                <div><small>Drop kick</small><span class="big" id="vbDk">0%</span><small id="vbDkEv">EV 0</small></div>
+                <div><small>Place kick</small><span class="big" id="vbPk">0%</span><small id="vbPkEv">EV 0</small></div>
+              </div>
+              <p style="margin:16px 0 0">The call: <span class="tag" id="vbCall">GO FOR IT</span></p>
+              <p class="cap" id="vbWhy"></p>
+            </div>
           </div>
-          <div class="why">Both scores have to reach 60 before a match is possible.</div>
-          <div class="src">Source: heypbj/src/data/mockSimulation.ts (calculateCompatibilityScore, sample users Alex and Blake), src/lib/stableMatchingSimulator.ts.</div>
+          <div class="why">Early downs gain about 2 yards against 20 to go, so drives reach fifth and sixth down, where this call gets made. A missed drop kick on the first five downs usually keeps the ball.</div>
+          <div class="src">Source: viperball/engine/game_engine.py (_drop_kick_success, _place_kick_success, select_kick_decision). Shown with no clock pressure, no coaching traits, style aggression 1.0.</div>
         </section>
 
-      <section class="uth-piece" id="uth-ygfweek">
-        <div class="head">
-          <div><h3>You Go First: a week of matching</h3></div>
-          <div>
-            <p>Swiping makes attention free, so a like tells you nothing and a few profiles get most of them. Everyone gets 15 picks a week in three tiers, and the other person sees the tier.</p>
-            <p>These are the app&rsquo;s 14 test profiles in its simulator. Click a person to see who they picked.</p>
-          </div>
-        </div>
-        <div class="stage">
-          <div class="panel">
-            <svg id="ygwRing" viewBox="0 0 520 520" role="img" aria-label="Fourteen people in a ring, with lines for picks and matches"></svg>
-          </div>
-          <div class="panel">
-            <div class="yrs" role="group" aria-label="What to show" id="ygwView"><button type="button" class="ghost" data-v="w1" aria-pressed="true">Week 1</button><button type="button" class="ghost" data-v="w2">After week 2</button><button type="button" class="ghost" data-v="gs">Textbook stable matching</button></div>
-            <div class="read" style="margin-top:18px">
-              <div><small>People matched</small><span class="big" id="ygwMatched">0</span></div>
-              <div><small>Average match score</small><span class="big" id="ygwAvg">0</span></div>
+      <section class="uth-piece" id="uth-o27">
+          <div class="head">
+            <div><h3>O27 college prospects</h3></div>
+            <div>
+              <p>In O27, a prospect&rsquo;s box-score grade and actual ceiling are different things. Each player has a hidden ceiling and a fixed lens on it, so the grade you see is ceiling times lens. Two scouting reports estimate that ceiling with their own errors. I kept the lens fixed through college: a hidden gem can still look ordinary when draft day arrives. The decision is whether to trust the box score or two imperfect scouting reports. I explain the model in <a href="https://blog.ronbronson.dev/3mn7c3uzctk2a">the development write-up</a>.</p>
+              <code class="eq">shown  = round(ceiling × lens)     lens 0.40–0.95
+      growth = min(rate × ceiling, cap)  cap 15 → 4
+      scout  = ceiling ± fog             fog 7–31</code>
             </div>
-            <p class="cap" id="ygwNote" aria-live="polite"></p>
-            <p class="why">The textbook stable-matching algorithm pairs all 14, but only by assuming everyone knows everyone and can propose without limit. Fifteen picks a week matched 12 by week 2.</p>
-            <p class="src">Source: heypbj/src/lib/stableMatchingSimulator.ts and src/data/mockSimulation.ts, default seed.</p>
           </div>
-        </div>
-      </section>
+          <div class="ctls" style="max-width:640px">
+            <div class="yrs" role="group" aria-label="College year"><button type="button" class="ghost" data-y="0">Freshman</button><button type="button" class="ghost" data-y="1">Sophomore</button><button type="button" class="ghost" data-y="2">Junior</button><button type="button" class="ghost" data-y="3" aria-pressed="true">Senior</button></div>
+          </div>
+          <p class="cap">Pick the one you&rsquo;d draft, then sign them and the lens drops. The plain bar is the box score. The highlighted bar is the real grade.</p>
+          <div class="board" id="o27Board"></div>
+          <div class="ctls" style="max-width:640px"><button type="button" id="o27Sign">Sign them: lift the lens</button><button type="button" class="ghost" id="o27Reset">Put the lens back</button></div>
+          <div class="why">Each player&rsquo;s development rate is set when he&rsquo;s generated. Nobody regresses. Everyone develops. The mystery is in who develops fast and how much they can hide it while getting there.</div>
+          <div class="src">Source: hybrid-baseball/o27v2/college.py and college_potential.py. These four prospects were generated by the game's own generate_college_player and advance_one_year (seeds 330, 245, 20, 219); reports drawn with make_scouting_report. Players get three growth years before they can sign.</div>
+        </section>
 
-      <section class="uth-piece" id="uth-hof">
-        <div class="head">
-          <div><h3>Marginal Player Line</h3></div>
-          <div>
-            <p>Count the Hall of Famers at a position, rank everyone there by JAWS, and find the player who would occupy that final slot. What happens when the people that system recognizes don&rsquo;t resemble the people our existing measures tell us had careers of comparable quality?</p>
-            <code class="eq">Career Index = JAWS &divide; Hall standard at the position &times; 100
-the line = the Nth player, where N = Hall of Famers at the position</code>
+      <section class="uth-piece" id="uth-oregon">
+          <div class="head">
+            <div><h3>Oregon high school tennis rankings</h3></div>
+            <div>
+              <p>Win-loss records ignore who you played and count every flight the same, so a coach could stack a lineup to look better. My flight-weighted score weights the eight flights from 1.00 down to 0.10, so depth counts and stacking stops paying. The Power Index blends it with an RPI-style strength of schedule.</p>
+              <code class="eq">PI = 0.65·APR + 0.25·FQI + 0.10·oGS
+      FQI = (Σ flight_score·opp_strength + 5×0.5) / (duals + 5)</code>
+            </div>
           </div>
-        </div>
-        <div class="hl" id="hof-line" data-src="assets/uth/hof-line.json"></div>
-        <div class="why">With the Hall as it is, John Olerud, Lou Whitaker, Bobby Grich, Kenny Lofton, and Graig Nettles all rank above their lines. So do Pete Rose and Shoeless Joe Jackson, who are banned, and Barry Bonds and Roger Clemens, who aged off the ballot after 10 years.</div>
-        <div class="src">Source: my post, <a href="https://blog.ronbronson.com/how-do-you-evaluate-a-baseball-hall-of-famer">How Do You Evaluate a (Baseball) Hall of Famer</a>, and Baseball Reference JAWS leaderboards for each position and its Hall of Fame list, pulled 8 November 2026. Hall standards are each position&rsquo;s Hall of Fame average JAWS. People elected as managers or executives don&rsquo;t count toward a position&rsquo;s total. Players not yet eligible are left out. The marginal player is Michael Mountain&rsquo;s idea, from <a href="https://community.fangraphs.com/boog-and-the-hall-of-fame-part-2-infielders/">BOOG and the Hall of Fame</a>.</div>
-      </section>
+          <div class="stage">
+            <div class="panel">
+              <svg class="bars" id="orBars" viewBox="0 0 520 300" role="img" aria-label="Flight weights. Drag a bar to change its weight."></svg>
+              <div class="ctls"><button class="ghost" id="orReset" type="button">Reset to the real weights</button></div>
+              <p class="cap">Drag a bar to change a flight&rsquo;s weight. All 121 ranked 2026 boys teams re-rank.</p>
+            </div>
+            <div class="panel">
+              <ol class="rank" id="orRank" aria-live="polite"></ol>
+              <p class="cap">Top 12 by Power Index, with each team&rsquo;s change from the real weights.</p>
+            </div>
+          </div>
+          <div class="why">Grant is No. 1 in the rankings with a lower Power Index than Lincoln, .7399 to .7467. They tied 4-4 on April 22, Grant won the tiebreak on sets, and the head-to-head rule put Grant first.</div>
+          <div class="src">Source: or-tennis-data/generate_site.py (FLIGHT_WEIGHTS, TOSS weights, FQI with 5 phantom matches). FQI recomputed here matches the published value for all 121 teams.</div>
+        </section>
     </div>
     <script src="assets/under-the-hood.js" defer></script>
     <article class="q"><div><h3><a href="https://blog.ronbronson.com/context-engineering-for-llms-starts-with-systems-not-prompts/">Context Engineering for LLMs Starts With Systems, Not Prompts</a></h3><p class="st">June 20, 2025</p></div><div class="tx"><p>More memory cannot tell an agent what a system is supposed to do. This essay starts with the rules of the place the agent is entering, the people affected, and the ways its actions can be corrected, escalated, or stopped.</p></div></article>

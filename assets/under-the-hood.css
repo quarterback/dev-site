@@ -107,3 +107,7 @@
 .uth .hl__rank .n { font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .uth .hl__rank .k-hof .t { color: var(--uth-fg); }
 @media (max-width: 560px) { .uth .hl__rank li { grid-template-columns: 28px minmax(0, 1fr) 36px; padding-right: 4px; } .uth .hl__rank .t { grid-column: 2 / -1; font-size: 12px; } }
+/* Jump links under the section heading */
+.uth .uth__toc ul { list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 22px; font-family: var(--uth-mono); font-size: 14px; }
+.uth .uth__toc a { color: var(--uth-fg); }
+.uth .uth-piece { scroll-margin-top: 90px; }

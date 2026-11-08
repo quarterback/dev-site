@@ -94,3 +94,32 @@ Ron's two-sentence intro wasn't edited.
 
 **Kept after review:** the caption's instruction and color key, the named players in the note, the Hall standard definition, the eligibility rule, and the credit to Mountain. Each adds information found nowhere else. The tool flagged the two summary templates as overlapping, but readers see only one at a time.
 **Checks after the edits.** plain-language-default 0 problems, prosekeep PASS, unslop 0 AI-isms.
+
+## Addendum: the blurb says why, links to each model, a new order
+**Instruction.** Ron:
+- Delete the paragraph that listed the players above their lines.
+- The blurb "needs to explain why the hell I did this … I wrote a blog post called blah, blog post was curious about this, this visualization shows what … I put in the blog post."
+- Add anchors "below their subheading", because there's "no way to select them only scrolling".
+- Reorder the models "with the oregon tennis one last, it lacks context … most relevant to least relevant for a normie/technical".
+
+**Change.**
+- **Blurb**, in that structure: "I wrote a blog post, How Do You Evaluate a (Baseball) Hall of Famer, after reading Michael Mountain's idea of the marginal player. Count the Hall of Famers at a position, rank everyone there, and the marginal player is the one who would fill the last slot. I was curious what happens when the people the Hall recognizes don't resemble the people our existing measures say had careers of comparable quality. This chart ranks every retired player at each position by JAWS and draws a line where the Hall's own count runs out."
+- The player-list paragraph is gone.
+- The source line no longer repeats the post link or the Mountain credit, since the blurb now carries both.
+- **Jump links** to all eight models now sit under the "Under the hood" heading. The models have `scroll-margin-top`, so a jump lands below the sticky header.
+- **New order:** Marginal Player Line; You Go First match score; You Go First: a week of matching; Play To Clinch point engine; Play To Clinch high school careers; Viperball kick decisions; O27 college prospects; Oregon high school tennis rankings.
+  - The reasoning: baseball and dating apps need no setup, college tennis needs one rule, and the made-up sports need their rules first.
+  - Oregon goes last, as Ron asked.
+  - The home page shows only one model (careers), so nothing changes there.
+
+**Editorial tools on the blurb.**
+- `red-pen-editor brief` (audience: people browsing the page, not all baseball fans).
+- Two edits through `red-pen-editor apply`, 2 accepted:
+  - split the long first sentence that plain-language-default flagged;
+  - cut "This chart does what the post describes," which delayed the point.
+- After the edits: plain-language-default 0, prosekeep PASS, unslop 0 AI-isms.
+
+**Evidence.** Playwright at 1440 and on iPhone 14 emulation:
+- Clicking the Oregon, Marginal Player Line, and Viperball links puts each heading 119px from the top, below the header.
+- The models appear in the new order.
+- No page errors and no horizontal overflow.
