@@ -16,25 +16,21 @@
 
   const explanation = document.createElement("div");
   explanation.className = "pd-workshop-intro";
-  explanation.innerHTML = "<h3>A scene in four parts</h3>" +
-    "<p>Switch roles to see different information. Select a line to inspect its source. Then change dialogue or an action cost.</p>";
+  explanation.innerHTML = "<h3>Inspect the scene</h3>" +
+    "<p>Switch roles or select a line to see its source. Change a cost or the dialogue to check the result.</p>";
   workshop.prepend(explanation);
 
   const opening = document.createElement("section");
   opening.className = "pd-opening";
-  opening.setAttribute("aria-labelledby", "pd-entry-title");
+  opening.setAttribute("aria-label", "Coalition content example");
   opening.innerHTML =
     "<figure class='pd-game'>" +
-      "<img src='../assets/coalition/play.webp' loading='lazy' alt='Coalition game screen: a pixel-art house at dusk, parked cars, an escape clock, choices, cards and a phone message.'>" +
-      "<figcaption>Coalition, the game that led to PBBG Content Schema. This is a screenshot of the playable game.</figcaption>" +
-      "<button type='button' class='pd-from-screen'>Inspect the residence scene</button>" +
+      "<img src='../assets/coalition/play.webp' loading='lazy' alt='Coalition game screen showing a house at dusk, the escape clock and available moves.'>" +
     "</figure>" +
     "<div class='pd-brief'>" +
-      "<h2 id='pd-entry-title'>What happens when an agent edits a game?</h2>" +
-      "<p>In Coalition, actions cost hours, depend on cards, and can draw police attention. When I asked agents to edit dialogue, they sometimes changed a button or game rule.</p>" +
-      "<p>I built PBBG Content Schema to separate story text, interface labels, game rules, and writing policy. Open the scene to inspect those records and try changing them.</p>" +
-      "<button type='button' class='pd-reveal' aria-expanded='false' aria-controls='pd-workshop'>Take the scene apart</button>" +
-      "<p class='pd-game-link'><a href='/projects/coalition.html'>Read about Coalition</a></p>" +
+      "<p>In Coalition, editing dialogue with coding agents sometimes changed buttons or game rules. I built PBBG Content Schema to keep those parts separate. Change the text or an action cost to see how the checks work.</p>" +
+      "<button type='button' class='pd-reveal' aria-expanded='false' aria-controls='pd-workshop'>Inspect the scene</button>" +
+      "<p class='pd-game-link'><a href='/projects/coalition.html'>Coalition project</a></p>" +
     "</div>";
   root.append(opening, workshop);
 
@@ -43,7 +39,7 @@
   function openInspector(focusScene = false) {
     workshop.hidden = false;
     reveal.setAttribute("aria-expanded", "true");
-    reveal.textContent = "Hide the content inspector";
+    reveal.textContent = "Close the inspector";
     if (focusScene) {
       // Reuse the original source-inspection handler.
       const scene = workshop.querySelector('[data-id="residence.arrive"]');
@@ -56,11 +52,11 @@
     else {
       workshop.hidden = true;
       reveal.setAttribute("aria-expanded", "false");
-      reveal.textContent = "Take the scene apart";
+      reveal.textContent = "Inspect the scene";
       reveal.focus();
     }
   });
-  opening.querySelector(".pd-from-screen").addEventListener("click", () => openInspector(true));
+
 
   const editControls = workshop.querySelector(".pd-tools");
   if (editControls) {
