@@ -250,3 +250,11 @@ html.dissolving body { visibility: hidden; }
 /* Colophon: facts first, labels bold, the digression set apart below */
 .foot p b { display: inline-block; min-width: 6.5em; font-weight: 600; color: var(--ink); }
 .foot p.digression { margin-top: 1.2em; }
+
+/* Hero: headline and the "Currently" line first; the photo is a contained
+   rectangle beside them on wide screens and after them on phones */
+.hero--split { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: 32px 56px; align-items: end; }
+.hero__now { margin: 32px 0 0; max-width: 34em; font-size: clamp(19px, 1.6vw, 23px); line-height: 1.5; }
+.hero__ph { margin: 0; }
+.hero__ph img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 28%; }
+@media (max-width: 860px) { .hero--split { grid-template-columns: minmax(0, 1fr); } .hero__ph { max-width: 420px; } }
