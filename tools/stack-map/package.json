@@ -1,0 +1,13 @@
+{
+  "name": "stack-map",
+  "private": true,
+  "type": "module",
+  "description": "Builds assets/stack-map.js, the draggable project map on projects.html.",
+  "scripts": { "build": "node build.mjs" },
+  "dependencies": {
+    "dragology": "0.2.0",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "devDependencies": { "esbuild": "0.25.5" }
+}

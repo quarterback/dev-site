@@ -59,6 +59,19 @@ img { display: block; max-width: 100%; }
 .gr:has(.pr-scen:hover, .pr-scen:focus) .l-scen,
 .gr:has(.pr-meas:hover, .pr-meas:focus) .l-meas { stroke: var(--lime); stroke-opacity: 1; stroke-width: 2.5; }
 
+/* Stack map (assets/stack-map.js, source in tools/stack-map): the old SVG
+   map stays as the no-JS fallback and is hidden once the script mounts. */
+.sm { margin: 72px 0 0; }
+.sm .gr { margin: 0; }
+.sm--on .gr { display: none; }
+.sm__wrap { position: relative; outline: none; }
+.sm__wrap:focus-visible { outline: 3px solid #fff; outline-offset: 8px; }
+.sm__field { position: absolute; top: -32px; left: calc(-1 * var(--gut)); width: calc(100% + 2 * var(--gut)); height: calc(100% + 64px); pointer-events: none; }
+.sm__stage { position: relative; width: 1240px; transform-origin: 0 0; }
+.sm__live { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.sm__cap { display: none; margin: 28px 0 0; max-width: 60em; font-family: "Plex Mono", monospace; font-size: 13px; line-height: 1.6; color: var(--dim); }
+.sm--on .sm__cap { display: block; }
+
 /* Essays */
 .q { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 24px 72px; padding: 96px 0 0; }
 .q h3 { font-size: clamp(32px, 3.6vw, 56px); line-height: .96; }
@@ -89,7 +102,7 @@ img { display: block; max-width: 100%; }
 @media (max-width: 860px) {
   :root { --gut: 16px; }
   .q, .plist li { grid-template-columns: 1fr; }
-  .pop, .gr { display: none; }
+  .pop, .gr, .sm { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { .pop, .gr .l { transition: none; } }
 
