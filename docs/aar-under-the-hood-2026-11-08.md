@@ -47,3 +47,13 @@ Chromium: home at 1440 and 390 in Snow and Coffee, Projects at 1440 and 390; no 
 **Follow-up.** Ron: "get rid of \"currently\"". The line now starts "Founder and CEO of Vloora…".
 **Pending, discussed before changing (Ron asked):** move Systems to the bottom, take the PBBG orchestration section off the home page (to its project page), move Talks up with the podcasts side by side, and replace the tennis piece with a non-sports one.
 **Evidence.** Chromium at 1440 and 390, no errors or horizontal scroll; prosekeep PASS.
+
+## Addendum: home page reorder and You Go First matching week
+**Instruction.** Ron approved: Systems to the bottom; the PBBG orchestration walkthrough off the home page; Talks up with the podcasts side by side; replace tennis with a non-sports piece, You Go First first. Also "spell it correctly … with the right capitalizations" for the hero titles.
+**Change.**
+- Hero titles in formal title case: "Assistant Professor of Practice in Urban Technology, University of Michigan; Nonresident Senior Fellow, Global Office of Public Delivery." (Overrides the earlier AP lowercase, per Ron.)
+- Home order: hero, Under the hood (new piece), Talks, Writing, Systems, footer. The PBBG Content Schema card in Systems is cut to one sentence.
+- The orchestration walkthrough moved to projects/pbbg-content-schema.html as "Building it with agents", before "What it doesn't do".
+- Podcast players sit in a two-column grid, stacked on phones.
+- New piece "You Go First: a week of matching" on the home page and Projects (now seven pieces). Data: heypbj's own simulateSPA and galeShapley run unchanged with the default seed (20260208), with a small patch to export each week's signals and mutual pairs. Week 1: 13 in the market (Riley's incomplete profile sits out), 156 signals, 59 mutual pairs, 5 matches (10 of 14 people); week 2 adds 1 (12 of 14). Gale–Shapley (stable roommates) pairs all 14, average 75.2, matching the repo's AAR.
+**Evidence.** Chromium: home at 1440 (Snow, Coffee) and 390, Projects at 1440, PBBG page at 1440; no errors, no horizontal scroll; clicking Alex shows 3/5/4 picks sent, 12 received, matched with Blake (82.3 / 83.0). prosekeep PASS.

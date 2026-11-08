@@ -258,3 +258,9 @@ html.dissolving body { visibility: hidden; }
 .hero__ph { margin: 0; }
 .hero__ph img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 28%; }
 @media (max-width: 860px) { .hero--split { grid-template-columns: minmax(0, 1fr); } .hero__ph { max-width: 420px; } }
+
+/* Podcast players side by side, stacked on phones */
+.eps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; margin-top: 40px; }
+.eps .ep { margin: 0; max-width: none; }
+.eps .ep + .ep { margin-top: 0; }
+@media (max-width: 860px) { .eps { grid-template-columns: minmax(0, 1fr); gap: 16px; } }

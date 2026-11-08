@@ -48,66 +48,49 @@
   <section class="g hero hero--split" id="top" aria-labelledby="h">
     <div class="hero__text">
       <h1 id="h" class="hero__stand">Building tools for the speculative present</h1>
-      <p class="hero__now">Founder and CEO of <a href="https://vloora.com">Vloora</a>, a startup building the plumbing of the agentic web; <a href="https://taubmancollege.umich.edu/faculty/directory/ron-bronson/">assistant professor of practice in Urban Technology</a> at the University of Michigan; and nonresident senior fellow at the Global Office of Public Delivery.</p>
+      <p class="hero__now">Founder and CEO of <a href="https://vloora.com">Vloora</a>, a startup building the plumbing of the agentic web; <a href="https://taubmancollege.umich.edu/faculty/directory/ron-bronson/">Assistant Professor of Practice in Urban Technology</a>, University of Michigan; Nonresident Senior Fellow, Global Office of Public Delivery.</p>
     </div>
     <figure class="hero__ph"><img src="assets/dev-ron-mic.jpg" alt="Ron speaking into a handheld microphone, wearing a yellow shirt" width="1400" height="933" /></figure>
   </section>
 
-  <section class="g sec" id="systems" aria-labelledby="h-sys">
-    <h2 id="h-sys">Systems</h2>
-    <article class="sys"><div><h3><a href="https://www.npmjs.com/package/red-pen-editor">Red Pen Editor</a></h3><code>npm i red-pen-editor</code></div><div class="sys__b"><p class="sys__idea">An editor for AI agents with permission to cut. It looks for what a draft can lose without changing what it says, and it refuses any cut that would drop the last mention of a number, date, or link. Agents can use it as a skill or through an MCP server. It runs locally, with no API key.</p></div></article>
-    <article class="sys"><div><h3><a href="projects/pbbg-content-schema.html">PBBG Content Schema</a></h3><code>npx -y github:quarterback/pbbg-content-schema install-skill</code></div><div class="sys__b"><p class="sys__idea">A reusable content architecture for browser games built with AI agents. It keeps interface copy, narrative, rules, and game state apart, so an agent can change one without breaking the others. Each layer has its own job and the links between them are written down. A checker tells the agent whether an edit stayed inside its layer.</p><p><a href="https://blog.ronbronson.com/bringing-ax-to-life-building-a-content-schema-for-browser-games-developed-with-agents/">Bringing AX to Life: Building a Content Schema for Browser Games Developed With Agents</a></p></div></article>
-    <article class="sys"><div><h3><a href="projects/closedtab.html">closedtab</a></h3><code>npm i closedtab</code></div><div class="sys__b"><p class="sys__idea">Shared memory for people and AI agents. It records what an agent decided and where it went off plan, which test results and agent logs often miss. The next session starts with that record.</p><p><a href="https://blog.ronbronson.com/closedtab-a-npm-shared-memory-for-you-and-your-ai-agents">Closedtab: A npm shared memory for you and your AI agents</a><br /><a href="https://blog.ronbronson.com/agent-experience-needs-failure-affordances/">Agent Experience Needs Failure Affordances</a></p></div></article>
-    <article class="sys"><div><h3><a href="projects/prosekeep.html">Prosekeep</a></h3><code>npm i prosekeep</code></div><div class="sys__b"><p class="sys__idea">An editorial system for teams writing with AI agents. It carries writing standards, author decisions, source requirements, and publishing workflows across repositories and agent tools. I treat editorial authority as a content design problem: an author&rsquo;s decisions should still hold when the writing reaches editing and review in another tool.</p></div></article>
-    <article class="sys"><div><h3><a href="https://www.npmjs.com/package/plain-language-default">plain-language-default</a></h3><code>npm i plain-language-default</code></div><div class="sys__b"><p class="sys__idea">A reusable writing standard for AI agents based on the U.S. Federal Plain Language Guidelines. It gives every agent the same rules for writing plainly.</p></div></article>
-  </section>
-
   <section class="g sec uth uth--home" id="under-the-hood" aria-labelledby="h-uth">
     <h2 id="h-uth">Under the hood</h2>
-    <p class="uth__lede">Some of my projects run on math most people never see. This is one of six live models of it; the other five are on the <a href="projects.html" data-dissolve="room">Projects</a> page.</p>
-    <section class="uth-piece" id="uth-oregon">
-        <div class="head">
-          <div><h3>Oregon high school tennis rankings</h3></div>
-          <div>
-            <p>A dual is eight flights. A team's flight score weights each one, so a win at No. 1 singles counts ten times a win at No. 4. That score, adjusted for opponent strength, feeds the Power Index the OSAA now seeds from.</p>
-            <code class="eq">PI = 0.65·APR + 0.25·FQI + 0.10·oGS
-    FQI = (Σ flight_score·opp_strength + 5×0.5) / (duals + 5)</code>
-          </div>
+    <p class="uth__lede">Some of my projects run on math most people never see. This is one of seven live models of it; the rest are on the <a href="projects.html" data-dissolve="room">Projects</a> page.</p>
+    <section class="uth-piece" id="uth-ygfweek">
+      <div class="head">
+        <div><h3>You Go First: a week of matching</h3></div>
+        <div>
+          <p>Dating apps run on unlimited swiping, so attention piles onto a few people. You Go First gives everyone three top picks, five second picks and seven third picks a week. A match needs picks in both directions and a score of at least 60 each way.</p>
+          <p>These are the app&rsquo;s 14 test profiles, run through its own simulator. Click a person to see who they picked.</p>
         </div>
-        <div class="stage">
-          <div class="panel">
-            <svg class="bars" id="orBars" viewBox="0 0 520 300" role="img" aria-label="Flight weights. Drag a bar to change its weight."></svg>
-            <div class="ctls"><button class="ghost" id="orReset" type="button">Reset to the real weights</button></div>
-            <p class="cap">Drag a bar up or down. The table re-ranks all 121 ranked 2026 boys teams live.</p>
-          </div>
-          <div class="panel">
-            <ol class="rank" id="orRank" aria-live="polite"></ol>
-            <p class="cap">Top 12 by Power Index. The right column shows the change from the real weights.</p>
-          </div>
+      </div>
+      <div class="stage">
+        <div class="panel">
+          <svg id="ygwRing" viewBox="0 0 520 520" role="img" aria-label="Fourteen people in a ring, with lines for picks and matches"></svg>
         </div>
-        <div class="why">The official No. 1 is Grant, with a lower Power Index (.7399) than Lincoln (.7467). They tied 4-4 on April 22, Grant won the tiebreak on sets, and the head-to-head rule lifted Grant above Lincoln. The tiebreak loser's record shows a tie, so statewide wins and losses never balance, on purpose.</div>
-        <div class="src">Source: or-tennis-data/generate_site.py (FLIGHT_WEIGHTS, TOSS weights, FQI with 5 phantom matches). FQI recomputed here matches the published value for all 121 teams.</div>
-      </section>
+        <div class="panel">
+          <div class="yrs" role="group" aria-label="What to show" id="ygwView"><button type="button" class="ghost" data-v="w1" aria-pressed="true">Week 1</button><button type="button" class="ghost" data-v="w2">After week 2</button><button type="button" class="ghost" data-v="gs">Textbook stable matching</button></div>
+          <div class="read" style="margin-top:18px">
+            <div><small>People matched</small><span class="big" id="ygwMatched">0</span></div>
+            <div><small>Average match score</small><span class="big" id="ygwAvg">0</span></div>
+          </div>
+          <p class="cap" id="ygwNote" aria-live="polite"></p>
+          <p class="why">Over twelve simulated weeks, the textbook algorithm pairs all 14, but it assumes everyone knows everyone and can propose without limit. Scarce picks match 12 and spread attention more evenly across the pool.</p>
+          <p class="src">Source: heypbj/src/lib/stableMatchingSimulator.ts and src/data/mockSimulation.ts, default seed.</p>
+        </div>
+      </div>
+    </section>
   </section>
-  <script src="assets/under-the-hood.js" defer></script>
 
-  <section class="g sec" id="orchestration" aria-labelledby="h-orch">
-    <h2 id="h-orch">Multi-agent orchestration: building PBBG Content Schema</h2>
-    <div class="essay">
-      <p class="essay__lede">I developed PBBG Content Schema after agent-assisted work on Coalition exposed recurring problems with language and game logic. Agents mixed narrative with interface copy and rebuilt action costs or conditions from scattered code. The response was a reusable architecture that separates those responsibilities and gives agents tools to inspect them.</p>
-      <h3>Define the release and its boundaries</h3>
-      <p>I chose to release the reusable architecture before building another game around it. I directed the work to stay independent of other editorial tools and to use a neutral example. Codex prepared the initial package: schemas, writing policies, reference checks, text rendering, a command-line tool, tests, and adoption documentation.</p>
-      <p>The action record also keeps an owner decision that changed the agent&rsquo;s first choice. Codex picked an MIT license. I specified the Eclipse Public License 2.0, and the record notes the change and the package updates that followed.</p>
-      <h3>Give the next agent a bounded extension</h3>
-      <p>Next I asked for an Agent Skill and a Model Context Protocol server so agents could use the package directly. Claude added that access layer and left the content format, schemas, and existing validation rules unchanged.</p>
-      <p>The server exposes five read-only tools. An agent can retrieve writing guidance, validate a content bundle, inspect schemas, check which facts a role may see, and preview rendered text. Each tool calls the existing library functions, so the command-line checks and the agent&rsquo;s checks stay consistent.</p>
-      <h3>Record what was tested and what wasn&rsquo;t finished</h3>
-      <p>The implementation records describe checks for invalid references, hidden facts, action-cost rendering, and policy scope. The second stage added tests for the server and documented a connection through an MCP client.</p>
-      <p>Coalition supplied the original problem and the extraction reference, but at that point its inline content hadn&rsquo;t moved to the package. Passing the checks proved the structure held. They didn&rsquo;t test the writing itself, string coverage, or the game integration.</p>
-      <h3>Handle a failure without inventing a diagnosis</h3>
-      <p>The first publishing attempt failed after the package checks passed. I asked Claude to investigate. It could inspect the failed step but couldn&rsquo;t see the raw log or the secret settings, so it recorded that the cause was unconfirmed.</p>
-      <p>Claude changed the workflow to check authentication before publishing and to surface errors on the run page. Its handoff documented the change, the evidence still needed, and the step I had to take to rerun the workflow.</p>
-      <p>At each stage I set the purpose and scope and made the calls that needed an owner. The agents wrote the code and tests and explained their technical choices. Every stage ended with a record of what was finished and checked, and what was still open.</p>
+  <section class="g sec" id="talks" aria-labelledby="h-talks">
+    <h2 id="h-talks">Talks and conversations</h2>
+    <div class="media">
+      <figure><div class="vidwrap"><iframe src="https://www.youtube-nocookie.com/embed/hnAScuK-oMo" title="Beyond Civic Tech: Public Mechanics Starts at Home, Ron Bronson at CUGOS" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div><figcaption>Beyond Civic Tech: Public Mechanics Starts at Home<span>CUGOS Fall Fling keynote, November 2025</span></figcaption></figure>
+      <figure><div class="vidwrap"><iframe src="https://www.youtube-nocookie.com/embed/_HAVowmb3JU" title="What Finnish Baseball Taught Me About Game Design, Ron Bronson at Donut.js" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div><figcaption>What Finnish Baseball Taught Me About Game Design<span>Donut.js, Portland, November 2019</span></figcaption></figure>
+    </div>
+    <div class="eps">
+    <iframe class="ep" title="Repairing Service Design for the Age of AI, Service Design Show" src="https://embed.podcasts.apple.com/us/podcast/repairing-service-design-for-the-age-of-ai-ron-bronson-ep-236/id1104665758?i=1000726081505" height="175" loading="lazy" allow="autoplay *; encrypted-media *; clipboard-write" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"></iframe>
+    <iframe class="ep" title="Consequence Design with Ron Bronson, Technically Speaking with Harrison Wheeler" src="https://embed.podcasts.apple.com/us/podcast/consequence-design-with-ron-bronson/id1505591873?i=1000479159967" height="175" loading="lazy" allow="autoplay *; encrypted-media *; clipboard-write" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"></iframe>
     </div>
   </section>
 
@@ -122,17 +105,16 @@
     </ul>
   </section>
 
-  <section class="g sec" id="talks" aria-labelledby="h-talks">
-    <h2 id="h-talks">Talks and conversations</h2>
-    <div class="media">
-      <figure><div class="vidwrap"><iframe src="https://www.youtube-nocookie.com/embed/hnAScuK-oMo" title="Beyond Civic Tech: Public Mechanics Starts at Home, Ron Bronson at CUGOS" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div><figcaption>Beyond Civic Tech: Public Mechanics Starts at Home<span>CUGOS Fall Fling keynote, November 2025</span></figcaption></figure>
-      <figure><div class="vidwrap"><iframe src="https://www.youtube-nocookie.com/embed/_HAVowmb3JU" title="What Finnish Baseball Taught Me About Game Design, Ron Bronson at Donut.js" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div><figcaption>What Finnish Baseball Taught Me About Game Design<span>Donut.js, Portland, November 2019</span></figcaption></figure>
-    </div>
-    <iframe class="ep" title="Repairing Service Design for the Age of AI, Service Design Show" src="https://embed.podcasts.apple.com/us/podcast/repairing-service-design-for-the-age-of-ai-ron-bronson-ep-236/id1104665758?i=1000726081505" height="175" loading="lazy" allow="autoplay *; encrypted-media *; clipboard-write" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"></iframe>
-    <iframe class="ep" title="Consequence Design with Ron Bronson, Technically Speaking with Harrison Wheeler" src="https://embed.podcasts.apple.com/us/podcast/consequence-design-with-ron-bronson/id1505591873?i=1000479159967" height="175" loading="lazy" allow="autoplay *; encrypted-media *; clipboard-write" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"></iframe>
+  <section class="g sec" id="systems" aria-labelledby="h-sys">
+    <h2 id="h-sys">Systems</h2>
+    <article class="sys"><div><h3><a href="https://www.npmjs.com/package/red-pen-editor">Red Pen Editor</a></h3><code>npm i red-pen-editor</code></div><div class="sys__b"><p class="sys__idea">An editor for AI agents with permission to cut. It looks for what a draft can lose without changing what it says, and it refuses any cut that would drop the last mention of a number, date, or link. Agents can use it as a skill or through an MCP server. It runs locally, with no API key.</p></div></article>
+    <article class="sys"><div><h3><a href="projects/pbbg-content-schema.html">PBBG Content Schema</a></h3><code>npx -y github:quarterback/pbbg-content-schema install-skill</code></div><div class="sys__b"><p class="sys__idea">A content format and checker that keeps a browser game&rsquo;s rules, story and interface text apart, so AI agents can edit one without breaking the others.</p></div></article>
+    <article class="sys"><div><h3><a href="projects/closedtab.html">closedtab</a></h3><code>npm i closedtab</code></div><div class="sys__b"><p class="sys__idea">Shared memory for people and AI agents. It records what an agent decided and where it went off plan, which test results and agent logs often miss. The next session starts with that record.</p><p><a href="https://blog.ronbronson.com/closedtab-a-npm-shared-memory-for-you-and-your-ai-agents">Closedtab: A npm shared memory for you and your AI agents</a><br /><a href="https://blog.ronbronson.com/agent-experience-needs-failure-affordances/">Agent Experience Needs Failure Affordances</a></p></div></article>
+    <article class="sys"><div><h3><a href="projects/prosekeep.html">Prosekeep</a></h3><code>npm i prosekeep</code></div><div class="sys__b"><p class="sys__idea">An editorial system for teams writing with AI agents. It carries writing standards, author decisions, source requirements, and publishing workflows across repositories and agent tools. I treat editorial authority as a content design problem: an author&rsquo;s decisions should still hold when the writing reaches editing and review in another tool.</p></div></article>
+    <article class="sys"><div><h3><a href="https://www.npmjs.com/package/plain-language-default">plain-language-default</a></h3><code>npm i plain-language-default</code></div><div class="sys__b"><p class="sys__idea">A reusable writing standard for AI agents based on the U.S. Federal Plain Language Guidelines. It gives every agent the same rules for writing plainly.</p></div></article>
   </section>
 
-  </main>
+</main>
 
   <footer class="g foot" id="contact">
     <div>
@@ -150,6 +132,7 @@
       <p class="digression" id="digression">Inexplicably, a Green Bay Packers shareholder.</p>
     </div>
   </footer>
+  <script src="assets/under-the-hood.js" defer></script>
   <script>
     /* Colour theme: the two swatches in the top bar set data-theme on
        <html> and remember the pick. The head script applies it early. */

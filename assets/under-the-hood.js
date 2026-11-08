@@ -343,4 +343,64 @@ function ygf() {
   render();
 }
 if (document.getElementById("ygfPair")) ygf();
+
+function ygfweek(D) {
+  const svg = document.getElementById("ygwRing");
+  const name = Object.fromEntries(D.users.map((u) => [u.id, u.name]));
+  const ids = D.users.map((u) => u.id);
+  const W = 520, H = 520, cx = 260, cy = 262, R = 196;
+  const pos = {}; ids.forEach((id, i) => { const a = (i / ids.length) * Math.PI * 2 - Math.PI / 2; pos[id] = [cx + R * Math.cos(a), cy + R * Math.sin(a), a]; });
+  const gLines = el("g", {}, svg), gNodes = el("g", {}, svg);
+  let view = "w1", sel = null;
+  const TIER_W = { first: 3, second: 1.6, third: 0.8 };
+  const matchesFor = (v) => (v === "gs" ? D.gs.matches : v === "w1" ? D.weeks[0].matches : D.weeks[0].matches.concat(D.weeks[1].matches));
+  const nodes = ids.map((id) => {
+    const [x, y, a] = pos[id];
+    const g = el("g", { tabindex: 0, role: "button", style: "cursor:pointer" }, gNodes);
+    const c = el("circle", { cx: x, cy: y, r: 9 }, g);
+    const lx = cx + (R + 22) * Math.cos(a), ly = cy + (R + 22) * Math.sin(a);
+    const t = el("text", { x: lx, y: ly + 4, "text-anchor": Math.abs(Math.cos(a)) < 0.2 ? "middle" : Math.cos(a) > 0 ? "start" : "end", "font-size": 14, fill: "var(--uth-fg)" }, g);
+    t.textContent = name[id];
+    const pick = () => { sel = sel === id ? null : id; draw(); };
+    g.addEventListener("click", pick); g.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); pick(); } });
+    return { id, c, t };
+  });
+  function line(a, b, attrs) { const [x1, y1] = pos[a], [x2, y2] = pos[b]; return el("line", { x1, y1, x2, y2, ...attrs }, gLines); }
+  function draw() {
+    gLines.innerHTML = "";
+    const ms = matchesFor(view), partner = {};
+    ms.forEach((m) => { partner[m.a] = m.b; partner[m.b] = m.a; });
+    if (sel && view !== "gs") {
+      const wk = D.weeks[view === "w1" ? 0 : 1];
+      wk.signals.filter((s) => s.from === sel).forEach((s) => line(s.from, s.to, { stroke: "var(--uth-dim)", "stroke-width": TIER_W[s.tier], "stroke-opacity": 0.8 }));
+    }
+    ms.forEach((m) => line(m.a, m.b, { stroke: "var(--uth-accent)", "stroke-width": 4 }));
+    nodes.forEach((n) => {
+      const out = view !== "gs" && D.weeks[0].active.indexOf(n.id) < 0;
+      n.c.style.fill = partner[n.id] ? "var(--uth-accent)" : out ? "transparent" : "var(--uth-fg)";
+      n.c.style.stroke = "var(--uth-fg)"; n.c.setAttribute("stroke-width", sel === n.id ? 3 : 1);
+      n.t.style.fontWeight = sel === n.id ? "700" : "400";
+    });
+    const avg = ms.reduce((a, m) => a + (m.ab + m.ba) / 2, 0) / (ms.length || 1);
+    const people = Object.keys(partner).length;
+    document.getElementById("ygwMatched").textContent = `${people} of ${ids.length}`;
+    document.getElementById("ygwAvg").textContent = avg.toFixed(1);
+    let note = "";
+    if (sel) {
+      if (view === "gs") note = `${name[sel]} is paired with ${name[partner[sel]]}. Stable matching gives everyone full information and unlimited proposals.`;
+      else {
+        const wk = D.weeks[view === "w1" ? 0 : 1], out = wk.signals.filter((s) => s.from === sel);
+        const cnt = (t) => out.filter((s) => s.tier === t).length;
+        const inc = wk.signals.filter((s) => s.to === sel).length;
+        note = out.length ? `${name[sel]} sent ${cnt("first")} top, ${cnt("second")} second and ${cnt("third")} third picks and received ${inc}.` : D.weeks[0].active.indexOf(sel) < 0 ? `${name[sel]}'s profile is incomplete, so ${name[sel]} isn't shown to anyone yet.` : `${name[sel]} matched in week 1 and left the market.`;
+        if (partner[sel]) note += ` Matched with ${name[partner[sel]]}: ${D.scores[sel][partner[sel]].toFixed(1)} one way, ${D.scores[partner[sel]][sel].toFixed(1)} the other.`;
+      }
+    } else note = view === "gs" ? "The textbook algorithm pairs everyone, including the incomplete profile." : "Click a person to see who they picked. Thicker lines are higher picks.";
+    document.getElementById("ygwNote").textContent = note;
+    document.querySelectorAll("#ygwView button").forEach((b) => b.setAttribute("aria-pressed", b.dataset.v === view));
+  }
+  document.querySelectorAll("#ygwView button").forEach((b) => (b.onclick = () => { view = b.dataset.v; draw(); }));
+  draw();
+}
+if (document.getElementById("ygwRing")) fetch("assets/uth/ygf-week.json").then((r) => r.json()).then(ygfweek);
 })();

@@ -45,7 +45,7 @@
     <script>if(matchMedia("(min-width: 861px)").matches){var s=document.createElement("script");s.src="assets/stack-map.js";s.defer=true;document.currentScript.after(s)}</script>
     <div class="uth" id="under-the-hood">
       <h2 class="uth__h">Under the hood</h2>
-      <p class="uth__lede">The math inside six of these projects, running on each project&rsquo;s own code and data.</p>
+      <p class="uth__lede">Seven live models of the math inside these projects, each running on its project&rsquo;s own code and data.</p>
       <section class="uth-piece" id="uth-oregon">
           <div class="head">
             <div><h3>Oregon high school tennis rankings</h3></div>
@@ -194,6 +194,31 @@
           <div class="why">Both people need 60 or more for each other before a match is possible, and each person only has 3 top picks, 5 second picks and 7 third picks a week. Against the textbook stable-matching algorithm on the same 14-person pool, this matched 12 instead of 14 but spread attention more evenly.</div>
           <div class="src">Source: heypbj/src/data/mockSimulation.ts (calculateCompatibilityScore, sample users Alex and Blake), src/lib/stableMatchingSimulator.ts.</div>
         </section>
+
+      <section class="uth-piece" id="uth-ygfweek">
+        <div class="head">
+          <div><h3>You Go First: a week of matching</h3></div>
+          <div>
+            <p>Dating apps run on unlimited swiping, so attention piles onto a few people. You Go First gives everyone three top picks, five second picks and seven third picks a week. A match needs picks in both directions and a score of at least 60 each way.</p>
+            <p>These are the app&rsquo;s 14 test profiles, run through its own simulator. Click a person to see who they picked.</p>
+          </div>
+        </div>
+        <div class="stage">
+          <div class="panel">
+            <svg id="ygwRing" viewBox="0 0 520 520" role="img" aria-label="Fourteen people in a ring, with lines for picks and matches"></svg>
+          </div>
+          <div class="panel">
+            <div class="yrs" role="group" aria-label="What to show" id="ygwView"><button type="button" class="ghost" data-v="w1" aria-pressed="true">Week 1</button><button type="button" class="ghost" data-v="w2">After week 2</button><button type="button" class="ghost" data-v="gs">Textbook stable matching</button></div>
+            <div class="read" style="margin-top:18px">
+              <div><small>People matched</small><span class="big" id="ygwMatched">0</span></div>
+              <div><small>Average match score</small><span class="big" id="ygwAvg">0</span></div>
+            </div>
+            <p class="cap" id="ygwNote" aria-live="polite"></p>
+            <p class="why">Over twelve simulated weeks, the textbook algorithm pairs all 14, but it assumes everyone knows everyone and can propose without limit. Scarce picks match 12 and spread attention more evenly across the pool.</p>
+            <p class="src">Source: heypbj/src/lib/stableMatchingSimulator.ts and src/data/mockSimulation.ts, default seed.</p>
+          </div>
+        </div>
+      </section>
     </div>
     <script src="assets/under-the-hood.js" defer></script>
     <article class="q"><div><h3><a href="https://blog.ronbronson.com/context-engineering-for-llms-starts-with-systems-not-prompts/">Context Engineering for LLMs Starts With Systems, Not Prompts</a></h3><p class="st">June 20, 2025</p></div><div class="tx"><p>Context engineering starts with understanding what a system does, how its rules interact, and what happens when something changes. Prompts alone cannot supply that structure. Agents working with games, public services, or business processes need access to the rules, relationships, and consequences that define a system, along with clear boundaries for what they can change.</p></div></article>
