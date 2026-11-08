@@ -74,3 +74,8 @@ Chromium: home at 1440 and 390 in Snow and Coffee, Projects at 1440 and 390; no 
 **Change.** The home page's copy of the career piece still had the earlier text, because the edits landed only in projects.html; it now matches. Added serial commas (house style) to five lists, including two from the editorial pass and three of mine. No other wording changed.
 **Follow-up.** Ron: remove "build record" ("not my language"). The sentence and its link are gone from the Projects lede.
 **Evidence.** Chromium home and Projects: no errors, pull tab and career chart work; prosekeep PASS.
+
+## Addendum: Home link on Projects; spam-safe contact links
+**Instruction.** Ron: Projects needs a visible way back to the .dev home besides the name; the nav needs a contact email that can't be spammed.
+**Change.** Projects nav now starts with "Home" (index.html, with the dissolve back to the home colours). Every plain `mailto:ron@ronbronson.com` on index, projects, about, more and talks (nav, footer icon, the Speaking link) now uses the site's existing `assets/contact.js`, which assembles the address only on click, so it never appears in the page source. Fallback href is #contact (each page's footer; added the id to the Projects footer). contact.js is now loaded on index and projects. Also fixed about/more/talks "Work" links that pointed to index.html#work, an anchor that no longer exists.
+**Evidence.** No email address in any of the five pages' source; the reversed string decodes to ron@ronbronson.com; Projects "Home" arrives at index.html; no page errors.
