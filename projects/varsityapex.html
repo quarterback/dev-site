@@ -172,8 +172,42 @@
 
   <footer class="foot">
     <span>Reach me at <a href="mailto:contact@ronbronson.com">contact@ronbronson.com</a>.</span>
+    <div class="colo">
+      <h2>Colophon, with digressions</h2>
+      <p><b>Type</b> Author, RX100, Hanken Grotesk</p>
+      <p><b>Built with</b> HTML, CSS, JavaScript, SVG</p>
+      <p><b>Hosting</b> GitHub, Vercel</p>
+      <p class="digression" id="digression">Inexplicably, a Green Bay Packers shareholder.</p>
+    </div>
   </footer>
 
 </div>
+  <script>
+    /* Digressions — one aside, picked at random per load (never the same
+       one twice in a row). Add or edit entries in DIGRESSIONS; the footer
+       shows one at a time so the list never has to be spelled out. */
+    (function () {
+      var DIGRESSIONS = [
+        "Inexplicably, a Green Bay Packers shareholder.",
+        "Favorite sports teams: Toronto Blue Jays, Vimpelin Veto, New Jersey Devils, Lapuan Virkiä, <s>New York Jets</s>, Portland Timbers, New York Knicks, Portland Thorns, Brighton &amp; Hove Albion, Sassuolo, Toluca, Toronto Tempo, Montreal Expos (RIP)",
+        "<em>Have you seen my fragrance collection?</em> <a href='https://www.oksmelly.xyz/' target='_blank' rel='noopener'>it’s here</a>.",
+        "I’m a longtime tea sommelier. I once curated the tea menu at <a href='https://hopscotchcoffee.com/' target='_blank' rel='noopener'>Hopscotch Coffee</a> in Bloomington. Ask me for loose-leaf recs!",
+        "Favorite wine regions: Slovenia, Georgia or anything that aged in amphorae or an old boot. I’m not picky.",
+        "I’ve coached high school tennis for ten years across 3 states. My career varsity record apparently is 91-33-4. 1 team state championship, 4 District/Regional titles, 5 Conference titles. 4 individual state champions. So far…",
+        "Yes, I have a <a href='https://www.discogs.com/user/quarterback/collection?header=1' target='_blank' rel='noopener'>Discogs</a> 🙄",
+        "I actually grew up watching golf, because my grandfather played. I still like a Par 3 because of him.",
+        "Last time I went fishing? 1994.",
+        "Unsurprisingly, I was once a bar trivia host in Bloomington. One step closer to my true calling: game show host."
+      ];
+      var el = document.getElementById("digression");
+      if (!el) return;
+      var last = -1;
+      try { last = parseInt(sessionStorage.getItem("rb-digression"), 10); } catch (e) {}
+      var i = Math.floor(Math.random() * DIGRESSIONS.length);
+      while (DIGRESSIONS.length > 1 && i === last) i = Math.floor(Math.random() * DIGRESSIONS.length);
+      try { sessionStorage.setItem("rb-digression", i); } catch (e) {}
+      el.innerHTML = DIGRESSIONS[i];
+    })();
+  </script>
 </body>
 </html>
