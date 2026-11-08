@@ -76,3 +76,21 @@ Reading every generated sentence also found "none players", a sentence opening w
 - **Note under the chart:** "With the Hall as it is, … all rank above their lines. So do Pete Rose and Shoeless Joe Jackson, who are banned, and Barry Bonds and Roger Clemens, who aged off the ballot after 10 years."
 - **Source line:** "Only people elected as players count toward a position's total, so managers, executives, and Negro Leagues inductees don't."
 **Result.** plain-language-default 0 problems, prosekeep PASS, and unslop 0 AI-isms across all 1,288 words. No page errors.
+
+## Addendum: red-pen-editor
+**Instruction.** Ron: "Use red pen editorial"
+**Model review blocked.** `red-pen-editor review` needs a local Ollama model. I downloaded Ollama into the scratchpad, but the session's safety check blocked running the downloaded binary. I didn't try to get around that. If Ron allows it, or runs `red-pen-editor review` himself, the model pass can still happen.
+**What ran instead.** red-pen-editor's agent route:
+- `brief` with the audience ("people browsing Ron's projects page who like baseball or data"), the purpose, and `--preserve "8 November 2026"`;
+- a review against that brief;
+- `apply --edits`, so the tool checked each edit and made it.
+
+Ron's two-sentence intro wasn't edited.
+**Edits (2 accepted, 0 rejected, 6 net words removed).**
+1. **Source line, counting rule.** "Only people elected as players count toward a position's total, so managers, executives, and Negro Leagues inductees don't." became "People elected as managers or executives don't count toward a position's total."
+   - It repeated the caption's Negro Leagues point.
+   - It contradicted itself, since Negro Leagues inductees were elected as players.
+2. **Source line, opening.** "From my post, … Data: Baseball Reference…" became "Source: my post, …, and Baseball Reference…", to match the other pieces' source lines.
+
+**Kept after review:** the caption's instruction and color key, the named players in the note, the Hall standard definition, the eligibility rule, and the credit to Mountain. Each adds information found nowhere else. The tool flagged the two summary templates as overlapping, but readers see only one at a time.
+**Checks after the edits.** plain-language-default 0 problems, prosekeep PASS, unslop 0 AI-isms.
