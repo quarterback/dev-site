@@ -27,7 +27,7 @@
       <li><b><a href="projects/varsityapex.html">VarsityApex</a></b><span>A prototype that turns the files schools already produce into portable, attributable records.</span><img class="pop" src="assets/varsityapex/home.png" alt="" loading="lazy" /></li>
       <li><b><a href="projects/coalition.html">Coalition</a></b><span>An escape game in one HTML file, where allies work in parallel and dice force you to plan around the people who fail to deliver.</span><img class="pop" src="assets/coalition/play.webp" alt="" loading="lazy" /></li>
       <li><b><a href="projects/draft-lab.html">Cap Buffet</a></b><span>Lets a league try a salary cap system before adopting it, with 18 mechanics as swappable modules.</span><img class="pop" src="assets/capbuffet/home.png" alt="" loading="lazy" /></li>
-      <li><b><a href="projects/oregon-tennis.html">Oregon HS Tennis Power Rankings</a></b><span>Ratings for every Oregon high school team from four years of results. The OSAA seeds its 2027 dual team championship from them.</span><img class="pop" src="assets/oregon-tennis/home.png" alt="" loading="lazy" /></li>
+      <li><b><a href="projects/oregon-tennis.html">Oregon HS Tennis Power Rankings</a></b><span>Independent ratings for every Oregon high school team from four years of results, like the computer rankings in college football and basketball.</span><img class="pop" src="assets/oregon-tennis/home.png" alt="" loading="lazy" /></li>
       <li><b><a href="projects/occupant.html">Occupant Indices</a></b><span>Daily price and activity indices for the AI economy, built from public data.</span><img class="pop" src="assets/occupant/dashboard.webp" alt="" loading="lazy" /></li>
       <li><b><a href="projects/mallo.html">Mallo</a></b><span>The first advanced stats for pes&auml;pallo.</span><img class="pop" src="assets/mallo/home.png" alt="" loading="lazy" /></li>
       <li><b><a href="projects/play-to-clinch.html">Play To Clinch</a></b><span>Team tennis on one rating scale, played point by point.</span><img class="pop" src="assets/play-to-clinch/recruiting-profile.png" alt="" loading="lazy" /></li>
@@ -50,7 +50,7 @@
           <div class="head">
             <div><h3>Oregon high school tennis rankings</h3></div>
             <div>
-              <p>Win-loss records ignore who you played and count every flight the same, so a coach could stack a lineup to look better. My flight-weighted score weights the eight flights from 1.00 down to 0.10, so depth counts and stacking stops paying. The Power Index blends it with an RPI-style strength of schedule, and the OSAA now seeds its dual team championship from it.</p>
+              <p>Win-loss records ignore who you played and count every flight the same, so a coach could stack a lineup to look better. My flight-weighted score weights the eight flights from 1.00 down to 0.10, so depth counts and stacking stops paying. The Power Index blends it with an RPI-style strength of schedule.</p>
               <code class="eq">PI = 0.65·APR + 0.25·FQI + 0.10·oGS
       FQI = (Σ flight_score·opp_strength + 5×0.5) / (duals + 5)</code>
             </div>
@@ -66,7 +66,7 @@
               <p class="cap">Top 12 by Power Index, with each team&rsquo;s change from the real weights.</p>
             </div>
           </div>
-          <div class="why">Grant is the official No. 1 with a lower Power Index than Lincoln, .7399 to .7467. They tied 4-4 on April 22, Grant won the tiebreak on sets, and the head-to-head rule put Grant first.</div>
+          <div class="why">Grant is No. 1 in the rankings with a lower Power Index than Lincoln, .7399 to .7467. They tied 4-4 on April 22, Grant won the tiebreak on sets, and the head-to-head rule put Grant first.</div>
           <div class="src">Source: or-tennis-data/generate_site.py (FLIGHT_WEIGHTS, TOSS weights, FQI with 5 phantom matches). FQI recomputed here matches the published value for all 121 teams.</div>
         </section>
 

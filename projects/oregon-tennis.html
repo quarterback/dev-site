@@ -41,7 +41,7 @@
     <h1 class="project__title">Oregon HS Tennis Power Rankings</h1>
     <p class="project__lede">The first power ranking for Oregon high school tennis teams. I designed the formula, built the entire site, and put it online on live statewide data. Teams across Oregon used it as a reference all through the 2026 season.</p>
     <!-- At a glance (3 November 2026) -->
-    <dl class="glance"><div><dt>Problem</dt><dd>Win-loss records ignore who you played and count every flight the same, so a coach could stack a lineup to look better.</dd></div><div><dt>System</dt><dd>A statewide rating system built on four years of match data, with a playoff simulator and live tournament tools.</dd></div><div><dt>Mechanics</dt><dd>Four rating models. FWS weights the eight flights from 1.00 down to 0.10, so depth counts and stacking stops paying. The Power Index blends it with an RPI-style strength of schedule.</dd></div><div><dt>Stack</dt><dd>Python pipeline; React, TypeScript and Vite; static hosting on Netlify.</dd></div><div><dt>Result</dt><dd>The OSAA adopted a dual team championship seeded from the rankings. Brackets start in spring 2027.</dd></div></dl>
+    <dl class="glance"><div><dt>Problem</dt><dd>Win-loss records ignore who you played and count every flight the same, so a coach could stack a lineup to look better.</dd></div><div><dt>System</dt><dd>A statewide rating system built on four years of match data, with a playoff simulator and live tournament tools.</dd></div><div><dt>Mechanics</dt><dd>Four rating models. FWS weights the eight flights from 1.00 down to 0.10, so depth counts and stacking stops paying. The Power Index blends it with an RPI-style strength of schedule.</dd></div><div><dt>Stack</dt><dd>Python pipeline; React, TypeScript and Vite; static hosting on Netlify.</dd></div><div><dt>Result</dt><dd>Independent rankings, like the computer rankings in college football and basketball, run live through the 2026 season.</dd></div></dl>
 
 
 
@@ -62,46 +62,20 @@
 
       <p>Four years of statewide results, four rating models I designed, a playoff simulator, and a set of live tournament tools, all generated from raw match data and served as one static site.</p>
 
+      <p>These are independent rankings I built for myself, like the computer rankings in college football and basketball, but for high school team tennis.</p>
+
       <p>I worked on this in the open. Back in <a href="https://blog.ronbronson.com/ranking-the-unrankable-building-a-better-system-for-oregon-high-school-tennis/" target="_blank" rel="noopener">an April 2025 writeup</a> I shared an early version of the formula and the thinking behind it, the proof of concept that the live system grew out of.</p>
-
-      <p>It&rsquo;s also the data behind an institutional change: the analysis that supported Oregon&rsquo;s adoption of a dual team tennis championship. The format is now on the calendar: power-ranking-seeded brackets debuting in spring 2027, with 12 teams at 6A and 8 at 5A and 4A-1A, per gender, higher seed hosting through to a final at the state championship site.</p>
-
-      <h2>The long game</h2>
-
-      <p>Alongside the tools came six years of persuading the OSAA to change how it runs the sport.</p>
-
-      <dl class="timeline">
-        <dt>2019</dt>
-        <dd>Oregon&rsquo;s high school tennis program has no team championship.</dd>
-
-        <dt>2020 to 2021</dt>
-        <dd>The case goes public in writing: split the seasons, raise the match limit, add a power-ranking-seeded team tournament.</dd>
-
-        <dt>early 2020s</dt>
-        <dd>Concerns about scheduling, travel, and roster viability get worked through with the OSAA. The argument needs data.</dd>
-
-        <dt>Dec 2025</dt>
-        <dd>After refining the rating model through earlier prototypes, I build the full site and put it online on live statewide data.</dd>
-
-        <dt>2026</dt>
-        <dd>The rankings run live all season, used by teams across the state. The OSAA State Championship Committee recommends the format, and the OSAA adopts it for the next four-year block.</dd>
-
-        <dt>2027</dt>
-        <dd>The first dual team championships are played.</dd>
-      </dl>
-
-      <p>Once the questions turned concrete (who qualifies, how do you seed it, what does it cost in travel) the answers were already computed and public.</p>
 
       <h2>The problem it models</h2>
 
       <p>A tennis dual meet is eight concurrent matches, four singles and four doubles, and the team that wins five flights wins the meet. That structure breaks ordinary ranking. A 5-3 win at the bottom of the lineup looks identical to a 5-3 win at the top, win-loss records skip over who you played, and lineups can be &ldquo;stacked&rdquo; to game any naive metric.</p>
 
-      <p>Central data was sparse, and existing ratings handled none of this. I had to define the measurement before building ingestion, rating models, simulation, and the public tools on top of it. It also has to absorb forfeits, ties, six-flight meets, classification changes, and dirty source data.</p>
+      <p>Existing ratings handled none of this. I had to define the measurement before building the rating models, simulation, and the public tools on top of it. It also has to absorb forfeits, ties, six-flight meets, classification changes, and messy results.</p>
 
       <h2>The models</h2>
 
       <h3>APR: Adjusted Power Rating</h3>
-      <p>RPI-style strength of schedule, aligned with what the OSAA already uses: your wins matter, your opponents&rsquo; more, theirs too. <i>&ldquo;How good are you, given who you played?&rdquo;</i></p>
+      <p>RPI-style strength of schedule: your wins matter, your opponents&rsquo; more, theirs too. <i>&ldquo;How good are you, given who you played?&rdquo;</i></p>
 
       <h3>FWS: Flight-Weighted Score</h3>
       <p>Scores all eight flights on a weighted curve (1st singles / doubles = 1.00 down to 4th doubles = 0.10, max 3.95). The top of the lineup drives the number, but depth still counts: a 7-1 sweep outscores a 5-3 win with the same top flights, which makes stacking pointless. Normalized for flights actually contested, so a six-flight meet still produces a clean number.</p>
@@ -131,7 +105,7 @@
         <li><b>All-State archive.</b> Teams from 2022 to 2025 in one place.</li>
         <li><b>Bracket tools.</b> A permutation explorer and a fair-bracket generator that stress-test how different seedings actually play out.</li>
         <li><b>SD1 draw suite.</b> A live seeding board, draw tool, and printable / live brackets built to run an actual special-district tournament in the room, on the day, with cloud-saved state.</li>
-        <li><b>2027 format tools.</b> A mixed-doubles standby-list tool and the dual team finals format, matching the adopted bracket structure and seeding.</li>
+        <li><b>2027 format tools.</b> A mixed-doubles standby-list tool and a dual team finals format.</li>
         <li><b>Changelog and after-action reports.</b> What changed, what was tested, what was learned.</li>
       </ul>
 
@@ -148,8 +122,6 @@
         <dd>Netlify Functions (v2) + Netlify Blobs for the cloud-saved SD1 draw.</dd>
         <dt>Hosting</dt>
         <dd>Netlify. Static, zero-infrastructure, offline-capable.</dd>
-        <dt>Data</dt>
-        <dd>~1,200 team-seasons, every flight, 2021 to present, straight from the OSAA source API.</dd>
       </dl>
 
       <h2>Design decisions</h2>
@@ -157,8 +129,6 @@
       <p>Static HTML with embedded JSON serves coaches and athletic directors, who need something fast, free, and saveable. A dataset this size belongs in the page. The model exposes raw, intuitive scores (0 to 3.95 FWS, ERA+-style FWS+) up front and keeps the normalized math underneath.</p>
 
       <p>The design work went into the model: a rating design that makes stacking pointless, tiebreaker logic that refuses circular results, travel optimization that protects top seeds while cutting miles for the rest, and a methodology published in full so the numbers carry their own evidence.</p>
-
-      <p>The model had to be transparent enough for an institution to trust, which meant keeping it running in public until the OSAA said yes.</p>
 
       <p style="margin-top: clamp(20px, 3vw, 36px)"><a class="live-link" href="https://oregontennis.org" target="_blank" rel="noopener">Oregon HS Tennis Power Rankings</a></p>
 
