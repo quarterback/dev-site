@@ -11,6 +11,34 @@ const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const DATA = { OR: "assets/uth/oregon-2026-boys.json", PTC: "assets/uth/ptc-points.json", O27: "assets/uth/o27-prospects.json", CAREERS: "assets/uth/ptc-careers.json" };
 const load = (k) => fetch(DATA[k]).then((r) => r.json());
 
+// Terms: a dashed-underline button opens its definition card next to it.
+// Click again, click outside, press Escape, or use the close button to shut it.
+(() => {
+  const terms = [...document.querySelectorAll(".uth button.term[aria-controls]")];
+  const close = (t, refocus) => { const pop = document.getElementById(t.getAttribute("aria-controls")); pop.hidden = true; t.setAttribute("aria-expanded", "false"); if (refocus) t.focus(); };
+  const place = (t, pop) => {
+    const host = pop.offsetParent.getBoundingClientRect(), b = t.getBoundingClientRect();
+    pop.style.top = `${b.bottom - host.top + 8}px`;
+    pop.style.left = `${Math.max(0, Math.min(b.left - host.left, host.width - pop.offsetWidth))}px`;
+  };
+  for (const t of terms) {
+    const pop = document.getElementById(t.getAttribute("aria-controls"));
+    t.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const open = pop.hidden;
+      terms.forEach((x) => close(x));
+      if (!open) return;
+      pop.hidden = false; t.setAttribute("aria-expanded", "true"); place(t, pop);
+      pop.querySelector("a, button").focus({ preventScroll: true });
+    });
+    pop.addEventListener("click", (e) => e.stopPropagation());
+    pop.querySelector(".term__x").addEventListener("click", () => close(t, true));
+    pop.addEventListener("keydown", (e) => { if (e.key === "Escape") close(t, true); });
+  }
+  document.addEventListener("click", () => terms.forEach((x) => { if (x.getAttribute("aria-expanded") === "true") close(x); }));
+  addEventListener("resize", () => terms.forEach((x) => { if (x.getAttribute("aria-expanded") === "true") place(x, document.getElementById(x.getAttribute("aria-controls"))); }));
+})();
+
 function oregon(OR) {
   const FL = ["S1","S2","S3","S4","D1","D2","D3","D4"];
   const REAL = { S1:1.00, S2:0.75, S3:0.25, S4:0.10, D1:1.00, D2:0.50, D3:0.25, D4:0.10 };

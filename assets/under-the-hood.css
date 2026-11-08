@@ -88,3 +88,39 @@
 .uth--home .uth__lede { font-size: 20px; color: var(--uth-fg); }
 .uth .uth-piece:first-of-type { margin-top: 40px; }
 .uth--home .head p { color: var(--uth-fg); }
+/* Hall of Fame line (assets/stack-map.js, tools/stack-map/src/hof-line.jsx) */
+.uth .hl { margin-top: 24px; }
+.uth .hl__wrap { position: relative; touch-action: pan-y; user-select: none; }
+.uth .hl__wrap:focus-visible { outline: 3px solid var(--uth-fg); outline-offset: 4px; }
+.uth .hl__gl, .uth .hl__svg { position: absolute; inset: 0; }
+.uth .hl__svg svg { display: block; overflow: visible; }
+.uth .hl__nm { position: absolute; font: 600 11px var(--uth-mono); color: var(--uth-fg); white-space: nowrap; pointer-events: none; text-shadow: 0 0 3px var(--uth-bg), 0 0 3px var(--uth-bg); }
+.uth .hl__list { margin-top: 20px; }
+.uth .hl__list .yrs { display: flex; flex-wrap: wrap; gap: 6px; }
+.uth .hl__list button[aria-pressed="true"] { background: var(--uth-accent); color: var(--uth-on-accent); border-color: var(--uth-accent); }
+.uth .hl__sum { margin: 14px 0 8px; max-width: 40em; }
+.uth .hl__rank { list-style: none; margin: 0; padding: 0; max-width: 640px; }
+.uth .hl__rank li { display: grid; grid-template-columns: 34px minmax(0, 1fr) 40px minmax(0, 13em); gap: 8px; padding: 5px 0; border-bottom: 1px solid var(--uth-grid); font-variant-numeric: tabular-nums; }
+.uth .hl__rank li.is-last { border-bottom: 3px solid var(--uth-accent); }
+.uth .hl__rank .r, .uth .hl__rank .v, .uth .hl__rank .t { font-family: var(--uth-mono); font-size: 13px; color: var(--uth-dim); }
+.uth .hl__rank .v { text-align: right; }
+.uth .hl__rank .n { font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.uth .hl__rank .k-hof .t { color: var(--uth-fg); }
+@media (max-width: 560px) { .uth .hl__rank li { grid-template-columns: 28px minmax(0, 1fr) 36px; padding-right: 4px; } .uth .hl__rank .t { grid-column: 2 / -1; font-size: 12px; } }
+/* Jump links under the section heading */
+.uth .uth__toc ul { list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 22px; font-family: var(--uth-mono); font-size: 14px; }
+.uth .uth__toc a { color: var(--uth-fg); }
+.uth .uth-piece { scroll-margin-top: 90px; }
+/* Phones: formulas wrap instead of running off the screen */
+@media (max-width: 560px) { .uth .eq { white-space: pre-wrap; overflow-x: visible; font-size: 13px; } }
+/* Terms: a dashed underline opens a definition card on first reference */
+.uth .head > div { position: relative; }
+.uth button.term { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline dashed; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.uth button.term[aria-expanded="true"] { color: var(--uth-accent); }
+.uth .term__pop { position: absolute; z-index: 20; width: min(360px, 100%); padding: 16px 40px 14px 16px; background: var(--uth-panel); color: var(--uth-fg); border: 1px solid var(--uth-grid); box-shadow: 0 10px 30px rgba(0, 0, 0, .35); font-size: 16px; line-height: 1.45; }
+.uth .term__pop p { margin: 0 0 10px; color: var(--uth-fg); max-width: none; }
+.uth .term__pop p:last-of-type { margin-bottom: 0; }
+.uth .term__pop code { display: block; margin: 0 0 10px; font: 13px/1.4 var(--uth-mono); color: var(--uth-accent); white-space: normal; }
+.uth .term__pop a { color: var(--uth-fg); }
+.uth button.term__x { position: absolute; top: 6px; right: 6px; width: 32px; height: 32px; padding: 0; font: 22px/1 var(--uth-mono); color: var(--uth-dim); background: none; border: 0; }
+.uth .uth-piece { position: relative; }

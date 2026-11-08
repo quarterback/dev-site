@@ -60,7 +60,15 @@
         <div class="head">
           <div><h3>Play To Clinch high school careers</h3></div>
           <div>
-            <p>The first high school model put seniors in 85.7% of No. 1 singles spots. I compared that with six seasons of Oregon boys tennis, then rebuilt development around starting ability, career peak, annual growth, and actual playing time. JV matches count for half the exposure of varsity, so five freshmen with the same ceiling can end up with very different careers.</p>
+            <p>The first high school model put seniors in 85.7% of <button type="button" class="term" aria-expanded="false" aria-controls="term-no1">No. 1 singles</button> spots. I compared that with six seasons of Oregon boys tennis, then rebuilt development around starting ability, career peak, annual growth, and actual playing time. JV matches count for half the <button type="button" class="term" aria-expanded="false" aria-controls="term-exposure">exposure</button> of varsity, so five freshmen with the same ceiling can end up with very different careers.</p>
+            <div class="term__pop" id="term-exposure" role="dialog" aria-label="What exposure means" hidden>
+              <p>Exposure is how much of a year&rsquo;s growth a player gets to use, and it comes from playing matches. JV, or junior varsity, is the level below varsity.</p>
+              <button type="button" class="term__x" aria-label="Close">&times;</button>
+            </div>
+            <div class="term__pop" id="term-no1" role="dialog" aria-label="What No. 1 singles means" hidden>
+              <p>A high school team ranks its singles players. The best plays No. 1 against the other team&rsquo;s best, the next best plays No. 2, and so on down the lineup.</p>
+              <button type="button" class="term__x" aria-label="Close">&times;</button>
+            </div>
             <code class="eq">gain = year's budget × playing time
     playing time: bench 0.55 · full JV 0.81 · varsity 1.00</code>
           </div>
