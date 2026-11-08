@@ -128,3 +128,25 @@ Ron's two-sentence intro wasn't edited.
 **Instruction.** Ron sent a phone screenshot of the piece. It came from an older preview build, still showing the earlier two-sentence intro. The formula box was cut off at the right edge.
 **Change.** On screens 560px and narrower, `.uth .eq` wraps (`white-space: pre-wrap`) at 13px instead of scrolling sideways. This applies to all seven models with a formula.
 **Evidence.** On iPhone 14 emulation, no formula on the page is wider than its box, and the Marginal Player Line formula wraps onto four lines.
+
+## Addendum: JAWS defined on first reference
+**Instruction.** Ron: JAWS needs a dashed hyperlink that, when clicked, says what JAWS is: "anytime you make that on a site like this you need to be able to [say] on first reference what … it is … some kind of treatment that pops out when you click it and tells you the definition … the math behind it … and then a link inside of that".
+**Change.**
+- In the blurb, the first "JAWS" is a dashed-underline button (`button.term`) that opens a card (`#term-jaws`, `role="dialog"`) under the word.
+- The card holds: what JAWS stands for and who made it (Jay Jaffe), what WAR is, the formula, a worked example, and a link to Baseball Reference's JAWS explainer.
+- The worked example uses Baseball Reference's numbers for Lou Whitaker: 75.1 career WAR + 37.9 peak, ÷ 2 = 56.5.
+- **Closing:** click the word again, click outside, press Escape, or use the × button. Escape and × return focus to the word.
+- **Phones:** the card is full width and never wider than the screen.
+- **Reuse:** the code in `assets/under-the-hood.js` handles any `button.term[aria-controls]`, and the styles are `.uth .term*` in `assets/under-the-hood.css`, so other jargon on the page can get the same treatment.
+
+**Editorial tools on the card.**
+- `red-pen-editor brief` (audience: people who don't follow baseball stats; facts kept: 75.1, 37.9, 56.5).
+- One edit through `red-pen-editor apply`, accepted. It cut the "It averages two numbers…" sentence because the formula says the same thing, moved the WAR definition ahead of the formula that uses it, and split the long WAR sentence.
+- prosekeep PASS and unslop 0 AI-isms.
+- plain-language-default's one flag is a false positive: it reads the period-less formula line together with the next sentence. On the page the formula is its own code block.
+
+**Evidence.** Playwright at 1440 and on iPhone 14 emulation:
+- The card opens and focus moves into it.
+- Escape closes it and returns focus to "JAWS". A click outside closes it too.
+- On the phone it fits from 16 to 374 of 390px.
+- No page errors and no horizontal overflow.

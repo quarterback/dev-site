@@ -51,7 +51,15 @@
         <div class="head">
           <div><h3>Marginal Player Line</h3></div>
           <div>
-            <p>I wrote a blog post, <a href="https://blog.ronbronson.com/how-do-you-evaluate-a-baseball-hall-of-famer">How Do You Evaluate a (Baseball) Hall of Famer</a>, after reading <a href="https://community.fangraphs.com/boog-and-the-hall-of-fame-part-2-infielders/">Michael Mountain&rsquo;s idea of the marginal player</a>. Count the Hall of Famers at a position, rank everyone there, and the marginal player is the one who would fill the last slot. I was curious what happens when the people the Hall recognizes don&rsquo;t resemble the people our existing measures say had careers of comparable quality. This chart ranks every retired player at each position by JAWS and draws a line where the Hall&rsquo;s own count runs out.</p>
+            <p>I wrote a blog post, <a href="https://blog.ronbronson.com/how-do-you-evaluate-a-baseball-hall-of-famer">How Do You Evaluate a (Baseball) Hall of Famer</a>, after reading <a href="https://community.fangraphs.com/boog-and-the-hall-of-fame-part-2-infielders/">Michael Mountain&rsquo;s idea of the marginal player</a>. Count the Hall of Famers at a position, rank everyone there, and the marginal player is the one who would fill the last slot. I was curious what happens when the people the Hall recognizes don&rsquo;t resemble the people our existing measures say had careers of comparable quality. This chart ranks every retired player at each position by <button type="button" class="term" aria-expanded="false" aria-controls="term-jaws">JAWS</button> and draws a line where the Hall&rsquo;s own count runs out.</p>
+            <div class="term__pop" id="term-jaws" role="dialog" aria-label="What JAWS means" hidden>
+              <p>JAWS is the Jaffe WAR Score system, made by the baseball writer Jay Jaffe to measure Hall of Fame cases.</p>
+              <p>WAR, or wins above replacement, estimates how many wins a player added. The comparison is a fill-in his team could have signed for close to nothing.</p>
+              <code>JAWS = (career WAR + WAR in his 7 best seasons) &divide; 2</code>
+              <p>Lou Whitaker had 75.1 career WAR and 37.9 in his seven best seasons, so his JAWS is 56.5.</p>
+              <p><a href="https://www.baseball-reference.com/about/jaws.shtml">How Baseball Reference explains JAWS</a></p>
+              <button type="button" class="term__x" aria-label="Close">&times;</button>
+            </div>
             <code class="eq">Career Index = JAWS &divide; Hall standard at the position &times; 100
 the line = the Nth player, where N = Hall of Famers at the position</code>
           </div>
