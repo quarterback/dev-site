@@ -47,3 +47,19 @@ If Coalition moves its content onto the schema, swap the example bundle for the 
 **What went wrong.** I searched this page for "colophon", found nothing, and wrote that it had none instead of following the rule in EDITORIAL.md ("Every page's colophon is a real colophon"). That was wrong.
 **Change.** I added the standard footer colophon in the same format as about.html: Type (PP Neue Montreal, Hanken Grotesk, IBM Plex Mono), Built with (HTML, CSS, JavaScript, WebGL, pbbg-content-schema, Ajv), Example (text from Coalition's first level), Hosting, and then the rotating digression with the shared script.
 **Open.** None of the 22 pages in `projects/` had a colophon on main. Only this one has one now.
+
+## Addendum: Coalition has adopted the checker
+**Instruction.** Ron: "The existing .dev project page also needs its outdated claim that Coalition has not adopted the package corrected."
+**Evidence (quarterback/escape-game at 59ae318, 8 November 2026).**
+- `tools/build.py` runs `tools/pbbg-bundle.js`, writes `content/pbbg/coalition.bundle.json`, and runs `tools/pbbg-check.js` with the owner's checker. If the check fails, the build stops (commit fba5411).
+- `.github/workflows/content.yml` clones pbbg-content-schema and fails if the committed bundle doesn't match the sources.
+- The bundle is schema 0.5.0 with 2 roles, 19 entities, 69 facts, 1,995 content entries, and 0 actions, scenes, or events. Conditions in `src/sim.js` use the schema's fact shape.
+- `node tools/pbbg-check.js` gives "Content checks passed."
+- The schema README (2511b22) already says: "Every build of Coalition checks the game's copy with this CLI."
+**Change.** In `projects/pbbg-content-schema.html`:
+- The glance Result adds that every build of Coalition checks the game's copy with it.
+- "What it doesn't do" no longer says no game has moved onto it. It now says Coalition writes its text in its own files, every build turns them into a bundle and checks it, a failure stops the build, the rules aren't in the bundle yet, and no second game uses it.
+- The demo note links the game's real bundle and says why the example ties costs to text by hand.
+- "At that point its inline content hadn't moved" is left as it is, because it describes October.
+**Checked.** pbbg-content-schema's `src/`, `schemas/`, and `policies/` are unchanged between 0f999d6 (vendored here) and 2511b22. prosekeep on the new copy: PASS.
+**Not changed.** `projects/coalition.html` links the schema but doesn't say whether the game uses it.
