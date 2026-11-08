@@ -8,6 +8,7 @@
 <title>Projects | Ron Bronson</title>
 <meta name="description" content="Games, simulations, and rule-based systems by Ron Bronson: sports rankings, probability models, invented games, and scenario exercises." />
 <link rel="stylesheet" href="assets/room.css" />
+<link rel="stylesheet" href="assets/under-the-hood.css" />
 <script>try{if(sessionStorage.getItem("rb-dissolve")){document.documentElement.classList.add("dissolving");setTimeout(function(){document.documentElement.classList.remove("dissolving")},1000)}}catch(e){}</script>
 <script src="assets/dissolve.js" defer></script>
 </head>
@@ -17,9 +18,9 @@
        ".dev, the other room" from the design canvas: its own page, reached
        from Projects in the nav. Cobalt and white in IBM Plex Sans
        Condensed and Plex Mono. Styles in assets/room.css. -->
-  <header class="rt"><a class="rt__nm" href="index.html" data-dissolve="home">Ron Bronson</a><nav aria-label="Main navigation"><a href="projects.html" aria-current="page">Projects</a><a href="https://ronbronson.design">Design</a><a href="https://blog.ronbronson.dev">Blog</a><a href="mailto:ron@ronbronson.com">Contact</a></nav></header>
+  <header class="rt"><a class="rt__nm" href="index.html" data-dissolve="home">Ron Bronson</a><nav aria-label="Main navigation"><a href="index.html" data-dissolve="home">Home</a><a href="projects.html" aria-current="page">Projects</a><a href="https://ronbronson.design">Design</a><a href="https://blog.ronbronson.dev">Blog</a><a href="#contact" data-contact>Contact</a></nav></header>
   <main class="se" id="other-room" aria-labelledby="h-se">
-    <div class="in"><h1 id="h-se">Problems are designed</h1><p>I design games, simulations, and rule-based systems to explore how decisions produce outcomes. The work spans sports rankings, probability models, invented games, and scenario exercises.</p></div>
+    <div class="in"><h1 id="h-se">Problems are designed</h1><p>These are examples of my projects, from games to tools and system demos. They show how I use multi-agent orchestration and my own models to bring ideas to life.</p></div>
     <section id="ticker" class="tk" aria-label="Occupant Indices, latest published values" hidden><a class="tk__lab" href="projects/occupant.html">Occupant Indices</a><div class="tk__win"><div class="tk__tape"></div></div></section>
     <script src="assets/ticker.js" defer></script>
     <ul class="plist" aria-label="Projects">
@@ -39,19 +40,202 @@
     <div id="stack-map" class="sm">
       <div class="sm__mount"></div>
       <svg class="gr" viewBox="0 0 1340 560" role="img" aria-label="How the experimental projects connect through the techniques they share"><line class="l l-mallo l-rate" x1="90" y1="82" x2="150" y2="266"></line><line class="l l-ortn l-rate" x1="300" y1="82" x2="150" y2="266"></line><line class="l l-ortn l-sim" x1="300" y1="82" x2="390" y2="266"></line><line class="l l-ptc l-rate" x1="560" y1="82" x2="150" y2="266"></line><line class="l l-ptc l-sim" x1="560" y1="82" x2="390" y2="266"></line><line class="l l-si l-sim" x1="760" y1="82" x2="390" y2="266"></line><line class="l l-si l-prob" x1="760" y1="82" x2="620" y2="266"></line><line class="l l-vb l-prob" x1="960" y1="82" x2="620" y2="266"></line><line class="l l-vb l-sim" x1="960" y1="82" x2="390" y2="266"></line><line class="l l-occ l-meas" x1="1210" y1="82" x2="1290" y2="266"></line><line class="l l-cap l-mech" x1="560" y1="478" x2="840" y2="294"></line><line class="l l-ygf l-match" x1="1040" y1="478" x2="990" y2="294"></line><line class="l l-ygf l-mech" x1="1040" y1="478" x2="840" y2="294"></line><line class="l l-pen l-scen" x1="1230" y1="478" x2="1125" y2="294"></line><g class="n n-mallo" tabindex="0"><circle cx="90" cy="70" r="7"></circle><text x="90" y="56" text-anchor="middle">Mallo</text></g><g class="n n-ortn" tabindex="0"><circle cx="300" cy="70" r="7"></circle><text x="300" y="56" text-anchor="middle">Oregon HS Tennis Power Rankings</text></g><g class="n n-ptc" tabindex="0"><circle cx="560" cy="70" r="7"></circle><text x="560" y="56" text-anchor="middle">Play To Clinch</text></g><g class="n n-si" tabindex="0"><circle cx="760" cy="70" r="7"></circle><text x="760" y="56" text-anchor="middle">SuperInnings</text></g><g class="n n-vb" tabindex="0"><circle cx="960" cy="70" r="7"></circle><text x="960" y="56" text-anchor="middle">Viperball</text></g><g class="n n-occ" tabindex="0"><circle cx="1210" cy="70" r="7"></circle><text x="1210" y="56" text-anchor="middle">Occupant Indices</text></g><g class="n n-cap" tabindex="0"><circle cx="560" cy="490" r="7"></circle><text x="560" y="520" text-anchor="middle">Cap Buffet</text></g><g class="n n-ygf" tabindex="0"><circle cx="1040" cy="490" r="7"></circle><text x="1040" y="520" text-anchor="middle">You Go First</text></g><g class="n n-pen" tabindex="0"><circle cx="1230" cy="490" r="7"></circle><text x="1230" y="520" text-anchor="middle">Pensulo Cards</text></g><g class="pr pr-rate" tabindex="0"><text x="150" y="286" text-anchor="middle">Rating models</text></g><g class="pr pr-sim" tabindex="0"><text x="390" y="286" text-anchor="middle">Simulated worlds</text></g><g class="pr pr-prob" tabindex="0"><text x="620" y="286" text-anchor="middle">Probability engines</text></g><g class="pr pr-mech" tabindex="0"><text x="840" y="286" text-anchor="middle">Mechanism design</text></g><g class="pr pr-match" tabindex="0"><text x="990" y="286" text-anchor="middle">Matching</text></g><g class="pr pr-scen" tabindex="0"><text x="1125" y="286" text-anchor="middle">Scenario play</text></g><g class="pr pr-meas" tabindex="0"><text x="1290" y="286" text-anchor="middle">Measurement</text></g></svg>
-      <p class="sm__cap">Drag the lime marker along the techniques, or use the arrow keys. Dragging built with <a href="https://github.com/declarative-dragging/dragology">Dragology</a>, from Joshua Horowitz, Andrew Blinn and Jeffrey Heer, &ldquo;<a href="https://declarative-dragging.github.io">Declarative Dragging</a>,&rdquo; UIST 2026.</p>
+      <p class="sm__cap">Drag the marker along the techniques, or use the arrow keys.</p>
     </div>
     <script>if(matchMedia("(min-width: 861px)").matches){var s=document.createElement("script");s.src="assets/stack-map.js";s.defer=true;document.currentScript.after(s)}</script>
-    <article class="q"><div><h3><a href="https://blog.ronbronson.com/context-engineering-for-llms-starts-with-systems-not-prompts/">Context Engineering for LLMs Starts With Systems, Not Prompts</a></h3><p class="st">June 20, 2025</p></div><div class="tx"><p>Context engineering starts with understanding what a system does, how its rules interact, and what happens when something changes. Prompts alone cannot supply that structure. Agents working with games, public services, or business processes need access to the rules, relationships, and consequences that define a system, along with clear boundaries for what they can change.</p></div></article>
+    <div class="uth" id="under-the-hood">
+      <h2 class="uth__h">Under the hood</h2>
+      <p class="uth__lede">These models use calculations and data from their source projects, checked against the originals. Coding agents brought them into the browser.</p>
+      <section class="uth-piece" id="uth-oregon">
+          <div class="head">
+            <div><h3>Oregon high school tennis rankings</h3></div>
+            <div>
+              <p>Win-loss records ignore who you played and count every flight the same, so a coach could stack a lineup to look better. My flight-weighted score weights the eight flights from 1.00 down to 0.10, so depth counts and stacking stops paying. The Power Index blends it with an RPI-style strength of schedule, and the OSAA now seeds its dual team championship from it.</p>
+              <code class="eq">PI = 0.65·APR + 0.25·FQI + 0.10·oGS
+      FQI = (Σ flight_score·opp_strength + 5×0.5) / (duals + 5)</code>
+            </div>
+          </div>
+          <div class="stage">
+            <div class="panel">
+              <svg class="bars" id="orBars" viewBox="0 0 520 300" role="img" aria-label="Flight weights. Drag a bar to change its weight."></svg>
+              <div class="ctls"><button class="ghost" id="orReset" type="button">Reset to the real weights</button></div>
+              <p class="cap">Drag a bar to change a flight&rsquo;s weight. All 121 ranked 2026 boys teams re-rank.</p>
+            </div>
+            <div class="panel">
+              <ol class="rank" id="orRank" aria-live="polite"></ol>
+              <p class="cap">Top 12 by Power Index, with each team&rsquo;s change from the real weights.</p>
+            </div>
+          </div>
+          <div class="why">Grant is the official No. 1 with a lower Power Index than Lincoln, .7399 to .7467. They tied 4-4 on April 22, Grant won the tiebreak on sets, and the head-to-head rule put Grant first.</div>
+          <div class="src">Source: or-tennis-data/generate_site.py (FLIGHT_WEIGHTS, TOSS weights, FQI with 5 phantom matches). FQI recomputed here matches the published value for all 121 teams.</div>
+        </section>
+
+      <section class="uth-piece" id="uth-viper">
+          <div class="head">
+            <div><h3>Viperball kick decisions</h3></div>
+            <div>
+              <p>Viperball has six downs to gain 20 yards, and the ball moves by running, lateral chains, and kick passes. A live-play drop kick is worth 5 and a place kick 3. Every rule creates a strategy, so on a late down the coach weighs both kicks against going for it.</p>
+              <code class="eq">distance = (100 − field position) + 10
+      drop kick EV = 5 × P(drop)   place kick EV = 3 × P(place)</code>
+            </div>
+          </div>
+          <div class="stage">
+            <div class="panel">
+              <svg id="vbChart" viewBox="0 0 520 300" role="img" aria-label="Kick success by distance"></svg>
+              <p class="cap">Drag the marker to change the kick distance. Highlighted line: drop kick. Plain line: place kick.</p>
+            </div>
+            <div class="panel">
+              <div class="ctls">
+                <label class="ctl" for="vbSkill">Kicker skill <output id="vbSkillO">80</output><input id="vbSkill" type="range" min="60" max="95" value="80"></label>
+                <label class="ctl" for="vbYtg">Yards to go <output id="vbYtgO">9</output><input id="vbYtg" type="range" min="1" max="20" value="9"></label>
+                <label class="ctl" for="vbDown">Down<select id="vbDown"><option value="5">5th</option><option value="6" selected>6th</option></select></label>
+                <label class="ctl" for="vbScore">Score<select id="vbScore"><option value="0" selected>Tied or ahead</option><option value="-1">Trailing</option></select></label>
+              </div>
+              <div class="read" style="margin-top:18px">
+                <div><small>Drop kick</small><span class="big" id="vbDk">0%</span><small id="vbDkEv">EV 0</small></div>
+                <div><small>Place kick</small><span class="big" id="vbPk">0%</span><small id="vbPkEv">EV 0</small></div>
+              </div>
+              <p style="margin:16px 0 0">The call: <span class="tag" id="vbCall">GO FOR IT</span></p>
+              <p class="cap" id="vbWhy"></p>
+            </div>
+          </div>
+          <div class="why">Early downs gain about 2 yards against 20 to go, so drives reach fifth and sixth down, where this call gets made. A missed drop kick on the first five downs usually keeps the ball.</div>
+          <div class="src">Source: viperball/engine/game_engine.py (_drop_kick_success, _place_kick_success, select_kick_decision). Shown with no clock pressure, no coaching traits, style aggression 1.0.</div>
+        </section>
+
+      <section class="uth-piece" id="uth-o27">
+          <div class="head">
+            <div><h3>O27 college prospects</h3></div>
+            <div>
+              <p>In O27, a prospect&rsquo;s box-score grade and actual ceiling are different things. Each player has a hidden ceiling and a fixed lens on it, so the grade you see is ceiling times lens. Two scouting reports estimate that ceiling with their own errors. I kept the lens fixed through college: a hidden gem can still look ordinary when draft day arrives. The decision is whether to trust the box score or two imperfect scouting reports. I explain the model in <a href="https://blog.ronbronson.dev/3mn7c3uzctk2a">the development write-up</a>.</p>
+              <code class="eq">shown  = round(ceiling × lens)     lens 0.40–0.95
+      growth = min(rate × ceiling, cap)  cap 15 → 4
+      scout  = ceiling ± fog             fog 7–31</code>
+            </div>
+          </div>
+          <div class="ctls" style="max-width:640px">
+            <div class="yrs" role="group" aria-label="College year"><button type="button" class="ghost" data-y="0">Freshman</button><button type="button" class="ghost" data-y="1">Sophomore</button><button type="button" class="ghost" data-y="2">Junior</button><button type="button" class="ghost" data-y="3" aria-pressed="true">Senior</button></div>
+          </div>
+          <p class="cap">Pick the one you&rsquo;d draft, then sign them and the lens drops. The plain bar is the box score. The highlighted bar is the real grade.</p>
+          <div class="board" id="o27Board"></div>
+          <div class="ctls" style="max-width:640px"><button type="button" id="o27Sign">Sign them: lift the lens</button><button type="button" class="ghost" id="o27Reset">Put the lens back</button></div>
+          <div class="why">Each player&rsquo;s development rate is set when he&rsquo;s generated. Nobody regresses. Everyone develops. The mystery is in who develops fast and how much they can hide it while getting there.</div>
+          <div class="src">Source: hybrid-baseball/o27v2/college.py and college_potential.py. These four prospects were generated by the game's own generate_college_player and advance_one_year (seeds 330, 245, 20, 219); reports drawn with make_scouting_report. Players get three growth years before they can sign.</div>
+        </section>
+
+      <section class="uth-piece" id="uth-ptc">
+          <div class="head">
+            <div><h3>Play To Clinch point engine</h3></div>
+            <div>
+              <p>College tennis is a team sport: three doubles matches make one point, six singles matches are a point each, and the first team to four wins. My engine plays every point, so a small edge per point adds up over a match.</p>
+              <code class="eq">P(server wins rally) = logistic(0.9·Δrally + 0.36 first | 0.10 second + …)</code>
+            </div>
+          </div>
+          <div class="stage">
+            <div class="panel">
+              <svg id="ptcChart" viewBox="0 0 520 300" role="img" aria-label="Win probability by skill gap"></svg>
+              <p class="cap">Drag to change the skill gap, on the game&rsquo;s 20-80 scale.</p>
+            </div>
+            <div class="panel">
+              <div class="read">
+                <div><small>A wins a point (avg)</small><span class="big" id="ptcPt">50%</span></div>
+                <div><small>A holds serve</small><span class="big" id="ptcGm">50%</span></div>
+              </div>
+              <div class="read" style="margin-top:14px">
+                <div><small>A wins a set</small><span class="big" id="ptcSet">50%</span></div>
+                <div><small>A wins the match</small><span class="big" id="ptcMt" style="color:var(--lime)">50%</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="why">In a dual, every match is decided before the first one finishes. Clinching only changes the order you see results in.</div>
+          <div class="src">Source: tennis-team-manager/engine/rally.py and match.py, NCAA dual format (best of three, no-ad, tiebreak sets). Point odds computed with the engine's own functions; match odds checked against 1,500 simulated matches (73.7% vs 73.7% at a 6-point gap).</div>
+        </section>
+
+      <section class="uth-piece" id="uth-careers">
+          <div class="head">
+            <div><h3>Play To Clinch high school careers</h3></div>
+            <div>
+              <p>The first high school model put seniors in 85.7% of No. 1 singles spots. I compared that with six seasons of Oregon boys tennis, then rebuilt development around starting ability, career peak, annual growth, and actual playing time. JV matches count for half the exposure of varsity, so five freshmen with the same ceiling can end up with very different careers.</p>
+              <code class="eq">gain = year's budget × playing time
+      playing time: bench 0.55 · full JV 0.81 · varsity 1.00</code>
+            </div>
+          </div>
+          <div class="stage">
+            <div class="panel">
+              <svg id="crChart" viewBox="0 0 520 300" role="img" aria-label="Five careers from grade 9 to 12"></svg>
+              <div class="yrs" role="group" aria-label="Playing time each season" id="crExpo" style="margin-top:10px">
+                <button type="button" class="ghost" data-x="0.55">Bench</button><button type="button" class="ghost" data-x="0.807">Full JV</button><button type="button" class="ghost" data-x="0.871">JV + varsity</button><button type="button" class="ghost" data-x="1" aria-pressed="true">Varsity</button>
+              </div>
+              <p class="cap">Five freshmen from one generated roster, all with the same ceiling. Dashes mark each career peak. Change their playing time.</p>
+            </div>
+            <div class="panel">
+              <svg id="crNo1" viewBox="0 0 520 300" role="img" aria-label="Share of No. 1 singles by grade"></svg>
+              <p class="cap">Who plays No. 1 singles, by grade: Oregon boys over six seasons, and my sim before and after the change.</p>
+            </div>
+          </div>
+          <div class="why">A player who is ready for No. 1 singles at 14 can now play there at 14. Change the playing-time control to see how four years of exposure alter the result.</div>
+          <div class="src">Source: tennis-team-manager/app/jhsaa.py (_career_plan, career_ability, exposure odometer). Careers generated with the game's own functions (school "SCHOOL", entry 2040, seats 25, 4, 10, 8, 18); the port here matches career_ability exactly. No. 1 singles shares from "Rebuilding player development in a PC sports sim," August 2026.</div>
+        </section>
+
+      <section class="uth-piece" id="uth-ygf">
+          <div class="head">
+            <div><h3>You Go First match score</h3></div>
+            <div>
+              <p>Scores are asymmetric. What you want, 10 chips across five traits, is scored against what they are, a behavioral quiz: 0.7 × alignment + 0.3 × temperature. Move the chips and both scores change.</p>
+              <code class="eq">score = 0.7 × alignment + 0.3 × temperature
+      temperature = max(0, 100 − 2 × |quiz gap|)</code>
+            </div>
+          </div>
+          <div class="pair" id="ygfPair"></div>
+          <div class="score">
+            <div><small class="t" style="font-family:var(--mono);font-size:12px;color:var(--dim)">Alex's score for Blake</small><div class="big" id="ygfAB">0</div><small class="t" id="ygfABx" style="font-family:var(--mono);font-size:12px;color:var(--dim)"></small></div>
+            <div><small class="t" style="font-family:var(--mono);font-size:12px;color:var(--dim)">Blake's score for Alex</small><div class="big" id="ygfBA">0</div><small class="t" id="ygfBAx" style="font-family:var(--mono);font-size:12px;color:var(--dim)"></small></div>
+          </div>
+          <div class="why">Both scores have to reach 60 before a match is possible.</div>
+          <div class="src">Source: heypbj/src/data/mockSimulation.ts (calculateCompatibilityScore, sample users Alex and Blake), src/lib/stableMatchingSimulator.ts.</div>
+        </section>
+
+      <section class="uth-piece" id="uth-ygfweek">
+        <div class="head">
+          <div><h3>You Go First: a week of matching</h3></div>
+          <div>
+            <p>Swiping makes attention free, so a like tells you nothing and a few profiles get most of them. Everyone gets 15 picks a week in three tiers, and the other person sees the tier.</p>
+            <p>These are the app&rsquo;s 14 test profiles in its simulator. Click a person to see who they picked.</p>
+          </div>
+        </div>
+        <div class="stage">
+          <div class="panel">
+            <svg id="ygwRing" viewBox="0 0 520 520" role="img" aria-label="Fourteen people in a ring, with lines for picks and matches"></svg>
+          </div>
+          <div class="panel">
+            <div class="yrs" role="group" aria-label="What to show" id="ygwView"><button type="button" class="ghost" data-v="w1" aria-pressed="true">Week 1</button><button type="button" class="ghost" data-v="w2">After week 2</button><button type="button" class="ghost" data-v="gs">Textbook stable matching</button></div>
+            <div class="read" style="margin-top:18px">
+              <div><small>People matched</small><span class="big" id="ygwMatched">0</span></div>
+              <div><small>Average match score</small><span class="big" id="ygwAvg">0</span></div>
+            </div>
+            <p class="cap" id="ygwNote" aria-live="polite"></p>
+            <p class="why">The textbook stable-matching algorithm pairs all 14, but only by assuming everyone knows everyone and can propose without limit. Fifteen picks a week matched 12 by week 2.</p>
+            <p class="src">Source: heypbj/src/lib/stableMatchingSimulator.ts and src/data/mockSimulation.ts, default seed.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script src="assets/under-the-hood.js" defer></script>
+    <article class="q"><div><h3><a href="https://blog.ronbronson.com/context-engineering-for-llms-starts-with-systems-not-prompts/">Context Engineering for LLMs Starts With Systems, Not Prompts</a></h3><p class="st">June 20, 2025</p></div><div class="tx"><p>More memory cannot tell an agent what a system is supposed to do. This essay starts with the rules of the place the agent is entering, the people affected, and the ways its actions can be corrected, escalated, or stopped.</p></div></article>
     <article class="q"><div><h3><a href="https://blog.ronbronson.com/context-aware-agents-designing-for-alignment-in-ax/">Context-Aware Agents: Designing for Alignment in AX</a></h3><p class="st">February 23, 2025</p></div><div class="tx"><p>Agents operate within existing systems of rules, responsibilities, and decisions. When those relationships are missing from their context, agents can complete a task while misunderstanding its purpose. I examine how context, authority, and oversight shape agent behavior, and why judging task completion alone misses important consequences.</p></div></article>
     <article class="q"><div><h3><a href="https://blog.ronbronson.com/bringing-ax-to-life-building-a-content-schema-for-browser-games-developed-with-agents/">Bringing AX to Life: Building a Content Schema for Browser Games Developed With Agents</a></h3><p class="st">October 2026</p></div><div class="tx"><p>Building Coalition with AI agents exposed a recurring problem: game rules, interface copy, and narrative kept getting mixed together. I developed a content schema that gives each a defined place, so agents can work on dialogue, game mechanics, or interface language while preserving the relationships between them. The schema is available as a standalone package.</p></div></article>
+    <article class="q"><div><h3><a href="https://vloora.com/writing/when-an-agent-should-ask-you/">When an agent should ask you</a></h3><p class="st">January 15, 2026</p></div><div class="tx"><p>I adapted Judgment Routing for the person giving an agent a task. Uncertainty, stakes, authority, and novelty help route an action to execute, verify, approve, or refer. The person sets the limits, and each action leaves a receipt showing which permission allowed it.</p></div></article>
+    <article class="q"><div><h3><a href="https://vloora.com/writing/proof-an-agent-did-its-job/">What counts as proof that an agent did its job?</a></h3><p class="st">July 23, 2026</p></div><div class="tx"><p>A tool call proves an attempt, and a provider response establishes only what that provider confirmed. I separate the request, approval, attempted action, acknowledgment, and observed result so a missing confirmation stays visible rather than turning into a generic success message.</p></div></article>
   </main>
-  <footer class="rc">
-    <div><div class="foot__icons"><a href="https://bsky.app/profile/ronbronson.com" target="_blank" rel="me noopener" aria-label="Bluesky" title="Bluesky"><svg viewBox="0 0 576 512" fill="currentColor" aria-hidden="true"><path d="M407.8 294.7c-3.3-.4-6.7-.8-10-1.3 3.4 .4 6.7 .9 10 1.3zM288 227.1C261.9 176.4 190.9 81.9 124.9 35.3 61.6-9.4 37.5-1.7 21.6 5.5 3.3 13.8 0 41.9 0 58.4S9.1 194 15 213.9c19.5 65.7 89.1 87.9 153.2 80.7 3.3-.5 6.6-.9 10-1.4-3.3 .5-6.6 1-10 1.4-93.9 14-177.3 48.2-67.9 169.9 120.3 124.6 164.8-26.7 187.7-103.4 22.9 76.7 49.2 222.5 185.6 103.4 102.4-103.4 28.1-156-65.8-169.9-3.3-.4-6.7-.8-10-1.3 3.4 .4 6.7 .9 10 1.3 64.1 7.1 133.6-15.1 153.2-80.7 5.9-19.9 15-138.9 15-155.5s-3.3-44.7-21.6-52.9c-15.8-7.1-40-14.9-103.2 29.8-66.1 46.6-137.1 141.1-163.2 191.8z"></path></svg></a><a href="https://mastodon.social/@ronbronson" target="_blank" rel="me noopener" aria-label="Mastodon" title="Mastodon"><svg viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M433 179.1c0-97.2-63.7-125.7-63.7-125.7-62.5-28.7-228.6-28.4-290.5 0 0 0-63.7 28.5-63.7 125.7 0 115.7-6.6 259.4 105.6 289.1 40.5 10.7 75.3 13 103.3 11.4 50.8-2.8 79.3-18.1 79.3-18.1l-1.7-36.9s-36.3 11.4-77.1 10.1c-40.4-1.4-83-4.4-89.6-54-.6-4.6-.9-9.3-.9-13.9 85.6 20.9 158.7 9.1 178.7 6.7 56.1-6.7 105-41.3 111.2-72.9 9.8-49.8 9-121.5 9-121.5zM357.9 304.3l-46.6 0 0-114.2c0-49.7-64-51.6-64 6.9l0 62.5-46.3 0 0-62.5c0-58.5-64-56.6-64-6.9l0 114.2-46.7 0c0-122.1-5.2-147.9 18.4-175 25.9-28.9 79.8-30.8 103.8 6.1l11.6 19.5 11.6-19.5c24.1-37.1 78.1-34.8 103.8-6.1 23.7 27.3 18.4 53 18.4 175l0 0z"></path></svg></a><a href="https://www.linkedin.com/in/ronbronson/" target="_blank" rel="me noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M100.3 448l-92.9 0 0-299.1 92.9 0 0 299.1zM53.8 108.1C24.1 108.1 0 83.5 0 53.8 0 39.5 5.7 25.9 15.8 15.8s23.8-15.8 38-15.8 27.9 5.7 38 15.8 15.8 23.8 15.8 38c0 29.7-24.1 54.3-53.8 54.3zM447.9 448l-92.7 0 0-145.6c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7l0 148.1-92.8 0 0-299.1 89.1 0 0 40.8 1.3 0c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3l0 164.3-.1 0z"></path></svg></a><a href="https://github.com/quarterback" target="_blank" rel="me noopener" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M216.5 362.5c-66-8-112.5-55.5-112.5-117 0-25 9-52 24-70-6.5-16.5-5.5-51.5 2-66 20-2.5 47 8 63 22.5 19-6 39-9 63.5-9s44.5 3 62.5 8.5c15.5-14 43-24.5 63-22 7 13.5 8 48.5 1.5 65.5 16 19 24.5 44.5 24.5 70.5 0 61.5-46.5 108-113.5 116.5 17 11 28.5 35 28.5 62.5l0 52C323 491.5 335.5 500 350.5 494 441 459.5 512 369 512 257 512 115.5 397 0 255.5 0S0 115.5 0 257c0 111 70.5 203 165.5 237.5 13.5 5 26.5-4 26.5-17.5l0-40c-7 3-16 5-24 5-33 0-52.5-18-66.5-51.5-5.5-13.5-11.5-21.5-23-23-6-.5-8-3-8-6 0-6 10-10.5 20-10.5 14.5 0 27 9 40 27.5 10 14.5 20.5 21 33 21s20.5-4.5 32-16c8.5-8.5 15-16 21-21z"></path></svg></a><a href="https://www.instagram.com/ronbronson/" target="_blank" rel="me noopener" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M224.3 141a115 115 0 1 0 -.6 230 115 115 0 1 0 .6-230zm-.6 40.4a74.6 74.6 0 1 1 .6 149.2 74.6 74.6 0 1 1 -.6-149.2zm93.4-45.1a26.8 26.8 0 1 1 53.6 0 26.8 26.8 0 1 1 -53.6 0zm129.7 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM399 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg></a><a href="https://twitter.com/ronbronson" target="_blank" rel="me noopener" aria-label="Twitter" title="Twitter"><svg viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M357.2 48L427.8 48 273.6 224.2 455 464 313 464 201.7 318.6 74.5 464 3.8 464 168.7 275.5-5.2 48 140.4 48 240.9 180.9 357.2 48zM332.4 421.8l39.1 0-252.4-333.8-42 0 255.3 333.8z"></path></svg></a><a href="https://letterboxd.com/ronbronson/" target="_blank" rel="me noopener" aria-label="Letterboxd" title="Letterboxd"><svg viewBox="0 0 640 512" fill="currentColor" aria-hidden="true"><path d="M521.3 128C586.9 128 640 181.1 640 246.6S586.9 365.2 521.3 365.2c-42.5 0-79.7-22.3-100.7-55.8 11.4-18.2 18-39.7 18-62.8s-6.6-44.6-18-62.8l.8-1.2c20.8-32.3 56.8-53.9 97.9-54.6l2 0zM320 128c42.5 0 79.7 22.3 100.7 55.8-11.4 18.2-18 39.7-18 62.8s6.6 44.6 18 62.8l-.8 1.2c-20.8 32.3-56.8 53.9-97.9 54.6l-2 0c-42.5 0-79.7-22.3-100.7-55.8 11.4-18.2 18-39.7 18-62.8s-6.6-44.6-18-62.8l.8-1.2c20.8-32.3 56.8-53.9 97.9-54.6l2 0zm-201.3 0c42.5 0 79.7 22.3 100.7 55.8-11.4 18.2-18 39.7-18 62.8s6.6 44.6 18 62.8l-.8 1.2c-20.8 32.3-56.8 53.9-97.9 54.6l-2 0C53.1 365.1 0 312.1 0 246.6S53.1 128 118.7 128z"></path></svg></a><a href="https://bookhive.buzz/profile/ronbronson.com" target="_blank" rel="me noopener" aria-label="Bookhive" title="Bookhive"><svg viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M384 512L96 512c-53 0-96-43-96-96L0 96C0 43 43 0 96 0L400 0c26.5 0 48 21.5 48 48l0 288c0 20.9-13.4 38.7-32 45.3l0 66.7c17.7 0 32 14.3 32 32s-14.3 32-32 32l-32 0zM96 384c-17.7 0-32 14.3-32 32s14.3 32 32 32l256 0 0-64-256 0zm32-232c0 13.3 10.7 24 24 24l176 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-176 0c-13.3 0-24 10.7-24 24zm24 72c-13.3 0-24 10.7-24 24s10.7 24 24 24l176 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-176 0z"></path></svg></a><a href="https://record.club/ron" target="_blank" rel="me noopener" aria-label="Record.club" title="Record.club"><svg viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M0 256a256 256 0 1 1 512 0 256 256 0 1 1 -512 0zm256-96a96 96 0 1 1 0 192 96 96 0 1 1 0-192zm0 240a144 144 0 1 0 0-288 144 144 0 1 0 0 288zm0-112a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"></path></svg></a><a href="https://listening.ronbronson.com" target="_blank" rel="me noopener" aria-label="Listening" title="Listening"><svg viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M64 224c0-88.4 71.6-160 160-160s160 71.6 160 160l0 37.5c-10-3.5-20.8-5.5-32-5.5l-16 0c-26.5 0-48 21.5-48 48l0 128c0 26.5 21.5 48 48 48l16 0c53 0 96-43 96-96l0-160C448 100.3 347.7 0 224 0S0 100.3 0 224L0 384c0 53 43 96 96 96l16 0c26.5 0 48-21.5 48-48l0-128c0-26.5-21.5-48-48-48l-16 0c-11.2 0-22 1.9-32 5.5L64 224z"></path></svg></a><a href="https://www.last.fm/user/statechampion" target="_blank" rel="me noopener" aria-label="Last.fm" title="Last.fm"><svg viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M225.8 367.1l-18.8-51s-30.5 34-76.2 34c-40.5 0-69.2-35.2-69.2-91.5 0-72.1 36.4-97.9 72.1-97.9 66.5 0 74.8 53.3 100.9 134.9 18.8 56.9 54 102.6 155.4 102.6 72.7 0 122-22.3 122-80.9 0-72.9-62.7-80.6-115-92.1-25.8-5.9-33.4-16.4-33.4-34 0-19.9 15.8-31.7 41.6-31.7 28.2 0 43.4 10.6 45.7 35.8l58.6-7c-4.7-52.8-41.1-74.5-100.9-74.5-52.8 0-104.4 19.9-104.4 83.9 0 39.9 19.4 65.1 68 76.8 44.9 10.6 79.8 13.8 79.8 45.7 0 21.7-21.1 30.5-61 30.5-59.2 0-83.9-31.1-97.9-73.9-32-96.8-43.6-163-161.3-163-86.1 0-131.8 54.5-131.8 147.2 0 89.1 45.7 137.2 127.9 137.2 66.2 0 97.9-31.1 97.9-31.1z"/></svg></a><a rel="me" href="mailto:ron@ronbronson.com" aria-label="Email" title="Email"><svg viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M48 64c-26.5 0-48 21.5-48 48 0 15.1 7.1 29.3 19.2 38.4l208 156c17.1 12.8 40.5 12.8 57.6 0l208-156c12.1-9.1 19.2-23.3 19.2-38.4 0-26.5-21.5-48-48-48L48 64zM0 196L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-188-198.4 148.8c-34.1 25.6-81.1 25.6-115.2 0L0 196z"></path></svg></a></div></div>
+  <footer class="rc" id="contact">
+    <div><div class="foot__icons"><a href="https://bsky.app/profile/ronbronson.com" target="_blank" rel="me noopener" aria-label="Bluesky" title="Bluesky"><svg viewBox="0 0 576 512" fill="currentColor" aria-hidden="true"><path d="M407.8 294.7c-3.3-.4-6.7-.8-10-1.3 3.4 .4 6.7 .9 10 1.3zM288 227.1C261.9 176.4 190.9 81.9 124.9 35.3 61.6-9.4 37.5-1.7 21.6 5.5 3.3 13.8 0 41.9 0 58.4S9.1 194 15 213.9c19.5 65.7 89.1 87.9 153.2 80.7 3.3-.5 6.6-.9 10-1.4-3.3 .5-6.6 1-10 1.4-93.9 14-177.3 48.2-67.9 169.9 120.3 124.6 164.8-26.7 187.7-103.4 22.9 76.7 49.2 222.5 185.6 103.4 102.4-103.4 28.1-156-65.8-169.9-3.3-.4-6.7-.8-10-1.3 3.4 .4 6.7 .9 10 1.3 64.1 7.1 133.6-15.1 153.2-80.7 5.9-19.9 15-138.9 15-155.5s-3.3-44.7-21.6-52.9c-15.8-7.1-40-14.9-103.2 29.8-66.1 46.6-137.1 141.1-163.2 191.8z"></path></svg></a><a href="https://mastodon.social/@ronbronson" target="_blank" rel="me noopener" aria-label="Mastodon" title="Mastodon"><svg viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M433 179.1c0-97.2-63.7-125.7-63.7-125.7-62.5-28.7-228.6-28.4-290.5 0 0 0-63.7 28.5-63.7 125.7 0 115.7-6.6 259.4 105.6 289.1 40.5 10.7 75.3 13 103.3 11.4 50.8-2.8 79.3-18.1 79.3-18.1l-1.7-36.9s-36.3 11.4-77.1 10.1c-40.4-1.4-83-4.4-89.6-54-.6-4.6-.9-9.3-.9-13.9 85.6 20.9 158.7 9.1 178.7 6.7 56.1-6.7 105-41.3 111.2-72.9 9.8-49.8 9-121.5 9-121.5zM357.9 304.3l-46.6 0 0-114.2c0-49.7-64-51.6-64 6.9l0 62.5-46.3 0 0-62.5c0-58.5-64-56.6-64-6.9l0 114.2-46.7 0c0-122.1-5.2-147.9 18.4-175 25.9-28.9 79.8-30.8 103.8 6.1l11.6 19.5 11.6-19.5c24.1-37.1 78.1-34.8 103.8-6.1 23.7 27.3 18.4 53 18.4 175l0 0z"></path></svg></a><a href="https://www.linkedin.com/in/ronbronson/" target="_blank" rel="me noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M100.3 448l-92.9 0 0-299.1 92.9 0 0 299.1zM53.8 108.1C24.1 108.1 0 83.5 0 53.8 0 39.5 5.7 25.9 15.8 15.8s23.8-15.8 38-15.8 27.9 5.7 38 15.8 15.8 23.8 15.8 38c0 29.7-24.1 54.3-53.8 54.3zM447.9 448l-92.7 0 0-145.6c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7l0 148.1-92.8 0 0-299.1 89.1 0 0 40.8 1.3 0c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3l0 164.3-.1 0z"></path></svg></a><a href="https://github.com/quarterback" target="_blank" rel="me noopener" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M216.5 362.5c-66-8-112.5-55.5-112.5-117 0-25 9-52 24-70-6.5-16.5-5.5-51.5 2-66 20-2.5 47 8 63 22.5 19-6 39-9 63.5-9s44.5 3 62.5 8.5c15.5-14 43-24.5 63-22 7 13.5 8 48.5 1.5 65.5 16 19 24.5 44.5 24.5 70.5 0 61.5-46.5 108-113.5 116.5 17 11 28.5 35 28.5 62.5l0 52C323 491.5 335.5 500 350.5 494 441 459.5 512 369 512 257 512 115.5 397 0 255.5 0S0 115.5 0 257c0 111 70.5 203 165.5 237.5 13.5 5 26.5-4 26.5-17.5l0-40c-7 3-16 5-24 5-33 0-52.5-18-66.5-51.5-5.5-13.5-11.5-21.5-23-23-6-.5-8-3-8-6 0-6 10-10.5 20-10.5 14.5 0 27 9 40 27.5 10 14.5 20.5 21 33 21s20.5-4.5 32-16c8.5-8.5 15-16 21-21z"></path></svg></a><a href="https://www.instagram.com/ronbronson/" target="_blank" rel="me noopener" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M224.3 141a115 115 0 1 0 -.6 230 115 115 0 1 0 .6-230zm-.6 40.4a74.6 74.6 0 1 1 .6 149.2 74.6 74.6 0 1 1 -.6-149.2zm93.4-45.1a26.8 26.8 0 1 1 53.6 0 26.8 26.8 0 1 1 -53.6 0zm129.7 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM399 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg></a><a href="https://twitter.com/ronbronson" target="_blank" rel="me noopener" aria-label="Twitter" title="Twitter"><svg viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M357.2 48L427.8 48 273.6 224.2 455 464 313 464 201.7 318.6 74.5 464 3.8 464 168.7 275.5-5.2 48 140.4 48 240.9 180.9 357.2 48zM332.4 421.8l39.1 0-252.4-333.8-42 0 255.3 333.8z"></path></svg></a><a href="https://letterboxd.com/ronbronson/" target="_blank" rel="me noopener" aria-label="Letterboxd" title="Letterboxd"><svg viewBox="0 0 640 512" fill="currentColor" aria-hidden="true"><path d="M521.3 128C586.9 128 640 181.1 640 246.6S586.9 365.2 521.3 365.2c-42.5 0-79.7-22.3-100.7-55.8 11.4-18.2 18-39.7 18-62.8s-6.6-44.6-18-62.8l.8-1.2c20.8-32.3 56.8-53.9 97.9-54.6l2 0zM320 128c42.5 0 79.7 22.3 100.7 55.8-11.4 18.2-18 39.7-18 62.8s6.6 44.6 18 62.8l-.8 1.2c-20.8 32.3-56.8 53.9-97.9 54.6l-2 0c-42.5 0-79.7-22.3-100.7-55.8 11.4-18.2 18-39.7 18-62.8s-6.6-44.6-18-62.8l.8-1.2c20.8-32.3 56.8-53.9 97.9-54.6l2 0zm-201.3 0c42.5 0 79.7 22.3 100.7 55.8-11.4 18.2-18 39.7-18 62.8s6.6 44.6 18 62.8l-.8 1.2c-20.8 32.3-56.8 53.9-97.9 54.6l-2 0C53.1 365.1 0 312.1 0 246.6S53.1 128 118.7 128z"></path></svg></a><a href="https://bookhive.buzz/profile/ronbronson.com" target="_blank" rel="me noopener" aria-label="Bookhive" title="Bookhive"><svg viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M384 512L96 512c-53 0-96-43-96-96L0 96C0 43 43 0 96 0L400 0c26.5 0 48 21.5 48 48l0 288c0 20.9-13.4 38.7-32 45.3l0 66.7c17.7 0 32 14.3 32 32s-14.3 32-32 32l-32 0zM96 384c-17.7 0-32 14.3-32 32s14.3 32 32 32l256 0 0-64-256 0zm32-232c0 13.3 10.7 24 24 24l176 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-176 0c-13.3 0-24 10.7-24 24zm24 72c-13.3 0-24 10.7-24 24s10.7 24 24 24l176 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-176 0z"></path></svg></a><a href="https://record.club/ron" target="_blank" rel="me noopener" aria-label="Record.club" title="Record.club"><svg viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M0 256a256 256 0 1 1 512 0 256 256 0 1 1 -512 0zm256-96a96 96 0 1 1 0 192 96 96 0 1 1 0-192zm0 240a144 144 0 1 0 0-288 144 144 0 1 0 0 288zm0-112a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"></path></svg></a><a href="https://listening.ronbronson.com" target="_blank" rel="me noopener" aria-label="Listening" title="Listening"><svg viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M64 224c0-88.4 71.6-160 160-160s160 71.6 160 160l0 37.5c-10-3.5-20.8-5.5-32-5.5l-16 0c-26.5 0-48 21.5-48 48l0 128c0 26.5 21.5 48 48 48l16 0c53 0 96-43 96-96l0-160C448 100.3 347.7 0 224 0S0 100.3 0 224L0 384c0 53 43 96 96 96l16 0c26.5 0 48-21.5 48-48l0-128c0-26.5-21.5-48-48-48l-16 0c-11.2 0-22 1.9-32 5.5L64 224z"></path></svg></a><a href="https://www.last.fm/user/statechampion" target="_blank" rel="me noopener" aria-label="Last.fm" title="Last.fm"><svg viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M225.8 367.1l-18.8-51s-30.5 34-76.2 34c-40.5 0-69.2-35.2-69.2-91.5 0-72.1 36.4-97.9 72.1-97.9 66.5 0 74.8 53.3 100.9 134.9 18.8 56.9 54 102.6 155.4 102.6 72.7 0 122-22.3 122-80.9 0-72.9-62.7-80.6-115-92.1-25.8-5.9-33.4-16.4-33.4-34 0-19.9 15.8-31.7 41.6-31.7 28.2 0 43.4 10.6 45.7 35.8l58.6-7c-4.7-52.8-41.1-74.5-100.9-74.5-52.8 0-104.4 19.9-104.4 83.9 0 39.9 19.4 65.1 68 76.8 44.9 10.6 79.8 13.8 79.8 45.7 0 21.7-21.1 30.5-61 30.5-59.2 0-83.9-31.1-97.9-73.9-32-96.8-43.6-163-161.3-163-86.1 0-131.8 54.5-131.8 147.2 0 89.1 45.7 137.2 127.9 137.2 66.2 0 97.9-31.1 97.9-31.1z"/></svg></a><a rel="me" href="#contact" data-contact aria-label="Email" title="Email"><svg viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M48 64c-26.5 0-48 21.5-48 48 0 15.1 7.1 29.3 19.2 38.4l208 156c17.1 12.8 40.5 12.8 57.6 0l208-156c12.1-9.1 19.2-23.3 19.2-38.4 0-26.5-21.5-48-48-48L48 64zM0 196L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-188-198.4 148.8c-34.1 25.6-81.1 25.6-115.2 0L0 196z"></path></svg></a></div></div>
     <h2>Colophon, with digressions</h2>
+    <p><b>Type</b> IBM Plex Sans Condensed, IBM Plex Mono, PP Neue Montreal</p>
+    <p><b>Built with</b> HTML, CSS, JavaScript, SVG, canvas, React, <a href="https://github.com/declarative-dragging/dragology">Dragology</a></p>
+    <p><b>Data</b> OpenRouter, Occupant Indices, the projects&rsquo; own code</p>
+    <p><b>Hosting</b> GitHub, Vercel</p>
+    <p><b>Cited</b> Horowitz, Blinn, and Heer, &ldquo;<a href="https://declarative-dragging.github.io">Declarative Dragging</a>,&rdquo; UIST &rsquo;26</p>
     <p id="digression">Inexplicably, a Green Bay Packers shareholder.</p>
-    <p>This room is set in IBM Plex Sans Condensed and Plex Mono.</p>
-    <p>The project map&rsquo;s dragging is built with <a href="https://github.com/declarative-dragging/dragology">Dragology</a> (MIT), from Joshua Horowitz, Andrew Blinn and Jeffrey Heer, &ldquo;<a href="https://declarative-dragging.github.io">Declarative Dragging</a>,&rdquo; <i>Proceedings of the 39th Annual ACM Symposium on User Interface Software and Technology</i> (UIST &rsquo;26).</p>
   </footer>
 </div>
   <script>
@@ -81,5 +265,6 @@
       el.innerHTML = DIGRESSIONS[i];
     })();
   </script>
+<script src="assets/contact.js" defer></script>
 </body>
 </html>

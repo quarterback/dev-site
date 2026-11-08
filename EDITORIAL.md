@@ -103,3 +103,6 @@ npx plain-language-default@0.1.0 check <extracted-copy>.md
 `plain-as-day` reads a file as prose. Pointed straight at an HTML page it scores the markup and the inline scripts, so extract the rendered visible text first and terminate headings, buttons, and definition-list rows with a full stop. Without that it runs the next sentence onto the previous block and reports long sentences no reader ever sees.
 
 A passing check proves nothing about accuracy, voice, or whether a claim is true. It only means no pattern matched.
+
+## Colophon
+Every page's colophon is a real colophon. It lists, first and as short bold-labelled lines: **Type** (every face the page loads), **Built with** (the page's whole stack in plain names: HTML, CSS, JavaScript, SVG, canvas, any library), and where relevant **Data**, **Embeds**, **Hosting** and **Cited**. No sentences about what controls what. The rotating digression comes last. Update the colophon whenever a page gains a font, library, embed or data source.

@@ -1,0 +1,90 @@
+/* under-the-hood.css: styles for assets/under-the-hood.js. Every color and
+   face is a --uth-* token. Defaults suit the Projects room (cobalt);
+   .uth--home maps the tokens onto the home page's Snow and Coffee themes. */
+.uth { --uth-bg: #1f2bff; --uth-fg: #ffffff; --uth-dim: #c9ccff; --uth-accent: #d7ff3d; --uth-on-accent: #1f2bff; --uth-grid: rgba(201,204,255,.28); --uth-panel: #0a1180; --uth-down: #ffb4c8;
+  --uth-head: "Plex Cond", "Arial Narrow", sans-serif; --uth-mono: "Plex Mono", ui-monospace, Menlo, monospace; color: var(--uth-fg); }
+.uth--home { --uth-bg: var(--bg); --uth-fg: var(--ink); --uth-dim: var(--soft); --uth-accent: var(--accent); --uth-on-accent: var(--bg); --uth-grid: color-mix(in srgb, var(--ink) 18%, transparent); --uth-panel: var(--shot); --uth-down: var(--accent);
+  --uth-head: var(--display); --uth-mono: var(--mono); }
+.uth h2, .uth h3 { font-family: var(--uth-head); }
+.uth .uth-piece { border-top: 1px solid var(--uth-grid); margin-top: 72px; padding-top: 28px; }
+.uth .head { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 12px 48px; align-items: start; }
+.uth .head h3 { font-size: clamp(26px, 2.6vw, 34px); line-height: 1.1; margin: 0; text-wrap: balance; }
+.uth .head p { margin: 0 0 10px; color: var(--uth-dim); max-width: 34em; }
+.uth .eq { font-family: var(--uth-mono); font-size: 14px; color: var(--uth-fg); background: var(--uth-panel); padding: 10px 12px; display: block; overflow-x: auto; white-space: pre; }
+.uth .stage { margin-top: 24px; display: grid; gap: 24px; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; }
+.uth .panel { min-width: 0; }
+.uth .cap { font-family: var(--uth-mono); font-size: 12px; color: var(--uth-dim); margin: 8px 0 0; }
+.uth .big { font-family: var(--uth-head); font-weight: 700; font-size: clamp(28px, 2.6vw, 36px); line-height: 1.1; font-variant-numeric: tabular-nums; }
+.uth .read { display: flex; flex-wrap: wrap; gap: 8px 28px; align-items: baseline; }
+.uth .read div { min-width: 0; }
+.uth .read small { display: block; font-family: var(--uth-mono); font-size: 12px; color: var(--uth-dim); }
+.uth .why { margin: 18px 0 0; max-width: 40em; }
+.uth .src { margin-top: 10px; font-family: var(--uth-mono); font-size: 12px; color: var(--uth-dim); }
+.uth svg text { font-family: var(--uth-mono); }
+.uth button, .uth select { font: 500 14px var(--uth-mono); color: var(--uth-bg); background: var(--uth-accent); border: 0; padding: 8px 12px; cursor: pointer; }
+.uth button.ghost { background: transparent; color: var(--uth-fg); border: 1px solid var(--uth-grid); }
+.uth button:focus-visible, .uth input:focus-visible, .uth select:focus-visible, .uth [tabindex]:focus-visible { outline: 3px solid var(--uth-fg); outline-offset: 2px; }
+.uth label.ctl { display: grid; gap: 4px; font-family: var(--uth-mono); font-size: 12px; color: var(--uth-dim); }
+.uth input[type=range] { width: 100%; accent-color: var(--uth-accent); }
+.uth .ctls { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px 20px; margin-top: 12px; }
+.uth /* Oregon table */
+.rank { list-style: none; margin: 0; padding: 0; position: relative; }
+.uth .rank li { display: grid; grid-template-columns: 34px minmax(0, 1fr) 64px 46px; gap: 8px; align-items: baseline; padding: 6px 0; border-bottom: 1px solid var(--uth-grid); font-variant-numeric: tabular-nums;  background: var(--uth-bg); }
+.uth .rank .n { font-weight: 600; font-size: 19px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.uth .rank .r { font-family: var(--uth-mono); font-size: 14px; color: var(--uth-dim); }
+.uth .rank .pi { font-family: var(--uth-mono); font-size: 14px; text-align: right; }
+.uth .rank .d { font-family: var(--uth-mono); font-size: 13px; text-align: right; color: var(--uth-dim); }
+.uth .rank .d.up { color: var(--uth-accent); }
+.uth .rank .d.dn { color: var(--uth-down); }
+.uth .bars { touch-action: none; user-select: none; }
+.uth .bars .bar { cursor: ns-resize; }
+.uth .tag { display: inline-block; font-family: var(--uth-mono); font-size: 13px; padding: 4px 8px; background: var(--uth-accent); color: var(--uth-bg); }
+.uth /* YGF chips */
+.pair { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; }
+.uth .person h3 { margin: 0; font-size: 28px; }
+.uth .person .t { font-family: var(--uth-mono); font-size: 12px; color: var(--uth-dim); }
+.uth .trait { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 8px; align-items: center; margin-top: 8px; }
+.uth .trait span { font-family: var(--uth-mono); font-size: 12px; color: var(--uth-dim); }
+.uth .chips { display: flex; gap: 4px; align-items: center; min-height: 26px; }
+.uth .chip { width: 18px; height: 18px; background: var(--uth-accent); border: 0; padding: 0; }
+.uth .chip.empty { background: transparent; outline: 1px dashed var(--uth-grid); }
+.uth .chips button.mini { padding: 2px 7px; font-size: 13px; }
+.uth .score { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; margin-top: 20px; }
+.uth .score .big { font-size: clamp(28px, 2.6vw, 36px); }
+.uth /* O27 draft board */
+.board { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-top: 24px; }
+.uth .pros { min-width: 0; background: var(--uth-panel); padding: 14px; display: grid; gap: 10px; align-content: start; border: 2px solid transparent; }
+.uth .pros.pick { border-color: var(--uth-accent); }
+.uth .pros h3 { margin: 0; font-size: 22px; }
+.uth .pros .k { font-family: var(--uth-mono); font-size: 11px; color: var(--uth-dim); }
+.uth .g { display: grid; grid-template-columns: 62px minmax(0, 1fr) 30px; gap: 6px; align-items: center; font-family: var(--uth-mono); font-size: 12px; }
+.uth .g .track { position: relative; height: 10px; background: var(--uth-grid); }
+.uth .g .disp { position: absolute; left: 0; top: 0; bottom: 0; background: var(--uth-fg); transition: background-color .15s; }
+.uth .g .pot { position: absolute; left: 0; top: 0; bottom: 0; background: var(--uth-accent); opacity: 0; transition: opacity .15s; }
+.uth .revealed .g .pot { opacity: 1; }
+.uth .revealed .g .disp { background: var(--uth-grid); }
+.uth .rep { display: flex; gap: 12px; font-family: var(--uth-mono); font-size: 12px; color: var(--uth-dim); }
+.uth .rep b { color: var(--uth-fg); font-size: 18px; font-family: var(--uth-head); }
+.uth .truth { display: none; font-family: var(--uth-mono); font-size: 12px; color: var(--uth-accent); }
+.uth .revealed .truth { display: block; }
+.uth .yrs { display: flex; gap: 6px; flex-wrap: wrap; }
+.uth .yrs button[aria-pressed="true"] { background: var(--uth-fg); color: var(--uth-bg); }
+@media (max-width: 860px) {
+  .uth .board { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+}
+@media (max-width: 520px) {
+  .uth .board { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 860px) {
+  .uth .head, .uth .stage, .uth .pair, .uth .score { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .uth .rank li { transition: none; }
+}
+
+/* Section heading and lede (Projects room; the home page uses its own .sec h2) */
+.uth .uth__h { margin: 96px 0 0; font-weight: 700; font-size: clamp(32px, 3.6vw, 56px); line-height: 1; }
+.uth .uth__lede { margin: 16px 0 0; max-width: 36em; font-size: clamp(20px, 2vw, 26px); line-height: 1.35; color: var(--uth-dim); }
+.uth--home .uth__lede { font-size: 20px; color: var(--uth-fg); }
+.uth .uth-piece:first-of-type { margin-top: 40px; }
+.uth--home .head p { color: var(--uth-fg); }

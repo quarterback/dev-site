@@ -85,7 +85,9 @@
 
       <h2>How it works</h2>
 
-      <p>Every game is seed-deterministic: same seed, same roster state, same result. A stat-invariant suite runs nine assertions before any release, and it has caught every impossible-stat bug the project has shipped. Roughly 85 after-action reports in the repo document each system as it landed, with the reasoning, tradeoffs, and verification numbers.</p>
+      <p>Every game is seed-deterministic: same seed, same roster state, same result. A stat-invariant suite runs nine assertions before any release. Roughly 85 after-action reports in the repo document the decisions, failed attempts, and checks behind the systems.</p>
+
+      <p>When the live stats pages took 25 to 52 seconds to load, the first fix added database indexes. Profiling showed that database queries were fast. The slow pages were recalculating whole leaderboards on every request. The eventual fix cached the rendered HTML until the data changed. The <a href="https://github.com/quarterback/hybrid-baseball/blob/main/docs/aar-perf-html-result-cache.md">performance report</a> keeps the wrong turn alongside the measurements that changed the approach.</p>
 
       <h2>The architecture</h2>
 

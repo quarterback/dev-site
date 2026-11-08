@@ -89,6 +89,8 @@
 
       <p>Every match is deterministic: same seed, same result. You can reproduce a specific match, share scenarios with others, and test recruiting strategies without randomness getting in the way. The engine simulates at different levels of detail depending on the task: point by point for college and showcase matches, and a faster model for bulk junior tournaments that still lands realistic results. Both stay deterministic.</p>
 
+      <p>I originally left JV tennis out. Then I found that a quarter of the high school players tracked across three seasons never appeared in a varsity lineup. I added JV and reserve squads so more players could compete, and those appearances now count toward their development. I also tested coaching effects by replaying the same 67 players with the same match exposure under different coaching staffs. Staff composition and teaching specialties changed the results. I documented the decisions in <a href="https://blog.ronbronson.dev/3mxstvdgpw22u">Revamping Coaching &amp; Player Development</a>.</p>
+
       <h2>The architecture</h2>
 
       <p>The core is Python, with no dependencies outside the standard library; a Flask web app sits on top, and everything runs on SQLite. It&rsquo;s fast enough to simulate full seasons in seconds. I chose Python for its clarity and determinism, and SQLite because it&rsquo;s portable and needs no separate database. There&rsquo;s no frontend framework and nothing in the cloud, so the whole thing runs offline. The web UI is one view of the engine, and the engine runs without it.</p>
