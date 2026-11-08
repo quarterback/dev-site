@@ -121,7 +121,7 @@ img { display: block; max-width: 100%; }
 @media (max-width: 860px) {
   :root { --gut: 16px; }
   .q, .plist li { grid-template-columns: 1fr; }
-  .pop, .gr, .sm { display: none; }
+  .pop, .gr { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { .pop, .gr .l { transition: none; } }
 
@@ -133,3 +133,12 @@ html.dissolving body { visibility: hidden; }
 .rc p b { display: inline-block; min-width: 6.5em; font-weight: 500; color: #fff; }
 .rc p + p { margin-top: .3em; }
 .rc #digression { margin-top: 1.2em; }
+
+/* Project map on phones: a small technique panel above the page's own
+   project list, which it sorts. The desktop map is hidden there. */
+.smp__mount { margin: 56px 0 0; }
+.has-smp .plist { margin-top: 20px; }
+.smp__hint { margin: 0 0 10px; font-family: "Plex Mono", monospace; font-size: 13px; color: var(--dim); }
+.smp__panel svg { display: block; }
+.plist li.is-dim { opacity: .35; }
+@media (max-width: 860px) { .sm { display: none; } }

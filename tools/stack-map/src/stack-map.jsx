@@ -285,8 +285,106 @@ function StackMap({ host }) {
   );
 }
 
+// Phones: the techniques sit in a small two-column panel with the marker,
+// and the projects are an ordinary HTML list below it, so the page still
+// scrolls when you touch the list. Only the small panel captures the finger.
+const P_COLS = 2;
+const P_CELL_H = 40;
+const P_H = Math.ceil(TECH.length / P_COLS) * P_CELL_H + 8;
+const P_LABEL = (t) => (t.id === "all" ? "All projects" : t.label);
+
+function makePanel(width) {
+  const cw = width / P_COLS;
+  const at = (i) => [(i % P_COLS) * cw, Math.floor(i / P_COLS) * P_CELL_H];
+  return ({ state, d, setState }) => {
+    const [mx, my] = at(state.lens);
+    return (
+      <g>
+        {TECH.map((t, i) => {
+          const [x, y] = at(i);
+          return (
+            <g id={`phit-${t.id}`} transform={translate(x, y)} onClick={() => setState({ lens: i })} style={{ cursor: "pointer" }}>
+              <rect width={cw - 6} height={P_CELL_H - 6} fill="rgba(255,255,255,0.06)" />
+            </g>
+          );
+        })}
+        <g id="plens" transform={translate(mx, my)} dragologyZIndex={1} dragologyOnDrag={() => d.between(STATES).withDropTransition("cubic-out")}>
+          <rect width={cw - 6} height={P_CELL_H - 6} fill={LIME} />
+        </g>
+        {TECH.map((t, i) => {
+          const [x, y] = at(i);
+          return (
+            <g id={`plab-${t.id}`} transform={translate(x + 10, y + 22)} dragologyZIndex={2} pointerEvents="none">
+              <text fontFamily={MONO} fontSize={13} fontWeight={500} fill={i === state.lens ? "#1f2bff" : "#fff"}>
+                {P_LABEL(t)}
+              </text>
+            </g>
+          );
+        })}
+      </g>
+    );
+  };
+}
+
+function PhoneMap({ list }) {
+  const [lens, setLens] = useState(0);
+  const [shown, setShown] = useState(0);
+  const [width, setWidth] = useState(0);
+  const wrap = useRef(null);
+  const items = useMemo(() => [...list.children], [list]);
+  useEffect(() => {
+    const ro = new ResizeObserver(([e]) => setWidth(Math.floor(e.contentRect.width)));
+    ro.observe(wrap.current);
+    return () => ro.disconnect();
+  }, []);
+  // Re-sort the page's own project list: projects that use the technique
+  // first, the rest after and dimmed. "All projects" restores the original order.
+  useEffect(() => {
+    const t = TECH[shown].id;
+    const uses = (li) => {
+      const href = li.querySelector("a")?.getAttribute("href");
+      const p = PROJECTS.find((x) => x.href === href);
+      return !!p && p.uses.includes(t);
+    };
+    const sorted = shown === 0 ? items : [...items.filter(uses), ...items.filter((li) => !uses(li))];
+    sorted.forEach((li) => { list.appendChild(li); li.classList.toggle("is-dim", shown !== 0 && !uses(li)); });
+  }, [shown, items, list]);
+  const panel = useMemo(() => (width ? makePanel(width) : null), [width]);
+  const state = useMemo(() => ({ lens }), [lens]);
+  const t = TECH[shown];
+  return (
+    <div className="smp" ref={wrap}>
+      <p className="smp__hint">Drag the marker, or tap a technique, to sort the projects.</p>
+      <div className="smp__panel" aria-hidden="true">
+        {panel && (
+          <DraggableRenderer
+            draggable={panel}
+            state={state}
+            onDragState={(s) => setShown(s.lens)}
+            onDropState={(s) => { setLens(s.lens); setShown(s.lens); }}
+            width={width}
+            height={P_H}
+          />
+        )}
+      </div>
+      <p className="sm__live" aria-live="polite">
+        {shown === 0 ? "Showing every project." : `${t.label}: ${PROJECTS.filter((p) => p.uses.includes(t.id)).map((p) => p.name).join(", ")}.`}
+      </p>
+    </div>
+  );
+}
+
 const host = document.getElementById("stack-map");
+const plist = document.querySelector(".plist");
 if (host && matchMedia("(min-width: 861px)").matches) {
   host.classList.add("sm--on");
   createRoot(host.querySelector(".sm__mount")).render(<StackMap host={host} />);
+} else if (plist) {
+  // Phones: one list. The technique panel sits above the page's project list
+  // and sorts it; the desktop map (and its own list) isn't shown.
+  const mount = document.createElement("div");
+  mount.className = "smp__mount";
+  plist.before(mount);
+  document.documentElement.classList.add("has-smp");
+  createRoot(mount).render(<PhoneMap list={plist} />);
 }
