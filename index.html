@@ -23,7 +23,7 @@
 <meta name="twitter:image" content="https://ronbronson.dev/assets/social-card.png" />
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/gallery/PPNeueMontreal-Extrabold.woff2" crossorigin />
 <link rel="stylesheet" href="assets/workshop.css" />
-<link rel="stylesheet" href="assets/pbbg-demo.css" />
+<link rel="stylesheet" href="assets/runthrough.css" />
 <script>try { if (localStorage.getItem("rb-theme") === "coffee") document.documentElement.setAttribute("data-theme", "coffee"); } catch (e) {}</script>
 <script>try{if(sessionStorage.getItem("rb-dissolve")){document.documentElement.classList.add("dissolving");setTimeout(function(){document.documentElement.classList.remove("dissolving")},1000)}}catch(e){}</script>
 <script src="assets/dissolve.js" defer></script>
@@ -53,9 +53,50 @@
     <figure class="hero__ph"><img src="assets/dev-ron-mic.jpg" alt="Ron speaking into a handheld microphone, wearing a yellow shirt" width="1400" height="933" /></figure>
   </section>
 
-  <section class="g sec" id="under-the-hood" aria-label="Coalition content model demonstration">
-    <div class="pd" id="pbbg-demo">
-      <noscript><img src="assets/coalition/play.webp" alt="Coalition game screen with the residence, escape clock and player choices." /><p>The interactive content inspector requires JavaScript.</p></noscript>
+  <section class="g sec rt" id="under-the-hood" aria-label="Coalition game and content model">
+    <p class="rt__lede"><a href="https://blog.ronbronson.dev/3mz4xx5bvhk2v">Coalition</a> is a Persistent Browser Based Game (PBBG) built in HTML5, the goal of the game is to escape before your character is captured.</p>
+    <p class="rt__intro">In developing a text-heavy game with AI agents, I needed a system that kept in-game help text, narrative text and game rules all separate.</p>
+    <p class="rt__intro">Based on design systems &amp; style guides, I wanted a way to integrate my own editorial rules into the game while only having it impact the sections I wanted.</p>
+    <div class="rt__grid" id="runthrough">
+      <figure class="rt__phone">
+        <video muted playsinline preload="metadata" poster="assets/coalition/runthrough-poster.webp" width="430" height="932" aria-label="One run of Coalition, from the title screen to the first stop">
+          <source src="assets/coalition/runthrough.mp4" type="video/mp4" />
+          <source src="assets/coalition/runthrough.webm" type="video/webm" />
+          <img src="assets/coalition/runthrough-poster.webp" alt="Coalition on a phone: the house at Portô Venla, the clock, and the first moves." />
+        </video>
+      </figure>
+      <button type="button" class="rt__play" aria-pressed="false" style="grid-column: 1">Play</button>
+      <div class="rt__side">
+        <div class="rt__note" aria-live="polite"><b>0:00 · The title</b><p>Every line comes from one catalog, not the code.</p></div>
+        <ol class="rt__chapters" aria-label="Chapters">
+          <li><button type="button" data-t="0" data-title="The title" data-note="Every line comes from one catalog, not the code."><time>0:00</time><span>The title</span></button></li>
+          <li><button type="button" data-t="7.5" data-title="Choose a character" data-note="The checker allows each character one sentence."><time>0:07</time><span>Choose a character</span></button></li>
+          <li><button type="button" data-t="11.6" data-title="Choose a companion" data-note="Each companion gets one sentence, and the checker rejects any that gives away the odds."><time>0:11</time><span>Choose a companion</span></button></li>
+          <li><button type="button" data-t="15.8" data-title="Add cards" data-note="The checker holds card buttons to six words."><time>0:15</time><span>Add cards</span></button></li>
+          <li><button type="button" data-t="20.9" data-title="Pick a country" data-note="Flight times and prices come from game data, not the text."><time>0:20</time><span>Pick a country</span></button></li>
+          <li><button type="button" data-t="23.5" data-title="The briefing" data-note="The game writes the briefing from live state: the stop, the clock, the police, the next step."><time>0:23</time><span>The briefing</span></button></li>
+          <li><button type="button" data-t="28.1" data-title="News" data-note="News is story text, so the checker gives it different rules than a button."><time>0:28</time><span>News</span></button></li>
+          <li><button type="button" data-t="37.5" data-title="A call" data-note="Dialogue must name its speaker, or the checker fails it."><time>0:37</time><span>A call</span></button></li>
+          <li><button type="button" data-t="46.6" data-title="Make a move" data-note="A move shows its name and its time, never the odds."><time>0:46</time><span>Make a move</span></button></li>
+          <li><button type="button" data-t="49" data-title="The roll" data-note="The result says what happened and what it cost."><time>0:49</time><span>The roll</span></button></li>
+          <li><button type="button" data-t="55.5" data-title="The first stop" data-note="Each kind of text passed its own rules before this build ran."><time>0:55</time><span>The first stop</span></button></li>
+        </ol>
+      </div>
+    </div>
+    <pre class="rt__check"><i>$</i> pbbg-content check content/pbbg/coalition.bundle.json
+
+<em>warning</em> COAL-10 ch2.level.eri_airstrip.fence.text: Owner, 2026-10-30: say a flight's length as '8-hour flight', never 'hours in the air'.
+<em>error</em> SPEAKER ch2.sibling_visa: Dialogue requires a speaker. Set speakerRef to a declared entity.
+<em>warning</em> TEXT-02 ch2.level.eri_town.bus.name: Review action labels longer than six words.
+
+<i>$</i> python3 tools/build.py
+content-check: 0 errors, 0 warnings
+pbbg-check: <u>Content checks passed.</u></pre>
+    <p class="rt__intro" style="margin-top: 14px">The checker caught the first three lines when I added chapter two. The last two are the fixed build.</p>
+    <div class="rt__links">
+      <a href="https://github.com/quarterback/pbbg-content-schema">PBBG Content Schema on GitHub</a>
+      <a href="projects/pbbg-content-schema.html">How I built it</a>
+      <a href="https://github.com/quarterback/escape-game/blob/main/content/pbbg/coalition.bundle.json">The game's text in the schema</a>
     </div>
   </section>
 
@@ -88,8 +129,7 @@
   </section>
 
   <section class="g sec" id="systems" aria-labelledby="h-sys">
-    <h2 id="h-sys">Systems</h2>
-    <p class="sec__st">These are small pieces of agent plumbing I needed while building larger projects. They keep editorial decisions, game rules, and work records from getting lost or changed as a task moves between agents, tools, and sessions.</p>
+    <h2 id="h-sys">NPM tools</h2>
     <article class="sys"><div><h3><a href="https://www.npmjs.com/package/red-pen-editor">Red Pen Editor</a></h3><code>npm i red-pen-editor</code></div><div class="sys__b"><p class="sys__idea">An editor for AI agents with permission to cut. It looks for what a draft can lose without changing what it says, and it refuses any cut that would drop the last mention of a number, date, or link. Agents can use it as a skill or through an MCP server. It runs locally, with no API key.</p></div></article>
     <article class="sys"><div><h3><a href="projects/pbbg-content-schema.html">PBBG Content Schema</a></h3><code>npx -y github:quarterback/pbbg-content-schema install-skill</code></div><div class="sys__b"><p class="sys__idea">A content format and checker that keeps a browser game&rsquo;s rules, story, and interface text apart, so AI agents can edit one without breaking the others.</p></div></article>
     <article class="sys"><div><h3><a href="projects/closedtab.html">closedtab</a></h3><code>npm i closedtab</code></div><div class="sys__b"><p class="sys__idea">Shared memory for people and AI agents. It records what an agent decided and where it went off plan, which test results and agent logs often miss. The next session starts with that record.</p><p><a href="https://blog.ronbronson.com/closedtab-a-npm-shared-memory-for-you-and-your-ai-agents">Closedtab: A npm shared memory for you and your AI agents</a><br /><a href="https://blog.ronbronson.com/agent-experience-needs-failure-affordances/">Agent Experience Needs Failure Affordances</a></p></div></article>
@@ -120,8 +160,7 @@
     <span class="pull__label" aria-hidden="true">Projects</span>
   </a>
   <script src="assets/pull.js" defer></script>
-  <script src="assets/pbbg-demo.js" defer></script>
-  <script src="assets/pbbg-game-first.js" defer></script>
+  <script src="assets/runthrough.js" defer></script>
   <script>
     /* Colour theme: the two swatches in the top bar set data-theme on
        <html> and remember the pick. The head script applies it early. */
