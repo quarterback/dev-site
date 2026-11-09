@@ -44,7 +44,7 @@
     <h1 class="project__title">PBBG Content Schema</h1>
     <p class="project__lede">A content architecture for browser games built with agents. JSON Schemas, scoped writing policies, and a linter that keep three things apart: the words on the buttons, the words in the story, and the numbers that decide what happens. I pulled it out of <a href="coalition.html">Coalition</a> and published it on its own.</p>
     <!-- At a glance (3 November 2026) -->
-    <dl class="glance"><div><dt>Problem</dt><dd>Asked to shorten a line of dialogue, an agent rewrote a button. Asked to add a scene, it made up the costs.</dd></div><div><dt>System</dt><dd>A content architecture for browser games built with agents: JSON Schemas, writing policies, a linter, a skill and an MCP server.</dd></div><div><dt>Mechanics</dt><dd>Rules, story, interface text and writing policy each have one owner. Text never holds its own numbers. <code>{turns}</code> points to a declared cost, so changing the rule changes every sentence that names it.</dd></div><div><dt>Stack</dt><dd>JSON Schema with Ajv; Node 20 CLI; MCP; Agent Skill. No network or model calls.</dd></div><div><dt>Result</dt><dd>Version 0.6.0. An agent installs it with one command and checks its own edits. Every build of Coalition checks the game&rsquo;s copy with it.</dd></div></dl>
+    <dl class="glance"><div><dt>Problem</dt><dd>Agents adding scenes needed clear content types and references to keep the story coherent and the interface consistent.</dd></div><div><dt>System</dt><dd>A content architecture for browser games built with agents: JSON Schemas, writing policies, a linter, a skill and an MCP server.</dd></div><div><dt>Mechanics</dt><dd>Rules, story, interface text and writing policy each have one owner. Text never holds its own numbers. <code>{turns}</code> points to a declared cost, so changing the rule changes every sentence that names it.</dd></div><div><dt>Stack</dt><dd>JSON Schema with Ajv; Node 20 CLI; MCP; Agent Skill. No network or model calls.</dd></div><div><dt>Result</dt><dd>Version 0.6.0. An agent installs it with one command and checks its own edits. Every build of Coalition checks the game&rsquo;s copy with it.</dd></div></dl>
 
     <section class="pd-wrap" aria-label="Try the schema on an example">
       <div class="pd" id="pbbg-demo">
@@ -56,7 +56,7 @@
     <div class="project__body">
 
       <h2>The problem</h2>
-      <p>Building Coalition with agents showed the same failure over and over. Ask an agent to shorten a line of dialogue and it rewrites a button. Ask it to add a scene and it infers the costs and the prerequisites from scattered prose and code, and where it can&rsquo;t infer, it invents something plausible. Ask it to fix the copy on an action and the die roll under that action moves with it. Interface copy, story, and rules lived in the same strings, so no edit was safe.</p>
+      <p>Coalition already kept its simulation, interface, and rendering code separate. Its content needed a clearer structure. As coding agents added scenes, I wanted the story to remain coherent and the interface text to meet the same standards I use for websites. Scenes need references to the choices, conditions, and events around them, so agents can find those relationships without reconstructing them from scattered code and prose.</p>
 
       <h2>What it separates</h2>
       <p>A bundle declares four kinds of thing with four owners. <i>Game definitions</i> own costs, requirements, conditions, and typed effects. <i>Narrative</i> owns scene text, dialogue, and who&rsquo;s speaking. <i>Interface</i> owns labels, headings, status lines, and errors. A <i>content policy</i> supplies the writing rules for each, scoped by domain and pattern. No terminal punctuation on a label. No action label over six words. No raw HTML in prose.</p>
@@ -85,7 +85,6 @@
 
       <h2>Building it with agents</h2>
       <div class="essay">
-        <p class="essay__lede">I developed PBBG Content Schema after agent-assisted work on Coalition exposed recurring problems with language and game logic. Agents mixed narrative with interface copy and rebuilt action costs or conditions from scattered code. The response was a reusable architecture that separates those responsibilities and gives agents tools to inspect them.</p>
         <h3>Define the release and its boundaries</h3>
         <p>I chose to release the reusable architecture before building another game around it. I directed the work to stay independent of other editorial tools and to use a neutral example. Codex prepared the initial package: schemas, writing policies, reference checks, text rendering, a command-line tool, tests, and adoption documentation.</p>
         <p>The action record also keeps an owner decision that changed the agent&rsquo;s first choice. Codex picked an MIT license. I specified the Eclipse Public License 2.0, and the record notes the change and the package updates that followed.</p>
