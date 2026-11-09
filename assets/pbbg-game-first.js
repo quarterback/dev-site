@@ -27,7 +27,7 @@
       "<img src='../assets/coalition/play.webp' loading='lazy' alt='Coalition game screen showing a house at dusk, the escape clock and available moves.'>" +
     "</figure>" +
     "<div class='pd-brief'>" +
-      "<p>While building Coalition with coding agents, I wanted to keep the story coherent as I added scenes and give interface text the same attention I give websites. I built PBBG Content Schema so agents can find the right content, follow its references, and apply the appropriate writing rules.</p>" +
+      "<p>I built PBBG Content Schema while developing Coalition with coding agents. It defines how scenes, interface text, game rules, and writing policies relate, so agents can follow those connections when adding content instead of reconstructing them from scattered files.</p>" +
       "<button type='button' class='pd-reveal' aria-expanded='false' aria-controls='pd-workshop'>Inspect the scene</button>" +
       "<p class='pd-game-link'><a href='/projects/coalition.html'>Coalition project</a></p>" +
     "</div>";
