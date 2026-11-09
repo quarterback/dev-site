@@ -54,3 +54,37 @@
 .pd-wrap { margin: 40px 0 0; }
 .pd-note { margin: 14px 0 0; max-width: 46em; font: var(--t-meta, 15px)/1.5 var(--mono, monospace); color: var(--muted, #55556a); }
 .pd noscript img { width: 100%; height: auto; }
+
+/* Start with the actual game, then open the editable content model.
+   The game image is a screenshot, not a simulated playable instance. */
+.pd-opening { display: grid; grid-template-columns: minmax(0, 1.28fr) minmax(260px, 0.9fr); background: var(--pd-paper); color: var(--pd-ink); border: 1px solid currentColor; }
+.pd-game { margin: 0; padding: 14px; background: #151326; color: #f3ead8; min-width: 0; }
+.pd-game img { display: block; width: 100%; height: auto; background: #151326; }
+.pd-game figcaption { margin: 12px 0; font-size: 14px; line-height: 1.5; }
+.pd .pd-from-screen { color: #f3ead8; border-color: rgba(243,234,216,.6); }
+.pd .pd-from-screen:hover { background: rgba(243,234,216,.14); }
+.pd-brief { padding: clamp(20px, 3vw, 38px); align-self: center; }
+.pd-brief h2 { margin: 0 0 18px; font-size: clamp(26px, 3vw, 38px); line-height: 1.12; letter-spacing: -.02em; }
+.pd-brief p { margin: 0 0 16px; font-size: 17px; line-height: 1.55; }
+.pd .pd-reveal { background: var(--pd-ink); color: var(--pd-paper); border-color: var(--pd-ink); padding: 12px 16px; font-weight: 700; }
+.pd .pd-reveal:hover { background: #443a31; }
+.pd-brief .pd-game-link { font-size: 15px; margin: 16px 0 0; }
+.pd-workshop { margin-top: 26px; padding-top: 16px; border-top: 1px solid currentColor; scroll-margin-top: 24px; }
+.pd-workshop[hidden] { display: none; }
+.pd-workshop-intro { max-width: 47em; margin-bottom: 18px; }
+.pd-workshop-intro h3 { margin: 0 0 8px; font-size: 23px; }
+.pd-workshop-intro p { margin: 0; font-size: 17px; line-height: 1.55; }
+.pd-inspect-explain { max-width: 50em; margin: 4px 0 10px; font-size: 16px; line-height: 1.5; }
+.pd-edit-intro { max-width: 46em; margin: 26px 0 10px; }
+.pd-edit-intro h3 { margin: 0 0 6px; font-size: 22px; }
+.pd-edit-intro p { margin: 0; font-size: 16px; line-height: 1.55; }
+.pd-verdict { margin: 24px 0 8px; padding: 11px 0; font-size: 16px; font-weight: 700; border-top: 1px solid currentColor; border-bottom: 1px solid currentColor; }
+.pd-verdict.is-failed { color: #8b2913; }
+.pd-verdict.is-passed { color: #275e48; }
+@media (max-width: 860px) {
+  .pd-opening { grid-template-columns: minmax(0, 1fr); }
+  .pd-game { padding: 10px; }
+  .pd-brief { padding: 22px 18px 26px; }
+  .pd-brief h2 { font-size: 28px; }
+  .pd-workshop { scroll-margin-top: 12px; }
+}
