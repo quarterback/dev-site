@@ -56,3 +56,21 @@ The change was based on the current `main` index so subsequent work on that file
 
 **Verified:** The PR diff shows the old `uth-careers`, `crChart`, `crNo1` and old explanatory paragraph removed, with `pbbg-demo` and the correct deferred script order in their place. The PBBG demo engine remains unchanged. Browser interaction still needs a rendered preview check.
 
+## Homepage copy revision: AP, plain language and Humanizer
+
+**Request:** Remove the "Under the hood" section heading. Cut the repetitive homepage demonstration copy and apply AP style, federal plain-language guidance and the Humanizer review.
+
+**Changes:**
+- Removed the visible homepage heading; the section keeps its descriptive accessibility label.
+- Removed the screenshot caption, redundant "Inspect the residence scene" button, question-form heading and extra explanatory paragraph.
+- Replaced the remaining text with one first-person account of the problem, one "Inspect the scene" control and one contextual link. On the homepage, "How I built it" links to the full PBBG project page. On the project page, "Coalition project" links to the game account.
+- Removed the second explanatory note below the homepage example. The full project page still documents that the demo uses the real PBBG renderer and validator, with sample action costs separate from Coalition's exported content.
+- Removed duplicated instructional headings and paragraphs from the expanded inspector while keeping its interactive controls intact.
+- Corrected descriptive image text and list punctuation using AP conventions.
+
+**Editorial checks:** Reviewed against the 26-pattern guidance in `blader/humanizer` 3.1.0. Executed `reviewPlainLanguage` from `quarterback/plain-as-day` 0.1.0, `inspect` from Red Pen Editor 0.2.1, and Prosekeep `lintSource` using this site's Vloora editorial profile. Across the newly added, extracted copy: 97 words, no plain-language findings, no near-duplicate sentences or paragraphs, and no Prosekeep mechanical findings. Script syntax passed. These checks do not certify AP compliance or reader comprehension.
+
+**Preserved:** Coalition screenshot, actual PBBG validator and text renderer, interactive cost and dialogue controls, role switching, WebGL lines, error cases, and the linked production source.
+
+**Pending:** Inspect the rendered browser preview on desktop and phone; these editorial and static checks alone do not establish visual behavior.
+
