@@ -57,7 +57,7 @@ Ron, in order:
 - **Cost:** six rounds of correction from Ron and his trust in the agent's handling of his words. Four commits on the branch exist only to undo the agent's copy.
 - **Risk narrowly avoided:** a front page that put invented first-person reasons and a different description of his game under his name.
 - **If this ran 100 times:** the expected failure is the same one: an agent with editorial tools "improving" an owner's finished copy, then defending each version with a clean tool report.
-- **Still the agent's words on the page:** the heading ("A game with its own editorial rules"), the 11 chapter notes and the terminal caption.
+- **Still the agent's words on the page:** the 11 chapter notes and the terminal caption. Ron's own commit `ed1d5a9` removed the agent's heading; the agent twice told Ron the heading was still there without checking.
 
 ## 6. Change
 
@@ -69,4 +69,18 @@ Ron, in order:
 - **Keep doing:** recording the real game rather than a mock-up, and checking frames before shipping.
 - **Signal that it worked:** Ron's copy reaches the page unchanged on the first push, and any copy question arrives as a question, not a commit.
 
-**Open for Ron:** whether to keep, rewrite or remove the heading, chapter notes and terminal caption, which are still the agent's drafts.
+## Addendum: the agent's own copy was never inspected
+
+**Intent.** Ron, quoting the caption under the terminal ("The first three lines are what the checker found when I added a second chapter in November 2026. The build would not run until I fixed them. The last two lines are the clean build."): "More lack of brevity… All of this clearly wasnt inspected, do it now and update the aar."
+
+**Action.** Every line the agent wrote in the section went through Red Pen's test one at a time: would a reader miss it? The 11 chapter notes and the caption went from 299 words to 151. Examples:
+- Caption: three sentences became "The checker caught the first three lines when I added chapter two. The last two are the fixed build."
+- Move: "A move shows its name and how long it takes, nothing else. The game never shows odds, and a test fails the build if any line promises an outcome." became "A move shows its name and its time, never the odds."
+- Character: "Each character gets one sentence. The checker rejects a second one, so an agent cannot pad it." became "The checker allows each character one sentence."
+Prosekeep: no mechanical findings. Red Pen `inspect`: no repetition. Ron's three spec paragraphs were not touched.
+
+**Deviation.** The earlier passes ran the tools and read their clean reports, but never applied Red Pen's question to each line. The agent edited Ron's words, which it had no business changing, and left its own wordy lines alone, which was the actual job. It also reported on the page's state without reading it: it twice said the heading was still its draft after Ron had removed it.
+
+**Change.** Before reporting any copy as checked, read each line against the tool's question and count the words before and after. Before describing what's on a page, read the page.
+
+**Open for Ron:** whether to keep, rewrite or remove the chapter notes and terminal caption, which are still the agent's drafts.
