@@ -54,8 +54,8 @@
   </section>
 
   <section class="g sec rt" id="under-the-hood" aria-label="Coalition game and content model">
-    <p class="rt__lede"><a href="projects/coalition.html">Coalition</a> is a persistent browser-based game (PBBG) built in HTML5. You have 72 hours to get out of the country before the police catch you.</p>
-    <p class="rt__intro">Building Coalition with coding agents led me to <a href="projects/pbbg-content-schema.html">PBBG Content Schema</a>. It records how scenes, interface text, game rules, and writing policies relate, so agents can follow those links instead of reconstructing them from scattered files. This 61-second run shows where the content appears. Pause it or choose a chapter.</p>
+    <p class="rt__lede"><a href="projects/coalition.html">Coalition</a> is a browser game. You have 72 hours to get out of the country before the police catch you.</p>
+    <p class="rt__intro">I built it with coding agents, and the text got away from me. Help, story, and rules ended up in the same files, in the same voice. <a href="projects/pbbg-content-schema.html">PBBG Content Schema</a> fixes that. It keeps every line of the game in one catalog, labels each line as interface, story, or fact, and gives each kind its own rules. An agent that adds a screen reads the catalog instead of guessing from a dozen files, and a checker stops the build when a line breaks a rule. This 61-second run shows each kind of text where it appears. Pause it, or pick a chapter.</p>
     <div class="rt__grid" id="runthrough">
       <figure class="rt__phone">
         <video muted playsinline preload="metadata" poster="assets/coalition/runthrough-poster.webp" width="430" height="932" aria-label="One run of Coalition, from the title screen to the first stop">
@@ -69,16 +69,16 @@
         <div class="rt__note" aria-live="polite"><b>0:00 · The title</b><p>Every line in the game comes from one content catalog, not from its code.</p></div>
         <ol class="rt__chapters" aria-label="Chapters">
           <li><button type="button" data-t="0" data-title="The title" data-note="Every line in the game comes from one content catalog, not from its code."><time>0:00</time><span>The title</span></button></li>
-          <li><button type="button" data-t="7.5" data-title="Choose a character" data-note="Each character gets one sentence. The schema marks it as interface text, so the checker rejects a second sentence, and an agent adding a character cannot pad it."><time>0:07</time><span>Choose a character</span></button></li>
-          <li><button type="button" data-t="11.6" data-title="Choose a companion" data-note="Eleven companions, each in a sentence that says how they help without saying exactly how. The checker rejects a line that gives away the odds."><time>0:11</time><span>Choose a companion</span></button></li>
+          <li><button type="button" data-t="7.5" data-title="Choose a character" data-note="Each character gets one sentence. The checker rejects a second one, so an agent cannot pad it."><time>0:07</time><span>Choose a character</span></button></li>
+          <li><button type="button" data-t="11.6" data-title="Choose a companion" data-note="Each of the 11 companions gets one sentence that says how they help without saying exactly how. The checker rejects a line that gives away the odds."><time>0:11</time><span>Choose a companion</span></button></li>
           <li><button type="button" data-t="15.8" data-title="Add cards" data-note="Each card has a pixel icon and one line. The checker holds its button to six words."><time>0:15</time><span>Add cards</span></button></li>
-          <li><button type="button" data-t="20.9" data-title="Pick a country" data-note="The flight lengths and each sponsor's price are game facts bound into the text, written once."><time>0:20</time><span>Pick a country</span></button></li>
-          <li><button type="button" data-t="23.5" data-title="The briefing" data-note="The briefing is built from live game state: the stop, the clock, where the police are searching, and what to do next. Durations are figures with hr, and the prose follows AP style."><time>0:23</time><span>The briefing</span></button></li>
-          <li><button type="button" data-t="28.1" data-title="News" data-note="The power is out. A news card is narrative text: it can have a voice, a second sentence, and a name, and the checker applies different rules to it than to a button."><time>0:28</time><span>News</span></button></li>
-          <li><button type="button" data-t="37.5" data-title="A call" data-note="Duartē's call takes over the screen. Dialogue has to name its speaker, and the checker fails a quote without one."><time>0:37</time><span>A call</span></button></li>
-          <li><button type="button" data-t="46.6" data-title="Make a move" data-note="A move shows its name and how long it takes, nothing else. No odds anywhere: a contract test fails the build if any text promises an outcome."><time>0:46</time><span>Make a move</span></button></li>
+          <li><button type="button" data-t="20.9" data-title="Pick a country" data-note="The flight times and each sponsor's price come from the game's data. They are written once, and the text reads them."><time>0:20</time><span>Pick a country</span></button></li>
+          <li><button type="button" data-t="23.5" data-title="The briefing" data-note="The game builds the briefing from its live state: the stop, the clock, where the police are searching, and what to do next. Durations are figures with hr. The prose follows AP style."><time>0:23</time><span>The briefing</span></button></li>
+          <li><button type="button" data-t="28.1" data-title="News" data-note="The power is out. A news card is story text, so it gets a voice, a second sentence, and a name. The checker holds it to different rules than a button."><time>0:28</time><span>News</span></button></li>
+          <li><button type="button" data-t="37.5" data-title="A call" data-note="Duartē's call takes over the screen. Dialogue must name its speaker, and the checker fails a quote without one."><time>0:37</time><span>A call</span></button></li>
+          <li><button type="button" data-t="46.6" data-title="Make a move" data-note="A move shows its name and how long it takes, nothing else. The game never shows odds, and a test fails the build if any line promises an outcome."><time>0:46</time><span>Make a move</span></button></li>
           <li><button type="button" data-t="49" data-title="The roll" data-note="The die rolls, the hours pass on screen, and the result says what happened and what it cost."><time>0:49</time><span>The roll</span></button></li>
-          <li><button type="button" data-t="55.5" data-title="The first stop" data-note="You made it to Pedra Branca. Interface text, story, and facts all came from one catalog, each checked by its own rules on every build."><time>0:55</time><span>The first stop</span></button></li>
+          <li><button type="button" data-t="55.5" data-title="The first stop" data-note="The first stop. Interface text, story, and facts came from one catalog, and each kind was checked by its own rules on every build."><time>0:55</time><span>The first stop</span></button></li>
         </ol>
       </div>
     </div>
@@ -91,7 +91,7 @@
 <i>$</i> python3 tools/build.py
 content-check: 0 errors, 0 warnings
 pbbg-check: <u>Content checks passed.</u></pre>
-    <p class="rt__intro" style="margin-top: 14px">The checker caught the first three lines when I added a second chapter in November 2026, and the build would not run until I fixed them. The last two lines are the build after the fixes.</p>
+    <p class="rt__intro" style="margin-top: 14px">The first three lines are what the checker found when I added a second chapter in November 2026. The build would not run until I fixed them. The last two lines are the clean build.</p>
     <div class="rt__links">
       <a href="https://github.com/quarterback/pbbg-content-schema">PBBG Content Schema on GitHub</a>
       <a href="projects/pbbg-content-schema.html">How I built it</a>
