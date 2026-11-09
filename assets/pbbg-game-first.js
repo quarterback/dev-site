@@ -27,7 +27,7 @@
       "<img src='../assets/coalition/play.webp' loading='lazy' alt='Coalition game screen showing a house at dusk, the escape clock and available moves.'>" +
     "</figure>" +
     "<div class='pd-brief'>" +
-      "<p>When I asked coding agents to edit Coalition's dialogue, they sometimes changed buttons or rules. I built PBBG Content Schema to keep those parts separate. Try changing the text or an action cost.</p>" +
+      "<p>While building Coalition with coding agents, I wanted to keep the story coherent as I added scenes and give interface text the same attention I give websites. I built PBBG Content Schema so agents can find the right content, follow its references, and apply the appropriate writing rules.</p>" +
       "<button type='button' class='pd-reveal' aria-expanded='false' aria-controls='pd-workshop'>Inspect the scene</button>" +
       "<p class='pd-game-link'><a href='/projects/coalition.html'>Coalition project</a></p>" +
     "</div>";
