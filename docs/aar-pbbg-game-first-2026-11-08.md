@@ -74,3 +74,15 @@ The change was based on the current `main` index so subsequent work on that file
 
 **Pending:** Inspect the rendered browser preview on desktop and phone; these editorial and static checks alone do not establish visual behavior.
 
+## Source correction: October 30 article
+
+**Source:** https://blog.ronbronson.com/bringing-ax-to-life-building-a-content-schema-for-browser-games-developed-with-agents/
+
+**User correction:** The earlier homepage copy claimed coding agents repeatedly changed dialogue, buttons, and rules in Coalition. The published essay does not report that as an observed incident.
+
+**What the essay says:** Working with agents raised a content architecture question. Ron wanted to keep a growing narrative coherent and give game interface writing the same care as website content. The proposed schema made content types, references, and type-specific editorial policy explicit, so agents could follow them without reconstructing each relationship from scattered sources. The essay describes editing dialogue without affecting dice calculations as a boundary the architecture should maintain.
+
+**Changes:** Rewrote the homepage PBBG entry and the project's Problem row and explanation to follow that argument. Removed the repeated unsupported incident and the duplicated introduction in the agent-build discussion. The updated Problem row cites a scene's dependence on an earlier promise, a concrete narrative relationship the article describes.
+
+**Checks:** Ran the Red Pen Editor 0.2.1 deterministic inspector, plain-language-default 0.1.0 checker, and Prosekeep with the site's Vloora rules on the three revised text blocks. No mechanical findings or repeated sentences/paragraphs. JavaScript passed syntax validation. Source fidelity still requires author review; mechanical checks cannot verify factual accuracy.
+
