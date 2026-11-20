@@ -16,8 +16,8 @@ body.arcade {
 .arcade-hero h1 { margin: 0; font-family: var(--display); font-weight: 800; font-size: clamp(64px, 12vw, 176px); line-height: .9; letter-spacing: -.05em; color: var(--blue); }
 .arcade-hero p { margin: 28px 0 0; max-width: 36em; font-size: clamp(20px, 2vw, 26px); font-weight: 300; line-height: 1.4; }
 .arcade-sec { padding: 0 var(--gut); }
-.arcade-sec + .arcade-sec { margin-top: 96px; }
-.arcade-sec h2 { margin: 0 0 32px; font-family: var(--mono); font-weight: 600; font-size: 17px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+
+
 .floor { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: 56px 32px; align-items: start; }
 .cab { display: flex; flex-direction: column; border: 2px solid var(--bezel); border-radius: 16px 16px 8px 8px; background: var(--cab); }
 .cab__marquee { margin: 0; padding: 18px 16px 16px; border-radius: 14px 14px 0 0; background: var(--mq); color: var(--mq-ink); font-family: var(--display); font-weight: 800; font-size: 32px; line-height: 1; letter-spacing: -.03em; text-align: center; }
@@ -32,6 +32,6 @@ body.arcade {
 .cab__btn--how { color: var(--blue); }
 .cab__btn--how:hover { color: var(--ink); border-color: var(--ink); }
 .cab__about { margin: 0; padding: 16px 16px 20px; font-size: 18px; line-height: 1.5; color: var(--ink); }
-.arcade-talk { margin: 72px var(--gut) 0; font-family: var(--mono); font-size: 17px; color: var(--muted); }
-.arcade-talk a { color: var(--blue); }
+
+
 .arcade .foot { border-top-color: var(--hair); }
