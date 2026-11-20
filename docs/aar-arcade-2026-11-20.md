@@ -39,8 +39,18 @@ Ron called the subtitle garbage and asked whether the editorial rules and AP sty
 - **Colophon:** Built with now lists HTML5 video.
 - **Checks:** `prosekeep check arcade.html` with the repo's `.editorial.json`: 0 findings. The visible copy, extracted with full stops after headings and buttons as `EDITORIAL.md` describes, passes `plain-language-default check` with 0 findings; `red-pen-editor inspect` flags only the repeated "How I built it" buttons.
 
-## 5. Gaps
+## 5. Follow-up: Projects and the Paco's Island page
 
-- Paco's Island and World Six have no project pages, so their cabinets have no How I built it button.
+Ron asked whether the Projects page had changed. It hadn't, apart from Arcade in its navigation. He said Projects shouldn't repeat the arcade, then that Paco's Island and World Six should be listed like the rest. A trial line pointing to the arcade ("…ready to play in a browser") was rejected as bad language and removed. He also pointed out that Paco's Island already had a project page, added by another session and merged as PR #124 after this branch began, but linked from nowhere.
+
+- **Merged main** into this branch, bringing in `projects/pacos-island.html` and its screenshots.
+- **Projects list:** Paco's Island and World Six follow Coalition, in the list's format. Paco's Island links to its project page; World Six, with no page, links to the game. Lines: "Seven trivia questions a day. The rarer your answer, the farther Paco the iguana takes you." and "A daily geography game: six places, one tap each on a world map." Hover screenshots: the page's own `end.webp`, and a new `assets/world-six/play.webp` of a practice round in progress.
+- **Arcade:** the Paco's Island cabinet now has How I built it, linking the project page.
+- **Checks:** projects.html, arcade.html and the Paco's Island page load with no failed requests or page errors; prosekeep 0 findings on both pages; plain-language-default 0 on the new lines.
+
+## 6. Gaps
+
+- World Six has no project page, so its cabinet has no How I built it button.
+- The Paco's Island project page predates Vacation mode and doesn't mention it.
 - pctennis.xyz and superinnin.gs didn't answer through this session's network; their links are the ones their project pages already use.
 - Talks, about and the project pages don't link to the arcade yet.
