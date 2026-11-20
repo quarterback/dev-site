@@ -1,0 +1,37 @@
+/* arcade.css — Ron's Arcade (arcade.html). Loads after slabs.css and turns
+   the page dark: an arcade floor of cabinets, each with a marquee, a
+   screen (a gameplay video or a screenshot), a control panel with Play and
+   How I built it, and a few lines on the idea. */
+body.arcade {
+  --paper: #13121d;
+  --ink: #f4f1e6;
+  --blue: #ffd24a;
+  --muted: #b9b6c8;
+  --hair: #34314a;
+  --cab: #22203a;
+  --bezel: #08080d;
+}
+.arcade .top nav a[aria-current="page"] { color: var(--blue); }
+.arcade-hero { padding: 24px var(--gut) 72px; }
+.arcade-hero h1 { margin: 0; font-family: var(--display); font-weight: 800; font-size: clamp(64px, 12vw, 176px); line-height: .9; letter-spacing: -.05em; color: var(--blue); }
+.arcade-hero p { margin: 28px 0 0; max-width: 36em; font-size: clamp(20px, 2vw, 26px); font-weight: 300; line-height: 1.4; }
+.arcade-sec { padding: 0 var(--gut); }
+
+
+.floor { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: 56px 32px; align-items: start; }
+.cab { display: flex; flex-direction: column; border: 2px solid var(--bezel); border-radius: 16px 16px 8px 8px; background: var(--cab); }
+.cab__marquee { margin: 0; padding: 18px 16px 16px; border-radius: 14px 14px 0 0; background: var(--mq); color: var(--mq-ink); font-family: var(--display); font-weight: 800; font-size: 32px; line-height: 1; letter-spacing: -.03em; text-align: center; }
+.cab__marquee a { color: inherit; text-decoration: none; }
+.cab__screen { display: block; width: calc(100% - 32px); margin: 16px auto 0; border: 10px solid var(--bezel); border-radius: 10px; background: var(--bezel); overflow: hidden; aspect-ratio: 16 / 10; }
+.cab--upright .cab__screen { width: min(calc(100% - 32px), 280px); aspect-ratio: 430 / 932; }
+.cab__screen video, .cab__screen img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+.cab__panel { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 16px 0; padding: 14px; border-radius: 8px; background: var(--bezel); }
+.cab__btn { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 8px 18px; border: 2px solid var(--blue); border-radius: 8px; font-family: var(--mono); font-weight: 600; font-size: 16px; text-decoration: none; }
+.cab__btn--play { background: var(--blue); color: var(--paper); }
+.cab__btn--play:hover { color: var(--paper); background: #ffe07e; border-color: #ffe07e; }
+.cab__btn--how { color: var(--blue); }
+.cab__btn--how:hover { color: var(--ink); border-color: var(--ink); }
+.cab__about { margin: 0; padding: 16px 16px 20px; font-size: 18px; line-height: 1.5; color: var(--ink); }
+
+
+.arcade .foot { border-top-color: var(--hair); }
