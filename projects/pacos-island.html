@@ -40,27 +40,27 @@
 
     <h1 class="project__title">Paco&rsquo;s Island</h1>
     <p class="project__lede">A daily trivia game. Paco is an iguana with a boat, and every day he asks seven questions. Each one has a fixed list of right answers. The rarer your answer, the farther he takes you across a bay I made up.</p>
-    <dl class="glance"><div><dt>Problem</dt><dd>A game that scores an answer by how few people gave it needs a crowd before its scores mean anything.</dd></div><div><dt>System</dt><dd>Seven questions a day, the same for everyone. Every right answer carries a rarity score that&rsquo;s set ahead of time.</dd></div><div><dt>Mechanics</dt><dd>Rarity comes from how often a name appears in English text, steadied by a hand-set tier. A curve turns it into points, a speed bonus grows with rarity, and the day&rsquo;s total moves Paco along one of four trips.</dd></div><div><dt>Stack</dt><dd>HTML, CSS, and JavaScript with no build step; PixiJS; a service worker; a Node check on the question pool; Cloudflare Workers.</dd></div><div><dt>Result</dt><dd>640 questions, with daily sets built a year ahead. It scores the same for one player or a million, runs without a server, and installs to a computer or phone.</dd></div></dl>
+    <dl class="glance"><div><dt>Problem</dt><dd>A game that scores an answer by how few people gave it needs a crowd before its scores mean anything.</dd></div><div><dt>System</dt><dd>Seven questions a day, the same for everyone. Every right answer carries a rarity score that&rsquo;s set ahead of time.</dd></div><div><dt>Mechanics</dt><dd>Rarity comes from how often a name appears in English text, steadied by a hand-set tier. A curve turns it into points, a speed bonus grows with rarity, and the day&rsquo;s total moves Paco along one of seven trips.</dd></div><div><dt>Stack</dt><dd>HTML, CSS, and JavaScript with no build step; PixiJS; a service worker; a Node check on the question pool; Cloudflare Workers.</dd></div><div><dt>Result</dt><dd>1,075 questions, with daily sets built a year ahead. It scores the same for one player or a million, runs without a server, and installs to a computer or phone.</dd></div></dl>
 
     <figure class="figure bleed">
-      <img src="../assets/pacos-island/title.webp" alt="The Paco's Island title screen on a computer. On the left, a drawn scene of a bay: a town with colored houses, a striped lighthouse on a pier, and Paco the iguana in a straw hat in a white boat. On the right, the wordmark, a one-line description, a list of four trips with three still locked, and a yellow button reading Start today's trip." />
-      <figcaption>The title screen. The boat is open from the start, and the other three trips open with points.</figcaption>
+      <img src="../assets/pacos-island/title.webp" alt="The Paco's Island title screen on a computer. On the left, a drawn scene of a bay: a town with colored houses, a striped lighthouse on a pier, and Paco the iguana in a straw hat in a white boat. On the right, the wordmark, a choice of three levels, a choice between today's trip and endless mode, and the list of trips, with Deliveries with Tío still locked." />
+      <figcaption>The title screen. The boat is open from the start, and the other six trips open with points.</figcaption>
     </figure>
 
     <div class="project__body">
 
       <h2>A question has many right answers</h2>
-      <p>Every question is a list cut by a rule. &ldquo;Name a country in North America whose name has the letter D in it&rdquo; has twelve right answers. The United States earns 1,497 points. Saint Kitts and Nevis earns 17,278. You get 25 seconds, and a wrong guess costs only the time it took.</p>
+      <p>Every question is a list cut by a rule. &ldquo;Name a world capital whose name starts with B&rdquo; has 26 right answers. Berlin earns 8,085 points. Belmopan earns 85,681. You get 25 seconds, and a wrong guess costs only the time it took.</p>
 
-      <p>The lists are the 193 UN member states, world capitals, the 50 states and their capitals, Mexico&rsquo;s 32 federal entities, the 118 elements, four sports leagues, the presidents, the constellations, the Greek letters, the NATO alphabet, and the books of the Bible. A close misspelling counts, and the game tells you what it counted.</p>
+      <p>The lists are the 193 UN member states, world capitals, the 50 states and their capitals, Mexico&rsquo;s 32 federal entities, the 118 elements, seven sports leagues, the presidents, the constellations, the Greek letters, the NATO alphabet, and the books of the Bible. There are also 311 more lists, like board games, cheeses, and sitcom families. A close misspelling counts, and so does the distinctive part of a longer name: Pennsylvania counts for Pennsylvania Avenue. The game tells you what it counted.</p>
 
       <div class="figpair">
         <figure class="figure">
-          <img src="../assets/pacos-island/question.webp" alt="A question in play: Name a world capital whose name ends with S. An answer box, a yellow Answer button, and a clock bar at 25 seconds. The scene shows Paco's boat near a rock arch, with the next stop and the score in labels over the picture." />
+          <img src="../assets/pacos-island/question.webp" alt="A question in play: Name a world capital whose name starts with B. An answer box, a yellow Answer button, a clock bar at 24 seconds, and a pink Stumped button. The scene shows Paco's boat at the pier, with the next stop and the score in labels over the picture." />
           <figcaption>A question, the clock, and the next stop on the scene.</figcaption>
         </figure>
         <figure class="figure">
-          <img src="../assets/pacos-island/answer.webp" alt="The result of an answer: Saint Kitts and Nevis, 27,897 points in large yellow numbers, split into 17,278 for rarity and 10,619 for speed, with a Next question button. The boat has moved along the coast." />
+          <img src="../assets/pacos-island/answer.webp" alt="The result of an answer: Belmopan, 115,201 points in large yellow numbers, split into 85,681 rarity and 29,520 speed, with a Next question button. The boat has moved along the coast." />
           <figcaption>A rare answer, given fast. The points split into rarity and speed.</figcaption>
         </figure>
       </div>
@@ -68,13 +68,13 @@
       <h2>Rarity is fixed, so the game needs no crowd</h2>
       <p>Each answer has a familiarity score that never changes with play. For places, elements, and presidents, 60% of it comes from how often the name appears in English text and 40% from a tier I set by hand, from 1 for a name almost everyone thinks of to 5 for one almost nobody does. Team nicknames use the tier alone, because Heat, Wild, and Stars are common words and their frequency says nothing about the team.</p>
 
-      <p>On a question, an answer&rsquo;s rarity depends on where it sits among the other right answers, so a list of 6 and a list of 55 score on the same scale. A curve turns that into up to 20,000 points. The most familiar answer earns about 1,500. The speed bonus is worth a lot on a rare answer and almost nothing on a common one, and it halves about every seven seconds.</p>
+      <p>On a question, an answer&rsquo;s rarity depends on where it sits among the other right answers, so a list of 6 and a list of 55 score on the same scale. A curve turns that into up to 108,000 points. The most familiar answer earns about 8,100. The speed bonus is 8,100 points plus a quarter of the rarity. It&rsquo;s full for the first five seconds and nearly gone by 15. A question tops out at 143,100, and a perfect day at 1,001,700.</p>
 
       <h2>Every set opens easy</h2>
-      <p>A set of seven has the same shape every day: two openers anyone can answer, three medium questions, and two hard ones. No list appears twice in a set. The daily sets are built a year ahead, and each day skips the questions used in the 30 days before it.</p>
+      <p>A set of seven has the same shape every day: two openers anyone can answer, an easy one, three medium questions, and a hard one. No list appears twice in a set. The daily sets are built a year ahead, and each day skips the questions used in the 30 days before it. Days already played are locked, so adding questions never changes a day someone has seen.</p>
 
       <h2>The score is a place</h2>
-      <p>Your trip shows the day&rsquo;s score as how far Paco got you. The boat runs from the Ixtaluz pier to his island. A walk to a waterfall opens at 50,000 lifetime points, an ATV ride at 110,000, and a dive at 450,000. Points are the same on every trip, so two players on different trips can still compare scores.</p>
+      <p>Your trip shows the day&rsquo;s score as how far Paco got you. The boat runs from the Ixtaluz pier to his island. A walk to a waterfall opens at 270,000 lifetime points, and an ATV ride at 594,000. Deliveries with Tío open at 810,000, then a night market at 1,080,000. A flight with Esmeralda the macaw opens at 1,620,000, and a dive at 2,430,000. Points are the same on every trip, so two players on different trips can still compare scores.</p>
 
       <p>Every place is invented: the bay, the town, the stops along the coast, and the island. Each name was searched before use, and the ones that matched a real place were dropped.</p>
 
@@ -83,16 +83,27 @@
         <figcaption>The boat, the walk, the ATV, and the dive.</figcaption>
       </figure>
 
-      <h2>The end of the day shows every answer once</h2>
-      <p>The score sheet has one row per question: your answer and its points. A row opens to its question and every right answer, most familiar first, with what each would have earned. The share text lists the seven scores, the rarity and speed totals, and your time.</p>
+      <h2>Three levels and an endless mode</h2>
+      <p>Paco&rsquo;s mode gives you 25 seconds a question. Mario&rsquo;s mode, with Paco&rsquo;s twin brother, gives you 40 seconds and pays half. When the clock runs out it&rsquo;s island time: the question stays open, and a right answer earns a flat 2,700 points. Stumped moves on with none. Each level has its own daily set, and endless mode deals new rounds of seven with every trip open.</p>
+
+      <h2>Vacation mode has no clock</h2>
+      <p>Vacation mode is for people who don&rsquo;t want a timer. A right answer scores its rarity alone, and the questions are the easiest in the game. Paco strolls down a beach to Maria&rsquo;s caf&eacute;. After every right answer, her menu comes up: seven drinks and eight plates. Pick one, and she walks it over to Paco.</p>
 
       <figure class="figure bleed">
-        <img src="../assets/pacos-island/end.webp" alt="The end of a day. The headline reads Paco got you all the way to his island. A score sheet lists seven answers with their points. One row is open, showing its question and all twelve right answers with their rarity points, with the player's answer marked in yellow." />
-        <figcaption>One row is open. It shows the question and all twelve right answers.</figcaption>
+        <img src="../assets/pacos-island/vacation-strip.webp" alt="Three phone screens from Vacation mode. The title screen with the beach lane and Vacation mode chosen. Maria's menu, Café Maria, listing drinks with a drawing of each. Maria standing beside Paco on the boardwalk with the drink, and below it the drink drawn large: Agua de jamaica, iced hibiscus tea." />
+        <figcaption>The Vacation mode start screen, Maria&rsquo;s menu, and Maria bringing an agua de jamaica.</figcaption>
+      </figure>
+
+      <h2>The end of the day shows every answer once</h2>
+      <p>The score sheet has one row per question: your answer and its points. A row opens to its question and every right answer, most familiar first, with what each would have earned. The share text is a row of marks, one per question, and the final score. The end screen also measures the day against 1,000 simulated players on the same seven questions.</p>
+
+      <figure class="figure bleed">
+        <img src="../assets/pacos-island/end.webp" alt="The end of a day. The headline reads Paco got you all the way to his island. A score sheet lists seven answers with their points. The first row is open, showing its question and all 26 right answers with their rarity points, with the player's answer, Belmopan, marked in yellow." />
+        <figcaption>One row is open. It shows the question and all 26 right answers.</figcaption>
       </figure>
 
       <figure class="figure bleed">
-        <img src="../assets/pacos-island/phone-strip.webp" alt="Three phone screens side by side: the title screen with the scene above the list of trips, a question with the answer box and clock, and the end of the day with the score sheet." />
+        <img src="../assets/pacos-island/phone-strip.webp" alt="Three phone screens side by side: the title screen with the scene above the levels, a question with the answer box and clock, and the end of the day with the score sheet." />
         <figcaption>The title, a question, and the end of the day on a phone.</figcaption>
       </figure>
 
@@ -116,7 +127,7 @@
       </dl>
 
       <h2>What changed after the first build</h2>
-      <p>The first version scored an answer by the share of players who gave it, with estimates standing in until people played. Fixed scores replaced that. The stops were first named for real places, and they became invented ones. The scene started as 240 by 120 pixel art and was redrawn twice, ending at 480 by 240 with shading and gradients. The pool grew from 218 questions to 640, and sets began to open with easy ones.</p>
+      <p>The first version scored an answer by the share of players who gave it, with estimates standing in until people played. Fixed scores replaced that. The stops were first named for real places, and they became invented ones. The scene started as 240 by 120 pixel art and was redrawn twice, ending at 480 by 240 with shading and gradients. The pool grew from 218 questions to 640, and sets began to open with easy ones. After launch, scores moved to a pinball scale, three trips were added, Vacation mode arrived, and the pool passed 1,000 questions.</p>
 
       <p class="tech-line">Play it: <a href="https://pacoisland.fun/" target="_blank" rel="noopener">Paco&rsquo;s Island</a>. Repo: <a href="https://github.com/quarterback/pacos-island" target="_blank" rel="noopener">quarterback/pacos-island</a>.</p>
 

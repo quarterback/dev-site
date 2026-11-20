@@ -48,9 +48,21 @@ Ron asked whether the Projects page had changed. It hadn't, apart from Arcade in
 - **Arcade:** the Paco's Island cabinet now has How I built it, linking the project page.
 - **Checks:** projects.html, arcade.html and the Paco's Island page load with no failed requests or page errors; prosekeep 0 findings on both pages; plain-language-default 0 on the new lines.
 
-## 6. Gaps
+## 6. Follow-up: closing the open items
 
-- World Six has no project page, so its cabinet has no How I built it button.
-- The Paco's Island project page predates Vacation mode and doesn't mention it.
+Ron asked for the open items to be done, with the language held to his editorial rules, and the arcade cut to its title and the games.
+
+- **Arcade:** the title is "Arcade" (not "Ron's Arcade"), with no subtitle, no section labels, and no talk line; all seven cabinets sit on one floor, with Tennis Polo last. Projects is in its navigation. Play To Clinch and SuperInnings, which aren't online, lost their Play buttons and link to their project pages. Viperball is described as a computer game. Tennis Polo is described as Ron put it, a field sport for two teams of nine with a racket-holding goalkeeper, and shows one of his 2010 game photos from his Substack post (his own photo; he asked for no credit).
+- **Paco's Island page:** brought up to date from the game's spec. Seven trips, not four, with today's opening thresholds; 1,075 questions; the pinball scale (up to 108,000 rarity points, 143,100 a question, 1,001,700 a day); the speed bonus as it works now; the set shape (two openers, an easy one, three medium, a hard one); locked days; seven sports leagues and 311 more lists; partial names. The worked example moved from a retired letter question to "Name a world capital whose name starts with B" (Berlin 8,085, Belmopan 85,681). New sections: "Three levels and an endless mode" and "Vacation mode has no clock," with a new three-phone strip. Every screenshot was retaken at the current scale, and the alt text rewritten to match.
+- **World Six page (`projects/world-six.html`):** new, in the Paco's Island page's format, from the game's `SCORING.md`, `replit.md` and code: the scoring (20,000 for distance, up to 30,000 for speed, scaled by the cube of accuracy, with the documented examples), how a day's six places are chosen and rested, the 97 hand-picked and about 3,400 added places, no transition screens, the date line, and the stack. The repo is private, so the page doesn't link it. Projects and the arcade cabinet link to it.
+- **Checks:** prosekeep found nothing on all four pages. On the visible text, plain-language-default found nothing on the World Six page; on the Paco's Island page it flags three long sentences that were there before this run (the lists, the familiarity split, and the rarity curve), and the one this run lengthened was split. red-pen-editor found no repetition on either page. All four pages load with no failed requests or errors.
+
+## 7. For Ron to confirm
+
+- The World Six page has no "Records" line about how it was built, because that would be a claim about his role that isn't documented; add one if wanted.
+- The three long sentences on the Paco's Island page are another session's wording and were left as they are.
+
+## 8. Gaps
+
 - pctennis.xyz and superinnin.gs didn't answer through this session's network; their links are the ones their project pages already use.
 - Talks, about and the project pages don't link to the arcade yet.
