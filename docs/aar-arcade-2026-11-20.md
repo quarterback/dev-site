@@ -26,7 +26,20 @@ Ron asked whether Paco's Island had an entry on ronbronson.dev. It had none, and
 - Contrast: body text 16.4 to 1, muted text 9.4, Play buttons 12.9, How I built it 13.9; marquees from 5.8 to 12.6 to 1 (Play To Clinch's green darkened from 4.3).
 - The five videos total about 3 MB, with Coalition's existing 2.9 MB MP4 the largest.
 
-## 4. Gaps
+## 4. Follow-up: copy review
+
+Ron called the subtitle garbage and asked whether the editorial rules and AP style had been checked first. They hadn't: "ignore the editorial policy" was about the site's argument, and the copy should still have gone through the voice rules, the humanizer pass and prosekeep before shipping.
+
+- **Subtitle:** "Ideas I had and built so other people could play them" (staged, vague, no fact) is now "Ideas I brought to life: five games you can play in a browser and two sports I made up," his own phrase plus the counts.
+- **Claims of intent removed:** the Paco's Island and World Six lines said what Ron "wanted," which the evidence rules treat as an interpretation he must confirm. They now state what each game does: "Seven trivia questions a day. The rarer your right answer, the farther Paco the iguana takes you…" and "Six places a day, one tap each on a world map. Closer and faster both score. A guess across the date line counts the short way around."
+- **Serial comma:** the page mixed AP style (no serial comma) with this site's rule (use it). It now follows the site's rule throughout; AP style would drop it.
+- **Talk line:** "More on how I think about game design: …" is now "My talk on game design: …"
+- **Tennis Polo's button** said "How I built it" for a real-world sport whose page is a 20th-anniversary retrospective; it now says "The story."
+- **Meta description:** "from Paco's Island and World Six to Coalition and Tennis Polo" (a from-X-to-Y construction) is now "Games and sports Ron Bronson made: five play in a browser, and two are sports he invented."
+- **Colophon:** Built with now lists HTML5 video.
+- **Checks:** `prosekeep check arcade.html` with the repo's `.editorial.json`: 0 findings. The visible copy, extracted with full stops after headings and buttons as `EDITORIAL.md` describes, passes `plain-language-default check` with 0 findings; `red-pen-editor inspect` flags only the repeated "How I built it" buttons.
+
+## 5. Gaps
 
 - Paco's Island and World Six have no project pages, so their cabinets have no How I built it button.
 - pctennis.xyz and superinnin.gs didn't answer through this session's network; their links are the ones their project pages already use.
