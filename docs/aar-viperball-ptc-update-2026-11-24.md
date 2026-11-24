@@ -64,7 +64,7 @@
    - Added "High school: the JHSAA" and "The paper" sections, plus a line on the new default look.
    - Added the one optional network call (the paper's writer).
    - Added a High School item to the feature list.
-10. **Play To Clinch screenshots:** ran the app locally and started a league. Week 0 pages are empty, so I ran one advance in the background to capture pages with real results. See the addendum for the outcome.
+10. **Play To Clinch screenshots:** ran the app locally and started a league. See the addendum for why the image is the dual simulator.
 11. **Editorial tools on every new sentence:**
     - red-pen-editor `brief` for each page;
     - edits through red-pen-editor `apply`: 3 for Viperball, 4 for Play To Clinch, 1 for the model note;
@@ -75,7 +75,7 @@
 **What it produced or changed:**
 - `projects/viperball.html`, `projects/play-to-clinch.html`, `projects.html`, `arcade.html`, `more.html`
 - `assets/under-the-hood.js` (`viper()`)
-- New images: `assets/viperball/stats-site-season.webp`, `assets/viperball/installation.webp`
+- New images: `assets/viperball/stats-site-season.webp`, `assets/viperball/installation.webp`, `assets/play-to-clinch/dual-simulator.webp`
 - This record
 
 **Where actual behavior differed from the instruction:** "Tennis" was ambiguous, and the clarifying question was declined. I chose Play To Clinch and say so here and in the PR.
@@ -142,3 +142,30 @@
 **Signal that the change worked:** Ron's review finds no stale counts and no claim the code contradicts.
 
 **Trace:** reconciled against this session's transcript, not a machine log.
+
+## Addendum: Play To Clinch format, counts, and screenshot
+**Found in the repo's CLAUDE.md, then checked in `app/ncaa.py` `DUAL_FORMATS`:** the game no longer plays real college tennis's 6+3. Each division plays its own shape:
+- D1: 10 singles and 5 doubles, with the doubles consolidated into one point. 11 points, clinch at 6.
+- D2 and D3: 8 singles and 3 doubles, each its own point. 11 points, clinch at 6.
+- D4: 10 singles and 3 doubles. 13 points, clinch at 7.
+
+The page's college paragraph still described 6+3, first to four, as the game's format. It now gives real college tennis's format, the owner's reason for leaving it ("court and Title IX reasons the game doesn't have"), and each division's shape.
+
+The "dual" definition card on Projects said four points clinches. It now says four in real college tennis and six or seven in Play To Clinch.
+
+The Play To Clinch model on Projects computes single-match odds, and `engine/rally.py` and `engine/match.py` are unchanged since 8 November, so the model itself stands.
+
+**JHSAA counts:**
+- The README says 862 girls' and 777 boys' programs across nine classifications.
+- The game's own `jhsaa.load_schools` gives 1,002 girls' and 965 boys' programs across 14 classes (1A–9A, Groups 1–3, and the private 10B and 11B).
+- The page uses the loader's numbers, per "the code is always right".
+
+**Screenshot:**
+- A fresh local league sits at week 0, with empty rankings and results.
+- Two `POST /world/advance` calls returned in under a second without moving the week. The likely cause is the advance lock, since a browser-triggered advance was still running; I didn't debug the game further for a screenshot.
+- The page uses the dual simulator page instead. It's accurate and shows the new Clinch palette.
+- `recruiting-profile.png` (alt text "NCAA D3 championship bracket", which didn't match) is replaced by `assets/play-to-clinch/dual-simulator.webp` on the project page, Projects, Arcade, and More. The page-types specimens are untouched.
+
+**Editorial tools:** red-pen-editor `brief`, plus one `apply` edit splitting the card sentence. plain-language-default, prosekeep, and unslop all clean.
+
+**Evidence:** Playwright on all five pages at 1440 and on iPhone 14 emulation. No broken images, no errors, no horizontal overflow.
