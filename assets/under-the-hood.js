@@ -122,47 +122,60 @@ function oregon(OR) {
 if (document.getElementById("orBars")) load("OR").then(oregon);
 
 function viper() {
-  // Ported from engine/game_engine.py
-  function place(d, k) {
-    if (d > 65) return 0; if (d >= 59) return 0.001; if (d >= 55) return 0.003;
-    const c = 30 + (k - 60) * 0.5;
+  // Ported from viperball/engine/game_engine.py at 1a8ddc8: _kick_skill,
+  // _place_kick_success, _drop_kick_success and select_kick_decision.
+  // Checked against the engine's own select_kick_decision on 16,800 situations.
+  const skill = (raw) => Math.max(40, Math.min(100, 60 + (raw - 15) * 0.5));
+  function place(d, s) {
+    if (d > 71) return 0;
+    const c = 30 + (s - 60) * 0.75 + 15;
     if (d <= 20) return 0.97;
     if (d <= c) return 0.95 - ((d - 20) / Math.max(1, c - 20)) * 0.10;
-    if (d <= c + 8) return Math.max(0.15, 0.80 - (d - c) * 0.08);
-    if (d <= 54) return Math.max(0.05, 0.15 - (d - c - 8) * 0.01);
-    return 0.003;
+    return Math.max(0.10, 0.82 - (d - c) * 0.04);
   }
-  function drop(d, k) {
-    const c = 30 + (k - 60) * 0.75;
+  function drop(d, s) {
+    const c = 30 + (s - 60) * 0.75;
     if (d <= 15) return 0.98;
     if (d <= c) return 0.96 - ((d - 15) / Math.max(1, c - 15)) * 0.10;
     if (d <= c + 10) return Math.max(0.08, 0.80 - (d - c) * 0.06);
     if (d <= c + 15) return Math.max(0.05, 0.20 - (d - c - 10) * 0.02);
     return Math.max(0.03, 0.06 - (d - c - 15) * 0.01);
   }
-  function decide(fp, down, ytg, k, trailing) {
-    const d = 100 - fp + 10;
-    const pk = d <= 54 ? place(d, k) : 0, dk = drop(d, k);
+  function decide(fp, down, ytg, raw, trailing) {
+    const s = skill(raw), d = 100 - fp + 10, pk = place(d, s), dk = drop(d, s);
     if (fp >= 90) {
-      if (down === 6 && ytg >= 8) { if (dk >= 0.40) return ["DROP KICK", "Inside the 10 on 6th and long: drop kick if it's 40% or better."]; if (pk >= 0.50) return ["PLACE KICK", "Inside the 10 on 6th and long: place kick if it's 50% or better."]; }
+      if (down === 6 && 100 - fp > 3) {
+        if (dk >= 0.40) return ["DROP KICK", "Inside the 10 on 6th down, more than 3 yards out: take the drop kick at 40% or better."];
+        if (pk >= 0.50) return ["PLACE KICK", "Inside the 10 on 6th down, more than 3 yards out: a place kick at 50% or better."];
+      }
       return ["GO FOR IT", "Inside the 10 the coach drives for the 9-point touchdown."];
     }
-    const comfort = 30 + (k - 60) * 0.75;
+    const comfort = 30 + (s - 60) * 0.75;
+    if (down <= 3) return ["GO FOR IT", "On 1st through 3rd down the coach keeps driving. A drop kick this early comes only late in a half."];
+    if (down === 4) {
+      if (ytg >= 4 && d <= comfort && dk >= 0.70) return ["DROP KICK", "Stalled on 4th down with 4 or more to go, inside the kicker's range. A miss still leaves 5th and 6th down."];
+      if (dk < 0.55 && ytg >= 10 && pk >= 0.60) return ["PLACE KICK", "Stalled on 4th and 10 or more, out of drop kick range: put 3 points up."];
+      return ["GO FOR IT", "4th down is for driving. There are still 5th and 6th down."];
+    }
     let best = null, ev = 0;
-    if (d <= comfort && dk >= 0.30) { best = "DROP KICK"; ev = dk * 5; }
+    if (dk >= 0.40) { best = "DROP KICK"; ev = dk * 5; }
     if (pk >= 0.20 && pk * 3 > ev) { best = "PLACE KICK"; ev = pk * 3; }
-    if (down === 5) return ["GO FOR IT", "On 5th down the coach runs another play to set up a better 6th-down kick (no clock pressure)."];
-    if (trailing) return best ? [best, "Trailing on 6th down: take the best kick."] : ["GO FOR IT", "Trailing and out of range: punting surrenders the game."];
-    const go = Math.max(1, 3 - Math.floor((k - 75) / 10));
-    if (ytg <= go) return ["GO FOR IT", `Short yardage: ${ytg} to go is within the ${go}-yard go zone for this kicker.`];
-    if (best) return [best, best === "DROP KICK" ? "Drop kick has the higher expected points and is inside the kicker's comfort range." : "Place kick has the higher expected points."];
-    if (fp < 65) return ["PUNT", "No makeable kick and deep in their own half: punt."];
+    if (down === 5) {
+      if (dk >= 0.55 && ytg >= 1) return ["DROP KICK", "5th down is the natural kicking down. A miss keeps the ball and leaves 6th down for another try."];
+      if (pk >= 0.60 && ytg >= 4) return ["PLACE KICK", "Out of drop kick range with 4 or more to go: take the field goal. A miss on 5th down keeps the ball."];
+      return ["GO FOR IT", "No good kick yet: run another play and decide on 6th down."];
+    }
+    if (trailing) return best ? [best, "Trailing on 6th down: take the best kick."] : ["GO FOR IT", "Trailing and out of range: punting gives up the game."];
+    const go = Math.max(1, 3 - Math.floor((s - 75) / 10));
+    if (ytg <= go) return ["GO FOR IT", `Short yardage: ${ytg} to go is inside this kicker's ${go}-yard go zone.`];
+    if (best) return [best, best === "DROP KICK" ? "The drop kick has the higher expected points." : "The place kick has the higher expected points."];
+    if (fp < 65) return ["PUNT", "No makeable kick in your own half: punt."];
     if (ytg <= 5) return ["GO FOR IT", "No makeable kick, short yardage, past midfield: go."];
     return ["PUNT", "No makeable kick and long yardage: punt."];
   }
   let fp = 72;
   const svg = document.getElementById("vbChart");
-  const L = 44, R = 508, T = 16, B = 250, D0 = 10, D1 = 70;
+  const L = 44, R = 508, T = 16, B = 250, D0 = 10, D1 = 75;
   const xd = (d) => L + ((d - D0) / (D1 - D0)) * (R - L), yp = (p) => B - p * (B - T);
   for (let p = 0; p <= 1.001; p += 0.25) { el("line", { x1: L, x2: R, y1: yp(p), y2: yp(p), stroke: "var(--uth-grid)" }, svg); el("text", { x: L - 6, y: yp(p) + 4, "text-anchor": "end", "font-size": 11, fill: "var(--uth-dim)" }, svg).textContent = Math.round(p * 100) + "%"; }
   for (let d = 10; d <= 70; d += 10) el("text", { x: xd(d), y: B + 18, "text-anchor": "middle", "font-size": 11, fill: "var(--uth-dim)" }, svg).textContent = d;
@@ -176,26 +189,26 @@ function viper() {
   const mt = el("text", { x: 0, y: B - 10, "text-anchor": "middle", "font-size": 12, fill: "var(--uth-on-accent)" }, mark);
   const $ = (id) => document.getElementById(id);
   function draw() {
-    const k = +$("vbSkill").value, ytg = +$("vbYtg").value, down = +$("vbDown").value, tr = $("vbScore").value === "-1";
-    $("vbSkillO").textContent = k; $("vbYtgO").textContent = ytg;
+    const raw = +$("vbSkill").value, s = skill(raw), ytg = +$("vbYtg").value, down = +$("vbDown").value, tr = $("vbScore").value === "-1";
+    $("vbSkillO").textContent = raw; $("vbYtgO").textContent = ytg;
     let dp = "", pp = "";
-    for (let d = D0; d <= D1; d += 0.5) { dp += (d === D0 ? "M" : "L") + xd(d).toFixed(1) + " " + yp(drop(d, k)).toFixed(1); pp += (d === D0 ? "M" : "L") + xd(d).toFixed(1) + " " + yp(d <= 54 ? place(d, k) : 0).toFixed(1); }
+    for (let d = D0; d <= D1; d += 0.5) { dp += (d === D0 ? "M" : "L") + xd(d).toFixed(1) + " " + yp(drop(d, s)).toFixed(1); pp += (d === D0 ? "M" : "L") + xd(d).toFixed(1) + " " + yp(place(d, s)).toFixed(1); }
     dPath.setAttribute("d", dp); pPath.setAttribute("d", pp);
     const d = 110 - fp; mark.setAttribute("transform", `translate(${xd(d)},0)`); mt.textContent = d + " yd";
     mark.setAttribute("aria-valuenow", d);
-    const dk = drop(d, k), pk = d <= 54 ? place(d, k) : 0;
+    const dk = drop(d, s), pk = place(d, s);
     $("vbDk").textContent = Math.round(dk * 100) + "%"; $("vbPk").textContent = Math.round(pk * 100) + "%";
     $("vbDkEv").textContent = "expected " + (dk * 5).toFixed(2) + " pts"; $("vbPkEv").textContent = "expected " + (pk * 3).toFixed(2) + " pts";
-    const [call, why] = decide(fp, down, ytg, k, tr);
+    const [call, why] = decide(fp, down, ytg, raw, tr);
     $("vbCall").textContent = call; $("vbWhy").textContent = `Ball on the opponent's ${100 - fp}. ${why}`;
   }
   let dragging = false;
-  const setX = (e) => { const pt = svg.createSVGPoint(); pt.x = e.clientX; pt.y = e.clientY; const p = pt.matrixTransform(svg.getScreenCTM().inverse()); const d = Math.round(D0 + ((p.x - L) / (R - L)) * (D1 - D0)); fp = Math.max(50, Math.min(99, 110 - d)); draw(); };
+  const setX = (e) => { const pt = svg.createSVGPoint(); pt.x = e.clientX; pt.y = e.clientY; const p = pt.matrixTransform(svg.getScreenCTM().inverse()); const d = Math.round(D0 + ((p.x - L) / (R - L)) * (D1 - D0)); fp = Math.max(40, Math.min(99, 110 - d)); draw(); };
   svg.style.touchAction = "none";
   svg.addEventListener("pointerdown", (e) => { dragging = true; svg.setPointerCapture(e.pointerId); setX(e); });
   svg.addEventListener("pointermove", (e) => dragging && setX(e));
   svg.addEventListener("pointerup", () => (dragging = false));
-  mark.addEventListener("keydown", (e) => { const s = e.key === "ArrowRight" ? -1 : e.key === "ArrowLeft" ? 1 : 0; if (!s) return; e.preventDefault(); fp = Math.max(50, Math.min(99, fp + s)); draw(); });
+  mark.addEventListener("keydown", (e) => { const s = e.key === "ArrowRight" ? -1 : e.key === "ArrowLeft" ? 1 : 0; if (!s) return; e.preventDefault(); fp = Math.max(40, Math.min(99, fp + s)); draw(); });
   ["vbSkill", "vbYtg", "vbDown", "vbScore"].forEach((id) => $(id).addEventListener("input", draw));
   draw();
 }

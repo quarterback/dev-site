@@ -6,12 +6,12 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="icon" href="/favicon.png" type="image/png" sizes="any" />
 <title>Play To Clinch | Ron Bronson</title>
-<meta name="description" content="Earth's first-ever team tennis computer game, covering a junior circuit, college, and a co-ed pro league on one continuous engine." />
+<meta name="description" content="Earth's first-ever team tennis computer game, covering high school, a junior circuit, college, and a co-ed pro league on one continuous engine." />
 <link rel="canonical" href="https://ronbronson.dev/projects/play-to-clinch.html" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Ron Bronson" />
 <meta property="og:title" content="Play To Clinch | Ron Bronson" />
-<meta property="og:description" content="Earth's first-ever team tennis computer game, covering a junior circuit, college, and a co-ed pro league on one continuous engine." />
+<meta property="og:description" content="Earth's first-ever team tennis computer game, covering high school, a junior circuit, college, and a co-ed pro league on one continuous engine." />
 <meta property="og:url" content="https://ronbronson.dev/projects/play-to-clinch.html" />
 <meta property="og:image" content="https://ronbronson.dev/assets/social-card.png" />
 <meta property="og:image:width" content="1200" />
@@ -19,7 +19,7 @@
 <meta property="og:image:alt" content="Ron Bronson beside the words Problems Are Designed, with a workshop photo and a content schema check." />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Play To Clinch | Ron Bronson" />
-<meta name="twitter:description" content="Earth's first-ever team tennis computer game, covering a junior circuit, college, and a co-ed pro league on one continuous engine." />
+<meta name="twitter:description" content="Earth's first-ever team tennis computer game, covering high school, a junior circuit, college, and a co-ed pro league on one continuous engine." />
 <meta name="twitter:image" content="https://ronbronson.dev/assets/social-card.png" />
 <link rel="preload" as="font" type="font/woff2" href="../assets/fonts/gallery/PPNeueMontreal-Extrabold.woff2" crossorigin />
 <!-- standard.site -->
@@ -39,7 +39,7 @@
   <article class="project">
 
     <h1 class="project__title">Play To Clinch</h1>
-    <p class="project__lede">Earth&rsquo;s first-ever team tennis computer game, covering a junior circuit, college, and a co-ed pro league on one continuous engine.</p>
+    <p class="project__lede">Earth&rsquo;s first-ever team tennis computer game, covering high school, a junior circuit, college, and a co-ed pro league on one continuous engine.</p>
     <div class="project__meta">
       <span>Designer &amp; sole engineer</span>
       <span class="sep">·</span>
@@ -73,11 +73,21 @@
 
       <p>The core is college-format dual matches. Two teams play three doubles matches that combine into a single team point and six singles matches worth a point each, and the first team to four points wins. Lineups are seeded by player strength, the engine pairs the doubles teams, and it simulates every point, so you see each serve, rally, and error. Box scores and play-by-play transcripts show exactly what happened.</p>
 
-      <p>You build a program across four years: recruit players, watch your roster age and develop, and run a full college season across D1, D2, or D3, men&rsquo;s or women&rsquo;s. Track conference standings, send your best eight to a national bracket, and crown a champion. A single rating spans juniors through college through the pros: a D3 women&rsquo;s player and a D1 men&rsquo;s player sit on the same scale, and that scale is your recruiting yardstick.</p>
+      <p>You build a program across four years: recruit players, watch your roster age and develop, and run a full college season across D1, D2, D3, or D4, men&rsquo;s or women&rsquo;s. Track conference standings and conference tournaments. A selection committee picks and seeds the national bracket, 96 teams in D1 and 64 in D2 through D4, drawn into four regions. Region champions meet in the national semifinals. A single rating spans juniors through college through the pros: a D3 women&rsquo;s player and a D1 men&rsquo;s player sit on the same scale, and that scale is your recruiting yardstick.</p>
 
       <h2>Junior rankings and recruiting</h2>
 
       <p>Before college, recruits compete on a junior circuit. Results earn badges and move the rankings. You can read a recruit&rsquo;s r&eacute;sum&eacute;: tournament history, match record, year-by-year ranking progression. The recruiting board shows the top prospects with their current rating and two independent scouting projections of where they could land. The ceiling stays hidden until you offer a spot and they commit: some players have hidden upside or outperform expectations, and some are overrated hype.</p>
+
+      <h2>High school: the JHSAA</h2>
+      <p>Jefferson is a fictional US state with its own high school tennis association, the JHSAA. It has 862 girls&rsquo; and 777 boys&rsquo; programs across nine classifications. Each season runs district schedules, a State postseason, and All-State, All-Region, and All-District teams. It runs apart from the college game, and a college save can opt in to put Jefferson&rsquo;s graduating seniors on the recruiting board. Match scorelines are calibrated against five seasons of real Oregon high school results.</p>
+
+      <p>The JHSAA Lab runs high school seasons on their own, many years at a time. When a class graduates, its best 200 seniors per gender each get a college program and a four-year career line.</p>
+
+      <h2>The paper</h2>
+      <p>A JHSAA season is simulated whole before anyone looks at it, so there wasn&rsquo;t a way to follow it while it happened. I wanted the running coverage a local daily gave high school sports in the &rsquo;90s. The paper replays a season as dated editions of an area daily. There&rsquo;s a preseason edition, then Tuesday and Friday mornings through the regular season, and one for every postseason morning an area team played.</p>
+
+      <p>Each edition prints results with full flight lines, league standings as of that morning, and the fixtures before the next paper, and it reads nothing dated after its own morning. An agent writes the stories from that edition&rsquo;s data, the paper&rsquo;s earlier stories, and a ledger of invented details like quotes and bylines, so week 9 remembers week 2.</p>
 
       <h2>GTT: the professional circuit</h2>
 
@@ -93,14 +103,17 @@
 
       <h2>The architecture</h2>
 
-      <p>The core is Python, with no dependencies outside the standard library; a Flask web app sits on top, and everything runs on SQLite. It&rsquo;s fast enough to simulate full seasons in seconds. I chose Python for its clarity and determinism, and SQLite because it&rsquo;s portable and needs no separate database. There&rsquo;s no frontend framework and nothing in the cloud, so the whole thing runs offline. The web UI is one view of the engine, and the engine runs without it.</p>
+      <p>The core is Python, with no dependencies outside the standard library; a Flask web app sits on top, and everything runs on SQLite. It&rsquo;s fast enough to simulate full seasons in seconds. I chose Python for its clarity and determinism, and SQLite because it&rsquo;s portable and needs no separate database. There&rsquo;s no frontend framework and nothing in the cloud, so the whole thing runs offline. The one exception is optional: writing the paper&rsquo;s stories from inside the game calls a model. The web UI is one view of the engine, and the engine runs without it.</p>
+
+      <p>The default look uses my Clinch palette with Author, Hanken Grotesk, and RX100 type, and 10 other color schemes are a click away.</p>
 
       <h2>What you can do right now</h2>
 
       <ul>
         <li><b>Match Simulator</b>: create two players and simulate a match with configurable rules (college format, pro sets, tiebreak variations, best of 3 or 5).</li>
         <li><b>Dual Match Viewer</b>: watch a team match with lineups, real-time scoring, and clinch scenarios.</li>
-        <li><b>College Seasons</b>: run a full D1, D2, or D3 season and watch a bracket tournament.</li>
+        <li><b>College Seasons</b>: run a full D1, D2, D3, or D4 season and watch a bracket tournament.</li>
+        <li><b>High School</b>: generate Jefferson&rsquo;s JHSAA seasons in the lab, follow the college alumni, and read a season in the paper.</li>
         <li><b>Junior Circuit</b>: generate a recruiting class, run the junior tournaments, and see how players rank and develop.</li>
         <li><b>Recruiting Board</b>: browse the top prospects and see their scouting reports and ceiling projections.</li>
         <li><b>GTT League</b>: create a professional franchise league, run seasons year by year, and build a Hall of Fame.</li>
