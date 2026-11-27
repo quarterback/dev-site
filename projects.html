@@ -32,8 +32,8 @@
       <li><b><a href="projects/oregon-tennis.html">Oregon HS Tennis Power Rankings</a></b><span>Independent ratings for every Oregon high school team from four years of results, like the computer rankings in college football and basketball.</span><img class="pop" src="assets/oregon-tennis/home.png" alt="" loading="lazy" /></li>
       <li><b><a href="projects/occupant.html">Occupant Indices</a></b><span>Daily price and activity indices for the AI economy, built from public data.</span><img class="pop" src="assets/occupant/dashboard.webp" alt="" loading="lazy" /></li>
       <li><b><a href="projects/mallo.html">Mallo</a></b><span>The first advanced stats for pes&auml;pallo.</span><img class="pop" src="assets/mallo/home.png" alt="" loading="lazy" /></li>
-      <li><b><a href="projects/play-to-clinch.html">Play To Clinch</a></b><span>Team tennis on one rating scale, played point by point.</span><img class="pop" src="assets/play-to-clinch/recruiting-profile.png" alt="" loading="lazy" /></li>
-      <li><b><a href="projects/viperball.html">Viperball</a></b><span>An invented gridiron sport with a probability engine and a 280 team universe.</span><img class="pop" src="assets/viperball/season-overview.png" alt="" loading="lazy" /></li>
+      <li><b><a href="projects/play-to-clinch.html">Play To Clinch</a></b><span>Team tennis on one rating scale, played point by point.</span><img class="pop" src="assets/play-to-clinch/dual-simulator.webp" alt="" loading="lazy" /></li>
+      <li><b><a href="projects/viperball.html">Viperball</a></b><span>An invented gridiron sport with a probability engine and a 333-team universe.</span><img class="pop" src="assets/viperball/stats-site-season.webp" alt="" loading="lazy" /></li>
       <li><b><a href="projects/super-innings.html">SuperInnings</a></b><span>Baseball as one continuous 27 out half, documented in 140+ decision records.</span><img class="pop" src="assets/superinnings/home.webp" alt="" loading="lazy" /></li>
       <li><b><a href="projects/ygf.html">You Go First</a></b><span>A matching model for dating apps built on game mechanics.</span><img class="pop" src="assets/ygf/16-system-at-work.png" alt="" loading="lazy" /></li>
       <li><b><a href="projects/beachwave.html">Beachwave</a></b><span>Live audio rooms on ATProto. Fork it and run your own.</span><img class="pop" src="assets/beachwave/home.png" alt="" loading="lazy" /></li>
@@ -156,7 +156,7 @@ the line = the Nth player, where N = Hall of Famers at the position</code>
           </div>
           <div class="why">In a <button type="button" class="term" aria-expanded="false" aria-controls="term-dual">dual</button>, every match is decided before the first one finishes. Clinching only changes the order you see results in.</div>
             <div class="term__pop" id="term-dual" role="dialog" aria-label="What dual means" hidden>
-              <p>A dual is one team-against-team meet. A team that reaches four points has clinched it.</p>
+              <p>A dual is one team-against-team meet. A team clinches it once it has won more than half the points. That takes four in real college tennis, and six or seven in Play To Clinch, which gives each division its own lineup.</p>
               <button type="button" class="term__x" aria-label="Close">&times;</button>
             </div>
           <div class="src">Source: tennis-team-manager/engine/rally.py and match.py, NCAA dual format (best of three, no-ad, tiebreak sets). Point odds computed with the engine's own functions; match odds checked against 1,500 simulated matches (73.7% vs 73.7% at a 6-point gap).</div>
@@ -215,6 +215,7 @@ the line = the Nth player, where N = Hall of Famers at the position</code>
               <button type="button" class="term__x" aria-label="Close">&times;</button>
             </div>
               <code class="eq">distance = (100 − field position) + 10
+      kicker skill = 60 + (kicker rating − 15) × 0.5
       drop kick EV = 5 × P(drop)   place kick EV = 3 × P(place)</code>
             </div>
           </div>
@@ -225,9 +226,9 @@ the line = the Nth player, where N = Hall of Famers at the position</code>
             </div>
             <div class="panel">
               <div class="ctls">
-                <label class="ctl" for="vbSkill">Kicker skill <output id="vbSkillO">80</output><input id="vbSkill" type="range" min="60" max="95" value="80"></label>
+                <label class="ctl" for="vbSkill">Kicker rating <output id="vbSkillO">77</output><input id="vbSkill" type="range" min="60" max="95" value="77"></label>
                 <label class="ctl" for="vbYtg">Yards to go <output id="vbYtgO">9</output><input id="vbYtg" type="range" min="1" max="20" value="9"></label>
-                <label class="ctl" for="vbDown">Down<select id="vbDown"><option value="5">5th</option><option value="6" selected>6th</option></select></label>
+                <label class="ctl" for="vbDown">Down<select id="vbDown"><option value="3">1st to 3rd</option><option value="4">4th</option><option value="5" selected>5th</option><option value="6">6th</option></select></label>
                 <label class="ctl" for="vbScore">Score<select id="vbScore"><option value="0" selected>Tied or ahead</option><option value="-1">Trailing</option></select></label>
               </div>
               <div class="read" style="margin-top:18px">
@@ -238,8 +239,8 @@ the line = the Nth player, where N = Hall of Famers at the position</code>
               <p class="cap" id="vbWhy"></p>
             </div>
           </div>
-          <div class="why">Early downs gain about 2 yards against 20 to go, so drives reach fifth and sixth down, where this call gets made. A missed drop kick on the first five downs usually keeps the ball.</div>
-          <div class="src">Source: viperball/engine/game_engine.py (_drop_kick_success, _place_kick_success, select_kick_decision). Shown with no clock pressure, no coaching traits, style aggression 1.0.</div>
+          <div class="why">A missed drop kick on the first five downs usually keeps the ball, so 5th down is the natural kicking down: a miss there leaves 6th down for another try. Field goals reach 71 yards, and a drive that stalls outside drop kick range can still score 3.</div>
+          <div class="src">Source: viperball/engine/game_engine.py at 1a8ddc8 (_kick_skill, _drop_kick_success, _place_kick_success, select_kick_decision). Shown in the first quarter with no clock pressure, no coaching traits, style aggression 1.0, and no bonus possession. The port gives the same call and the same kick odds as the engine&rsquo;s own function on all 16,800 situations tested.</div>
         </section>
 
       <section class="uth-piece" id="uth-o27">
